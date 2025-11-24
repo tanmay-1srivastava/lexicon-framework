@@ -106,7 +106,7 @@ class ConversationParser:
         # Red flags for narrative files
         narrative_indicators = [
             "After greeting Speaker",
-            "began the discussion by", 
+            "began the discussion by",
             "Speaker 1 sat anxiously",
             "entered the room, carrying",
             "The nurse assistant had just",
@@ -118,44 +118,439 @@ class ConversationParser:
             if indicator in content:
                 return False
         
-        # Check for timestamped dialogue patterns (new format)
-        # Handle both formats: "00:00:04:" and "00:00:04 {"
-        timestamped_pattern = r'\d{2}:\d{2}:\d{2}:?\s*\{\s*[A-Za-z][A-Za-z0-9_\s]*?:\s*"[^"]+"\s*\}'
-        dialogue_count = len(re.findall(timestamped_pattern, content))
+        # Check for dialogue patterns (good signs)
+        dialogue_patterns = [
+            r'[A-Za-z]+:\s*"[^"]+[.!?]"',  # Name: "actual speech"
+            r'\{[^}]*[A-Za-z]+:\s*"[^"]+[.!?]"',  # {timestamp} Name: "speech"
+            r'[A-Za-z]+\s*:\s*[A-Z][^.]*[.!?]',  # Name: Direct speech without quotes
+        ]
+        
+        dialogue_count = 0
+        for pattern in dialogue_patterns:
+            dialogue_count += len(re.findall(pattern, content))
         
         # Need at least 2 dialogue exchanges
         return dialogue_count >= 2
+    
+    def _is_new_format(self, content: str) -> bool:
+        """Detect if this is any variation of the new simple format"""
+        
+        # Multiple new format patterns
+        new_patterns = [
+            r'\{\d{2}:\d{2}:\d{2}\s+[A-Za-z]+:"[^"]*"\s*\}',  # {timestamp Name:"text"}
+            r'\{\d{2}:\d{2}:\d{2}\{\s*[A-Za-z]+:\s*"[^"]*"\s*\}',  # {timestamp{ Name: "text" }
+            r'\d{2}:\d{2}:\d{2}\s*[A-Za-z]+:\s*"[^"]*"',  # timestamp Name: "text"
+        ]
+        
+        for pattern in new_patterns:
+            if re.search(pattern, content):
+                return True
+        return False
+    
+    def _parse_new_format_robust(self, content: str, file_path: str) -> ConversationData:
+        """Parse ALL variations of new format"""
+        
+        print("   Detected: NEW conversation format")
+        
+        # Try multiple extraction patterns in order of preference
+        extraction_strategies = [
+            self._extract_new_format_strategy1,
+            self._extract_new_format_strategy2, 
+            self._extract_new_format_strategy3,
+            self._extract_new_format_strategy4,
+            self._extract_new_format_strategy5
+        ]
+        
+        for i, strategy in enumerate(extraction_strategies, 1):
+            try:
+                matches = strategy(content)
+                if matches and len(matches) >= 2:  # Need at least 2 exchanges
+                    print(f"   ✅ Parsed using strategy {i}: Found {len(matches)} exchanges")
+                    return self._build_conversation_from_matches(matches, file_path)
+            except Exception as e:
+                print(f"   Strategy {i} failed: {e}")
+                continue
+        
+        print("   ⚠️ All parsing strategies failed")
+        return self._create_empty_conversation_data()
+    
+    def _extract_new_format_strategy1(self, content: str) -> List[Tuple[str, str, str]]:
+        """Strategy 1: {12:01:05 Rob:"text"}"""
+        pattern = r'\{(\d{2}:\d{2}:\d{2})\s+([A-Za-z]+):"([^"]+)"\s*\}'
+        return re.findall(pattern, content, re.DOTALL)
+    
+    def _extract_new_format_strategy2(self, content: str) -> List[Tuple[str, str, str]]:
+        """Strategy 2: {10:02:12{ Rob: "text" }"""
+        pattern = r'\{(\d{2}:\d{2}:\d{2})\{\s*([A-Za-z]+):\s*"([^"]+)"\s*\}'
+        return re.findall(pattern, content, re.DOTALL)
+    
+    def _extract_new_format_strategy3(self, content: str) -> List[Tuple[str, str, str]]:
+        """Strategy 3: 10:02:12 Rob: "text" (no braces)"""
+        pattern = r'(\d{2}:\d{2}:\d{2})\s*([A-Za-z]+):\s*"([^"]+)"'
+        return re.findall(pattern, content, re.DOTALL)
+    
+    def _extract_new_format_strategy4(self, content: str) -> List[Tuple[str, str, str]]:
+        """Strategy 4: Flexible spacing {timestamp{speaker:"text"}"""
+        pattern = r'\{(\d{2}:\d{2}:\d{2})\{?\s*([A-Za-z]+):\s*"([^"]+)"\s*\}?'
+        return re.findall(pattern, content, re.DOTALL)
+    
+    def _extract_new_format_strategy5(self, content: str) -> List[Tuple[str, str, str]]:
+        """Strategy 5: Extract without quotes if necessary"""
+        pattern = r'(\d{2}:\d{2}:\d{2})[^A-Za-z]*([A-Za-z]+):\s*([^{}]+?)(?=\d{2}:\d{2}:\d{2}|\s*$)'
+        matches = re.findall(pattern, content, re.DOTALL)
+        # Clean up extracted text
+        cleaned_matches = []
+        for timestamp, speaker, text in matches:
+            clean_text = text.strip().strip('"').strip('{}').strip()
+            if clean_text and len(clean_text) > 5:  # Minimum meaningful text
+                cleaned_matches.append((timestamp, speaker, clean_text))
+        return cleaned_matches
+    
+    def _build_conversation_from_matches(self, matches: List[Tuple[str, str, str]], file_path: str) -> ConversationData:
+        """Build conversation data from extracted matches"""
+        
+        if not matches:
+            return self._create_empty_conversation_data()
+        
+        # Get first speaker
+        first_speaker = matches[0][1]
+        print(f"   Selected speaker: {first_speaker}")
+        
+        # Extract utterances and timestamps for first speaker
+        speaker_utterances = []
+        timestamps = []
+        
+        for timestamp, speaker, utterance in matches:
+            if speaker == first_speaker:
+                timestamps.append(timestamp)
+                # Clean up utterance
+                clean_utterance = utterance.strip().strip('"').strip('{}').strip()
+                if clean_utterance and clean_utterance not in speaker_utterances:
+                    speaker_utterances.append(clean_utterance)
+        
+        print(f"   Found {len(speaker_utterances)} utterances")
+        
+        # Create profiles for new format
+        all_speakers = list(set(match[1] for match in matches))
+        speaker_profile = {"Name": first_speaker, "Role": "Participant"}
+        other_speakers = [s for s in all_speakers if s != first_speaker]
+        other_speaker_profile = {"Name": other_speakers[0] if other_speakers else "Other", "Role": "Participant"}
+        
+        return ConversationData(
+            speaker_name=first_speaker,
+            speaker_utterances=speaker_utterances,
+            timestamps=timestamps,
+            speaker_profile=speaker_profile,
+            other_speaker_profile=other_speaker_profile,
+            scenario_context={"format": "new", "file": os.path.basename(file_path)}
+        )
+    
+    def _parse_old_format_robust(self, content: str, file_path: str) -> ConversationData:
+        """Parse old format with robust error handling"""
+        
+        print("   Detected: OLD conversation format")
+        
+        try:
+            # Extract character profiles
+            character_profiles = self._extract_character_profiles_robust(content)
+            
+            # Extract scenario context
+            scenario_context = self._extract_scenario_context(content)
+            
+            # Extract GPT response section
+            gpt_section = self._extract_gpt_response_robust(content)
+            
+            # Get first speaker data
+            conversation_data = self._extract_first_speaker_data_robust(gpt_section, character_profiles)
+            
+            # Add scenario context
+            conversation_data.scenario_context = scenario_context
+            conversation_data.scenario_context["format"] = "old"
+            
+            return conversation_data
+            
+        except Exception as e:
+            print(f"   ⚠️ Old format parsing failed: {e}")
+            return self._create_empty_conversation_data()
+    
+    def _extract_character_profiles_robust(self, content: str) -> Dict:
+        """Robust character profile extraction with multiple strategies"""
+        
+        strategies = [
+            self._extract_json_strategy1,
+            self._extract_json_strategy2,
+            self._extract_json_strategy3,
+            self._extract_names_from_content
+        ]
+        
+        for strategy in strategies:
+            try:
+                profiles = strategy(content)
+                if profiles and isinstance(profiles, dict):
+                    return profiles
+            except:
+                continue
+        
+        print("   Using default character profiles")
+        return self._create_default_profiles()
+    
+    def _extract_names_from_content(self, content: str) -> Dict:
+        """Extract character names directly from content when JSON fails"""
+        
+        # Look for common name patterns
+        name_patterns = [
+            r'([A-Z][a-z]+):\s*"',  # Name: "speech"
+            r'Speaker\s*(\d+)',     # Speaker 1, Speaker 2
+            r'character\d+.*?"Name":\s*"([^"]+)"'  # JSON name field
+        ]
+        
+        found_names = set()
+        for pattern in name_patterns:
+            matches = re.findall(pattern, content)
+            for match in matches:
+                if isinstance(match, str) and len(match) > 1:
+                    found_names.add(match)
+        
+        # Create profiles from found names
+        names_list = list(found_names)[:2]  # Take first 2
+        if len(names_list) >= 2:
+            return {
+                "character1": {"Name": names_list[0], "Role": "Participant"},
+                "character2": {"Name": names_list[1], "Role": "Participant"}
+            }
+        
+        return self._create_default_profiles()
+    
+    def _extract_json_strategy1(self, content: str) -> Dict:
+        """Strategy 1: Extract between character1 and Event ID"""
+        profile_start = content.find('"character1":')
+        profile_end = content.find('Scenario: Event ID:')
+        
+        if profile_start != -1 and profile_end != -1:
+            profile_section = content[profile_start-1:profile_end].strip()
+            profile_section = '{' + profile_section + '}'
+            
+            # Clean up the JSON
+            profile_section = profile_section.replace('\n', ' ').replace('\r', '')
+            last_brace = profile_section.rfind('}')
+            if last_brace != -1:
+                profile_section = profile_section[:last_brace + 1]
+            
+            return json.loads(profile_section)
+        return {}
+    
+    def _extract_json_strategy2(self, content: str) -> Dict:
+        """Strategy 2: Extract using regex for JSON blocks"""
+        pattern = r'{\s*"character1":\s*{[^}]+}[^}]*"character2":\s*{[^}]+}\s*}'
+        match = re.search(pattern, content, re.DOTALL)
+        if match:
+            return json.loads(match.group(0))
+        return {}
+    
+    def _extract_json_strategy3(self, content: str) -> Dict:
+        """Strategy 3: Build JSON from individual character blocks"""
+        char1_match = re.search(r'"character1":\s*({[^}]+})', content)
+        char2_match = re.search(r'"character2":\s*({[^}]+})', content)
+        
+        if char1_match and char2_match:
+            char1_data = json.loads(char1_match.group(1))
+            char2_data = json.loads(char2_match.group(1))
+            return {"character1": char1_data, "character2": char2_data}
+        return {}
+    
+    def _create_default_profiles(self) -> Dict:
+        """Create default character profiles"""
+        return {
+            "character1": {
+                "Name": "Speaker1",
+                "Role": "Participant", 
+                "Experience (years)": "2",
+                "Current project": "Discussion",
+                "Nature(like introvert/extrovert)": "Mixed"
+            },
+            "character2": {
+                "Name": "Speaker2",
+                "Role": "Participant",
+                "Experience (years)": "3", 
+                "Current project": "Discussion",
+                "Nature(like introvert/extrovert)": "Mixed"
+            }
+        }
+    
+    def _extract_scenario_context(self, content: str) -> Dict:
+        """Extract scenario context from content"""
+        scenario_data = {}
+        
+        try:
+            # Extract event ID
+            event_match = re.search(r'Event ID:\s*(\d+)', content)
+            if event_match:
+                scenario_data['event_id'] = event_match.group(1)
+            
+            # Extract keywords
+            keywords_match = re.search(r'Keywords:\s*([^\n]+)', content)
+            if keywords_match:
+                scenario_data['keywords'] = keywords_match.group(1).split(', ')
+            
+        except Exception as e:
+            print(f"   Warning: Could not parse scenario context: {e}")
+        
+        return scenario_data
+    
+    def _extract_gpt_response_robust(self, content: str) -> str:
+        """Robust GPT response extraction"""
+        
+        # Try multiple patterns
+        response_patterns = [
+            'GPT-4 RESPONSE:',
+            'GPT RESPONSE:',
+            'Response:',
+            'RESPONSE:',
+            'Generated Conversation:',
+            'Conversation:'
+        ]
+        
+        for pattern in response_patterns:
+            start_pos = content.find(pattern)
+            if start_pos != -1:
+                return content[start_pos + len(pattern):].strip()
+        
+        # If no explicit response section, try to find conversation-like content
+        lines = content.split('\n')
+        conversation_lines = []
+        found_dialogue = False
+        
+        for line in lines:
+            if re.search(r'[A-Za-z]+:\s*"[^"]*"', line) or re.search(r'[A-Za-z]+:\s*[A-Z]', line):
+                found_dialogue = True
+                conversation_lines.append(line)
+            elif found_dialogue and line.strip():
+                conversation_lines.append(line)
+        
+        return '\n'.join(conversation_lines) if conversation_lines else ""
+    
+    def _extract_first_speaker_data_robust(self, gpt_section: str, character_profiles: Dict) -> ConversationData:
+        """Robust first speaker data extraction"""
+        
+        # Get speaker names from profiles
+        speaker_names = []
+        for char_key, profile in character_profiles.items():
+            if isinstance(profile, dict) and 'Name' in profile:
+                speaker_names.append(profile['Name'])
+        
+        # Add common fallback names
+        speaker_names.extend(['Speaker1', 'Speaker2', 'Sarah', 'Thomas', 'Mathew', 'Rob', 'Tina', 'Dr', 'Patient'])
+        
+        print(f"   Looking for speakers: {speaker_names}")
+        
+        # Find first speaker with multiple strategies
+        first_speaker = None
+        lines = [line.strip() for line in gpt_section.split('\n') if line.strip()]
+        
+        # Strategy 1: Exact name match with colon
+        for line in lines:
+            for name in speaker_names:
+                if f'{name}:' in line:
+                    first_speaker = name
+                    break
+            if first_speaker:
+                break
+        
+        # Strategy 2: Any speaker-like pattern
+        if not first_speaker:
+            for line in lines:
+                speaker_match = re.search(r'([A-Za-z][A-Za-z0-9_]*)\s*:', line)
+                if speaker_match:
+                    potential_speaker = speaker_match.group(1)
+                    if potential_speaker not in ['GPT', 'Timestamp', 'RESPONSE', 'Event', 'Keywords', 'Setting']:
+                        first_speaker = potential_speaker
+                        break
+        
+        if not first_speaker:
+            first_speaker = speaker_names[0] if speaker_names else "Speaker1"
+        
+        print(f"   Selected speaker: {first_speaker}")
+        
+        # Extract utterances with multiple patterns
+        speaker_utterances = []
+        timestamps = []
+        
+        for line in lines:
+            if f'{first_speaker}:' in line:
+                # Extract timestamp
+                timestamp_match = re.search(r'(\d{2}:\d{2}:\d{2})', line)
+                if timestamp_match:
+                    timestamps.append(timestamp_match.group(1))
+                
+                # Extract utterance with multiple patterns
+                utterance_patterns = [
+                    f'{first_speaker}:\\s*"([^"]+)"',  # Name: "utterance"
+                    f'{first_speaker}:\\s*([^\\n]+)',  # Name: utterance without quotes
+                    f'\\{{[^}}]*\\}}\\s*{first_speaker}:\\s*"([^"]+)"'  # {timestamp} Name: "utterance"
+                ]
+                
+                utterance_found = False
+                for pattern in utterance_patterns:
+                    utterance_match = re.search(pattern, line)
+                    if utterance_match:
+                        utterance = utterance_match.group(1).strip()
+                        # Clean up utterance
+                        utterance = utterance.strip('"').strip('{}').strip()
+                        if utterance and len(utterance) > 5 and utterance not in speaker_utterances:
+                            speaker_utterances.append(utterance)
+                            utterance_found = True
+                        break
+                
+                if not utterance_found:
+                    # Last resort: take everything after the colon
+                    colon_index = line.find(f'{first_speaker}:')
+                    if colon_index != -1:
+                        utterance = line[colon_index + len(f'{first_speaker}:'):].strip()
+                        utterance = utterance.strip('"').strip('{}').strip()
+                        if utterance and len(utterance) > 5 and utterance not in speaker_utterances:
+                            speaker_utterances.append(utterance)
+        
+        print(f"   Found {len(speaker_utterances)} utterances")
+        
+        # Get profiles
+        speaker_profile = self._get_profile_by_name(first_speaker, character_profiles)
+        other_speaker_profile = self._get_other_profile(first_speaker, character_profiles)
+        
+        return ConversationData(
+            speaker_name=first_speaker,
+            speaker_utterances=speaker_utterances,
+            timestamps=timestamps,
+            speaker_profile=speaker_profile,
+            other_speaker_profile=other_speaker_profile,
+            scenario_context={}
+        )
+    
+    def _get_profile_by_name(self, name: str, character_profiles: Dict) -> Dict:
+        """Get profile for specific character name"""
+        for char_key, profile in character_profiles.items():
+            if isinstance(profile, dict) and profile.get('Name') == name:
+                return profile
+        return {"Name": name, "Role": "Participant"}
+    
+    def _get_other_profile(self, speaker_name: str, character_profiles: Dict) -> Dict:
+        """Get profile for the other speaker"""
+        for char_key, profile in character_profiles.items():
+            if isinstance(profile, dict) and profile.get('Name') != speaker_name:
+                return profile
+        return {"Name": "Other", "Role": "Participant"}
     
     def _extract_annotations(self, content: str) -> List[GroundTruthAnnotation]:
         """Extract ground truth annotations from the annotations section"""
         annotations = []
         
         try:
-            # Try to find annotations section (multiple possible formats)
-            annotations_start = -1
-            annotations_text = ""
-            
-            # Format 1: // ---Annotations Section---
-            if content.find('// ---Annotations Section---') != -1:
-                annotations_start = content.find('// ---Annotations Section---')
-                annotations_text = content[annotations_start:]
-            # Format 2: "Annotations": [
-            elif content.find('"Annotations": [') != -1:
-                annotations_start = content.find('"Annotations": [')
-                annotations_text = content[annotations_start:]
-            # Format 3: Annotations: [ (without quotes)
-            elif content.find('Annotations: [') != -1:
-                annotations_start = content.find('Annotations: [')
-                annotations_text = content[annotations_start:]
-            # Format 4: Annotations (on its own line)
-            elif re.search(r'\nAnnotations\s*\n', content):
-                match = re.search(r'\nAnnotations\s*\n', content)
-                annotations_start = match.start()
-                annotations_text = content[annotations_start:]
-            
+            # Find annotations section
+            annotations_start = content.find('// ---Annotations Section---')
             if annotations_start == -1:
                 print("   ⚠️ No annotations section found")
                 return annotations
+            
+            annotations_text = content[annotations_start:]
             
             # Extract JSON array from annotations
             start_bracket = annotations_text.find('[')
@@ -202,23 +597,13 @@ class ConversationParser:
         
         # Extract conversation part (before annotations)
         conversation_end = content.find('// ---Annotations Section---')
-        if conversation_end == -1:
-            conversation_end = content.find('"Annotations": [')
-        if conversation_end == -1:
-            conversation_end = content.find('Annotations: [')
-        if conversation_end == -1:
-            # Format 4: Annotations on its own line
-            match = re.search(r'\nAnnotations\s*\n', content)
-            if match:
-                conversation_end = match.start()
         if conversation_end != -1:
             conversation_content = content[:conversation_end]
         else:
             conversation_content = content
         
         # Extract timestamped utterances
-        # Handle both formats: "00:00:04:" and "00:00:04 {"
-        pattern = r'(\d{2}:\d{2}:\d{2}):?\s*\{\s*([A-Za-z][A-Za-z0-9_\s]*?):\s*"([^"]+)"\s*\}'
+        pattern = r'(\d{2}:\d{2}:\d{2}):\s*\{\s*([A-Za-z][A-Za-z0-9_\s]*?):\s*"([^"]+)"\s*\}'
         matches = re.findall(pattern, conversation_content, re.DOTALL)
         
         if not matches:
@@ -276,6 +661,7 @@ class ConversationParser:
             scenario_context={}
         )
 
+# [Rest of the classes remain the same as the previous version]
 class MetadataGenerator:
     """Generate realistic metadata based on conversation context"""
     
@@ -964,10 +1350,10 @@ class EvaluationPipeline:
         self.metrics_calculator = MetricsCalculator()
     
     def run_complete_evaluation(self) -> List[EvaluationResult]:
-        """Run complete evaluation using ground truth annotations"""
+        """Run complete evaluation on ALL valid conversation files"""
         
-        print("🚀 Starting Ground Truth Based Evaluation Pipeline")
-        print("="*60)
+        print("🚀 Starting ULTRA-ROBUST Evaluation Pipeline")
+        print("=" * 60)
         
         results = []
         txt_files = self._find_all_txt_files()
@@ -983,8 +1369,8 @@ class EvaluationPipeline:
             print(f"\n[{i}/{total_files}] Processing: {os.path.basename(txt_file)}")
             
             try:
-                # Parse conversation with annotations
-                conversation_data, ground_truth_annotations = self.parser.parse_conversation_file(txt_file)
+                # Parse conversation with intelligent filtering
+                conversation_data = self.parser.parse_conversation_file(txt_file)
                 
                 # Check if file should be skipped
                 if conversation_data.speaker_name == "SKIP_FILE":
@@ -996,39 +1382,26 @@ class EvaluationPipeline:
                     failed_files += 1
                     continue
                 
-                if not ground_truth_annotations:
-                    print(f"   ⚠️ No ground truth annotations found - skipping")
-                    skipped_files += 1
-                    continue
-                
-                print(f"   🎯 Target User: {conversation_data.speaker_name}")
-                print(f"   💬 Utterances: {len(conversation_data.speaker_utterances)}")
-                print(f"   🎲 Annotations: {len(ground_truth_annotations)}")
-                
                 # Generate metadata
                 metadata = self.metadata_generator.generate_metadata(conversation_data)
                 
                 # Run framework
-                print(f"   🏠 Running Framework...")
-                framework_output = self.context_aggregator.process_conversation(
-                    conversation_data, metadata, ground_truth_annotations)
+                print(f"   🏗️ Running Framework...")
+                framework_output = self.context_aggregator.process_conversation(conversation_data, metadata)
                 
                 # Run baseline
                 print(f"   🤖 Running Baseline...")
-                baseline_output = self.baseline_gpt.process_conversation_baseline(
-                    conversation_data, metadata)
+                baseline_output = self.baseline_gpt.process_conversation_baseline(conversation_data, metadata)
                 
-                # Calculate metrics using ground truth
-                print(f"   📈 Calculating Ground Truth Metrics...")
+                # Calculate metrics
+                print(f"   📊 Calculating Metrics...")
                 metrics = self.metrics_calculator.calculate_all_metrics(
-                    framework_output, baseline_output, conversation_data, ground_truth_annotations
+                    framework_output, baseline_output, conversation_data
                 )
                 
                 result = EvaluationResult(
                     file_path=txt_file,
                     speaker_name=conversation_data.speaker_name,
-                    target_user_utterances=conversation_data.speaker_utterances,
-                    ground_truth_annotations=ground_truth_annotations,
                     framework_output=framework_output,
                     baseline_output=baseline_output,
                     metrics=metrics,
@@ -1044,14 +1417,14 @@ class EvaluationPipeline:
                 failed_files += 1
                 continue
         
-        print(f"\n📈 Processing Complete:")
+        print(f"\n📊 Processing Complete:")
         print(f"   Successfully processed: {successful_results}/{total_files} files")
-        print(f"   Skipped (no annotations/narrative): {skipped_files}/{total_files} files") 
+        print(f"   Skipped (narrative): {skipped_files}/{total_files} files") 
         print(f"   Failed: {failed_files}/{total_files} files")
         
         if results:
-            self._print_ground_truth_summary(results)
-            self._save_ground_truth_results(results)
+            self._print_summary(results)
+            self._save_comprehensive_results(results)
         
         return results
     
@@ -1072,64 +1445,47 @@ class EvaluationPipeline:
         
         return txt_files
     
-    def _print_ground_truth_summary(self, results: List[EvaluationResult]):
-        """Print ground truth based evaluation summary"""
+    def _print_summary(self, results: List[EvaluationResult]):
+        """Print evaluation summary"""
         
         print("\n" + "=" * 60)
-        print("📈 GROUND TRUTH BASED EVALUATION SUMMARY")
+        print("📊 ULTRA-ROBUST EVALUATION SUMMARY")
         print("=" * 60)
         
         # Calculate averages for Framework
-        fw_precision = sum(r.metrics["framework"]["reference_resolution_precision"] for r in results) / len(results)
-        fw_recall = sum(r.metrics["framework"]["reference_resolution_recall"] for r in results) / len(results)
-        fw_temporal = sum(r.metrics["framework"]["temporal_resolution_accuracy"] for r in results) / len(results)
-        fw_spatial = sum(r.metrics["framework"]["spatial_resolution_accuracy"] for r in results) / len(results)
-        fw_object = sum(r.metrics["framework"]["object_resolution_accuracy"] for r in results) / len(results)
-        fw_usefulness = sum(r.metrics["framework"]["question_usefulness_score"] for r in results) / len(results)
+        fw_resolution = sum(r.metrics["framework"]["reference_resolution_accuracy"] for r in results) / len(results)
+        fw_completeness = sum(r.metrics["framework"]["completeness_score"] for r in results) / len(results)
+        fw_relevance = sum(r.metrics["framework"]["question_relevance_score"] for r in results) / len(results)
         fw_question_count = sum(r.metrics["framework"]["question_count"] for r in results) / len(results)
         
         # Calculate averages for Baseline
-        bl_precision = sum(r.metrics["baseline"]["reference_resolution_precision"] for r in results) / len(results)
-        bl_recall = sum(r.metrics["baseline"]["reference_resolution_recall"] for r in results) / len(results)
-        bl_temporal = sum(r.metrics["baseline"]["temporal_resolution_accuracy"] for r in results) / len(results)
-        bl_spatial = sum(r.metrics["baseline"]["spatial_resolution_accuracy"] for r in results) / len(results)
-        bl_object = sum(r.metrics["baseline"]["object_resolution_accuracy"] for r in results) / len(results)
-        bl_usefulness = sum(r.metrics["baseline"]["question_usefulness_score"] for r in results) / len(results)
+        bl_resolution = sum(r.metrics["baseline"]["reference_resolution_accuracy"] for r in results) / len(results)
+        bl_completeness = sum(r.metrics["baseline"]["completeness_score"] for r in results) / len(results)
+        bl_relevance = sum(r.metrics["baseline"]["question_relevance_score"] for r in results) / len(results)
         bl_question_count = sum(r.metrics["baseline"]["question_count"] for r in results) / len(results)
         
-        # Calculate total annotations processed
-        total_annotations = sum(len(r.ground_truth_annotations) for r in results)
+        print(f"📁 Valid Conversation Files Processed: {len(results)}")
         
-        print(f"📁 Valid Files with Annotations: {len(results)}")
-        print(f"🎲 Total Ground Truth Annotations: {total_annotations}")
-        
-        print(f"\n🏠 FRAMEWORK RESULTS:")
-        print(f"   Reference Resolution Precision: {fw_precision:.3f}")
-        print(f"   Reference Resolution Recall: {fw_recall:.3f}")
-        print(f"   Temporal Resolution Accuracy: {fw_temporal:.3f}")
-        print(f"   Spatial Resolution Accuracy: {fw_spatial:.3f}")
-        print(f"   Object Resolution Accuracy: {fw_object:.3f}")
-        print(f"   Question Usefulness Score: {fw_usefulness:.3f}")
+        print(f"\n🏗️ FRAMEWORK RESULTS:")
+        print(f"   Reference Resolution: {fw_resolution:.3f}")
+        print(f"   Completeness Score: {fw_completeness:.3f}")
+        print(f"   Question Relevance: {fw_relevance:.3f}")
         print(f"   Avg Questions: {fw_question_count:.1f}")
         
         print(f"\n🤖 BASELINE RESULTS:")
-        print(f"   Reference Resolution Precision: {bl_precision:.3f}")
-        print(f"   Reference Resolution Recall: {bl_recall:.3f}")
-        print(f"   Temporal Resolution Accuracy: {bl_temporal:.3f}")
-        print(f"   Spatial Resolution Accuracy: {bl_spatial:.3f}")
-        print(f"   Object Resolution Accuracy: {bl_object:.3f}")
-        print(f"   Question Usefulness Score: {bl_usefulness:.3f}")
+        print(f"   Reference Resolution: {bl_resolution:.3f}")
+        print(f"   Completeness Score: {bl_completeness:.3f}")
+        print(f"   Question Relevance: {bl_relevance:.3f}")
         print(f"   Avg Questions: {bl_question_count:.1f}")
         
         print(f"\n⚡ FRAMEWORK vs BASELINE:")
-        print(f"   Precision Advantage: {fw_precision - bl_precision:+.3f}")
-        print(f"   Recall Advantage: {fw_recall - bl_recall:+.3f}")
-        print(f"   Context Aggregation Advantage: {(fw_temporal + fw_spatial + fw_object)/3 - (bl_temporal + bl_spatial + bl_object)/3:+.3f}")
-        print(f"   Question Quality Advantage: {fw_usefulness - bl_usefulness:+.3f}")
+        print(f"   Resolution Advantage: {fw_resolution - bl_resolution:+.3f}")
+        print(f"   Completeness Advantage: {fw_completeness - bl_completeness:+.3f}")
+        print(f"   Relevance Advantage: {fw_relevance - bl_relevance:+.3f}")
         print(f"   Question Efficiency: {fw_question_count - bl_question_count:+.1f}")
     
-    def _save_ground_truth_results(self, results: List[EvaluationResult]):
-        """Save ground truth based evaluation results"""
+    def _save_comprehensive_results(self, results: List[EvaluationResult]):
+        """Save comprehensive results with same metrics for both Framework and Baseline"""
         
         data = []
         
@@ -1138,42 +1494,29 @@ class EvaluationPipeline:
                 # File info
                 "file_path": result.file_path,
                 "file_name": os.path.basename(result.file_path),
-                "target_speaker": result.speaker_name,
-                "target_utterances_count": len(result.target_user_utterances),
-                "ground_truth_annotations_count": len(result.ground_truth_annotations),
+                "speaker_name": result.speaker_name,
+                "conversation_format": result.framework_output["resolved_content"].get("location", "unknown"),
                 
-                # Framework metrics (Ground Truth Based)
-                "framework_precision": result.metrics["framework"]["reference_resolution_precision"],
-                "framework_recall": result.metrics["framework"]["reference_resolution_recall"],
-                "framework_temporal_accuracy": result.metrics["framework"]["temporal_resolution_accuracy"],
-                "framework_spatial_accuracy": result.metrics["framework"]["spatial_resolution_accuracy"],
-                "framework_object_accuracy": result.metrics["framework"]["object_resolution_accuracy"],
-                "framework_question_usefulness": result.metrics["framework"]["question_usefulness_score"],
+                # Framework metrics
+                "framework_reference_resolution": result.metrics["framework"]["reference_resolution_accuracy"],
+                "framework_completeness_score": result.metrics["framework"]["completeness_score"],
+                "framework_question_relevance": result.metrics["framework"]["question_relevance_score"],
                 "framework_question_count": result.metrics["framework"]["question_count"],
                 
-                # Baseline metrics (Same Ground Truth Based)
-                "baseline_precision": result.metrics["baseline"]["reference_resolution_precision"],
-                "baseline_recall": result.metrics["baseline"]["reference_resolution_recall"],
-                "baseline_temporal_accuracy": result.metrics["baseline"]["temporal_resolution_accuracy"],
-                "baseline_spatial_accuracy": result.metrics["baseline"]["spatial_resolution_accuracy"],
-                "baseline_object_accuracy": result.metrics["baseline"]["object_resolution_accuracy"],
-                "baseline_question_usefulness": result.metrics["baseline"]["question_usefulness_score"],
+                # Baseline metrics (SAME as framework)
+                "baseline_reference_resolution": result.metrics["baseline"]["reference_resolution_accuracy"],
+                "baseline_completeness_score": result.metrics["baseline"]["completeness_score"],
+                "baseline_question_relevance": result.metrics["baseline"]["question_relevance_score"],
                 "baseline_question_count": result.metrics["baseline"]["question_count"],
                 
                 # Comparative metrics
-                "overall_framework_advantage": result.metrics["comparative"]["overall_framework_advantage"],
-                "reference_resolution_advantage": result.metrics["comparative"]["reference_resolution_advantage"],
-                "context_aggregation_advantage": result.metrics["comparative"]["context_aggregation_advantage"],
-                "question_quality_advantage": result.metrics["comparative"]["question_quality_advantage"],
+                "efficiency_ratio": result.metrics["comparative"]["framework_vs_baseline_efficiency"],
+                "relevance_difference": result.metrics["comparative"]["framework_vs_baseline_relevance_diff"],
                 
-                # Sample outputs (truncated)
+                # Raw outputs (truncated for CSV)
                 "framework_questions": str(result.framework_output.get("information_gaps", [])[:3]),
                 "baseline_questions": str(result.baseline_output.get("baseline_questions_list", [])[:3]),
-                "sample_target_speech": ' '.join(result.target_user_utterances[:2]) if result.target_user_utterances else "",
-                
-                # Ground truth sample
-                "sample_annotations": str([{"phrase": ann.word_or_phrase, "refers_to": ann.refers_to[:50]} 
-                                          for ann in result.ground_truth_annotations[:3]])
+                "sample_conversation": ' '.join(result.framework_output["resolved_content"].get("original_speech", "").split()[:30]) + "..."
             }
             
             data.append(row)
