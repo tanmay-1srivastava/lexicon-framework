@@ -1,0 +1,338 @@
+
+========================================================================================================================
+CORRECTNESS ANALYSIS: What BASELINE and FRAMEWORK got RIGHT vs WRONG
+========================================================================================================================
+
+
+========================================================================================================================
+SCENARIO: DOCTOR VISIT
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION (Resolution Accuracy)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 8 correct, 6 wrong
+
+✅ BASELINE got RIGHT (showing first 2):
+
+  Example 1:
+    Turn 1: 'here'
+    Predicted: Dr. Chen's Office, Evergreen Medical Center, third floor, near nurses' station
+    Ground Truth: Dr. Chen's Office, Evergreen Medical Center, 3rd floor
+    Match: similar
+
+  Example 2:
+    Turn 24: 'her'
+    Predicted: Dr. Patel, the rheumatologist
+    Ground Truth: Dr. Patel, rheumatologist
+    Match: similar
+
+❌ BASELINE got WRONG (showing first 2):
+
+  Example 1:
+    Turn 8: 'it'
+    Predicted: Marcus's new medication
+    Ground Truth: Methotrexate (medication prescribed)
+
+  Example 2:
+    Turn 10: 'it'
+    Predicted: Marcus's new medication
+    Ground Truth: Methotrexate (morning dose)
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 7 correct, 8 wrong
+
+✅ FRAMEWORK got RIGHT (showing first 2):
+
+  Example 1:
+    Turn 1: 'here'
+    Predicted: Dr. Chen's Office, Evergreen Medical Center (GPS: 37.7749, -122.4194)
+    Ground Truth: Dr. Chen's Office, Evergreen Medical Center, 3rd floor
+    Match: similar
+
+  Example 2:
+    Turn 18: 'here'
+    Predicted: Dr. Chen's Office, Evergreen Medical Center (GPS: 37.7749, -122.4194)
+    Ground Truth: Evergreen Medical Center laboratory, 2nd floor
+    Match: similar
+
+❌ FRAMEWORK got WRONG (showing first 2):
+
+  Example 1:
+    Turn 8: 'it'
+    Predicted: new medication prescribed to Marcus Lee
+    Ground Truth: Methotrexate (medication prescribed)
+
+  Example 2:
+    Turn 10: 'it'
+    Predicted: new medication prescribed to Marcus Lee
+    Ground Truth: Methotrexate (morning dose)
+
+------------------------------------------------------------------------------------------------------------------------
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION (Query Filtering)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 7 matched ground truth, 12 did not match
+
+✅ BASELINE queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: Are you able to access and use the symptom tracker app without issues?
+    Ground Truth: patient inquired about privacy of health app data. verify and relay privacy assurance.
+
+  Example 2:
+    Generated: Is the follow-up appointment date and time clear to you?
+    Ground Truth: doctor scheduled bloodwork. confirm lab location and appointment time for patient.
+
+❌ BASELINE queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: Have you experienced any side effects from your new medication?
+
+  Example 2: Do you have any questions about shifting your medication to mornings?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 3 matched ground truth, 2 did not match
+
+✅ FRAMEWORK queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: Do you still have Kara's contact info if you need technical help?
+    Ground Truth: doctor mentioned technical help. provide it coordinator's contact details to patient.
+
+  Example 2:
+    Generated: Is your follow-up appointment scheduled for the same time we discussed?
+    Ground Truth: doctor scheduled bloodwork. confirm lab location and appointment time for patient.
+
+❌ FRAMEWORK queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: When did you last take your new medication?
+
+  Example 2: Have you had any issues with allergies since your last visit?
+
+------------------------------------------------------------------------------------------------------------------------
+
+⚠️  Ground truth queries MISSED by BOTH systems:
+
+  1. patient is on-site. clarify required check-in steps for dr. chen.
+  2. doctor is discussing medication. fill in the medication name for record accuracy.
+
+
+========================================================================================================================
+SCENARIO: FRIENDS MEETING
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION (Resolution Accuracy)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 9 correct, 13 wrong
+
+✅ BASELINE got RIGHT (showing first 2):
+
+  Example 1:
+    Turn 1: 'here'
+    Predicted: The Java House Coffee Shop
+    Ground Truth: The Java House Coffee Shop
+    Match: exact
+
+  Example 2:
+    Turn 15: 'the coordinator'
+    Predicted: the event coordinator for Sam's birthday party
+    Ground Truth: Loft Event Coordinator (Michael)
+    Match: similar
+
+❌ BASELINE got WRONG (showing first 2):
+
+  Example 1:
+    Turn 7: 'that list'
+    Predicted: the party planning checklist for Sam's birthday
+    Ground Truth: Party Planning Task List (User B’s notes app)
+
+  Example 2:
+    Turn 9: 'them'
+    Predicted: the venue staff or management for Sam's birthday party
+    Ground Truth: Downtown Loft management
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 9 correct, 13 wrong
+
+✅ FRAMEWORK got RIGHT (showing first 2):
+
+  Example 1:
+    Turn 1: 'here'
+    Predicted: The Java House Coffee Shop
+    Ground Truth: The Java House Coffee Shop
+    Match: exact
+
+  Example 2:
+    Turn 15: 'the coordinator'
+    Predicted: the event coordinator for Sam's birthday party
+    Ground Truth: Loft Event Coordinator (Michael)
+    Match: similar
+
+❌ FRAMEWORK got WRONG (showing first 2):
+
+  Example 1:
+    Turn 7: 'that list'
+    Predicted: the party planning checklist for Sam's birthday
+    Ground Truth: Party Planning Task List (User B’s notes app)
+
+  Example 2:
+    Turn 9: 'them'
+    Predicted: the venue staff or management for Sam's birthday party
+    Ground Truth: Downtown Loft management
+
+------------------------------------------------------------------------------------------------------------------------
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION (Query Filtering)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 4 matched ground truth, 20 did not match
+
+✅ BASELINE queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: Who is on the guest list and has everyone been contacted?
+    Ground Truth: user b referenced 'everyone' for rides. request full guest list for turn 62.
+
+  Example 2:
+    Generated: Did you confirm the reservation for the venue next Saturday?
+    Ground Truth: user b referenced an ambiguous venue ('that place'). request venue name for turn 8.
+
+❌ BASELINE queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: What time should guests arrive?
+
+  Example 2: Did you reach out to the coordinator about decorations and what is the plan?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 4 matched ground truth, 5 did not match
+
+✅ FRAMEWORK queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: How many people should I tell them to expect?
+    Ground Truth: user b reminds to charge the speaker. not actionable, should be filtered out.
+
+  Example 2:
+    Generated: Are we all pitching in for that smartwatch Sam wanted?
+    Ground Truth: user b referenced 'that speaker'. request music object details for turn 30.
+
+❌ FRAMEWORK queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: Did you talk to the coordinator about decorations?
+
+  Example 2: Do we have the balloons or should I order more?
+
+------------------------------------------------------------------------------------------------------------------------
+
+⚠️  Ground truth queries MISSED by BOTH systems:
+
+  1. user b referenced 'him' as the party subject. request confirmation of the person entity from turn 4.
+  2. user a referenced 'the coordinator'. request name/contact info for turn 15.
+  3. user a asked about 'the balloons'. request clarification of decoration items from turn 19.
+
+
+========================================================================================================================
+SCENARIO: WORK COLLABORATION
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION (Resolution Accuracy)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 2 correct, 2 wrong
+
+✅ BASELINE got RIGHT (showing first 2):
+
+  Example 1:
+    Turn 1: 'here'
+    Predicted: Nimbus HQ - 15th Floor Conference Room
+    Ground Truth: Nimbus HQ - 15th Floor Conference Room
+    Match: exact
+
+  Example 2:
+    Turn 3: 'the box'
+    Predicted: box located by the door in the conference room at Nimbus HQ
+    Ground Truth: Shipping box delivered to conference room door (tracking #8373921)
+    Match: similar
+
+❌ BASELINE got WRONG (showing first 2):
+
+  Example 1:
+    Turn 9: 'there'
+    Predicted: the location User A will head to later (likely the client's office or another meeting site)
+    Ground Truth: Nimbus Satellite Campus - West Lab
+
+  Example 2:
+    Turn 35: 'him'
+    Predicted: QA coordinator (male)
+    Ground Truth: Lead Developer, James Wu
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 0 correct, 0 wrong
+
+------------------------------------------------------------------------------------------------------------------------
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION (Query Filtering)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Results: 7 matched ground truth, 13 did not match
+
+✅ BASELINE queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: Who needs to sign the release forms?
+    Ground Truth: user a needs to update timeline with it lead. requesting full name/contact.
+
+  Example 2:
+    Generated: Where should the signed release forms be delivered?
+    Ground Truth: user a joked about internet connection. query should be rejected.
+
+❌ BASELINE queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: Who is supposed to receive the wrapped package and paperwork?
+
+  Example 2: What is inside the wrapped package?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Results: 2 matched ground truth, 4 did not match
+
+✅ FRAMEWORK queries that MATCHED ground truth (showing first 2):
+
+  Example 1:
+    Generated: Has the client responded about the demo link?
+    Ground Truth: user a needs client information for demo scheduling. query for full client name.
+
+  Example 2:
+    Generated: Did you change the passwords for the cloud storage?
+    Ground Truth: incoming request for new cloud storage passwords. verify permissions for 'colleague' relationship.
+
+❌ FRAMEWORK queries that DIDN'T match ground truth (showing first 2):
+
+  Example 1: Is he at your location or the client’s?
+
+  Example 2: Can you ask her to bring the signed release forms?
+
+------------------------------------------------------------------------------------------------------------------------
+
+⚠️  Ground truth queries MISSED by BOTH systems:
+
+  1. user a agreed to forward the folder. query needed for the recipient's identity ('him') from turn 6.
+  2. user a needs vendor identity for follow-up. requesting full contact from turn 17.
+  3. user a requested location of checklist file. query for exact drive and folder name.
+
+
+========================================================================================================================
+

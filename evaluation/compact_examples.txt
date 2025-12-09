@@ -1,0 +1,301 @@
+
+========================================================================================================================
+SPECIFIC EXAMPLES: BASELINE vs FRAMEWORK
+========================================================================================================================
+
+
+========================================================================================================================
+SCENARIO: DOCTOR VISIT
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION - Sample Resolutions
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+
+  Example 1:
+    Turn: 1
+    Ambiguous phrase: 'here'
+    Type: spatial
+    Resolution: Dr. Chen's Office, Evergreen Medical Center, third floor, near nurses' station
+
+  Example 2:
+    Turn: 3
+    Ambiguous phrase: 'station'
+    Type: spatial
+    Resolution: nurses' station on the third floor of Evergreen Medical Center
+
+  Example 3:
+    Turn: 8
+    Ambiguous phrase: 'it'
+    Type: object
+    Resolution: Marcus's new medication
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+
+  Example 1:
+    Turn: 1
+    Ambiguous phrase: 'here'
+    Type: spatial
+    Resolution: Dr. Chen's Office, Evergreen Medical Center (GPS: 37.7749, -122.4194)
+
+  Example 2:
+    Turn: 3
+    Ambiguous phrase: 'station'
+    Type: spatial
+    Resolution: nurses' station on the third floor of Evergreen Medical Center
+
+  Example 3:
+    Turn: 8
+    Ambiguous phrase: 'it'
+    Type: object
+    Resolution: new medication prescribed to Marcus Lee
+
+------------------------------------------------------------------------------------------------------------------------
+
+Accuracy Summary:
+  BASELINE:  Total resolutions=20
+    Spatial: 1/6 correct (16.7%)
+    Temporal: 0/4 correct (0.0%)
+    Person: 2/3 correct (66.7%)
+    Object: 0/4 correct (0.0%)
+
+  FRAMEWORK: Total resolutions=21
+    Spatial: 1/6 correct (16.7%)
+    Temporal: 0/4 correct (0.0%)
+    Person: 2/3 correct (66.7%)
+    Object: 1/4 correct (25.0%)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION - Sample Queries
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+  1. Have you experienced any side effects from your new medication?
+  2. Do you have any questions about shifting your medication to mornings?
+  3. Are you able to access and use the symptom tracker app without issues?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+  1. When did you last take your new medication?
+  2. Do you still have Kara's contact info if you need technical help?
+  3. Is your follow-up appointment scheduled for the same time we discussed?
+
+------------------------------------------------------------------------------------------------------------------------
+
+Query Metrics Summary:
+  BASELINE:  Total queries=19, TPR=80.0%, Precision=100.0%, F1=0.889
+  FRAMEWORK: Total queries=5, TPR=30.0%, Precision=100.0%, F1=0.462
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Key Differences:
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+References ONLY caught by BASELINE (showing first 3):
+  • Turn 22: 'that' (object) → pre-authorization document given by Dr. Chen
+
+References ONLY caught by FRAMEWORK (showing first 3):
+  • Turn 16: 'Kara' (person) → Kara, technical support at extension 822 for SymptoLog app
+  • Turn 22: 'that document' (object) → pre-authorization document provided by Dr. Chen
+
+Same reference, DIFFERENT resolutions (showing first 2):
+
+  Turn 8: 'it'
+    BASELINE:  Marcus's new medication
+    FRAMEWORK: new medication prescribed to Marcus Lee
+
+  Turn 10: 'it'
+    BASELINE:  Marcus's new medication
+    FRAMEWORK: new medication prescribed to Marcus Lee
+
+========================================================================================================================
+SCENARIO: FRIENDS MEETING
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION - Sample Resolutions
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+
+  Example 1:
+    Turn: 1
+    Ambiguous phrase: 'here'
+    Type: spatial
+    Resolution: The Java House Coffee Shop
+
+  Example 2:
+    Turn: 7
+    Ambiguous phrase: 'that list'
+    Type: object
+    Resolution: the party planning checklist for Sam's birthday
+
+  Example 3:
+    Turn: 9
+    Ambiguous phrase: 'them'
+    Type: person
+    Resolution: the venue staff or management for Sam's birthday party
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+
+  Example 1:
+    Turn: 1
+    Ambiguous phrase: 'here'
+    Type: spatial
+    Resolution: The Java House Coffee Shop
+
+  Example 2:
+    Turn: 3
+    Ambiguous phrase: 'this place'
+    Type: spatial
+    Resolution: The Java House Coffee Shop
+
+  Example 3:
+    Turn: 7
+    Ambiguous phrase: 'that list'
+    Type: object
+    Resolution: the party planning checklist for Sam's birthday
+
+------------------------------------------------------------------------------------------------------------------------
+
+Accuracy Summary:
+  BASELINE:  Total resolutions=24
+    Spatial: 3/8 correct (37.5%)
+    Temporal: 0/0 correct (0.0%)
+    Person: 3/6 correct (50.0%)
+    Object: 0/8 correct (0.0%)
+
+  FRAMEWORK: Total resolutions=29
+    Spatial: 3/8 correct (37.5%)
+    Temporal: 0/0 correct (0.0%)
+    Person: 3/6 correct (50.0%)
+    Object: 0/8 correct (0.0%)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION - Sample Queries
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+  1. Who is on the guest list and has everyone been contacted?
+  2. Did you confirm the reservation for the venue next Saturday?
+  3. What time should guests arrive?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+  1. Did you talk to the coordinator about decorations?
+  2. Do we have the balloons or should I order more?
+  3. Do you want to do pizza like last time or try catering?
+
+------------------------------------------------------------------------------------------------------------------------
+
+Query Metrics Summary:
+  BASELINE:  Total queries=24, TPR=62.5%, Precision=83.3%, F1=0.714
+  FRAMEWORK: Total queries=9, TPR=37.5%, Precision=100.0%, F1=0.545
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Key Differences:
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+References ONLY caught by FRAMEWORK (showing first 3):
+  • Turn 3: 'this place' (spatial) → The Java House Coffee Shop
+  • Turn 9: 'us' (person) → User A and their party planning group
+  • Turn 11: 'that thing' (object) → Sam's evening commitment on the day of the party
+
+Same reference, DIFFERENT resolutions (showing first 2):
+
+  Turn 57: 'Maya'
+    BASELINE:  Maya (female guest or friend involved in party planning)
+    FRAMEWORK: Maya (party guest or helper, female)
+
+  Turn 43: 'that flyer'
+    BASELINE:  the flyer for Sam's birthday party
+    FRAMEWORK: the party flyer for Sam's birthday
+
+========================================================================================================================
+SCENARIO: WORK COLLABORATION
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+CONTEXT AGGREGATION - Sample Resolutions
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+
+  Example 1:
+    Turn: 1
+    Ambiguous phrase: 'here'
+    Type: spatial
+    Resolution: Nimbus HQ - 15th Floor Conference Room
+
+  Example 2:
+    Turn: 3
+    Ambiguous phrase: 'the box'
+    Type: object
+    Resolution: box located by the door in the conference room at Nimbus HQ
+
+  Example 3:
+    Turn: 7
+    Ambiguous phrase: 'he'
+    Type: person
+    Resolution: a male colleague or contact involved in the meeting or delivery (possibly QA coordinator or client rep)
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+
+------------------------------------------------------------------------------------------------------------------------
+
+Accuracy Summary:
+  BASELINE:  Total resolutions=32
+    Spatial: 1/4 correct (25.0%)
+    Temporal: 0/0 correct (0.0%)
+    Person: 0/3 correct (0.0%)
+    Object: 0/1 correct (0.0%)
+
+  FRAMEWORK: Total resolutions=0
+    Spatial: 0/4 correct (0.0%)
+    Temporal: 0/0 correct (0.0%)
+    Person: 0/3 correct (0.0%)
+    Object: 0/1 correct (0.0%)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+INFORMATION GAP DETECTION - Sample Queries
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+BASELINE Examples:
+  1. Who is supposed to receive the wrapped package and paperwork?
+  2. What is inside the wrapped package?
+  3. Who needs to sign the release forms?
+
+------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK Examples:
+  1. Is he at your location or the client’s?
+  2. Can you ask her to bring the signed release forms?
+  3. Did he send them to your email or mine?
+
+------------------------------------------------------------------------------------------------------------------------
+
+Query Metrics Summary:
+  BASELINE:  Total queries=20, TPR=69.2%, Precision=100.0%, F1=0.818
+  FRAMEWORK: Total queries=6, TPR=23.1%, Precision=100.0%, F1=0.375
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Key Differences:
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+References ONLY caught by BASELINE (showing first 3):
+  • Turn 1: 'here' (spatial) → Nimbus HQ - 15th Floor Conference Room
+  • Turn 3: 'the box' (object) → box located by the door in the conference room at Nimbus HQ
+  • Turn 7: 'he' (person) → a male colleague or contact involved in the meeting or delivery (possibly QA coordinator or client rep)
+
+========================================================================================================================
+

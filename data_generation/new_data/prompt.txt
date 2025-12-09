@@ -1,0 +1,127 @@
+You are a "God View" Synthetic Data Generator for a Context-Aware Assistant Protocol.
+Your goal is to generate a **High-Density "Gold Standard" Dataset** for training an Assistant-to-Assistant communication system.
+
+### 1. THE CORE LOGIC (READ CAREFULLY)
+* **The "Gap":** Assistant A records **ONLY** User A. Assistant B records **ONLY** User B. They cannot hear the other person.
+* **The Problem:** When User B says "Let's meet at *Joe's Pizza*," Assistant A hears silence, then User A saying "Okay." Assistant A misses the location entity.
+* **The Goal:** Generate the conversation AND the specific **Protocol Queries** needed to fill these gaps.
+
+### 2. STRICT CONSTRAINTS
+1.  **Length:** ~2,000 words (Approx 15 mins of dialogue).
+2.  **High Density:** Include 15+ local context resolutions and 8+ inter-agent queries.
+    * **REQUIRED RESOLUTION TYPES (CRITICAL):**
+      - **5+ SPATIAL** (here, there, this place, that building, the café, that intersection, etc.)
+      - **2+ TEMPORAL** (now, then, later, today, tomorrow, at that time, etc.)
+      - **3+ PERSON** (him, her, them, that guy, the coordinator, etc.)
+      - **2+ OBJECT** (this, that, it, the box, that folder, etc.)
+3.  **Query Quality Filter (CRITICAL FOR TRAINING):**
+    * Generate **TWO TYPES** of potential queries:
+      - **HIGH_VALUE** (8+ queries): Missing info that is **Actionable** (Time, Location, Contact Name) or **Sensitive** (Privacy)
+      - **LOW_VALUE** (3-5 queries): Missing info that is **NOT important** (jokes, weather comments, casual observations, opinions, small talk)
+    * **Purpose:** The LOW_VALUE queries test if the Info Gap Detection system can correctly REJECT useless queries.
+    * **Mark each query** with `query_quality_check: "HIGH_VALUE"` or `query_quality_check: "LOW_VALUE"`
+
+### 3. GENERATION STEPS
+
+**Step 1: The World State**
+Define a complex scenario (e.g., Organizing a protest, Planning a secret surprise, Managing a crisis).
+
+**Step 2: The Metadata (Sensors)**
+Generate valid JSON metadata for BOTH users (GPS, Wifi, Calendar) that explains the "local" context (e.g., Why "here" = "Central Park").
+
+**Step 3: The Conversation**
+Write the dialogue.
+* **Force Ambiguity:** Users should rely on context. ("I'm *here*", "Did you ask *him*?").
+* **Force Gaps:** User B should propose plans/names. User A should agree without repeating the name.
+* **MUST include varied spatial references:** "here", "there", "this place", "that building", "the gym", "that corner"
+* **MUST include temporal references:** "now", "then", "later", "at that time", "tomorrow morning"
+* **MUST include person references:** "him", "her", "them", "that person", "the coordinator"
+* **MUST include object references:** "this", "that", "it", "the package", "that document"
+
+**Step 4: The Answer Keys (Protocol Outputs)**
+* **Resolutions:** Map "here" -> "GPS Coordinates".
+* **Queries:** Generate **Structured Protocol Payloads** for the missing info.
+
+### 4. OUTPUT FORMAT (Strict JSON)
+
+{
+  "dataset_id": "scenario_protocol_001",
+  "backstory": {
+    "summary": "Full scenario description...",
+    "relationship": "Colleague / Spouse / Doctor"
+  },
+  "mobile_context_snapshot": {
+    "user_a": {
+      "location_semantic": "Place Name",
+      "gps_coords": "Lat, Long",
+      "wifi_ssid": "Network_Name",
+      "calendar_next": "Event Name"
+    },
+    "user_b": {
+      "location_semantic": "Place Name",
+      "wifi_ssid": "Network_Name"
+    }
+  },
+  "conversation_transcript": [
+    { "turn_id": 1, "speaker": "User A", "text": "I'm finally *here*." },
+    { "turn_id": 2, "speaker": "User B", "text": "Great. Meet me at *The Red Lion* in 5 minutes." },
+    { "turn_id": 3, "speaker": "User A", "text": "Okay, see you there." }
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "Specific Location Name",
+      "resolution_source": "User A GPS + Wifi"
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "then",
+      "resolved_entity": "2:00 PM",
+      "resolution_source": "User A Calendar"
+    },
+    {
+      "trigger_turn_id": 8,
+      "ambiguous_phrase": "that place",
+      "resolved_entity": "Downtown Library",
+      "resolution_source": "User B GPS"
+    }
+  ],
+  "NOTE": "CRITICAL: resolution_source MUST be one of: 'User A GPS', 'User B GPS', 'User A Wifi', 'User B Wifi', 'User A Calendar', 'User B Calendar', 'User A GPS + Wifi', 'User B GPS + Wifi'. DO NOT use vague sources like 'context' or 'known'.",
+  "required_protocol_queries": [
+    {
+      "trigger_turn_id": 3,
+      "query_quality_check": "HIGH_VALUE",
+      "reason": "User A committed to a meeting ('See you there') but the Location Entity ('The Red Lion') was in the audio gap.",
+      "protocol_payload": {
+        "intent": "RESOLVE_MISSING_ENTITY",
+        "target_slot": "LOCATION_DESTINATION",
+        "urgency": "IMMEDIATE",
+        "context_ref": "Turn 2"
+      },
+      "natural_language_fallback": "User A confirmed a destination. Requesting the Location Name entity from Turn 2."
+    },
+    {
+      "trigger_turn_id": 15,
+      "query_quality_check": "LOW_VALUE",
+      "reason": "User B made a joke about the weather and User A laughed. This is small talk, not actionable.",
+      "protocol_payload": {
+        "intent": "RESOLVE_MISSING_ENTITY",
+        "target_slot": "CASUAL_COMMENT",
+        "urgency": "NONE",
+        "context_ref": "Turn 14"
+      },
+      "natural_language_fallback": "User B made a casual remark. This should NOT trigger a query (testing filter)."
+    },
+      "trigger_turn_id": 45,
+      "query_quality_check": "HIGH_VALUE",
+      "reason": "User B asked for User A's location history (Sensitive).",
+      "protocol_payload": {
+        "intent": "CHECK_PRIVACY_PERMISSIONS",
+        "target_attribute": "USER_LOCATION_HISTORY",
+        "requester_relationship": "SPOUSE"
+      },
+      "natural_language_fallback": "Incoming request for sensitive Location Data. Verifying permissions for Spouse relationship."
+    }
+  ]
+}

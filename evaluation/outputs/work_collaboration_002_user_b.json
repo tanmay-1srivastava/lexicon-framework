@@ -1,0 +1,185 @@
+{
+  "dataset": "work_collaboration_002.json",
+  "scenario": "work_collaboration",
+  "target_user": "User B",
+  "baseline": {
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "the rack on your left",
+        "resolved_entity": "East Rack in the Secondary Data Center",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "Corey",
+        "resolution_type": "person"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "that cable near the window",
+        "resolved_entity": "fiber cable near the window in the Secondary Data Center \u2013 East Rack",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "your location",
+        "resolved_entity": "Secondary Data Center \u2013 East Rack",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "mine",
+        "resolved_entity": "User B's location (likely another data center or office)",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "the box with the orange sticker or the blue label",
+        "resolved_entity": "the package for the patch at the Secondary Data Center \u2013 East Rack",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "the login for the backup node",
+        "resolved_entity": "credentials for accessing the backup node in the data center",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "that document she sent last night",
+        "resolved_entity": "the document sent by a female team member (likely about patches) last night",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "female team member who sent the document about patches",
+        "resolution_type": "person"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "Her note",
+        "resolved_entity": "note from the female team member about the critical security fix",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "his message",
+        "resolved_entity": "Corey's message",
+        "resolution_type": "person"
+      }
+    ],
+    "queries": [
+      "Can you confirm that the config file labeled 'v3.21-alpha' is the correct version for this environment?",
+      "Did you verify that the proxy reboot propagated the expected changes to all relevant services?",
+      "Are the new logs showing any errors or warnings after the reboot?",
+      "Have the app server credentials been updated to use the new vault key?",
+      "Is there a checklist for go-live access validation we should review together?",
+      "Did you ping him to confirm the workflow, or should I follow up again?",
+      "Has the backup finished so we can run the verification script as Corey suggested?",
+      "Is there a specific resource file version we should be using in that folder?",
+      "Does the fiber cable near the window match the required specifications for the secondary node?",
+      "Did you receive the note about adjusting CPU allocation for the main node before noon?",
+      "Have you set 'ENV_TEST_STAGE' to 'true' in the correct environment?",
+      "Did the package for the patch arrive at your location or mine, and is it the box with the orange sticker or blue label?",
+      "Do you still have the login credentials for the backup node, or should I request them from IT?",
+      "Are there any other resources or access you need me to request from IT?",
+      "Did you review the document with the patches sent last night, and is the critical security fix included?",
+      "Should we clear the old logs now or wait until after the backup is complete?",
+      "Is there anything else outstanding on your end before we wrap up?",
+      "Are there any dependencies or blockers for today's setup that we haven't discussed?",
+      "Should we coordinate timing for the next cycle given the CPU allocation deadline?",
+      "Is there a preferred channel for urgent communications during go-live?"
+    ]
+  },
+  "framework": {
+    "resolutions": [],
+    "queries": [
+      "Did you set the credentials for the app server to use the new vault key, or is it still using the old one?",
+      "Did you ping him to confirm the workflow, or should I?",
+      "Can you double-check the resource file in that folder? It was missing the last time I updated it.",
+      "For the secondary node, can you grab that cable near the window? I think it's the fiber we need.",
+      "Also, did you see the note from her about adjusting CPU allocation?",
+      "The package for the patch\u2014did it arrive at your location or mine?",
+      "Is it the box with the orange sticker or the blue label?",
+      "Do you still have the login for the backup node, or should I ask IT?",
+      "Anything else you need me to ask for?",
+      "Did you see the patches in that document she sent last night?",
+      "Should I clear the old logs now or wait until after the backup?"
+    ]
+  },
+  "metrics": {
+    "resolution_accuracy": {
+      "baseline": {
+        "spatial": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "temporal": {
+          "total": 1,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "person": {
+          "total": 4,
+          "correct": 1,
+          "accuracy": 0.25
+        },
+        "object": {
+          "total": 5,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      },
+      "framework": {
+        "spatial": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "temporal": {
+          "total": 1,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "person": {
+          "total": 4,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "object": {
+          "total": 5,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "query_filtering": {
+      "baseline": {
+        "tpr": 1.0,
+        "fnr": 0.0,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1_score": 0.888888888888889,
+        "tp": 8,
+        "fp": 2,
+        "tn": 1,
+        "fn": 0
+      },
+      "framework": {
+        "tpr": 0.75,
+        "fnr": 0.25,
+        "precision": 0.8571428571428571,
+        "recall": 0.75,
+        "f1_score": 0.7999999999999999,
+        "tp": 6,
+        "fp": 1,
+        "tn": 2,
+        "fn": 2
+      }
+    }
+  }
+}

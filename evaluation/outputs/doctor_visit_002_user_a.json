@@ -1,0 +1,412 @@
+{
+  "dataset": "doctor_visit_002.json",
+  "scenario": "doctor_visit",
+  "target_user": "User A",
+  "baseline": {
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Hospital Lounge",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Dr. Smith's office or consultation room (next location after lounge)",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the test results or discussion about the test",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "going over the test results/discussion",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "the pharmacy",
+        "resolved_entity": "the hospital pharmacy near the consultation area",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the folder",
+        "resolved_entity": "folder containing test papers",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the folder with test papers",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "in the test results or medical findings",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "concerning information from the test results",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "at the current time, after the appointment",
+        "resolution_type": "temporal"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "the current day (date of appointment)",
+        "resolution_type": "temporal"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "that medication",
+        "resolved_entity": "medication Dr. Smith mentioned last week (specific type not named)",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "the time of the follow-up or next appointment",
+        "resolution_type": "temporal"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "the bloodwork",
+        "resolved_entity": "results of the bloodwork test",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the summary",
+        "resolved_entity": "summary of test results and consultation",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "User A's husband",
+        "resolution_type": "person"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the insurance card",
+        "resolved_entity": "User A's insurance card",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "the caf\u00e9",
+        "resolved_entity": "hospital caf\u00e9",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "the consultation room",
+        "resolved_entity": "Dr. Smith's consultation room in the hospital",
+        "resolution_type": "spatial"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "User A's husband",
+        "resolution_type": "person"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "the test results and medical information",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "paperwork for privacy or information sharing",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "signing the paperwork",
+        "resolution_type": "object"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Dr. Smith's office or consultation room",
+        "resolution_type": "spatial"
+      }
+    ],
+    "queries": [
+      "What were the results of the test, and is there anything specific I should be concerned about?",
+      "Are there any next steps or treatments recommended based on my test results?",
+      "What information should I share with my husband, and what should remain confidential?",
+      "Is there anything I need to prepare or bring for the follow-up appointment?",
+      "What is the purpose of the medication you mentioned last week, and should I start taking it now?",
+      "Are there any side effects or precautions I should know about the medication?",
+      "How will my privacy be maintained regarding my test results and medical information?",
+      "Is there any paperwork or consent forms I need to sign to keep my information private?",
+      "Can you clarify what information will be shared with my husband and what will be sent only to me?",
+      "How will I receive the summary and full report\u2014will it be sent securely to my personal email?",
+      "Is there anything else I should monitor or report before my next appointment?",
+      "Do I need to provide any additional insurance information or documents?",
+      "Are there any lifestyle changes or precautions I should take based on my results?",
+      "If I have further questions after the appointment, how can I contact you?"
+    ]
+  },
+  "framework": {
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Hospital Lounge (GPS: 40.765432, -73.981234, WiFi: StMarys_Main_5G)",
+        "resolution_type": "spatial",
+        "resolution_source": "Semantic Location|GPS|WiFi"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Dr. Smith's consultation room (per Calendar: Consultation: Dr. Smith - 2:00 PM)",
+        "resolution_type": "spatial",
+        "resolution_source": "Calendar|ConversationContext"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Discussion of test results",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Discussing test results now",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "the pharmacy",
+        "resolved_entity": "Hospital pharmacy adjacent to lounge (based on semantic location)",
+        "resolution_type": "spatial",
+        "resolution_source": "Semantic Location|ConversationContext"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the folder",
+        "resolved_entity": "Folder containing user's test papers",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The folder with test papers",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "In the test results",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Information about concerning test results",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Immediately after current consultation",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar|ConversationContext"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Today, the current date of the appointment",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "that medication",
+        "resolved_entity": "Medication Dr. Smith mentioned in last week's appointment",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext|Calendar"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "At the time of the scheduled follow-up or next appointment",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar|ConversationContext"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "the bloodwork",
+        "resolved_entity": "User's bloodwork results from recent test",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the summary",
+        "resolved_entity": "Summary of test results and consultation",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "User's husband",
+        "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the insurance card",
+        "resolved_entity": "User's insurance card",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "the caf\u00e9",
+        "resolved_entity": "Hospital caf\u00e9 near lounge",
+        "resolution_type": "spatial",
+        "resolution_source": "Semantic Location|ConversationContext"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "the consultation room",
+        "resolved_entity": "Dr. Smith's consultation room (per Calendar: Consultation: Dr. Smith - 2:00 PM)",
+        "resolution_type": "spatial",
+        "resolution_source": "Calendar|ConversationContext"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "Privacy of test results and consultation details",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Paperwork related to privacy or sharing of test results",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Signing paperwork after appointment",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Dr. Smith's consultation room",
+        "resolution_type": "spatial",
+        "resolution_source": "Calendar|ConversationContext"
+      }
+    ],
+    "queries": [
+      "Is there anything concerning?",
+      "Should I schedule a follow-up now, or wait?",
+      "Should I bring that medication you mentioned last week?",
+      "Is there any paperwork I need to sign for that?"
+    ]
+  },
+  "metrics": {
+    "resolution_accuracy": {
+      "baseline": {
+        "spatial": {
+          "total": 5,
+          "correct": 1,
+          "accuracy": 0.2
+        },
+        "temporal": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "person": {
+          "total": 7,
+          "correct": 2,
+          "accuracy": 0.2857142857142857
+        },
+        "object": {
+          "total": 7,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      },
+      "framework": {
+        "spatial": {
+          "total": 5,
+          "correct": 1,
+          "accuracy": 0.2
+        },
+        "temporal": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "person": {
+          "total": 7,
+          "correct": 2,
+          "accuracy": 0.2857142857142857
+        },
+        "object": {
+          "total": 7,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "query_filtering": {
+      "baseline": {
+        "tpr": 0.625,
+        "fnr": 0.375,
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1_score": 0.7692307692307693,
+        "tp": 5,
+        "fp": 0,
+        "tn": 3,
+        "fn": 3
+      },
+      "framework": {
+        "tpr": 0.125,
+        "fnr": 0.875,
+        "precision": 1.0,
+        "recall": 0.125,
+        "f1_score": 0.2222222222222222,
+        "tp": 1,
+        "fp": 0,
+        "tn": 3,
+        "fn": 7
+      }
+    }
+  }
+}
