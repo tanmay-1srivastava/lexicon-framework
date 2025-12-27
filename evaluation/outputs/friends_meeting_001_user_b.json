@@ -13,13 +13,13 @@
       {
         "turn_id": 10,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the party/event being planned",
+        "resolved_entity": "the party",
         "resolution_type": "object"
       },
       {
         "turn_id": 12,
         "ambiguous_phrase": "next Saturday",
-        "resolved_entity": "the Saturday following the current date (party date)",
+        "resolved_entity": "Saturday, [date one week from today]",
         "resolution_type": "temporal"
       },
       {
@@ -37,13 +37,13 @@
       {
         "turn_id": 20,
         "ambiguous_phrase": "ones",
-        "resolved_entity": "party decorations (likely balloons or tableware)",
+        "resolved_entity": "party decorations",
         "resolution_type": "object"
       },
       {
         "turn_id": 22,
         "ambiguous_phrase": "them",
-        "resolved_entity": "party decorations (likely balloons or tableware)",
+        "resolved_entity": "party decorations",
         "resolution_type": "object"
       },
       {
@@ -85,8 +85,14 @@
       {
         "turn_id": 40,
         "ambiguous_phrase": "that text",
-        "resolved_entity": "the message Sam sent this morning",
+        "resolved_entity": "Sam's suspicious message sent this morning",
         "resolution_type": "object"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "Sam",
+        "resolution_type": "person"
       },
       {
         "turn_id": 48,
@@ -95,9 +101,15 @@
         "resolution_type": "person"
       },
       {
+        "turn_id": 50,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "the venue staff at the downtown loft",
+        "resolution_type": "person"
+      },
+      {
         "turn_id": 56,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the email/message about party planning",
+        "resolved_entity": "the party planning document or list",
         "resolution_type": "object"
       },
       {
@@ -109,31 +121,41 @@
       {
         "turn_id": 62,
         "ambiguous_phrase": "everyone",
-        "resolved_entity": "all party attendees (Tom, Maya, Casey, Sam, Sam's roommate, User B, User A, and others)",
+        "resolved_entity": "all party guests (Tom, Maya, Casey, Sam, Sam's roommate, User B, User A, and others)",
         "resolution_type": "person"
+      },
+      {
+        "turn_id": 64,
+        "ambiguous_phrase": "out",
+        "resolved_entity": "leaving The Java House Coffee Shop",
+        "resolution_type": "spatial"
       }
     ],
     "queries": [
-      "Who exactly is *him* and what is the occasion we're planning for?",
-      "What is the budget for the event?",
-      "Are there any dietary restrictions or preferences for the guests?",
-      "Do we need to send formal invitations or is texting enough?",
-      "Should we prepare any decorations or a theme for the event?",
-      "Is there a backup venue in case the loft becomes unavailable?",
-      "How will we handle transportation for guests who don't drive?",
-      "Do we need to arrange for parking passes for everyone?",
-      "What tasks still need to be assigned and to whom?",
-      "Will there be any surprise element or activities planned?",
-      "Who is responsible for bringing the speaker and other equipment?",
-      "How will we keep Sam from finding out about the event?",
-      "What time should guests arrive and is there a schedule for the event?",
-      "Do we need to coordinate with the Italian catering for menu selection?",
-      "Should we get new decorations or use the blue ones from last year?",
-      "Is karaoke something the group would enjoy, or should we skip it?",
-      "How will we handle RSVPs and track who is coming?",
-      "Do we need to confirm with Sam\u2019s roommate directly about attendance?",
-      "Is there a plan for cleanup after the event?",
-      "Who will handle payments and reimbursements for shared expenses?"
+      "Who is the event for, and what is the occasion?",
+      "What is the final guest list, and are there any special considerations for attendees?",
+      "Has the venue on 4th Street been officially booked and confirmed?",
+      "What is the backup plan if the venue becomes unavailable?",
+      "What is the preferred time for the event\u2014afternoon or evening\u2014and why?",
+      "Who is responsible for sending invitations and managing RSVPs?",
+      "Has everyone who needs to be invited been contacted?",
+      "Are there any dietary restrictions or preferences for catering?",
+      "What is the budget for decorations, food, and other expenses?",
+      "Do we need to purchase new decorations, or can we reuse last year's?",
+      "Who will pick up or set up the decorations?",
+      "Is there a plan for music and entertainment, and who will bring the speaker?",
+      "Should karaoke or any other activities be added to the agenda?",
+      "How will transportation and parking be coordinated for guests?",
+      "Do we need to arrange rides for anyone, and who will organize this?",
+      "Is there a need for parking passes, and how many are required?",
+      "Are there any concerns about keeping the event secret from Sam?",
+      "What precautions should be taken to avoid social media leaks?",
+      "Who is responsible for communicating with Sam\u2019s roommate and other potential guests?",
+      "Is there a contingency plan for bad weather?",
+      "What time should everyone arrive for setup?",
+      "Who is handling payments for catering and other expenses?",
+      "Are there any tasks that still need to be assigned or confirmed?",
+      "Is there anything else that needs to be discussed before the event?"
     ]
   },
   "framework": {
@@ -141,112 +163,112 @@
       {
         "turn_id": 2,
         "ambiguous_phrase": "here",
-        "resolved_entity": "Java House Coffee Shop (GPS: 40.712770,-74.005970, WiFi: Java_House_Wifi)",
+        "resolved_entity": "Java House Coffee Shop (40.712770,-74.005970)",
         "resolution_type": "spatial",
-        "resolution_source": "GPS|WiFi|SemanticLocation"
+        "resolution_source": "Semantic Location|GPS"
       },
       {
         "turn_id": 4,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Sam (the person being planned for, inferred from later references and context)",
+        "resolved_entity": "Sam (the person for whom the party is being planned)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 6,
         "ambiguous_phrase": "that list I made last night",
-        "resolved_entity": "Party planning task list created by User B the previous night",
+        "resolved_entity": "Task list for party planning created by User B last night",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 8,
         "ambiguous_phrase": "that place on 4th Street",
-        "resolved_entity": "Venue on 4th Street being considered for the party (specific name not given)",
+        "resolved_entity": "Venue on 4th Street considered for the party",
         "resolution_type": "spatial",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 10,
         "ambiguous_phrase": "it",
-        "resolved_entity": "The party/event being planned for Sam",
+        "resolved_entity": "the party/event being planned for Sam",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 12,
         "ambiguous_phrase": "next Saturday",
-        "resolved_entity": "The Saturday following the current date, as per calendar context (party date)",
+        "resolved_entity": "Saturday, [date of next Saturday from current context]",
         "resolution_type": "temporal",
-        "resolution_source": "Calendar|ConversationContext"
+        "resolution_source": "Calendar"
       },
       {
-        "turn_id": 12,
-        "ambiguous_phrase": "the downtown loft",
-        "resolved_entity": "Venue: downtown loft (specific address not given, but referenced as party location)",
-        "resolution_type": "spatial",
+        "turn_id": 14,
+        "ambiguous_phrase": "she\u2019s in",
+        "resolved_entity": "Casey has confirmed attendance for the party",
+        "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 16,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Sam (the person being planned for)",
+        "resolved_entity": "Sam (the party's guest of honor)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 18,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Sam (the person being planned for)",
+        "resolved_entity": "Sam (the party's guest of honor)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 20,
         "ambiguous_phrase": "some from last year",
-        "resolved_entity": "Party supplies/decorations from last year's event (specifically blue ones)",
+        "resolved_entity": "Decorations or party supplies from last year's event",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 22,
         "ambiguous_phrase": "them",
-        "resolved_entity": "New party supplies/decorations",
+        "resolved_entity": "New decorations or party supplies for the event",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 24,
         "ambiguous_phrase": "that Italian place near Sam's apartment",
-        "resolved_entity": "Italian restaurant located near Sam's apartment (specific name not given)",
+        "resolved_entity": "Specific Italian restaurant located near Sam's apartment",
         "resolution_type": "spatial",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 26,
         "ambiguous_phrase": "he",
-        "resolved_entity": "Sam (the person being planned for)",
+        "resolved_entity": "Sam (the party's guest of honor)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 28,
         "ambiguous_phrase": "her",
-        "resolved_entity": "Sam's roommate (female, name not specified)",
+        "resolved_entity": "Sam's roommate (female)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 30,
         "ambiguous_phrase": "that speaker from last time",
-        "resolved_entity": "Portable speaker used at the previous party/event",
+        "resolved_entity": "Portable speaker used at previous party/event",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 34,
         "ambiguous_phrase": "it",
-        "resolved_entity": "The speaker referenced in turn 30",
+        "resolved_entity": "Speaker for music at the party",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
@@ -259,66 +281,69 @@
       },
       {
         "turn_id": 38,
-        "ambiguous_phrase": "Same time",
-        "resolved_entity": "2pm next Saturday (previously established party time)",
+        "ambiguous_phrase": "Same time?",
+        "resolved_entity": "2pm next Saturday (previously agreed party time)",
         "resolution_type": "temporal",
-        "resolution_source": "ConversationContext"
+        "resolution_source": "ConversationContext|Calendar"
       },
       {
         "turn_id": 40,
         "ambiguous_phrase": "that text from Sam this morning",
-        "resolved_entity": "Text message sent by Sam to the group earlier today",
+        "resolved_entity": "Text message sent by Sam to User B earlier today",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 46,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Sam (the person being planned for)",
+        "resolved_entity": "Sam (the party's guest of honor)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 48,
         "ambiguous_phrase": "me",
-        "resolved_entity": "User B (the speaker, who will handle RSVP list)",
+        "resolved_entity": "User B (the person handling RSVP list)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 50,
         "ambiguous_phrase": "them",
-        "resolved_entity": "Venue staff or parking authority (regarding parking passes)",
+        "resolved_entity": "Venue or parking management for parking passes",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 56,
         "ambiguous_phrase": "it",
-        "resolved_entity": "Information or document relevant to party planning (likely the RSVP list or party details)",
+        "resolved_entity": "Information or document being sent (likely party details or invite)",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 58,
-        "ambiguous_phrase": "she",
-        "resolved_entity": "Casey (confirmed for next Saturday)",
+        "ambiguous_phrase": "she\u2019s good for next Saturday",
+        "resolved_entity": "Female guest (likely Casey or Maya) confirmed for next Saturday's party",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 62,
         "ambiguous_phrase": "everyone",
-        "resolved_entity": "All party attendees (Tom, Maya, Casey, Sam, Sam's roommate, User B, User A, and possible friends)",
+        "resolved_entity": "All party attendees (Tom, Maya, Casey, Sam, Sam's roommate, User B, and others)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       }
     ],
     "queries": [
-      "Should we get new decorations instead of using the blue ones from last year?",
-      "Should we ask Sam\u2019s roommate directly if she\u2019s coming, or just guess?",
-      "Does anyone have that speaker from last time?",
-      "Should we coordinate rides for everyone?"
+      "Who is 'him' that we're planning for?",
+      "What is the name of 'that place' on 4th Street?",
+      "Who is 'Sam\u2019s roommate' and should we contact her directly?",
+      "Who has 'that speaker' from last time?",
+      "What is Casey supposed to grab?",
+      "What did Sam say in 'that text' this morning?",
+      "Who needs rides coordinated for 'everyone'?"
     ]
   },
   "metrics": {
@@ -370,26 +395,26 @@
     },
     "query_filtering": {
       "baseline": {
-        "tpr": 0.3125,
-        "fnr": 0.6875,
-        "precision": 1.0,
-        "recall": 0.3125,
-        "f1_score": 0.47619047619047616,
-        "tp": 5,
-        "fp": 0,
-        "tn": 4,
-        "fn": 11
+        "tpr": 0.5,
+        "fnr": 0.5,
+        "precision": 0.8888888888888888,
+        "recall": 0.5,
+        "f1_score": 0.64,
+        "tp": 8,
+        "fp": 1,
+        "tn": 3,
+        "fn": 8
       },
       "framework": {
-        "tpr": 0.1875,
-        "fnr": 0.8125,
+        "tpr": 0.375,
+        "fnr": 0.625,
         "precision": 1.0,
-        "recall": 0.1875,
-        "f1_score": 0.3157894736842105,
-        "tp": 3,
+        "recall": 0.375,
+        "f1_score": 0.5454545454545454,
+        "tp": 6,
         "fp": 0,
         "tn": 4,
-        "fn": 13
+        "fn": 10
       }
     }
   }

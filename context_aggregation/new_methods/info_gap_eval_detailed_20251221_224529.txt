@@ -1,0 +1,561 @@
+Information Gap Detection Evaluation - Detailed Results
+Generated: 2025-12-21 22:45:29
+==========================================================================================
+
+
+==========================================================================================
+FILE: doctor_visit_001.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 8: Doctor is discussing medication. Fill in the medication name for record accuracy.
+  - Turn 14: Doctor mentioned technical help. Provide IT Coordinator's contact details to patient.
+  - Turn 18: Doctor scheduled bloodwork. Confirm lab location and appointment time for patient.
+  - Turn 24: Referral mentioned. Request specialist's name and contact information for patient.
+  - Turn 28: Doctor assigned a time limit for specialist callback. Clarify the cutoff time for patient action.
+  - Turn 32: Patient asked which folder (red or blue) for insurance. Confirm correct folder for visit.
+  - Turn 42: Doctor referenced swelling at injection site. Request specific location info for documentation.
+
+[BASELINE PREDICTIONS]:
+  ✗ Turn ?: Marcus, are you on your way up or still downstairs? Did you find the elevator?
+  ✗ Turn ?: Do you need directions to the nurses' station, or do you know where it is?
+  ✗ Turn ?: Is there anyone you need to check in with before coming in?
+  ✓ Turn ?: Which medication are we discussing today? Can you confirm the name? -> [MATCHED GT TURN 8]
+  ✗ Turn ?: What time did you take your last dose? Did you experience any side effects?
+  ✗ Turn ?: Will shifting to mornings affect your routine or other medications?
+  ✓ Turn ?: Have you installed the symptom tracker app yet? Any trouble setting it up? -> [MATCHED GT TURN 14]
+  ✓ Turn ?: Do you remember how to reach Kara if you need technical help? Would you like her email as well? -> [MATCHED GT TURN 14]
+  ✗ Turn ?: Is the follow-up appointment confirmed on your calendar? What date and time do you have?
+  ✓ Turn ?: Do you know where the lab is located on the second floor? Need a map? -> [MATCHED GT TURN 18]
+  ✗ Turn ?: Do you have the pre-authorization document with you, or should I resend it?
+  ✗ Turn ?: Do you have any questions about the specialist referral process?
+  ✗ Turn ?: Have you seen Dr. Patel before, or is this your first visit?
+  ✗ Turn ?: Will you be available for Dr. Patel's call tomorrow between noon and two?
+  ✓ Turn ?: Do you have your insurance folder ready for the visit? Is it the red one? -> [MATCHED GT TURN 32]
+  ✗ Turn ?: Do you know where the hospital pharmacy is located? Need directions?
+  ✗ Turn ?: Are you currently experiencing any allergies or reactions?
+  ✓ Turn ?: Can you describe any swelling or discomfort at the injection site? -> [MATCHED GT TURN 42]
+  ✗ Turn ?: Do you know how to upload photos via the app? Need help with that?
+  ✗ Turn ?: Do you have any concerns about privacy or data security with the app?
+  ✗ Turn ?: Is there anything else you’d like to discuss or clarify before your next visit?
+
+[FRAMEWORK PREDICTIONS]:
+  ✓ Turn 8: What is the full medication name, dosage, and schedule for the new prescription? -> [MATCHED GT TURN 8]
+  ✗ Turn 10: What is the exact dosage and frequency for Methotrexate, and should it always be taken after breakfast at 8am?
+  ✗ Turn 12: What is the full name of the symptom tracker app, and are there specific instructions for use after each dose?
+  ✓ Turn 14: Who is Kara? Please provide her full name, title/role, and department. -> [MATCHED GT TURN 14]
+  ✓ Turn 18: What is the exact date, time, and location for the next bloodwork appointment, and are there any preparation instructions? -> [MATCHED GT TURN 18]
+  ✓ Turn 22: What is the pre-authorization document's identifier or location, and what is its purpose for the lab visit? -> [MATCHED GT TURN 32]
+  ✓ Turn 24: What is Dr. Patel's full contact information, specialty, and reason for referral? -> [MATCHED GT TURN 24]
+  ✓ Turn 28: If Dr. Patel does not call by the specified time window ('tomorrow after 2 PM'), what should the patient do? -> [MATCHED GT TURN 28]
+  ✓ Turn 32: What specific insurance information is contained in the red folder, and why is it needed for the visit? -> [MATCHED GT TURN 32]
+  ✗ Turn 36: What is the full address and directions to the hospital pharmacy for prescription pickup?
+  ✓ Turn 40: Which specific anatomical location is being referenced for allergies and injection site swelling? -> [MATCHED GT TURN 42]
+  ✗ Turn 44: How should the patient upload data via the SymptoLog app, and what privacy protections are in place?
+  ✗ Turn 46: Can you confirm the patient understands the privacy boundaries and who can access their SymptoLog app data?
+  ✗ Turn 50: What specific changes or symptoms should the patient report, and by what method?
+  ✓ Turn 52: What is the exact date, time, and location for the next week's appointment? -> [MATCHED GT TURN 18]
+
+doctor_visit_001.json     | User A  | Baseline   | 71.4%    | 28.6%    | 23.8%
+                          |         | Framework  | 100.0%   | 0.0%     | 46.7%
+
+==========================================================================================
+FILE: doctor_visit_002.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 3: User A indicated preference for a private conversation; confirm who is present.
+  - Turn 5: User A confirmed heading to 'that room'. Requesting exact Location Entity from Turn 4.
+  - Turn 7: User A seeks consultation on 'it'. Requesting clarification on which test result is referenced.
+  - Turn 27: User A's husband wants to come 'then'; requesting the appointment time entity for correct scheduling.
+  - Turn 33: User A requests exclusion of 'him' from seeing results; requesting identity mapping for 'him'.
+  - Turn 41: User A wants the full report to herself, basics to spouse; request for precise partition of medical report.
+  - Turn 45: User A asks about required paperwork for privacy; request clarification on legal document type.
+  - Turn 51: User A confirms meeting 'there'; request for destination room entity from Turn 50.
+
+[BASELINE PREDICTIONS]:
+  ✓ Turn ?: Which test did you just finish? -> [MATCHED GT TURN 7]
+  ✓ Turn ?: Would you like your husband to join later, or should he wait outside? -> [MATCHED GT TURN 3]
+  ✓ Turn ?: Where should I meet you now? -> [MATCHED GT TURN 5]
+  ✓ Turn ?: What would you like to discuss now, or should we wait for your husband? -> [MATCHED GT TURN 3]
+  ✗ Turn ?: What would you like to do?
+  ✓ Turn ?: Yes, it's the door on the left. Do you need directions? -> [MATCHED GT TURN 5]
+  ✗ Turn ?: Do you have all your documents with you?
+  ✗ Turn ?: Are you ready to begin the consultation?
+  ✗ Turn ?: Is there anything specific you're concerned about?
+  ✓ Turn ?: Would you like a detailed explanation, or just the main points? -> [MATCHED GT TURN 41]
+  ✗ Turn ?: Would you prefer to schedule the follow-up now or after discussing with your husband?
+  ✓ Turn ?: What time works best for you today? -> [MATCHED GT TURN 27]
+  ✗ Turn ?: Which medication are you referring to?
+  ✓ Turn ?: What time would your husband like to join? -> [MATCHED GT TURN 27]
+  ✓ Turn ?: Would you like to discuss the bloodwork results now or at a later time? -> [MATCHED GT TURN 7]
+  ✗ Turn ?: Which email address should I use to send the summary?
+  ✗ Turn ?: Can you confirm your personal email address?
+  ✗ Turn ?: Do you need your insurance card back today?
+  ✗ Turn ?: Would you like your husband to join the consultation when he returns?
+  ✓ Turn ?: Is 4 PM a good time for your husband to join? -> [MATCHED GT TURN 27]
+  ✓ Turn ?: What information would you like me to share with your husband? -> [MATCHED GT TURN 27]
+  ✓ Turn ?: Is there anything else you want to keep private? -> [MATCHED GT TURN 41]
+  ✓ Turn ?: Which paperwork are you referring to? -> [MATCHED GT TURN 7]
+  ✗ Turn ?: Would you like assistance with the paperwork after your appointment?
+  ✗ Turn ?: Is there anything else you want to discuss before we finish?
+  ✓ Turn ?: Should I meet you in the consultation room or somewhere else? -> [MATCHED GT TURN 5]
+
+[FRAMEWORK PREDICTIONS]:
+  ✗ Turn 25: What is the full name, dosage, frequency, and timing of the medication you are supposed to bring?
+  ✓ Turn 23: What is the exact date, time, location, and any preparation instructions for the follow-up appointment scheduled for today? -> [MATCHED GT TURN 27]
+  ✗ Turn 31: What is the summary being sent to your email—does it include all test results, and how will you access it securely?
+  ✗ Turn 35: Where is the insurance card now, who has access to it, and how will it be returned to you?
+  ✓ Turn 3: What specific information will be kept private from your husband, and what will be shared with him? -> [MATCHED GT TURN 33]
+  ✓ Turn 41: What are the 'basics' to be shared with your husband, and what is considered the 'full report' for you only? -> [MATCHED GT TURN 41]
+  ✓ Turn 27: When exactly is 'then'—what date and time is your husband requesting to come? -> [MATCHED GT TURN 27]
+  ✓ Turn 39: What is the full address, floor, and room number of the 'consultation room next to pharmacy' for the 4 PM meeting? -> [MATCHED GT TURN 5]
+  ✓ Turn 47: What is the privacy consent paperwork—where is it, what does it cover, and how will you sign it? -> [MATCHED GT TURN 45]
+  ✓ Turn 29: Is there a documented consent or privacy note indicating that bloodwork results are to be kept private from your husband? -> [MATCHED GT TURN 33]
+  ✗ Turn 7: Should the blood test results be discussed now or after your husband joins? Was your preference clearly confirmed?
+  ✓ Turn 11: Which door is the consultation room—what are the exact directions from the pharmacy? -> [MATCHED GT TURN 5]
+  ✓ Turn 33: Is there a record of Ms. Taylor's husband's access level to her medical information? -> [MATCHED GT TURN 33]
+  ✓ Turn 51: What is the full location of 'Exam Room 3'—building, floor, and directions? -> [MATCHED GT TURN 5]
+
+doctor_visit_002.json     | User A  | Baseline   | 62.5%    | 37.5%    | 19.2%
+                          |         | Framework  | 62.5%    | 37.5%    | 35.7%
+
+==========================================================================================
+FILE: doctor_visit_003.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 3: Patient mentioned an allergy (penicillin) with a sticker on the folder. Confirming allergy info for medical records.
+  - Turn 7: Patient referenced lab results in an envelope. Requesting document identity for pre-op verification.
+  - Turn 9: User B confirmed coordinator identity. Protocol should resolve Michelle as staff coordinator.
+  - Turn 15: User B identified Janet as surgical assistant. Protocol must resolve 'the other person at the desk'.
+  - Turn 21: User A confirmed Emily Brooks as emergency contact. Protocol should verify and record contact details.
+  - Turn 27: User A referenced a medication list to be reviewed for surgery.
+  - Turn 31: User A confirmed surgery check-in ('6:30 AM at this building'). Protocol must resolve precise location and time.
+  - Turn 39: User B stated volunteer will notify Emily Brooks post-surgery. Protocol to verify notification contact and process.
+  - Turn 43: User B specified John is therapist (not Lisa). Protocol must resolve therapist identity for tomorrow.
+  - Turn 45: Doctor mentioned on-call nurse in info packet. Protocol to resolve nurse contact for after hours.
+  - Turn 47: Patient referenced a phone number ending -2384 as nurse's cell. Protocol must validate contact info.
+  - Turn 59: Doctor will add PT pamphlet to the patient's packet. Protocol must resolve handout document.
+
+[BASELINE PREDICTIONS]:
+  ✗ Turn ?: Hi! Are you able to find the entrance easily, or do you need directions inside?
+  ✓ Turn ?: Do you have your medical records and forms with you? -> [MATCHED GT TURN 7]
+  ✓ Turn ?: Have you had any reactions to penicillin before, or is it just a noted allergy? -> [MATCHED GT TURN 3]
+  ✓ Turn ?: Are those your imaging results or lab reports? -> [MATCHED GT TURN 7]
+  ✗ Turn ?: Is your daughter planning to join you for the consultation, or just waiting outside?
+  ✗ Turn ?: Does your daughter have any mobility needs or require assistance while waiting?
+  ✗ Turn ?: Do you need help finding the check-in desk?
+  ✓ Turn ?: Is the other person at the desk expecting you as well? -> [MATCHED GT TURN 15]
+  ✗ Turn ?: Do you have your insurance information and ID ready?
+  ✗ Turn ?: Are you comfortable with electronic signatures, or do you prefer paper forms?
+  ✗ Turn ?: Will your daughter be signing any forms as your emergency contact?
+  ✓ Turn ?: Is Emily Brooks your emergency contact or just accompanying you today? -> [MATCHED GT TURN 21]
+  ✗ Turn ?: Do you have any questions about your pre-op instructions?
+  ✓ Turn ?: Is the list you have about your current medications? -> [MATCHED GT TURN 27]
+  ✗ Turn ?: Did you stop any other medications besides aspirin?
+  ✗ Turn ?: Will you need assistance getting to the building at 6:30 AM?
+  ✓ Turn ?: Do you know who Michelle is, or should I describe her? -> [MATCHED GT TURN 9]
+  ✗ Turn ?: Would you prefer to recover in a private room or shared space?
+  ✗ Turn ?: Does your daughter have any special needs for visiting the recovery area?
+  ✓ Turn ?: Would you like us to notify anyone else besides your daughter when you're out of surgery? -> [MATCHED GT TURN 21]
+  ✗ Turn ?: Do you have any concerns about starting physical therapy right after surgery?
+  ✓ Turn ?: Would you like to meet the same physical therapist as last week? -> [MATCHED GT TURN 43]
+  ✗ Turn ?: Is there a preferred contact method for tonight's questions—phone or email?
+  ✓ Turn ?: Can you read the number to me so I can confirm whose it is? -> [MATCHED GT TURN 7]
+  ✗ Turn ?: Do you have any dietary restrictions besides fasting tonight?
+  ✗ Turn ?: Is there anything else you'd like to discuss before your appointment?
+  ✗ Turn ?: Do you need help with directions to the office from the entrance?
+  ✗ Turn ?: Did the weather affect your travel plans at all today?
+  ✗ Turn ?: Do you have a preference for walker or crutches after surgery?
+  ✓ Turn ?: Would you like a printed copy or digital version of the exercise paperwork? -> [MATCHED GT TURN 59]
+
+[FRAMEWORK PREDICTIONS]:
+  ✓ Turn 3: What is the full list of allergies, including medication names, reactions, and severity? -> [MATCHED GT TURN 3]
+  ✓ Turn 5: What is the full contents of the Patient Records Envelope, and what is the purpose of each item? -> [MATCHED GT TURN 7]
+  ✗ Turn 7: What lab tests are included in the envelope, and what are their results and significance?
+  ✓ Turn 9: Who is 'the person with the blue badge'—full name, role, and department? -> [MATCHED GT TURN 9]
+  ✗ Turn 11: Is Emily Brooks authorized to access patient medical information and wait in the lounge? What are her privacy boundaries?
+  ✓ Turn 13: What are the directions to the Surgical Reception Desk—building, floor, room number? -> [MATCHED GT TURN 31]
+  ✓ Turn 15: Who is 'another person at the desk'—full name, role, and department? -> [MATCHED GT TURN 9]
+  ✗ Turn 17: What insurance card is required—provider, policy number, and purpose?
+  ✗ Turn 19: What forms need to be signed today, and what is their purpose?
+  ✗ Turn 21: Is Emily Brooks required to sign any documents, and what is her role in the process?
+  ✓ Turn 23: Is Emily Brooks's ID required, and what information is needed for her signature? -> [MATCHED GT TURN 7]
+  ✓ Turn 25: What are all required actions before tomorrow morning—documents, medications, fasting, arrival time? -> [MATCHED GT TURN 31]
+  ✓ Turn 27: What medications are on the list—name, dosage, frequency, timing? -> [MATCHED GT TURN 27]
+  ✗ Turn 29: What was the dosage and schedule for aspirin, and when was it last taken?
+  ✓ Turn 31: Is the 6:30 AM arrival at the Main Entrance or another location—building, floor, room? -> [MATCHED GT TURN 31]
+  ✓ Turn 33: Who is Michelle—full name, role, department, and contact method? -> [MATCHED GT TURN 9]
+  ✗ Turn 35: Where is the recovery area—building, floor, room, directions?
+  ✗ Turn 37: Is Emily Brooks allowed in the recovery area, and what are her access boundaries?
+  ✓ Turn 39: Who will notify Emily Brooks when surgery is complete—name, role, contact method? -> [MATCHED GT TURN 9]
+  ✓ Turn 41: What is the physical therapy plan—start time, location, therapist name, frequency? -> [MATCHED GT TURN 43]
+  ✓ Turn 43: Who is the physical therapist from last week—full name, role, department? -> [MATCHED GT TURN 43]
+  ✓ Turn 45: Who should be called with questions tonight—name, role, contact method, hours? -> [MATCHED GT TURN 9]
+  ✓ Turn 47: Whose phone number ends in -2384—full name, role, and purpose of contact? -> [MATCHED GT TURN 9]
+  ✗ Turn 49: Is the check-in with Alex at the desk—full name, role, department, and location?
+  ✓ Turn 51: Is there any additional paperwork or preparation required before surgery? -> [MATCHED GT TURN 7]
+  ✗ Turn 57: Will a walker or crutches be required after surgery—type, duration, instructions?
+  ✓ Turn 59: Is there paperwork about post-op exercises—type, location, how to access? -> [MATCHED GT TURN 59]
+  ✓ Turn 55: What is the specific time and location for today's meeting? -> [MATCHED GT TURN 31]
+
+doctor_visit_003.json     | User A  | Baseline   | 66.7%    | 33.3%    | 26.7%
+                          |         | Framework  | 58.3%    | 41.7%    | 25.0%
+
+==========================================================================================
+FILE: friends_meeting_001.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 13: User A referenced 'her' as a guest. Request guest identity for Turn 13.
+  - Turn 15: User A referenced 'the coordinator'. Request name/contact info for Turn 15.
+  - Turn 19: User A asked about 'the balloons'. Request clarification of decoration items from Turn 19.
+  - Turn 33: User A referenced 'that smartwatch'. Request gift item details for Turn 33.
+  - Turn 35: User A referenced 'he'. Request dessert preference person entity for Turn 35.
+  - Turn 45: User A referenced 'him' regarding the invitation. Request delivery status from Turn 45.
+  - Turn 53: User A referenced 'inside' for backup venue. Request venue details for Turn 53.
+  - Turn 55: User A referenced 'that list' for emailing. Request list source for Turn 55.
+
+[BASELINE PREDICTIONS]:
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+  ✗ Turn ?: 
+
+[FRAMEWORK PREDICTIONS]:
+  ✓ Turn 7: What is the full content and purpose of 'that list'? Where is it stored and how can it be accessed? -> [MATCHED GT TURN 55]
+  ✓ Turn 15: Who is 'the coordinator'? Please provide full name, role, and contact information. -> [MATCHED GT TURN 15]
+  ✓ Turn 19: What type, quantity, and color of balloons are needed? Where are they currently stored? -> [MATCHED GT TURN 19]
+  ✗ Turn 21: What is the full address, hours, and contact info for 'that party supply store' on Main?
+  ✗ Turn 23: Do you prefer pizza like last time or should we try catering? Please specify your choice.
+  ✗ Turn 25: What is the expected guest count for the event? Please provide a specific number.
+  ✗ Turn 27: Who is Sam's roommate? Please confirm full name and contact method.
+  ✗ Turn 30: What is the exact model and location of 'that speaker'? Is it available for the event?
+  ✓ Turn 33: What is the brand, model, and purchase plan for 'that smartwatch' Sam wanted? -> [MATCHED GT TURN 33]
+  ✓ Turn 35: Who is 'he' in 'Did anyone ask Sam what he wants for dessert?' Please confirm if 'he' refers to Sam. -> [MATCHED GT TURN 35]
+  ✗ Turn 39: Is the meeting next Tuesday at 4pm at The Java House Coffee Shop? Please confirm location and attendees.
+  ✗ Turn 43: What is 'that flyer'? What information does it contain and why must it not be left at the loft?
+  ✗ Turn 47: What is the content and intended recipients of the party invitation to be printed?
+  ✗ Turn 49: What are the parking options at the loft? Is a reservation required, and if so, how is it made?
+  ✗ Turn 51: What is the weather forecast for next Saturday? Is there a backup plan if it rains?
+  ✓ Turn 53: What does 'inside' refer to? Please specify the exact indoor location for the event if it rains. -> [MATCHED GT TURN 53]
+  ✗ Turn 55: How will 'that list' be emailed? What is the recipient's email address and format of the list?
+  ✓ Turn 57: Who is Maya? Please provide her full name and contact information. -> [MATCHED GT TURN 13]
+  ✗ Turn 59: Is there any remaining task or detail that has not been addressed for the party planning?
+  ✗ Turn 61: Who is authorized to know about the surprise for Sam? Are there any privacy restrictions?
+
+friends_meeting_001.json  | User A  | Baseline   | 0.0%     | 100.0%   | 0.0%
+                          |         | Framework  | 87.5%    | 12.5%    | 35.0%
+
+==========================================================================================
+FILE: friends_meeting_002.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 15: Resolve '1:30' in Turn 15 for actionable trip timing.
+  - Turn 31: Turn 31: Request name/address for 'first lookout' meeting point.
+  - Turn 33: Turn 33: Resolve details of 'spare key'—vehicle and owner.
+
+[BASELINE PREDICTIONS]:
+  ✗ Turn ?: What do you still need from the store before I leave?
+  ✓ Turn ?: Where should we meet to hand off the water filter? -> [MATCHED GT TURN 31]
+  ✗ Turn ?: Are you at the Beacon Grocery Store now or somewhere else nearby?
+  ✗ Turn ?: Who else is joining us, and do they know where to meet?
+  ✗ Turn ?: Who is 'him'—are you talking about Sam or Chris?
+  ✗ Turn ?: What’s our backup plan if he doesn’t show up?
+  ✓ Turn ?: What’s the address or directions to your place from here? -> [MATCHED GT TURN 31]
+  ✓ Turn ?: What should we do if no one arrives by 1:30? -> [MATCHED GT TURN 15]
+  ✗ Turn ?: What else do I need to bring besides what’s in my glove box?
+  ✗ Turn ?: Do we need extra water bottles for anyone else?
+  ✗ Turn ?: Should we check the weather again for tonight?
+  ✗ Turn ?: What happened last time that was rough?
+  ✓ Turn ?: Where exactly are we meeting Sam? -> [MATCHED GT TURN 31]
+  ✓ Turn ?: Did Sam say how late he’ll be? -> [MATCHED GT TURN 15]
+  ✗ Turn ?: What did Sam say when you called?
+  ✓ Turn ?: How will we recognize the first lookout? -> [MATCHED GT TURN 31]
+  ✗ Turn ?: Where should I leave the spare key if you’re not there?
+  ✗ Turn ?: Which trail is Chris planning to take?
+  ✗ Turn ?: Should we set a specific time to check in with Chris?
+  ✗ Turn ?: Does anyone else have a topo map, or should I bring mine?
+  ✗ Turn ?: Is there anything else I should pack before leaving?
+  ✗ Turn ?: Do you need anything else from the grocery store before I leave?
+  ✗ Turn ?: What kind of bottle do you want—water or something else?
+  ✗ Turn ?: Is there anything else anyone needs from the store before I leave town?
+  ✗ Turn ?: Where should I park when I get there?
+  ✓ Turn ?: Where are you waiting for me? -> [MATCHED GT TURN 31]
+  ✗ Turn ?: Do you need anything else besides the filter and first aid kit?
+  ✓ Turn ?: Did Chris say when he’ll arrive? -> [MATCHED GT TURN 15]
+  ✓ Turn ?: How long should we wait for Chris before heading up? -> [MATCHED GT TURN 15]
+  ✓ Turn ?: What time should I set the alarm for? -> [MATCHED GT TURN 15]
+  ✗ Turn ?: Is there anything else we need to do before we start?
+
+[FRAMEWORK PREDICTIONS]:
+  ✗ Turn 13: What is the full address or directions to 'your place'? Is there a specific meeting spot or instructions for arrival?
+  ✗ Turn 11: What is the backup plan if Sam does not arrive or communicate? Who is responsible for next steps?
+  ✗ Turn 35: Who is Chris? Please provide full name, role in the group, and contact method.
+  ✗ Turn 25: Who is 'he' in 'he texted'? Is this Sam, Chris, or another person?
+  ✓ Turn 31: Where is the 'south entrance' and 'first lookout'? Please specify trail names, GPS coordinates, or landmarks. -> [MATCHED GT TURN 31]
+  ✗ Turn 39: What is the purpose of the 'topo map'? Is it required for navigation, and does everyone have access to a copy?
+  ✗ Turn 57: Should the group wait for Chris or start heading up the trail? Is there a consensus or preferred action?
+  ✗ Turn 21: What is the hourly weather forecast for tonight? Are there any warnings or changes expected?
+  ✗ Turn 53: Are the Sawyer Water Filter and Red Adventure Medical Kit sufficient for the group's needs? Is there a checklist of required gear?
+  ✗ Turn 47: Does anyone need additional items from the grocery store before departure? Please specify if so.
+  ✓ Turn 59: What is the alarm set for? Is it for a specific action, time, or event? -> [MATCHED GT TURN 15]
+  ✗ Turn 55: Did anyone hear from Chris? What is his current status and ETA?
+  ✗ Turn 63: Is the weather forecast for the entire hike duration confirmed? Are there contingency plans for adverse conditions?
+
+friends_meeting_002.json  | User A  | Baseline   | 66.7%    | 33.3%    | 6.5%
+                          |         | Framework  | 66.7%    | 33.3%    | 15.4%
+
+==========================================================================================
+FILE: friends_meeting_003.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 3: User A acknowledged Sam's arrival but did not specify the time. Requesting explicit arrival details.
+  - Turn 5: User A moved to a specific table. Requesting the table location entity referenced in Turn 4.
+  - Turn 8: User B sent a menu PDF to Jules. Requesting the file reference and format.
+  - Turn 12: User B checked the venue's availability for tomorrow evening. Requesting the available time slot.
+  - Turn 14: User A referenced Tom's child. Requesting explicit child details for planning.
+  - Turn 16: Requesting coordinator details at the venue for allergy accommodation.
+  - Turn 22: User A asked for the invitation card. Requesting its current location from User B.
+  - Turn 26: Zoe's allergy list received by User A. Requesting the ingredient info for venue confirmation.
+  - Turn 44: User A said 'see you tomorrow at that place'. Requesting explicit venue entity.
+
+[BASELINE PREDICTIONS]:
+  ✓ Turn ?: Where are you sitting in the café? -> [MATCHED GT TURN 5]
+  ✓ Turn ?: Has Sam arrived yet, or should I text him? -> [MATCHED GT TURN 3]
+  ✗ Turn ?: Did Jules mention why she couldn't open the PDF?
+  ✗ Turn ?: Are there any vegan options on the menu?
+  ✓ Turn ?: Should we check if the café is open tomorrow evening? -> [MATCHED GT TURN 12]
+  ✓ Turn ?: What time would work best for Sam and his kid? -> [MATCHED GT TURN 3]
+  ✓ Turn ?: Did the coordinator at the Italian place confirm about nut-free options for Zoe? -> [MATCHED GT TURN 26]
+  ✗ Turn ?: Should we let the restaurant know about our dietary restrictions in advance?
+  ✓ Turn ?: When will she be back from traveling? -> [MATCHED GT TURN 3]
+  ✗ Turn ?: Is anyone else joining us, or is that everyone?
+  ✓ Turn ?: Do you have the invitation card with you? -> [MATCHED GT TURN 22]
+  ✓ Turn ?: Have you heard back from the restaurant yet? -> [MATCHED GT TURN 12]
+  ✓ Turn ?: Can you send Zoe the ingredient list for her to review? -> [MATCHED GT TURN 26]
+  ✗ Turn ?: Is Anna arriving by train, and what time should we expect her?
+  ✓ Turn ?: Is the place open tomorrow, or do we need to pick another date? -> [MATCHED GT TURN 12]
+  ✗ Turn ?: Should we consider traffic when planning our arrival time?
+  ✗ Turn ?: What appetizers would you like to pre-order?
+  ✗ Turn ?: Did Sam say anything about the meeting or plans?
+  ✗ Turn ?: Is there anything else we need to check before confirming?
+  ✓ Turn ?: Does Zoe need us to bring anything for her dietary needs? -> [MATCHED GT TURN 26]
+  ✗ Turn ?: Should I update the group chat now or wait for final confirmation?
+  ✓ Turn ?: Are we meeting at the Italian place tomorrow? -> [MATCHED GT TURN 12]
+  ✓ Turn ?: Did you remember to bring the invitation card? -> [MATCHED GT TURN 22]
+  ✓ Turn ?: Should we double-check all allergies before ordering? -> [MATCHED GT TURN 26]
+
+[FRAMEWORK PREDICTIONS]:
+  ✓ Turn 8: What is the PDF that Jules couldn't open—what is its type, purpose, and how should she access it? -> [MATCHED GT TURN 8]
+  ✗ Turn 10: Which vegan options are available—please specify dish names, ingredients, and any allergy information?
+  ✓ Turn 12: What is the specific date and time for 'tomorrow evening'—please clarify with exact details? -> [MATCHED GT TURN 12]
+  ✓ Turn 14: Who is 'his kid'—please provide full name and relationship to Tom? -> [MATCHED GT TURN 14]
+  ✓ Turn 16: Who is the coordinator at the Italian place—full name, role, and contact method? What is the process for confirming nut avoidance for Zoe? -> [MATCHED GT TURN 16]
+  ✗ Turn 18: What information is included on the dietary cards—whose restrictions are listed and how will they be used?
+  ✗ Turn 20: Who is 'she' traveling now—please clarify full name and travel details?
+  ✗ Turn 22: What is the big invitation card—what details need to be filled in and who will be responsible?
+  ✓ Turn 24: What is the process for confirming the final place—who will notify, what criteria, and by when? -> [MATCHED GT TURN 44]
+  ✓ Turn 26: What is included in Zoe's allergy ingredient list—please specify allergens and how the list will be verified? -> [MATCHED GT TURN 26]
+  ✗ Turn 30: Who is 'she' driving and picking up Anna—please clarify full name and travel arrangements?
+  ✗ Turn 32: What is 'here' in reference to traffic—please specify the exact location affected?
+  ✗ Turn 34: Do you want to pre-order appetizers—please specify which appetizers and for whom?
+  ✗ Turn 38: What else needs to be checked—please specify outstanding tasks and responsible parties?
+  ✗ Turn 40: What will she bring herself—please specify food item and whether it meets dietary restrictions?
+  ✗ Turn 42: Who will update the group chat and what information will be included in the update?
+  ✓ Turn 44: What is 'that place' for tomorrow—please specify name, address, and reservation details? -> [MATCHED GT TURN 44]
+  ✓ Turn 46: What dietary cards are in your bag—please confirm whose cards and what restrictions are listed? -> [MATCHED GT TURN 26]
+  ✗ Turn 48: What is the emergency plan if someone has a dietary reaction—who is responsible and what steps should be taken?
+
+friends_meeting_003.json  | User A  | Baseline   | 55.6%    | 44.4%    | 20.8%
+                          |         | Framework  | 66.7%    | 33.3%    | 31.6%
+
+==========================================================================================
+FILE: work_collaboration_001.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 17: User A needs vendor identity for follow-up. Requesting full contact from Turn 17.
+  - Turn 33: User A referenced QA coordinator. Query for specific person’s name.
+  - Turn 35: User A requested build status from 'him'. Query for developer’s name.
+  - Turn 44: Incoming request for new cloud storage passwords. Verify permissions for 'Colleague' relationship.
+
+[BASELINE PREDICTIONS]:
+  ✓ Turn ?: Who else is joining the meeting in the conference room? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: What is inside the box by the door?
+  ✓ Turn ?: Who is the package and paperwork for? -> [MATCHED GT TURN 17]
+  ✓ Turn ?: Who are you referring to—should I check with the receptionist? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: Where should I bring the package—your office or the client's location?
+  ✗ Turn ?: What time was the meeting originally scheduled for?
+  ✗ Turn ?: Which location on 45th are you referring to?
+  ✓ Turn ?: Who should I give the signed release forms to? -> [MATCHED GT TURN 33]
+  ✓ Turn ?: Who is 'he'—the person responsible for sending the forms? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: What specifically should I check for in the paperwork?
+  ✗ Turn ?: Which attachment are you referring to?
+  ✗ Turn ?: What updates are we expecting from the downtown office team?
+  ✗ Turn ?: When do we need the client to respond about the demo link?
+  ✓ Turn ?: Which developer should I ask to reschedule? -> [MATCHED GT TURN 33]
+  ✓ Turn ?: Who should I send my notes to? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: What should I include in the feedback document?
+  ✓ Turn ?: Who is the QA coordinator? -> [MATCHED GT TURN 33]
+  ✓ Turn ?: Who can provide the final build status? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: What is the weather like outside?
+  ✗ Turn ?: Where is the QA room located?
+  ✓ Turn ?: Who is 'she'—the person at the table by the windows? -> [MATCHED GT TURN 33]
+  ✗ Turn ?: Why were the cloud storage passwords changed?
+  ✗ Turn ?: What time are we meeting at the café?
+  ✗ Turn ?: What are you bringing?
+  ✗ Turn ?: What do you need me to handle?
+
+[FRAMEWORK PREDICTIONS]:
+  ✗ Turn 3: What is inside the folder with paperwork? What documents are included, and what is their purpose?
+  ✗ Turn 5: What is the identifier or location of the paperwork folder, and how should it be accessed or used?
+  ✓ Turn 7: Who is 'he' referenced in 'is he at your location or the client’s'? Please provide full name, role, and contact method. -> [MATCHED GT TURN 17]
+  ✗ Turn 13: What is the full address and room number for 'the one on 45th'? Please specify building, floor, and directions.
+  ✓ Turn 15: Who is 'her' who should bring the signed release forms? What is her full name, role, and contact method? -> [MATCHED GT TURN 17]
+  ✓ Turn 17: Who is 'he' who may have sent the forms? Please provide full name, role, and contact method. -> [MATCHED GT TURN 17]
+  ✗ Turn 21: What is the attachment referenced? Please specify document type, identifier, and how to access it.
+  ✗ Turn 23: Who is 'the team at the downtown office'? Please list names, roles, and contact methods.
+  ✗ Turn 25: What is the client's response about the demo link? Please specify client name, contact, and status of the demo.
+  ✓ Turn 33: Who is 'the coordinator from QA'? Please confirm full name, title, department, and contact method. -> [MATCHED GT TURN 33]
+  ✓ Turn 35: Who is 'him' to ask about the final build status? Please provide full name, role, and contact method. -> [MATCHED GT TURN 17]
+  ✓ Turn 44: Who changed the passwords for the cloud storage? What are the new credentials, and who has access? -> [MATCHED GT TURN 44]
+  ✗ Turn 48: What is 'it' that is being brought? Please specify the item (e.g., prototype package, paperwork, etc.).
+  ✗ Turn 50: What specific actions should be handled tonight if anything else pops up? Please clarify responsibilities and deadlines.
+
+work_collaboration_001.js | User A  | Baseline   | 50.0%    | 50.0%    | 8.0%
+                          |         | Framework  | 75.0%    | 25.0%    | 21.4%
+
+==========================================================================================
+FILE: work_collaboration_002.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 3: User A confirmed the config file. Requesting the label/entity from Turn 2.
+  - Turn 9: User A mentioned a directory for the vault key update. Need to resolve the folder path.
+  - Turn 17: User A requested a specific schedule based on backup finish time. Need precise timestamp.
+  - Turn 41: Incoming request for container registry password reset. Verify permissions for colleague.
+
+[BASELINE PREDICTIONS]:
+  ✓ Turn ?: Which hardware unit are you prepping for the deployment? -> [MATCHED GT TURN 3]
+  ✗ Turn ?: What did you decide to use? Is it a specific server or device?
+  ✗ Turn ?: Which system should be rebooted now?
+  ✗ Turn ?: Are there any errors or warnings during the update process?
+  ✗ Turn ?: Which vault are you switching to, and what is the expected outcome?
+  ✗ Turn ?: Can you share the new hash value for verification?
+  ✗ Turn ?: Who should I reach out to regarding the next step?
+  ✓ Turn ?: What did he say about the schedule? -> [MATCHED GT TURN 17]
+  ✓ Turn ?: What time is the script scheduled to run? -> [MATCHED GT TURN 17]
+  ✗ Turn ?: Which script are you queuing, and what does it do?
+  ✗ Turn ?: Which repo did it sync from, and what file are you checking?
+  ✗ Turn ?: What are the differences between the short and long one?
+  ✗ Turn ?: What are you plugging in? Is it a device or a cable?
+  ✓ Turn ?: What was the message from Serena about? -> [MATCHED GT TURN 41]
+  ✗ Turn ?: What is the deadline for applying Serena's changes?
+  ✗ Turn ?: Which environment variable needs to be set for the test suite?
+  ✗ Turn ?: Is 'true' the correct value for the environment variable?
+  ✗ Turn ?: What was dropped off at the front desk?
+  ✗ Turn ?: What does the orange sticker indicate?
+  ✓ Turn ?: Who should check on the lost access, and what system is affected? -> [MATCHED GT TURN 41]
+  ✗ Turn ?: Who should be contacted for the password reset for the container registry?
+  ✗ Turn ?: What step are you on before opening it?
+  ✗ Turn ?: What is the heads up about? Is it a new update or issue?
+  ✗ Turn ?: How will you verify the backup before proceeding?
+  ✓ Turn ?: How will Corey confirm the backup completion? -> [MATCHED GT TURN 17]
+  ✗ Turn ?: What went wrong last week during the deployment?
+  ✗ Turn ?: Is there anything else to wrap up before leaving the server room?
+
+[FRAMEWORK PREDICTIONS]:
+  ✗ Turn 13: Who is 'he' referenced in 'If you could reach out, that'd be great' and 'When did he say that's scheduled for?'? Please provide full name, role, and contact method.
+  ✗ Turn 17: What is the full appointment detail referenced as 'that's scheduled for'? Please specify type, date, time, location, and any preparation instructions.
+  ✗ Turn 27: Who is 'Serena' referenced in 'Was it from Serena?'? Please provide full name, role, and contact method.
+  ✗ Turn 29: What is the specific deadline for applying the changes mentioned by Serena? Please provide date, time, and any consequences for missing it.
+  ✗ Turn 41: Who is responsible for the password reset for the container registry? Please specify full name, role, and contact method.
+  ✗ Turn 49: Who is 'Corey' referenced for backup confirmation? Please provide full name, role, and contact method.
+  ✗ Turn 47: What are the criteria for backup verification, and who is responsible for confirming it? What steps should be taken if verification fails?
+  ✗ Turn 53: Are there any remaining steps or follow-up actions required after wrapping up? Please specify if any documentation, notifications, or checks are pending.
+
+work_collaboration_002.js | User A  | Baseline   | 75.0%    | 25.0%    | 11.1%
+                          |         | Framework  | 0.0%     | 100.0%   | 0.0%
+
+==========================================================================================
+FILE: work_collaboration_003.json | USER: User A
+==========================================================================================
+[GROUND TRUTH GAPS]:
+  - Turn 4: User A mentioned approval is pending from 'the coordinator'. Requesting the full name and role.
+  - Turn 8: User A referenced 'this'. Requesting clarification on the selected object.
+  - Turn 32: User A referenced 'that guy at the helpdesk'. Requesting full name and role.
+  - Turn 35: User A stated network access starts 'tomorrow morning'. Requesting the exact time.
+
+[BASELINE PREDICTIONS]:
+  ✓ Turn ?: Who should the invoices be given to or reviewed by? -> [MATCHED GT TURN 4]
+  ✗ Turn ?: What exactly are you asking her? Is it about the invoice approval status?
+  ✓ Turn ?: Who is the finance coordinator? Can you confirm their name? -> [MATCHED GT TURN 4]
+  ✓ Turn ?: Can you clarify what 'this' refers to? Is it a document or an email? -> [MATCHED GT TURN 8]
+  ✓ Turn ?: What meeting or event are you asking the time for? -> [MATCHED GT TURN 8]
+  ✗ Turn ?: Where should you head after the finance meeting?
+  ✗ Turn ?: Who is expected to come? Is it for the rollout or another meeting?
+  ✓ Turn ?: Whose employee ID do you need? Is it for a visitor or a new team member? -> [MATCHED GT TURN 32]
+  ✗ Turn ?: What information are you forwarding to security?
+  ✓ Turn ?: What items are you referring to bringing to the rollout? -> [MATCHED GT TURN 8]
+  ✗ Turn ?: Who is responsible for sending the final budget numbers?
+  ✗ Turn ?: Is there anything specific you need to check or complete before leaving the Procurement Office?
+  ✓ Turn ?: Who just walked by? Is this someone relevant to the invoices or the rollout? -> [MATCHED GT TURN 32]
+  ✗ Turn ?: What documents are in the folder? Are these all the invoices or additional paperwork?
+  ✗ Turn ?: What do you need from IT? Is it access, equipment, or something else?
+  ✓ Turn ?: What is the helpdesk person's name? What exactly are you asking him? -> [MATCHED GT TURN 32]
+  ✗ Turn ?: What access will be live tomorrow morning? Who needs it?
+  ✗ Turn ?: What list needs to be sent to IT? Who should be included?
+  ✗ Turn ?: Who is in the basement? Is this a reference to another team or person?
+  ✗ Turn ?: Where is the 'big room'? Is this the location for the rollout or another meeting?
+  ✗ Turn ?: What should be done if anything changes? Is there a backup plan?
+
+[FRAMEWORK PREDICTIONS]:
+  ✗ Turn 1: What is the full list of contents in the folder with last week's invoices, and what is its intended purpose?
+  ✓ Turn 4: What is the full name, title, and contact method for 'the coordinator' who must sign off? -> [MATCHED GT TURN 4]
+  ✓ Turn 6: Who is the 'finance coordinator' (full name, title, contact)? -> [MATCHED GT TURN 4]
+  ✗ Turn 10: What is the exact location (building, room) and duration of the finance meeting at 2:00?
+  ✗ Turn 14: Who is coming? Please specify full names, roles, and departments of all expected attendees.
+  ✓ Turn 16: Who is 'him' (employee ID requested)? What is his role and what information is security authorized to access? -> [MATCHED GT TURN 32]
+  ✗ Turn 20: Which documents should be brought to the rollout, and what is the purpose of bringing them?
+  ✗ Turn 22: What are the 'final numbers on budget'? Please specify the document, its location, and how to access it.
+  ✗ Turn 24: Is there anything else required in the Procurement Office before leaving? Please specify any remaining tasks.
+  ✓ Turn 26: Who is 'he' that just walked by? Please provide full name, role, and department. -> [MATCHED GT TURN 32]
+  ✓ Turn 28: What is in 'this folder' and what is its intended use? -> [MATCHED GT TURN 8]
+  ✗ Turn 30: What IT needs should be addressed before leaving? Please specify any outstanding IT requests.
+  ✓ Turn 32: Who is 'that guy at the helpdesk, the one with glasses'? Please confirm full name, role, and contact. -> [MATCHED GT TURN 32]
+  ✗ Turn 35: What specific access will be live tomorrow morning? Please specify system, permissions, and any required actions.
+  ✗ Turn 37: What list needs to be sent to IT, and what is the deadline for compiling and sending it?
+  ✗ Turn 41: Where is 'the big room'? Please specify building, floor, and room number.
+
+work_collaboration_003.js | User A  | Baseline   | 75.0%    | 25.0%    | 14.3%
+                          |         | Framework  | 75.0%    | 25.0%    | 18.8%
+
+==========================================================================================
+SUMMARY STATISTICS (User A only)
+==========================================================================================
+Baseline   - TPR: 58.1% ± 23.4%
+Framework  - TPR: 65.7% ± 27.9%

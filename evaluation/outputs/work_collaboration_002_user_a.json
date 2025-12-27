@@ -7,31 +7,31 @@
       {
         "turn_id": 35,
         "ambiguous_phrase": "here",
-        "resolved_entity": "Main Office Server Room front desk",
+        "resolved_entity": "Main Office front desk",
         "resolution_type": "spatial"
       },
       {
         "turn_id": 35,
-        "ambiguous_phrase": "it",
-        "resolved_entity": "the item that was dropped off at the front desk (likely hardware or package for deployment)",
-        "resolution_type": "object"
+        "ambiguous_phrase": "server room",
+        "resolved_entity": "Main Office Server Room (GPS: 37.789102,-122.401207)",
+        "resolution_type": "spatial"
       },
       {
         "turn_id": 37,
         "ambiguous_phrase": "that",
-        "resolved_entity": "the item with the orange sticker matching the tracking number (hardware/package)",
+        "resolved_entity": "the item with the orange sticker and matching tracking number (likely a hardware package)",
         "resolution_type": "object"
       },
       {
         "turn_id": 39,
         "ambiguous_phrase": "them",
-        "resolved_entity": "the team or administrators responsible for access management (likely IT or DevOps team)",
+        "resolved_entity": "the IT or admin team responsible for access management",
         "resolution_type": "person"
       },
       {
         "turn_id": 41,
         "ambiguous_phrase": "too",
-        "resolved_entity": "in addition to the previous password reset request (for general access), also request for the container registry",
+        "resolved_entity": "in addition to the previous password reset request (for another account or system)",
         "resolution_type": "object"
       },
       {
@@ -43,52 +43,49 @@
       {
         "turn_id": 45,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the update or change that was mentioned in the previous step (likely a file or configuration update)",
+        "resolved_entity": "the update or notification mentioned earlier",
         "resolution_type": "object"
       },
       {
         "turn_id": 47,
-        "ambiguous_phrase": "it",
-        "resolved_entity": "the next step or action in the deployment process",
+        "ambiguous_phrase": "the backup",
+        "resolved_entity": "the backup of the production server or data before deployment",
         "resolution_type": "object"
       },
       {
         "turn_id": 49,
-        "ambiguous_phrase": "confirmation",
-        "resolved_entity": "confirmation from Corey that the backup has completed",
-        "resolution_type": "object"
+        "ambiguous_phrase": "confirmation from Corey",
+        "resolved_entity": "confirmation from Corey (a team member responsible for backup verification)",
+        "resolution_type": "person"
       },
       {
         "turn_id": 53,
         "ambiguous_phrase": "here",
-        "resolved_entity": "Main Office Server Room",
+        "resolved_entity": "Main Office Server Room (GPS: 37.789102,-122.401207)",
         "resolution_type": "spatial"
       }
     ],
     "queries": [
-      "Do you need any assistance with the hardware setup in the server room?",
-      "Which server or hardware unit are you using for the deployment?",
-      "Has the reboot completed successfully on your end?",
-      "Are there any errors or issues showing up during the update process?",
-      "Can you confirm that the new key is functioning as expected after the vault switch?",
-      "Who should be notified once the key update is complete?",
-      "What did the person you reached out to say about the issue?",
-      "When exactly is the scheduled time for the next task or maintenance?",
-      "Is there a specific script you want queued, or should I use the default one?",
-      "Was the file sync with the repo expected, or should we investigate further?",
-      "Which file do you need: the short one or the long one?",
-      "Was the message from Serena important, and should I follow up if you haven't seen it?",
-      "Did Serena mention a specific deadline for the changes?",
-      "Should I set the environment variable for the test suite, or have you already done it?",
-      "Do you need help bringing the package from the front desk to the server room?",
-      "Is the orange sticker the only identifier for the package, or should I check anything else?",
-      "Who should we contact about the lost access from yesterday?",
-      "Have you requested a password reset for the container registry, or should I handle it?",
-      "Is it safe to open the package now, or should we wait for another step?",
-      "When will the backup verification be complete?",
-      "Has Corey confirmed that the backup has ended?",
-      "Are there any remaining tasks before wrapping up?",
-      "Is there anything we should do differently to avoid issues like last week?"
+      "Is there a checklist or documentation for the deployment steps that should be followed?",
+      "Has the backup been verified and completed successfully?",
+      "Did Corey confirm the backup is finished?",
+      "What was the scheduled time for the deployment according to the other team member?",
+      "Did Serena specify a deadline for the changes to be applied?",
+      "Are there any outstanding issues from last week that need to be addressed?",
+      "Has the environment variable for the test suite been set correctly on all relevant systems?",
+      "Is there any additional configuration needed after the key update?",
+      "Has the password reset for the container registry been requested and processed?",
+      "Is there any documentation or notes about the new key and its hash for future reference?",
+      "Are there any other files or scripts that need to be queued for this deployment?",
+      "Is there a specific procedure for switching the vault and updating the key?",
+      "Is the file with the new key in the correct folder and accessible to all necessary services?",
+      "Are all hardware components accounted for and properly labeled (e.g., orange sticker)?",
+      "Is there a timeline for when the backup verification will be completed?",
+      "Has everyone involved in the deployment been notified of their responsibilities?",
+      "Is there a plan for rollback in case something goes wrong during deployment?",
+      "Are there any dependencies that need to be checked before proceeding?",
+      "Is the repo fully synced and up to date with the latest changes?",
+      "Are there any other approvals needed before proceeding to the next step?"
     ]
   },
   "framework": {
@@ -96,43 +93,120 @@
       {
         "turn_id": 3,
         "ambiguous_phrase": "this one",
-        "resolved_entity": "the hardware unit User A selected in the server room for deployment prep",
+        "resolved_entity": "the hardware selected for deployment in the server room",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
-        "turn_id": 21,
-        "ambiguous_phrase": "it's here now",
-        "resolved_entity": "the script or file that synced with the repository and is now available in the server room",
+        "turn_id": 5,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "at the current moment, prior to the scheduled deployment at 10:30 AM",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar|ConversationContext"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "the vault",
+        "resolved_entity": "the credentials or secrets storage being switched during deployment",
         "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "this folder",
+        "resolved_entity": "the folder currently open in the server room's deployment console",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the key in the folder, now updated with the new hash",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "reaching out to the relevant person for confirmation or information (likely Corey or Serena)",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "Corey (referenced in turn 49 as someone who needs to confirm backup)",
+        "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "Corey (referenced in previous turns)",
+        "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "that's scheduled for",
+        "resolved_entity": "the time Corey scheduled for the next deployment or backup",
+        "resolution_type": "temporal",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "the time Corey scheduled for the event (deployment/backup)",
+        "resolution_type": "temporal",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "the server room at Main Office (GPS: 37.789102,-122.401207, WiFi: CorpNet_Main)",
+        "resolution_type": "spatial",
+        "resolution_source": "GPS|WiFi|SemanticLocation"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "at the current moment, after repo sync and before deployment",
+        "resolution_type": "temporal",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 23,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the file or item that synced with the repo and is now present in the folder",
+        "resolved_entity": "the file or item that synced with the repo and is being grabbed",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 23,
         "ambiguous_phrase": "the short one or the long one",
-        "resolved_entity": "refers to two possible files or scripts in the folder, differentiated by length or size",
+        "resolved_entity": "refers to two possible files/scripts/items in the folder, differentiated by length",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 25,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the selected file or script (short or long) being plugged in for deployment",
+        "resolved_entity": "the selected file/script/item (short or long) being plugged in",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 27,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the message or file User A was expecting to see, possibly from Serena",
+        "resolved_entity": "the message or file expected from Serena",
         "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "Serena",
+        "resolved_entity": "a person involved in the deployment process, likely responsible for sending files or updates",
+        "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
@@ -144,9 +218,9 @@
       },
       {
         "turn_id": 29,
-        "ambiguous_phrase": "she",
-        "resolved_entity": "Serena",
-        "resolution_type": "person",
+        "ambiguous_phrase": "deadline",
+        "resolved_entity": "the time by which Serena expects the changes to be applied",
+        "resolution_type": "temporal",
         "resolution_source": "ConversationContext"
       },
       {
@@ -158,96 +232,101 @@
       },
       {
         "turn_id": 33,
-        "ambiguous_phrase": "it's",
+        "ambiguous_phrase": "it",
         "resolved_entity": "the environment variable for the test suite, now set to true",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 35,
-        "ambiguous_phrase": "here",
-        "resolved_entity": "Main Office Server Room (GPS: 37.789102,-122.401207, WiFi: CorpNet_Main)",
-        "resolution_type": "spatial",
-        "resolution_source": "Semantic Location|GPS|WiFi"
-      },
-      {
-        "turn_id": 35,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the item that got dropped off at the front desk, to be brought to the server room",
+        "resolved_entity": "the package or item dropped off at the front desk",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
+        "turn_id": 35,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "the front desk of the Main Office (same building as server room)",
+        "resolution_type": "spatial",
+        "resolution_source": "SemanticLocation"
+      },
+      {
         "turn_id": 37,
         "ambiguous_phrase": "that",
-        "resolved_entity": "the item with the orange sticker matching the tracking number",
+        "resolved_entity": "the package with the orange sticker matching the tracking number",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 39,
         "ambiguous_phrase": "them",
-        "resolved_entity": "the team or group responsible for access management (likely IT or admin)",
+        "resolved_entity": "the team or administrators managing access (likely IT or security team)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 41,
         "ambiguous_phrase": "the container registry",
-        "resolved_entity": "the organization's container registry requiring a password reset",
+        "resolved_entity": "the system for storing and managing container images used in deployment",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 43,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the item dropped off at the front desk, now to be opened after the current step",
+        "resolved_entity": "the package or item dropped off at the front desk, to be opened after the current step",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 45,
         "ambiguous_phrase": "it",
-        "resolved_entity": "the update or change that User A was given a heads up about, to be applied soon",
+        "resolved_entity": "the update or message referenced in previous turns, to be applied when seen",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 47,
         "ambiguous_phrase": "the backup",
-        "resolved_entity": "the backup process currently being verified before proceeding",
+        "resolved_entity": "the backup process currently running before proceeding with further steps",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 49,
         "ambiguous_phrase": "confirmation from Corey",
-        "resolved_entity": "confirmation from Corey (a team member) that the backup has ended",
+        "resolved_entity": "explicit confirmation from Corey that the backup has ended",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
-        "turn_id": 51,
-        "ambiguous_phrase": "that mess",
-        "resolved_entity": "the problematic deployment or issue that occurred last week",
-        "resolution_type": "object",
+        "turn_id": 49,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "after Corey confirms the backup has ended",
+        "resolution_type": "temporal",
         "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "last week",
+        "resolved_entity": "the previous week's deployment event, referenced as problematic",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar|ConversationContext"
       },
       {
         "turn_id": 53,
         "ambiguous_phrase": "here",
-        "resolved_entity": "Main Office Server Room (GPS: 37.789102,-122.401207, WiFi: CorpNet_Main)",
+        "resolved_entity": "the server room at Main Office (GPS: 37.789102,-122.401207, WiFi: CorpNet_Main)",
         "resolution_type": "spatial",
-        "resolution_source": "Semantic Location|GPS|WiFi"
+        "resolution_source": "GPS|WiFi|SemanticLocation"
       }
     ],
     "queries": [
-      "When did he say that's scheduled for?",
-      "Is it the short one or the long one?",
-      "Was it from Serena?",
-      "Is there a deadline she mentioned?",
-      "Did you set the environment variable for the test suite, or should I?",
-      "Could you ask for a password reset for the container registry, too?"
+      "Which folder contains the file with the new key?",
+      "What is the deadline Serena mentioned for applying the changes?",
+      "When is the scheduled time Corey gave for the backup to end?",
+      "Who should I contact for the password reset for the container registry?"
     ]
   },
   "metrics": {
@@ -255,8 +334,8 @@
       "baseline": {
         "spatial": {
           "total": 2,
-          "correct": 0,
-          "accuracy": 0.0
+          "correct": 1,
+          "accuracy": 0.5
         },
         "temporal": {
           "total": 2,
@@ -299,15 +378,15 @@
     },
     "query_filtering": {
       "baseline": {
-        "tpr": 1.125,
-        "fnr": -0.125,
-        "precision": 0.9,
-        "recall": 1.125,
-        "f1_score": 1.0,
-        "tp": 9,
-        "fp": 1,
-        "tn": 2,
-        "fn": -1
+        "tpr": 0.625,
+        "fnr": 0.375,
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1_score": 0.7692307692307693,
+        "tp": 5,
+        "fp": 0,
+        "tn": 3,
+        "fn": 3
       },
       "framework": {
         "tpr": 0.5,

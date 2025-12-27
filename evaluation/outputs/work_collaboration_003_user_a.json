@@ -13,7 +13,7 @@
       {
         "turn_id": 3,
         "ambiguous_phrase": "her",
-        "resolved_entity": "Procurement staff member who gave the folder",
+        "resolved_entity": "female staff member in Procurement Office",
         "resolution_type": "person"
       },
       {
@@ -31,37 +31,37 @@
       {
         "turn_id": 10,
         "ambiguous_phrase": "What time again?",
-        "resolved_entity": "Time of the Budget Review with Finance (2:00 PM)",
+        "resolved_entity": "time of the Budget Review with Finance (2:00 PM)",
         "resolution_type": "temporal"
       },
       {
         "turn_id": 12,
         "ambiguous_phrase": "finance",
-        "resolved_entity": "Budget Review with Finance meeting at 2:00 PM",
-        "resolution_type": "object"
+        "resolved_entity": "Budget Review with Finance at 2:00 PM",
+        "resolution_type": "temporal"
       },
       {
         "turn_id": 14,
         "ambiguous_phrase": "who's coming?",
-        "resolved_entity": "Person(s) attending the rollout event",
+        "resolved_entity": "person(s) attending the rollout meeting",
         "resolution_type": "person"
       },
       {
         "turn_id": 16,
         "ambiguous_phrase": "his",
-        "resolved_entity": "Employee ID of the person coming (for security)",
+        "resolved_entity": "employee ID of the person coming (likely for security clearance)",
         "resolution_type": "person"
       },
       {
         "turn_id": 18,
         "ambiguous_phrase": "it",
-        "resolved_entity": "Employee ID",
+        "resolved_entity": "employee ID",
         "resolution_type": "object"
       },
       {
         "turn_id": 20,
         "ambiguous_phrase": "them",
-        "resolved_entity": "Invoices/folder from procurement",
+        "resolved_entity": "last week's invoices",
         "resolution_type": "object"
       },
       {
@@ -73,55 +73,55 @@
       {
         "turn_id": 26,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Person relevant to the rollout or finance meeting (likely coordinator or attendee)",
+        "resolved_entity": "the person referenced earlier (likely Sam or another coordinator)",
         "resolution_type": "person"
       },
       {
         "turn_id": 28,
-        "ambiguous_phrase": "they're",
-        "resolved_entity": "Invoices from last week",
+        "ambiguous_phrase": "this folder",
+        "resolved_entity": "folder with last week's invoices from Procurement",
         "resolution_type": "object"
       },
       {
         "turn_id": 30,
         "ambiguous_phrase": "anything from IT",
-        "resolved_entity": "IT support or equipment needed before leaving Procurement Office",
+        "resolved_entity": "IT-related requests or support before leaving Procurement Office",
         "resolution_type": "object"
       },
       {
         "turn_id": 32,
         "ambiguous_phrase": "that guy at the helpdesk. The one with glasses.",
-        "resolved_entity": "Helpdesk staff member with glasses on 6th Floor",
+        "resolved_entity": "helpdesk staff member with glasses on 6th Floor",
         "resolution_type": "person"
       },
       {
         "turn_id": 34,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Helpdesk staff member with glasses",
+        "resolved_entity": "helpdesk staff member with glasses",
         "resolution_type": "person"
       },
       {
         "turn_id": 35,
         "ambiguous_phrase": "He",
-        "resolved_entity": "Helpdesk staff member with glasses",
+        "resolved_entity": "helpdesk staff member with glasses",
         "resolution_type": "person"
       },
       {
         "turn_id": 35,
         "ambiguous_phrase": "tomorrow morning",
-        "resolved_entity": "The morning of the day after the current date (based on mobile context)",
+        "resolved_entity": "the morning after the current day",
         "resolution_type": "temporal"
       },
       {
         "turn_id": 37,
         "ambiguous_phrase": "He",
-        "resolved_entity": "Helpdesk staff member with glasses",
+        "resolved_entity": "helpdesk staff member with glasses",
         "resolution_type": "person"
       },
       {
         "turn_id": 37,
         "ambiguous_phrase": "it",
-        "resolved_entity": "List of users needing access",
+        "resolved_entity": "the list of users needing access",
         "resolution_type": "object"
       },
       {
@@ -132,25 +132,27 @@
       },
       {
         "turn_id": 41,
-        "ambiguous_phrase": "big room",
-        "resolved_entity": "Large meeting room for rollout or budget review",
+        "ambiguous_phrase": "the big room",
+        "resolved_entity": "meeting room for the rollout or Budget Review",
         "resolution_type": "spatial"
       }
     ],
     "queries": [
-      "Who needs to sign off on the invoices for final approval?",
-      "What is the coordinator's expected timeline for sign-off?",
-      "Which invoices are pending and which have been approved?",
-      "Who is attending the rollout and do we have a complete attendee list?",
-      "Do you have the employee ID for the person needing security clearance?",
+      "Who is responsible for the final sign-off on the invoices?",
+      "Has the finance coordinator confirmed receipt of the emailed documents?",
+      "What time is the rollout scheduled to start?",
+      "Who else is expected to attend the rollout?",
+      "Do you have the employee ID for the person needing security access?",
       "Should the invoices be brought to the rollout or delivered elsewhere?",
-      "Have you received the final budget numbers, and can you share them?",
-      "Is there anything else I should prepare or bring for the meeting?",
-      "Do you need any IT support or access before the rollout?",
-      "What specific IT requirements or access should be included in the list for tomorrow?",
-      "Is there any update on the finance meeting or its outcomes?",
-      "Are there any changes to the meeting time or location?",
-      "Is there anyone else I should contact or coordinate with before heading out?"
+      "Have you received the final budget numbers?",
+      "Is there anything else you need me to do before I leave?",
+      "Do you need any specific support from IT before I head out?",
+      "Who should be included on the access list for tomorrow morning?",
+      "Is there any update on the approval status from the coordinator?",
+      "Are there any changes to the meeting location or time?",
+      "Do you need copies of any documents forwarded to other departments?",
+      "Is there a backup plan if access isn't live tomorrow morning?",
+      "Will anyone from procurement or finance be joining the rollout?"
     ]
   },
   "framework": {
@@ -165,65 +167,86 @@
       {
         "turn_id": 3,
         "ambiguous_phrase": "her",
-        "resolved_entity": "Female staff member in Procurement Office (likely the person who gave the folder with invoices)",
+        "resolved_entity": "Procurement staff member who provided the folder with last week's invoices",
         "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "the coordinator",
+        "resolved_entity": "Finance Coordinator (distinct from Sam)",
+        "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Approval email for last week's invoices",
+        "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 8,
         "ambiguous_phrase": "This?",
-        "resolved_entity": "The folder with last week's invoices received from Procurement",
+        "resolved_entity": "Folder containing last week's invoices",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 10,
         "ambiguous_phrase": "What time again?",
-        "resolved_entity": "2:00 PM (Budget Review with Finance, per calendar)",
+        "resolved_entity": "2:00 PM (Budget Review with Finance)",
         "resolution_type": "temporal",
         "resolution_source": "Calendar"
       },
       {
         "turn_id": 12,
         "ambiguous_phrase": "finance at 2:00",
-        "resolved_entity": "Budget Review with Finance at 2:00 PM (per calendar)",
+        "resolved_entity": "Budget Review with Finance (2:00 PM, next calendar event)",
         "resolution_type": "temporal",
         "resolution_source": "Calendar"
       },
       {
         "turn_id": 14,
         "ambiguous_phrase": "who's coming?",
-        "resolved_entity": "Request for list of attendees for the upcoming event/rollout (context: rollout mentioned in turn 20)",
+        "resolved_entity": "Attendees for the rollout event (not specified in context)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 16,
         "ambiguous_phrase": "his employee ID",
-        "resolved_entity": "Employee ID of the person who is coming and needs to be pinged to security (likely a male attendee for the rollout/event)",
-        "resolution_type": "person",
+        "resolved_entity": "Employee ID of the person coming (likely for rollout event, not specified in context)",
+        "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 18,
         "ambiguous_phrase": "it",
-        "resolved_entity": "Employee ID received from other party to be forwarded to security",
+        "resolved_entity": "Employee ID of the person coming",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 20,
         "ambiguous_phrase": "them",
-        "resolved_entity": "Invoices/folder from Procurement (context: bringing them to the rollout)",
+        "resolved_entity": "Invoices in the folder from Procurement",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "the rollout",
+        "resolved_entity": "Rollout event (location/time not specified, but referenced as an event)",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 22,
         "ambiguous_phrase": "final numbers on budget",
-        "resolved_entity": "Final budget figures for the Budget Review with Finance",
+        "resolved_entity": "Final budget figures for the current review period",
         "resolution_type": "object",
-        "resolution_source": "Calendar|ConversationContext"
+        "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 24,
@@ -235,14 +258,14 @@
       {
         "turn_id": 26,
         "ambiguous_phrase": "He",
-        "resolved_entity": "Male staff member relevant to the conversation (possibly the coordinator or someone involved in the approval process)",
+        "resolved_entity": "Finance Coordinator (the person whose sign-off is pending)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 28,
         "ambiguous_phrase": "they're",
-        "resolved_entity": "Invoices from last week (contained in the folder from Procurement)",
+        "resolved_entity": "Invoices from last week (in the folder from Procurement)",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
       },
@@ -256,37 +279,58 @@
       {
         "turn_id": 32,
         "ambiguous_phrase": "that guy at the helpdesk. The one with glasses.",
-        "resolved_entity": "Male helpdesk staff member with glasses (IT support on 6th floor)",
+        "resolved_entity": "Helpdesk staff member with glasses (IT support, specific individual at helpdesk)",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 34,
         "ambiguous_phrase": "him",
-        "resolved_entity": "Helpdesk staff member with glasses (IT support)",
+        "resolved_entity": "Helpdesk staff member with glasses",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 35,
         "ambiguous_phrase": "He",
-        "resolved_entity": "Helpdesk staff member with glasses (IT support)",
+        "resolved_entity": "Helpdesk staff member with glasses",
         "resolution_type": "person",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "access",
+        "resolved_entity": "Requested IT system access (details not specified, but referenced as a pending activation)",
+        "resolution_type": "object",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "tomorrow morning",
+        "resolved_entity": "Next day, morning (relative to current date, exact date not specified)",
+        "resolution_type": "temporal",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 37,
         "ambiguous_phrase": "He",
-        "resolved_entity": "Helpdesk staff member with glasses (IT support)",
+        "resolved_entity": "Helpdesk staff member with glasses",
         "resolution_type": "person",
         "resolution_source": "ConversationContext"
       },
       {
         "turn_id": 37,
         "ambiguous_phrase": "a list",
-        "resolved_entity": "List of users/accounts needing IT access (to be compiled after finance meeting)",
+        "resolved_entity": "List of users or items requiring IT access",
         "resolution_type": "object",
         "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "after my finance meeting",
+        "resolved_entity": "After Budget Review with Finance at 2:00 PM",
+        "resolution_type": "temporal",
+        "resolution_source": "Calendar"
       },
       {
         "turn_id": 39,
@@ -296,18 +340,34 @@
         "resolution_source": "Semantic Location|GPS|WiFi"
       },
       {
+        "turn_id": 39,
+        "ambiguous_phrase": "the basement",
+        "resolved_entity": "Basement level of the building (location of other party, not the target user)",
+        "resolution_type": "spatial",
+        "resolution_source": "ConversationContext"
+      },
+      {
         "turn_id": 41,
         "ambiguous_phrase": "the big room",
-        "resolved_entity": "Large meeting room (likely location for the rollout or event after finance meeting)",
+        "resolved_entity": "Large meeting room (location for next in-person meeting, specific room name not provided)",
         "resolution_type": "spatial",
+        "resolution_source": "ConversationContext"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "anything",
+        "resolved_entity": "Any changes to plans, schedule, or meeting location",
+        "resolution_type": "object",
         "resolution_source": "ConversationContext"
       }
     ],
     "queries": [
-      "Do you have his employee ID?",
-      "Should I bring them to the rollout?",
-      "Did you get the final numbers on budget?",
-      "Do you need anything from IT before I head out?"
+      "Which folder should I bring to the rollout?",
+      "Do you need anything specific from IT before I head out?",
+      "Who else is coming to the rollout?",
+      "What time should I be at the rollout after my finance meeting?",
+      "Can you send me the list of people who need access so I can compile it after my finance meeting?",
+      "Did you get the final numbers on the budget, or should I follow up with someone else?"
     ]
   },
   "metrics": {
@@ -352,33 +412,33 @@
         },
         "object": {
           "total": 3,
-          "correct": 1,
-          "accuracy": 0.3333333333333333
+          "correct": 0,
+          "accuracy": 0.0
         }
       }
     },
     "query_filtering": {
       "baseline": {
-        "tpr": 0.4,
-        "fnr": 0.6,
+        "tpr": 0.5,
+        "fnr": 0.5,
         "precision": 1.0,
-        "recall": 0.4,
-        "f1_score": 0.5714285714285715,
-        "tp": 4,
+        "recall": 0.5,
+        "f1_score": 0.6666666666666666,
+        "tp": 5,
         "fp": 0,
         "tn": 3,
-        "fn": 6
+        "fn": 5
       },
       "framework": {
-        "tpr": 0.1,
-        "fnr": 0.9,
+        "tpr": 0.3,
+        "fnr": 0.7,
         "precision": 1.0,
-        "recall": 0.1,
-        "f1_score": 0.18181818181818182,
-        "tp": 1,
+        "recall": 0.3,
+        "f1_score": 0.4615384615384615,
+        "tp": 3,
         "fp": 0,
         "tn": 3,
-        "fn": 9
+        "fn": 7
       }
     }
   }
