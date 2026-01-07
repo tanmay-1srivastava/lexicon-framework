@@ -1,0 +1,374 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "file": "work_collaboration_002.json",
+  "mode": "guided_by_ground_truth",
+  "llm_input_keys_sent": [
+    "dataset_id",
+    "conversation_transcript"
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "server room",
+      "resolved_entity": "physical server room where User A is located",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A states they are at the server room prepping hardware in turn 1.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "If User A is referencing a virtual location",
+          "If there are multiple server rooms"
+        ],
+        "what_would_change_my_mind": "Additional context indicating a different location or clarification."
+      }
+    },
+    {
+      "trigger_turn_id": 2,
+      "ambiguous_phrase": "rack on your left",
+      "resolved_entity": "equipment rack to the left of User A in the server room",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 2 references User A's physical position in the server room and specifies the rack on their left.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Ambiguity in physical layout",
+          "Multiple racks on the left"
+        ],
+        "what_would_change_my_mind": "More detailed description of the room or racks."
+      }
+    },
+    {
+      "trigger_turn_id": 3,
+      "ambiguous_phrase": "this one",
+      "resolved_entity": "config file labeled 'v3.21-alpha' from the rack on User A's left",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 2 specifies the file and location; 'this one' refers to the config file just described.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple files with similar labels",
+          "User A picks a different item"
+        ],
+        "what_would_change_my_mind": "Contradictory evidence about which file was chosen."
+      }
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "now",
+      "resolved_entity": "the current moment during the deployment process",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A signals readiness for reboot at this moment in turn 5.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "User A meant a slightly later time",
+          "Delay between turns"
+        ],
+        "what_would_change_my_mind": "Explicit scheduling or time reference."
+      }
+    },
+    {
+      "trigger_turn_id": 9,
+      "ambiguous_phrase": "this folder",
+      "resolved_entity": "folder containing the new vault key file User A is working with",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 9 mentions switching the vault and refers to the folder with the new key file.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple folders open",
+          "Ambiguity about which folder"
+        ],
+        "what_would_change_my_mind": "Clarification on folder name or path."
+      }
+    },
+    {
+      "trigger_turn_id": 12,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "Corey",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 14 confirms Corey is the person to be contacted about the workflow.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple male contacts",
+          "Corey not the intended person"
+        ],
+        "what_would_change_my_mind": "Mention of a different person in workflow context."
+      }
+    },
+    {
+      "trigger_turn_id": 14,
+      "ambiguous_phrase": "Corey",
+      "resolved_entity": "Corey (team member responsible for workflow confirmation)",
+      "resolution_source": "Conversation Context",
+      "rationale": "Corey is referenced as the person to confirm workflow in previous turns.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Corey not involved in workflow",
+          "Mistaken identity"
+        ],
+        "what_would_change_my_mind": "Contradictory context about Corey's role."
+      }
+    },
+    {
+      "trigger_turn_id": 16,
+      "ambiguous_phrase": "the verification script",
+      "resolved_entity": "script used to verify system integrity after backup",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 16 specifies running the verification script after backup finishes per Corey's instructions.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple verification scripts",
+          "Ambiguity about which script"
+        ],
+        "what_would_change_my_mind": "Explicit naming of a different script."
+      }
+    },
+    {
+      "trigger_turn_id": 17,
+      "ambiguous_phrase": "When did he say that's scheduled for?",
+      "resolved_entity": "scheduled time for running the verification script after backup (right after 11:05 AM)",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 18 answers that Corey said 'right after 11:05 AM.'",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Corey gave a different time",
+          "Ambiguity in schedule"
+        ],
+        "what_would_change_my_mind": "Evidence of a different scheduled time."
+      }
+    },
+    {
+      "trigger_turn_id": 20,
+      "ambiguous_phrase": "that folder",
+      "resolved_entity": "folder containing the resource file for the deployment",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 20 refers to the folder where the resource file was missing previously.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple folders referenced",
+          "Ambiguity about which resource file"
+        ],
+        "what_would_change_my_mind": "Clarification of folder name or path."
+      }
+    },
+    {
+      "trigger_turn_id": 22,
+      "ambiguous_phrase": "that cable near the window",
+      "resolved_entity": "long fiber cable with blue connectors located near the window in the server room",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 24 clarifies it's the long cable with blue connectors near the window.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple cables near the window",
+          "Ambiguity in cable type"
+        ],
+        "what_would_change_my_mind": "Contradictory evidence about cable location or type."
+      }
+    },
+    {
+      "trigger_turn_id": 26,
+      "ambiguous_phrase": "her",
+      "resolved_entity": "Serena",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 27 identifies Serena as the sender of the note about CPU allocation.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple female contacts",
+          "Serena not the sender"
+        ],
+        "what_would_change_my_mind": "Mention of a different sender."
+      }
+    },
+    {
+      "trigger_turn_id": 29,
+      "ambiguous_phrase": "deadline",
+      "resolved_entity": "before noon",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 30 states Serena's deadline is 'before noon.'",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Ambiguity in deadline time",
+          "Different deadline mentioned elsewhere"
+        ],
+        "what_would_change_my_mind": "Contradictory deadline information."
+      }
+    },
+    {
+      "trigger_turn_id": 34,
+      "ambiguous_phrase": "the package for the patch",
+      "resolved_entity": "box with orange sticker containing the patch, delivered to User A's front desk",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 35 and 37 clarify the package is the box with the orange sticker at User A's location.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple packages",
+          "Wrong package identified"
+        ],
+        "what_would_change_my_mind": "Evidence of a different package for the patch."
+      }
+    },
+    {
+      "trigger_turn_id": 36,
+      "ambiguous_phrase": "orange sticker",
+      "resolved_entity": "orange sticker on the package containing the patch",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 37 confirms the orange sticker matches the tracking number for the patch package.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple stickers",
+          "Sticker on wrong package"
+        ],
+        "what_would_change_my_mind": "Contradictory evidence about sticker color or location."
+      }
+    },
+    {
+      "trigger_turn_id": 38,
+      "ambiguous_phrase": "login for the backup node",
+      "resolved_entity": "user credentials required to access the backup node",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 38 and 39 discuss needing login credentials for the backup node.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple backup nodes",
+          "Ambiguity in login type"
+        ],
+        "what_would_change_my_mind": "Clarification of which backup node or credentials."
+      }
+    },
+    {
+      "trigger_turn_id": 41,
+      "ambiguous_phrase": "password reset for the container registry",
+      "resolved_entity": "request to IT for a password reset for the container registry service",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 41 is a direct request for a password reset for the container registry.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple registries",
+          "Ambiguity about which password"
+        ],
+        "what_would_change_my_mind": "Mention of a different registry or password."
+      }
+    },
+    {
+      "trigger_turn_id": 42,
+      "ambiguous_phrase": "that document she sent last night",
+      "resolved_entity": "document containing patches sent by Serena last night",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turns 27 and 42 confirm Serena sent the document containing patches last night.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple documents sent",
+          "Different sender"
+        ],
+        "what_would_change_my_mind": "Clarification about sender or document contents."
+      }
+    },
+    {
+      "trigger_turn_id": 46,
+      "ambiguous_phrase": "old logs",
+      "resolved_entity": "previous system logs stored before the current backup",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 46 refers to clearing old logs, implying logs from before the current backup.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Ambiguity about which logs are old",
+          "Multiple log sources"
+        ],
+        "what_would_change_my_mind": "Explicit specification of log files or sources."
+      }
+    }
+  ],
+  "tot": {
+    "num_candidates": 5,
+    "candidates_scored": [
+      {
+        "temperature": 0.4,
+        "score": 100,
+        "reasons": [
+          "All resolutions match the correct trigger_turn_id and ambiguous_phrase.",
+          "Each resolved_entity is concrete and grounded in the conversation context.",
+          "resolution_source is consistently 'Conversation Context', which is allowed.",
+          "Rationales are short, evidence-based, and not step-by-step.",
+          "self_reflection fields are plausible and helpful.",
+          "No extra or missing resolutions; matches guided mode requirements.",
+          "JSON is valid and matches the required schema."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.6,
+        "score": 100,
+        "reasons": [
+          "All resolutions match the specified trigger_turn_id and ambiguous_phrase.",
+          "Each resolved_entity is concrete and grounded in the conversation context.",
+          "resolution_source is consistently 'Conversation Context', which is allowed.",
+          "Rationales are short, evidence-based, and do not include step-by-step reasoning.",
+          "self_reflection fields are plausible and helpful, listing confidence and possible failure modes.",
+          "No extra or missing resolutions; matches guided mode requirements.",
+          "JSON is valid and matches the required schema."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.8,
+        "score": 100,
+        "reasons": [
+          "Valid JSON and matches required schema exactly.",
+          "All resolutions match correct trigger_turn_id and ambiguous_phrase.",
+          "resolved_entity is concrete and grounded in context for each case.",
+          "resolution_source uses allowed labels.",
+          "Rationale is short and evidence-based.",
+          "Self_reflection is plausible and helpful.",
+          "No hallucinated or extra resolutions."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.9,
+        "score": 100,
+        "reasons": [
+          "Valid JSON and matches required schema exactly.",
+          "All resolutions correspond to correct trigger_turn_id and ambiguous_phrase.",
+          "resolved_entity is concrete and context-grounded for each case.",
+          "resolution_source uses allowed label ('Conversation Context').",
+          "Rationale is short and evidence-based, not step-by-step.",
+          "Self_reflection is plausible and helpful for each resolution.",
+          "No hallucinated or extra resolutions; strictly follows guided mode."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.2,
+        "score": 98,
+        "reasons": [
+          "Valid JSON and matches required schema.",
+          "All trigger_turn_id and ambiguous_phrase pairs are present and correctly resolved.",
+          "resolved_entity is concrete and context-grounded for each item.",
+          "resolution_source is consistently 'Conversation Context' and appropriate.",
+          "Rationales are short, evidence-based, and avoid step-by-step reasoning.",
+          "Self_reflection is plausible and helpful for each resolution.",
+          "No hallucinated extra resolutions; strictly guided by ground truth."
+        ],
+        "must_fix": [
+          "Consider making rationales even more concise for some entries.",
+          "Ensure self_reflection confidence levels are always justified by context."
+        ]
+      }
+    ]
+  }
+}

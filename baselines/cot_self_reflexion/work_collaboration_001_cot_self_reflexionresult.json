@@ -1,0 +1,311 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "file": "work_collaboration_001.json",
+  "mode": "guided_by_ground_truth",
+  "llm_input_keys_sent": [
+    "dataset_id",
+    "conversation_transcript"
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "conference room",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A states they just got into the conference room in the same turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misreading location context",
+          "Overlooking prior location clues"
+        ],
+        "what_would_change_my_mind": "If another location was mentioned as 'here' in previous turns."
+      }
+    },
+    {
+      "trigger_turn_id": 2,
+      "ambiguous_phrase": "the lab",
+      "resolved_entity": "lab where User B is located",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says they are still at the lab in this turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Lab could refer to a different lab",
+          "Ambiguity in multiple lab locations"
+        ],
+        "what_would_change_my_mind": "If User B's calendar or GPS indicated a different location."
+      }
+    },
+    {
+      "trigger_turn_id": 3,
+      "ambiguous_phrase": "the box",
+      "resolved_entity": "box by the conference room door containing samples",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says the box is right by the door and refers to the samples mentioned by User B.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Box could refer to a different box",
+          "Misattribution of box contents"
+        ],
+        "what_would_change_my_mind": "If another box was referenced earlier or in context."
+      }
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "wrapped package",
+      "resolved_entity": "wrapped package inside the box by the conference room door",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A describes finding a wrapped package and a folder inside the box.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple packages present",
+          "Package not inside the box"
+        ],
+        "what_would_change_my_mind": "If more than one package was described in context."
+      }
+    },
+    {
+      "trigger_turn_id": 6,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "designer",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B previously mentioned 'the designer' in turn 4 as the person associated with the prototype.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing designer with another male person",
+          "Designer not present at User B's location"
+        ],
+        "what_would_change_my_mind": "If another male person was referenced as needing the folder."
+      }
+    },
+    {
+      "trigger_turn_id": 8,
+      "ambiguous_phrase": "he",
+      "resolved_entity": "designer",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'he’s with me' referring to the designer mentioned earlier.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "He could refer to another male person",
+          "Designer not present"
+        ],
+        "what_would_change_my_mind": "If another male person was present with User B."
+      }
+    },
+    {
+      "trigger_turn_id": 9,
+      "ambiguous_phrase": "there",
+      "resolved_entity": "lab where User B is located",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to heading 'there' later, which is where User B is (the lab).",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "'There' could refer to another location",
+          "Misreading User B's location"
+        ],
+        "what_would_change_my_mind": "If User B moved to a different location before this turn."
+      }
+    },
+    {
+      "trigger_turn_id": 10,
+      "ambiguous_phrase": "the QA review",
+      "resolved_entity": "QA review meeting scheduled for 12:30",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks about the QA review schedule, which is confirmed as moved to 12:30 in turn 11.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "QA review could refer to a different event",
+          "Incorrect time association"
+        ],
+        "what_would_change_my_mind": "If another QA review was scheduled in User A's calendar."
+      }
+    },
+    {
+      "trigger_turn_id": 12,
+      "ambiguous_phrase": "the café next door",
+      "resolved_entity": "Green Bean Café on 45th",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms in turn 14 that the café next door is the Green Bean Café on 45th.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple cafés nearby",
+          "Incorrect café name"
+        ],
+        "what_would_change_my_mind": "If another café was referenced as 'next door'."
+      }
+    },
+    {
+      "trigger_turn_id": 14,
+      "ambiguous_phrase": "she",
+      "resolved_entity": "coordinator from QA",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'she’ll be there at one' after mentioning the wrap-up with the coordinator.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "She could refer to another female",
+          "Coordinator not female"
+        ],
+        "what_would_change_my_mind": "If another female was referenced as attending the meeting."
+      }
+    },
+    {
+      "trigger_turn_id": 17,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "vendor",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks about contacting 'him' regarding revised specs, which refers to the vendor discussed in turn 16.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Him could refer to designer",
+          "Vendor not male"
+        ],
+        "what_would_change_my_mind": "If another male was referenced in the context of specs."
+      }
+    },
+    {
+      "trigger_turn_id": 20,
+      "ambiguous_phrase": "her",
+      "resolved_entity": "coordinator from QA",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks about a message from 'her' regarding the launch checklist, referring to the coordinator from QA.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Her could refer to another female",
+          "Coordinator not sender of checklist"
+        ],
+        "what_would_change_my_mind": "If another female sent the checklist."
+      }
+    },
+    {
+      "trigger_turn_id": 22,
+      "ambiguous_phrase": "shared folder named 'Nimbus_Final'",
+      "resolved_entity": "shared drive folder 'Nimbus_Final' containing launch checklist",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B specifies the folder location for the checklist document.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Folder name could be incorrect",
+          "Checklist not in folder"
+        ],
+        "what_would_change_my_mind": "If the folder was not found or named differently."
+      }
+    },
+    {
+      "trigger_turn_id": 24,
+      "ambiguous_phrase": "IT lead",
+      "resolved_entity": "IT lead at the downtown office",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to the IT lead who sent a note about server migration from the downtown office team.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple IT leads",
+          "IT lead not from downtown office"
+        ],
+        "what_would_change_my_mind": "If another IT lead was referenced in context."
+      }
+    },
+    {
+      "trigger_turn_id": 26,
+      "ambiguous_phrase": "client",
+      "resolved_entity": "client requesting demo link at 10 AM tomorrow",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'he replied' about the demo link, referring to the client.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Client could refer to client's assistant",
+          "Client not male"
+        ],
+        "what_would_change_my_mind": "If another client was referenced in the conversation."
+      }
+    },
+    {
+      "trigger_turn_id": 33,
+      "ambiguous_phrase": "coordinator from QA",
+      "resolved_entity": "QA coordinator arriving at User A's location by eleven",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says the coordinator from QA will be there by eleven for the dry run.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple QA coordinators",
+          "Coordinator not arriving"
+        ],
+        "what_would_change_my_mind": "If another coordinator was referenced for the dry run."
+      }
+    },
+    {
+      "trigger_turn_id": 35,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "developer",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks User B to ask 'him' about the final build status, referring to the developer responsible for the build.",
+      "self_reflection": {
+        "confidence": "medium",
+        "possible_failure_modes": [
+          "Him could refer to vendor or designer",
+          "Developer not responsible for build"
+        ],
+        "what_would_change_my_mind": "If another male was referenced as responsible for the build."
+      }
+    },
+    {
+      "trigger_turn_id": 41,
+      "ambiguous_phrase": "her",
+      "resolved_entity": "QA coordinator",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B tells User A to give the prototype to 'her', referring to the QA coordinator.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Her could refer to another female",
+          "Prototype not for coordinator"
+        ],
+        "what_would_change_my_mind": "If another female was present in the QA room."
+      }
+    },
+    {
+      "trigger_turn_id": 42,
+      "ambiguous_phrase": "table by the windows",
+      "resolved_entity": "table by the windows in the QA room",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says the QA coordinator is usually at the table by the windows in the QA room.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple tables by windows",
+          "Wrong room"
+        ],
+        "what_would_change_my_mind": "If another table was referenced as the coordinator's spot."
+      }
+    },
+    {
+      "trigger_turn_id": 47,
+      "ambiguous_phrase": "the package",
+      "resolved_entity": "wrapped package containing the prototype",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B reminds User A not to forget the package, which refers to the wrapped package containing the prototype.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Package could refer to paperwork folder",
+          "Multiple packages present"
+        ],
+        "what_would_change_my_mind": "If another package was referenced for delivery."
+      }
+    }
+  ]
+}

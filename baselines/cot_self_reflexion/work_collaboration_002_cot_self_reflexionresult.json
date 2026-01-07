@@ -1,0 +1,296 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "file": "work_collaboration_002.json",
+  "mode": "guided_by_ground_truth",
+  "llm_input_keys_sent": [
+    "dataset_id",
+    "conversation_transcript"
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "server room",
+      "resolved_entity": "the server room where User A is currently located",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A states in turn 1 that they are at the server room prepping hardware.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "User A could be referencing a different server room if multiple exist",
+          "Misinterpretation of location context"
+        ],
+        "what_would_change_my_mind": "Evidence of multiple server rooms or explicit clarification in the transcript."
+      }
+    },
+    {
+      "trigger_turn_id": 2,
+      "ambiguous_phrase": "rack on your left",
+      "resolved_entity": "the equipment rack to the left of User A in the server room",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to the rack on User A's left in the server room, as established in turn 1.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Ambiguity if there are multiple racks on the left",
+          "Unclear spatial orientation"
+        ],
+        "what_would_change_my_mind": "Clarification about the number or arrangement of racks."
+      }
+    },
+    {
+      "trigger_turn_id": 3,
+      "ambiguous_phrase": "this one",
+      "resolved_entity": "the config file labeled 'v3.21-alpha' from the rack on User A's left",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 2 specifies the config file to be grabbed from the rack on the left, labeled 'v3.21-alpha'.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "User A could be referring to a different item",
+          "Label ambiguity"
+        ],
+        "what_would_change_my_mind": "If User A later specifies a different file or label."
+      }
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "now",
+      "resolved_entity": "the current moment after User A is ready for reboot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A signals readiness for reboot, so 'now' refers to the present time in the conversation.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Time zone confusion",
+          "Delay between readiness and action"
+        ],
+        "what_would_change_my_mind": "If a specific timestamp or delay is mentioned."
+      }
+    },
+    {
+      "trigger_turn_id": 9,
+      "ambiguous_phrase": "this folder",
+      "resolved_entity": "the folder User A is currently using to switch the vault key, likely on their console or server",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to the folder containing the new key for the vault, as mentioned in turn 9.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple folders could be open",
+          "Unclear file system context"
+        ],
+        "what_would_change_my_mind": "Explicit naming or path of the folder in the transcript."
+      }
+    },
+    {
+      "trigger_turn_id": 12,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "Corey",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 14 confirms Corey is the person to be messaged about workflow confirmation.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple male contacts involved",
+          "Pronoun ambiguity"
+        ],
+        "what_would_change_my_mind": "Mention of another male contact relevant to workflow."
+      }
+    },
+    {
+      "trigger_turn_id": 14,
+      "ambiguous_phrase": "Corey",
+      "resolved_entity": "Corey, the workflow contact for confirmation",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B states they will message Corey to confirm the workflow in turn 14.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple people named Corey",
+          "Role ambiguity"
+        ],
+        "what_would_change_my_mind": "If another Corey is referenced or role is clarified differently."
+      }
+    },
+    {
+      "trigger_turn_id": 16,
+      "ambiguous_phrase": "the verification script",
+      "resolved_entity": "the script to verify the deployment after the backup finishes",
+      "resolution_source": "Conversation Context",
+      "rationale": "Corey instructs to run the verification script after backup, as relayed in turn 16.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple verification scripts exist",
+          "Script name ambiguity"
+        ],
+        "what_would_change_my_mind": "If a specific script name or multiple scripts are mentioned."
+      }
+    },
+    {
+      "trigger_turn_id": 17,
+      "ambiguous_phrase": "When did he say that's scheduled for?",
+      "resolved_entity": "the scheduled time for the backup to finish, as stated by Corey",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks about Corey's scheduled time for the backup, clarified in turn 18 as 'right after 11:05 AM'.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpretation of which event is scheduled",
+          "Ambiguity in Corey's statement"
+        ],
+        "what_would_change_my_mind": "If Corey refers to a different event or time."
+      }
+    },
+    {
+      "trigger_turn_id": 20,
+      "ambiguous_phrase": "that folder",
+      "resolved_entity": "the folder containing the resource file that was previously missing",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks User A to check the resource file in the folder that was missing during the last update.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple folders could be referenced",
+          "Unclear which resource file"
+        ],
+        "what_would_change_my_mind": "Explicit folder name or path provided."
+      }
+    },
+    {
+      "trigger_turn_id": 22,
+      "ambiguous_phrase": "that cable near the window",
+      "resolved_entity": "the long fiber cable with blue connectors near the window",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 24 clarifies it's the long cable with blue connectors near the window.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple cables near the window",
+          "Connector color ambiguity"
+        ],
+        "what_would_change_my_mind": "If another cable near the window is described."
+      }
+    },
+    {
+      "trigger_turn_id": 26,
+      "ambiguous_phrase": "her",
+      "resolved_entity": "Serena",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 27 confirms 'her' refers to Serena, who sent the note about CPU allocation.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple female contacts involved",
+          "Pronoun ambiguity"
+        ],
+        "what_would_change_my_mind": "If another female contact is referenced in the context."
+      }
+    },
+    {
+      "trigger_turn_id": 29,
+      "ambiguous_phrase": "deadline",
+      "resolved_entity": "before noon, as specified by Serena",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 30 states the deadline is 'before noon', as mentioned by Serena.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple deadlines exist",
+          "Misattribution of deadline source"
+        ],
+        "what_would_change_my_mind": "If another deadline is mentioned for a different task."
+      }
+    },
+    {
+      "trigger_turn_id": 34,
+      "ambiguous_phrase": "the package for the patch",
+      "resolved_entity": "the box with the orange sticker dropped off at User A's front desk",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 35 and 37 specify the package is the box with the orange sticker at User A's location.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple packages for patches",
+          "Sticker color ambiguity"
+        ],
+        "what_would_change_my_mind": "If another package is described or delivered."
+      }
+    },
+    {
+      "trigger_turn_id": 36,
+      "ambiguous_phrase": "orange sticker",
+      "resolved_entity": "the orange sticker on the box containing the patch package",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turn 37 confirms the orange sticker matches the tracking number for the patch package.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple boxes with orange stickers",
+          "Sticker misplaced"
+        ],
+        "what_would_change_my_mind": "If another orange sticker is referenced on a different box."
+      }
+    },
+    {
+      "trigger_turn_id": 38,
+      "ambiguous_phrase": "login for the backup node",
+      "resolved_entity": "the user credentials required to access the backup node",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks if User A still has the login credentials for the backup node in turn 38.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple backup nodes",
+          "Credential ambiguity"
+        ],
+        "what_would_change_my_mind": "If multiple backup nodes or logins are mentioned."
+      }
+    },
+    {
+      "trigger_turn_id": 41,
+      "ambiguous_phrase": "password reset for the container registry",
+      "resolved_entity": "a request to IT for a password reset for the container registry system",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks User B to request a password reset for the container registry in turn 41.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple container registries",
+          "Password reset for a different system"
+        ],
+        "what_would_change_my_mind": "If another registry or system is referenced for password reset."
+      }
+    },
+    {
+      "trigger_turn_id": 42,
+      "ambiguous_phrase": "that document she sent last night",
+      "resolved_entity": "the document sent by Serena last night containing patch details",
+      "resolution_source": "Conversation Context",
+      "rationale": "Turns 27 and 44 confirm Serena sent a document last night with patch information.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple documents sent by Serena",
+          "Timing ambiguity"
+        ],
+        "what_would_change_my_mind": "If another document sent by Serena is mentioned."
+      }
+    },
+    {
+      "trigger_turn_id": 46,
+      "ambiguous_phrase": "old logs",
+      "resolved_entity": "the previous log files stored before the current backup",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks about clearing old logs, referring to log files generated before the backup.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Multiple sets of old logs",
+          "Log retention policy ambiguity"
+        ],
+        "what_would_change_my_mind": "If specific log files or timeframes are clarified."
+      }
+    }
+  ]
+}

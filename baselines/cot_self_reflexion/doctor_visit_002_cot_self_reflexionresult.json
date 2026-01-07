@@ -1,0 +1,641 @@
+{
+  "dataset_id": "scenario_protocol_001_medical_coordination",
+  "file": "doctor_visit_002.json",
+  "mode": "guided_by_ground_truth",
+  "llm_input_keys_sent": [
+    "dataset_id",
+    "conversation_transcript"
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "the lounge",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A explicitly states being in the lounge in the same turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misreading location",
+          "Overlooking explicit mention"
+        ],
+        "what_would_change_my_mind": "If the lounge was not mentioned in the turn."
+      }
+    },
+    {
+      "trigger_turn_id": 4,
+      "ambiguous_phrase": "that room",
+      "resolved_entity": "the room next to the pharmacy",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B specifies the room is next to the pharmacy.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misidentifying which room",
+          "Missing spatial reference"
+        ],
+        "what_would_change_my_mind": "If another room was referenced nearby."
+      }
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "there",
+      "resolved_entity": "the room next to the pharmacy",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A is heading to the room mentioned in the previous turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing destination",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If User A indicated a different location."
+      }
+    },
+    {
+      "trigger_turn_id": 6,
+      "ambiguous_phrase": "them",
+      "resolved_entity": "test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to having received results and reviewing them.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing 'them' with other items",
+          "Missing context of results"
+        ],
+        "what_would_change_my_mind": "If another plural item was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 7,
+      "ambiguous_phrase": "it",
+      "resolved_entity": "test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks about going over 'it' after User B mentions reviewing results.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking 'it' for another topic",
+          "Missing context"
+        ],
+        "what_would_change_my_mind": "If a different singular item was discussed."
+      }
+    },
+    {
+      "trigger_turn_id": 8,
+      "ambiguous_phrase": "the rest",
+      "resolved_entity": "the non-critical parts of the test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B distinguishes between the critical part and 'the rest'.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding what 'the rest' refers to",
+          "Missing division of results"
+        ],
+        "what_would_change_my_mind": "If 'the rest' referred to something other than test results."
+      }
+    },
+    {
+      "trigger_turn_id": 9,
+      "ambiguous_phrase": "that",
+      "resolved_entity": "discussing the critical part of the test results alone",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A agrees to the plan just proposed by User B.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misattributing agreement",
+          "Missing prior proposal"
+        ],
+        "what_would_change_my_mind": "If a different action was proposed."
+      }
+    },
+    {
+      "trigger_turn_id": 10,
+      "ambiguous_phrase": "my office",
+      "resolved_entity": "Dr. Smith's office",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to their own office as Dr. Smith.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking which office",
+          "Missing speaker identity"
+        ],
+        "what_would_change_my_mind": "If another office was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 12,
+      "ambiguous_phrase": "the consultation room",
+      "resolved_entity": "the room next to the pharmacy, left door",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms the consultation room is the left door next to the pharmacy.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing room location",
+          "Overlooking explicit direction"
+        ],
+        "what_would_change_my_mind": "If the consultation room was elsewhere."
+      }
+    },
+    {
+      "trigger_turn_id": 13,
+      "ambiguous_phrase": "the folder",
+      "resolved_entity": "folder with test papers",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A specifies the folder contains test papers.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking folder contents",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If the folder contained something else."
+      }
+    },
+    {
+      "trigger_turn_id": 14,
+      "ambiguous_phrase": "them",
+      "resolved_entity": "test papers",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks User A to bring the test papers referenced in the previous turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing 'them' with other items",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another plural item was mentioned."
+      }
+    },
+    {
+      "trigger_turn_id": 15,
+      "ambiguous_phrase": "it",
+      "resolved_entity": "the folder with test papers",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A confirms bringing the folder just mentioned.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking 'it' for another item",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If 'it' referred to something else."
+      }
+    },
+    {
+      "trigger_turn_id": 17,
+      "ambiguous_phrase": "there",
+      "resolved_entity": "in the bloodwork results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks if anything is concerning in the results being discussed.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding location vs. context",
+          "Missing topic of discussion"
+        ],
+        "what_would_change_my_mind": "If another context was being discussed."
+      }
+    },
+    {
+      "trigger_turn_id": 19,
+      "ambiguous_phrase": "that",
+      "resolved_entity": "the details about hemoglobin/bloodwork",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to sharing the details just discussed.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misattributing what 'that' refers to",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another detail was discussed."
+      }
+    },
+    {
+      "trigger_turn_id": 21,
+      "ambiguous_phrase": "now",
+      "resolved_entity": "at this moment",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks about scheduling a follow-up at the present time.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding time reference",
+          "Missing context of scheduling"
+        ],
+        "what_would_change_my_mind": "If 'now' referred to a different time."
+      }
+    },
+    {
+      "trigger_turn_id": 22,
+      "ambiguous_phrase": "today",
+      "resolved_entity": "June 1, 2024 (assumed date of conversation)",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B offers an appointment 'today', referring to the current date.",
+      "self_reflection": {
+        "confidence": "medium",
+        "possible_failure_modes": [
+          "Incorrect date assumption",
+          "Missing explicit date"
+        ],
+        "what_would_change_my_mind": "If the actual date was specified elsewhere."
+      }
+    },
+    {
+      "trigger_turn_id": 22,
+      "ambiguous_phrase": "my calendar",
+      "resolved_entity": "Dr. Smith's appointment calendar",
+      "resolution_source": "User B Calendar",
+      "rationale": "User B refers to their own calendar for scheduling.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking which calendar",
+          "Missing speaker identity"
+        ],
+        "what_would_change_my_mind": "If another calendar was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 24,
+      "ambiguous_phrase": "Exam Room 3",
+      "resolved_entity": "Exam Room 3 in the medical facility",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B schedules the appointment in Exam Room 3.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misidentifying room location",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another room was specified."
+      }
+    },
+    {
+      "trigger_turn_id": 25,
+      "ambiguous_phrase": "that medication",
+      "resolved_entity": "medication mentioned last week by Dr. Smith",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to medication previously discussed with Dr. Smith.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Unclear which medication",
+          "Missing prior conversation"
+        ],
+        "what_would_change_my_mind": "If a specific medication was named."
+      }
+    },
+    {
+      "trigger_turn_id": 26,
+      "ambiguous_phrase": "it",
+      "resolved_entity": "the medication mentioned last week",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms bringing the medication just referenced.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking 'it' for another item",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If 'it' referred to something else."
+      }
+    },
+    {
+      "trigger_turn_id": 27,
+      "ambiguous_phrase": "then",
+      "resolved_entity": "the 4:00 PM appointment time",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to the time of the scheduled appointment.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding time reference",
+          "Missing explicit time"
+        ],
+        "what_would_change_my_mind": "If another time was scheduled."
+      }
+    },
+    {
+      "trigger_turn_id": 28,
+      "ambiguous_phrase": "everything",
+      "resolved_entity": "all details including bloodwork and medication",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks if User A wants her husband to hear about all details or just medication.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding scope of 'everything'",
+          "Missing context of details"
+        ],
+        "what_would_change_my_mind": "If 'everything' referred to something else."
+      }
+    },
+    {
+      "trigger_turn_id": 29,
+      "ambiguous_phrase": "the bloodwork",
+      "resolved_entity": "blood test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A wants to keep blood test results private.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing which test",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another test was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 31,
+      "ambiguous_phrase": "the summary",
+      "resolved_entity": "summary of test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A requests the summary of results to be sent via email.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing which summary",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another summary was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 33,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "User A's husband",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to her husband not seeing the results.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking who 'him' refers to",
+          "Missing relationship context"
+        ],
+        "what_would_change_my_mind": "If another male was present."
+      }
+    },
+    {
+      "trigger_turn_id": 34,
+      "ambiguous_phrase": "it",
+      "resolved_entity": "the summary of test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms sending the summary to User A.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking 'it' for another item",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another item was being sent."
+      }
+    },
+    {
+      "trigger_turn_id": 35,
+      "ambiguous_phrase": "the insurance card",
+      "resolved_entity": "User A's insurance card",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A left her insurance card with the receptionist.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking which card",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another card was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 36,
+      "ambiguous_phrase": "it",
+      "resolved_entity": "the insurance card",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms the insurance card will be scanned and returned.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking 'it' for another item",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If 'it' referred to something else."
+      }
+    },
+    {
+      "trigger_turn_id": 37,
+      "ambiguous_phrase": "the café",
+      "resolved_entity": "the café in the medical facility or nearby",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says her husband stepped out to the café.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Unclear which café",
+          "Missing location context"
+        ],
+        "what_would_change_my_mind": "If another café was specified."
+      }
+    },
+    {
+      "trigger_turn_id": 38,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "the consultation room",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to when the husband is present in the consultation room.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking location",
+          "Missing context of meeting place"
+        ],
+        "what_would_change_my_mind": "If another location was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 39,
+      "ambiguous_phrase": "the consultation room",
+      "resolved_entity": "the room next to the pharmacy, left door",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to the consultation room for meeting at 4.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing room location",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another room was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 40,
+      "ambiguous_phrase": "he",
+      "resolved_entity": "User A's husband",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to the husband asking about cholesterol.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Mistaking who 'he' refers to",
+          "Missing relationship context"
+        ],
+        "what_would_change_my_mind": "If another male was present."
+      }
+    },
+    {
+      "trigger_turn_id": 41,
+      "ambiguous_phrase": "the basics",
+      "resolved_entity": "basic information about cholesterol",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A requests only basic cholesterol info for her husband.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding what 'the basics' are",
+          "Missing context of cholesterol"
+        ],
+        "what_would_change_my_mind": "If 'the basics' referred to something else."
+      }
+    },
+    {
+      "trigger_turn_id": 42,
+      "ambiguous_phrase": "the files",
+      "resolved_entity": "files containing medical test results",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B will separate files for privacy.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing which files",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If other files were referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 43,
+      "ambiguous_phrase": "this",
+      "resolved_entity": "keeping medical information private",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A thanks for help in keeping information private.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding what 'this' refers to",
+          "Missing context of privacy"
+        ],
+        "what_would_change_my_mind": "If another matter was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 44,
+      "ambiguous_phrase": "patients",
+      "resolved_entity": "medical patients",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B refers to privacy concern for patients in general.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing which patients",
+          "Missing context of medical setting"
+        ],
+        "what_would_change_my_mind": "If another group was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 45,
+      "ambiguous_phrase": "that",
+      "resolved_entity": "privacy consent paperwork",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks about paperwork for privacy consent just discussed.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misattributing what 'that' refers to",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another paperwork was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 46,
+      "ambiguous_phrase": "the privacy consent",
+      "resolved_entity": "privacy consent form",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B confirms the need to sign the privacy consent form.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing which consent",
+          "Missing explicit mention"
+        ],
+        "what_would_change_my_mind": "If another consent was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 47,
+      "ambiguous_phrase": "that",
+      "resolved_entity": "signing the privacy consent form",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A confirms intent to sign the privacy consent after appointment.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misattributing what 'that' refers to",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another action was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 48,
+      "ambiguous_phrase": "now",
+      "resolved_entity": "at this moment",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks if there is anything else at the present time.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding time reference",
+          "Missing context of conversation end"
+        ],
+        "what_would_change_my_mind": "If 'now' referred to a different time."
+      }
+    },
+    {
+      "trigger_turn_id": 51,
+      "ambiguous_phrase": "there",
+      "resolved_entity": "Exam Room 3",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A confirms meeting in Exam Room 3 as previously scheduled.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confusing location",
+          "Missing prior reference"
+        ],
+        "what_would_change_my_mind": "If another location was referenced."
+      }
+    },
+    {
+      "trigger_turn_id": 52,
+      "ambiguous_phrase": "anything",
+      "resolved_entity": "any additional questions or concerns",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B invites User A to ask about any further issues.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misunderstanding scope of 'anything'",
+          "Missing context of open-ended question"
+        ],
+        "what_would_change_my_mind": "If 'anything' referred to a specific item."
+      }
+    }
+  ]
+}
