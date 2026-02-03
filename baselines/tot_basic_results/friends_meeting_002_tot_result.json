@@ -1,0 +1,479 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "file": "friends_meeting_002.json",
+  "mode": "guided_by_ground_truth",
+  "llm_input_keys_sent": [
+    "dataset_id",
+    "conversation_transcript"
+  ],
+  "ground_truth_resolutions": [
+    {
+      "trigger_turn_id": 1,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "User A's current location before driving up",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'I'm just getting out of here,' referring to their present location before driving up.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpret User A's location",
+          "Assume a specific place without evidence"
+        ],
+        "what_would_change_my_mind": "If GPS or calendar data specified a location."
+      }
+    },
+    {
+      "trigger_turn_id": 4,
+      "ambiguous_phrase": "the usual spot",
+      "resolved_entity": "the parking lot where User A and User B typically meet",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B suggests swapping at 'the usual spot,' which contextually refers to their typical meeting place, likely the parking lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong location if prior context is missing",
+          "Confuse with another spot"
+        ],
+        "what_would_change_my_mind": "If prior turns specified a different usual meeting spot."
+      }
+    },
+    {
+      "trigger_turn_id": 5,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "User A's current location near the parking lot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'I'm nearby anyway,' indicating 'here' is close to the parking lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpret proximity",
+          "Assume wrong location"
+        ],
+        "what_would_change_my_mind": "If GPS data showed a different location."
+      }
+    },
+    {
+      "trigger_turn_id": 6,
+      "ambiguous_phrase": "lot",
+      "resolved_entity": "the parking lot where User B is waiting",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B states 'I’m still at the lot,' referring to the parking lot where they are waiting.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong lot if multiple lots exist",
+          "Confuse with trailhead"
+        ],
+        "what_would_change_my_mind": "If context specified a different lot."
+      }
+    },
+    {
+      "trigger_turn_id": 6,
+      "ambiguous_phrase": "that old Jeep",
+      "resolved_entity": "an old Jeep parked next to User B's car in the parking lot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says their car is next to 'that old Jeep,' indicating a specific vehicle in the lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong vehicle",
+          "Misinterpret reference"
+        ],
+        "what_would_change_my_mind": "If context clarified a different vehicle."
+      }
+    },
+    {
+      "trigger_turn_id": 9,
+      "ambiguous_phrase": "him",
+      "resolved_entity": "Chris",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks if User B has seen 'him,' referring to Chris mentioned in the previous turn.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confuse with another person",
+          "Lose track of referent"
+        ],
+        "what_would_change_my_mind": "If context referenced a different person."
+      }
+    },
+    {
+      "trigger_turn_id": 12,
+      "ambiguous_phrase": "my place",
+      "resolved_entity": "User B's home in Andes, 10 minutes south of the parking lot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'my place,' clarified in turn 14 as being in Andes, 10 minutes south.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong location",
+          "Miss contextual clarification"
+        ],
+        "what_would_change_my_mind": "If GPS or calendar data contradicted this."
+      }
+    },
+    {
+      "trigger_turn_id": 14,
+      "ambiguous_phrase": "Andes",
+      "resolved_entity": "Andes, a town 10 minutes south of the parking lot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B specifies their place is in Andes, a town nearby.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpret Andes as something else",
+          "Assume wrong town"
+        ],
+        "what_would_change_my_mind": "If context specified a different Andes."
+      }
+    },
+    {
+      "trigger_turn_id": 15,
+      "ambiguous_phrase": "1:30",
+      "resolved_entity": "1:30 PM",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'wait till 1:30,' referring to the time 1:30 PM.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpret AM/PM",
+          "Confuse with another time"
+        ],
+        "what_would_change_my_mind": "If calendar data specified a different time."
+      }
+    },
+    {
+      "trigger_turn_id": 16,
+      "ambiguous_phrase": "that first aid kit",
+      "resolved_entity": "the first aid kit User A possesses, stored in their glove box",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks for 'that first aid kit,' and User A confirms it's in their glove box.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong kit",
+          "Confuse with another item"
+        ],
+        "what_would_change_my_mind": "If context specified a different kit."
+      }
+    },
+    {
+      "trigger_turn_id": 18,
+      "ambiguous_phrase": "the portable charger",
+      "resolved_entity": "User A's portable charger",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks for a portable charger, and User A agrees to bring theirs.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong charger",
+          "Confuse with another device"
+        ],
+        "what_would_change_my_mind": "If context specified a different charger."
+      }
+    },
+    {
+      "trigger_turn_id": 21,
+      "ambiguous_phrase": "hourly",
+      "resolved_entity": "hourly weather forecast for tonight at the ridge",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A refers to not seeing 'the hourly' for tonight, meaning the hourly weather forecast.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Misinterpret as something else",
+          "Confuse with hourly schedule"
+        ],
+        "what_would_change_my_mind": "If context clarified a different meaning."
+      }
+    },
+    {
+      "trigger_turn_id": 24,
+      "ambiguous_phrase": "Sam",
+      "resolved_entity": "Sam, a friend who may be joining the group",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks if User A has contacted Sam about joining, referring to a person.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Confuse with another Sam",
+          "Misinterpret as an object"
+        ],
+        "what_would_change_my_mind": "If context specified a different Sam."
+      }
+    },
+    {
+      "trigger_turn_id": 26,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "the parking lot where User B is waiting",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B asks if Sam will meet 'here at the lot,' clarifying 'here' as the parking lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong location",
+          "Misinterpret reference"
+        ],
+        "what_would_change_my_mind": "If GPS data showed a different location."
+      }
+    },
+    {
+      "trigger_turn_id": 31,
+      "ambiguous_phrase": "first lookout",
+      "resolved_entity": "the first lookout point along the trail from the south entrance",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says Sam will meet them at 'the first lookout,' indicating a specific trail location.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong lookout",
+          "Confuse with another spot"
+        ],
+        "what_would_change_my_mind": "If context specified a different lookout."
+      }
+    },
+    {
+      "trigger_turn_id": 33,
+      "ambiguous_phrase": "spare key",
+      "resolved_entity": "User A's spare car key",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A offers to leave 'the spare key,' referring to their car key.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong key",
+          "Confuse with house key"
+        ],
+        "what_would_change_my_mind": "If context specified a different key."
+      }
+    },
+    {
+      "trigger_turn_id": 38,
+      "ambiguous_phrase": "extra tent",
+      "resolved_entity": "the backup tent stored at User B's place",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B mentions packing up 'that extra tent,' previously referenced as being at their place.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong tent",
+          "Confuse with Chris's tent"
+        ],
+        "what_would_change_my_mind": "If context specified a different tent."
+      }
+    },
+    {
+      "trigger_turn_id": 39,
+      "ambiguous_phrase": "this topo map",
+      "resolved_entity": "User A's topographic map",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A asks if they should bring 'this topo map,' referring to their own map.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong map",
+          "Confuse with User B's map"
+        ],
+        "what_would_change_my_mind": "If context specified a different map."
+      }
+    },
+    {
+      "trigger_turn_id": 42,
+      "ambiguous_phrase": "here",
+      "resolved_entity": "the parking lot where User B is waiting",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'Text when you’re close to here,' referring to the parking lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong location",
+          "Misinterpret reference"
+        ],
+        "what_would_change_my_mind": "If GPS data showed a different location."
+      }
+    },
+    {
+      "trigger_turn_id": 44,
+      "ambiguous_phrase": "that little shop",
+      "resolved_entity": "a small shop near the parking lot where User B is getting water",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says they're getting water at 'that little shop,' implying a nearby store.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong shop",
+          "Confuse with another store"
+        ],
+        "what_would_change_my_mind": "If context specified a different shop."
+      }
+    },
+    {
+      "trigger_turn_id": 49,
+      "ambiguous_phrase": "GPS",
+      "resolved_entity": "User A's GPS navigation app",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'GPS says 19 minutes to you,' referring to their navigation app.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong device",
+          "Confuse with physical GPS unit"
+        ],
+        "what_would_change_my_mind": "If context specified a different GPS."
+      }
+    },
+    {
+      "trigger_turn_id": 52,
+      "ambiguous_phrase": "over here",
+      "resolved_entity": "by the old Jeep in the parking lot",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'over here by the old Jeep,' specifying their location in the lot.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong spot",
+          "Misinterpret reference"
+        ],
+        "what_would_change_my_mind": "If GPS data showed a different spot."
+      }
+    },
+    {
+      "trigger_turn_id": 53,
+      "ambiguous_phrase": "filter and first aid kit",
+      "resolved_entity": "the water filter and first aid kit User A brought",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'Here’s the filter and first aid kit,' referring to the items discussed earlier.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong items",
+          "Confuse with other gear"
+        ],
+        "what_would_change_my_mind": "If context specified different items."
+      }
+    },
+    {
+      "trigger_turn_id": 54,
+      "ambiguous_phrase": "your bottle",
+      "resolved_entity": "the bottle User B purchased for User A at the shop",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says 'Here’s your bottle,' referring to the bottle User A requested in turn 45.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong bottle",
+          "Confuse with another item"
+        ],
+        "what_would_change_my_mind": "If context specified a different bottle."
+      }
+    },
+    {
+      "trigger_turn_id": 56,
+      "ambiguous_phrase": "that gas station on Route 28",
+      "resolved_entity": "a specific gas station located on Route 28 where Chris is currently",
+      "resolution_source": "Conversation Context",
+      "rationale": "User B says Chris is at 'that gas station on Route 28,' specifying a location.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong gas station",
+          "Confuse with another location"
+        ],
+        "what_would_change_my_mind": "If GPS data specified a different station."
+      }
+    },
+    {
+      "trigger_turn_id": 63,
+      "ambiguous_phrase": "the weather",
+      "resolved_entity": "the weather conditions for the hike, specifically at the ridge",
+      "resolution_source": "Conversation Context",
+      "rationale": "User A says 'Let’s hope the weather holds,' referring to the forecast for the ridge discussed earlier.",
+      "self_reflection": {
+        "confidence": "high",
+        "possible_failure_modes": [
+          "Assume wrong location's weather",
+          "Confuse with general weather"
+        ],
+        "what_would_change_my_mind": "If context specified a different area."
+      }
+    }
+  ],
+  "tot": {
+    "num_candidates": 5,
+    "candidates_scored": [
+      {
+        "temperature": 0.2,
+        "score": 100,
+        "reasons": [
+          "Valid JSON and matches required schema exactly.",
+          "All resolutions match correct trigger_turn_id and ambiguous_phrase.",
+          "resolved_entity is concrete and grounded in context for each case.",
+          "resolution_source uses allowed labels.",
+          "Rationales are short and evidence-based.",
+          "Self_reflection is plausible and helpful.",
+          "No hallucinated extra resolutions; only specified targets addressed."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.6,
+        "score": 100,
+        "reasons": [
+          "Valid JSON and matches required schema exactly.",
+          "All resolutions match correct trigger_turn_id and ambiguous_phrase.",
+          "resolved_entity is concrete and grounded in context for each case.",
+          "resolution_source uses allowed labels.",
+          "Rationale is short and evidence-based.",
+          "Self_reflection is plausible and helpful.",
+          "No hallucinated extra resolutions; only specified targets addressed."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.9,
+        "score": 100,
+        "reasons": [
+          "All trigger_turn_id and ambiguous_phrase pairs match ground truth.",
+          "Each resolved_entity is concrete and contextually grounded.",
+          "resolution_source is consistently 'Conversation Context', which is allowed.",
+          "Rationales are concise and evidence-based, not step-by-step.",
+          "self_reflection fields are plausible and relevant.",
+          "No extra or missing resolutions; strictly guided by ground truth.",
+          "JSON is valid and matches schema."
+        ],
+        "must_fix": []
+      },
+      {
+        "temperature": 0.4,
+        "score": 98,
+        "reasons": [
+          "Valid JSON and matches schema exactly.",
+          "All trigger_turn_id and ambiguous_phrase pairs are present and correctly resolved.",
+          "resolved_entity is concrete and grounded in context for each case.",
+          "resolution_source uses allowed labels.",
+          "Rationales are short and evidence-based.",
+          "Self_reflection is plausible and helpful.",
+          "No hallucinated extra resolutions."
+        ],
+        "must_fix": [
+          "Some rationales could be slightly more concise for brevity."
+        ]
+      },
+      {
+        "temperature": 0.8,
+        "score": 97,
+        "reasons": [
+          "All required fields present and schema is followed.",
+          "Resolutions are concrete, grounded, and match trigger_turn_id + ambiguous_phrase.",
+          "resolution_source labels are appropriate and consistent.",
+          "Rationales are concise and evidence-based.",
+          "No hallucinated or missing resolutions for guided mode.",
+          "self_reflection is plausible and helpful."
+        ],
+        "must_fix": [
+          "Some rationales could be even more concise (e.g., avoid minor repetition)."
+        ]
+      }
+    ]
+  }
+}
