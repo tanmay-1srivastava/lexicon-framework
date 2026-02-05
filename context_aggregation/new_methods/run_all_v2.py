@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Run improved V2 approach on all datasets"""
+
+import json
+from pathlib import Path
+from improved_processor import ImprovedResolutionProcessor
+
+DATA_DIR = Path('../../data_generation/new_data/generated_datasets')
+OUTPUT_DIR = Path('resolution_results_v2')
+
+DATASETS = [
+    'doctor_visit_001.json',
+    'doctor_visit_002.json', 
+    'doctor_visit_003.json',
+    'friends_meeting_001.json',
+    'friends_meeting_002.json',
+    'friends_meeting_003.json',
+    'work_collaboration_001.json',
+    'work_collaboration_002.json',
+    'work_collaboration_003.json'
+]
+
+def process_dataset(data_file):
+    """Process a single dataset with improved V2 approach"""
+    print(f"\nProcessing {data_file.name}...")
+    
+    with open(data_file) as f:
+        data = json.load(f)
+    
+    # ONE-SIDED: Only User A's messages
+    transcript = [t for t in data['conversation_transcript'] if t['speaker'] == 'User A']
+    context = data['mobile_context_snapshot']['user_a']
+    backstory = data.get('backstory')
+    ref_time = data.get('generation_metadata', {}).get('timestamp', '2024-11-17T09:30:00')
+    
+    # Run resolution
+    processor = ImprovedResolutionProcessor()
+    resolutions = processor.resolve_references(transcript, context, ref_time, backstory)
+    
+    # Build result
+    result = {
+        "dataset_id": data['dataset_id'],
+        "file": data_file.name,
+        "mode": "improved_v2_conversational",
+        "ground_truth_resolutions": []
+    }
+    
+    for res in resolutions:
+        result["ground_truth_resolutions"].append({
+            "turn_id": res['turn_id'],
+            "ambiguous_phrase": res['ambiguous_phrase'],
+            "resolved_entity": res['resolved_entity'],
+            "resolution_type": res['resolution_type'],
+            "metadata_source": res['metadata_source']
+        })
+    
+    # Save
+    output_file = OUTPUT_DIR / data_file.name.replace('.json', '_resolution_v2.json')
+    with open(output_file, 'w') as f:
+        json.dump(result, f, indent=2)
+    
+    print(f"  ✓ Generated {len(result['ground_truth_resolutions'])} resolutions")
+    return len(result['ground_truth_resolutions'])
+
+def main():
+    # Create output directory
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    
+    print("=" * 60)
+    print("RUNNING IMPROVED V2 APPROACH ON ALL DATASETS")
+    print("=" * 60)
+    
+    total_resolutions = 0
+    successful = 0
+    
+    for dataset_name in DATASETS:
+        data_file = DATA_DIR / dataset_name
+        if not data_file.exists():
+            print(f"\n⚠️  {dataset_name} not found, skipping...")
+            continue
+        
+        try:
+            count = process_dataset(data_file)
+            total_resolutions += count
+            successful += 1
+        except Exception as e:
+            print(f"  ✗ Error: {e}")
+    
+    print("\n" + "=" * 60)
+    print(f"COMPLETED: {successful}/{len(DATASETS)} datasets")
+    print(f"Total resolutions generated: {total_resolutions}")
+    print(f"Results saved to: {OUTPUT_DIR}")
+    print("=" * 60)
+
+if __name__ == '__main__':
+    main()

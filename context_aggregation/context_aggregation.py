@@ -5,11 +5,15 @@ Reads transcript files and uses real LLM APIs for processing
 
 import json
 import os
+import sys
 import datetime
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 from openai import AzureOpenAI
 from pathlib import Path
+
+# Add parent directory to path to import secret_keys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from secret_keys import Open_ai_key
 
 @dataclass
@@ -401,7 +405,7 @@ def main():
     
     # Process files
     try:
-        result = aggregator.process_transcript_file('sample_transcript.txt', 'sample_context.json', degbug=True)
+        result = aggregator.process_transcript_file('sample_transcript.txt', 'sample_context.json')
         
         print("\n" + "="*60)
         print("CONTEXT AGGREGATION RESULTS")

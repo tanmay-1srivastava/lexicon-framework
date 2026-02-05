@@ -1,0 +1,87 @@
+import json
+
+with open('data_generation/new_data/generated_datasets/doctor_visit_001.json') as f:
+    data = json.load(f)
+
+print('='*80)
+print('METADATA AVAILABLE TO LLM FOR RESOLUTION')
+print('='*80)
+print()
+
+print('1. MOBILE CONTEXT SNAPSHOT (User A):')
+context_a = data['mobile_context_snapshot']['user_a']
+for key, value in context_a.items():
+    if isinstance(value, dict):
+        print(f'   {key}:')
+        for k, v in value.items():
+            print(f'      {k}: {str(v)[:70]}')
+    else:
+        print(f'   {key}: {str(value)[:70]}')
+
+print()
+print('2. GROUND TRUTH RESOLUTIONS (how "here", "it" etc should be resolved):')
+for i, res in enumerate(data['ground_truth_resolutions'][:8]):
+    phrase = res.get('ambiguous_phrase', 'N/A')
+    entity = res.get('resolved_entity', 'N/A')[:60]
+    source = res.get('resolution_source', 'N/A')
+    match = res.get('entity_match_in_context', 'N/A')
+    turn = res.get('trigger_turn_id', res.get('turn_id', '?'))
+    print(f"   Turn {turn}: '{phrase}' -> '{entity}'")
+    print(f"      Source: {source}, Found in metadata: {match}")
+
+print()
+print('='*80)
+print('EXAMPLE: SPATIAL RESOLUTION')
+print('='*80)
+print('Turn 1: User A says "Are you here already?"')
+print('  Ambiguous word: "here"')
+print(f'  Metadata available: location_semantic = {context_a.get("location_semantic", "N/A")}')
+print('  Correct resolution: "Dr. Chen\'s Office" or "Evergreen Medical Center"')
+print('  How LLM should know: Match "here" -> location_semantic in metadata')
+print()
+
+print('='*80)
+print('METRICS FOR RESOLUTION ACCURACY')
+print('='*80)
+print()
+print('Current metrics from evaluation/results/resolution_accuracy_results.csv:')
+print('  - Category: person, spatial, temporal, object')
+print('  - For each category:')
+print('      baseline_correct / baseline_total = baseline_accuracy')
+print('      framework_correct / framework_total = framework_accuracy')
+print()
+print('Example for doctor_visit_001:')
+print('  Spatial (places): 1 correct out of 6 total = 16.7% (baseline)')
+print('                    2 correct out of 6 total = 33.3% (framework)')
+print()
+print('HOW "CORRECT" IS DETERMINED:')
+print('  Ground truth says: Turn 1, "here" -> "Dr. Chen\'s Office"')
+print('  LLM resolution: Turn 1, "here" -> "Dr. Chen\'s Office, Evergreen Medical Center"')
+print('  Match? YES if resolved entity contains the key info from ground truth')
+print()
+
+print('='*80)
+print('INFO GAP METRICS (TPR/FNR)')
+print('='*80)
+print()
+print('TPR (True Positive Rate) = Recall = Sensitivity')
+print('  = (Questions correctly identified) / (All questions that should be asked)')
+print('  = TP / (TP + FN)')
+print('  Higher is better! Want to catch ALL critical info gaps.')
+print()
+print('FNR (False Negative Rate) = Miss Rate')
+print('  = (Questions missed) / (All questions that should be asked)')
+print('  = FN / (TP + FN)')
+print('  = 1 - TPR')
+print('  Lower is better! Don\'t want to miss important questions.')
+print()
+print('Example from results:')
+print('  doctor_visit_001:')
+print('    Ground truth has 7 HIGH_VALUE gaps')
+print('    Framework detected 7 out of 7')
+print('    TPR = 7/7 = 100%  FNR = 0/7 = 0%  <- PERFECT!')
+print()
+print('  work_collaboration_002:')
+print('    Ground truth has 8 HIGH_VALUE gaps')
+print('    Framework detected 0 out of 8')
+print('    TPR = 0/8 = 0%  FNR = 8/8 = 100%  <- TOTAL FAILURE!')
