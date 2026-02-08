@@ -1,0 +1,797 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring specifically to Olga's Home (Garden Patio), or could it be another location nearby?",
+        "priority": "HIGH",
+        "reason": "While metadata resolves 'here' to Olga's Home (Garden Patio), the user's statement is vague and could refer to another nearby area if not confirmed. Precise spatial context is important for medical or appointment follow-up."
+      },
+      {
+        "turn_id": 1,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "just finished",
+        "question": "What exact time did the stroll end?",
+        "priority": "HIGH",
+        "reason": "Temporal precision is important for medical tracking (e.g., exercise logs, medication timing). 'Just finished' is vague and lacks a timestamp."
+      },
+      {
+        "turn_id": 1,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Daily Garden Walk",
+        "question": "Was the stroll part of the scheduled 'Daily Garden Walk' appointment, and if so, were any prep instructions or outcomes recorded?",
+        "priority": "CRITICAL",
+        "reason": "If this activity is medically prescribed or scheduled, confirmation and documentation of completion, prep, and outcomes are important for compliance and care tracking."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "medical",
+        "ambiguous_phrase": "A little stiffness near the end",
+        "question": "Where exactly is the stiffness located (e.g., which joint or muscle group), how severe is it, and how long does it last?",
+        "priority": "HIGH",
+        "reason": "Precise details about the location, severity, and duration of stiffness are necessary for accurate medical assessment and follow-up."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "afternoon",
+        "question": "What is the exact time window during which the user consumes herbal tea instead of coffee?",
+        "priority": "HIGH",
+        "reason": "Precise timing is relevant for tracking caffeine intake and its effects on sleep or medication schedules."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "medication",
+        "ambiguous_phrase": "them",
+        "question": "What is the name, dosage, and frequency of the medication(s) started two days ago?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'them' is ambiguous; it is unclear which medication(s) are being referenced, and no details are provided about the medication name, dosage, or prescribed frequency. This information is essential for accurate tracking, safety, and follow-up."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "medication",
+        "ambiguous_phrase": "Could that be related yet?",
+        "question": "Which medication or supplement is being referenced as potentially related to reduced muscle pain?",
+        "priority": "CRITICAL",
+        "reason": "The antecedent for 'that' is unclear; it is important to confirm which medication or supplement is being discussed to accurately assess possible effects or side effects."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after gardening last weekend",
+        "question": "What is the exact date of 'last weekend' when the gardening and subsequent muscle pain occurred?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to correlate the onset and resolution of muscle pain with the start of any new medication or supplement."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "person",
+        "ambiguous_phrase": "my friend",
+        "question": "Who is the friend referenced, and what is their medical background or relevance to the user's situation?",
+        "priority": "HIGH",
+        "reason": "The friend's experience is being used as a reference for expected symptoms, but their identity, medical history, and relevance to the user's condition are unclear. This affects the reliability of the anecdote."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "another bone density scan soon, or is that for next year?",
+        "question": "When was the last bone density scan, and what is the recommended interval for the next scan?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the next bone density scan cannot be determined without knowing the date of the last scan and the recommended follow-up interval. This is essential for appropriate medical scheduling and monitoring."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you'\u2014what is the full name, title, and contact information of the provider being referenced?",
+        "priority": "HIGH",
+        "reason": "It is unclear which provider 'you' refers to, which is essential for correct communication and escalation in a medical context."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "your nurse",
+        "question": "Who is 'your nurse'\u2014what is the full name, title, and contact information for the nurse?",
+        "priority": "HIGH",
+        "reason": "The identity and contact details of 'your nurse' are not specified, which is necessary for the user to know whom to contact in case of an issue."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "if something comes up",
+        "question": "What types of issues or symptoms should prompt direct contact versus contacting the nurse? Is there a protocol or triage guideline?",
+        "priority": "CRITICAL",
+        "reason": "Without clear guidance, the user may not know when to escalate concerns or whom to contact for specific situations, potentially impacting timely medical care."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "Linda",
+        "question": "Who is Linda? What is her full name, title, and role in the user's care team?",
+        "priority": "HIGH",
+        "reason": "The user's reference to 'Linda' assumes prior knowledge, but her identity, role, and contact information are not specified. This is important for clear communication and privacy."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "my lab appointment last week",
+        "question": "What was the specific type, date, and time of the lab appointment referenced?",
+        "priority": "CRITICAL",
+        "reason": "The lab appointment is referenced without details, making it unclear which appointment is being discussed. This could affect follow-up or record-keeping."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "the lab technician",
+        "question": "What is the full name or identifier of the lab technician referenced?",
+        "priority": "HIGH",
+        "reason": "The lab technician is referenced without a name or unique identifier, making it difficult to track feedback or address concerns about the hurried interaction."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "medication|lab/test",
+        "ambiguous_phrase": "them",
+        "question": "What specific items or results did you show to your daughter? (e.g., lab results, medication, physical symptoms, etc.)",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'them' is ambiguous; without knowing what was shown, it is impossible to provide an informed opinion or medical advice."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "these things",
+        "question": "What specific updates or information does 'she' like to stay updated on? Is it lab results, appointments, or something else?",
+        "priority": "HIGH",
+        "reason": "The phrase 'these things' is vague and lacks specificity. Without clarification, it's unclear what information needs to be provided or tracked."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "credential",
+        "ambiguous_phrase": "sharris78@gmail.com",
+        "question": "What system or purpose is this email address being used for? Is it for login, contact, or another function?",
+        "priority": "HIGH",
+        "reason": "Without specifying the system or context for this credential, access level and privacy implications cannot be determined."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "credential",
+        "ambiguous_phrase": "same as before",
+        "question": "Is the credential (email address) still valid and current for the intended use? Has its access level or permissions changed since last reference?",
+        "priority": "CRITICAL",
+        "reason": "Reusing credentials without explicit confirmation of validity or access level may lead to errors or privacy risks."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "medical",
+        "ambiguous_phrase": "my knees ached after, but the pain went away overnight",
+        "question": "Was any medication taken or other intervention used to relieve the knee pain, or did it resolve without treatment?",
+        "priority": "CRITICAL",
+        "reason": "It's important to know if pain was managed with medication or other means, especially if there are underlying medical concerns or medication tracking requirements."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "overnight",
+        "question": "What is the exact time frame during which the knee pain resolved (e.g., when did the pain start and when did it end)?",
+        "priority": "HIGH",
+        "reason": "Precise timing of symptom onset and resolution is important for medical monitoring and pattern recognition."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "my neighbor",
+        "question": "Who is 'my neighbor'? What is their full name and contact information?",
+        "priority": "HIGH",
+        "reason": "A third party is referenced as the lender of equipment, but their identity and access level are undefined. This is important for privacy, accountability, and potential follow-up."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "mine are too flimsy",
+        "question": "What specific equipment is 'mine'? What are its specifications or description?",
+        "priority": "HIGH",
+        "reason": "The user's own equipment is described as 'too flimsy', but the type and details are missing. This matters for understanding equipment suitability and potential replacement needs."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday afternoon",
+        "question": "What is the exact date and time referred to by 'yesterday afternoon'?",
+        "priority": "HIGH",
+        "reason": "Temporal reference is relative and requires resolution to a specific date/time for accurate record-keeping or scheduling."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "near the fence",
+        "question": "Which specific fence or location is being referenced for the vegetable planting?",
+        "priority": "HIGH",
+        "reason": "The phrase 'near the fence' is spatially vague; there may be multiple fences or areas, and precise location is important for tracking gardening activities."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "we",
+        "question": "Who is included in 'we'\u2014is it only User A and 'she', or are there others?",
+        "priority": "HIGH",
+        "reason": "The group referenced by 'we' is not explicitly defined, which may cause confusion if more than two people were present."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "worked together",
+        "question": "Was this gardening session a scheduled appointment or an informal activity?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying whether this was a formal appointment or informal activity may be relevant for calendar or care tracking."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "dropped by for a bit",
+        "question": "What was the exact time or duration of the daughter's visit?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for temporal tracking and for correlating activities with calendar events."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after starting the walks",
+        "question": "When exactly did the walks start? What is the frequency and duration of these walks?",
+        "priority": "HIGH",
+        "reason": "Precise timing and frequency are needed to assess the impact of the walks on sleep and to correlate with other events or interventions."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "medication",
+        "ambiguous_phrase": "I fall asleep faster",
+        "question": "Is any medication or sleep aid being used in addition to the walks, or is the improvement solely due to the walks?",
+        "priority": "CRITICAL",
+        "reason": "Determining whether medication is involved is important for understanding the cause of sleep improvement and for medical documentation."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "read for a while",
+        "question": "How long is 'a while' when reading after waking up at dawn?",
+        "priority": "HIGH",
+        "reason": "Duration of wakefulness after early waking can affect overall sleep quality and daytime functioning."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "medication",
+        "ambiguous_phrase": "aches",
+        "question": "What type of aches is the user experiencing (location, severity, duration, cause)? Are these aches being treated with any medication or therapy?",
+        "priority": "CRITICAL",
+        "reason": "The mention of 'aches' suggests a medical issue, but there is no detail about the nature, cause, or treatment of the symptoms. This information is important for monitoring health status and ensuring appropriate care."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "again",
+        "question": "When did the user previously start or finish reading 'Middlemarch'? When did they start reading it this time?",
+        "priority": "HIGH",
+        "reason": "The word 'again' implies a previous event, but the timing is unclear. Temporal clarity is important for understanding routines and changes in behavior."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow morning right after breakfast",
+        "question": "What is the exact date and time for 'tomorrow morning right after breakfast'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to a specific date and time for accurate scheduling and reminders. 'Tomorrow' is ambiguous without a reference date, and 'right after breakfast' is not a precise time."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "location",
+        "ambiguous_phrase": "mailbox",
+        "question": "Where is the mailbox located relative to Olga's Home (Garden Patio)? Is it on the property or elsewhere?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed to assess the distance and exertion level of the walk, which may be relevant for medical or activity tracking."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "the path behind the house",
+        "question": "What is the exact location or route of 'the path behind the house'? Is it accessible, safe, and does it have any relevant features or hazards?",
+        "priority": "CRITICAL",
+        "reason": "The phrase refers to a location that is not precisely defined. For safety, planning, and tracking purposes, the exact route, accessibility, and any potential risks should be clarified."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What is the specific date or date range for 'next week' when the user intends to try the path? Has this been scheduled or does it need to be added to the calendar?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity can lead to missed or unscheduled activities. For reminders, monitoring, and care planning, the exact timing must be resolved."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "If it's like today",
+        "question": "What is the exact date and time being referenced as 'today'? Is this referring to the current day or a specific date in the calendar?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect scheduling and planning for the walk, especially if the reference date is unclear or if the weather conditions are being compared to an unspecified day."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "location",
+        "ambiguous_phrase": "walking weather",
+        "question": "What is the specific walking route or location being referenced? Is it the garden, the path behind the house, or another area?",
+        "priority": "HIGH",
+        "reason": "The location for the walk is not explicitly stated, which could lead to confusion about where the activity will take place, especially given multiple possible walking areas mentioned in previous turns."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this time",
+        "question": "What specific event or action is 'this time' referring to?",
+        "priority": "HIGH",
+        "reason": "'This time' is a deictic reference that lacks a clear antecedent in this turn. Without explicit linkage to a prior event (e.g., applying sunscreen before a walk), downstream systems or readers may not know exactly what was remembered or when."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that's all for today",
+        "question": "Were all scheduled or recommended medical appointments, follow-ups, or action items for today explicitly confirmed as complete or addressed?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that's all for today' may prematurely close the session without explicit confirmation that all necessary medical or follow-up actions (e.g., medication review, appointment scheduling, test orders) have been completed or discussed. This could result in missed care steps."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Garden Patio at Olga's Home (where Olga just finished her stroll)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "out here",
+        "resolved_entity": "Garden Patio at Olga's Home (where Olga does her morning exercises when the weather is nice)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "last weekend",
+        "resolved_entity": "Previous weekend before the current conversation (when Olga was gardening and experienced muscle pain)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "yesterday",
+        "resolved_entity": "Day before the current conversation (when Olga spoke with her friend about joint pain)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "last week",
+        "resolved_entity": "Previous week before the current conversation (when Linda called to confirm Olga's lab appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "by the shed",
+        "resolved_entity": "Area next to the shed in Olga's garden (where Olga pulled weeds)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "behind it",
+        "resolved_entity": "Behind the shed in Olga's garden (where Olga planted tulips)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "last week",
+        "resolved_entity": "Previous week before the current conversation (when Olga's neighbor lent her gardening gloves)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "yesterday afternoon",
+        "resolved_entity": "Afternoon of the day before the current conversation (when Olga and her neighbor worked together in the garden)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "onto the porch",
+        "resolved_entity": "Porch at Olga's Home (where her daughter helped carry gardening bags)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "dawn",
+        "resolved_entity": "Early morning hours (when Olga sometimes wakes up and reads)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "tomorrow morning",
+        "resolved_entity": "Morning of the next day after the current conversation (when Olga plans to do her daily walk after breakfast)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "around the garden",
+        "resolved_entity": "Garden at Olga's Home (where Olga did two laps during her walk)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "to the mailbox and back",
+        "resolved_entity": "Path from Olga's garden to the mailbox and back (part of Olga's walking routine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "the path behind the house",
+        "resolved_entity": "Walking path located behind Olga's house (suggested for next week's walk)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current day of the conversation (with sunny and breezy weather, ideal for walking)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "before I left the house",
+        "resolved_entity": "Before Olga departed from her home for her walk (when she applied sunscreen)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 29
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date of 'today' being referenced?",
+        "priority": "HIGH",
+        "reason": "Precise temporal context is necessary for accurate medical documentation and follow-up."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "medical",
+        "ambiguous_phrase": "the exercises I demonstrated to you in the office",
+        "question": "Which specific exercises are being referred to? (e.g., name, type, frequency, duration, instructions)",
+        "priority": "HIGH",
+        "reason": "The phrase is vague and does not specify which exercises are meant. For accurate tracking of adherence and clinical outcomes, the exact exercises should be identified."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "medical",
+        "ambiguous_phrase": "dietary guidelines I sent over",
+        "question": "Which specific dietary guidelines were sent, and when were they sent? Are there details about the format, source, or delivery method?",
+        "priority": "HIGH",
+        "reason": "The reference to 'dietary guidelines' is vague\u2014without specifying which guidelines, their source, or delivery method, it is unclear what the user is being asked to review. This could impact the patient's ability to confirm understanding or compliance."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the vitamin D tablets I prescribed",
+        "question": "What is the name, dosage, frequency, and timing of the vitamin D tablets prescribed?",
+        "priority": "HIGH",
+        "reason": "The medication reference lacks essential details (name, dosage, frequency, timing) required for safe and accurate patient care and documentation."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "medication",
+        "ambiguous_phrase": "side effects",
+        "question": "Which medication or supplement is being referenced regarding side effects?",
+        "priority": "CRITICAL",
+        "reason": "It is unclear which specific medication or supplement the question about side effects refers to. This ambiguity could lead to incomplete or inaccurate medical assessment, as the patient may be taking multiple substances with different side effect profiles."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "medication",
+        "ambiguous_phrase": "Great system",
+        "question": "What does 'system' refer to in this context (e.g., medication regimen, supplement routine, dietary change)?",
+        "priority": "CRITICAL",
+        "reason": "The term 'system' is vague and could refer to several aspects of the patient's care plan. Clarifying this is important to ensure the conversation is focused and that any reported side effects are attributed to the correct intervention."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "medical",
+        "ambiguous_phrase": "soreness",
+        "question": "What specific type, location, and severity of soreness is being referred to?",
+        "priority": "HIGH",
+        "reason": "Without details on the nature and location of soreness, it is unclear whether the symptom is expected or potentially concerning."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as you increase activity",
+        "question": "What is the recommended timeline or schedule for increasing activity?",
+        "priority": "HIGH",
+        "reason": "Lack of a clear activity progression plan may lead to patient confusion or inappropriate pacing, affecting recovery."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after a few weeks",
+        "question": "What is the exact timeframe (number of weeks or specific dates) after which most patients see improvement?",
+        "priority": "HIGH",
+        "reason": "The phrase 'a few weeks' is vague and may lead to uncertainty for the patient regarding when to expect improvement or when to follow up if symptoms persist."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "medical",
+        "ambiguous_phrase": "discomfort",
+        "question": "What type and severity of discomfort should be considered normal versus concerning, and what specific symptoms should prompt the patient to contact their provider?",
+        "priority": "HIGH",
+        "reason": "The term 'discomfort' is non-specific; clarifying what is expected versus what is abnormal is important for patient safety and appropriate self-monitoring."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "repeat it in twelve months",
+        "question": "What exactly is being repeated in twelve months (e.g., which test, exam, or procedure)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'repeat it' is ambiguous; without specifying what is to be repeated, there is risk of miscommunication regarding follow-up care."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "in twelve months",
+        "question": "What is the exact date and time for the follow-up in twelve months?",
+        "priority": "CRITICAL",
+        "reason": "A specific date/time is needed to ensure the appointment is scheduled and not missed."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "person",
+        "ambiguous_phrase": "Linda",
+        "question": "What is Linda's direct contact information (phone number, extension, email) for triage purposes?",
+        "priority": "HIGH",
+        "reason": "The user is instructed to contact Linda for triage, but no contact details are provided, which could delay urgent communication."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I'm out",
+        "question": "What are the specific times or circumstances when User B is unavailable and Linda will be triaging?",
+        "priority": "HIGH",
+        "reason": "Clarifying User B's availability helps the user know when to expect Linda to handle triage, reducing confusion and ensuring timely care."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "What is Linda's full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "Linda is referenced as handling scheduling and patient follow-up, but her full identity and contact details are not provided. This is important for privacy, access, and ensuring the patient knows how to reach her."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "scheduling",
+        "question": "What types of appointments does Linda schedule, and what are the procedures for scheduling?",
+        "priority": "CRITICAL",
+        "reason": "The scope of Linda's scheduling responsibilities is unclear, which could lead to confusion about which appointments she can assist with and how to initiate scheduling."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "lab/test",
+        "ambiguous_phrase": "serum calcium and vitamin D results",
+        "question": "What were the actual results (values, reference ranges, date of test) for the serum calcium and vitamin D labs?",
+        "priority": "HIGH",
+        "reason": "The results are referenced but not provided; without explicit values, it is impossible to assess the patient's status or next steps."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that day",
+        "question": "What is the exact date being referenced by 'that day' when several walk-ins occurred?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is needed to correlate events and ensure accurate documentation and follow-up."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "walk-ins",
+        "question": "Who were the walk-in patients and what were the reasons for their visits?",
+        "priority": "CRITICAL",
+        "reason": "Details about walk-ins are vague; this may impact scheduling, resource allocation, or follow-up if relevant to the patient's care."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Did you get your serum calcium and vitamin D results emailed to you?",
+        "question": "When were the results emailed, and to which email address were they sent?",
+        "priority": "HIGH",
+        "reason": "Confirmation of delivery time and recipient is necessary to ensure the patient received critical lab information."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the supplement",
+        "question": "What is the name, dosage, and frequency of the supplement being recommended?",
+        "priority": "HIGH",
+        "reason": "The specific supplement, its dosage, and administration instructions are not stated, which is essential for safe and effective patient care."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "your daughter",
+        "question": "What is the daughter's full name and her authorization status to receive the patient's medical summary?",
+        "priority": "CRITICAL",
+        "reason": "Sending medical information to a third party requires confirmation of identity and authorization to protect patient privacy."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this week",
+        "question": "What are the exact start and end dates for 'this week' in reference to the gardening session?",
+        "priority": "HIGH",
+        "reason": "Precise temporal context is needed to accurately assess the timing of the physical activity and correlate it with other clinical events or symptoms."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "gardening session",
+        "question": "Where did the gardening session take place (e.g., home garden, community garden, other location)?",
+        "priority": "HIGH",
+        "reason": "Location details may impact risk assessment (e.g., environmental hazards, accessibility, support available) and are relevant for clinical documentation."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "your neighbor",
+        "question": "Who is the neighbor being referenced? What is her full name and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'your neighbor' is unclear, which is important for tracking who is involved in the patient's care and for privacy/access management."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "helping with your garden",
+        "question": "What specific tasks is the neighbor assisting with in the garden? Is this help ongoing or was it a one-time event?",
+        "priority": "HIGH",
+        "reason": "Details about the nature and frequency of assistance are missing, which may be relevant for assessing physical activity, support systems, and potential risks."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "lately",
+        "question": "What is the specific time frame referred to by 'lately' (e.g., past week, month)?",
+        "priority": "HIGH",
+        "reason": "The term 'lately' is ambiguous and could refer to different time periods; clarifying the time frame is important for accurate tracking or recommendations."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "Any new books",
+        "question": "Who is being asked about new books\u2014does 'you' refer to the patient, a family member, or someone else?",
+        "priority": "HIGH",
+        "reason": "The subject of the question is implied but not explicit; clarifying ensures the correct person is being addressed for follow-up."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next garden walk",
+        "question": "What is the exact date and time of the next garden walk appointment?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the next garden walk is unclear; without a specific date and time, scheduling, preparation, and potential conflicts cannot be managed."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "usual time",
+        "question": "What is the 'usual time' for the garden walk? Please specify the exact time.",
+        "priority": "HIGH",
+        "reason": "The phrase 'usual time' is ambiguous and needs to be resolved to a specific time for clarity and accurate scheduling."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date referred to as 'today'?",
+        "priority": "HIGH",
+        "reason": "Precise temporal resolution is necessary for accurate tracking of walking activity and for correlating with medical records or progress notes."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "nearby path",
+        "question": "Which specific path is being referred to as the 'nearby path'? Is its location, accessibility, and safety known?",
+        "priority": "CRITICAL",
+        "reason": "The recommendation to venture onto a 'nearby path' is ambiguous without specifying which path, its suitability for the user, and any relevant safety or accessibility considerations. This is important for medical advice and risk assessment."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "over time",
+        "question": "What is the recommended timeframe or schedule for adding another lap or venturing onto the nearby path?",
+        "priority": "HIGH",
+        "reason": "The phrase 'over time' is vague and lacks a specific timeline, which is important for tracking progress and setting clear goals in a medical or therapeutic context."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to by 'there'? Is it the garden, the nearby path, or another place?",
+        "priority": "HIGH",
+        "reason": "The instruction to check the weather is only meaningful if the destination is clear. Ambiguity in 'there' could lead to misunderstanding about where the weather should be checked for, which is important for safety and planning."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "location",
+        "ambiguous_phrase": "Did you wear your sun hat and comfortable shoes?",
+        "question": "Where did the walking activity take place (indoors, outdoors, specific location)?",
+        "priority": "HIGH",
+        "reason": "The need for a sun hat implies outdoor activity, but the location of the walk is not specified. This affects risk assessment for sun exposure and appropriateness of attire."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Did you wear your sun hat and comfortable shoes?",
+        "question": "When did the walking activity occur (date and time)?",
+        "priority": "HIGH",
+        "reason": "Timing affects relevance of weather advice and risk factors (e.g., sun exposure, temperature), but the exact time of the walk is not provided."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next follow-up",
+        "question": "What is the exact date, time, and location of the next follow-up appointment?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'next follow-up' is vague and lacks specific scheduling details, which are essential for patient clarity and proper planning."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Olga's garden walking route (where she does her scheduled garden walks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "later today",
+        "resolved_entity": "Later on the current day (after this conversation, before end of day)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "usual time",
+        "resolved_entity": "Olga's regular garden walk time (as previously established in her routine)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 56,
+        "ambiguous_phrase": "next follow-up",
+        "resolved_entity": "Next scheduled follow-up appointment with Olga (as agreed in prior conversations or clinic schedule)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 29
+  }
+}

@@ -1,0 +1,786 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'?",
+        "priority": "HIGH",
+        "reason": "'here' is a deictic reference and is ambiguous without explicit resolution; precise location is necessary for context and downstream actions."
+      },
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "by the window",
+        "question": "Which window or what is the precise position 'by the window' refers to within the room?",
+        "priority": "HIGH",
+        "reason": "'by the window' is a relative spatial reference; more detail may be needed for exact positioning within the room."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Okay, handed it to her.",
+        "question": "When exactly was the item handed to Maya? Was it immediately after the previous action, or at a later time?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for tracking sequence of actions, especially in collaborative or competitive settings."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "still",
+        "question": "How long has Eric been talking to Jackson, and is there a specific time when this conversation is expected to end?",
+        "priority": "HIGH",
+        "reason": "The duration and expected end time of the conversation are unclear, which may impact coordination or scheduling for the team."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "first",
+        "question": "When will 'he' return after grabbing his notebook? Is there a specific expected time or deadline?",
+        "priority": "HIGH",
+        "reason": "The timing of when the notebook will be retrieved and when the person will return is not specified, which may impact coordination for the next activity (e.g., Math Quiz Competition)."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "location",
+        "ambiguous_phrase": "his locker",
+        "question": "Which specific locker is being referred to? Is there a locker number or more precise location?",
+        "priority": "HIGH",
+        "reason": "While 'student locker area outside Room 204' is resolved, the exact locker is not specified. This could be relevant for access, privacy, or tracking movement."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the first question",
+        "question": "What is the exact content or subject of 'the first question' being referenced?",
+        "priority": "CRITICAL",
+        "reason": "The request to use the whiteboard is tied to 'the first question', but without knowing what that question is, it's unclear if using the whiteboard is appropriate or permitted for that context (e.g., quiz rules may differ by question type)."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "technical",
+        "ambiguous_phrase": "use the whiteboard",
+        "question": "Is there explicit permission or rule allowing or prohibiting the use of the whiteboard for the first question in this competition?",
+        "priority": "CRITICAL",
+        "reason": "Access to the whiteboard may be restricted by competition rules or require prior approval; lack of clarity could lead to rule violations or disputes."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "special calculator",
+        "question": "What make, model, or specifications define 'special calculator'? Is it a particular brand, model, or does it have unique features relevant to the competition rules?",
+        "priority": "HIGH",
+        "reason": "The term 'special calculator' is ambiguous and may refer to a device with capabilities that could be restricted or allowed under competition rules. Without specifics, it's impossible to confirm compliance or fairness."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam? What is Sam's role or team affiliation in the context of the Math Quiz Competition?",
+        "priority": "HIGH",
+        "reason": "Sam is referenced without prior introduction or context. Clarifying identity ensures proper tracking of participants and their equipment."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "technical/credential",
+        "ambiguous_phrase": "you said it was allowed, right?",
+        "question": "Who authorized the use of the 'special calculator'? Is there a documented rule or explicit permission from the competition organizer?",
+        "priority": "CRITICAL",
+        "reason": "The phrase implies prior approval, but lacks documentation or source. Explicit confirmation is needed to avoid disputes or rule violations."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "He\u2019s passing it to me now.",
+        "question": "Who is 'he' specifically? Is this Sam, or another participant?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is ambiguous; without clear antecedent, it is unclear who is passing the item, which could affect tracking of roles or responsibilities."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "round one",
+        "question": "When does 'round one' start? Is there a specific time or schedule?",
+        "priority": "HIGH",
+        "reason": "The timing of 'round one' is not specified, which could impact coordination and readiness for the event."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "your desk",
+        "question": "Which specific desk is being referred to as 'your desk'? (e.g., student name, desk number, or location in Room 204)",
+        "priority": "HIGH",
+        "reason": "Precise identification of the recipient's desk is necessary to ensure Sam delivers the item to the correct person, especially in a classroom with multiple desks."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam? (e.g., full name, team, or role in the competition)",
+        "priority": "HIGH",
+        "reason": "Clarifying Sam's identity is important for accountability and to avoid confusion if there are multiple people named Sam."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "Maya",
+        "question": "Is Maya's authority or role in providing the answer established (e.g., is she the team spokesperson, scorer, or just a participant)?",
+        "priority": "CRITICAL",
+        "reason": "Knowing Maya's role could affect the reliability or official status of the answer, especially in a competition setting."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "location",
+        "ambiguous_phrase": "Passing it",
+        "question": "What exactly is being passed, and to what specific location or person is it being delivered?",
+        "priority": "HIGH",
+        "reason": "The object or item being passed is not specified, nor is the exact recipient or delivery location, which could lead to miscommunication or loss of the item."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "location",
+        "ambiguous_phrase": "the box Ms. Lee placed earlier",
+        "question": "Where exactly is the box located within Room 204? (e.g., which table, corner, or area?)",
+        "priority": "HIGH",
+        "reason": "Precise location of the box is necessary for others to verify or retrieve the card, especially in a classroom with multiple possible locations."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "earlier",
+        "question": "When exactly did Ms. Lee place the box? (specific time or event reference)",
+        "priority": "HIGH",
+        "reason": "Knowing the exact time helps clarify the sequence of events and ensures there is no confusion about which box or card is being referenced."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "we",
+        "question": "Who specifically is included in 'we'? (list of team members or group name)",
+        "priority": "HIGH",
+        "reason": "Identifying the members involved is important for accountability and tracking actions in a group setting."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "object",
+        "ambiguous_phrase": "the card",
+        "question": "What is the card (e.g., description, label, or purpose)?",
+        "priority": "HIGH",
+        "reason": "Clarifying what 'the card' refers to is necessary to avoid confusion if multiple cards or items are present."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "Eric",
+        "question": "Who is Eric (full name, role/team, contact info)?",
+        "priority": "HIGH",
+        "reason": "Eric is referenced as the author and courier of a document, but his identity and role are unclear, which may affect accountability and access."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "He\u2019ll bring it to you",
+        "question": "When will Eric bring the document? (specific time or deadline)",
+        "priority": "HIGH",
+        "reason": "The timing of the delivery is unspecified, which could impact coordination and expectations for the recipient."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "location",
+        "ambiguous_phrase": "bring it to you",
+        "question": "Where will Eric deliver the document? (exact location or recipient's current location)",
+        "priority": "HIGH",
+        "reason": "The delivery location is ambiguous; knowing the exact place is necessary for successful handoff."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "wrote it up",
+        "question": "What is the nature of the document Eric wrote up? (type, purpose, format)",
+        "priority": "CRITICAL",
+        "reason": "The content and purpose of the document are not specified, which may affect its handling and urgency."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "location",
+        "ambiguous_phrase": "over there",
+        "question": "Where exactly is Maya walking to? What is the precise location or destination within Room 204 or the school?",
+        "priority": "HIGH",
+        "reason": "The phrase 'over there' is deictic and lacks a resolved spatial reference. Without knowing the exact destination, actions or instructions involving Maya's movement cannot be tracked or verified."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the question",
+        "question": "What is the exact content of the question being read?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the question' is vague; the actual question content is not specified, which is important for tracking the flow of the quiz competition."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "We have an answer for the bonus round.",
+        "question": "At what exact time or deadline does the answer need to be submitted or announced?",
+        "priority": "HIGH",
+        "reason": "The timing of answer submission is critical in a competition context; without a clear deadline or timestamp, it's ambiguous whether the answer is being provided within the required window."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "for the bonus round",
+        "question": "Where is the answer being submitted or to whom (e.g., which judge, moderator, or location in the room)?",
+        "priority": "HIGH",
+        "reason": "The submission location or recipient is not specified, which is important for process tracking and ensuring the answer reaches the correct party."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "person",
+        "ambiguous_phrase": "that team by the door",
+        "question": "Which team is 'that team by the door'? What is their team name or members?",
+        "priority": "HIGH",
+        "reason": "The identity of the team being referenced is unclear, which could cause confusion in tracking scores or resolving disputes about the tie."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam (full name, team, role in the competition)?",
+        "priority": "HIGH",
+        "reason": "Sam is referenced as having the answer sheet, but their identity and role are not specified, which could cause confusion if there are multiple Sams or if their authority to submit answers is unclear."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the answer sheet",
+        "question": "What is the format and content of the answer sheet (paper, digital, team name, answers included)?",
+        "priority": "HIGH",
+        "reason": "The answer sheet is central to the competition process, but its format and contents are not described, which could impact understanding of submission procedures or verification."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "picking a prize",
+        "question": "When is Maya picking the prize, and when will the prize be received?",
+        "priority": "HIGH",
+        "reason": "The timing of the prize selection and receipt is unclear, which could affect planning or expectations for the event's conclusion."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "location",
+        "ambiguous_phrase": "prize",
+        "question": "Where is Maya picking the prize from\u2014what is the exact location or source of the prize?",
+        "priority": "HIGH",
+        "reason": "The physical location or source of the prize is not specified, which could be relevant for logistics or verification."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "prize for us",
+        "question": "Does Maya have the necessary access or permission to pick the prize for the group?",
+        "priority": "CRITICAL",
+        "reason": "If Maya is acting on behalf of the group, her access level or authorization should be confirmed to avoid potential issues."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' still referring to Lincoln Middle School, Room 204, or has the location changed since the last explicit mention?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and relies on prior context; if the location has changed or is unclear, this could cause confusion about the current setting."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "the other teams",
+        "question": "Which specific teams or individuals are present with User A? Are their identities or team names known?",
+        "priority": "HIGH",
+        "reason": "The reference to 'the other teams' is vague; knowing which teams or people are present could be important for context or follow-up actions."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What exact date and time is being proposed for playing again?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next week' is ambiguous and needs to be resolved to a specific date/time for scheduling and coordination purposes."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "Deal!",
+        "question": "What is the specific agreement or arrangement being confirmed? Is there a scheduled date, time, or activity associated with this 'deal'?",
+        "priority": "HIGH",
+        "reason": "The term 'Deal!' implies an agreement or commitment, but the details (what was agreed upon, when, and how) are missing. This is important for tracking appointments, deadlines, or follow-up actions."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "person",
+        "ambiguous_phrase": "Ms. Lee",
+        "question": "What is Ms. Lee's full name and role in this context? Is she a teacher, organizer, or another staff member?",
+        "priority": "HIGH",
+        "reason": "While Ms. Lee is referenced, her full identity and role are not specified, which may be relevant for permissions, privacy, or future contact."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "By the window with my team in Lincoln Middle School, Room 204 (during the math quiz competition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "that table by the board",
+        "resolved_entity": "The table located next to the classroom whiteboard (used for classroom supplies during the math quiz competition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "that guy from the other team near the door",
+        "resolved_entity": "A student from another team standing near the classroom door (in Room 204 during the math quiz competition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "the whiteboard",
+        "resolved_entity": "The main classroom whiteboard at the front of Room 204 (used for solving math problems during the quiz competition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "that special calculator",
+        "resolved_entity": "The special calculator Sam brought for the math quiz competition (previously discussed as being allowed by Ms. Lee)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The special calculator Sam brought (being passed to User A for round one)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "this paper",
+        "resolved_entity": "The answer sheet or paper Maya is using to write the team's answer for round one",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "you",
+        "resolved_entity": "Ms. Lee (the teacher facilitating the math quiz competition)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "Olivia's team",
+        "resolved_entity": "The team led by Olivia participating in the math quiz competition (receiving the answer or item being passed)",
+        "resolution_type": "group",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "the box Ms. Lee placed earlier",
+        "resolved_entity": "The box containing quiz cards or materials, placed by Ms. Lee at the start of the competition",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Ms. Lee's desk (where Maya, the team captain, is walking to submit the answer or pick a card)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "that team by the door",
+        "resolved_entity": "The team seated near the classroom door in Room 204 (currently tied in the quiz competition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "a prize",
+        "resolved_entity": "A prize from the selection provided by Ms. Lee for the winning team in the math quiz competition",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Sitting with the other teams in Room 204 after the quiz competition",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "next week",
+        "resolved_entity": "The week following the current math quiz competition session (i.e., the next scheduled math class with Ms. Lee)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once everyone's settled",
+        "question": "What is the specific time or criteria for when 'everyone's settled'? Is there a deadline or signal to begin?",
+        "priority": "HIGH",
+        "reason": "A clear temporal marker is needed to coordinate the start of the rules explanation and avoid confusion or delays."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "person",
+        "ambiguous_phrase": "Maya",
+        "question": "Who is Maya (full name or role in the group) to ensure the correct person receives the item?",
+        "priority": "HIGH",
+        "reason": "While Maya is referenced by first name, without further context or identification, there could be ambiguity if there are multiple Mayas or if the group is large."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "person",
+        "ambiguous_phrase": "Eric",
+        "question": "Who is Eric (full name, role, group assignment), and does he have permission/access to join the group?",
+        "priority": "CRITICAL",
+        "reason": "Eric is referenced as needing to join a group, but his identity, role, and group assignment are not specified. This could impact group organization, permissions, or privacy if Eric is not authorized or expected."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "in two minutes",
+        "question": "What is the exact start time for the activity, based on the current reference time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'in two minutes' is relative and ambiguous without a clear reference time. This could cause confusion about the precise start time for participants."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "about to begin",
+        "question": "What is the exact start time for the quiz?",
+        "priority": "HIGH",
+        "reason": "The phrase 'about to begin' is vague and does not specify the precise time the quiz will start, which could lead to ambiguity for participants regarding urgency."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after your team is done",
+        "question": "When exactly should the erasing occur? Is there a specific time window or deadline for cleanup before the next group uses the item?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity could result in overlap or delays between groups, affecting the schedule and readiness for the next activity."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "the next group",
+        "question": "Where will the next group use 'it'? Is this in the same room, or should 'it' be moved to another location?",
+        "priority": "HIGH",
+        "reason": "Clarifying the location ensures proper handoff and avoids confusion about where the item should be available for the next group."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he'? Is this Eric or another individual? Please specify the person's identity.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without explicit reference to a specific person in this turn. This could cause misunderstandings about who is responsible for sharing the item/resource."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "share it if anyone from your team needs it",
+        "question": "What are the access permissions or privacy considerations for sharing 'it'? Is sharing allowed with all team members, or are there restrictions?",
+        "priority": "CRITICAL",
+        "reason": "The sharing instruction lacks detail about access levels or privacy restrictions, which could be important if the item/resource contains sensitive information or if there are rules about who may access it."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Where exactly should the answer sheet be handed? Is it Ms. Lee's desk, a specific table, or another location in the room?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and ambiguous without explicit spatial resolution. Participants may be unsure where to bring the answer sheet, leading to confusion or delays in the activity."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "you and your friends",
+        "question": "Who specifically are 'you and your friends'? Are the participants identified by name or team?",
+        "priority": "HIGH",
+        "reason": "Clarifying the participants is important for accurate record-keeping or scoring, especially in a competitive or classroom setting."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "the group at the back",
+        "question": "Which specific group or table at the back should the answer sheet be passed to? Is there a group number, team name, or table identifier?",
+        "priority": "HIGH",
+        "reason": "Without a clear identifier, students may be unsure which group is responsible for peer checking, leading to confusion or delays in the activity."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next challenge",
+        "question": "When does the 'next challenge' begin? Is there a specific start time or time window for solving the puzzle?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is important for scheduling and ensuring all teams start at the same time; lack of timing could lead to unfair advantages or confusion."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "Eric",
+        "question": "Who is Eric? (e.g., full name, role, group affiliation)",
+        "priority": "HIGH",
+        "reason": "It is unclear who Eric is; without clear identification, the instruction to have Eric hand in the answer may not be actionable by all participants or observers."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "location",
+        "ambiguous_phrase": "hand me your answer",
+        "question": "Where specifically should Eric deliver the answer to User B? (e.g., desk location, room number, or physical handoff point)",
+        "priority": "HIGH",
+        "reason": "The instruction lacks a precise drop-off location, which could lead to confusion about where the answer should be delivered, especially in a multi-table or multi-room setting."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "captain from each team",
+        "question": "Who are the captains for each team? Are their names or identifiers specified?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification, it is unclear who should gather, which may cause confusion or delays in the activity."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Next up",
+        "question": "What is the exact timing for when the captains should gather by the cabinet? Is there a deadline or time window?",
+        "priority": "HIGH",
+        "reason": "Lack of precise timing may result in teams not knowing when to proceed, potentially disrupting the flow of the event."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "receive bonus questions",
+        "question": "Are there any restrictions or access controls regarding who can view or handle the bonus questions?",
+        "priority": "CRITICAL",
+        "reason": "If bonus questions are sensitive or intended only for captains, unclear access may lead to unauthorized viewing or distribution."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "that basket on top",
+        "question": "Is the location of 'that basket on top' clear to all participants, or could there be confusion about which basket or which surface 'on top' refers to?",
+        "priority": "HIGH",
+        "reason": "While the known resolutions indicate this refers to the purple basket on top of the cabinet, if participants are not aware of this prior context, the phrase could be ambiguous, especially if there are multiple baskets or surfaces in the room."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "the person by the bookshelf",
+        "question": "Who exactly is 'the person by the bookshelf'? What is their name or role?",
+        "priority": "HIGH",
+        "reason": "The instruction depends on identifying a specific individual, but 'the person by the bookshelf' is ambiguous\u2014multiple people could be present, leading to confusion or misdelivery."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bookshelf",
+        "question": "Which bookshelf is being referred to? Where is it located within the room?",
+        "priority": "HIGH",
+        "reason": "If there are multiple bookshelves or unclear room layout, the location is ambiguous and could cause errors in following the instruction."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "scoreboard",
+        "question": "Where is the scoreboard located? Is it physical or digital, and how should it be accessed?",
+        "priority": "CRITICAL",
+        "reason": "The user is instructed to check the team's total on the scoreboard, but without specifying its location or format, the instruction may be unclear, especially to new participants."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last question",
+        "question": "What is the exact timing or sequence for when the last question will be asked?",
+        "priority": "HIGH",
+        "reason": "The phrase 'last question' references a critical event but does not specify when it will occur, which is important for participants to understand the timeline and prepare accordingly."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "whoever solves it first",
+        "question": "Which individuals or teams are eligible to solve the question and participate in raising their hand and shouting their team name?",
+        "priority": "HIGH",
+        "reason": "The phrase 'whoever' is ambiguous; it is unclear which participants are included, which could affect fairness or clarity in the competition."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "solves it first",
+        "question": "What is the exact start time for attempting to solve the question, and how is 'first' determined (e.g., by timestamp, by observer)?",
+        "priority": "HIGH",
+        "reason": "Without a clear temporal marker, disputes may arise about who solved the question first, impacting the outcome of the competition."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "raise your hand and shout your team name",
+        "question": "Where should participants be physically located when raising their hand and shouting their team name (e.g., at their table, in a designated area)?",
+        "priority": "HIGH",
+        "reason": "Location ambiguity could lead to confusion or unfair advantage if some participants are closer to the judge or in a more visible spot."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Go!",
+        "question": "What is the exact time or deadline for answering the riddle?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Go!' initiates an action but does not specify a time window or deadline for responses, which is critical for tracking event timing and ensuring fair competition."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "the riddle",
+        "question": "Where is the riddle being presented or displayed (e.g., verbally, on a board, on paper)?",
+        "priority": "HIGH",
+        "reason": "Knowing the presentation method/location of the riddle is important for accessibility and ensuring all participants receive the information equally."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "location",
+        "ambiguous_phrase": "that bag near the board",
+        "question": "Which specific bag is being referred to, and where exactly is it located in the room?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that bag near the board' is spatially ambiguous\u2014there may be multiple bags or boards in the room, and without a precise location or description, participants may not know where to collect their prize. This could cause confusion or delays in the activity."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "location",
+        "ambiguous_phrase": "circle rug",
+        "question": "Where exactly is the 'circle rug' located? Is it in the current room (Lincoln Middle School Faculty Room), or does it refer to a different classroom or area?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for participants to know where to gather, especially since current metadata places the conversation in the Faculty Room, which may not have a 'circle rug'."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before class ends",
+        "question": "What is the exact time remaining before class ends? Is there a specific deadline or time window for the debrief?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is important for scheduling and ensuring the debrief fits within the available class time."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "used",
+        "question": "During which specific activity or time period should the teams share their strategies? Is it for the riddle just completed, the overall game, or another segment?",
+        "priority": "HIGH",
+        "reason": "Specifying the timeframe or activity for which strategies are being discussed avoids confusion and ensures relevant strategies are shared."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "person",
+        "ambiguous_phrase": "all teams",
+        "question": "Which specific teams are being referred to as 'all teams'? Is there a roster or list of team names or members?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification, it is unclear which groups are included in the applause, which could lead to confusion or exclusion."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "we\u2019ll see how everyone does on the homework first",
+        "question": "What is the specific deadline or date for reviewing the homework and making a decision?",
+        "priority": "HIGH",
+        "reason": "The timing for when 'everyone does on the homework' will be assessed is unclear, which may impact planning or expectations for follow-up actions."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Maybe!",
+        "question": "What specific event or action is being considered as a 'maybe'\u2014is it a reward, an activity, or something else?",
+        "priority": "CRITICAL",
+        "reason": "The subject of the conditional 'Maybe!' is not specified, making it unclear what is contingent on the homework results."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "over here",
+        "resolved_entity": "Ms. Lee's location at the front of the classroom (where answer sheets are being collected)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "the group at the back",
+        "resolved_entity": "Student group seated at the back of the classroom (for peer checking answer sheets)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "that table by the window",
+        "resolved_entity": "Table located next to the classroom window (where the puzzle challenge is placed)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "that cabinet",
+        "resolved_entity": "Cabinet in the classroom (where bonus questions are kept for team captains)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "that basket on top",
+        "resolved_entity": "Basket on top of the cabinet (containing envelopes with bonus questions)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "the person by the bookshelf",
+        "resolved_entity": "Student standing near the classroom bookshelf (designated to receive the envelope)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that bag near the board",
+        "resolved_entity": "Prize bag located near the classroom whiteboard (where winners collect their prize)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "the circle rug",
+        "resolved_entity": "Circle rug in the classroom (gathering spot for debrief at the end of class)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "homework",
+        "resolved_entity": "Math homework assigned at the end of the gamified quiz competition (to be completed after class)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 23
+  }
+}

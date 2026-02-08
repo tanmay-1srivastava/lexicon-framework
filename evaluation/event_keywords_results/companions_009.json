@@ -1,0 +1,920 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring specifically to Emma's Apartment, Living Room, or could it mean another area within the apartment?",
+        "priority": "HIGH",
+        "reason": "While 'here' is resolved to Emma's Apartment, Living Room using GPS and wifi, there could still be ambiguity if multiple rooms or areas are involved. Clarifying ensures accurate context for follow-up actions."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "the pantry",
+        "question": "Where exactly is 'the pantry' located within Emma's Apartment? Is it accessible from the living room or another area?",
+        "priority": "CRITICAL",
+        "reason": "Precise location is needed to coordinate cleaning tasks and avoid confusion about which area is being referenced."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "that pile",
+        "question": "Which specific pile is being referred to as 'that pile'? Where is it located in the apartment?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that pile' is deictic and ambiguous without clear spatial reference, making it unclear what task is being assigned or where."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What is the exact time or deadline for dropping off the boxes?",
+        "priority": "HIGH",
+        "reason": "The phrase 'later' is ambiguous and does not specify when the boxes need to be dropped off. Precise timing is necessary to ensure the task aligns with the scheduled 'Donation Drop-off at Goodwill, 1:30 PM' and to avoid missed deadlines."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "drop *these boxes* off later",
+        "question": "What is the exact time for dropping off the donation boxes at Goodwill?",
+        "priority": "CRITICAL",
+        "reason": "While the calendar shows a scheduled drop-off at 1:30 PM, the phrase 'later' in previous turns and the current plan to 'hit Goodwill' could imply a change in timing. Confirmation is needed to ensure the appointment time is accurate and up to date."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What exact location does 'there' refer to in this context?",
+        "priority": "HIGH",
+        "reason": "The phrase 'there' is deictic and lacks explicit resolution in this turn. While previous context suggests Goodwill as a likely destination, the reference is not directly confirmed in this turn, risking confusion about the intended location for the 1:30 visit."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "around 1:30",
+        "question": "Is 'around 1:30' a confirmed appointment time or an estimate? What is the exact scheduled time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'around 1:30' introduces temporal ambiguity. Calendar metadata lists a specific 1:30 PM appointment, but the user's phrasing suggests flexibility. This could impact coordination and punctuality for the planned activity."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who specifically is 'he'? (Full name or clear identifier needed.)",
+        "priority": "HIGH",
+        "reason": "Pronoun 'he' is used without a clear antecedent, making it unclear who provided the information. This is essential for accountability and follow-up."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "that shelf",
+        "question": "Which shelf specifically is being referred to in the hallway? (Location, description, or label needed.)",
+        "priority": "HIGH",
+        "reason": "The phrase 'that shelf' is deictic and ambiguous without prior resolution; multiple shelves may exist in the hallway, leading to confusion or errors in locating the item."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who does 'her' refer to? Please specify the full name or unique identifier.",
+        "priority": "HIGH",
+        "reason": "Pronoun 'her' is used without a clear antecedent in the immediate context, making it ambiguous which person is being referenced. This is essential for accurate tracking, privacy, and task assignment."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "object",
+        "ambiguous_phrase": "those socks",
+        "question": "Which specific socks are being referred to? (e.g., color, owner, location, purpose)",
+        "priority": "HIGH",
+        "reason": "The phrase 'those socks' is ambiguous without prior explicit identification; it's unclear which socks are meant, which could lead to confusion or incorrect retrieval."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "over there",
+        "question": "Where exactly is 'over there' in the living room? Is there a specific location or landmark to clarify?",
+        "priority": "HIGH",
+        "reason": "Spatial deictic 'over there' is ambiguous without a resolved reference point; necessary for accurate object retrieval."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "that basket",
+        "question": "Which basket is being referred to? Is there a description, label, or distinguishing feature?",
+        "priority": "HIGH",
+        "reason": "Multiple baskets may exist in the living room; lack of specificity could lead to confusion or incorrect item selection."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact calendar date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to a specific date for scheduling and coordination, especially since there is a calendar event ('Donation Drop-off at Goodwill, 1:30 PM') that may conflict."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bookshelves",
+        "question": "Which specific bookshelves are being referred to, and where are they located within Emma's Apartment?",
+        "priority": "HIGH",
+        "reason": "Multiple bookshelves may exist in the apartment; precise location is needed for task assignment and spatial tracking."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator from the last book swap",
+        "question": "Who specifically is 'the coordinator' (full name, contact information)?",
+        "priority": "HIGH",
+        "reason": "The identity and contact details of 'the coordinator' are necessary to determine if and how they can be invited; without this, the action cannot proceed."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after we finish here",
+        "question": "What is the exact time or event that marks 'after we finish here'? Is it tied to a calendar event, a specific activity, or a deadline?",
+        "priority": "HIGH",
+        "reason": "Temporal phrase 'after we finish here' is vague and lacks a resolved time reference, which is important for scheduling and coordination."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "remind me",
+        "question": "When should the reminder to check the mail be set? (e.g., specific time, after a certain event, or deadline?)",
+        "priority": "HIGH",
+        "reason": "Without a specific time or trigger, the reminder cannot be scheduled or delivered effectively, risking missed exam results."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "location",
+        "ambiguous_phrase": "the mail",
+        "question": "Where exactly should the mail be checked? (e.g., apartment mailbox, building lobby, specific location within Emma's Apartment?)",
+        "priority": "HIGH",
+        "reason": "The exact location of 'the mail' is not specified, which could cause confusion if there are multiple mail collection points."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "When specifically will the paperwork be addressed? Is there a deadline or scheduled time for returning to it?",
+        "priority": "HIGH",
+        "reason": "The term 'later' is temporally vague and could impact scheduling, especially with a known upcoming calendar event (Donation Drop-off at 1:30 PM). Lack of specificity may cause missed deadlines or conflicts."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the big tote",
+        "question": "Which specific tote is 'the big tote'? Where is it located and what are its specifications?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the big tote' is ambiguous without further details. Identifying the exact tote is important for ensuring the correct item is used for switching, especially if multiple totes are present."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Without resolving 'tomorrow' to a specific date, there may be confusion about the deadline or expected timing, especially if the conversation is referenced later."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "the closet",
+        "question": "Which closet is being referred to? (e.g., bedroom closet, hallway closet, etc.)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the closet' is spatially ambiguous within Emma's Apartment; precise location is needed for tracking or retrieval."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "this place",
+        "question": "What exact location does 'this place' refer to?",
+        "priority": "HIGH",
+        "reason": "'This place' is likely Emma's Apartment, Living Room (per metadata), but the phrase is deictic and not explicitly resolved in the turn. Explicit confirmation is needed for clarity, especially if context shifts."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "it",
+        "question": "What specific event or item does 'it' refer to, and what is the exact date and time for 'it'?",
+        "priority": "HIGH",
+        "reason": "'It' is a pronoun with no clear antecedent in the immediate context, making it impossible to determine what event or item the user is asking about or when it is scheduled. This prevents accurate scheduling, reminders, or follow-up actions."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for at least a week",
+        "question": "What are the exact start and end dates/times for 'a week' in this context?",
+        "priority": "HIGH",
+        "reason": "The duration is vague; without specific dates/times, it is unclear when the agreed state should begin and end, which could lead to misunderstandings or missed expectations."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date referred to by 'today'?",
+        "priority": "HIGH",
+        "reason": "'Today' is a relative temporal reference and should be resolved to a specific date for clarity, especially if this information is used for scheduling, planning, or record-keeping."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "sandwiches",
+        "question": "Where will the sandwiches be obtained or eaten?",
+        "priority": "HIGH",
+        "reason": "The location for making, obtaining, or eating sandwiches is not specified, which could cause confusion if coordination or preparation is needed."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Emma's Apartment, Living Room (where Emma and Mia are starting their Saturday organizing session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "that pile",
+        "resolved_entity": "Pile of clothes for donation (the area Mia is tackling during their organizing session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "these boxes",
+        "resolved_entity": "Boxes of items to be donated (prepared for drop-off later in the session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "that intersection",
+        "resolved_entity": "Intersection near Goodwill (where Emma and Mia plan to go for recycling after donation drop-off)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Goodwill donation center (where Emma and Mia plan to drop off boxes around 1:30 PM)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "Building maintenance staff (who provided information about the item under the shelf)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "that shelf",
+        "resolved_entity": "Shelf in the hallway (where the item is located as mentioned by the maintenance staff)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "our list",
+        "resolved_entity": "Shared grocery and household supplies list (used by Emma and Mia for apartment needs)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Mia (Emma's roommate and best friend, referenced in the context of their Saturday routine)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "those socks",
+        "resolved_entity": "Socks Mia was sorting for donation (referenced during the organizing session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "that basket",
+        "resolved_entity": "Basket used for organizing items (requested by Emma during the session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "over there",
+        "resolved_entity": "Area near the pile of clothes or art supplies (where the basket is located in the apartment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "the bookshelves",
+        "resolved_entity": "Apartment bookshelves (Emma plans to organize them tomorrow as part of their routine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "the coordinator",
+        "resolved_entity": "Coordinator from the last book swap event (person Emma suggests inviting for tomorrow's organizing)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Book swap coordinator (Emma plans to text her after finishing the current organizing session)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Emma's Apartment, Living Room (where Emma and Mia are finishing their organizing session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "the mail",
+        "resolved_entity": "Apartment mailbox (where Emma expects her exam results to arrive)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current organizing session (when Emma will deal with paperwork)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "all this",
+        "resolved_entity": "All items gathered for donation and recycling (the total load Emma and Mia need to transport)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Basket currently being used for carrying items (referenced for stability)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "the big tote",
+        "resolved_entity": "Large tote bag used for transporting items (alternative to the basket if it wobbles)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Exam results notification (expected via email)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "Next day after the current conversation (when Emma expects to receive her exam results email)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "the closet",
+        "resolved_entity": "Apartment closet (where organizing is finally completed)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "Sentimental items rediscovered during organizing (which bring life to the apartment)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "this place",
+        "resolved_entity": "Emma and Mia's apartment (the cozy home they share)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Upcoming event or appointment (referenced in the conversation, likely related to organizing or donation)",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Organized and tidy state of the apartment (Emma and Mia hope to maintain for at least a week)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current day of the organizing session (Saturday, as part of Emma and Mia's routine)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Is 'there' referring specifically to Emma's Apartment, Bedroom, or a more precise location within the bedroom (e.g., a particular corner or area)?",
+        "priority": "HIGH",
+        "reason": "While 'there' is resolved to 'Emma's Apartment, Bedroom' via GPS, the phrase could refer to a more specific spot (e.g., a pile of clothes in a certain area). Without this detail, actions or references to the 'mountain of old clothes' may lack precision."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "those blue containers",
+        "question": "What are the exact specifications, location, or description of the 'blue containers' being referenced?",
+        "priority": "HIGH",
+        "reason": "The identity and location of the 'blue containers' is unclear, which could lead to confusion about which items are being requested for art supplies."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now or after lunch",
+        "question": "What is the exact time for 'now' and when is 'after lunch'? Is there a scheduled lunch time or deadline for departure?",
+        "priority": "HIGH",
+        "reason": "Departure timing is ambiguous; without a specific time, coordination and planning are unclear, and any appointments or deadlines may be missed."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the folding cart",
+        "question": "Which specific folding cart is being referenced (e.g., owner, location, description)?",
+        "priority": "HIGH",
+        "reason": "There may be multiple folding carts or uncertainty about which one is meant; specifying ensures the correct item is borrowed and avoids confusion."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "location",
+        "ambiguous_phrase": "move *this*",
+        "question": "Where exactly should the donation bag be moved to? Is it being moved within Emma's Apartment, or to a vehicle, or another location?",
+        "priority": "HIGH",
+        "reason": "The destination for moving the donation bag is not specified, which could lead to confusion or misplacement."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Help me",
+        "question": "Who is being asked to help? Is it Emma, Mia, or another person present?",
+        "priority": "HIGH",
+        "reason": "The helper is not explicitly identified, which could cause ambiguity if multiple people are present."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "that jar",
+        "question": "Is the location of 'that jar' (coffee jar, pantry shelf) sufficiently clear for all parties involved, or could there be multiple jars or shelves causing confusion?",
+        "priority": "HIGH",
+        "reason": "While 'that jar' is resolved to 'coffee jar, pantry shelf' via GPS, if there are multiple jars or shelves, ambiguity could arise about which jar to include."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "until later",
+        "question": "What specific time does 'until later' refer to?",
+        "priority": "HIGH",
+        "reason": "The temporal reference 'until later' is ambiguous and needs to be resolved to a specific time for scheduling or coordination."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this weekend",
+        "question": "What are the exact dates and times referred to by 'this weekend'?",
+        "priority": "HIGH",
+        "reason": "'This weekend' is ambiguous without calendar context; planning requires precise dates/times to avoid miscommunication or scheduling conflicts."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "plan",
+        "question": "What specific activities, locations, participants, and times are included in the 'plan' for this weekend?",
+        "priority": "CRITICAL",
+        "reason": "The 'plan' is undefined; without details, participants cannot prepare or confirm attendance, and logistical arrangements may be missed."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "that stack I left by the window",
+        "question": "What exactly is 'that stack' (e.g., papers, clothes, books), and where by the window is it located (which window, which room)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that stack' is deictic and ambiguous without prior explicit resolution. The type and precise location of the stack are unclear, which could lead to confusion or errors in action, especially if there are multiple windows or stacks in the apartment."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "location",
+        "ambiguous_phrase": "that corner",
+        "question": "Which exact area or coordinates within Emma's Apartment, Bedroom does 'that corner' refer to?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed to avoid accidental removal of items or confusion about which supplies to clear."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mia",
+        "question": "Does User B have permission from Mia to clear her art supplies, or is consent required?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access concerns: handling another person's belongings may require explicit permission."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What specific time or deadline does 'later' refer to for sorting the papers?",
+        "priority": "HIGH",
+        "reason": "'Later' is ambiguous and could lead to missed tasks or confusion about when the papers should be sorted. Temporal clarity is required for task tracking and completion."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "those papers",
+        "question": "Where exactly are 'those papers' located within Emma's Apartment, Bedroom?",
+        "priority": "HIGH",
+        "reason": "The location of 'those papers' is not specified, which could cause confusion or inefficiency in finding and sorting them."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "this box",
+        "question": "Which specific box is 'this box' referring to? Please clarify its location or description.",
+        "priority": "HIGH",
+        "reason": "The reference to 'this box' is deictic and ambiguous without clear spatial resolution. Multiple boxes may be present in the room, so the intended stacking location is unclear and could lead to misplaced items."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "that cart",
+        "question": "Which specific cart is being referenced? What are its condition and specifications relevant to the task?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that cart' is deictic and ambiguous; without clear identification, it's unclear which cart's reliability is being discussed, which could affect planning or safety."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Maybe two?",
+        "question": "Two of what? Is this a quantity, a time estimate, or another metric? What is the reference for 'two'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Maybe two?' lacks context\u2014it's unclear whether it refers to time, items, or another measure, which is essential for understanding and scheduling the next steps."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "those donations",
+        "question": "Which donations are being referenced? What is the date, recipient, and contents of the donations?",
+        "priority": "HIGH",
+        "reason": "Without specifying which donations, it is unclear which receipt is being requested. This could lead to confusion if there are multiple donation events or items."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "technical",
+        "ambiguous_phrase": "receipt",
+        "question": "Is the receipt digital or physical? Where is it stored or located?",
+        "priority": "HIGH",
+        "reason": "Knowing the format and location of the receipt is necessary to retrieve or verify it, especially if access or privacy is a concern."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "technical",
+        "ambiguous_phrase": "that organizer",
+        "question": "What is the specific organizer being referenced (type, location, purpose)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that organizer' is deictic and ambiguous without prior resolution. It is unclear what organizer is being discussed, which could lead to confusion about the task or item in question."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What are the exact start and end dates for 'last week'?",
+        "priority": "HIGH",
+        "reason": "The reference to 'last week' is vague without a specific date range, which could cause ambiguity about when the organizer was started."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "your plants",
+        "question": "Which specific plants are being referred to, and where are they located within Emma's Apartment, Bedroom?",
+        "priority": "HIGH",
+        "reason": "The reference to 'your plants' is ambiguous\u2014there is no detail about which plants are meant or their exact location, which could be important for tracking, care, or organization tasks."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that meeting",
+        "question": "What is the exact date, time, and location of the meeting for the building tenants?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that meeting' is ambiguous and lacks essential appointment details (date, time, location). Without this, the user cannot confirm attendance or prepare appropriately."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "location",
+        "ambiguous_phrase": "the building tenants",
+        "question": "Which building is being referred to for the tenants' meeting?",
+        "priority": "HIGH",
+        "reason": "It is unclear which building's tenants are involved. This is important for context, especially if there are multiple buildings or properties associated with the users."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Next Thursday, 7 PM in the lobby",
+        "question": "What is the exact date for 'Next Thursday'? (Reference date needed to resolve to a calendar date.)",
+        "priority": "CRITICAL",
+        "reason": "Precise scheduling requires an exact date; 'Next Thursday' is ambiguous without a reference point."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "location",
+        "ambiguous_phrase": "the lobby",
+        "question": "Which building's lobby is being referenced? (Specify building address or name.)",
+        "priority": "HIGH",
+        "reason": "Multiple lobbies may exist; without specifying the building, attendees may go to the wrong location."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that meeting",
+        "question": "What is the purpose or agenda of the meeting?",
+        "priority": "CRITICAL",
+        "reason": "Attendees need to know the meeting's purpose to prepare or decide if they should attend."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "your exam",
+        "question": "What is the exact type, date, time, and location of 'your exam'?",
+        "priority": "CRITICAL",
+        "reason": "'Your exam' is referenced without any details. For effective help or scheduling, the exam's specifics (type, date, time, location) are required."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Does 'here' refer specifically to Emma's Apartment, Bedroom, or another location within the apartment?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and, while location metadata suggests Emma's Apartment, Bedroom, there is ambiguity if the conversation context has shifted to another room or area. Precise location is important for accurate context tracking."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Now",
+        "question": "What exact time is being proposed for lunch? Is 'now' immediate or does it refer to a specific time window?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for scheduling and coordination; 'now' is ambiguous without a reference time."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "lunch",
+        "question": "Where is lunch supposed to take place? Is it at Emma's Apartment, another room, or an external location?",
+        "priority": "HIGH",
+        "reason": "The location for lunch is not specified, which is necessary for planning and logistics."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "that drawer",
+        "question": "Which specific drawer is 'that drawer'? (e.g., kitchen top drawer, pantry drawer, bedroom nightstand, etc.)",
+        "priority": "HIGH",
+        "reason": "The phrase 'that drawer' is deictic and ambiguous without clear spatial resolution; multiple drawers may exist in the apartment, and the current location metadata ('Emma's Apartment, Bedroom') does not clarify which drawer is meant. This could lead to confusion or errors in locating the bread."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bread",
+        "question": "Which specific bread is being referred to? (e.g., type, brand, packaging, location within the drawer)",
+        "priority": "HIGH",
+        "reason": "If there are multiple types of bread or similar items stored, the reference to 'the bread' may be ambiguous, potentially leading to the wrong item being retrieved."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Area with the mountain of old clothes (likely Mia's side of the bedroom or closet, where socks from last winter are being found)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "me",
+        "resolved_entity": "Emma (User A, who needs the blue containers for her art supplies)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "Goodwill",
+        "resolved_entity": "Goodwill donation center (potential destination for clothing donations)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "The ARC",
+        "resolved_entity": "The ARC donation center (alternative destination for clothing donations)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, referring to leaving immediately for donation drop-off or recycling center)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "Person who owns or manages the folding cart (likely a neighbor or building staff, referenced in prior conversation)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "Item currently being moved (likely a box or bag of donations, referenced in the organizing session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "that jar",
+        "resolved_entity": "Jar in the pantry that is running low (referenced as needing to be included in organizing/restocking)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "the shelter",
+        "resolved_entity": "Local animal or community shelter (where 'she' is volunteering until later)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current organizing session or later in the day (when 'she' will return from volunteering)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "the donation bag",
+        "resolved_entity": "Bag designated for items to be donated (used during the decluttering session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "this weekend",
+        "resolved_entity": "Upcoming Saturday and Sunday (referring to their regular organizing and decluttering ritual)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "that stack",
+        "resolved_entity": "Stack of items (likely clothes or papers) left by the window for sorting",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Person referenced earlier (likely Mia or another friend, contextually someone who would appreciate the suggested idea)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "that corner",
+        "resolved_entity": "Corner of the apartment where Mia\u2019s art supplies are scattered (likely near the living room or workspace)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "those papers",
+        "resolved_entity": "Papers needing sorting (likely related to art supplies or donation paperwork)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current organizing session or at a future time (when papers might be sorted)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "this box",
+        "resolved_entity": "Box currently being used to stack sorted papers or items (referenced in the organizing session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "that cart",
+        "resolved_entity": "Folding cart borrowed for transporting donations (referenced earlier in conversation)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "those donations",
+        "resolved_entity": "Items recently donated (clothes, art supplies, etc., for which a receipt is needed)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "that organizer",
+        "resolved_entity": "Organizer (storage unit or container) started last week for sorting items",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "your plants",
+        "resolved_entity": "Mia\u2019s collection of houseplants (referenced as the exception to being fully organized)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that meeting",
+        "resolved_entity": "Building tenants meeting (referenced as an event for residents)",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "the lobby",
+        "resolved_entity": "Apartment building lobby (location for the tenants meeting next Thursday at 7 PM)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "your exam",
+        "resolved_entity": "Emma\u2019s upcoming medical school exam (offered help with preparation)",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Emma and Mia\u2019s apartment (current location, contextually referring to the tidy home environment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "Now",
+        "resolved_entity": "Current time (message sent time, suggesting lunch immediately)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "the bread",
+        "resolved_entity": "Bread stored in the drawer (referenced for lunch preparation)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "that drawer",
+        "resolved_entity": "Drawer where bread is kept (likely in the kitchen, referenced for lunch)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

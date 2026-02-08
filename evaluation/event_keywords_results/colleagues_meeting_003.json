@@ -1,0 +1,787 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring to Workspace A - Fintech HQ, 255 Mission St, San Francisco, or another location?",
+        "priority": "HIGH",
+        "reason": "Spatial deictic 'here' is ambiguous without explicit confirmation; location must be resolved for context accuracy."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "technical",
+        "ambiguous_phrase": "main dataset",
+        "question": "What is the exact name, format, and location of the 'main dataset' being projected?",
+        "priority": "HIGH",
+        "reason": "The term 'main dataset' is vague; without specifying which dataset, its format, or location, participants may be unclear about the data source, leading to confusion or errors in analysis."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the irregular pattern we noticed last week",
+        "question": "What exactly is the 'irregular pattern' being referenced? Please specify the nature, location in the dataset, and any relevant metrics or identifiers.",
+        "priority": "HIGH",
+        "reason": "The phrase refers to a previously observed anomaly but does not specify what the pattern is, where it appears in the data, or how it is identified. Without this detail, group members may be unclear about which pattern to highlight, leading to confusion or miscommunication during the analysis."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What are the exact dates or time window referred to by 'last week'?",
+        "priority": "HIGH",
+        "reason": "The reference to 'last week' is vague and could lead to ambiguity about which data or events are being discussed, especially if multiple patterns or meetings occurred in recent weeks."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "batch timings",
+        "question": "What are the exact batch timings being referenced (start/end times, time zone, frequency)?",
+        "priority": "HIGH",
+        "reason": "Without precise batch timing details, it's impossible to determine alignment with the spike or perform a meaningful analysis."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the spike",
+        "question": "What is the exact time window or timestamp for the spike event?",
+        "priority": "HIGH",
+        "reason": "The spike's timing must be clearly defined to compare it against batch timings and establish any correlation."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "person",
+        "ambiguous_phrase": "Has anyone checked",
+        "question": "Who is responsible for checking the batch timings against the spike, and has this task been assigned?",
+        "priority": "HIGH",
+        "reason": "Unclear task ownership may result in the analysis not being performed or duplicated efforts."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "would you share",
+        "question": "By when is Anna expected to share her findings? Is there a deadline or timeframe?",
+        "priority": "HIGH",
+        "reason": "No timeframe is given, which could delay resolution or cause confusion about urgency, especially given the context of an upcoming brainstorming session."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "technical",
+        "ambiguous_phrase": "those records",
+        "question": "Which records is 'those records' referring to? Please specify the dataset, time range, or system.",
+        "priority": "HIGH",
+        "reason": "Without clear identification of which records Anna is being asked to review, the request is ambiguous and may lead to incomplete or incorrect analysis."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "person",
+        "ambiguous_phrase": "Anna",
+        "question": "What is Anna's role or access level regarding these records?",
+        "priority": "CRITICAL",
+        "reason": "Anna's authority or access to the records is not specified, which could impact her ability to respond or act on the request."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "technical",
+        "ambiguous_phrase": "merchant logs",
+        "question": "Which specific merchant logs are being referenced (system, date range, location, access method)?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying which merchant logs to cross-check, the request is ambiguous and cannot be actioned. Multiple logs may exist across systems, dates, or merchants."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "credential",
+        "ambiguous_phrase": "cross-check",
+        "question": "Who has access to the merchant logs, and are the necessary credentials available for cross-checking?",
+        "priority": "CRITICAL",
+        "reason": "Access to merchant logs may be restricted; it's unclear if the requester or team has the required permissions or credentials."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the spike",
+        "question": "What is the exact time window or date range for 'the spike' that should be cross-checked in the merchant logs?",
+        "priority": "HIGH",
+        "reason": "The relevant period for the spike is not defined, making it unclear which log entries to review."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Who is Mark (full name, role, access level), and is he expected or required for this session?",
+        "priority": "CRITICAL",
+        "reason": "Mark's identity and role are not specified. If his presence is critical for the session or for privacy/access reasons, this must be clarified to ensure the right participants are present and authorized."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the batch in question",
+        "question": "Which specific batch is being referred to? What is its identifier or date range?",
+        "priority": "HIGH",
+        "reason": "Without a clear batch identifier, Mark cannot know which merchant logs to retrieve, risking confusion or incorrect data retrieval."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "technical",
+        "ambiguous_phrase": "merchant logs",
+        "question": "Where are the merchant logs stored? What system, directory, or file location should Mark access?",
+        "priority": "CRITICAL",
+        "reason": "Mark needs explicit instructions on where to find the merchant logs to avoid delays or access issues."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Does Mark have the necessary access level or credentials to retrieve the merchant logs?",
+        "priority": "CRITICAL",
+        "reason": "If Mark lacks access, the request cannot be fulfilled, and privacy or security protocols may be breached."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "technical",
+        "ambiguous_phrase": "this subset",
+        "question": "Which exact subset of data is being referenced for the hypothesis test (e.g., batch number, time window, merchant group)?",
+        "priority": "HIGH",
+        "reason": "The subset is not defined, making it ambiguous which data is under consideration for analysis and potentially leading to miscommunication or incorrect analysis."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "config",
+        "ambiguous_phrase": "your script",
+        "question": "What is the name, version, location, and purpose of the script Luis is being asked to share?",
+        "priority": "HIGH",
+        "reason": "Without specifying which script is being referenced, there may be confusion if Luis has multiple scripts. The group needs to know exactly which script is required to ensure the correct file is shared and used."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "credential",
+        "ambiguous_phrase": "share your script with the group",
+        "question": "Does the script contain sensitive information or require specific access permissions before being shared with the group?",
+        "priority": "CRITICAL",
+        "reason": "Sharing scripts can involve privacy or security risks if credentials or sensitive data are embedded. It is important to confirm access levels and ensure compliance with data sharing policies."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator",
+        "question": "Who specifically is 'the coordinator'? What is their full name, role, and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'the coordinator' is ambiguous. Without specifying who this person is, it is unclear who should be invited for oversight, risking lack of accountability and possible oversight gaps."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "invite the coordinator for oversight",
+        "question": "What are the details of the invitation? (Date, time, location, method of invitation, confirmation status)",
+        "priority": "CRITICAL",
+        "reason": "The specifics of the oversight appointment are missing. Without these details, it is unclear when and how the coordinator is expected to participate, which could lead to scheduling conflicts or missed oversight."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who specifically is 'she' referring to? Please provide full name or role.",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without explicit antecedent in this turn, which could cause confusion about which individual is being referenced for task assignment."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Once she arrives",
+        "question": "What is the expected arrival time or deadline for 'her' arrival?",
+        "priority": "HIGH",
+        "reason": "The timing of when follow-up analysis tasks can be assigned is ambiguous without a specific arrival time or deadline, which could impact scheduling and workflow."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "we",
+        "question": "Who is included in 'we' for assigning follow-up analysis tasks? Please specify roles or names.",
+        "priority": "HIGH",
+        "reason": "The group responsible for assigning tasks is not clearly defined, which could lead to ambiguity in responsibility."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "credential",
+        "ambiguous_phrase": "access to the logs from Mark",
+        "question": "What system are the logs stored on, and what credentials or access level are required from Mark to retrieve them?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the system, access method, or required credentials, User A cannot proceed. Privacy and security implications are also unresolved."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Who is Mark (full name, role, contact info), and does he have authority to grant access to the logs?",
+        "priority": "CRITICAL",
+        "reason": "Mark's identity and authority are unclear, which could delay access or create compliance issues."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "config",
+        "ambiguous_phrase": "logs",
+        "question": "What logs are being referred to (type, location, format, purpose)?",
+        "priority": "HIGH",
+        "reason": "The logs are not defined, making it ambiguous what data is needed for analysis and how to retrieve it."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "technical",
+        "ambiguous_phrase": "document your findings",
+        "question": "What specific findings is Anna expected to document? Is there a defined format, location, or template for documentation?",
+        "priority": "HIGH",
+        "reason": "Without specifying what findings and how/where to document them, Anna may not provide the necessary details or may use an incorrect platform or format, impacting later review and traceability."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for later review",
+        "question": "When is the review expected to take place? Is there a deadline by which Anna must complete the documentation?",
+        "priority": "HIGH",
+        "reason": "The lack of a clear deadline or review timeline could lead to delays or missed expectations for when the findings should be available."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "technical",
+        "ambiguous_phrase": "batch upload timings",
+        "question": "What are the exact parameters or scope for 'batch upload timings' (e.g., which system, what data, deadline, success criteria)?",
+        "priority": "HIGH",
+        "reason": "Without specifying the system, data set, deadline, or success criteria, the task is undefined and cannot be properly assigned or tracked, risking incomplete or misaligned work."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once you\u2019re done",
+        "question": "What is the expected deadline or timeframe for Luis to complete his summary?",
+        "priority": "HIGH",
+        "reason": "Without a clear deadline, Luis may not prioritize the task appropriately, which could delay subsequent steps or the upcoming brainstorming session."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "brainstorming folder",
+        "question": "What is the exact location or path of the 'brainstorming folder' where Luis should add his summary?",
+        "priority": "HIGH",
+        "reason": "If the folder location is ambiguous, Luis may add the summary to the wrong place, causing confusion or loss of information."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "Luis",
+        "question": "Is Luis clearly identified (full name or user handle) to avoid confusion if there are multiple people named Luis?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in person identification can lead to miscommunication or the wrong individual performing the task."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "config|directory|temporal",
+        "ambiguous_phrase": "session notes",
+        "question": "Where are the session notes stored (platform, folder, physical copy)? Who is responsible for maintaining them, and what is their latest version or timestamp?",
+        "priority": "HIGH",
+        "reason": "The location, ownership, and version of the session notes are unclear, which could lead to confusion or loss of important documentation needed for later review or compliance."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "grab a copy",
+        "question": "When were the session notes supposed to be captured or distributed? Is there a deadline or expected timeframe?",
+        "priority": "HIGH",
+        "reason": "The timing for capturing or sharing session notes is not specified, which could delay access to critical information for follow-up tasks."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "technical",
+        "ambiguous_phrase": "next steps",
+        "question": "What are the exact next steps, who is responsible for each, and what are the deadlines?",
+        "priority": "HIGH",
+        "reason": "Lack of specificity on actions, owners, and timing can result in confusion, missed tasks, or delays in project progress."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator",
+        "question": "Who specifically is 'the coordinator'? What is their full name or identifier?",
+        "priority": "HIGH",
+        "reason": "The identity of 'the coordinator' is ambiguous, which may lead to confusion about who should be included or notified. Explicit identification is necessary for accountability and task completion."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date and time for the next session?",
+        "priority": "HIGH",
+        "reason": "The term 'tomorrow' is relative and requires resolution to a specific calendar date and time to avoid confusion or scheduling errors."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "10 AM",
+        "question": "What is the exact date of the appointment being confirmed for 10 AM?",
+        "priority": "CRITICAL",
+        "reason": "The phrase '10 AM' confirms a time but does not specify the date. Without an explicit date, there is risk of miscommunication about when the meeting is scheduled."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to a specific date for scheduling and clarity, especially since 'tomorrow' can be ambiguous depending on the reference time."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The day after this brainstorming session (i.e., the next workday following today's meeting)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "same place",
+        "resolved_entity": "Workspace A - Fintech HQ, 255 Mission St, San Francisco (the shared workspace where the current brainstorming session is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "10 AM",
+        "resolved_entity": "10:00 AM on the day after this session (the agreed start time for the follow-up meeting in the same workspace)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 57,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The day after this brainstorming session (i.e., the next workday following today's meeting)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 29
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "config",
+        "ambiguous_phrase": "anomaly report",
+        "question": "What is the format, location, and version of the anomaly report being referenced?",
+        "priority": "HIGH",
+        "reason": "The term 'anomaly report' is ambiguous without specifying which report, its format, where it is stored, or which version is needed. This can lead to confusion or the wrong document being brought."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "main display",
+        "question": "Which specific display or screen should be connected to? (e.g., device ID, location, input port)",
+        "priority": "HIGH",
+        "reason": "There may be multiple displays in the workspace; specifying the exact device prevents confusion and technical delays."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "config/credential",
+        "ambiguous_phrase": "connect to the main display",
+        "question": "Are there any required credentials, network settings, or access permissions needed to connect to the main display?",
+        "priority": "CRITICAL",
+        "reason": "Connection may require authentication or specific configuration; missing this could block the task."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "config/credential",
+        "ambiguous_phrase": "real-time dashboard from our platform",
+        "question": "What are the access details or credentials required to bring up the real-time dashboard? Is there a specific URL, login, or application to use?",
+        "priority": "CRITICAL",
+        "reason": "Accessing the dashboard may require specific credentials or instructions; lack of detail could prevent successful display."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the spike on the right side of the chart",
+        "question": "What is the nature of the spike (e.g., metric, timestamp, value, cause)?",
+        "priority": "HIGH",
+        "reason": "Without specifying what the spike represents (which metric, time, or anomaly type), it's impossible to take action or investigate further."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the chart",
+        "question": "Which chart is being referenced (name, source, or dashboard view)?",
+        "priority": "HIGH",
+        "reason": "Multiple charts may exist on the dashboard; ambiguity could lead to miscommunication or analysis of the wrong data."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "technical",
+        "ambiguous_phrase": "isn't sure yet",
+        "question": "What steps are being taken to confirm or refute the hypothesis about batch uploads causing the anomaly, and what is the expected timeline for confirmation?",
+        "priority": "HIGH",
+        "reason": "Uncertainty about the cause leaves the issue unresolved; knowing the investigation plan and timeline is necessary for accountability and progress tracking."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the timestamps almost match",
+        "question": "Which specific timestamps are being compared, and what is the exact time difference between them?",
+        "priority": "HIGH",
+        "reason": "Precise timestamp details are necessary to confirm correlation between events and to validate the suspected cause of the spike. Ambiguity here could lead to incorrect conclusions or missed anomalies."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "Anna",
+        "question": "Does Anna Lee have the necessary access level or permissions to investigate the relevant data sources?",
+        "priority": "CRITICAL",
+        "reason": "Verifying Anna's access ensures data privacy and confirms she can perform the required analysis without security or compliance issues."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "location",
+        "ambiguous_phrase": "the group chat",
+        "question": "Which specific group chat is being referred to (e.g., Slack channel name, Teams group, etc.)?",
+        "priority": "HIGH",
+        "reason": "Without knowing the exact group chat, it is unclear where the analysis is posted and how to access it. This could delay retrieval or cause confusion if there are multiple group chats."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What are the exact start and end dates/times for 'last week' and the 'anomaly period' that Anna compared?",
+        "priority": "HIGH",
+        "reason": "Precise time windows are necessary for reproducibility and to ensure the analysis covers the correct data ranges."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "technical",
+        "ambiguous_phrase": "compared merchant batches",
+        "question": "What metrics or attributes were compared between the batches (e.g., volume, timestamps, error rates)?",
+        "priority": "HIGH",
+        "reason": "The nature of the comparison is unclear; knowing what was analyzed is essential for interpreting the results."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "Here it is",
+        "question": "Where is Anna's analysis located (e.g., which group chat, platform, or file)?",
+        "priority": "HIGH",
+        "reason": "The reference to 'here' is deictic and lacks a resolved location, which could hinder access to the analysis."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "technical",
+        "ambiguous_phrase": "one batch",
+        "question": "Which specific batch had duplicate entries (e.g., batch ID, date, merchant)?",
+        "priority": "HIGH",
+        "reason": "Identifying the exact batch is necessary to investigate the scope and impact of the duplicate entries and to take corrective action."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "technical",
+        "ambiguous_phrase": "duplicate entries",
+        "question": "What kind of duplicate entries were found (e.g., same transaction ID, timestamp, amount)?",
+        "priority": "HIGH",
+        "reason": "Clarifying the nature of the duplicates is important for root cause analysis and to determine if this is a systemic issue."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "credential",
+        "ambiguous_phrase": "access from the engineering team",
+        "question": "What type of access is required (system, credentials, permissions), and for which resource or system?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the exact access needed, it is unclear what permissions or credentials must be requested from the engineering team, which could delay resolution or cause miscommunication."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "the engineering team",
+        "question": "Which specific members of the engineering team are responsible for granting access?",
+        "priority": "CRITICAL",
+        "reason": "Identifying the correct contact(s) is necessary to efficiently request and obtain the required access."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Have you asked them yet?",
+        "question": "When was the request to the engineering team made, or when will it be made?",
+        "priority": "HIGH",
+        "reason": "Knowing the timing of the request is important for tracking progress and setting expectations for when access might be granted."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "over there by the window",
+        "question": "Which exact window or location within Workspace B is being referenced?",
+        "priority": "HIGH",
+        "reason": "Spatial reference 'over there by the window' is vague and does not specify the exact position, which is important for physical tracking or access in a workspace."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "technical",
+        "ambiguous_phrase": "them",
+        "question": "What exactly does 'them' refer to (e.g., files, records, credentials, etc.)?",
+        "priority": "CRITICAL",
+        "reason": "The object being fetched from the backend system is not specified, which is necessary for tracking technical tasks and ensuring the correct items are retrieved."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "in a couple of minutes",
+        "question": "What is the exact expected time or deadline for fetching the items?",
+        "priority": "HIGH",
+        "reason": "The phrase 'in a couple of minutes' is vague and does not provide a specific timestamp, which could lead to confusion or missed follow-up if the action is delayed."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "Luis",
+        "question": "Who is Luis (full name, role/title, department)?",
+        "priority": "HIGH",
+        "reason": "Luis is referenced as discussing a technical procedure, but his identity and authority are unclear, which may affect the reliability or relevance of his input."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "technical",
+        "ambiguous_phrase": "permutation test",
+        "question": "What are the details of the permutation test (type, purpose, data involved, timeline)?",
+        "priority": "HIGH",
+        "reason": "The permutation test is mentioned as a potential technical action, but without specifics, it's unclear what is being tested, why, and when, which is essential for tracking technical tasks and outcomes."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "config",
+        "ambiguous_phrase": "the link",
+        "question": "What is the link referring to (e.g., file type, purpose, version, or content)?",
+        "priority": "HIGH",
+        "reason": "Without knowing what the link contains or its purpose, it is unclear whether it is appropriate or safe to add it to the platform. This is essential for technical and privacy reasons."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "platform",
+        "ambiguous_phrase": "the platform",
+        "question": "Which platform is being referred to, and what are the requirements or permissions for adding new content?",
+        "priority": "CRITICAL",
+        "reason": "The specific platform is not identified, which could lead to confusion or errors if multiple platforms exist or if there are access restrictions."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' that sent the link?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'he' is not explicit in this turn, which could cause ambiguity if the conversation is referenced later or by someone not following the full context."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "brainstorming folder",
+        "question": "What is the exact full path and contents of the 'brainstorming folder'? Who has access permissions?",
+        "priority": "CRITICAL",
+        "reason": "The location and access details of the folder are unclear, which may impact retrieval, collaboration, and privacy."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent in the immediate prior turns, making it ambiguous who is being referenced. This is essential for actionability and privacy tracking."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "her office upstairs",
+        "question": "What is the exact location (floor number, room) of 'her office upstairs'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'upstairs' is spatially vague; for precise tracking, the specific floor and office/room number are needed, especially in a multi-floor workspace."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she' specifically? Is this Anna Lee, Data Analyst, or another person?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is ambiguous without explicit antecedent; critical for tracking participant actions and privacy/access."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "soon",
+        "question": "What is the exact expected time or deadline for 'she' to join? Is there a defined timeframe?",
+        "priority": "HIGH",
+        "reason": "Temporal phrase 'soon' is vague; precise timing is needed for scheduling and accountability."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "deployment/task",
+        "ambiguous_phrase": "merchant reconciliation",
+        "question": "What are the exact requirements, scope, and deadline for the merchant reconciliation task?",
+        "priority": "HIGH",
+        "reason": "Task details are missing; without clear criteria and timeline, volunteers may not understand expectations or urgency."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Who is Mark? (full name, role, and contact if relevant)",
+        "priority": "HIGH",
+        "reason": "Mark's identity is not clarified, which could cause confusion if there are multiple Marks or for audit purposes."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "volunteers for that",
+        "question": "What is the deadline or expected timeline for Anna to complete the merchant reconciliation?",
+        "priority": "HIGH",
+        "reason": "Missing timeline may lead to delays or lack of accountability for task completion."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "Anna",
+        "question": "Does Anna have the necessary access level or credentials to perform merchant reconciliation?",
+        "priority": "CRITICAL",
+        "reason": "If Anna lacks proper access, she may not be able to fulfill the task, causing workflow interruptions."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What is the exact timestamp or time window when the analysis is being uploaded?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for tracking deliverables and accountability. 'Now' is ambiguous without a reference time."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "technical",
+        "ambiguous_phrase": "her analysis",
+        "question": "What is the format, filename, or location of the analysis being uploaded?",
+        "priority": "HIGH",
+        "reason": "Without details on the analysis file (format, location, etc.), team members may not be able to access or verify the correct document."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "Luis",
+        "question": "What is Luis's full name and role or department?",
+        "priority": "HIGH",
+        "reason": "Luis is referenced by first name only, which may cause confusion if there are multiple people named Luis. Full identification is needed for accountability."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after running the permutation test",
+        "question": "What is the expected timeline or deadline for running the permutation test and uploading the file?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after running the permutation test' is vague and does not specify when the upload will occur. This lack of a clear timeline may impact project scheduling and accountability."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "config",
+        "ambiguous_phrase": "it",
+        "question": "What specifically is being uploaded (e.g., file name, type, or content)?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'it' is not explicitly defined in this turn, making it unclear what file or analysis is being referenced. This could cause confusion about deliverables."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the notes",
+        "question": "Which specific notes were exported (e.g., file name, version, or content summary)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which notes were exported, it is unclear what information is now available to the team or if the correct document was shared."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "technical",
+        "ambiguous_phrase": "exported",
+        "question": "To which location or system were the notes exported (e.g., local drive, shared folder, email, or another platform)?",
+        "priority": "HIGH",
+        "reason": "The destination of the exported notes is not specified, which is essential for team members to access the notes and for auditability."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "config",
+        "ambiguous_phrase": "the summary",
+        "question": "Which summary is being referred to, and where is it stored or located?",
+        "priority": "HIGH",
+        "reason": "It is unclear which summary is meant (e.g., meeting notes, test results), which could lead to confusion or the wrong document being circulated."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who specifically is 'she'? What is her full name and role?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without clear antecedent in this turn. Identifying the person is necessary for privacy, access control, and audit trail."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "been added",
+        "question": "What system, group, or platform was 'she' added to? What access level was granted?",
+        "priority": "CRITICAL",
+        "reason": "The action of adding someone is ambiguous without specifying the system or access level, which is important for privacy and technical compliance."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "Same time?",
+        "question": "What is the exact date and time for the calendar invite update?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Same time?' is ambiguous without explicit reference to a specific date and time. For calendar and scheduling purposes, the exact temporal details are required to avoid confusion or miscommunication."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Does 'here' refer specifically to Workspace B - Fintech HQ, 255 Mission St, San Francisco, or could it be ambiguous for remote participants or those unfamiliar with the location?",
+        "priority": "HIGH",
+        "reason": "Spatial deictic 'here' requires explicit resolution to avoid confusion, especially for participants who may not know the meeting location or are joining remotely."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What is the exact date and time for 'then'? Has the meeting time been explicitly confirmed in the calendar or context?",
+        "priority": "HIGH",
+        "reason": "Temporal deictic 'then' is ambiguous without a specific date/time, risking missed appointments or scheduling errors."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "location",
+        "ambiguous_phrase": "outside",
+        "question": "What is the precise location referred to by 'outside'? Is it immediately outside Workspace B, the building entrance, or a broader area in San Francisco?",
+        "priority": "HIGH",
+        "reason": "The term 'outside' is spatially vague; for operational or safety purposes, knowing the exact location affected by rain could be important (e.g., for planning commutes, deliveries, or outdoor activities)."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 54,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Central table near the screen in the shared workspace (where the brainstorming session is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 52,
+        "ambiguous_phrase": "Same time",
+        "resolved_entity": "Same time as the current brainstorming session (previously scheduled meeting time for this group)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (when Anna is uploading her analysis during the brainstorming session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 28
+  }
+}

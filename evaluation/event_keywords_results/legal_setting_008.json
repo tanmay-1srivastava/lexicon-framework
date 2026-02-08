@@ -1,0 +1,901 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and requires explicit resolution to a specific location for accurate context, privacy, and record-keeping. Although metadata provides a likely resolution, the user's statement alone is ambiguous."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "we can talk freely",
+        "question": "What topics require privacy, and are there any specific privacy or access controls in place (e.g., soundproofing, electronic surveillance, authorized personnel)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase implies sensitive discussion, but does not specify what privacy measures are in place or what topics require confidentiality. This is crucial in a medical/hospital context for compliance and risk assessment."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "location",
+        "ambiguous_phrase": "which building",
+        "question": "Which building was referenced for the meeting or event at the specified time?",
+        "priority": "HIGH",
+        "reason": "The user is uncertain about the exact building location for the scheduled event, which is essential for spatial clarity and proper attendance."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the time",
+        "question": "What appointment or event is scheduled at the referenced time, and does it include full details (type, location, prep instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The user saw the time but lacks context about the associated appointment or event, risking confusion or missed preparation."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "the place",
+        "question": "Which exact place/building/room is User A referring to? Is it Brian's Office, Mercy General Hospital, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the place' is vague and could refer to multiple locations. Without explicit confirmation, there is risk of miscommunication about the meeting site, which is essential for privacy, scheduling, and operational clarity."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "What should I bring with me there?",
+        "question": "Are there any required documents, identification, medical records, or specific items (e.g., forms, insurance card, medication list) that User A needs to bring to the appointment in Brian's Office at Mercy General Hospital?",
+        "priority": "CRITICAL",
+        "reason": "Missing prep instructions for the appointment could result in incomplete documentation, delays, or inability to proceed with the meeting."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Is 'there' referring specifically to Brian's Office at Mercy General Hospital, or is another location involved for this meeting?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in location could cause User A to arrive at the wrong place, impacting the appointment."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "times",
+        "question": "Which specific times are likely to be asked about, and are these times available in the user's memory or only on their phone/calendar?",
+        "priority": "HIGH",
+        "reason": "The user is unsure whether to rely on memory or their phone for 'times,' but it is unclear which times are relevant (e.g., appointment times, meeting times, deadlines). Without specifying which times, it is difficult to determine the best reference source or to ensure accuracy."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "admin",
+        "question": "Who specifically is 'admin' (name, role, department) referenced in the emails?",
+        "priority": "HIGH",
+        "reason": "The identity of 'admin' is unclear, which affects understanding of authority, context, and potential privacy implications."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "push me for more",
+        "question": "Is the request for 'more' related to appointment details, patient information, or administrative matters?",
+        "priority": "CRITICAL",
+        "reason": "If the request pertains to appointments or patient data, additional privacy and compliance considerations may apply."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "during the actual court case",
+        "question": "When exactly is 'the actual court case' scheduled, and does it refer to a specific date, hearing, or trial phase?",
+        "priority": "HIGH",
+        "reason": "Temporal specificity is needed to distinguish between current and future obligations or restrictions."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "any details",
+        "question": "What specific details about Mr. Hall is the user referring to (e.g., medical history, diagnosis, treatment, appointment times)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'any details' is overly broad and ambiguous, making it unclear what type of information the user wants to discuss. This is especially important for privacy and compliance, as different types of patient information may have different disclosure rules."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "am I allowed to talk about",
+        "question": "Who is the intended audience for sharing Mr. Hall's details (e.g., legal counsel, court, colleagues, external parties)?",
+        "priority": "HIGH",
+        "reason": "Permission to discuss patient information depends on the recipient. Without specifying who the user wants to talk to, it is impossible to determine if disclosure is permitted under privacy regulations (e.g., HIPAA)."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "document",
+        "ambiguous_phrase": "any other documents",
+        "question": "Which specific documents (by name, type, or location) should User A review before 'then'? Are there required or recommended documents for the upcoming event?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification of which documents are relevant, User A may miss important materials, risking incomplete preparation or non-compliance with legal/medical protocols."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before then",
+        "question": "What is the exact deadline or event referred to by 'then'? Is it a meeting, court case, or another appointment? What is the specific date and time?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about the deadline could result in missed preparation or late review, especially if multiple upcoming events are possible."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "PERSON",
+        "ambiguous_phrase": "I",
+        "question": "Who is the user in this context (full name, role, and authority to access/print these EMR documents)?",
+        "priority": "CRITICAL",
+        "reason": "User identity and access level are relevant for privacy and audit trails, especially when handling sensitive medical records."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "medical",
+        "ambiguous_phrase": "the chart",
+        "question": "Which specific chart is being referenced (e.g., patient name, type of chart, date)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which chart, it is unclear what information needs to be described or reviewed, which could lead to privacy breaches or incomplete responses."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "timing",
+        "question": "What event or action does 'timing' refer to? Is it the timing of an appointment, medication, document review, or another process?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying what 'timing' refers to, it is unclear what information or context is needed, which could lead to miscommunication or missed deadlines for critical medical or administrative tasks."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "that clinic later that day",
+        "question": "What is the exact time, type, and location of the clinic appointment that may need to be rescheduled?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that clinic later that day' is vague; without specifying which clinic appointment, its scheduled time, or location, it is unclear which appointment is at risk of being rescheduled. This is essential for accurate calendar management and patient notification."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "depending on how long this goes",
+        "question": "What is the expected duration or end time of the current event, and what is the threshold for needing to reschedule the clinic?",
+        "priority": "HIGH",
+        "reason": "The condition for rescheduling is ambiguous; without knowing the current event's expected duration or the cutoff time for rescheduling, it is impossible to determine when action is needed."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "Dr. Myers\u2014the department chair",
+        "question": "What is Dr. Myers' full name and department to ensure correct identification and communication?",
+        "priority": "HIGH",
+        "reason": "Precise identification of Dr. Myers is necessary for accurate communication and privacy compliance, especially in a hospital setting with multiple departments."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I already mentioned something to him in the hallway",
+        "question": "When did the hallway conversation with Dr. Myers occur, and what exactly was mentioned?",
+        "priority": "HIGH",
+        "reason": "The timing and content of the prior mention are unclear, which affects understanding of what Dr. Myers already knows and what still needs to be communicated."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "person",
+        "ambiguous_phrase": "the HR person who reached out earlier",
+        "question": "What is the HR person's full name, title, department, and contact information?",
+        "priority": "HIGH",
+        "reason": "Identifying the HR person is necessary for privacy, access control, and follow-up; 'she' is ambiguous and lacks entity resolution."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "earlier",
+        "question": "When exactly did the HR person reach out? What was the date and time?",
+        "priority": "HIGH",
+        "reason": "Temporal precision is needed to track the sequence of events and clarify context for any follow-up or documentation."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? Is this the HR person referenced earlier, and what is her full name and role?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about the identity of 'her' could lead to privacy or communication errors, especially when forwarding potentially sensitive information."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "forward anything from her to you",
+        "question": "What type of information will be forwarded, and is there appropriate authorization to share this information with the recipient?",
+        "priority": "CRITICAL",
+        "reason": "Forwarding information from an HR person may involve sensitive or confidential content; explicit confirmation of access rights and content type is necessary to avoid privacy violations."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "forms",
+        "question": "What are the names and types of forms required before the deposition? Are they legal, medical, or HR-related?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying which forms are needed, the user cannot prepare or ensure compliance before the deposition. This could delay the process or result in missing documentation."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "deposition",
+        "question": "What is the exact date, time, and location of the deposition?",
+        "priority": "CRITICAL",
+        "reason": "The user asks about forms before the deposition, but the deposition's scheduling details are not confirmed. This is necessary for proper preparation and coordination."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "person",
+        "ambiguous_phrase": "Are there any forms I need to sign",
+        "question": "Who is responsible for providing or collecting the forms? Is it legal, HR, or another department?",
+        "priority": "HIGH",
+        "reason": "Identifying the responsible party ensures the user knows whom to contact for questions or submission, reducing confusion and delays."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that day",
+        "question": "What is the exact date and time of the event for which the dress code is being asked?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that day' is temporally ambiguous; without a resolved date/time, it is unclear which appointment or event the dress code applies to. This can lead to confusion or miscommunication about expectations for the correct day."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "dress code",
+        "question": "What is the required dress code for the specified event or appointment?",
+        "priority": "CRITICAL",
+        "reason": "The user is asking for dress code requirements, but no information is provided about what is expected. This is necessary for proper preparation and compliance with event or institutional standards."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "how long I\u2019ll actually be in that room",
+        "question": "What is the expected duration of the deposition appointment in the specified room?",
+        "priority": "CRITICAL",
+        "reason": "Duration is essential for scheduling, preparation, and managing subsequent calendar events; lack of this information may cause conflicts or incomplete planning."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "that room",
+        "question": "Which specific room is being referred to for the deposition (building, floor, room number)?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for navigation, privacy, and logistical arrangements; 'that room' is ambiguous without explicit identification."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator",
+        "question": "Who is the coordinator referenced (full name, title, contact)?",
+        "priority": "HIGH",
+        "reason": "Identifying the coordinator is important for follow-up, accountability, and clarifying authority over scheduling and instructions."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that packet with the questions",
+        "question": "What is the official name, source, and contents of the 'packet with the questions'? Is it a standard deposition prep packet, and who prepares/distributes it?",
+        "priority": "CRITICAL",
+        "reason": "The user refers to a packet containing questions for the deposition, but it is unclear what this packet is, who provides it, and whether it contains all relevant materials. This is essential for preparation and legal compliance."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "copy",
+        "question": "Will the copy of the packet be physical, digital, or both? How and when will it be delivered to the user?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the format and delivery method is important for timely access and preparation, especially if remote or in-person requirements differ."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after that day",
+        "question": "What is the exact date or time window referred to by 'that day'? Is it clearly defined in prior context?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity prevents accurate guidance; without knowing which day is the cutoff, advice about post-event topics cannot be tailored or verified."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "things that happened after that day",
+        "question": "What types of 'things' are being referenced\u2014medical events, administrative actions, patient interactions, or something else?",
+        "priority": "CRITICAL",
+        "reason": "Lack of specificity about the nature of 'things' makes it difficult to determine what information is relevant or permissible to discuss."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "person",
+        "ambiguous_phrase": "that person\u2014the court reporter\u2014",
+        "question": "Who exactly is the court reporter (full name, title, contact, department)?",
+        "priority": "HIGH",
+        "reason": "The identity and role of the court reporter are not specified. For privacy, access, and communication, it is important to know who this person is and their authority in the context."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "location",
+        "ambiguous_phrase": "step out",
+        "question": "Where should the user step out to if an interruption occurs? (e.g., hallway, waiting area, another office?)",
+        "priority": "HIGH",
+        "reason": "The appropriate location to step out to may have privacy, security, or procedural implications."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the proceeding",
+        "question": "What is the exact nature, type, and rules of the 'proceeding' being referenced?",
+        "priority": "CRITICAL",
+        "reason": "The permissibility of answering calls during a proceeding depends on the type (e.g., court hearing, deposition, medical board review), and each may have strict rules about interruptions or phone use. Without knowing the proceeding type, guidance cannot be specific or compliant."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "during the proceeding",
+        "question": "What is the scheduled time window for the proceeding, and does it overlap with any critical appointments or obligations?",
+        "priority": "HIGH",
+        "reason": "Knowing the exact timing is important to assess conflicts with other scheduled events (e.g., the upcoming patient appointment at 3:00 PM) and to determine if answering calls is feasible."
+      },
+      {
+        "turn_id": 63,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Is there anything else I can do to prepare?",
+        "question": "Are there any specific preparation instructions, required documents, or materials that User A should bring or review before the proceeding?",
+        "priority": "CRITICAL",
+        "reason": "Preparation requirements for the appointment/proceeding have not been specified; missing this information could result in User A being unprepared or non-compliant."
+      },
+      {
+        "turn_id": 65,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "handling this",
+        "question": "What specific proceeding or event is User A referring to, and are all preparation steps for it clearly documented?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'handling this' is vague; it is unclear what exact appointment, event, or process User A feels prepared for. Without explicit reference, there is risk of missing critical instructions or context for the proceeding."
+      },
+      {
+        "turn_id": 67,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "my next patient",
+        "question": "Who is the next patient, and what are the appointment details (type, time, location, prep_instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'my next patient' is vague; while calendar metadata suggests 'J. Ramirez, 3:00 PM', the turn itself does not specify the patient or appointment details, which could lead to ambiguity if context changes or for audit/tracking purposes."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Brian's Office at Mercy General Hospital (where the meeting with Lara is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (when Brian started the conversation with Lara in his office)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Deposition location (the place where Brian will be giving testimony, as discussed with Lara)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "Time of the deposition (when Brian is scheduled to testify, as discussed in the meeting)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Brian's Office at Mercy General Hospital (where Brian accesses the EMR to review documents)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "later that day",
+        "resolved_entity": "Later on the same day as the deposition (after the testimony session is complete)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "after that day",
+        "resolved_entity": "After the date of the incident or event being discussed in the deposition (i.e., subsequent to the key event in the malpractice case)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 67,
+        "ambiguous_phrase": "next patient",
+        "resolved_entity": "Brian's upcoming patient appointment (the patient scheduled to be seen after this meeting with Lara)",
+        "resolution_type": "temporal",
+        "metadata_source": "User A Calendar"
+      }
+    ],
+    "transcript_turns": 34
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "your office or somewhere quieter",
+        "question": "What is Brian's current location? Is he at his office, and if so, which office? If not, where is 'somewhere quieter'?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed to ensure privacy and context for the conversation, and to resolve any subsequent deictic references (e.g., 'here', 'there')."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "location",
+        "ambiguous_phrase": "that building downtown",
+        "question": "What is the exact name and address of 'that building downtown' where the user is required to appear?",
+        "priority": "HIGH",
+        "reason": "Precise location is necessary for compliance with the subpoena and to avoid confusion or missed appearance."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "subpoena requires you to appear",
+        "question": "What is the specific room or office within the building where the appearance is required?",
+        "priority": "CRITICAL",
+        "reason": "Room or office details are needed to ensure the user arrives at the correct place within the building."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next Friday at 10am",
+        "question": "What is the exact date corresponding to 'next Friday'?",
+        "priority": "HIGH",
+        "reason": "Exact date is needed to avoid scheduling errors, especially if the current day is close to Friday or if there is ambiguity about which Friday is meant."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "person",
+        "ambiguous_phrase": "Counsel for both sides",
+        "question": "Who specifically are the counsel for both sides (names and roles)?",
+        "priority": "HIGH",
+        "reason": "Identifying the specific individuals present is important for privacy, preparation, and access control."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "person",
+        "ambiguous_phrase": "court reporter",
+        "question": "Who is the court reporter (name and contact information)?",
+        "priority": "HIGH",
+        "reason": "Knowing the court reporter's identity may be necessary for record-keeping, access, or follow-up."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to? What is his full name and role?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'him' is ambiguous; without clear identification, participant list for the appointment is incomplete and may affect legal proceedings."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "his counsel",
+        "question": "Who is 'his counsel'? What is their full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "Counsel's identity is necessary for legal coordination and access permissions; ambiguity may cause confusion or access issues."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "perhaps the coordinator for legal affairs",
+        "question": "Is the coordinator for legal affairs confirmed to attend? If so, what is their full name and role?",
+        "priority": "HIGH",
+        "reason": "Attendance of the legal affairs coordinator is uncertain; confirmation is needed for scheduling and access."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mr. Arnold",
+        "question": "Who is Mr. Arnold? What is his full name, title, and role in this context?",
+        "priority": "HIGH",
+        "reason": "The identity and role of Mr. Arnold are not specified, which is essential for confirming attendance and ensuring proper communication."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "possibly",
+        "question": "Is Mr. Arnold's attendance confirmed or tentative? What criteria will determine confirmation?",
+        "priority": "CRITICAL",
+        "reason": "Uncertainty about attendance affects planning and coordination for the appointment."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "I\u2019ll be sitting beside you",
+        "question": "Who specifically is 'I'? What is their full name and role in the proceeding?",
+        "priority": "HIGH",
+        "reason": "The identity and role of the person providing support is unclear, which is essential for privacy, legal, and procedural clarity."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that afternoon",
+        "question": "What is the exact date and time referred to as 'that afternoon'?",
+        "priority": "HIGH",
+        "reason": "Precise temporal reference is necessary for calendar retrieval and to ensure the correct event or recollection is prepared for; 'that afternoon' is ambiguous without a specific date and time."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "in case they ask about your recollections for that afternoon",
+        "question": "What is the specific appointment or event being referenced for which recollections may be needed?",
+        "priority": "CRITICAL",
+        "reason": "The user may need to prepare for a particular appointment or event, but the details are not specified, which could lead to incomplete preparation."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if you need to be precise",
+        "question": "What exact date and time should the user reference in their calendar?",
+        "priority": "HIGH",
+        "reason": "Precision is required for legal or medical recollections; without specifying which event or time period to check, the user may not know what information is needed."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "your calendar",
+        "question": "Which appointment or event in the calendar is relevant for the recollection?",
+        "priority": "CRITICAL",
+        "reason": "The user may have multiple calendar entries; without specifying which appointment or event, ambiguity remains about what needs to be recalled."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Depositions",
+        "question": "Which deposition is being referenced, including date, time, location, and involved parties?",
+        "priority": "CRITICAL",
+        "reason": "The term 'depositions' is used generically without specifying which event, making it unclear which appointment or legal proceeding is being discussed and who is involved."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "to the extent the subpoena covers",
+        "question": "What is the exact time frame or date range covered by the subpoena?",
+        "priority": "HIGH",
+        "reason": "Without a defined temporal scope, the witness may not know which observations or actions are relevant, risking over- or under-disclosure."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "facts you directly observed or actions you took",
+        "question": "Where did these observations or actions occur? Are specific locations relevant to the subpoena?",
+        "priority": "HIGH",
+        "reason": "Location context is necessary to determine which facts or actions are responsive to the subpoena and to avoid irrelevant disclosures."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that date",
+        "question": "Which specific date should the user review progress notes from?",
+        "priority": "HIGH",
+        "reason": "The instruction to review notes from 'that date' is ambiguous without a clearly defined date, which could lead to reviewing the wrong records and potential privacy or legal issues."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "technical",
+        "ambiguous_phrase": "reviewing them electronically",
+        "question": "Which electronic system or platform should be used to review the notes? Is remote access permitted, and are there any privacy or security requirements for accessing these records electronically?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the system or method for electronic review, there is risk of privacy breaches or improper access. The user may not know which device, application, or secure method is approved for this sensitive information."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "person",
+        "ambiguous_phrase": "Clarify if you didn\u2019t author a section",
+        "question": "Is there a required format or method for clarifying non-authorship? Should the user explicitly list sections not authored or simply state 'not authored' for each?",
+        "priority": "CRITICAL",
+        "reason": "Ambiguity in how to clarify non-authorship may lead to incomplete or inconsistent documentation, affecting the reliability of the record."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "what you recall",
+        "question": "What is the specific time frame or event that the user should recall information about?",
+        "priority": "HIGH",
+        "reason": "Without a defined time frame or event, 'what you recall' is ambiguous and may lead to incomplete or irrelevant information being provided."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' referring to in this context? Is it the note author, the reviewer, or another party?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the referent ensures the correct individual provides the information, which is important for accuracy and accountability."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "you\u2019ll be out of there by noon",
+        "question": "What is the exact scheduled end time of the appointment or event? Is 'noon' an estimate or based on a formal schedule?",
+        "priority": "CRITICAL",
+        "reason": "The statement provides only an estimated end time ('by noon'), which may impact staff planning and downstream scheduling. Precise timing is critical for setting accurate expectations."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location of 'there'? Is it still Room 305, San Diego County Hall of Justice, or has the location changed?",
+        "priority": "CRITICAL",
+        "reason": "While prior context suggests a location, the pronoun 'there' could introduce ambiguity if the location has changed or is not explicitly confirmed in this turn."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to? Is this a supervisor, colleague, or another party?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'him' is ambiguous; without clear identification, instructions may be misapplied or privacy may be breached."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "subpoenaed as a witness",
+        "question": "What is the date, time, and location of the subpoenaed appearance?",
+        "priority": "CRITICAL",
+        "reason": "Appointment details are missing; without them, the recipient cannot plan or verify the event."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to? What is her full name, title, and role in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is used without a clear antecedent, making it ambiguous who should direct questions to User B. This is essential for privacy, access control, and ensuring instructions are followed by the correct individual."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Does 'here' refer to User B, Lara's Office, or another specific location or contact method?",
+        "priority": "HIGH",
+        "reason": "Unclear referral destination could result in miscommunication, lost information, or improper handling of sensitive inquiries."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "refer them here as well",
+        "question": "What is the access protocol for individuals being referred? Is there a defined process or permission level required?",
+        "priority": "CRITICAL",
+        "reason": "Undefined access control may expose confidential or sensitive information to unauthorized parties."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this afternoon",
+        "question": "What is the exact time the consent form and witness information sheet will be sent by email?",
+        "priority": "HIGH",
+        "reason": "The recipient may need to know precisely when to expect the documents for planning or follow-up; 'this afternoon' is vague and could lead to missed communications or delays."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "consent form and witness information sheet",
+        "question": "What is the purpose and required action for the consent form and witness information sheet? Is there a deadline for completion or submission?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the purpose, required actions, or deadlines, the recipient may not respond appropriately or in a timely manner, which could impact legal or procedural obligations."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Business attire\u2014something you\u2019d wear for a meeting here or in court.",
+        "question": "What is the specific date, time, and location of the meeting or court appearance for which business attire is required?",
+        "priority": "CRITICAL",
+        "reason": "The instruction to wear business attire references an event, but the exact appointment details (date, time, location) are not provided, which are essential for preparation and scheduling."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "They estimate about 90 minutes",
+        "question": "Who specifically is 'they' referring to? Is it the court, a coordinator, or another party?",
+        "priority": "CRITICAL",
+        "reason": "The antecedent for 'they' is unclear, which could lead to confusion about who is providing the time estimate and whether it is authoritative."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "about 90 minutes, but sometimes it runs shorter",
+        "question": "What is the exact scheduled start and end time for the appointment/event? Is there a latest possible end time?",
+        "priority": "CRITICAL",
+        "reason": "Without a specific start/end time, attendees may not be able to plan accurately, risking missed obligations or scheduling conflicts."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "it runs shorter",
+        "question": "Under what circumstances does the event run shorter? Is there a minimum expected duration?",
+        "priority": "CRITICAL",
+        "reason": "Understanding variability in duration helps with planning and setting expectations, especially if there are dependencies or follow-up actions."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "copies",
+        "question": "Which specific documents will be brought and reviewed? Are these the consent form and witness information sheet, or are there additional documents?",
+        "priority": "CRITICAL",
+        "reason": "Clarity on which documents are being referenced is necessary to ensure all required paperwork is prepared and reviewed before the appointment."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "right before we go in",
+        "question": "What is the exact time or time window for 'right before we go in'? How much time will be allocated for document review prior to the appointment?",
+        "priority": "HIGH",
+        "reason": "The timing of the review is ambiguous, which could impact preparation if not enough time is set aside."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the date in question",
+        "question": "What is the exact date being referred to as 'the date in question'?",
+        "priority": "HIGH",
+        "reason": "The instruction depends on knowing the specific date of the events being testified about; without this, the scope of testimony is ambiguous."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "person",
+        "ambiguous_phrase": "court reporter",
+        "question": "Who is the court reporter assigned to this proceeding (full name, contact information)?",
+        "priority": "HIGH",
+        "reason": "Identifying the court reporter may be necessary for follow-up, transcript requests, or clarifying procedural questions."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "a break",
+        "question": "What are the rules or procedures for requesting a break during the appointment or proceeding? Who must be notified, and are there any restrictions?",
+        "priority": "CRITICAL",
+        "reason": "The process for requesting a break is not specified, which could lead to confusion or procedural issues during the event."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "person",
+        "ambiguous_phrase": "I'll request one",
+        "question": "Who is 'I' in this context, and do they have the authority to request a break on behalf of the user? Is explicit permission or protocol required?",
+        "priority": "CRITICAL",
+        "reason": "It is unclear if the speaker has the authority to request a break, which could affect whether the request is honored."
+      },
+      {
+        "turn_id": 62,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "during questioning",
+        "question": "What are the exact start and end times for 'questioning'? Is there a defined schedule or time window?",
+        "priority": "HIGH",
+        "reason": "Without precise temporal boundaries, the instruction to not check the phone 'during questioning' is ambiguous and could lead to misunderstandings about when it is permissible to check the phone."
+      },
+      {
+        "turn_id": 62,
+        "entity_type": "location",
+        "ambiguous_phrase": "Silent is fine",
+        "question": "Is this instruction specific to Lara's Office, or does it apply to other locations (e.g., deposition room, hallway)?",
+        "priority": "HIGH",
+        "reason": "The location context is unclear; if the instruction applies only in Lara's Office, it may not be valid elsewhere, leading to inconsistent behavior."
+      },
+      {
+        "turn_id": 64,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "I\u2019ll call you the evening before to check in.",
+        "question": "What is the exact date and time of the check-in call?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the check-in call is ambiguous; without a specific date and time, the recipient may not be prepared or available, which could impact readiness for the deposition."
+      },
+      {
+        "turn_id": 64,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Keep reviewing that day\u2019s notes",
+        "question": "Which specific day's notes should be reviewed? What is the exact date being referenced?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that day\u2019s notes' is vague; without specifying the date, the recipient may review the wrong material, affecting preparation quality."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "that building downtown",
+        "resolved_entity": "San Diego County Hall of Justice (location of the deposition as referenced in the subpoena)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "the address",
+        "resolved_entity": "Address of the San Diego County Hall of Justice (as listed on the first page of the subpoena)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "Room 305",
+        "resolved_entity": "Room 305 at the San Diego County Hall of Justice (where the deposition will take place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "that afternoon",
+        "resolved_entity": "Afternoon of the date specified in the subpoena for the incident in question",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "your calendar",
+        "resolved_entity": "Brian's personal/professional calendar (for checking recollections about the incident date)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "that date",
+        "resolved_entity": "Date of the incident relevant to the malpractice case (as referenced in the subpoena and documents)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Progress notes from the incident date and the consult note sent to the legal team",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "San Diego County Hall of Justice, Room 305 (location of the deposition)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "this afternoon",
+        "resolved_entity": "Afternoon of the current day (2026-02-06, as per reference time)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Lara's Office, Washington & Associates Law (where Brian might have meetings with Lara)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 54,
+        "ambiguous_phrase": "the date in question",
+        "resolved_entity": "Date of the incident relevant to the malpractice case (as referenced in the subpoena and documents)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 64,
+        "ambiguous_phrase": "that day\u2019s notes",
+        "resolved_entity": "Progress notes and consult note from the date of the incident in question",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 64,
+        "ambiguous_phrase": "the evening before",
+        "resolved_entity": "Evening before the scheduled deposition date (i.e., the night before Brian is to appear at the Hall of Justice)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 34
+  }
+}

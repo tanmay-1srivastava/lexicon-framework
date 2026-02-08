@@ -1,0 +1,846 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "the same spot as last time",
+        "question": "What was the exact location (building, room, area) where 'last time' occurred?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the same spot as last time' is ambiguous without a resolved reference to the previous location. Without this, it's unclear which specific location is being referred to, which could lead to confusion about where to meet or look for the other person."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the model",
+        "question": "Is the model being referenced the only one available, and where is it currently located?",
+        "priority": "HIGH",
+        "reason": "While 'the model' is resolved as a physical cardboard structure for the simulation project, it is not clear if there are multiple models or where exactly it is being stored prior to being brought. This could impact retrieval or coordination if others need access."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "on the way in",
+        "question": "What exact time did the conversation between 'him' and Ms. Patel occur?",
+        "priority": "HIGH",
+        "reason": "Temporal reference is vague; knowing the timing could clarify relevance to current or upcoming events (e.g., simulation project)."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "something important",
+        "question": "What was the subject or nature of the 'important' conversation between 'him' and Ms. Patel?",
+        "priority": "CRITICAL",
+        "reason": "The importance of the conversation is asserted but not specified; details may impact project or resource access."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact calendar date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to specific dates for scheduling and coordination; 'tomorrow' is ambiguous without explicit date."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "the shelf near the 20th-century section",
+        "question": "Which exact shelf is being referred to? Is there a shelf number, label, or more precise identifier?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the shelf near the 20th-century section' is spatially vague; without a precise shelf identifier, retrieval or verification of the correct items may be error-prone."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he'? What is the full name or identifier of the person referenced?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in this turn. Identifying the person is necessary to determine whose forum post is being referenced and to ensure privacy/access tracking."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "location",
+        "ambiguous_phrase": "class forum",
+        "question": "What is the exact URL, platform, or access method for the 'class forum'? Is it a physical bulletin board, an online platform, or another system?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'class forum' lacks specificity about its location or access method, which is important for technical and privacy reasons (e.g., credentials, access level)."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "credential",
+        "ambiguous_phrase": "posted",
+        "question": "Does accessing the forum require credentials (username, password, access level)? If so, what are they and who has access?",
+        "priority": "CRITICAL",
+        "reason": "Accessing a forum may require credentials; without this information, privacy and access control cannot be verified."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this period",
+        "question": "What is the exact start and end time of 'this period' being referenced?",
+        "priority": "HIGH",
+        "reason": "'This period' is a deictic temporal reference that is not explicitly defined in the turn or context. Without knowing the exact time window, it is unclear when the first draft is expected to be completed, which could lead to missed deadlines or confusion about expectations."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the first draft",
+        "question": "What are the specific requirements or criteria for 'the first draft' that must be completed by the end of this period?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the first draft' is referenced as a deliverable, but there is no detail about what constitutes completion (e.g., length, format, content). This could cause ambiguity about what is expected to be finished by the deadline."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the schedule",
+        "question": "Which specific schedule is being referenced (class schedule, project deadlines, or another calendar)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the schedule' is ambiguous; without specifying which schedule, it is unclear what deadlines or events are being checked, which could lead to miscommunication about important tasks or deadlines."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "might take it",
+        "question": "When might 'Sara's group' take 'it'? Is there a deadline or scheduled time for this action?",
+        "priority": "HIGH",
+        "reason": "Temporal specificity is needed to coordinate actions and ensure timely completion or transfer of responsibility."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after class",
+        "question": "What is the exact time 'after class' refers to? Which class and what is its end time?",
+        "priority": "HIGH",
+        "reason": "Temporal reference 'after class' is vague; without a specific time, scheduling or follow-up actions may be unclear."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "location",
+        "ambiguous_phrase": "the hallway",
+        "question": "Which hallway is being referred to? Is it the hallway outside History Building Room 204 or another location?",
+        "priority": "HIGH",
+        "reason": "Spatial reference 'the hallway' is ambiguous; specifying the exact hallway is important for clarity, especially in a large building."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "ask her about it",
+        "question": "What is the subject or topic that will be discussed with 'her'? Is it about the first draft deadline, the schedule, or something else?",
+        "priority": "CRITICAL",
+        "reason": "The object of the inquiry ('it') is not explicitly stated in this turn, which could cause confusion about the purpose of the conversation."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "location",
+        "ambiguous_phrase": "this section underneath",
+        "question": "Which exact section is being referred to as 'this section underneath'? Is it a part of the model, a document, or a physical area in the room?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this section underneath' is deictic and lacks a resolved reference, making it unclear what area or object is being discussed for modification."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "technical",
+        "ambiguous_phrase": "those little figures",
+        "question": "What are 'those little figures'? Are they specific scale models, paper cutouts, or another type of representation? Where are they located and what specifications do they have?",
+        "priority": "HIGH",
+        "reason": "The term 'those little figures' is ambiguous; without clarification, it's unclear what objects are to be added for scale, which could affect project accuracy and resource allocation."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the impact of rationing",
+        "question": "What specific aspects or effects of rationing (e.g., material shortages, design simplifications, mandated features) should be represented in the exterior design?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the impact of rationing' is broad and could refer to multiple factors (materials, aesthetics, regulations, etc.). Clarifying which impacts are relevant is necessary to determine an accurate and meaningful representation in the design."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "location",
+        "ambiguous_phrase": "the supply cart",
+        "question": "Where exactly is 'the supply cart' located (room, hallway, or specific area in Room 204)?",
+        "priority": "HIGH",
+        "reason": "If there are multiple supply carts or if its location changes, the reference is ambiguous and could cause confusion or delay in retrieving the correct materials."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the projector",
+        "question": "Which specific projector is being referred to (make/model, location within Room 204, or inventory ID)?",
+        "priority": "HIGH",
+        "reason": "There may be multiple projectors available in the History Building or even within Room 204; without specifying which projector, the request could lead to confusion or checking the wrong equipment."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for our draft slides",
+        "question": "When exactly will the draft slides be presented or used (specific date/time)?",
+        "priority": "HIGH",
+        "reason": "Knowing the exact time the projector is needed ensures it is available and functional at the required moment, avoiding last-minute issues."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "He",
+        "question": "Who specifically is 'he'? What is his name, role, and contact information?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is ambiguous; without clear identification, responsibility and communication cannot be established."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the tech team",
+        "question": "Which individuals or department constitute 'the tech team'? What are their roles and contact details?",
+        "priority": "HIGH",
+        "reason": "The entity 'tech team' is vague; knowing who is responsible for technical fixes is necessary for follow-up and accountability."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date of 'tomorrow' as referenced in the context of the field trip?",
+        "priority": "HIGH",
+        "reason": "Temporal references like 'tomorrow' must be resolved to an exact date to avoid confusion about the timing of the field trip."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the field trip",
+        "question": "What are the details of the field trip (destination, time, meeting location, participants, agenda)?",
+        "priority": "CRITICAL",
+        "reason": "Key appointment details are missing, which are necessary for planning and coordination."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "config|credential|privacy",
+        "ambiguous_phrase": "the email",
+        "question": "Who sent the email, who are the recipients, and does the user have access to it?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing sender/recipients/access, it's unclear if the user should or can view the referenced email."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "8:30 AM",
+        "question": "Is 8:30 AM the confirmed start time for the field trip, or is this an estimate? What is the exact scheduled time as stated on the permission slip?",
+        "priority": "CRITICAL",
+        "reason": "The field trip timing is essential for planning and coordination. An unconfirmed or estimated time could lead to missed departures or confusion among participants."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the field trip",
+        "question": "What are the full details of the field trip appointment (date, time, location, prep instructions) as listed on the permission slip?",
+        "priority": "CRITICAL",
+        "reason": "Complete appointment details are needed for logistical planning and to ensure all requirements (such as prep instructions) are met."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "permission slip",
+        "question": "Who is the issuing authority or contact person for the permission slip? Is there a responsible staff member or organizer listed?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the responsible person or authority is important for follow-up questions or in case clarification is needed about the field trip."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after class",
+        "question": "What is the exact end time of 'class' after which the reminder will be given?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after class' is vague without a specific time reference. Precise timing is important for scheduling and accountability, especially if follow-up is required."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "technical",
+        "ambiguous_phrase": "my laptop",
+        "question": "What are the specifications or model of the laptop that froze? Is it a personal or school-issued device?",
+        "priority": "HIGH",
+        "reason": "Knowing the device details is important for troubleshooting, support, or reporting recurring technical issues, especially in a school context."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "technical",
+        "ambiguous_phrase": "an hour's work",
+        "question": "What specific work or file was lost when the laptop froze? Was it related to a particular project or assignment?",
+        "priority": "HIGH",
+        "reason": "Clarifying what was lost is important for recovery steps, accountability, and understanding the impact on ongoing assignments or deadlines."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "at the end",
+        "question": "What is the exact deadline or endpoint being referred to? Is it the end of class, the end of the project, or another specific time?",
+        "priority": "HIGH",
+        "reason": "Without a clear temporal reference, the urgency and planning for finishing 'this section' cannot be properly managed or tracked."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "History Building, Room 204 (where the architecture simulation is taking place at Lincoln High School)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context and Metadata"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current class period (the architecture simulation session happening now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "these",
+        "resolved_entity": "The resources (books or materials) from the shelf near the 20th-century section in the classroom",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "this period",
+        "resolved_entity": "Current class period (architecture simulation session in History Building, Room 204)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "the schedule",
+        "resolved_entity": "The class schedule for the architecture simulation project (as listed in Maya's personal calendar or class materials)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "the hallway",
+        "resolved_entity": "The hallway outside History Building, Room 204 (where students pass after class)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "This section of the model (the part Maya is currently referencing for design modifications)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The model (the physical project model for the architecture simulation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "this project",
+        "resolved_entity": "The current architecture simulation assignment on war and revolution influences",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the supply cart",
+        "resolved_entity": "The classroom supply cart (where color markers and other materials are kept for the project)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The projector (used for displaying draft slides during the architecture simulation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "the email",
+        "resolved_entity": "The recent email about the upcoming field trip (sent to students regarding logistics and permission slips)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "the permission slip",
+        "resolved_entity": "The field trip permission slip (document with details about the Getty Center trip and its schedule)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "at the end",
+        "resolved_entity": "At the end of the current class period (when the architecture simulation session concludes)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 4,
+        "entity_type": "HARDWARE/EQUIPMENT",
+        "ambiguous_phrase": "the binder",
+        "question": "What is the specific binder being referenced (e.g., subject, color, label, contents)?",
+        "priority": "HIGH",
+        "reason": "Without clear identification, there may be confusion if multiple binders are present or if the recipient is unsure which binder to retrieve."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "PERSON",
+        "ambiguous_phrase": "Mr. Evans",
+        "question": "Who is Mr. Evans (full name, role/title, contact information)?",
+        "priority": "HIGH",
+        "reason": "Clarifying Mr. Evans's identity is important for access and accountability, especially if retrieval requires permission or confirmation."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "LOCATION",
+        "ambiguous_phrase": "left it with Mr. Evans",
+        "question": "Where specifically did User B leave the binder with Mr. Evans (room, office, desk location)?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed to ensure efficient retrieval and avoid searching multiple places."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "location",
+        "ambiguous_phrase": "the poster by the door",
+        "question": "Which door is being referenced, and where exactly is the poster located within the Library Study Commons?",
+        "priority": "HIGH",
+        "reason": "The Library Study Commons may have multiple doors; without specifying which door, the poster's location is ambiguous and could lead to confusion or missed information."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "timeline",
+        "question": "What timeline is being referenced\u2014project, assignment, or another event\u2014and what are the relevant dates or deadlines?",
+        "priority": "HIGH",
+        "reason": "The term 'timeline' is vague; clarifying which timeline is meant is important for ensuring the user reviews the correct information and meets necessary deadlines."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "location",
+        "ambiguous_phrase": "on the side",
+        "question": "Where exactly should the stack of reference books be placed? Please specify the location (e.g., which side of the table, a shelf, or another surface).",
+        "priority": "HIGH",
+        "reason": "The instruction 'on the side' is vague and could result in the books being placed in an unintended or inconvenient location."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "technical",
+        "ambiguous_phrase": "that article",
+        "question": "What is the full citation or access location (e.g., title, author, publication, link) of the article Ms. Lee suggested?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that article' is ambiguous; without the full citation or access details, group members may not be able to locate or reference the correct material for their project."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Ms. Lee",
+        "question": "What is Ms. Lee's full name and role (e.g., teacher, librarian, advisor) in relation to the project?",
+        "priority": "HIGH",
+        "reason": "Ms. Lee is referenced as the source of the article suggestion, but her exact identity and authority are unclear, which may affect the relevance or credibility of the resource."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "his",
+        "question": "Who is 'he'? What is the full name or identifier of the person whose post is being referenced?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'his' is used without a clear antecedent in the immediate or prior context. Identifying the author of the post is necessary for attribution, privacy, and access control."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "config",
+        "ambiguous_phrase": "'his post' under 'Revolutionary Architecture'",
+        "question": "What is the exact location, format, and access permissions of the referenced post? Is it a digital file, forum entry, or physical document?",
+        "priority": "CRITICAL",
+        "reason": "The post's storage location, format, and access level are not specified, which may impact retrieval and privacy compliance."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mr. Evans",
+        "question": "What is Mr. Evans's full name and role (e.g., teacher, administrator)?",
+        "priority": "HIGH",
+        "reason": "Identifying Mr. Evans is necessary to confirm the authority and relevance of the information referenced in his email."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "that",
+        "question": "What is the exact due date and time for the first draft as mentioned by Mr. Evans?",
+        "priority": "HIGH",
+        "reason": "The specific deadline for the first draft is essential for planning and compliance; ambiguity could lead to missed deadlines."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "his email",
+        "question": "What are the full details of the appointment or deadline communicated in Mr. Evans's email (date, time, location, instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The referenced email may contain critical instructions or requirements that are not explicitly stated here."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the presentation slot after us",
+        "question": "What is the exact date and time of 'the presentation slot after us'?",
+        "priority": "HIGH",
+        "reason": "Without a specific date/time, it is unclear which presentation slot is being referenced, making it impossible to check its availability or confirm scheduling."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "our stuff",
+        "question": "What items or materials are included in 'our stuff', and where are they located within the Library Study Commons?",
+        "priority": "HIGH",
+        "reason": "The phrase 'our stuff' is vague and does not specify what needs to be cleared (e.g., laptops, posters, handouts). This lack of detail could cause confusion about what should be removed and from which exact area, especially in a shared space."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if they do",
+        "question": "What specific event or action is being anticipated ('if they do'), and what is the expected timing for when readiness to clear is required?",
+        "priority": "HIGH",
+        "reason": "The conditional 'if they do' lacks a clear trigger event and timing, making it difficult to prepare appropriately. Without knowing what 'they' might do and when, the group cannot plan for timely clearing of their materials."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "technical",
+        "ambiguous_phrase": "our model",
+        "question": "What is the current format, scale, and medium of 'our model' (e.g., physical, digital, schematic), and what are its constraints or specifications?",
+        "priority": "HIGH",
+        "reason": "Understanding the nature and limitations of 'our model' is necessary to assess how the bomb shelter concept can be integrated or visualized effectively."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the special glue",
+        "question": "What is the exact type, brand, or specification of 'the special glue' needed for the model?",
+        "priority": "HIGH",
+        "reason": "'The special glue' is referenced without any details about its type, brand, or intended use. This is critical for ensuring the correct material is provided, especially if there are safety, compatibility, or project requirements."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mr. Evans",
+        "question": "What is Mr. Evans's role or authority regarding the project? Is he a teacher, supervisor, or another staff member?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying Mr. Evans's position is important to determine the validity and relevance of his approval for relating 'it' back to the main theme."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mr. Evans said",
+        "question": "When and where did Mr. Evans communicate this approval? Was it verbal, written, or via another medium?",
+        "priority": "HIGH",
+        "reason": "Knowing the context and medium of Mr. Evans's statement helps verify its authenticity and applicability."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as long as we relate it back to the main theme",
+        "question": "Is there a specific deadline or milestone by which 'it' must be related back to the main theme?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is needed to ensure compliance with project requirements and avoid last-minute issues."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "they're right here",
+        "question": "What exactly is 'right here'? What items are being referred to, and where are they located within the Library Study Commons?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'they' and the deictic 'here' are ambiguous without clear antecedents or spatial resolution. This makes it unclear what items are available and their precise location, which could hinder task completion or retrieval."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "on his way back",
+        "question": "When exactly is Mr. Evans expected to be 'on his way back' from the office?",
+        "priority": "HIGH",
+        "reason": "The timing of when Mr. Evans will be available is unclear, which may impact when the user can ask him and receive the needed information."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "technical",
+        "ambiguous_phrase": "this list",
+        "question": "Which specific list of must-have features is being referred to? Where is it located (document name, link, or physical copy)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this list' is deictic and ambiguous without clear reference or location. For effective collaboration and review, all participants need to know exactly which list is being discussed and how to access it."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the time",
+        "question": "What is the exact time the group is supposed to meet?",
+        "priority": "HIGH",
+        "reason": "The meeting time is not specified, making it impossible to confirm or coordinate the appointment."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the precise location referred to as 'there' for the meeting?",
+        "priority": "HIGH",
+        "reason": "While prior context and metadata suggest the Library Study Commons, the reference is ambiguous without explicit confirmation."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "location",
+        "ambiguous_phrase": "that place",
+        "question": "What is the exact name and address of 'that place' User B is referring to?",
+        "priority": "HIGH",
+        "reason": "'That place' is a deictic reference without explicit resolution in this turn; the specific location is not identified, which could cause confusion about where User B is excited to go."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jordan",
+        "question": "Who is Jordan (full name, role, and relevance to the group)?",
+        "priority": "HIGH",
+        "reason": "Jordan is referenced as the source of a joke, but their identity and relationship to the participants is not specified, which may be important for context or privacy."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "15 minutes left in this class",
+        "question": "What is the exact end time and date of 'this class' session?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for scheduling, deadlines, and coordination; '15 minutes left' is relative and lacks an absolute timestamp."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "this class",
+        "question": "What is the exact location (room number, building) where 'this class' is being held?",
+        "priority": "HIGH",
+        "reason": "While the general location is inferred from metadata, the specific classroom or area for 'this class' is not explicitly stated, which may be necessary for context or follow-up."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "this class",
+        "question": "What is the official name, subject, or instructor of 'this class'?",
+        "priority": "CRITICAL",
+        "reason": "'This class' is referenced without specifying which class session is ending, which could cause confusion if multiple classes are scheduled in the same location or time window."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "our table",
+        "resolved_entity": "The group\u2019s usual table near the windows in the Library Study Commons (where Maya and her classmates typically meet for architecture class work)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "the binder",
+        "resolved_entity": "The project binder Maya left with Mr. Evans yesterday (contains group research and notes for the architecture simulation)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "the poster by the door",
+        "resolved_entity": "The informational poster displayed near the entrance to the Library Study Commons (showing ideas for the project timeline)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Ms. Lee (the teacher who gave guidance about using digital models for the project)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "that stack",
+        "resolved_entity": "The stack of reference books for the architecture project (to be moved to the side of the group\u2019s table)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "that article",
+        "resolved_entity": "The article Ms. Lee suggested for the group\u2019s research on architectural innovation during war and revolution",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "his post",
+        "resolved_entity": "Mr. Evans\u2019s post titled 'Revolutionary Architecture' (shared with the class for project inspiration)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "The topic or guideline Mr. Evans mentioned in his email (related to the architecture project requirements)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "the presentation slot after us",
+        "resolved_entity": "The time slot immediately following Maya\u2019s group\u2019s scheduled project presentation (for the architecture simulation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "The group or student(s) scheduled to present after Maya\u2019s group",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "our stuff",
+        "resolved_entity": "Maya\u2019s group\u2019s project materials and supplies on the table (to be cleared after their presentation)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "the bomb shelter concept",
+        "resolved_entity": "The group\u2019s design idea for incorporating a bomb shelter into their architectural model (reflecting war\u2019s influence on architecture)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "our model",
+        "resolved_entity": "The physical or digital architectural model Maya\u2019s group is building for the class simulation",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "the special glue",
+        "resolved_entity": "The specific adhesive used for assembling parts of the group\u2019s architectural model",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "that wall",
+        "resolved_entity": "The section of the architectural model currently being attached (possibly representing the bomb shelter or another key feature)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "these recycled materials",
+        "resolved_entity": "The recycled materials available at the group\u2019s table for use as cladding in the architectural model",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "The use of recycled materials for cladding (to be documented in the project notes)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "it's fine",
+        "resolved_entity": "Mr. Evans\u2019s approval for using recycled materials or the proposed design approach, as long as it relates to the main theme",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The group\u2019s design choice (e.g., using recycled materials or a specific concept) that must relate back to the main theme of war and revolution in architecture",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "they're",
+        "resolved_entity": "The set of items (likely markers, pens, or tools) Maya just referenced as being at the table",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "the green one",
+        "resolved_entity": "The green marker, pen, or tool from the set Maya referenced",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the office",
+        "resolved_entity": "Mr. Evans\u2019s office at Lincoln High School (where he went before returning to the Library Study Commons)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "this list",
+        "resolved_entity": "The group\u2019s compiled list of must-have features for their architectural model",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "the time",
+        "resolved_entity": "The scheduled meeting time for the group to meet at the next location (possibly for a field trip or off-site project activity)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The location where the group is supposed to meet for the next activity (e.g., a field trip site or special classroom, as referenced in prior conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that place",
+        "resolved_entity": "The off-site location or special venue where the group is scheduled to meet (referenced in previous messages, possibly for a field trip or project presentation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "Mr. Evans (the teacher, who may have borrowed or been given the USB drive last week)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Jordan\u2019s USB drive (which was missing and contained important files)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "the cloud",
+        "resolved_entity": "An online file storage service (e.g., Google Drive, Dropbox) for backing up project files",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "this class",
+        "resolved_entity": "The current architecture class session (in the Library Study Commons at Lincoln High School, led by Mr. Evans)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

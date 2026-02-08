@@ -1,0 +1,880 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' (the user's current location) fully and unambiguously resolved for all downstream medical or privacy-sensitive actions?",
+        "priority": "CRITICAL",
+        "reason": "While 'here' is resolved to 'Carlos' Apartment - Kitchen' using GPS and Wifi, if any medical or privacy-sensitive actions depend on more granular location (e.g., room within apartment, presence of others), further clarification may be needed."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "medication",
+        "ambiguous_phrase": "breakfast - eggs and avocado",
+        "question": "Were any medications taken with breakfast? If so, which ones, at what dosage, and at what time?",
+        "priority": "CRITICAL",
+        "reason": "For diabetes management, it is essential to know if/when medications are taken with meals to assess glycemic control and avoid hypoglycemia."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "breakfast",
+        "question": "What time was breakfast eaten?",
+        "priority": "HIGH",
+        "reason": "Precise meal timing is important for correlating with medication schedules and blood glucose monitoring."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "medication",
+        "ambiguous_phrase": "Much better, actually. Less tired than before. The tingling in my feet is still there, but not as bad.",
+        "question": "What medications is the user currently taking, including name, dosage, frequency, and timing?",
+        "priority": "CRITICAL",
+        "reason": "Medication details are essential to assess symptom improvement and potential side effects or efficacy, especially in the context of diabetes management and neuropathy."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before",
+        "question": "What is the exact time frame being compared (e.g., since last appointment, since starting medication, or another reference point)?",
+        "priority": "CRITICAL",
+        "reason": "While 'before' is resolved to 'previous follow-up two weeks ago,' explicit confirmation from the user would ensure accurate clinical tracking."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Mostly in the evenings, after dinner",
+        "question": "What exact time does the tingling in your feet usually start in the evenings after dinner? Please specify approximate start and end times.",
+        "priority": "HIGH",
+        "reason": "Precise timing is necessary to correlate symptoms with medication, meals, or activity, and to assess severity or triggers."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Sometimes when I'm on my feet at work",
+        "question": "At what times during your work shift do you notice the tingling in your feet? Please specify if it occurs at the beginning, middle, or end of your shift, and how long it lasts.",
+        "priority": "HIGH",
+        "reason": "Detailed timing during work hours is important to identify activity-related triggers and to inform management strategies."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "at work",
+        "question": "What is your work location (address or facility name), and what are your typical work hours?",
+        "priority": "HIGH",
+        "reason": "Knowing the work environment and schedule helps assess occupational risk factors and contextualize symptom onset."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "medication",
+        "ambiguous_phrase": "it",
+        "question": "What is the exact name, dosage, and instructions for the medication being picked up?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'it' is used without specifying which medication is being referenced. For safety and clarity, the medication name, dosage, and instructions must be explicit, especially before starting a new treatment."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight or wait until tomorrow",
+        "question": "What are the exact dates and times for 'tonight' and 'tomorrow' in this context?",
+        "priority": "HIGH",
+        "reason": "The terms 'tonight' and 'tomorrow' are relative and need to be resolved to specific calendar dates/times to avoid confusion about when the medication should be started."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "medication",
+        "ambiguous_phrase": "insulin 18 units before I go to bed",
+        "question": "What is the specific type (e.g., long-acting, short-acting) and brand of insulin to be administered at bedtime?",
+        "priority": "HIGH",
+        "reason": "Different insulin types have different onset and duration; incorrect type could cause hypoglycemia or inadequate glucose control."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before I go to bed",
+        "question": "What is the specific time window intended for 'before I go to bed' (e.g., 10 PM, or a defined range)?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for insulin efficacy and to coordinate with meal timing and risk of nocturnal hypoglycemia."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "location",
+        "ambiguous_phrase": "market",
+        "question": "Which specific market does User A walk to? What is its name and address?",
+        "priority": "HIGH",
+        "reason": "The term 'market' is vague and could refer to multiple locations. For accurate activity tracking, spatial analysis, or medical advice (e.g., walking distance, safety), the exact market location is needed."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "location",
+        "ambiguous_phrase": "that place downtown",
+        "question": "What is the name and address of 'that place' downtown where User A salsa dances?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that place downtown' is ambiguous and lacks a resolved entity. For context on physical activity, risk assessment, or appointment scheduling, the specific location is required."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact date and time of 'this morning'? When was the measurement taken?",
+        "priority": "HIGH",
+        "reason": "Precise temporal information is needed for medical records and trend analysis, especially if the measurement is relevant to medication timing or appointment preparation."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Once after dancing at *the club*",
+        "question": "When exactly did the episode of shakiness occur (date and time)?",
+        "priority": "HIGH",
+        "reason": "Precise timing is necessary to correlate the event with medication, meals, or activity, and to assess risk for hypoglycemia."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name and role (e.g., supervisor, manager, colleague)?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous; identifying the person is necessary for privacy, access, and context\u2014especially if this relates to medical or employment accommodations."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bay",
+        "question": "Which specific bay is being referred to? What is its exact location or address?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the bay' is ambiguous; without a specific location, it is unclear where the user will be. This affects spatial tracking and any related medical or logistical planning."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "location",
+        "ambiguous_phrase": "Juan's Place",
+        "question": "What is the exact address or location of 'Juan's Place'?",
+        "priority": "HIGH",
+        "reason": "The venue 'Juan's Place' is mentioned without a resolved address or location, which is necessary for spatial tracking and emergency planning."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "early Saturday",
+        "question": "What is the specific time for 'early Saturday'? Please provide an exact start time.",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity could impact medical management, scheduling, and coordination with appointments or medication timing."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "in the evening",
+        "question": "What is the exact time for dancing at 'Juan's Place' in the evening?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for calendar integration, medication planning, and to avoid conflicts with medical appointments."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "medication",
+        "ambiguous_phrase": "them",
+        "question": "Which specific medications were picked up? What are their names, dosages, and frequencies?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'them' is ambiguous and does not specify which medications were obtained. This is essential for medical tracking, safety, and ensuring proper adherence."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "medication",
+        "ambiguous_phrase": "everything",
+        "question": "Does 'everything' refer only to medications, or does it include other pharmacy items (e.g., supplies, devices)? What exactly was obtained?",
+        "priority": "CRITICAL",
+        "reason": "'Everything' is vague and could include non-medication items relevant to diabetes management or other health needs. Clarification is needed for completeness."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Same time as today?",
+        "question": "What is the exact time being referenced as 'today'? (e.g., 2:00 PM, 7:30 PM, etc.)",
+        "priority": "HIGH",
+        "reason": "The phrase 'same time as today' is ambiguous without a specific reference time. For scheduling or medical coordination, the exact time is required to avoid confusion or missed appointments."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "medical",
+        "ambiguous_phrase": "higher readings in the *morning*",
+        "question": "What are the actual blood pressure readings (values and times) observed in the morning compared to other times of day?",
+        "priority": "HIGH",
+        "reason": "Without specific values and timing, it is impossible to assess the clinical significance of the reported higher readings or provide appropriate medical advice."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "medical",
+        "ambiguous_phrase": "blood pressure monitor",
+        "question": "What type/model of blood pressure monitor is being used, and is it validated/calibrated for accuracy?",
+        "priority": "HIGH",
+        "reason": "Device accuracy and validation are essential for interpreting home blood pressure readings; inaccurate devices can lead to misleading conclusions."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "medical",
+        "ambiguous_phrase": "morning",
+        "question": "At what exact time(s) in the morning are the blood pressure readings taken, and under what conditions (e.g., before/after medication, before/after eating, after waking up)?",
+        "priority": "CRITICAL",
+        "reason": "Blood pressure varies with time of day and activity; knowing the exact timing and context is necessary for proper interpretation."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "early",
+        "question": "What specific time in the morning does the blood pressure reading of 140/88 usually occur?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to interpret blood pressure patterns and assess for morning hypertension risk."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "afternoon",
+        "question": "At what specific time in the afternoon does the blood pressure typically go down?",
+        "priority": "HIGH",
+        "reason": "Exact timing is important to correlate blood pressure changes with medication timing, meals, or activity."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "medication",
+        "ambiguous_phrase": "goes down",
+        "question": "Is the decrease in blood pressure related to medication intake, and if so, what medication and timing?",
+        "priority": "CRITICAL",
+        "reason": "Understanding if medication is influencing the blood pressure drop is essential for evaluating treatment effectiveness and safety."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "medical",
+        "ambiguous_phrase": "them",
+        "question": "What exactly does 'them' refer to\u2014blood pressure readings, times, symptoms, or something else?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'them' is ambiguous; without clear reference, it is unclear what should be recorded, which could impact medical tracking and advice."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "medical",
+        "ambiguous_phrase": "low-GI foods",
+        "question": "What are the user's current dietary restrictions, medical conditions (e.g., diabetes), or medications that might affect whether a low-GI diet is appropriate?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the user's medical background and current treatment plan, it's not possible to determine if a low-GI diet is suitable or safe."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "medical",
+        "ambiguous_phrase": "Do I need to avoid fruit?",
+        "question": "Is there a medical reason (e.g., diagnosis, medication, lab result) that requires fruit avoidance, or is moderation sufficient?",
+        "priority": "CRITICAL",
+        "reason": "The user's question implies uncertainty about dietary restrictions. Without clarifying the medical rationale (e.g., blood sugar control, medication interactions), recommendations may lack context and accuracy."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "medication",
+        "ambiguous_phrase": "medication approval",
+        "question": "Which medication is being referred to for approval (name, dosage, frequency)?",
+        "priority": "CRITICAL",
+        "reason": "The specific medication is not identified, making it impossible to determine what approval is needed or to coordinate with insurance or provider."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "them",
+        "question": "Who specifically at the insurance company needs to be contacted (name, department, contact info)?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'them' is ambiguous; without a specific contact, communication cannot proceed and privacy/access cannot be managed."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "medication approval",
+        "question": "Is a follow-up appointment or action required for this medication approval, and if so, when and where?",
+        "priority": "CRITICAL",
+        "reason": "If approval is pending, it may impact upcoming appointments or medication schedule, but no details are provided."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "credential",
+        "ambiguous_phrase": "insurance called",
+        "question": "Is any authorization or credential required to speak with the insurance company on the user's behalf?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access concerns: Without explicit permission or credentials, third-party communication may not be permitted."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "anything",
+        "question": "What specific items, documents, or preparations (e.g., lab results, medication list, glucose log, insurance information) should the user bring to their next diabetes follow-up appointment?",
+        "priority": "CRITICAL",
+        "reason": "The user's question is vague ('anything') and does not specify what is required for the appointment. Missing or unclear instructions could result in an incomplete or less effective visit, especially for a medical follow-up where specific documentation or preparation may be necessary."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next time",
+        "question": "What is the exact date and time of the 'next' appointment being referenced?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'next time' is temporally vague; without a resolved date/time, it is unclear when the user expects to report better numbers, which is critical for tracking medical follow-up and preparation."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Carlos' kitchen (where he is having coffee and ready to talk)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "before",
+        "resolved_entity": "Earlier period when Carlos was experiencing more fatigue (prior to recent improvements)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Carlos' feet (where the tingling sensation is occurring)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "work",
+        "resolved_entity": "Carlos' workplace (restaurant kitchen where he works as a chef)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Metformin prescription (the new medication to be picked up from the pharmacy)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "This evening (the evening of the current conversation date, for starting metformin)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "market",
+        "resolved_entity": "Local market (where Carlos walks for groceries as part of his daily routine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "that place",
+        "resolved_entity": "Salsa dance venue downtown (where Carlos sometimes goes dancing)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Carlos' weight (which he checked in the morning)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "the club",
+        "resolved_entity": "Salsa club (where Carlos went dancing and felt shaky once)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Carlos' supervisor/manager at work (who offered to adjust his shifts)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "the bay",
+        "resolved_entity": "Miami bay area (where Carlos plans to go early Saturday for recreation or exercise)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "Juan's Place",
+        "resolved_entity": "Juan's Place (downtown salsa dance venue Carlos plans to visit Saturday evening)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Medications (prescriptions Carlos picked up from the pharmacy yesterday)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current day of the conversation (the day Carlos and the doctor are messaging)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "morning",
+        "resolved_entity": "Early morning hours (when Carlos checks his blood pressure and sees higher readings)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Higher blood pressure readings in the morning (the issue Carlos is asking about)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "afternoon",
+        "resolved_entity": "Afternoon hours (when Carlos' blood pressure readings decrease)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Blood pressure readings (that Carlos is tracking)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Low-GI (glycemic index) diet (the new diet Carlos read about)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "fruit",
+        "resolved_entity": "Fruits (especially mangoes, which Carlos enjoys and is asking if he needs to avoid)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Insurance company representatives (who called Carlos about medication approval)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "anything",
+        "resolved_entity": "Any items or documents the doctor may want Carlos to bring to his next diabetes follow-up appointment",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "next time",
+        "resolved_entity": "Next scheduled diabetes follow-up appointment (the next visit Carlos will have with his doctor)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 23
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the check-in",
+        "question": "What are the specific details of the 'check-in' (type, time, location, agenda)?",
+        "priority": "CRITICAL",
+        "reason": "The term 'check-in' is vague; it is unclear if this refers to a scheduled appointment, a routine call, or another type of interaction. This affects clarity for both parties and may impact documentation or follow-up."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "medical",
+        "ambiguous_phrase": "tingling",
+        "question": "What is the exact location, duration, severity, and associated symptoms of the tingling?",
+        "priority": "HIGH",
+        "reason": "Without details about the tingling (e.g., which body part, how long it lasts, how severe, and any related symptoms), it is difficult to assess the potential medical cause or urgency."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "night or during the day",
+        "question": "What are the specific time windows when the tingling occurs (e.g., exact hours, frequency, pattern)?",
+        "priority": "HIGH",
+        "reason": "Knowing the precise timing and frequency helps differentiate between possible causes and guides further medical evaluation."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "lab/test",
+        "ambiguous_phrase": "kidney function was stable",
+        "question": "What were the specific kidney function test results (e.g., eGFR, creatinine, date of test)?",
+        "priority": "HIGH",
+        "reason": "Kidney function is referenced as stable, but no specific values or test dates are given. This is important for monitoring metformin safety."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "lab/test",
+        "ambiguous_phrase": "glucose average dropped to 110",
+        "question": "What is the time frame and method for calculating the glucose average (e.g., daily, weekly, from labs or home monitoring)?",
+        "priority": "HIGH",
+        "reason": "The glucose average is reported, but the calculation method and time frame are unclear. This affects interpretation of glycemic control."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time for 'tonight' in the context of starting metformin?",
+        "priority": "HIGH",
+        "reason": "The term 'tonight' is ambiguous without a reference date, which could lead to confusion about when to begin the new medication."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "medication",
+        "ambiguous_phrase": "reduce your insulin dose by 2 units. Take 18 units at bedtime.",
+        "question": "Should the insulin glargine (Lantus) dose be taken only at bedtime, or are there other doses during the day that need adjustment?",
+        "priority": "CRITICAL",
+        "reason": "It is unclear if the reduction applies to all insulin doses or only the bedtime dose, which could result in dosing errors."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "each day lately",
+        "question": "What is the exact date range or time period referred to by 'lately' when asking about daily steps?",
+        "priority": "HIGH",
+        "reason": "The term 'lately' is ambiguous and could refer to different time frames (e.g., past week, past month). For accurate tracking and comparison of activity data, a specific date range is needed."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "your manager",
+        "question": "Who is the manager (full name, title, contact) that should be informed about the new medication?",
+        "priority": "CRITICAL",
+        "reason": "The identity and contact details of the manager are not specified, which is necessary for proper documentation and privacy considerations."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "medication",
+        "ambiguous_phrase": "your new medication",
+        "question": "Which specific medication (name, dosage, frequency) is being referred to as 'your new medication'?",
+        "priority": "CRITICAL",
+        "reason": "It is unclear which medication needs to be disclosed to the manager; this is essential for safety, compliance, and accurate communication."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this weekend",
+        "question": "What are the exact dates and times being referred to as 'this weekend'?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to coordinate medical advice (hydration, snacks) and ensure safety during activities, especially for diabetes management."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "plans for fishing or salsa",
+        "question": "Are these activities scheduled events or informal plans? If scheduled, what are the details (date, time, location)?",
+        "priority": "CRITICAL",
+        "reason": "Knowing whether these are formal appointments or casual plans affects preparation and risk assessment for diabetes management."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "fishing or salsa",
+        "question": "Where will the fishing or salsa activities take place?",
+        "priority": "HIGH",
+        "reason": "Location impacts access to medical supplies, emergency support, and hydration/snack logistics."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "medication",
+        "ambiguous_phrase": "Did you refill your test strips and lancets?",
+        "question": "Did the user actually refill their OneTouch Ultra Test Strips and lancets? If so, when and how much supply do they currently have?",
+        "priority": "HIGH",
+        "reason": "Confirmation of refill status and current supply is essential for ongoing diabetes self-management and to prevent missed blood glucose monitoring."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "two weeks from now",
+        "question": "What is the exact date and time for the next check-in appointment?",
+        "priority": "CRITICAL",
+        "reason": "Precise scheduling is required for medical appointments; 'two weeks from now' is ambiguous without a reference date, and 'Thursday' could refer to multiple possible dates."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Does Thursday work?",
+        "question": "Which Thursday is being referred to, and at what time will the appointment occur?",
+        "priority": "CRITICAL",
+        "reason": "The specific Thursday and appointment time are not defined, which could lead to confusion or missed appointments."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the appointment link",
+        "question": "What is the exact URL or platform for the appointment link, and are there any prep instructions or access requirements?",
+        "priority": "CRITICAL",
+        "reason": "The user is told they will receive an appointment link, but the specific platform (e.g., Zoom, Teams), access instructions, and any technical or privacy requirements are not provided. This could impact the user's ability to join the appointment."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "10 AM",
+        "question": "What is the exact date of the appointment at 10 AM?",
+        "priority": "CRITICAL",
+        "reason": "Only the time is specified, not the date. Without the date, the user cannot confirm when the appointment is scheduled, which is essential for attendance and planning."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "at *that time*",
+        "question": "What exact time in the morning is being referenced for the average reading (e.g., 6 AM, 8 AM, fasting, pre-breakfast)?",
+        "priority": "HIGH",
+        "reason": "Precise timing is essential for interpreting glucose readings and identifying patterns; 'morning' is too vague and could refer to different physiological states (fasting, post-breakfast, etc.)."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "those numbers",
+        "question": "Which specific numbers should be tracked (e.g., fasting glucose, postprandial, time of day, units)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which readings to track, the patient may collect inconsistent or incomplete data, impacting clinical decision-making."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for a week",
+        "question": "What are the exact start and end dates for the tracking period?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the tracking window could lead to missed or overlapping data, affecting the reliability of the assessment."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "medication",
+        "ambiguous_phrase": "adjust your meds",
+        "question": "Which medication(s) will be considered for adjustment, and what criteria will trigger a change?",
+        "priority": "CRITICAL",
+        "reason": "Unclear which medication regimen is being referenced; this could cause confusion or anxiety for the patient and complicate follow-up."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before we meet next time",
+        "question": "What is the exact date and time of the 'next' meeting?",
+        "priority": "HIGH",
+        "reason": "The instruction to send the log is tied to the next meeting, but the specific date/time is not stated in this turn. Without a precise deadline, the user may not know when to send the log, risking missed preparation for the appointment."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "your carrier",
+        "question": "Which insurance carrier is being referred to? (Name, contact details, and department are missing.)",
+        "priority": "HIGH",
+        "reason": "The identity of the carrier is necessary to ensure correct communication and paperwork submission for the metformin prescription."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "medication",
+        "ambiguous_phrase": "metformin prescription",
+        "question": "What are the full details of the metformin prescription (dosage, frequency, timing) being referenced for paperwork?",
+        "priority": "CRITICAL",
+        "reason": "Incomplete prescription details may lead to errors or delays in processing paperwork with the carrier."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date and time when the carrier will be contacted?",
+        "priority": "CRITICAL",
+        "reason": "Precise timing is needed for tracking follow-up and ensuring deadlines are met for prescription processing."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "contact your carrier",
+        "question": "Does User B have authorization or required credentials to contact the user's carrier regarding medical prescriptions?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and HIPAA compliance require explicit authorization before a third party can discuss patient prescriptions with an insurance carrier."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "glucose log",
+        "question": "What date range and format is required for the glucose log? Is it daily, weekly, or a specific period?",
+        "priority": "HIGH",
+        "reason": "Without specifying the date range or format, the user may provide incomplete or incorrect records, impacting clinical review."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "blood pressure records",
+        "question": "What date range and frequency are required for the blood pressure records? Should these be home readings, clinic readings, or both?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the required records could lead to missing or insufficient data for medical assessment."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "If you have questions, jot them down.",
+        "question": "Where and how should the questions be submitted or brought? Is there a specific form, app, or will they be discussed at the next appointment?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the process ensures the user's questions are addressed efficiently and not overlooked."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Keep up the good work",
+        "question": "What specific actions or metrics should Carlos continue to focus on for his diabetes management?",
+        "priority": "CRITICAL",
+        "reason": "The phrase is vague and does not specify which behaviors, measurements, or tasks are considered 'good work.' Without explicit guidance, Carlos may lack clarity on what is expected or recommended for ongoing diabetes management."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "See you soon",
+        "question": "What is the exact date and time of the next meeting or appointment with Carlos?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'See you soon' is temporally vague and does not specify when the next interaction will occur. For medical continuity and scheduling, an explicit date/time is required."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "home",
+        "resolved_entity": "Carlos's residence (where he is currently located for the remote check-in)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "night",
+        "resolved_entity": "Nighttime hours (when Carlos is typically at home and not working)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "day",
+        "resolved_entity": "Daytime hours (including Carlos's work hours as a chef and daily activities)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "This evening (the evening of the current day of the conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "bedtime",
+        "resolved_entity": "Carlos's usual time for going to bed (when he takes his nighttime insulin dose)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "day",
+        "resolved_entity": "Each day (Carlos's typical daily routine, including work and physical activity)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "exercise",
+        "resolved_entity": "Periods when Carlos is physically active (e.g., walking, working as a chef, or recreational activities)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "meals",
+        "resolved_entity": "Times when Carlos eats (breakfast, lunch, dinner, or snacks)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "this weekend",
+        "resolved_entity": "The upcoming weekend following the current conversation date (Saturday and Sunday after today)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (the time of this message/conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "10 AM",
+        "resolved_entity": "10:00 AM on the Thursday two weeks from today (the scheduled time for Carlos's next check-in appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "that time",
+        "resolved_entity": "Morning hours (when Carlos typically checks his blood glucose upon waking up)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "those numbers",
+        "resolved_entity": "Carlos's morning blood glucose readings (the values he reports after waking up)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "next time",
+        "resolved_entity": "The next scheduled check-in appointment (10:00 AM, Thursday, two weeks from now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Mango (the fruit Carlos asked about eating)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "your carrier",
+        "resolved_entity": "Carlos's health insurance provider (responsible for prescription coverage)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Carlos's questions (any topics or concerns he wants to discuss at the next appointment)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "soon",
+        "resolved_entity": "At the next scheduled check-in appointment (10:00 AM, Thursday, two weeks from now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 22
+  }
+}

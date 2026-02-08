@@ -1,0 +1,872 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring to Denver Office - Conference Room B, or could there be ambiguity if multiple rooms are in use?",
+        "priority": "HIGH",
+        "reason": "Spatial deictic 'here' is ambiguous without explicit confirmation; location metadata resolves it, but if Craig is not using the same metadata, confusion may occur."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "signed in",
+        "question": "What method or system was used for sign-in? Is there a timestamp or record of each individual's sign-in?",
+        "priority": "CRITICAL",
+        "reason": "Sign-in process details are important for audit trails and verifying participation, especially for HR or onboarding compliance."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is the location of 'here' explicitly confirmed for all attendees, or only for User A?",
+        "priority": "HIGH",
+        "reason": "Ensuring all attendees are physically present in the correct location is necessary for safety and logistical planning."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "the folder",
+        "question": "What is the full path or location of the folder (physical or digital), and are there any access or privacy restrictions associated with its contents?",
+        "priority": "CRITICAL",
+        "reason": "While the folder is physically placed on desks, if it contains sensitive information (e.g., credentials, personal data), access controls or privacy considerations may apply. The lack of explicit location or permissions could pose a risk."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "this room",
+        "question": "What is the exact location referred to as 'this room'?",
+        "priority": "HIGH",
+        "reason": "'This room' is likely Conference Room B based on prior metadata, but it is not explicitly stated in this turn. Precise location tracking is important for context and access control."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "person",
+        "ambiguous_phrase": "he / him",
+        "question": "Who specifically is 'he' referring to? What is his full name or role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in this turn, making it ambiguous which individual is being referenced. This is essential for tracking actions and responsibilities."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "location",
+        "ambiguous_phrase": "the corner by the window",
+        "question": "Which specific corner by the window is being referenced? Can this be mapped to a precise location within Conference Room B?",
+        "priority": "HIGH",
+        "reason": "While the general area is described, the exact location within the room is not specified, which could cause confusion if multiple windows or corners exist."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "person",
+        "ambiguous_phrase": "She",
+        "question": "Who specifically is 'she'? What is her full name or role within the group?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'she' is used without clear antecedent or identification, making it ambiguous who is joining the group at 10:15. This is essential for tracking attendance, privacy, and access."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "10:15",
+        "question": "Is '10:15' AM or PM? What is the reference date for this time?",
+        "priority": "HIGH",
+        "reason": "The time '10:15' is mentioned without specifying AM/PM or the date, which could cause confusion if the context shifts or is referenced later."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "config",
+        "ambiguous_phrase": "the feedback forms from last quarter",
+        "question": "What is the exact version, location, or filename of the 'feedback forms from last quarter'?",
+        "priority": "HIGH",
+        "reason": "Without specifying which version or where to find the forms, there is ambiguity about which document should be used, risking use of outdated or incorrect materials."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "config",
+        "ambiguous_phrase": "the new version",
+        "question": "What is the exact version, location, or filename of the 'new version' of the feedback forms?",
+        "priority": "HIGH",
+        "reason": "The 'new version' is not clearly identified, which could lead to confusion or inconsistent use if multiple new drafts exist or if the location is unclear."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "config",
+        "ambiguous_phrase": "them",
+        "question": "What exactly does 'them' refer to\u2014are these the feedback forms from last quarter or the new version?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'them' is ambiguous because the previous turn asked whether to use last quarter's feedback forms or the new version, but no explicit choice was confirmed. Printing the wrong version could impact the session's effectiveness."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday",
+        "question": "What is the exact date referred to as 'yesterday'?",
+        "priority": "HIGH",
+        "reason": "Precise temporal reference is needed to ensure the correct version of the explanation is used, especially if there have been multiple discussions."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this part",
+        "question": "What is the exact time or agenda item referred to by 'this part'?",
+        "priority": "HIGH",
+        "reason": "'This part' is a deictic reference to a segment of time or agenda, but it is not explicitly defined. Without knowing what 'this part' refers to, the timing of when User A will check with 'her' is unclear, which could affect scheduling or coordination."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "all but two",
+        "question": "Who are the two people that are not present? Are their names or identifiers available?",
+        "priority": "HIGH",
+        "reason": "Identifying which individuals are missing is necessary for attendance tracking, follow-up, and ensuring all required participants are present."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by 9:45",
+        "question": "Is 9:45 AM a hard deadline for their arrival, and what are the consequences if they are not present by then?",
+        "priority": "HIGH",
+        "reason": "Clarifying the importance of the 9:45 arrival time is necessary for scheduling and contingency planning if the individuals do not arrive as expected."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the culture talk",
+        "question": "What is the exact time, location, and agenda for 'the culture talk'?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the culture talk' is referenced as an event, but its specific timing, location, and content are not defined. This is necessary to ensure clarity on scheduling and responsibilities."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "should I handle that",
+        "question": "What does 'handle that' specifically entail in terms of responsibilities or actions for the culture talk?",
+        "priority": "CRITICAL",
+        "reason": "The scope of 'handle that' is not defined, making it unclear what tasks or responsibilities are being delegated or expected."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the end of the day",
+        "question": "What is the exact date and time deadline for 'the end of the day'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the end of the day' is ambiguous without a specific date and time, which is necessary for clear expectations and accountability."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who specifically is 'he'? What is his full name and role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in the immediate context, making it unclear who is starting next Monday. This is essential for tracking personnel and responsibilities."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next Monday",
+        "question": "What is the exact date for 'next Monday'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next Monday' is relative and needs to be resolved to a specific calendar date for scheduling and coordination."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "welcome lunch on Monday",
+        "question": "What is the exact time and location of the 'welcome lunch on Monday'? Is it scheduled in the calendar, and who are the attendees?",
+        "priority": "CRITICAL",
+        "reason": "The event is referenced but lacks specific temporal and spatial details. This could lead to confusion about scheduling and logistics for the invitee."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bistro",
+        "question": "Which exact location does 'the bistro' refer to (address, name, or internal location code)?",
+        "priority": "HIGH",
+        "reason": "Without a precise location, attendees may be confused or unable to find the venue for the welcome lunch."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "somewhere else",
+        "question": "If not 'the bistro', what is the alternative location for the welcome lunch (address, room, or venue name)?",
+        "priority": "HIGH",
+        "reason": "The event location is undetermined, which is essential for scheduling, directions, and logistics."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "their manager",
+        "question": "Who specifically is 'their manager'? What is the manager's full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'their manager' is unclear, which could lead to miscommunication or delays in confirming the headcount. Explicit identification is needed for accurate follow-up."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "headcount",
+        "question": "What is the exact headcount required for the event? Is this for the welcome lunch, orientation, or another appointment?",
+        "priority": "CRITICAL",
+        "reason": "The purpose and scope of the headcount are not specified, which could result in incorrect planning for the event or appointment."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "up there",
+        "question": "What exact location does 'up there' refer to? (e.g., which floor, room, or area?)",
+        "priority": "HIGH",
+        "reason": "The phrase 'up there' is spatially ambiguous; without explicit resolution, it is unclear where User A intends to go, which could cause confusion or miscoordination."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What specific time or event does 'after this' refer to?",
+        "priority": "HIGH",
+        "reason": "The timing of the action is unclear; 'after this' is deictic and could refer to a meeting, task, or unspecified event, which may cause delays or missed actions."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Denver Office - Conference Room B (where the orientation session is set up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context and Metadata"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "the new hires present for the orientation session",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "the folder",
+        "resolved_entity": "the onboarding materials folder placed on each new hire's desk for orientation",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "this room",
+        "resolved_entity": "Denver Office - Conference Room B (where the orientation session is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context and Metadata"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "the corner",
+        "resolved_entity": "the corner by the window in Denver Office - Conference Room B (where the orientation is happening)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "10:15",
+        "resolved_entity": "10:15 AM (the time the new hire will join the orientation session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the feedback forms",
+        "resolved_entity": "employee feedback forms used to collect onboarding session feedback (either last quarter's or the new version)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "this session",
+        "resolved_entity": "the current new hire orientation session in Denver Office - Conference Room B",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "yesterday",
+        "resolved_entity": "the previous workday (the day before the current conversation, when the bonus structure explanation was discussed)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "this part",
+        "resolved_entity": "the current section of the orientation session (likely the bonus structure discussion)",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Denver Office - Conference Room B (where the orientation session is being held)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context and Metadata"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "9:45",
+        "resolved_entity": "9:45 AM (expected arrival time for the two late new hires to the orientation session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "the culture talk segment of the orientation session",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "the new hires attending the orientation session",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "the end of the day",
+        "resolved_entity": "by the end of the current workday (before close of business today)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "next Monday",
+        "resolved_entity": "the upcoming Monday (the next Monday after the current conversation date, when the new hire will start)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "Monday",
+        "resolved_entity": "the upcoming Monday (the day of the welcome lunch for new hires)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "the bistro",
+        "resolved_entity": "the company-frequented bistro (usual location for welcome lunches, unless otherwise specified)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "their manager",
+        "resolved_entity": "the manager responsible for the new hires attending the welcome lunch",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Craig's location (likely his office or workspace within the Denver Office, as referenced in the ongoing conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the item discussed in the previous message (likely sensitive onboarding materials or documents)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "the current orientation session or activity just completed",
+        "resolution_type": "event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the technical issue or device that IT fixed earlier (likely a computer or projector used for orientation)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "those problems",
+        "resolved_entity": "the onboarding or technical issues previously discussed in the session",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 23
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "that room",
+        "question": "Which specific room is 'that room' referring to within the Denver Office - Executive Suite?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that room' is deictic and ambiguous without explicit reference; it is unclear which room is meant, which could lead to confusion or miscommunication about employee location."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "config",
+        "ambiguous_phrase": "that",
+        "question": "What is the specific item or location referred to by 'that' (e.g., packet, folder, presentation, email, etc.)?",
+        "priority": "HIGH",
+        "reason": "'That' is a deictic reference with no clear antecedent in the immediate context, making it ambiguous what should contain the updated handbook. This prevents confirmation of whether the correct material was updated and distributed."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "config",
+        "ambiguous_phrase": "updated handbook",
+        "question": "Which version or edition of the handbook is considered the 'updated' one (e.g., version number, date, or title)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which 'updated handbook' is meant, there is risk of including an outdated or incorrect version, which could lead to compliance or onboarding errors."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "you or the IT manager",
+        "question": "Who specifically is 'the IT manager'? What is their full name and role?",
+        "priority": "HIGH",
+        "reason": "The identity of 'the IT manager' is ambiguous; explicit identification is needed for responsibility assignment and follow-up."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "remote work protocol walkthrough",
+        "question": "When and where is the 'remote work protocol walkthrough' scheduled to occur?",
+        "priority": "CRITICAL",
+        "reason": "The timing and location of the walkthrough are not specified, which is essential for coordination and attendance."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is ambiguous without clear antecedent in this turn, making it unclear which individual is being discussed regarding the laptop."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to by 'there' (e.g., room number, office, or area within the Denver Office - Executive Suite)?",
+        "priority": "HIGH",
+        "reason": "The deictic term 'there' is not explicitly resolved to a specific location, which is necessary to determine where the alternative laptop is located."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the one in there",
+        "question": "What are the specifications and intended user of 'the one in there' (e.g., is it a shared office laptop, a demo device, or assigned to someone)?",
+        "priority": "HIGH",
+        "reason": "It is unclear what laptop is being referenced as the alternative, which may impact access, setup, or permissions for the walkthrough."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that",
+        "question": "What is the exact new date and time if the benefits overview has been rescheduled?",
+        "priority": "HIGH",
+        "reason": "If the benefits overview is rescheduled, the new timing must be specified to avoid confusion and ensure proper scheduling."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "technical|directory|location",
+        "ambiguous_phrase": "those packets",
+        "question": "Which packets are being referenced? Where are they located, and what forms do they contain?",
+        "priority": "HIGH",
+        "reason": "The phrase 'those packets' is ambiguous; without specifying which packets, users cannot reliably locate or use the correct forms."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "config",
+        "ambiguous_phrase": "this one",
+        "question": "Is the Q2-2024 Employee Onboarding Feedback Form the correct and final version to use, and where is the file located (e.g., shared drive path, email attachment)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this one' is deictic and relies on prior context; without explicit confirmation of version and location, there is risk of using an outdated or incorrect form, which could impact onboarding accuracy."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last night",
+        "question": "What is the exact timestamp or date when the file was sent, and through which channel (e.g., email, internal system)?",
+        "priority": "HIGH",
+        "reason": "The reference to 'last night' is vague; without a precise timestamp or channel, retrieval or audit of the sent file may be difficult, especially if multiple files were sent or if there are versioning concerns."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "questions on compensation",
+        "question": "Are there privacy or access controls in place for discussing compensation? Who is authorized to answer these questions?",
+        "priority": "CRITICAL",
+        "reason": "Compensation information is sensitive; ensuring proper privacy and access controls is essential to prevent unauthorized disclosure."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name, role, and contact information?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous and does not specify which individual needs to be consulted for approval. This is essential for accountability and proper communication."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "config",
+        "ambiguous_phrase": "latest version of the explanation",
+        "question": "Is 'Bonus Structure Explanation, v3' the definitive latest version, and where is it stored? Is there a version history or changelog?",
+        "priority": "HIGH",
+        "reason": "While 'latest' is resolved in metadata, explicit confirmation and location of the document are needed to avoid versioning errors and ensure correct usage."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "new hires",
+        "question": "Who are the 'new hires' being referenced? Is there a complete, up-to-date list of expected arrivals for today?",
+        "priority": "HIGH",
+        "reason": "Without a specific roster, it is impossible to confirm if 'everyone' has arrived or to accurately count how many new hires made it in today."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date being referred to as 'today'? Is this aligned with the current calendar context?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity can lead to confusion about which day's attendance is being tracked, especially if the conversation is referenced later."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "made it in",
+        "question": "Does 'made it in' refer specifically to the Denver Office - Executive Suite, or could it include remote arrivals or other office locations?",
+        "priority": "HIGH",
+        "reason": "Clarifying the location ensures accurate tracking of physical presence versus remote onboarding, which affects operational and security protocols."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "everyone",
+        "question": "Who is included in 'everyone'? Is this limited to new hires, or does it include other staff or stakeholders expected today?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in 'everyone' may result in incomplete attendance checks or missed follow-ups for individuals not explicitly listed."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "person",
+        "ambiguous_phrase": "their badges",
+        "question": "Whose badges need to be updated by security?",
+        "priority": "HIGH",
+        "reason": "The phrase 'their badges' lacks a clear antecedent. Security will not know which individuals' badges require updating, risking incomplete or incorrect badge processing."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "in there",
+        "question": "What is the exact location referred to by 'in there'? Is it a specific office, room, or area within the Denver Office - Executive Suite?",
+        "priority": "HIGH",
+        "reason": "The phrase 'in there' is deictic and unresolved; knowing the precise location is essential for clarity of action and coordination."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Afterwards",
+        "question": "After which specific event or time should the feedback summary be sent?",
+        "priority": "HIGH",
+        "reason": "The timing for sending the feedback summary is unclear; 'afterwards' is ambiguous without a defined reference point, which could lead to delays or missed expectations."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "that applicant",
+        "question": "Who is 'that applicant'? What is their full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'that applicant' is ambiguous; without clarification, it is impossible to confirm offer acceptance or track relevant actions."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the offer",
+        "question": "Which specific offer is being referenced? What are the details (position, terms, date sent)?",
+        "priority": "CRITICAL",
+        "reason": "The referenced 'offer' is not specified; multiple offers may exist, and clarity is needed to ensure accurate status tracking."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "details",
+        "question": "What are the specific details to be sent (e.g., time, agenda, participants)?",
+        "priority": "CRITICAL",
+        "reason": "The content of 'details' is unspecified; incomplete information could lead to confusion or missed expectations for the appointment."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to by 'there'? Is it the Denver Office - Executive Suite, Maple Street Bistro, or another place?",
+        "priority": "HIGH",
+        "reason": "The term 'there' is deictic and ambiguous; booking the back room requires a precise location to avoid scheduling errors or miscommunication."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "book the back room",
+        "question": "For what date and time should the back room be booked? Is this for a specific meeting or event?",
+        "priority": "CRITICAL",
+        "reason": "Booking requires temporal details to ensure availability and proper reservation; missing date/time may result in double-booking or failed reservation."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this session",
+        "question": "What is the exact time or scheduled end time of 'this session' to determine when the debrief will occur?",
+        "priority": "HIGH",
+        "reason": "Precise timing is required for scheduling and coordination; 'this session' is not explicitly defined in time, making the debrief timing ambiguous."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "my office",
+        "question": "What is the exact location (building, floor, room number) of 'my office'?",
+        "priority": "HIGH",
+        "reason": "While the metadata suggests 'Denver Office - Executive Suite', it is not explicitly confirmed that 'my office' refers to this location; clarity is needed for participants to know where to meet."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "this folder",
+        "question": "What is the full path, contents, and permissions of 'this folder'?",
+        "priority": "CRITICAL",
+        "reason": "The identity and location of 'this folder' are unclear, which is essential for ensuring proper handling and security of compliance documents."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "config",
+        "ambiguous_phrase": "the compliance docs",
+        "question": "What specific compliance documents are included (titles, versions, formats)?",
+        "priority": "HIGH",
+        "reason": "Without knowing exactly which compliance documents are referenced, there is risk of incomplete or incorrect document handling for new hires."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "new hires",
+        "question": "Who are the 'new hires' referenced (names, roles)?",
+        "priority": "HIGH",
+        "reason": "Identifying the new hires is important for tracking which compliance documents pertain to which individuals."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "the helpdesk",
+        "question": "Who specifically constitutes 'the helpdesk'? Is there a direct contact name, number, or email for login issues?",
+        "priority": "HIGH",
+        "reason": "Without explicit contact details, users experiencing login trouble may not know how to reach support, causing delays or unresolved access issues."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "credential",
+        "ambiguous_phrase": "login trouble",
+        "question": "Which system(s) does 'login trouble' refer to? Are there specific credentials or platforms affected?",
+        "priority": "CRITICAL",
+        "reason": "Ambiguity about which logins are meant could result in misdirected help requests or unresolved technical problems."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "in a bit",
+        "question": "What is the exact or approximate time when User B will see Nina?",
+        "priority": "HIGH",
+        "reason": "The phrase 'in a bit' is temporally vague and could lead to confusion or missed coordination, especially in a professional context where timing may be important."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "that room",
+        "resolved_entity": "Designated onboarding room for new hires (where employees are waiting for orientation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Onboarding packet or materials (including the updated handbook)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Onboarding room (where the IT manager may use a laptop for the remote work protocol walkthrough)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Benefits overview session (potentially rescheduled)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Compensation or benefits question (topic employees may ask about)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "those packets",
+        "resolved_entity": "Onboarding packets containing forms for new hires",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "this one",
+        "resolved_entity": "Latest version of the explanation document (sent last night)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "their paperwork",
+        "resolved_entity": "New hire onboarding paperwork (forms and documents required for onboarding)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Person responsible for approving the latest version of the explanation (likely a team member or HR colleague)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "in today",
+        "resolved_entity": "Current onboarding session date (today, when new hires are expected to arrive)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "their badges",
+        "resolved_entity": "Security badges for new hires (to be updated at reception)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "Onboarding coordination and communication (Nina's skill at managing onboarding tasks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "in there",
+        "resolved_entity": "Onboarding room (where Nina is coordinating the session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "this call",
+        "resolved_entity": "Current phone or video call with Nina (ongoing conversation before User A joins in person)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "the feedback summary for today",
+        "resolved_entity": "Summary of new hire feedback from the current onboarding session (today)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "that applicant",
+        "resolved_entity": "Specific job candidate recently offered a position (whose acceptance status is being checked)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "the usual place",
+        "resolved_entity": "Regular meeting location for onboarding or orientation sessions (as previously established between User A and Nina)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "There",
+        "resolved_entity": "The usual onboarding meeting place (where the session will be held)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the back room",
+        "resolved_entity": "Back room adjacent to the usual onboarding location (booked as a backup for the session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "my office",
+        "resolved_entity": "User A's office (Craig's office, where the debrief will take place after the session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "this session",
+        "resolved_entity": "Current onboarding or orientation session (taking place before the debrief)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "this folder",
+        "resolved_entity": "Folder containing compliance documents for new hires",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "the compliance docs",
+        "resolved_entity": "Compliance documents required for new hire onboarding",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that issue",
+        "resolved_entity": "WiFi connectivity problem affecting the onboarding group",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "the group",
+        "resolved_entity": "Cohort of new hires currently onboarding",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "a bit",
+        "resolved_entity": "Shortly after the current conversation or task (User A will see Nina soon)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 22
+  }
+}

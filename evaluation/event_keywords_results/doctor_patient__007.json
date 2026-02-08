@@ -1,0 +1,1137 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' (the user's apartment) sufficiently specified for clinical or privacy purposes, or is additional detail (e.g., full address, room, privacy status) required?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'here' is deictic and, while resolved to 'Mei's Apartment' via metadata, may lack sufficient granularity for medical, privacy, or telemedicine compliance (e.g., is the user in a private space suitable for confidential discussion?)."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "medication",
+        "ambiguous_phrase": "Just some cough left",
+        "question": "Is User A currently taking any medication for the cough? If so, what is the name, dosage, frequency, and timing?",
+        "priority": "CRITICAL",
+        "reason": "Medication details are essential for monitoring treatment, potential interactions, and assessing recovery progress."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "I haven't left this place all week.",
+        "question": "Has User A missed or rescheduled any medical appointments due to not leaving the apartment?",
+        "priority": "CRITICAL",
+        "reason": "Missed or rescheduled appointments could impact continuity of care and follow-up."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "medication",
+        "ambiguous_phrase": "it",
+        "question": "What is the name, dosage, and frequency of the medication that was completed?",
+        "priority": "CRITICAL",
+        "reason": "The medication is referenced only as 'it' with no explicit identification. For medical safety and documentation, the specific medication, its dosage, and regimen must be confirmed."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "X-ray",
+        "question": "What anatomical region was imaged (e.g., chest, sinus), and on what date was the X-ray performed?",
+        "priority": "HIGH",
+        "reason": "Knowing the specific X-ray type and timing is essential for correlating findings with symptoms and other test results."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the inhaler from the kit",
+        "question": "What is the name, dosage, and frequency of the inhaler used from the kit?",
+        "priority": "HIGH",
+        "reason": "Precise identification of the medication is necessary for clinical safety, monitoring, and to avoid potential drug interactions or errors."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the kit",
+        "question": "What medications or devices are included in 'the kit'?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the contents of 'the kit' is important to understand what treatments are available and being used by the patient."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact time the inhaler was used this morning?",
+        "priority": "HIGH",
+        "reason": "Exact timing of medication administration is important for assessing efficacy and potential side effects."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "watercolor workshop at the Cambridge Center",
+        "question": "What is the exact date and time of the watercolor workshop?",
+        "priority": "CRITICAL",
+        "reason": "Appointment entities require date and time for completeness; only location and activity are specified."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "the Cambridge Center",
+        "question": "What is the full address or room number for 'the Cambridge Center'?",
+        "priority": "HIGH",
+        "reason": "Location entities require precise address or room details for clarity and navigation; 'Cambridge Center' is ambiguous and could refer to multiple places."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "location",
+        "ambiguous_phrase": "a space farther from the door",
+        "question": "Which exact space is being referred to? What is its location within the Cambridge Center?",
+        "priority": "HIGH",
+        "reason": "Lack of precise spatial information could impact accessibility, safety, or medical needs (e.g., avoiding drafts/allergens)."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "schedule the flu shot",
+        "question": "What are the available dates, times, and locations for the flu shot appointment?",
+        "priority": "CRITICAL",
+        "reason": "Without specific options for scheduling, it is not possible to determine whether 'this week' or 'wait' is feasible or optimal."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "medical",
+        "ambiguous_phrase": "Should I do it *this week*, or wait?",
+        "question": "Are there any current medical conditions, recent exposures, or medication interactions that would affect the timing of the flu shot?",
+        "priority": "CRITICAL",
+        "reason": "Medical context is needed to safely advise on the timing of vaccination, especially given recent inhaler use and possible respiratory symptoms."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "*this week*",
+        "question": "What are the exact date range boundaries for 'this week' in the user's context?",
+        "priority": "HIGH",
+        "reason": "Precise temporal resolution is needed to avoid scheduling errors or misunderstandings."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the swimming session",
+        "question": "What is the exact time, location, and duration of 'the swimming session' after lunch?",
+        "priority": "CRITICAL",
+        "reason": "Without precise scheduling details, it is unclear how 'the swimming session' conflicts with other appointments or can be rescheduled."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after lunch",
+        "question": "What is the specific time referenced by 'after lunch'?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity prevents accurate calendar updates and coordination with other events."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "I can move it",
+        "question": "What are the available alternative times or dates for rescheduling the swimming session?",
+        "priority": "CRITICAL",
+        "reason": "Rescheduling options are not specified, making it unclear how flexible the appointment is."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Do I need any paperwork?",
+        "question": "What type of appointment or service is being referenced (e.g., flu shot, prescription pickup, consultation)?",
+        "priority": "CRITICAL",
+        "reason": "The paperwork required depends entirely on the specific service or appointment; without this, the question cannot be answered accurately."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "The pharmacy is closer to here",
+        "question": "Which specific pharmacy is being referenced (name, address, or chain)?",
+        "priority": "HIGH",
+        "reason": "Multiple pharmacies may be near the user's location; specifying which one is intended is necessary for accurate paperwork or procedural requirements."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "soon",
+        "question": "What is the specific timeframe or deadline for when additional vaccines are being considered or recommended?",
+        "priority": "HIGH",
+        "reason": "The term 'soon' is ambiguous and needs to be resolved to a concrete date or date range to provide actionable medical recommendations and ensure timely vaccination."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "medical",
+        "ambiguous_phrase": "other vaccines",
+        "question": "Which specific vaccines (by name or type) are being considered or recommended for the user, based on their age, medical history, or risk factors?",
+        "priority": "HIGH",
+        "reason": "The phrase 'other vaccines' is vague; without specifying which vaccines, it is unclear what immunizations are relevant or due for the user, impacting the completeness of medical guidance."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "medication",
+        "ambiguous_phrase": "it",
+        "question": "Which specific medication or vaccine is 'it' referring to?",
+        "priority": "CRITICAL",
+        "reason": "The antecedent for 'it' is unclear; without knowing which medication or vaccine is being discussed, medical advice or record lookup cannot proceed."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "my last doctor",
+        "question": "Who is 'my last doctor'? What is their full name and contact information?",
+        "priority": "HIGH",
+        "reason": "Identifying the doctor is necessary for verifying medical records or contacting for history; 'my last doctor' is ambiguous."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before grad school",
+        "question": "What is the exact date or time period referred to by 'before grad school'?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to determine vaccine validity or eligibility; 'before grad school' is vague and could span months or years."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "another week",
+        "question": "What is the exact date range being referred to by 'another week'? Does this mean 7 days from today, or a specific calendar week?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect medical advice and scheduling; precise timing is needed for actionable recommendations."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "location",
+        "ambiguous_phrase": "the pool",
+        "question": "Which specific pool is being referenced? Is it a public pool, apartment pool, or another location?",
+        "priority": "HIGH",
+        "reason": "Location specificity is important for risk assessment and context, especially for medical or exposure-related advice."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "medication|appointment|location|temporal|person",
+        "ambiguous_phrase": "it",
+        "question": "What does 'it' refer to in this context? Is it a medication, activity, food, or something else?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'it' is used without a clear antecedent in the immediate or prior turns, making it impossible to determine what User A is referring to. This ambiguity could impact medical, technical, or scheduling follow-up actions."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name, title, and role?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'her' is used without a clear antecedent in this turn, making it ambiguous who was emailed. This is essential for privacy, communication tracking, and medical context."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "the grad admin",
+        "question": "Who specifically is 'the grad admin'? What is their full name and contact information?",
+        "priority": "HIGH",
+        "reason": "Precise identification of the recipient is necessary to ensure the update is sent to the correct individual and for privacy/audit tracking."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "my return date",
+        "question": "What is the exact return date being referenced?",
+        "priority": "HIGH",
+        "reason": "The specific return date is required for accurate communication and scheduling; ambiguity could lead to miscommunication or administrative errors."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "medication",
+        "ambiguous_phrase": "nutritional supplement",
+        "question": "What is the exact name, dosage, and intended use of the nutritional supplement referenced?",
+        "priority": "HIGH",
+        "reason": "The supplement is referenced in a medical context, but without specifics, it is unclear which product, dosage, or regimen is being discussed. This is essential for accurate tracking, safety, and communication with medical staff."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "Dr. Patel",
+        "question": "What is Dr. Patel's full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "Dr. Patel is referenced as a medical professional, but without full identification, it is ambiguous which individual is being discussed, especially if there are multiple Dr. Patels in the system."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "reply from Dr. Patel",
+        "question": "Was the reply from Dr. Patel regarding a specific appointment, prescription, or lab/test result? What was the content and date of the reply?",
+        "priority": "CRITICAL",
+        "reason": "The nature of the reply is unclear\u2014whether it pertains to an appointment, prescription, or test result. This affects follow-up actions and record-keeping."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the shot",
+        "question": "What is the exact type of 'shot' being referred to (e.g., vaccine name, dosage, purpose)?",
+        "priority": "CRITICAL",
+        "reason": "Ambiguity about the medical appointment could result in confusion or incorrect preparation for the visit."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "when I go for the shot",
+        "question": "What is the scheduled date and time for the shot appointment?",
+        "priority": "CRITICAL",
+        "reason": "Missing temporal details may cause scheduling conflicts or missed appointments."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the same medication",
+        "question": "Which medication is 'the same medication' referring to? Please specify the name, dosage, and frequency.",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the medication, it is unclear which drug or treatment is being referenced. This is essential for safe medical advice, especially regarding fever management."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "my friend",
+        "question": "Who is 'my friend'? What is their name or relationship, and do they have permission to receive information about the user's health?",
+        "priority": "CRITICAL",
+        "reason": "Mention of a third party raises privacy concerns. It's unclear if this person is authorized to know about the user's medical status."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the last month",
+        "question": "What is the exact date range referred to by 'the last month'? (e.g., March 1\u2013March 31, 2024)",
+        "priority": "HIGH",
+        "reason": "Precise temporal boundaries are required for data selection and compliance; ambiguity could lead to incorrect or incomplete data usage."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "my data stays confidential",
+        "question": "What specific confidentiality measures will be used to protect 'my data'? (e.g., encryption, access controls, anonymization)",
+        "priority": "CRITICAL",
+        "reason": "User's consent is conditional on confidentiality; lack of detail risks privacy violations or misunderstanding of protections."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "medication|medical data",
+        "ambiguous_phrase": "my data",
+        "question": "What type of data is being referenced as 'my data'? (e.g., medical records, medication history, appointment logs)",
+        "priority": "CRITICAL",
+        "reason": "The scope of 'my data' is unclear, which could result in over- or under-inclusion of sensitive information."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "the cold weather",
+        "question": "What is the specific location being referenced as having 'the cold weather'? Is it Dr. Evans' current location, User A's location, or another place?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the cold weather' is contextually vague without a resolved location. If location-specific advice or context is relevant (e.g., for medical recommendations or scheduling), this ambiguity could matter."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Mei's Apartment (where User A is currently logging in for the appointment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "this place",
+        "resolved_entity": "Mei's Apartment (User A's home, where she has stayed all week during recovery)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "that call",
+        "resolved_entity": "Previous phone or video call with Dr. Evans regarding medication instructions",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "the kit",
+        "resolved_entity": "Medical kit provided for respiratory support (including inhaler, as discussed in prior care)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "the living room",
+        "resolved_entity": "Living room in Mei's Apartment (where User A used the inhaler after walking around)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "the Cambridge Center",
+        "resolved_entity": "Cambridge Art Center (location of the watercolor workshop User A plans to attend)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "Workshop coordinator and staff at the Cambridge Art Center",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the door",
+        "resolved_entity": "Main entrance door to the Cambridge Art Center workshop space",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "this week",
+        "resolved_entity": "Current week (starting from the conversation date, 2026-02-06)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "the swimming session",
+        "resolved_entity": "Scheduled swimming session after lunch (User A's planned physical activity for the day)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Mei's Apartment (User A's current location, referenced in relation to the nearby pharmacy)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "soon",
+        "resolved_entity": "Near future (within the next few weeks, as discussed for vaccine recommendations)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "before grad school",
+        "resolved_entity": "Period prior to User A starting graduate school in Boston",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "that recipe",
+        "resolved_entity": "Specific healthy recipe suggested by Dr. Evans for immune support",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "the pool",
+        "resolved_entity": "Swimming pool used for User A's regular swimming sessions",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Swimming pool (referenced in previous turn as something User A doesn't like much)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Workshop coordinator at the Cambridge Art Center",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the team",
+        "resolved_entity": "Workshop staff or group at the Cambridge Art Center",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "the office",
+        "resolved_entity": "Administrative office at Mei's graduate program or medical provider",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "my record",
+        "resolved_entity": "User A's official medical or academic record (for documentation of recovery)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the grad admin",
+        "resolved_entity": "Graduate program administrative office at User A's university",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "Dr. Patel",
+        "resolved_entity": "Dr. Patel (colleague of Dr. Evans, consulted for nutritional supplement advice)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Pharmacy staff (who can answer questions about the flu shot and supplements)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "the pharmacy",
+        "resolved_entity": "Local pharmacy near Mei's Apartment (where User A plans to get the flu shot)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "the same medication",
+        "resolved_entity": "Previously prescribed medication for fever management (as discussed with Dr. Evans)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "the cough",
+        "resolved_entity": "User A's lingering cough following viral pneumonia (subject of recent rumors among friends)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "my data",
+        "resolved_entity": "User A's personal health data (to be kept confidential for analysis)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "the last month",
+        "resolved_entity": "Previous month leading up to the current conversation date (for data analysis)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "the cold weather",
+        "resolved_entity": "Current winter weather in Boston (affecting both User A and Dr. Evans)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 24
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a couple days ago",
+        "question": "What exact dates are being referenced for 'now' and 'a couple days ago'?",
+        "priority": "HIGH",
+        "reason": "Precise temporal tracking is essential in medical contexts to correlate symptoms, interventions, or medication changes with specific dates."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the last set of medication",
+        "question": "What was the name, dosage, frequency, and timing of the 'last set of medication'?",
+        "priority": "CRITICAL",
+        "reason": "Medication details are required for accurate medical tracking, reconciliation, and safety. The phrase is vague and lacks all required attributes."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the antiviral from then",
+        "question": "Which antiviral medication is being referenced, and what was the exact time period ('then')?",
+        "priority": "CRITICAL",
+        "reason": "The specific antiviral and its administration period are not identified, which is essential for continuity of care and avoiding medication errors."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What exact date or time does 'then' refer to?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity can lead to confusion about which medication course is being discussed, impacting clinical decisions."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "the chest X-ray from last Friday",
+        "question": "What is the exact date and time of the chest X-ray referred to as 'last Friday'?",
+        "priority": "HIGH",
+        "reason": "Precise identification of the test date is necessary for accurate retrieval and interpretation of results, especially in a medical context where multiple tests may be performed."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "the sputum results",
+        "question": "Which specific sputum test is being referenced (e.g., culture, cytology, PCR), and what is the collection date?",
+        "priority": "HIGH",
+        "reason": "Multiple sputum tests may exist; specifying type and date ensures the correct results are reviewed."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "TECHNICAL",
+        "ambiguous_phrase": "the portal",
+        "question": "Which portal is being referenced for accessing the chest X-ray and sputum results (e.g., hospital EMR, patient portal, lab system)?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the system is necessary to ensure the correct access method and permissions for retrieving medical results."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "art class",
+        "question": "What is the exact date, time, and location of the art class scheduled for 'tomorrow'?",
+        "priority": "CRITICAL",
+        "reason": "Appointment details are incomplete; without exact date, time, and location, calendar tracking and preparation cannot be confirmed."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the specific calendar date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity prevents accurate scheduling and coordination; 'tomorrow' must be resolved to an exact date."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next Thursday",
+        "question": "What is the exact date and time for the proposed appointment on 'next Thursday'?",
+        "priority": "CRITICAL",
+        "reason": "Temporal ambiguity: 'next Thursday' is not resolved to a specific calendar date or time, which is essential for scheduling and confirmation."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Is that free in your calendar?",
+        "question": "What type of appointment is being scheduled, and where will it take place?",
+        "priority": "CRITICAL",
+        "reason": "Appointment details are incomplete: type and location are not specified, which may cause confusion about the nature and place of the meeting."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "vaccine",
+        "question": "Which vaccine is being offered (type, brand, dose number)?",
+        "priority": "CRITICAL",
+        "reason": "The specific vaccine type/brand/dose is not stated, which is essential for medical consent, scheduling, and preparation."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the clinic or the pharmacy",
+        "question": "What are the available appointment dates and times at each location?",
+        "priority": "CRITICAL",
+        "reason": "User cannot make an informed choice between locations without knowing available scheduling options."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the clinic or the pharmacy",
+        "question": "Are there any specific preparation instructions or requirements for receiving the vaccine at either location?",
+        "priority": "CRITICAL",
+        "reason": "Preparation requirements (e.g., paperwork, fasting, insurance) may differ by location and affect user readiness."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "recent infection",
+        "question": "What was the specific infection (diagnosis, date, severity) that should be reported to the pharmacist?",
+        "priority": "CRITICAL",
+        "reason": "Pharmacists require detailed clinical information to assess vaccine eligibility and safety; 'recent infection' is too vague and may lead to inappropriate care or missed contraindications."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "ID and insurance card",
+        "question": "Are there any additional documents or forms (e.g., vaccine consent, prior immunization records) required for the appointment?",
+        "priority": "CRITICAL",
+        "reason": "Missing required documentation could delay or prevent vaccine administration; explicit instructions ensure preparedness."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Let the pharmacist know",
+        "question": "Is there a preferred method or format for communicating the infection history to the pharmacist (e.g., written note, verbal, through app)?",
+        "priority": "CRITICAL",
+        "reason": "Unclear communication method may result in incomplete or missed information transfer, impacting clinical decision-making."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "config",
+        "ambiguous_phrase": "the file",
+        "question": "Which specific file is being referenced (name, location, purpose)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the file' is ambiguous; without specifying which file, it is unclear what information will be checked or where it is stored, which could impact follow-up or auditability."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "at this time",
+        "question": "What is the exact time or date range referred to by 'at this time'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'at this time' is deictic and lacks a precise temporal reference, which could lead to ambiguity in assessing the user's current eating habits."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "config",
+        "ambiguous_phrase": "your app",
+        "question": "Which app is being referenced for tracking? What is its name, version, and intended use?",
+        "priority": "HIGH",
+        "reason": "Without specifying the app, it is unclear what tool the user should use for tracking, which may lead to confusion or improper monitoring."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "the center",
+        "question": "Which specific center is being referred to for swimming? Is it Beth Israel Deaconess Medical Center, another facility, or elsewhere?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in location could lead to the user visiting the wrong facility, which may have different health or access policies."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "the sauna",
+        "question": "Which sauna is being referenced? Is it located within the same center, and if so, which room or facility?",
+        "priority": "HIGH",
+        "reason": "Unclear reference to the sauna may cause confusion about which facility or amenity should be avoided, impacting compliance with medical advice."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "your advisor",
+        "question": "Who specifically is 'your advisor'? (full name, title, contact, department)",
+        "priority": "HIGH",
+        "reason": "The identity of 'your advisor' is not specified, which is necessary for clear communication, privacy, and ensuring updates are sent to the correct individual."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "medical|appointment",
+        "ambiguous_phrase": "updates",
+        "question": "What specific 'updates' are being referred to? (medical status, test results, appointment changes, etc.)",
+        "priority": "HIGH",
+        "reason": "The content and nature of the 'updates' are unclear, which could lead to miscommunication or incomplete information sharing with the advisor."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "doctor\u2019s note",
+        "question": "What is the purpose and required content of the doctor's note? (e.g., medical clearance, absence verification, specific details needed?)",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the purpose or required content, the note may not fulfill the recipient's needs, causing delays or repeated requests."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "I",
+        "question": "Who is 'I' in this context? (Is this Dr. Evans or another provider?)",
+        "priority": "HIGH",
+        "reason": "While likely Dr. Evans based on prior context, explicit identification is necessary for proper authorization and record-keeping."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "send it directly",
+        "question": "What is the direct method of sending the note? (e.g., email, fax, secure portal) and is recipient contact information available?",
+        "priority": "HIGH",
+        "reason": "The transmission method and recipient details are required to ensure secure and successful delivery, especially for sensitive medical documents."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "technical|location",
+        "ambiguous_phrase": "the portal",
+        "question": "Which specific portal is being referenced for the upload (system name, URL, or access instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The destination for the upload is ambiguous, which could lead to miscommunication or failed delivery if multiple portals exist."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by tomorrow",
+        "question": "What is the exact calendar date for 'tomorrow' relative to the current reference time?",
+        "priority": "HIGH",
+        "reason": "Without a resolved date, deadlines may be missed or misunderstood, especially if the conversation spans multiple days or time zones."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next Monday",
+        "question": "What is the exact date (month/day/year) referred to as 'next Monday'?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'next Monday' is ambiguous without a specific date, which is essential for scheduling and coordination, especially in medical or administrative contexts."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "anything changes",
+        "question": "What specific changes should be reported (e.g., time, location, participant, appointment type)?",
+        "priority": "CRITICAL",
+        "reason": "The instruction to report if 'anything changes' is vague; specifying what constitutes a relevant change would ensure clear communication and prevent misunderstandings."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "medication",
+        "ambiguous_phrase": "the supplement",
+        "question": "What is the exact name, dosage, and intended use of 'the supplement' being discussed?",
+        "priority": "HIGH",
+        "reason": "Without the specific identity and details of the supplement, it is impossible to verify safety, insurance coverage, or provide accurate medical advice."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who specifically is 'he' that replied yesterday? (Full name, title, and role in this context)",
+        "priority": "HIGH",
+        "reason": "The identity of 'he' is unclear, which affects the credibility and authority of the safety assessment provided."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date referred to by 'today'? Is it resolved to a specific calendar date?",
+        "priority": "HIGH",
+        "reason": "Temporal references like 'today' must be resolved to an exact date for accurate tracking, scheduling, and documentation, especially in medical or technical contexts."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "your mind",
+        "question": "Who is being addressed? Is the recipient's identity (full name, role) explicitly clear in this context?",
+        "priority": "HIGH",
+        "reason": "Clarity about the addressed person is important for privacy, accountability, and ensuring the correct recipient is responding, especially in shared or clinical environments."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "medication",
+        "ambiguous_phrase": "it",
+        "question": "What exactly does 'it' refer to? Is this a specific medication, supplement, treatment, or procedure?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'it' is ambiguous and could refer to multiple entities discussed previously (e.g., supplement, medication, appointment). Without clear identification, confirmation and safety cannot be assured."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before starting",
+        "question": "What is the exact date and time when 'starting it again' is planned?",
+        "priority": "HIGH",
+        "reason": "Temporal details are missing, making it unclear when the user intends to resume the activity. This affects scheduling, monitoring, and confirmation processes."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "person",
+        "ambiguous_phrase": "the research coordinator",
+        "question": "Who specifically is 'the research coordinator'? (full name, title, contact, department)",
+        "priority": "HIGH",
+        "reason": "The identity of the third party receiving sensitive location history is not specified, raising privacy and access concerns."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "location",
+        "ambiguous_phrase": "your location history",
+        "question": "What is the scope and time range of 'your location history' to be sent?",
+        "priority": "HIGH",
+        "reason": "The extent of location data being shared is ambiguous, which is important for privacy and consent."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "The recipient of the report is not clearly identified, which could lead to privacy breaches or misdelivery of sensitive information."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by end of day",
+        "question": "What is the exact deadline (date and time) for 'end of day'? Is there a specific cutoff hour?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the deadline could result in missed expectations or compliance issues, especially if different parties interpret 'end of day' differently."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the follow-up appointment next week",
+        "question": "What is the exact date, time, and location of the follow-up appointment next week?",
+        "priority": "CRITICAL",
+        "reason": "The appointment reference lacks specific scheduling details (date, time, location), which are essential for calendar management, reminders, and ensuring both parties are coordinated."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time during this appointment (how Mei feels at the present moment in the conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "Time of Mei's last antiviral medication course (the previous treatment period discussed in the conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "last Friday",
+        "resolved_entity": "The Friday immediately preceding this conversation (date of Mei's chest X-ray and sputum test results)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "the portal",
+        "resolved_entity": "Mei's online patient portal (where test results are accessed)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "this moment",
+        "resolved_entity": "Current time during this appointment (Mei's breathing status right now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "art class",
+        "resolved_entity": "Mei's scheduled art class (next day after the conversation, as referenced for tomorrow)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Members of Mei's art class (the group she attends with)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "me",
+        "resolved_entity": "Dr. Evans (Mei's physician, the person to contact if symptoms return)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "the app",
+        "resolved_entity": "Mei's patient communication app (used to message Dr. Evans or report symptoms)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "next Thursday",
+        "resolved_entity": "The Thursday following the current conversation (proposed date for follow-up or recovery check-in)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "the clinic",
+        "resolved_entity": "Beth Israel Deaconess Medical Center clinic (where Mei can receive her vaccine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "the pharmacy on Main Street",
+        "resolved_entity": "Local pharmacy on Main Street (alternative location for Mei's vaccine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "the pharmacist",
+        "resolved_entity": "Pharmacist at the Main Street pharmacy (person Mei should inform about her recent infection)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "your record",
+        "resolved_entity": "Mei's medical record (being reviewed for vaccination history)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "the file",
+        "resolved_entity": "Mei's patient file (where vaccination and health history are documented)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "this time",
+        "resolved_entity": "Current period during recovery (how Mei is eating and caring for herself right now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "your app",
+        "resolved_entity": "Mei's health tracking app (used for monitoring symptoms and alerts)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Mei's health tracking app (the app that may flag unusual symptoms)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "the center",
+        "resolved_entity": "Mei's local swimming center (where she swims, referenced for safe activity)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "the sauna",
+        "resolved_entity": "Sauna at the swimming center (facility Mei should avoid for now)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "your advisor",
+        "resolved_entity": "Mei's graduate advisor (person to update about her health status)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "Mei's advisor or their administrative team (those who may need a doctor's note)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Doctor\u2019s note (document Dr. Evans can send directly)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the note",
+        "resolved_entity": "Doctor\u2019s note for Mei\u2019s advisor (to be uploaded to the portal)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the portal",
+        "resolved_entity": "Mei's online patient portal (where documents and results are uploaded)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "next Monday",
+        "resolved_entity": "The Monday following this conversation (potential date for a confirmed event or appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "anything",
+        "resolved_entity": "Any changes in Mei\u2019s health status or schedule (that should be communicated to Dr. Evans)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "the supplement",
+        "resolved_entity": "Immune health supplement (recently discussed with Mei\u2019s advisor and Dr. Evans)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "your insurance",
+        "resolved_entity": "Mei\u2019s health insurance plan (to check coverage for the supplement)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current day of the conversation (Mei\u2019s present concerns or thoughts)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Immune health supplement (to be confirmed before restarting)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Mei\u2019s friend or classmate (person concerned about infection status)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "the research coordinator",
+        "resolved_entity": "Research coordinator for the immune health study (recipient of Mei\u2019s location history)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "the report",
+        "resolved_entity": "Mei\u2019s location history report (to be sent to the research coordinator)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "The research coordinator (recipient of the report)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "the follow-up appointment",
+        "resolved_entity": "Scheduled follow-up appointment next week (where Mei will meet Dr. Evans)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

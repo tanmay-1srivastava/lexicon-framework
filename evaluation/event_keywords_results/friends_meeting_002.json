@@ -1,0 +1,908 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring to Iron Forge Gym, and is the specific area within the gym (e.g., main floor, studio, locker room) known?",
+        "priority": "HIGH",
+        "reason": "While 'here' is resolved to Iron Forge Gym using GPS and wifi, the exact location within the gym is not specified, which could be relevant for context-sensitive actions or privacy concerns."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I bailed again",
+        "question": "When did the previous instance(s) of 'bailing' occur?",
+        "priority": "HIGH",
+        "reason": "The phrase 'again' implies prior events, but no specific time or event is referenced, making it unclear when the relevant prior incident(s) happened."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last time",
+        "question": "What exact date and time did 'last time' (the previous gym session with thirty reps) occur?",
+        "priority": "HIGH",
+        "reason": "Precise temporal reference is needed to confirm which session is being referenced, especially if there have been multiple recent gym visits."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "thirty reps",
+        "question": "What specific exercise or activity does 'thirty reps' refer to (e.g., bench press, squats, etc.)?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the exercise is important for accurate tracking of workout routines and for context if multiple exercises are performed in sets of thirty reps."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "text me",
+        "question": "When is the text expected? Is there a deadline or time window for the response?",
+        "priority": "HIGH",
+        "reason": "The timing of the expected text is unspecified, which could impact planning or next steps if the response is time-sensitive."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What exact time does 'now' refer to? Is there a specific departure or arrival time planned?",
+        "priority": "HIGH",
+        "reason": "The term 'now' is ambiguous without a timestamp or calendar reference. Precise timing is important for coordinating to 'beat the crowd' and avoid scheduling conflicts."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "beat the crowd",
+        "question": "What is the expected time window for the crowd to arrive? Is there historical or calendar data to define when the gym becomes busy?",
+        "priority": "HIGH",
+        "reason": "Understanding the crowd timing helps optimize planning and may affect the success of the intended action. Without this, the strategy to 'beat the crowd' may be ineffective."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "project deadline\u2019s in two days",
+        "question": "What is the exact date and time of the project deadline, and what are the submission or completion criteria?",
+        "priority": "CRITICAL",
+        "reason": "The deadline is referenced only relatively; for scheduling, escalation, or compliance, the precise deadline and requirements are needed."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next weekend",
+        "question": "What are the exact dates for 'next weekend'? Is this Saturday-Sunday, or does it include Friday? Which calendar dates are being referenced?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling is required for confirmation and planning. 'Next weekend' is ambiguous without explicit dates, especially for travel arrangements."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "road trip",
+        "question": "What are the details of the 'road trip' appointment? Who is attending, what is the destination, what is the departure time, and what are the logistics?",
+        "priority": "CRITICAL",
+        "reason": "Key appointment details are missing, which are necessary for coordination, calendar entry, and resolving potential conflicts."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the cooler",
+        "question": "Which specific cooler is being referred to (owner, type, location)?",
+        "priority": "HIGH",
+        "reason": "The reference to 'the cooler' lacks detail about which cooler is meant, which could cause logistical confusion if multiple coolers exist or if the recipient is unsure."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after work tomorrow",
+        "question": "What is the exact time window for 'after work tomorrow'? (e.g., when does User A finish work, and what is the latest possible time for pickup?)",
+        "priority": "HIGH",
+        "reason": "Precise timing is necessary to coordinate the pickup and avoid conflicts with other scheduled events (e.g., 'Project Standup Meeting at 9:00am' or other calendar items). 'After work' is ambiguous without a defined end time."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "grab it",
+        "question": "Where exactly is 'it' to be picked up? (e.g., which location/building/room?)",
+        "priority": "HIGH",
+        "reason": "The pickup location is not specified, which is necessary for logistical planning and to avoid confusion."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date referred to by 'today'?",
+        "priority": "HIGH",
+        "reason": "While 'today' is likely the current date, without explicit resolution, there is ambiguity if this conversation is referenced later or in a different time zone/context."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the last time",
+        "question": "What exact date and time does 'the last time' refer to?",
+        "priority": "HIGH",
+        "reason": "The reference to 'the last time' is ambiguous without a precise date/time, which is important for context and tracking workout history or incidents."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "location",
+        "ambiguous_phrase": "inside",
+        "question": "Which specific indoor location is being referred to for the activity? Is it Iron Forge Gym, another facility, or a different area within the gym?",
+        "priority": "HIGH",
+        "reason": "The phrase 'inside' is ambiguous; without specifying the exact location, there could be confusion about where the activity will take place, especially if multiple indoor options exist."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "again",
+        "question": "When did User A previously eat 'that much cheese'? What was the context or timing of the prior incident?",
+        "priority": "HIGH",
+        "reason": "The word 'again' references a prior event, but the specific timing or context of the previous cheese consumption is not provided. This temporal gap may be relevant for understanding any patterns or consequences."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "location",
+        "ambiguous_phrase": "that much cheese",
+        "question": "Where did User A previously eat 'that much cheese'? Was it at the current location (Iron Forge Gym) or elsewhere?",
+        "priority": "HIGH",
+        "reason": "The location of the prior cheese consumption is unclear, which could be relevant if dietary habits or restrictions are location-dependent (e.g., gym, restaurant, home)."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "medical",
+        "ambiguous_phrase": "I'll regret it",
+        "question": "What specific medical or physical consequence does User A anticipate from eating 'that much cheese'? Is there a known intolerance, allergy, or other health issue?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'I'll regret it' is vague and could imply a medical issue (e.g., lactose intolerance, digestive discomfort), but no explicit detail is given. This is important for safety and context."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after the workout",
+        "question": "What is the exact time for the hangout after the workout?",
+        "priority": "HIGH",
+        "reason": "'After the workout' is a relative time reference. Without a specific time, scheduling conflicts may arise, especially since the next calendar event is at 9:00am."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "location",
+        "ambiguous_phrase": "hangout",
+        "question": "Where will the hangout take place after the workout?",
+        "priority": "HIGH",
+        "reason": "The location for the hangout is not specified, which is necessary for attendees to know where to go and for logistical planning."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "should be done by seven",
+        "question": "Does 'seven' refer to 7:00 AM or 7:00 PM, and in which time zone? The exact time is not specified.",
+        "priority": "HIGH",
+        "reason": "Unclear timing can cause scheduling errors or missed connections, especially if AM/PM or time zone is not explicit."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "ramen",
+        "question": "Which ramen place does User A want to go to? Is there a specific restaurant or location in mind?",
+        "priority": "HIGH",
+        "reason": "The intent to get ramen is clear, but the specific location is not specified, which is necessary for planning or coordination."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What specific location does 'there' refer to?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference with no explicit resolution in this turn or prior context. The intended location for the group to go after drinks is ambiguous, which could lead to confusion in planning."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after drinks",
+        "question": "What is the specific time or event referred to by 'after drinks'?",
+        "priority": "HIGH",
+        "reason": "'After drinks' is a vague temporal reference. Without a defined time or event, the sequence of plans is unclear, which could impact scheduling or coordination."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "head out",
+        "question": "Where exactly are User A and the group planning to go after leaving the current location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'head out' is spatially ambiguous. While prior context suggests possible destinations (e.g., ramen place, drinks), the immediate next location is not explicitly stated, which could impact coordination or logistics."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "config|deployment|technical",
+        "ambiguous_phrase": "it",
+        "question": "What is 'it' referring to? Is this a config file, deployment task, document, or another technical entity?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'it' is unclear, making it impossible to determine what needs to be updated before the standup. This affects tracking, accountability, and technical resolution."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow\u2019s standup",
+        "question": "What is the exact date and time for 'tomorrow\u2019s standup'? Is it confirmed to be the next calendar event at 9:00am?",
+        "priority": "HIGH",
+        "reason": "Temporal reference needs explicit resolution to ensure deadlines are met and updates are completed on time."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "deployment|task|technical",
+        "ambiguous_phrase": "update it",
+        "question": "What does 'update' entail for 'it'? Is there a specific success criteria, rollback plan, or required format for the update?",
+        "priority": "HIGH",
+        "reason": "Without knowing the nature of the update, it's unclear what actions are required, which could lead to incomplete or incorrect task execution."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the keys",
+        "question": "Which specific keys are being referred to (e.g., car keys, gym locker keys, apartment keys)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the keys' is ambiguous; without clarification, it is unclear which keys are at risk of being forgotten, which could impact access or security."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What exact location does 'there' refer to in this context?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic spatial reference. While local metadata suggests 'Iron Forge Gym' as the likely location, the turn itself does not specify this explicitly, and without confirmation, ambiguity remains about the meeting place."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this time",
+        "question": "What is the specific event or activity being referenced as 'this time'? Is it a gym session, a competition, or another activity?",
+        "priority": "HIGH",
+        "reason": "'This time' is a deictic phrase that lacks explicit reference. Without clarification, it is unclear what User A intends to win, which could impact scheduling, preparation, or tracking outcomes."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Iron Forge Gym (where Daniel and Marcus are working out together tonight)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "last time",
+        "resolved_entity": "Previous workout session with Marcus (when Daniel was made to do thirty reps)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "People Marcus asked about (likely mutual friends or group members involved in weekend plans or the road trip)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, referring to heading to the perfect spot in the gym)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "this week",
+        "resolved_entity": "Current work week leading up to the project deadline (two days from now)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "Marcus (Daniel's best friend and workout partner, known for being tough during workouts)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "next weekend",
+        "resolved_entity": "The weekend following the current week (when Daniel and Marcus are planning a road trip)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "A mutual friend (likely the person Marcus asked to pick up the cooler for the road trip)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "after work",
+        "resolved_entity": "After Daniel finishes his workday tomorrow (referring to picking up the cooler)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current day (the day of the gym session and conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "inside",
+        "resolved_entity": "Indoors at Iron Forge Gym (to avoid the Austin heat during their workout)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "the bottle",
+        "resolved_entity": "Water bottle Marcus offered to Daniel during the workout",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "that much cheese",
+        "resolved_entity": "Large amount of cheese Daniel ate previously (likely during a past pizza night with Marcus)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "everyone",
+        "resolved_entity": "All mutual friends in Daniel and Marcus's social group (for the post-workout hangout)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "he\u2019s",
+        "resolved_entity": "A male friend in their group (currently at work, expected to be done by seven)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "seven",
+        "resolved_entity": "7:00 PM tonight (when their friend is expected to finish work)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the group",
+        "resolved_entity": "Daniel and Marcus's circle of friends (who are being invited for the hangout)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "ramen",
+        "resolved_entity": "Ramen (Daniel's preferred food for the current weather, likely referencing a local ramen spot)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "this weather",
+        "resolved_entity": "Current weather in Austin (likely cool or rainy, making Daniel crave soup)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "everyone\u2019s",
+        "resolved_entity": "All friends in the group (if they agree to join for ramen after drinks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Ramen restaurant (the place Daniel wants to go after drinks if everyone is in)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Item Daniel put in his car earlier (likely the cooler or another item needed for the hangout/road trip)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Daniel's code/project (which needs updating before tomorrow\u2019s standup meeting)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "the keys",
+        "resolved_entity": "Keys needed for the car or gym locker (which Daniel and Marcus have forgotten before)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Meeting spot at Iron Forge Gym (where Daniel will see Marcus in a minute)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "this time",
+        "resolved_entity": "Current workout session/competition (Daniel is determined to win against Marcus)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "this place",
+        "question": "Is 'this place' referring specifically to the entire Iron Forge Gym, or a particular area/room within it?",
+        "priority": "HIGH",
+        "reason": "While 'this place' is resolved to Iron Forge Gym via metadata, the phrase could ambiguously refer to a specific area (e.g., weight room, lobby) within the gym, which may be relevant for spatial tracking or context-sensitive actions."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "on time",
+        "question": "What is the exact expected arrival time, and what event or activity is being referenced for punctuality?",
+        "priority": "HIGH",
+        "reason": "The phrase 'on time' implies a scheduled event or meeting, but the specific time and event (e.g., Yoga Class at 7:00pm) are not explicitly linked, which could cause confusion in temporal tracking or appointment management."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "location",
+        "ambiguous_phrase": "the benches",
+        "question": "Which specific benches are being referred to within Iron Forge Gym? (e.g., bench press area, stretching benches, or another specific location?)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the benches' is spatially ambiguous within the gym context; precise location is needed for clarity and accurate tracking of user movement or intent."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Saturday plans",
+        "question": "What are the exact details (time, location, attendees, activity) of the 'Saturday plans' being referenced?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'Saturday plans' is referenced but lacks explicit details about the event, which could be important for scheduling, coordination, or context."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact time or event referred to by 'after this'? Is it after the gym session, after a specific activity, or after the next calendar event?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity can lead to confusion about scheduling and coordination, especially if 'after this' overlaps with other calendar events (e.g., Yoga Class at 7:00pm). Precise timing is needed for planning."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "cut you some slack",
+        "question": "What is the specific timeframe or deadline for which slack is needed (e.g., a project, deliverable, or shift)?",
+        "priority": "HIGH",
+        "reason": "Without a defined timeframe, it is unclear what period or task the user needs flexibility for, which could impact work planning or support."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "talk to your lead",
+        "question": "Is there a scheduled meeting or does a new appointment need to be set up with the lead (Brian Ellis)?",
+        "priority": "CRITICAL",
+        "reason": "Knowing if a conversation is already scheduled or needs to be arranged is important for follow-up and resolution."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time window referred to by 'tonight'?",
+        "priority": "HIGH",
+        "reason": "'Tonight' is a relative temporal reference and should be resolved to a specific date and time window using calendar/context to avoid ambiguity, especially if actions or reminders are to be scheduled."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "person",
+        "ambiguous_phrase": "the guy with the van",
+        "question": "Who is 'the guy with the van'? What is his full name or identifier?",
+        "priority": "HIGH",
+        "reason": "Identity is unclear; without a resolved name or contact, coordination, accountability, or privacy cannot be managed."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "person",
+        "ambiguous_phrase": "Ben",
+        "question": "Who is 'Ben'? What is his full name or relevant contact information?",
+        "priority": "HIGH",
+        "reason": "Ben is referenced as the driver, but his identity is not fully specified; this may impact logistics, responsibility, or privacy."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "She",
+        "question": "Who is 'she'? Is this Jessica Nguyen or another person?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is ambiguous without explicit antecedent in this turn; prior resolution (Turn 6) may not apply if context has shifted. Accurate identification is necessary for scheduling, privacy, and follow-up."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "her schedule",
+        "question": "What specific schedule is being referenced? Is it a calendar event, work shift, or another commitment?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'her schedule' lacks detail about what constraints or events are affecting availability. This is important for planning and confirmation."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "maybe, depending",
+        "question": "What is the timeframe for a decision or confirmation? Is there a deadline or expected response time?",
+        "priority": "HIGH",
+        "reason": "The response 'maybe, depending' is vague and does not specify when a final answer will be given. Temporal clarity is needed for effective coordination."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "that treadmill",
+        "question": "Which specific treadmill is User B referring to? (e.g., location within gym, equipment ID, or distinguishing features)",
+        "priority": "HIGH",
+        "reason": "There may be multiple treadmills in Iron Forge Gym; without clarification, it's unclear which one User B intends to use, which could impact coordination or equipment tracking."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "might jump on",
+        "question": "When does User B plan to use the treadmill? Is this immediate, after another activity, or at a scheduled time?",
+        "priority": "HIGH",
+        "reason": "The timing of treadmill use is ambiguous, which could affect scheduling, equipment availability, or coordination with other planned activities (e.g., upcoming yoga class)."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "that intersection",
+        "question": "Which specific intersection outside is being referred to? (e.g., street names, GPS coordinates, or proximity to Iron Forge Gym)",
+        "priority": "HIGH",
+        "reason": "Precise location is necessary for context, incident reporting, or emergency follow-up. 'That intersection' is deictic and unresolved in current metadata."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "location",
+        "ambiguous_phrase": "the cooler",
+        "question": "Where exactly is 'the cooler' located within Iron Forge Gym? Is it accessible from the current location?",
+        "priority": "CRITICAL",
+        "reason": "Precise location is needed to determine accessibility and context for the water source being offered."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "pizza deal",
+        "question": "What are the details of the 'pizza deal' (e.g., time, location, terms)?",
+        "priority": "CRITICAL",
+        "reason": "The referenced 'pizza deal' may involve a future event or appointment; specifics are needed for scheduling, participation, and decision-making."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "group chat",
+        "question": "Which group chat is being referenced (platform, group name, membership)?",
+        "priority": "HIGH",
+        "reason": "Multiple group chats may exist; clarification is needed to ensure the correct context and privacy boundaries."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "your roommate",
+        "question": "Who is 'your roommate'? What is their full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'your roommate' is unclear, which could affect privacy, access permissions, and coordination for the planned activity. Without resolution, it's ambiguous who is being referred to and whether they are expected or allowed to join."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What specific time does 'later' refer to? Is there a defined time window or deadline for when the roommate might join?",
+        "priority": "HIGH",
+        "reason": "The term 'later' is vague and lacks a specific time reference, which could impact scheduling and coordination, especially if there are time-sensitive events (e.g., Yoga Class at 7:00pm) or location access constraints."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "the spot",
+        "question": "What is the exact location referred to as 'the spot'?",
+        "priority": "HIGH",
+        "reason": "'The spot' is a vague spatial reference with no explicit resolution in this turn or prior context. Without a precise location, meeting logistics are ambiguous and could lead to confusion or missed connections."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "around 7:30",
+        "question": "Is the meeting time exactly 7:30, or is there a flexible window? Does this conflict with any scheduled events (e.g., Yoga Class at 7:00pm)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'around 7:30' is imprecise and may overlap with a scheduled Yoga Class at 7:00pm in the calendar metadata. Clarification is needed to avoid scheduling conflicts."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after",
+        "question": "After what specific event or time are they planning to eat? Is it after the gym session, after the yoga class, or another activity?",
+        "priority": "HIGH",
+        "reason": "The reference point for 'after' is ambiguous; it is necessary to know the exact event or time to coordinate plans accurately."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "that burger",
+        "question": "Which restaurant or location is 'that burger' from? Is it a specific place previously mentioned or somewhere new?",
+        "priority": "HIGH",
+        "reason": "The location for getting the burger is unclear, which is essential for planning where to go after the prior activity."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "they",
+        "question": "Who does 'they' refer to? Is it User A's roommate, the group, or someone else?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'they' is ambiguous; without clear antecedent, it's unclear whose opinion is being sought, which affects group coordination."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "that place on Lamar",
+        "question": "What is the exact name and address of 'that place on Lamar'?",
+        "priority": "HIGH",
+        "reason": "The location is referenced vaguely; without a specific name or address, meeting logistics and directions are unclear."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for later",
+        "question": "What specific time does 'for later' refer to?",
+        "priority": "HIGH",
+        "reason": "'For later' is temporally ambiguous\u2014without a clear reference to a specific time, it is unclear when the board game is expected to be brought out or played, which could impact scheduling and coordination."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "location",
+        "ambiguous_phrase": "home",
+        "question": "Which specific location does 'home' refer to? Is it User A's residence, User B's, or another place?",
+        "priority": "HIGH",
+        "reason": "'Home' is context-dependent and ambiguous; without clarification, it's unclear what location is being referenced for item retrieval or preparation."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' in this context? Is it User A or another participant?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'you' could refer to multiple people in group chats or multi-user scenarios; explicit identification ensures correct recipient of the request."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the document",
+        "question": "What is the exact name, purpose, and required completion criteria for 'the document' referenced for work?",
+        "priority": "HIGH",
+        "reason": "Without specifying which document is being discussed, it is unclear what task or deliverable is being referenced, which may lead to confusion or missed work obligations."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "finish",
+        "question": "What is the deadline or expected completion time for 'the document' for work?",
+        "priority": "HIGH",
+        "reason": "Knowing when the document is due is essential for prioritizing tasks and ensuring timely completion."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "person",
+        "ambiguous_phrase": "for work",
+        "question": "Who is the intended recipient or responsible party for 'the document' at work?",
+        "priority": "HIGH",
+        "reason": "Identifying the recipient or responsible party clarifies accountability and next steps for document submission."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Ready to go?",
+        "question": "Ready to go where and at what specific time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Ready to go?' lacks a clear reference to the destination or activity (e.g., leaving the gym, heading to yoga class, or another event) and does not specify timing. This ambiguity could lead to confusion about next steps or coordination."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "outside",
+        "question": "Where specifically is 'outside'? Is it the front entrance, parking lot, or another area of Iron Forge Gym?",
+        "priority": "HIGH",
+        "reason": "'Outside' is spatially ambiguous given the gym context and could refer to multiple locations. Precise meeting point is important for coordination and safety."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "the car",
+        "question": "Which specific car is being referenced? (e.g., make/model, owner, parking location)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the car' is ambiguous in a public or multi-vehicle setting, especially at a gym parking lot. Without clarification, it is unclear which vehicle is the destination for the race, which could cause confusion or miscoordination."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Loser buys pizza",
+        "question": "When and where will the pizza be purchased or consumed? Is this immediately after the race, or at a later time/location?",
+        "priority": "HIGH",
+        "reason": "The timing and location of the pizza purchase/consumption are not specified. This could affect scheduling, especially with a calendar event (Yoga Class at 7:00pm) coming up, and may require coordination."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Let\u2019s go",
+        "question": "What is the exact time or deadline for 'going'? Is there a specific event or time window being referenced?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may impact coordination with scheduled events (e.g., upcoming Yoga Class at 7:00pm) or other time-sensitive activities."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "location",
+        "ambiguous_phrase": "Let\u2019s go",
+        "question": "What is the precise destination or route? Is 'going' to the car, outside, or another location within or outside Iron Forge Gym?",
+        "priority": "HIGH",
+        "reason": "Spatial ambiguity could cause confusion about where User B and others are expected to go, especially given prior references to 'outside' and 'the car'."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "this place",
+        "resolved_entity": "Iron Forge Gym (where Daniel and Marcus are currently working out together)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "that room",
+        "resolved_entity": "Private workout room at Iron Forge Gym (the room Daniel jokingly threatened to drag Marcus into)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "the place near your apartment",
+        "resolved_entity": "Bar or restaurant close to Marcus's apartment (suggested spot for post-gym drinks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "Later this evening after their gym session (the night following the current conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "that towel",
+        "resolved_entity": "Towel Marcus is currently using or has nearby during their workout (requested by Daniel because he\u2019s drenched)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "that treadmill",
+        "resolved_entity": "Specific treadmill visible in the gym (the one Daniel is considering using after bench presses)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "that intersection",
+        "resolved_entity": "Intersection just outside Iron Forge Gym (where Marcus nearly collapsed previously)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "the cooler",
+        "resolved_entity": "Water cooler at Iron Forge Gym (where Daniel offers to get water for Marcus)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "that bottle",
+        "resolved_entity": "Water bottle in Daniel's gym bag (alternative to water from the cooler)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Pizza (referenced in the group chat as a deal and suggested for splitting)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the spot",
+        "resolved_entity": "Agreed meeting place for the group hangout (likely the bar/restaurant near Marcus's apartment, as discussed earlier)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "7:30",
+        "resolved_entity": "7:30 PM (planned meetup time for the group hangout after the gym session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "that burger",
+        "resolved_entity": "Burger from a specific restaurant Daniel craved last week (referenced as a possible food choice after the gym)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "that place",
+        "resolved_entity": "Ramen restaurant on Lamar Boulevard (suggested as a possible dinner spot for the group)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that board game",
+        "resolved_entity": "Board game Marcus is expected to bring for the group hangout later (referenced for post-dinner activities)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "home",
+        "resolved_entity": "Marcus's apartment (where he may need to pick up items before joining the group)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "the document",
+        "resolved_entity": "Work document Daniel was supposed to finish for his project deadline (referenced in context of work stress)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "my bag",
+        "resolved_entity": "Daniel's gym bag (which he needs to grab before leaving the gym)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "outside",
+        "resolved_entity": "Outside the entrance of Iron Forge Gym (where Daniel will meet Marcus after grabbing his bag)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "the car",
+        "resolved_entity": "Marcus's car parked outside Iron Forge Gym (destination for their post-gym race)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  }
+}

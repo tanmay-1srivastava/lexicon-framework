@@ -1,0 +1,1020 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Has 'here' been fully resolved to a precise location (e.g., Home - Apartment #34, Beacon Hill) using current metadata?",
+        "priority": "HIGH",
+        "reason": "Deictic term 'here' is ambiguous without explicit resolution; location context is essential for downstream actions or privacy checks."
+      },
+      {
+        "turn_id": 1,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after that shift",
+        "question": "What is the exact timing of 'that shift'? Is there a calendar entry or timestamp for when the shift ended?",
+        "priority": "HIGH",
+        "reason": "Temporal reference 'after that shift' is vague; knowing the shift's end time is important for context, scheduling, or follow-up actions."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' referring to? Is it a specific person (e.g., User B, roommate, partner)?",
+        "priority": "HIGH",
+        "reason": "Clarifying the addressee ensures accurate tracking of actions and responses, especially in shared living spaces."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yet",
+        "question": "What is the reference time for 'yet'? Is there a specific meal (e.g., dinner, lunch) or time window implied?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is important to determine if the question refers to a specific meal or just any recent eating event."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date for 'tomorrow' referenced in the grocery run reminder?",
+        "priority": "HIGH",
+        "reason": "Temporal references like 'tomorrow' must be resolved to an exact date to avoid scheduling confusion, especially if the conversation is reviewed later or spans multiple days."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "any other essentials",
+        "question": "What specific items are considered 'essentials' for the grocery list?",
+        "priority": "CRITICAL",
+        "reason": "'Essentials' is a vague term and may lead to incomplete or incorrect grocery shopping if not clarified. The list may miss critical items if assumptions are made."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "breakfast after",
+        "question": "What is the exact time and location for 'breakfast after'? Is it immediately after the grocery run, and where will it take place?",
+        "priority": "CRITICAL",
+        "reason": "Temporal and spatial details for the breakfast appointment are missing, which are necessary for scheduling and coordination."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to? Is it Liz or another person?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous; without clear antecedent, it's unclear whose needs or preferences are being discussed, which could lead to miscommunication or errors in planning."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What is the exact date or date range for 'next week' when Liz wants to cook?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next week' is vague; an exact date or range is needed for scheduling and coordination, especially if calendar integration is required."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "your shift",
+        "question": "What is the exact date and time of 'your shift' for which snacks are being requested?",
+        "priority": "HIGH",
+        "reason": "'Your shift' is temporally ambiguous. Without a specific date/time, it's unclear when the snacks are needed, which could affect what is purchased and when."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "object",
+        "ambiguous_phrase": "the coupon",
+        "question": "Which specific coupon is being referred to? (e.g., store name, type, expiration date, value)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the coupon' is ambiguous without context\u2014multiple coupons may exist at home, and the recipient may not know which one is meant. This can lead to confusion or failure to locate the correct coupon."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact calendar date referred to by 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal precision is required for scheduling and coordination; 'tomorrow' is ambiguous without explicit date resolution."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she'? What is her full name or role in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'she' is used without a clear antecedent, making it unclear which person is being referenced. This is essential for resolving responsibility or tracking actions."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "location",
+        "ambiguous_phrase": "leave *it*",
+        "question": "Where exactly did 'she' leave 'it'? What is the precise location (room, area, container)?",
+        "priority": "HIGH",
+        "reason": "The location where 'it' was left is unspecified, which is necessary for retrieval or verification."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "leave *it*",
+        "question": "When did 'she' leave 'it'? What is the specific time or timeframe?",
+        "priority": "HIGH",
+        "reason": "Knowing when the item was left could affect its availability or condition, and is relevant for tracking actions."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after dinner",
+        "question": "What is the exact time or time window when 'after dinner' occurs?",
+        "priority": "HIGH",
+        "reason": "The timing of the action ('read it after dinner') is ambiguous; without a specific time, follow-up or coordination may be unclear."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that appointment",
+        "question": "What is the type, exact time, location, and any prep instructions for 'that appointment' on Friday?",
+        "priority": "CRITICAL",
+        "reason": "The appointment is referenced as a temporal constraint for scheduling, but its details are entirely missing. Without knowing the type, time, or location, it's impossible to confirm when User A will actually be free or if there are any dependencies or conflicts."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date and time for 'tomorrow' referenced in the prepping question?",
+        "priority": "HIGH",
+        "reason": "Without resolving 'tomorrow' to a specific date and time, prepping instructions cannot be scheduled or coordinated accurately."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "What time should I start prepping",
+        "question": "What is the precise start time for prepping? Is there a deadline or event this prepping is for?",
+        "priority": "HIGH",
+        "reason": "The prepping activity lacks a defined start time and context, making it ambiguous when User A should begin preparations."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before we head out",
+        "question": "What is the exact time 'we head out'? What event or appointment is this referring to?",
+        "priority": "HIGH",
+        "reason": "The departure time is unspecified, preventing proper planning for breakfast and prepping activities."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Do you want breakfast before we head out?",
+        "question": "Is there a specific appointment or event scheduled for 'heading out'? If so, what are its details (type, time, location)?",
+        "priority": "CRITICAL",
+        "reason": "The referenced event is not explicitly identified, making it unclear what User A is preparing for and when."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "technical",
+        "ambiguous_phrase": "those pans",
+        "question": "Which specific pans are being referred to? (e.g., type, size, purpose, location in kitchen)",
+        "priority": "HIGH",
+        "reason": "The phrase 'those pans' is ambiguous without prior specification. If multiple pans exist, it's unclear which ones should be laid out, potentially leading to confusion or incorrect preparation."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator",
+        "question": "Who specifically is 'the coordinator'? What is their full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'the coordinator' is unclear, which may cause confusion or miscommunication regarding the shift change request."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What are the exact dates or date range referred to by 'next week'?",
+        "priority": "HIGH",
+        "reason": "Without a precise date range, the timing of the requested shift change is ambiguous and could lead to scheduling errors."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "switching shifts",
+        "question": "What are the specific details of the shift(s) to be switched (dates, times, roles)?",
+        "priority": "CRITICAL",
+        "reason": "The lack of detail about which shifts are being switched may result in incomplete or incorrect communication with the coordinator."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "where was *it* posted?",
+        "question": "What is the exact location or platform where 'it' was posted (e.g., physical location, website, app, email, bulletin board)?",
+        "priority": "HIGH",
+        "reason": "The question asks about the posting location, but without knowing what 'it' is, the location remains ambiguous. This is necessary for resolving spatial context and ensuring proper follow-up."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "Those machines",
+        "question": "Which specific machines are being referred to? What type, location, and description apply?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Those machines' is ambiguous; without clarification, it is unclear what equipment is malfunctioning, which is essential for troubleshooting, maintenance, or escalation."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "that corner room",
+        "question": "Which exact room is referred to as 'that corner room'? (e.g., room number, description, location within apartment)",
+        "priority": "HIGH",
+        "reason": "Precise identification of the target location is necessary to avoid confusion or misplacement of laundry."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact calendar date for 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to a specific date to ensure correct scheduling and avoid ambiguity."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "our laundry",
+        "question": "Does 'our laundry' refer to a specific batch, basket, or location? What items are included?",
+        "priority": "HIGH",
+        "reason": "Clarifying what constitutes 'our laundry' is important for task completeness and to prevent items being left out or misplaced."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "credential",
+        "ambiguous_phrase": "log ... in the app",
+        "question": "Does the recipient have the necessary access/credentials to log their food preferences in the app?",
+        "priority": "CRITICAL",
+        "reason": "If the recipient lacks access or the correct permissions, they may be unable to complete the requested action."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "out there",
+        "question": "What specific location does 'out there' refer to?",
+        "priority": "HIGH",
+        "reason": "'Out there' is a deictic phrase with no explicit spatial resolution in this context. Without clarification, it is unclear whether the user refers to outside the apartment, a specific neighborhood, or a broader area. This could impact situational awareness or follow-up actions."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "location",
+        "ambiguous_phrase": "that fridge",
+        "question": "Which specific fridge is being referred to? Is it the main kitchen fridge in Apartment #34, Beacon Hill, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that fridge' is deictic and could refer to more than one appliance or location, especially if there are multiple fridges (e.g., secondary, shared, or mini fridges) in the apartment or building. Clarifying ensures correct context for stocking or planning."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Home - Apartment #34, Beacon Hill (where Ava just arrived after her shift)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "that pasta",
+        "resolved_entity": "Last night\u2019s leftover pasta in the fridge (the only remaining meal option)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "that time",
+        "resolved_entity": "Scheduled joint grocery run time (as set in the shared calendar for tomorrow morning)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "the list",
+        "resolved_entity": "Shared grocery shopping list (for tomorrow\u2019s joint grocery run)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "Mark (Rachel\u2019s friend who might join for breakfast after the grocery run)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "what we use",
+        "resolved_entity": "Usual amount of eggs Ava and Rachel typically use for breakfast (based on their meal planning routine)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "that bread",
+        "resolved_entity": "Gluten-free bread Ava picked up recently (for Rachel\u2019s dietary needs)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "the soft one",
+        "resolved_entity": "The preferred soft gluten-free bread Ava and Rachel found during their last grocery run",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Liz (Rachel\u2019s friend who wants to cook with them next week)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "the store",
+        "resolved_entity": "Trader Joe\u2019s (the grocery store Ava plans to check for items)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "your shift",
+        "resolved_entity": "Rachel\u2019s upcoming work shift (for which Ava is asking about snack preferences)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "the coupon",
+        "resolved_entity": "Grocery store coupon (for their upcoming shopping trip)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The grocery store coupon (referenced in the previous message)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The grocery store coupon (to be grabbed before heading out for the grocery run)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "Next day after the conversation date (2026-02-07), when the joint grocery run is scheduled",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The grocery store coupon (location where Liz left it)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Message or note (to be read after dinner, possibly about Liz or meal planning)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, asking if anything needs a reply immediately)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "that appointment",
+        "resolved_entity": "Ava\u2019s scheduled appointment earlier on Friday (before dinner)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "we head out",
+        "resolved_entity": "Leaving for the joint grocery run tomorrow morning (after breakfast)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "those pans",
+        "resolved_entity": "Cooking pans Ava and Rachel use for meal prep (to be laid out for breakfast or meal prep tomorrow)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the coordinator",
+        "resolved_entity": "Rachel\u2019s work shift coordinator (regarding switching shifts next week)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Rachel\u2019s work shift coordinator (who is expected to get back to Rachel)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The message or notice about shift changes (location where it was posted)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "those machines",
+        "resolved_entity": "Laundry machines in their apartment building (which have been malfunctioning)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "our laundry",
+        "resolved_entity": "Ava and Rachel\u2019s laundry (to be moved tomorrow)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "that corner room",
+        "resolved_entity": "Corner laundry room in their apartment building (where they plan to move their laundry tomorrow)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "your food preferences",
+        "resolved_entity": "Rachel\u2019s dietary preferences (logged in their shared meal planning app)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "meal planning",
+        "resolved_entity": "Collaborative meal planning routine (using the app and shared preferences)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "out there",
+        "resolved_entity": "Outside their apartment (where Rachel is heading for her shift)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "that fridge",
+        "resolved_entity": "Their shared fridge in Apartment #34, Beacon Hill (to be restocked after the grocery run)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to by 'there'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'there' is deictic and ambiguous without explicit resolution; knowing the precise location is necessary for clarity, especially if actions or follow-ups depend on it."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "late tonight",
+        "question": "What is the exact time User B expects to return home tonight?",
+        "priority": "HIGH",
+        "reason": "Precise return time is needed to confirm if 10:30 AM is feasible for User B, and to assess if additional rest or scheduling adjustments are required."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "medication",
+        "ambiguous_phrase": "coffee",
+        "question": "Is coffee being used as a substitute for medication or is there any medical reason for needing coffee to wake up?",
+        "priority": "CRITICAL",
+        "reason": "If coffee is being used for alertness due to fatigue, it may be relevant to flag for health or medication tracking, especially if User B has medical restrictions."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to? What is his full name or relevant identifier?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in the current or previous turns. Identifying the person is necessary for clarity, privacy, and potential access control."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What specific time or deadline does 'later' refer to? When will the update be provided?",
+        "priority": "HIGH",
+        "reason": "'Later' is a vague temporal reference. For scheduling, coordination, and follow-up, a specific time or window is needed."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Who is Mark (full name, relationship to User B, and any relevant context)?",
+        "priority": "HIGH",
+        "reason": "Mark is referenced as a third party, but there is no information about his identity, relationship, or privacy/access considerations."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "location",
+        "ambiguous_phrase": "those omelets you make",
+        "question": "Where are the omelets typically made or served (specific location: apartment, kitchen, etc.)?",
+        "priority": "HIGH",
+        "reason": "The phrase references omelets being made, but the specific location is not stated, which could be relevant for planning or privacy."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "location",
+        "ambiguous_phrase": "the spinach",
+        "question": "Which store or location should the spinach be purchased from?",
+        "priority": "HIGH",
+        "reason": "The source of the spinach is unspecified; prior context references multiple stores (e.g., Trader Joe's), and quality concerns were raised about a previous brand. Clarifying the store or brand is important to avoid repeating an unsatisfactory purchase."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "those tofu blocks",
+        "question": "Which brand or type of tofu blocks should be purchased, and from which store/location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'those tofu blocks' is vague; without specifying brand, type (firm, silken, etc.), or store, the recipient may not know which tofu to buy, risking an incorrect purchase for Liz's vegan needs."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "veggie broth",
+        "question": "Is there a preferred brand or ingredient list for the veggie broth, and where should it be purchased?",
+        "priority": "HIGH",
+        "reason": "'Veggie broth' is ambiguous; some brands may contain animal-derived ingredients or allergens. Specifying brand or store ensures suitability for Liz's vegan diet."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "Liz",
+        "question": "Is Liz's veganism strict (e.g., avoids honey, certain additives), or are there exceptions to consider when shopping?",
+        "priority": "HIGH",
+        "reason": "Understanding the specifics of Liz's vegan preferences is important to avoid purchasing items that may not meet her dietary requirements."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "the health aisle",
+        "question": "Which store's health aisle is being referenced? Is it Trader Joe's or another location?",
+        "priority": "HIGH",
+        "reason": "The location of the 'health aisle' is not explicitly stated, which could lead to confusion if multiple stores are involved or if the recipient is unsure where to shop."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "that bowl",
+        "question": "Which bowl is 'that bowl'? The description does not specify which bowl is being referenced, leading to potential confusion about the item's exact location.",
+        "priority": "HIGH",
+        "reason": "The deictic phrase 'that bowl' is vague without context, which could result in difficulty locating the item."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "dinner plans",
+        "question": "What is the exact date and time of the dinner plans referenced in Liz's note?",
+        "priority": "HIGH",
+        "reason": "Without a specific date and time, it is impossible to schedule, confirm, or prepare for the dinner; this is essential for calendar and planning purposes."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "dinner plans",
+        "question": "Where is the dinner supposed to take place according to Liz's note?",
+        "priority": "HIGH",
+        "reason": "The location is necessary for logistical planning and may affect travel, preparation, and attendance."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "Liz",
+        "question": "Who is Liz (full name and contact), and what is her role in the dinner plans?",
+        "priority": "HIGH",
+        "reason": "Clarifying Liz's identity and role ensures correct communication and avoids confusion with other contacts."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the note",
+        "question": "What are the specific instructions or details contained in Liz's note about the dinner plans?",
+        "priority": "CRITICAL",
+        "reason": "The content of the note may include critical instructions, dietary restrictions, or timing that must be followed."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she'? Is it Liz or another person?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'she' is unclear. Without explicit identification, the recipient may not know which person's message to look for, especially if multiple contacts are involved."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "the date",
+        "question": "What is the exact date being proposed for the dinner (i.e., which Friday night)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the date' is ambiguous without a specific calendar date. Confirmation cannot be given without knowing which Friday is intended, especially if there are potential scheduling conflicts."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "breakfast",
+        "question": "Where will breakfast take place? Is it at home (Apartment #34, Beacon Hill) or another location?",
+        "priority": "CRITICAL",
+        "reason": "Location is necessary for planning, logistics, and potential calendar conflicts."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "around 9:30",
+        "question": "Is 'around 9:30' an exact start time or a flexible window? What is the expected duration of breakfast?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for scheduling, especially given the next calendar event (Bartender Shift at 7:30 PM)."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "Let\u2019s",
+        "question": "Who is included in 'Let\u2019s'? Is it just User B and User A, or are others (e.g., 'her' from previous turns) invited?",
+        "priority": "HIGH",
+        "reason": "Participant list affects privacy, preparation, and potential conflicts with other commitments."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the blender",
+        "question": "Which specific blender is being referred to? (e.g., brand, model, location in apartment)",
+        "priority": "HIGH",
+        "reason": "Multiple blenders or similar appliances may exist in the household; unclear which device needs to be charged."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name or role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is used without a clear antecedent in this turn, making it ambiguous who User B intends to email. This could lead to miscommunication or privacy concerns if the wrong person is contacted."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "When exactly does 'later' refer to? Is there a specific time or deadline for sending the email?",
+        "priority": "HIGH",
+        "reason": "The term 'later' is vague and lacks a specific time reference, which could cause confusion or missed deadlines if the timing is important."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "my last message",
+        "question": "What was the content and context of 'my last message'? Was it related to an appointment, task, or other entity?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the content or purpose of the last message, it's unclear what follow-up is required or what information is outstanding."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "that announcement",
+        "question": "What was the content and subject of the announcement from the building manager?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that announcement' is deictic and lacks detail about what was announced, when, and its relevance. Without this, it's unclear what action or awareness is required."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "the building manager",
+        "question": "Who specifically is the building manager referenced in the announcement?",
+        "priority": "HIGH",
+        "reason": "The identity of the building manager is not specified, which could be important for follow-up or context, especially in multi-unit buildings."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "location",
+        "ambiguous_phrase": "the lobby",
+        "question": "Which building's lobby is being referred to?",
+        "priority": "HIGH",
+        "reason": "The location 'the lobby' is ambiguous without explicit reference to a building; multiple lobbies may exist in the context (e.g., apartment building, work, etc.), and precise location is important for clarity."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when I get back",
+        "question": "What is the exact time or date when User B will return and check the schedule for repairs?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect coordination or timely action regarding repairs; exact timing is needed for scheduling."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the schedule for repairs",
+        "question": "Where is the schedule for repairs located, and what system or format is it in?",
+        "priority": "HIGH",
+        "reason": "Without knowing the location or format of the schedule, it is unclear how User B will access or update it; technical completeness is missing."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "location",
+        "ambiguous_phrase": "that room",
+        "question": "Which specific room is being referred to? (e.g., laundry room, meeting room, apartment number, floor)",
+        "priority": "HIGH",
+        "reason": "The identity of 'that room' is unclear; without knowing which room is meant, it's impossible to confirm access, usage, or relevant permissions."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "location",
+        "ambiguous_phrase": "it",
+        "question": "Does 'it' refer to the same room as 'that room'? If so, which room is it specifically?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'it' lacks a resolved antecedent, which may cause confusion about what is being used or accessed."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "config",
+        "ambiguous_phrase": "it",
+        "question": "What is the specific item or system that was updated? Is 'it' a config file, a database, a spreadsheet, or another record?",
+        "priority": "HIGH",
+        "reason": "The antecedent of 'it' is unclear, making it impossible to determine what was updated and where allergy information is now stored or reflected."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "config",
+        "ambiguous_phrase": "updated it",
+        "question": "What details were updated? Which allergies were added or modified, and for whom?",
+        "priority": "HIGH",
+        "reason": "Without specifics, it's unclear whose allergies are reflected and whether the update is complete or accurate."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What specific time or time window does 'later' refer to?",
+        "priority": "HIGH",
+        "reason": "'Later' is a vague temporal reference. Without a specific time or deadline, follow-up actions or communications may be delayed or missed, especially if there are upcoming appointments or tasks."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date and time of the run scheduled for 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "The term 'tomorrow' is relative and requires resolution to a specific date (and ideally time) for accurate scheduling, reminders, and to avoid confusion or missed appointments."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "our run",
+        "question": "What are the full details of the 'run' appointment (exact time, location, participants, and any prep instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'our run' refers to an appointment, but lacks specifics such as time, location, and participants, which are necessary for proper calendar management and coordination."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The Copper Tap (Rachel's workplace, where her bartender shift starts soon)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "the bar",
+        "resolved_entity": "The Copper Tap (where Rachel grabbed a quick bite before coming home)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Last night\u2019s leftovers (the only food left in the fridge)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "The current evening (the night of the conversation, before Rachel returns from her shift)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "that place",
+        "resolved_entity": "Preferred grocery store (where they usually buy oat milk and almond butter)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "The grocery store staff (who might stock almond butter)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After Mark decides if he\u2019s free and swings by (later in the evening)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "those omelets",
+        "resolved_entity": "Omelets made by Rachel (which Mark enjoys)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "that brand",
+        "resolved_entity": "The specific brand of leftovers from last night (which was too dry)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "those granola bars",
+        "resolved_entity": "Granola bars found in the health aisle of their preferred grocery store",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "that trail mix",
+        "resolved_entity": "Trail mix found in the health aisle of their preferred grocery store",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The item left on the kitchen counter (behind the bowl)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "that bowl",
+        "resolved_entity": "The bowl on the kitchen counter (used as a reference point for the item)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "the note",
+        "resolved_entity": "Liz\u2019s note about dinner plans (sent to Rachel)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Liz\u2019s note about dinner plans (sent as a text to Rachel\u2019s phone)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "the date",
+        "resolved_entity": "Proposed date for dinner plans (Friday night, as suggested by Liz)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "Friday night",
+        "resolved_entity": "The upcoming Friday evening (for the planned dinner with Liz)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Liz (the person organizing the dinner plans)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "9:30",
+        "resolved_entity": "Breakfast time (9:30 AM, as planned for the next morning)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the blender",
+        "resolved_entity": "The household blender (used for making smoothies in the morning)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Liz (who hasn\u2019t replied to Ava\u2019s last email message)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "my last message",
+        "resolved_entity": "Ava\u2019s most recent email to Liz (awaiting a reply)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "that announcement",
+        "resolved_entity": "Announcement from the building manager (about laundry machine updates)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "the lobby",
+        "resolved_entity": "Apartment building lobby (where the announcement was posted)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "they",
+        "resolved_entity": "Building management (responsible for updating the laundry machines)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "the schedule",
+        "resolved_entity": "Repair schedule for laundry machines (posted by building management)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "that room",
+        "resolved_entity": "Common room in the apartment building (potentially used for household activities)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Common room in the apartment building (if open, for their use)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Shared household calendar (updated with allergy information)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After Rachel\u2019s shift or after Ava returns home (later in the evening)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The next day after the conversation (when Ava and Rachel plan to go for a run together)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

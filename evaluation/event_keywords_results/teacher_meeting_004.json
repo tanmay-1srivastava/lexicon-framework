@@ -1,0 +1,915 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'?",
+        "priority": "HIGH",
+        "reason": "'Here' is a deictic reference and is ambiguous without explicit resolution. Although metadata and a known resolution exist, the original turn itself does not specify the location, which could cause confusion if metadata is unavailable or not referenced."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now or later",
+        "question": "What exact time is 'now' and what is 'later'? Is 'later' a specific time slot or deadline?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity affects task scheduling and coordination; without a precise time, the action may be delayed or missed."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "technical",
+        "ambiguous_phrase": "sparrow data",
+        "question": "What is the format, location, and contents of the 'sparrow data'? Is it a file, spreadsheet, or database entry?",
+        "priority": "HIGH",
+        "reason": "Technical ambiguity prevents proper integration of data; without knowing the format and location, the addition process cannot proceed."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "config",
+        "ambiguous_phrase": "the other one",
+        "question": "What is the full name and format of 'the other one' file?",
+        "priority": "HIGH",
+        "reason": "Referring to 'the other one' is ambiguous and does not specify which file is being discussed. This could result in User A opening the wrong file, especially if there are multiple files present."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the data on that USB",
+        "question": "Which USB device is being referred to? What is its location, description, and contents?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that USB' is ambiguous; there is no prior reference specifying which USB device, its owner, or its contents. Without clarification, it is unclear what data is being requested or where to find it."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to? What is his full name or role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is ambiguous; without clear identification, the request cannot be properly directed or tracked."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Where is 'here'? Is it Room 205, a specific desk, or another location within the school?",
+        "priority": "HIGH",
+        "reason": "The destination for the item is not explicitly stated; while metadata suggests Room 205, explicit confirmation is needed for precise delivery."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to? What is his full name or role in the group?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'him' is ambiguous without clear antecedent in this turn, which could lead to confusion about who needs to be located or contacted."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "config",
+        "ambiguous_phrase": "species list",
+        "question": "Which specific file or document is the 'species list'? What is its filename, location, and format?",
+        "priority": "HIGH",
+        "reason": "The 'species list' is referenced but not clearly identified, which could cause confusion if multiple lists exist or if others need to access or update it."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after yesterday",
+        "question": "What is the exact date and time referred to by 'after yesterday'? When was the last update expected?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after yesterday' is vague and could lead to misunderstandings about the update timeline, especially if multiple updates occur."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "technical|config|directory",
+        "ambiguous_phrase": "the document",
+        "question": "Which specific document is being referred to, and where will it be shared (platform, location, permissions)?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the exact document and sharing method, recipients may not know what to expect, where to access it, or whether they have permission."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I'll do it now",
+        "question": "What is the exact time or deadline for sharing the document?",
+        "priority": "HIGH",
+        "reason": "The phrase 'now' is ambiguous without a timestamp; recipients may not know when to check for the document or follow up if it is delayed."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "location",
+        "ambiguous_phrase": "that sticky note",
+        "question": "Where exactly is 'that sticky note' located\u2014on which desk, in which part of Room 205, and is it accessible to others?",
+        "priority": "CRITICAL",
+        "reason": "While metadata suggests it's on User A's desk, the precise location and accessibility are not explicitly stated, which could affect retrieval or verification."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' referring to? Is it Oscar, another group member, or someone else?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'you' is ambiguous without explicit identification, which is necessary to confirm who took over for Mia and ensure task accountability."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after Monday",
+        "question": "What exact date and time did the takeover from Mia occur?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after Monday' is vague; a specific date/time is needed to clarify when the responsibility transfer happened for accurate tracking."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam (full name or role)?",
+        "priority": "HIGH",
+        "reason": "Sam's identity is not specified; knowing who Sam is may be necessary for accountability or follow-up."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the USB",
+        "question": "What is the specific USB being referenced (label, contents, or distinguishing features)?",
+        "priority": "HIGH",
+        "reason": "There may be multiple USB devices present; without clarification, the wrong device could be transferred."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the sheet with the adaptation definitions",
+        "question": "What is the exact name, format, and location of the 'sheet with the adaptation definitions'? Is it a physical paper, a digital file, or something else?",
+        "priority": "HIGH",
+        "reason": "Without specifying the sheet's name, format, or location, it is unclear what resource is being requested, making it difficult for the recipient to identify or retrieve the correct document."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "technical",
+        "ambiguous_phrase": "adaptation definitions",
+        "question": "Which specific adaptation definitions are needed? Is there a version, author, or date associated with the required definitions?",
+        "priority": "CRITICAL",
+        "reason": "There may be multiple sheets or versions containing adaptation definitions; specifying which one is needed is important for accuracy and relevance."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when we could use the chromebooks",
+        "question": "What is the exact date and time that Mrs. Bennett said the chromebooks could be used?",
+        "priority": "HIGH",
+        "reason": "The timing for chromebook access is unspecified, which is essential for planning group work and ensuring resources are available when needed."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mrs. Bennett",
+        "question": "Who is Mrs. Bennett (full name, title, and role in this context)?",
+        "priority": "HIGH",
+        "reason": "Mrs. Bennett's identity and authority over chromebook access are assumed but not explicitly defined, which could cause confusion if there are multiple staff with similar names or roles."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before then",
+        "question": "What exact time or event does 'then' refer to? Is it the start of chromebook usage, the end of class, or another scheduled event?",
+        "priority": "HIGH",
+        "reason": "The phrase 'before then' is temporally ambiguous. Without a resolved reference point, it is unclear what deadline the group is working toward, which could impact planning and task completion."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "extra time online",
+        "question": "How much 'extra time online' is available, and what is the total window for chromebook usage?",
+        "priority": "HIGH",
+        "reason": "The amount of 'extra time online' is undefined, making it unclear how much time is being gained or what the constraints are for online work."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I see her come back this way",
+        "question": "What is the expected time frame for 'her' to come back this way? Is there a deadline or window for this action?",
+        "priority": "HIGH",
+        "reason": "The timing of when 'her' might return is undefined, which could impact planning or task completion. A specific time frame is needed for clarity."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "location",
+        "ambiguous_phrase": "this way",
+        "question": "What exact location or path does 'this way' refer to within Room 205 or the school?",
+        "priority": "HIGH",
+        "reason": "The spatial reference 'this way' is vague and could refer to multiple areas. Precise location is needed for effective tracking or coordination."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "technical",
+        "ambiguous_phrase": "images",
+        "question": "Which specific images are being referred to? Are there filenames, descriptions, or expected image counts?",
+        "priority": "HIGH",
+        "reason": "The term 'images' is ambiguous\u2014without specifying which images, it is unclear what files or resources are expected or missing, which could lead to confusion or incomplete project work."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "technical",
+        "ambiguous_phrase": "They're both",
+        "question": "Which specific images/files are being referred to as 'both'? What are their filenames or descriptions?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification, the recipient may not know which images/files are being offered, leading to confusion or incorrect transfer."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "technical",
+        "ambiguous_phrase": "airdrop them to you or upload to Drive",
+        "question": "Does the recipient have access to both transfer methods (Airdrop and Drive)? Is there a preferred method or any privacy/access restrictions?",
+        "priority": "CRITICAL",
+        "reason": "Transfer method may be limited by device compatibility or access permissions; explicit confirmation is needed to ensure successful file sharing."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after I finish this",
+        "question": "What specific task or event does 'this' refer to, and when will it be finished?",
+        "priority": "HIGH",
+        "reason": "The timing of the file transfer is ambiguous; without knowing what 'this' refers to or when it will be finished, the recipient cannot determine when to send the files."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "She",
+        "question": "Who is 'she' referring to? Please specify the person's name or role.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'she' is used without a clear antecedent in the immediate context, making it ambiguous who is being referenced. This is essential for understanding who is by the fish tank and whether User A should interact with them or retrieve something from them."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who specifically is 'she'? What is her full name or role in the group?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'she' is unclear, which is essential for tracking responsibility and privacy/access regarding the notes and email."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time meant by 'tonight'? Is there a deadline or expected delivery window for the emailed notes?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity could affect project planning and expectations for when the notes will be available."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "location",
+        "ambiguous_phrase": "here it is",
+        "question": "What is 'it' and where specifically is 'here'? Is this a physical object, a file, or something else? Location details are missing.",
+        "priority": "HIGH",
+        "reason": "Deictic reference 'here' is ambiguous without explicit spatial resolution, which is important for tracking items or files in collaborative work."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "technical",
+        "ambiguous_phrase": "her notes",
+        "question": "What format and contents are expected in 'her notes'? Is it a document, spreadsheet, or something else? Where will it be stored?",
+        "priority": "HIGH",
+        "reason": "Technical details about the notes are missing, which could impact access, compatibility, and collaboration."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "it",
+        "question": "What does 'it' refer to, and where is its current location?",
+        "priority": "HIGH",
+        "reason": "'It' is a pronoun with no clear antecedent in this turn. The location of the referenced item is unknown, which is essential for resolving the user's request."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "technical",
+        "ambiguous_phrase": "project folder",
+        "question": "Which specific project folder is being referenced, and where is it located (e.g., device, cloud, directory path)?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about the folder's location or identity could lead to confusion or misplacement of the photo, affecting project organization."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "What is Sam's full name or role in the project?",
+        "priority": "HIGH",
+        "reason": "Identifying Sam more precisely is important for responsibility and follow-up, especially if items are missing or need to be tracked."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when he takes them",
+        "question": "When did Sam take the items? Are there specific dates or times for each instance?",
+        "priority": "HIGH",
+        "reason": "Knowing the timing of when items were taken is important for tracking usage, resolving disputes, or reconstructing project progress."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "where that is",
+        "question": "Where is the migration graph for the birds located (physical location, file path, or digital location)?",
+        "priority": "HIGH",
+        "reason": "The user is unsure of the location of the migration graph, which is necessary for retrieval or reference. Without a resolved location, the item cannot be accessed or used for the project."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "config",
+        "ambiguous_phrase": "migration graph for the birds",
+        "question": "What is the format, filename, or storage method of the migration graph for the birds?",
+        "priority": "HIGH",
+        "reason": "It is unclear whether the migration graph is a physical chart, a digital file, or another format. This information is needed to determine how to search for or access it."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal|appointment",
+        "ambiguous_phrase": "Are we almost done?",
+        "question": "What is the definition of 'done' in this context? Is there a checklist, deadline, or specific criteria for completion?",
+        "priority": "HIGH",
+        "reason": "Without clear criteria for 'done', group members may have different expectations about when the task is complete, leading to confusion or incomplete work."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "start on the summary",
+        "question": "What is the expected deadline or completion time for the summary?",
+        "priority": "HIGH",
+        "reason": "Without a clear timeline, the group cannot coordinate next steps or ensure the summary is finished before the project deadline."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "By the window in Room 205 (where User A is currently located within the classroom)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Immediately (during the current group work session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "that USB",
+        "resolved_entity": "The USB drive containing project data (previously referenced as holding the data)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "By the window in Room 205 (where User A is located within the classroom)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "yesterday",
+        "resolved_entity": "The previous school day before today (the last group work session before this conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "that sticky note",
+        "resolved_entity": "The sticky note where User A wrote the number seven (likely related to the species list or project data)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "this way",
+        "resolved_entity": "Toward User A's location by the window in Room 205",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "somewhere",
+        "resolved_entity": "An unspecified location in the classroom (User A misplaced the adaptation definitions sheet within the classroom)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "when",
+        "resolved_entity": "The time Mrs. Bennett will allow the group to use the Chromebooks (as specified by Mrs. Bennett, not yet clarified in conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "The time when the group is allowed to use the Chromebooks (as specified by Mrs. Bennett)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "this way",
+        "resolved_entity": "Toward User A's location by the window in Room 205",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "The two images related to the project (stored on User A's phone)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "The current task User A is finishing (likely related to the project work, such as organizing files or images)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "By the fish tank in Room 205 (where Mrs. Bennett is currently located)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "The evening after the current school day (when Mrs. Bennett will email her notes)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The item or document just referenced (likely the migration graph for the birds, as discussed in Turn 49)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "The migration graph for the birds (referenced as possibly missing)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The migration graph for the birds (which User A is going to retrieve)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 55,
+        "ambiguous_phrase": "last semester's project",
+        "resolved_entity": "The science project completed by User A's group in the previous semester (for comparison to the current evolution and diversity project)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 28
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mia",
+        "question": "What is Mia's full name and role in the project or class?",
+        "priority": "HIGH",
+        "reason": "Clarifying Mia's identity ensures accurate attribution and avoids confusion if there are multiple individuals named Mia."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the chart that Mia made",
+        "question": "What is the format, location, and purpose of the chart Mia made?",
+        "priority": "HIGH",
+        "reason": "Knowing the chart's format (digital, paper), location (file path, physical spot), and purpose is necessary for retrieval and effective collaboration."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "location",
+        "ambiguous_phrase": "that table by the door",
+        "question": "Is the exact location of 'that table by the door' unambiguous to all parties? Is there more than one table near the door?",
+        "priority": "HIGH",
+        "reason": "While resolved in metadata, the phrase could be ambiguous in a context with multiple tables near the door or if the listener is not physically present."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What exact time does 'now' refer to? Is there a specific deadline or time window before Mrs. Bennett returns?",
+        "priority": "HIGH",
+        "reason": "'Now' is a vague temporal reference; without a specific time or deadline, it's unclear how much time is available to complete the task before Mrs. Bennett returns. This could impact planning and urgency."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mrs. Bennett",
+        "question": "Who is Mrs. Bennett and what is her role or authority in this context?",
+        "priority": "CRITICAL",
+        "reason": "Understanding Mrs. Bennett's identity and authority is important for context\u2014whether her return affects permissions, privacy, or supervision."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "before Mrs. Bennett comes back",
+        "question": "When is Mrs. Bennett expected to come back? Is there a scheduled or estimated return time?",
+        "priority": "HIGH",
+        "reason": "The urgency and feasibility of the proposed action depend on knowing when Mrs. Bennett will return. Without this, the time window for action is ambiguous."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "config",
+        "ambiguous_phrase": "The second one",
+        "question": "Which specific file is being referred to as 'the second one'? What is its filename, location, and purpose?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification, it is unclear which file should be used, risking selection of the wrong file for the task."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "config",
+        "ambiguous_phrase": "The other file",
+        "question": "What is the exact name and location of 'the other file' that contains notes from last week?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in file identification could lead to confusion or errors in accessing or referencing the correct notes."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "Sam has it. He borrowed it",
+        "question": "Does Sam Patel have authorized access to the item? What are the permissions or access levels associated with borrowing it?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are important, especially if the item contains sensitive or project-critical information."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "location",
+        "ambiguous_phrase": "over there, by the bookshelf with Mrs. Bennett",
+        "question": "Which specific bookshelf is being referenced, and is its location unambiguous to all parties?",
+        "priority": "HIGH",
+        "reason": "The phrase relies on shared spatial context ('over there'), which may not be clear to someone not physically present or unfamiliar with the room layout."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "waiting for you to send",
+        "question": "When were the plant examples supposed to be sent, and is there a deadline or expected timeframe for sending them?",
+        "priority": "HIGH",
+        "reason": "The timing of the expected action is unclear, which could impact coordination and project deadlines."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "the group leader",
+        "question": "Who is the group leader for this week?",
+        "priority": "HIGH",
+        "reason": "The identity of the group leader is not specified, which is essential to answer Mrs. Bennett's request and for group accountability."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this week",
+        "question": "What are the exact start and end dates for 'this week'?",
+        "priority": "HIGH",
+        "reason": "The timeframe for 'this week' is not explicitly defined, which could cause confusion if group leadership rotates on a non-standard schedule."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to? Is it Mrs. Bennett or another person?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous; without clear antecedent, it is unclear who will be informed, which could lead to miscommunication."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "directory/folder|location",
+        "ambiguous_phrase": "that folder by the microscope",
+        "question": "What is the exact name, path, or identifying label of 'that folder'? What are its contents and access permissions?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that folder by the microscope' is spatially vague and lacks a precise identifier. Without the exact folder name, path, or description, it is unclear which folder is being referenced, which could lead to confusion or misplacement of important materials."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "hardware/equipment|location",
+        "ambiguous_phrase": "the microscope",
+        "question": "Which specific microscope is being referenced (make/model, location details) if there are multiple microscopes in Room 205?",
+        "priority": "HIGH",
+        "reason": "If there are multiple microscopes in the room, the location is ambiguous and could result in searching the wrong area or folder."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after lunch",
+        "question": "What is the exact time or timeframe for 'after lunch'? When is lunch scheduled to end?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to coordinate when 'they' can be obtained; 'after lunch' is vague and could lead to confusion or missed deadlines."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "earlier",
+        "question": "What is the specific time or range for 'earlier'? How much earlier than 'after lunch' is possible?",
+        "priority": "HIGH",
+        "reason": "Knowing the earliest possible time is necessary for planning and may affect workflow or deadlines."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "if we finish the draft",
+        "question": "What draft needs to be finished? What are the criteria for completion, and who verifies it?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying which draft and completion criteria ensures the condition for getting 'them' is understood and actionable."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to? What is her full name or role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous; without clear identification, it is unclear who was supposed to be asked about library access, which may affect task completion or accountability."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "credential",
+        "ambiguous_phrase": "library access",
+        "question": "What type of library access is being referred to (e.g., physical entry, digital credentials, special permissions)? What are the required credentials or permissions?",
+        "priority": "CRITICAL",
+        "reason": "The nature of 'library access' is unspecified; without knowing what kind of access is needed or what credentials are required, it is unclear what action or follow-up is necessary."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous; without clear antecedent, it's unclear which individual is being referenced, which could impact task tracking or communication."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "science office",
+        "question": "What is the exact location (building, floor, room number) of the 'science office'?",
+        "priority": "HIGH",
+        "reason": "The term 'science office' is not resolved to a specific location; this could cause confusion if multiple offices exist or for precise tracking."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "the cactus photo you took on the field trip",
+        "question": "Where exactly was the cactus photo taken during the field trip? (e.g., site name, coordinates, or description)",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for scientific documentation, reproducibility, or referencing the photo in reports."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "field trip",
+        "question": "On what date did the field trip occur?",
+        "priority": "HIGH",
+        "reason": "Exact date is needed for timeline tracking, referencing, and correlating observations."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the cactus photo",
+        "question": "What format or resolution is the cactus photo? Where is it stored or how can it be accessed?",
+        "priority": "CRITICAL",
+        "reason": "Technical details are necessary for sharing, archiving, or using the photo in presentations or reports."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "Airdrop",
+        "question": "Where will the Airdrop transfer take place (e.g., between which devices or in which physical location)?",
+        "priority": "HIGH",
+        "reason": "Airdrop requires proximity; the specific devices and their locations are not defined, which may affect feasibility and security."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "in her notebook",
+        "question": "Where is Ava's notebook currently located?",
+        "priority": "HIGH",
+        "reason": "Knowing the physical location of Ava's notebook is necessary to access the amphibian chart for the presentation. Without this, the group cannot retrieve the needed material."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "Ava",
+        "question": "Who is Ava (full name and role in the group)?",
+        "priority": "HIGH",
+        "reason": "Clarifying Ava's identity ensures the correct person and notebook are referenced, especially if there are multiple Avas or ambiguity in group membership."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "while you do that",
+        "question": "What specific task is 'that'? What is the expected timeline or deadline for completion of both tasks?",
+        "priority": "HIGH",
+        "reason": "'That' refers to an unspecified action, and the timing/deadline for both tasks (bibliography and the other task) is unclear. This affects coordination and task tracking."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' specifically? Is it User A or another group member?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'you' is ambiguous in a multi-person context, which could lead to confusion about task assignment."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent in the immediate context, making it ambiguous who brought the fossil. This is essential for tracking contributions and responsibilities."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "that cool fossil",
+        "question": "What are the details of the 'cool fossil' (type, description, location, relevance to project)?",
+        "priority": "HIGH",
+        "reason": "The fossil is referenced as important or noteworthy, but no specifics are given. For project documentation and attribution, details are needed."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location being referred to by 'there'? Is it a specific table, shelf, or area in Room 205?",
+        "priority": "HIGH",
+        "reason": "The phrase 'there' is deictic and lacks a resolved, explicit spatial reference. Without clarification, it is ambiguous for anyone not physically present or lacking visual context, making it unclear where the referenced object (the fossil) is located."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "technical",
+        "ambiguous_phrase": "all the pictures",
+        "question": "Which specific pictures are being referred to? Is there a defined set or list of pictures that require labeling?",
+        "priority": "HIGH",
+        "reason": "Without a clear definition of 'all the pictures,' it is ambiguous which images need to be labeled, risking incomplete documentation."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "technical",
+        "ambiguous_phrase": "dates and sources",
+        "question": "What format or standard should be used for labeling dates and sources? Are there specific requirements for how this information should be presented?",
+        "priority": "HIGH",
+        "reason": "Lack of specification for labeling format may lead to inconsistent or non-compliant documentation."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' that User B will check with after class?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'him' is used without a clear antecedent in this turn, making it ambiguous who User B intends to check with. This could impact task tracking or accountability."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after class",
+        "question": "What is the exact time or date for 'after class'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after class' is a relative temporal reference and lacks a specific time or date, which is necessary for precise scheduling or follow-up."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "near her desk",
+        "question": "Where exactly is Mrs. Bennett's desk located within Room 205? Is it identifiable by a specific landmark, position, or label?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed to retrieve the printed item efficiently, especially in a classroom with multiple desks or areas."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mrs. Bennett",
+        "question": "What is Mrs. Bennett's full name and role? Is she a teacher, administrator, or another staff member?",
+        "priority": "HIGH",
+        "reason": "Clarifying her identity ensures correct attribution and access permissions, especially if multiple staff share similar names."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "config",
+        "ambiguous_phrase": "it",
+        "question": "What exactly did Mrs. Bennett print out? Is it a report, chart, set of labeled pictures, or another document?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'it' is ambiguous; knowing the specific item is essential for confirming completeness and relevance to the project."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Just need to add the summary",
+        "question": "What is the deadline or expected completion time for adding the summary?",
+        "priority": "HIGH",
+        "reason": "Without a specific time or deadline, task completion may be delayed or missed."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "technical",
+        "ambiguous_phrase": "add the summary",
+        "question": "Where should the summary be added (e.g., which section or document), and what format or length is required?",
+        "priority": "HIGH",
+        "reason": "Lack of detail may result in the summary being placed incorrectly or not meeting expectations."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "that table by the door",
+        "resolved_entity": "Table located next to the classroom door (where Mia left the chart)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, before Mrs. Bennett returns to the classroom)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The chart that Mia made (borrowed by Sam to add the lizard info)",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "over there",
+        "resolved_entity": "Area by the bookshelf where Mrs. Bennett and Sam are standing",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "that folder by the microscope",
+        "resolved_entity": "Folder located next to the microscope station (where the item is believed to be)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "after lunch",
+        "resolved_entity": "After the lunch break during the current school day",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "earlier",
+        "resolved_entity": "Before the scheduled time after lunch, if the draft is finished sooner",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "just now",
+        "resolved_entity": "A moment ago (relative to the current conversation, shortly before this message)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "that chart Ava made for amphibians",
+        "resolved_entity": "Ava's chart about amphibians (located in her notebook)",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Next to the salamander tank (where the fossil is located)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "after class",
+        "resolved_entity": "After the current class session ends",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The printed document Mrs. Bennett prepared (left near her desk)",
+        "resolution_type": "entity",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 27
+  }
+}

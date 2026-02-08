@@ -1,0 +1,900 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What exact location does 'here' refer to?",
+        "priority": "HIGH",
+        "reason": "'here' is a deictic reference and is ambiguous without explicit resolution. Accurate location tracking is essential for context, coordination, and downstream task automation."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Where exactly is 'there'? Is it Sophia's Apartment (Atlanta, GA), Tybee Island, or another location?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference without explicit resolution in this turn. The destination is not specified, which could cause confusion about where User A intends to meet the recipient."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once I get there",
+        "question": "When will User A arrive at 'there'? Is there an estimated arrival time or deadline?",
+        "priority": "HIGH",
+        "reason": "The timing of arrival is vague. Without a specific time, coordination or planning for the meeting may be impacted."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "location",
+        "ambiguous_phrase": "exit ramp",
+        "question": "Which exit ramp is being referenced? Is it the exit ramp for US-80, Tybee Island, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'exit ramp' is deictic and could refer to multiple locations unless resolved. Accurate location tracking is essential for coordination and safety."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "turning in now",
+        "question": "What is the exact destination or parking location being referred to when 'turning in now'? Is it a specific lot, entrance, or area near the Tybee Island Lighthouse?",
+        "priority": "HIGH",
+        "reason": "While 'the lighthouse' has been resolved to a specific landmark, 'turning in now' is spatially ambiguous\u2014there may be multiple entrances, lots, or drop-off points. This matters for precise coordination or if directions/assistance are needed."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "location",
+        "ambiguous_phrase": "a big blue tent",
+        "question": "What is the exact location (coordinates or landmark) of the 'big blue tent' User A is referring to?",
+        "priority": "HIGH",
+        "reason": "The phrase 'a big blue tent' is visually descriptive but not spatially precise. Without confirmation of its location, it is unclear if User A is at the correct meeting spot or if there are multiple similar tents in the area. This could lead to confusion or missed connections."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'? Is it the area near the big blue tent, a specific spot on the beach, or another location?",
+        "priority": "HIGH",
+        "reason": "The term 'here' is deictic and context-dependent. Without explicit resolution, it is unclear where User A intends to leave their belongings, which could lead to confusion or loss of items."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' that User A intends to join?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' lacks a clear antecedent in the immediate context, making it ambiguous who User A is referring to. This is essential for tracking actions, responsibilities, or privacy concerns."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "How long are we staying?",
+        "question": "What is the specific departure time or duration of the stay at Sophia's Apartment?",
+        "priority": "HIGH",
+        "reason": "The user's question about the length of stay is unanswered, and no explicit end time or duration is provided in the context or metadata. This is necessary for planning, coordination, and potential calendar conflicts."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "location",
+        "ambiguous_phrase": "Volleyball game",
+        "question": "Where is the volleyball game taking place? Is it at Sophia's Apartment, a nearby court, or another location?",
+        "priority": "HIGH",
+        "reason": "The location of the volleyball game is not specified. Multiple possible locations exist (apartment, beach, public court), and participants need to know where to go."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What exact time does 'now' refer to? Is there a specific start time for the volleyball game?",
+        "priority": "HIGH",
+        "reason": "'Now' is ambiguous without a timestamp. Participants may be in different locations or time zones, so a precise time is needed for coordination."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "side bet: Last place buys ice cream",
+        "question": "When will the ice cream be bought\u2014immediately after the game, later today, or at another time?",
+        "priority": "HIGH",
+        "reason": "The timing of the side bet fulfillment is unclear, which could affect planning and expectations for participants."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "buys ice cream",
+        "question": "Where will the ice cream be bought\u2014at a specific store, on-site, or elsewhere?",
+        "priority": "HIGH",
+        "reason": "Clarifying the purchase location is important for logistical planning and may affect accessibility or timing."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the camera",
+        "question": "What type/model of camera is being referred to, and does it have all necessary accessories (e.g., memory card, charged battery)?",
+        "priority": "CRITICAL",
+        "reason": "The camera is referenced generically; without specifying which camera or its readiness, there could be confusion or missing equipment."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "goofy hats",
+        "question": "What qualifies as a 'goofy hat' and who is responsible for bringing them?",
+        "priority": "HIGH",
+        "reason": "The definition of 'goofy hats' is subjective and not specified, which could result in inconsistent participation or confusion about expectations for the photo."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before sunset",
+        "question": "What is the exact time or deadline for 'before sunset'? When should the first photo be taken?",
+        "priority": "HIGH",
+        "reason": "The phrase 'before sunset' is ambiguous without a specific time. Precise timing is needed to coordinate the photo and avoid missing the opportunity."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "first photo",
+        "question": "Where exactly will the first photo be taken? Is it at Sophia's Apartment, Tybee Island, or another location?",
+        "priority": "HIGH",
+        "reason": "The location for the first photo is not specified, which could lead to confusion about where the group should gather for the picture."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "Let\u2019s take the first photo",
+        "question": "Who is responsible for taking the first photo? Has the photographer or camera person been confirmed?",
+        "priority": "HIGH",
+        "reason": "It is unclear who will actually take the photo, which could delay or complicate the process if not clarified."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after the game",
+        "question": "What is the exact time or timeframe for 'after the game'?",
+        "priority": "HIGH",
+        "reason": "'After the game' is a vague temporal reference. Without a specific time or link to a calendar event, it is unclear when the chat is intended to occur, which may impact scheduling or coordination."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sierra",
+        "question": "Who is Sierra? What is Sierra's full name or identifying details?",
+        "priority": "HIGH",
+        "reason": "Without clear identification, it is ambiguous which 'Sierra' is being referenced, especially if there are multiple people with that name in the group or context."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "has that podcast",
+        "question": "Does Sierra have permission to share the podcast? Is it a private or public resource?",
+        "priority": "CRITICAL",
+        "reason": "It is unclear whether Sierra is authorized to distribute or share the podcast, which could have privacy or access implications."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "location",
+        "ambiguous_phrase": "grab some water",
+        "question": "Where specifically is User A going to get water within Sophia's Apartment? (e.g., kitchen, bathroom, water cooler)",
+        "priority": "HIGH",
+        "reason": "Precise location tracking is important for spatial entity resolution and context continuity, especially if subsequent actions or interactions depend on User A's whereabouts."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' definitively resolved as 'Sophia's Apartment (Atlanta, GA)' for this turn, or could there be ambiguity if User A has moved since the last known location metadata?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and requires confirmation that User A is still at Sophia's Apartment at the time of Turn 49. If User A has changed locations since the last metadata update, the reference could be ambiguous."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before I leave",
+        "question": "What is the exact time or event that defines 'before I leave'? Is it departure from Sophia's Apartment, or another specific time?",
+        "priority": "HIGH",
+        "reason": "Without a clear temporal reference, the reminder cannot be scheduled accurately. The system needs to know when 'leave' occurs to trigger the reminder."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "person",
+        "ambiguous_phrase": "my mom",
+        "question": "Who is 'my mom'? What is her full name and contact information?",
+        "priority": "HIGH",
+        "reason": "To enable the reminder to call, the system needs the correct contact details for 'my mom'."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "object",
+        "ambiguous_phrase": "that floral blanket",
+        "question": "Which specific floral blanket is being referred to? (e.g., owner, description, location, or distinguishing features)",
+        "priority": "HIGH",
+        "reason": "Multiple floral blankets may exist; without clear identification, group members may not know which blanket to bring or confirm."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who does 'she' refer to in this context? (e.g., name or relationship to group)",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'she' is unclear, which could cause confusion about who is expected to love the photos."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "location",
+        "ambiguous_phrase": "the water",
+        "question": "Which specific body of water is being referred to? Is it the ocean, a river, a lake, or another feature at the current location?",
+        "priority": "HIGH",
+        "reason": "Precise identification of 'the water' is necessary for accurate spatial context, safety considerations, and for linking activities or directions to a specific geographic feature. The phrase is vague given multiple possible water features at or near Tybee Island."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for a change",
+        "question": "What is the specific time frame or duration for User A's relaxation? Is this relaxation occurring now, or is it planned for later?",
+        "priority": "HIGH",
+        "reason": "The phrase 'for a change' implies a deviation from routine, but does not specify when or for how long User A intends to relax. This could impact scheduling or coordination with other planned activities."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Sophia's Apartment in Atlanta (where User A just finished packing and is about to leave)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Beach meetup spot on Tybee Island (where the friend group is gathering for the beach day)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "at the exit ramp",
+        "resolved_entity": "Exit ramp near Tybee Island (approaching the beach destination)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "the lighthouse",
+        "resolved_entity": "Tybee Island Lighthouse (landmark near the beach meetup location)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "The female friend User A is meeting at the beach (likely just mentioned in prior conversation, e.g., Sierra or another group member)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "this cooler",
+        "resolved_entity": "The cooler User A brought to the beach (containing food/drinks for the group)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the sand dunes",
+        "resolved_entity": "Sand dunes near the Tybee Island beach path (on the way to the group\u2019s spot)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "a big blue tent",
+        "resolved_entity": "The group\u2019s large blue tent set up on the beach (serving as the meetup spot)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "my stuff",
+        "resolved_entity": "User A\u2019s personal belongings (bag, towel, etc.) brought to the group\u2019s beach spot",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "the snacks",
+        "resolved_entity": "Snacks brought by the group for the beach day (e.g., chips, fruit, etc.)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "The male friend known for bringing good snacks (likely just mentioned in prior conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "The female friend User A is about to join (possibly Sierra or another group member)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "my phone",
+        "resolved_entity": "User A\u2019s phone (to be held by a friend while User A joins an activity)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "The male friend who brought snacks and is being praised as MVP",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "this break",
+        "resolved_entity": "The relaxing beach day with friends (a break from medical school stress)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "How long are we staying?",
+        "resolved_entity": "Duration of the beach day outing (until the group decides to leave Tybee Island beach)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, suggesting starting the volleyball game immediately)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "The group of friends playing volleyball",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "ice cream",
+        "resolved_entity": "Ice cream from a nearby beach vendor or shop (prize for the side bet loser)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the camera",
+        "resolved_entity": "The group\u2019s camera or phone used for taking group photos",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "before sunset",
+        "resolved_entity": "Before sunset at Tybee Island beach (while there\u2019s still daylight for photos)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "someone",
+        "resolved_entity": "A friend in the group who wanted a pep talk about med school (identity to be clarified in conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "The male friend who wanted to talk about med school (to be chatted with after the volleyball game)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "Sierra",
+        "resolved_entity": "Sierra (a member of the friend group, possibly with a podcast about anxiety)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "grab some water",
+        "resolved_entity": "Get water from the group\u2019s cooler or supplies at the beach spot",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "The group\u2019s spot on Tybee Island beach (where User A is relaxing with friends)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "my mom",
+        "resolved_entity": "User A\u2019s mother (to be called before leaving the beach)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "that floral blanket",
+        "resolved_entity": "The floral-patterned blanket brought by someone in the group for sitting on the beach",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 55,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The floral blanket (just mentioned in the previous message)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 57,
+        "ambiguous_phrase": "the water",
+        "resolved_entity": "The shoreline at Tybee Island beach (where the group is sitting/relaxing)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 59,
+        "ambiguous_phrase": "for a change",
+        "resolved_entity": "Taking time to relax at the beach with friends (instead of usual busy routine)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 30
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 6,
+        "entity_type": "location",
+        "ambiguous_phrase": "near the boardwalk",
+        "question": "What exact location should the user text from\u2014does 'near the boardwalk' refer to a specific entrance, landmark, or GPS coordinate?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for User B to find User A efficiently; ambiguity could cause delays or confusion."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "your bag",
+        "question": "Is there any privacy or security concern regarding the bag\u2014does User B have permission to handle it, and are there any special instructions or restrictions?",
+        "priority": "CRITICAL",
+        "reason": "If the bag contains sensitive or valuable items, explicit permission or handling instructions may be required."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when you\u2019re near the boardwalk",
+        "question": "Is there a time window or deadline for when User A should text\u2014what happens if User A arrives outside expected hours?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity could lead to missed connections or waiting; specifying a time window would improve coordination."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sierra",
+        "question": "What is Sierra's full name and how can she be identified beyond just the pink hat?",
+        "priority": "HIGH",
+        "reason": "Only a first name and a clothing description are provided; without a full name or additional identifying details, there could be confusion if there are multiple people named Sierra or others wearing pink hats."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jordan",
+        "question": "Who is Jordan? What is Jordan's full name and role in the group?",
+        "priority": "HIGH",
+        "reason": "Jordan is referenced as bringing the speaker, but their identity and relationship to the group are unclear. This matters for coordination and privacy, especially if access or responsibility is involved."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the speaker",
+        "question": "What type of speaker was brought? Are there any specifications or setup instructions?",
+        "priority": "HIGH",
+        "reason": "The speaker is mentioned as being available for music, but details about its type, compatibility, or setup are missing. This could affect technical planning or troubleshooting."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "Lindsey",
+        "question": "Who is Lindsey? What is her full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "Lindsey is referenced as a third party being sent over, but there is no identifying information to confirm her identity or contact details. This could lead to confusion or privacy concerns if multiple people named Lindsey are present."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "location",
+        "ambiguous_phrase": "send her over",
+        "question": "Where exactly is Lindsey being sent from and to? What are the precise locations involved?",
+        "priority": "HIGH",
+        "reason": "The phrase 'send her over' is spatially ambiguous. Without specifying Lindsey's current location or the intended destination, the recipient may not know where to expect her or where to meet, leading to possible miscommunication or missed connections."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "location",
+        "ambiguous_phrase": "that\u2019s us",
+        "question": "What is the exact location or coordinates of 'us'? Is there a specific spot, group, or marker that identifies the group\u2019s location after turning left?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that\u2019s us' is deictic and relies on prior context; without a clear marker or description, the user may not be able to identify the group\u2019s exact location."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "the sunscreen",
+        "question": "Where specifically is the sunscreen located (e.g., with whom, at what spot, in what bag)?",
+        "priority": "HIGH",
+        "reason": "If the user needs the sunscreen, they do not know exactly where or with whom it is, which could cause confusion or delay in finding it."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "Alec",
+        "question": "Who is Alec? What is Alec's full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'Alec' is not established in prior context, making it unclear who is being referenced, which could cause confusion if multiple people are present."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "that blue bag next to him",
+        "question": "Where exactly is 'that blue bag'? What is its precise location relative to known landmarks or coordinates?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that blue bag next to him' is deictic and depends on knowing Alec's location, which is not explicitly stated in this turn."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "out there",
+        "question": "Where exactly is Sierra swimming? Is it directly in front of the group, a specific section of the beach, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'out there' is spatially ambiguous. For coordination or safety, the precise location of Sierra in the water is important, especially on a public beach."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jordan",
+        "question": "Who is 'Jordan'? Is there a full name or additional identifier for Jordan to avoid ambiguity if multiple people with that name are present?",
+        "priority": "HIGH",
+        "reason": "If there is more than one person named Jordan, the instruction may be misdirected, causing privacy or operational issues."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "all afternoon",
+        "question": "What is the exact time range referred to by 'all afternoon'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'all afternoon' is vague and could refer to different time windows depending on context. For planning or coordination, an exact time range is needed."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Until sunset",
+        "question": "What is the exact time of sunset on the relevant date and location?",
+        "priority": "HIGH",
+        "reason": "The duration of the activity is defined by 'until sunset', but the specific end time is not provided. For scheduling, coordination, or safety, the exact sunset time is needed."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "unless folks get tired",
+        "question": "Who decides when 'folks get tired', and how is this determined or communicated?",
+        "priority": "HIGH",
+        "reason": "The end time is ambiguous because it depends on a subjective condition ('folks get tired'), which is undefined and could lead to confusion or lack of coordination."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "Lindsey, Jordan, and Alec",
+        "question": "What are the full names of Lindsey, Jordan, and Alec?",
+        "priority": "HIGH",
+        "reason": "Full identification is needed for coordination, privacy, and access control, especially if these individuals are referenced in other systems or records."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "warming up",
+        "question": "Where specifically are Lindsey, Jordan, and Alec warming up? Is it at the volleyball court, parking lot, or another location?",
+        "priority": "HIGH",
+        "reason": "Precise location is necessary for meeting, safety, and logistical coordination, especially given multiple possible areas in the vicinity."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "already warming up",
+        "question": "At what exact time did Lindsey, Jordan, and Alec start warming up?",
+        "priority": "HIGH",
+        "reason": "Temporal specificity is important for scheduling, tracking participation, and ensuring alignment with planned activities."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What exact time does 'later' refer to for carrying the cooler back?",
+        "priority": "HIGH",
+        "reason": "'Later' is a vague temporal reference; without a specific time, participants cannot plan or coordinate when the cooler needs to be carried back, which may impact logistics and scheduling."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the cooler",
+        "question": "Which specific cooler is being referenced, and where is it currently located?",
+        "priority": "HIGH",
+        "reason": "If there are multiple coolers or uncertainty about its location, this could cause confusion about which item needs to be carried and from where."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "that shack near the entrance",
+        "question": "Which specific shack near the entrance is being referred to? Please provide the name, description, or exact location (e.g., GPS coordinates or business name).",
+        "priority": "HIGH",
+        "reason": "There may be multiple shacks or structures near the entrance, and without a precise identifier, group members or systems cannot reliably determine the intended meeting spot or destination."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "by the dunes",
+        "question": "Which specific dunes are being referenced? Can you provide a precise location or GPS coordinates?",
+        "priority": "HIGH",
+        "reason": "The phrase 'by the dunes' is spatially vague. Given multiple dune areas may exist near Tybee Island Beach, a precise location is needed for clarity and coordination."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sierra\u2019s",
+        "question": "What is Sierra's full name and what specific item or thing belonging to Sierra is being referenced as 'legendary'?",
+        "priority": "HIGH",
+        "reason": "The reference to 'Sierra\u2019s' is ambiguous: it is unclear what object, skill, or attribute of Sierra is being described as 'legendary.' This lack of specificity could cause confusion about what to expect or look for, especially if there are multiple Sierras or multiple possible items."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "After that",
+        "question": "What is the exact event or activity referred to by 'that'? What is the specific timing for when volleyball will resume?",
+        "priority": "HIGH",
+        "reason": "'After that' is a vague temporal reference; without explicit resolution, the sequence and timing of activities are unclear, which could impact scheduling and coordination."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "time for more volleyball",
+        "question": "What is the specific time window allocated for 'more volleyball'? Is there a scheduled end time or duration?",
+        "priority": "HIGH",
+        "reason": "The phrase lacks a defined time window, which is necessary for planning and ensuring all participants are aware of the schedule."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "Alec",
+        "question": "What is Alec's full name and role in the context of the group or activity?",
+        "priority": "HIGH",
+        "reason": "Without Alec's full identification and role, it is unclear how his stress about rotations impacts the group or what support may be needed."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "person",
+        "ambiguous_phrase": "He\u2019d appreciate it.",
+        "question": "Who is 'he'? Is this referring to Alec from turn 42, or another person?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'he' is used without explicit antecedent in this turn, which can cause confusion about who is being discussed, especially in multi-person contexts."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "We all feel that way sometimes.",
+        "question": "When specifically is 'sometimes'? Is this referring to a recent event, ongoing situation, or a particular timeframe?",
+        "priority": "HIGH",
+        "reason": "Temporal reference is vague; clarifying timeframe could be important for context, especially if discussing stress or medical rotations."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "privacy",
+        "ambiguous_phrase": "He\u2019d appreciate it.",
+        "question": "What is 'it'? Is this a reference to an action, support, or something else? Is there any privacy concern regarding what is being appreciated?",
+        "priority": "CRITICAL",
+        "reason": "The object of appreciation ('it') is not specified, which could be important for privacy or consent, especially if medical or personal information is involved."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "person",
+        "ambiguous_phrase": "*she*",
+        "question": "Who specifically is 'she'? What is her full name or unique identifier?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent in the immediate context, making it ambiguous who is being referred to. This is essential for task assignment and follow-up."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when she\u2019s back from swimming",
+        "question": "What is the expected or scheduled time for her to return from swimming?",
+        "priority": "HIGH",
+        "reason": "The timing of 'when she\u2019s back from swimming' is vague and may impact coordination or deadlines."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "next to the speaker",
+        "question": "Which specific speaker is being referenced, and where exactly is it located within the Tybee Island Beachfront Parking Lot?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next to the speaker' is spatially ambiguous; without knowing which speaker or its precise location, the position of the jug cannot be accurately determined or communicated to others."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this is the break",
+        "question": "What specific break is being referred to (e.g., lunch break, vacation, work pause), and what is its duration or scheduled time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this is the break' is deictic and lacks temporal specificity. Without knowing what 'break' refers to, it's unclear what event or time period is being discussed, which could impact scheduling, coordination, or follow-up actions."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'she' is used without a clear, explicit antecedent in turn 52. While prior turns reference a female individual (possibly Sierra Johnson from previous resolutions), it is not explicitly stated in this turn, which could lead to ambiguity about whom User B is referring to."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "person",
+        "ambiguous_phrase": "Lindsey",
+        "question": "What is Lindsey's full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "The reference to 'Lindsey' is ambiguous without a full name or context, which could cause confusion if there are multiple people named Lindsey present."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "location",
+        "ambiguous_phrase": "Here you go!",
+        "question": "What exactly is being handed over, and where is 'here'? Is it the Tybee Island Beachfront Parking Lot, or a more specific spot?",
+        "priority": "HIGH",
+        "reason": "'Here' is a deictic reference that is ambiguous without explicit spatial resolution. The exact location and the object or information being provided are unclear, which could lead to confusion or miscommunication, especially if physical handoff or retrieval is involved."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "technical|person|object",
+        "ambiguous_phrase": "Here you go!",
+        "question": "What is being given or transferred? Is it an object, document, credential, or information? The referent is missing.",
+        "priority": "CRITICAL",
+        "reason": "The phrase lacks a clear antecedent for what is being handed over, which is necessary for tracking the flow of items, information, or responsibilities."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date referred to as 'today'?",
+        "priority": "HIGH",
+        "reason": "'Today' is a relative temporal reference and should be resolved to a specific calendar date for clarity, especially if this conversation is referenced later or spans multiple days."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "location",
+        "ambiguous_phrase": "snacks",
+        "question": "Where are the snacks located? Are they in a specific cooler, bag, or area at the Tybee Island Beachfront Parking Lot?",
+        "priority": "HIGH",
+        "reason": "If someone needs to access the snacks, the exact location is not specified, which could cause confusion in a group or event setting."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "over by the volleyball nets",
+        "resolved_entity": "The area next to the volleyball nets on the beach (where the group is setting up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "the lot by the old lighthouse",
+        "resolved_entity": "Parking lot near the old lighthouse (recommended for less crowding)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "near the boardwalk",
+        "resolved_entity": "The area close to the boardwalk entrance to the beach",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "the first volleyball court",
+        "resolved_entity": "The first volleyball court you see upon entering the beach area",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "that\u2019s us",
+        "resolved_entity": "The group set up just past the first volleyball court, left at the lifeguard stand",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "at the lifeguard stand",
+        "resolved_entity": "The lifeguard stand near the first volleyball court (used as a landmark for directions)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "out there",
+        "resolved_entity": "In the water (where Sierra is swimming)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "Until sunset",
+        "resolved_entity": "Until sunset today (the group plans to stay at the beach until sunset unless people get tired)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the volleyball game (the loser will carry the cooler back after the game ends)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "that shack near the entrance",
+        "resolved_entity": "The snack shack or small shop located near the main entrance to the beach",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "on the tripod by the dunes",
+        "resolved_entity": "On the tripod set up by the sand dunes (where Lindsey is setting something up, likely a camera or phone)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "when she\u2019s back from swimming",
+        "resolved_entity": "When Lindsey returns from swimming in the water",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "next to the speaker",
+        "resolved_entity": "Beside the portable speaker that Jordan brought (where the jug is located)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 54,
+        "ambiguous_phrase": "by the tent",
+        "resolved_entity": "At the tent set up by the group on the beach (where Lindsey has the item)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 58,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "The current day of the beach outing (the day the group is spending together at Tybee Island)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 30
+  }
+}

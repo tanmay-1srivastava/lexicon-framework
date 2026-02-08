@@ -1,0 +1,966 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What exact location does 'there' refer to within the clinic (e.g., Dr. Lee's office, exam room, waiting area)?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference and is ambiguous without explicit resolution. Knowing the precise location is essential for spatial tracking, appointment flow, and ensuring the user arrives at the correct place."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a couple minutes",
+        "question": "What is the exact expected arrival time (e.g., 10:28 AM) based on 'a couple minutes'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'a couple minutes' is vague and does not provide a specific time, which is important for appointment scheduling and coordination."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' in this context? Is it Dr. Lee or another staff member?",
+        "priority": "HIGH",
+        "reason": "Explicit recipient identification is necessary to ensure that patient information is only shared with authorized personnel."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "printing out my chart",
+        "question": "What are the privacy and access controls in place for printing and transferring the patient chart? Who is authorized to view or handle the printed chart?",
+        "priority": "CRITICAL",
+        "reason": "Handling of printed medical records involves significant privacy risks; explicit access controls and chain of custody should be confirmed."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "coming up",
+        "question": "What specific location or floor is User A coming up to? Is it Dr. Lee's office, a particular exam room, or another area within the clinic?",
+        "priority": "HIGH",
+        "reason": "The phrase 'coming up' is spatially vague. Without specifying the destination, there is ambiguity about where User A is headed, which could cause confusion or delay in meeting, especially in a multi-floor clinic."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "medical",
+        "ambiguous_phrase": "spotting and pain last week",
+        "question": "What were the exact dates, severity, duration, and location of the spotting and pain? Were there any associated symptoms or interventions?",
+        "priority": "HIGH",
+        "reason": "Precise details about symptoms are essential for clinical assessment, risk evaluation, and determining next steps in prenatal care."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What are the specific start and end dates/times for when the spotting and pain occurred?",
+        "priority": "HIGH",
+        "reason": "Exact timing is needed to correlate symptoms with medical events, appointments, or interventions, and to resolve ambiguity for documentation."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that day",
+        "question": "Which specific date does 'that day' refer to?",
+        "priority": "HIGH",
+        "reason": "'That day' is a deictic temporal reference that is ambiguous without explicit resolution. Precise dating is necessary for accurate medical documentation and timeline reconstruction, especially in relation to symptoms and missed activities."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "my yoga class",
+        "question": "What is the scheduled date and time of the missed yoga class?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the missed yoga class may be relevant to correlating symptoms or stressors. Without the exact date/time, it is difficult to assess potential impacts or patterns."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "extra work for school",
+        "question": "On which date(s) did the extra school work occur?",
+        "priority": "HIGH",
+        "reason": "Knowing the exact timing of increased workload may help correlate with reported anxiety or physical symptoms, but is less critical than resolving 'that day.'"
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a few hours after the spotting",
+        "question": "What is the exact time when 'it' (the symptom) started, relative to the known spotting timeline (Thursday afternoon, 2024-06-13, 2:00 PM to late Friday, 2024-06-14)?",
+        "priority": "HIGH",
+        "reason": "Precise timing of symptom onset is important for clinical assessment and correlation with other events or interventions."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "it's been pretty irregular",
+        "question": "What is the specific pattern or duration of irregularity in the user's tracked cycles? (e.g., how many cycles, how irregular, dates affected)",
+        "priority": "HIGH",
+        "reason": "Precise temporal data is essential for medical assessment of cycle irregularity, which may impact diagnosis and care planning."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "config",
+        "ambiguous_phrase": "Clue",
+        "question": "What version of the Clue app is being used, and is the tracking configuration (e.g., cycle length, symptoms tracked) up to date?",
+        "priority": "HIGH",
+        "reason": "App configuration affects data reliability; outdated or misconfigured tracking may lead to inaccurate medical records."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "medication|lab/test|appointment|temporal",
+        "ambiguous_phrase": "them",
+        "question": "What does 'them' refer to? Is it medication, test results, calendar entries, or another entity?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'them' is used without a clear antecedent in the immediate context. This creates ambiguity about what User A is offering to show, which is essential for accurate tracking, privacy, and medical recordkeeping."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "medical",
+        "ambiguous_phrase": "Is it normal",
+        "question": "Does the user have any relevant medical history, current medications, or underlying conditions that could affect menstrual bleeding?",
+        "priority": "CRITICAL",
+        "reason": "Medical history and medication use can influence menstrual patterns and are important for accurate assessment."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'? Is it a specific room, department, or area within the Downtown Women's Health Clinic?",
+        "priority": "HIGH",
+        "reason": "The term 'here' is deictic and ambiguous without explicit mapping to a physical space. For medical procedures like ultrasounds, knowing the precise location is essential for patient navigation, privacy, and scheduling."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "down the hall",
+        "question": "What is the specific destination referred to by 'down the hall'? Is it a named room, suite, or department within the clinic?",
+        "priority": "HIGH",
+        "reason": "The phrase 'down the hall' lacks spatial resolution. For medical appointments, patients and staff require clear directions to avoid confusion and delays."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "ultrasound",
+        "question": "What are the full details of the ultrasound appointment (type, date, time, location, prep instructions)?",
+        "priority": "CRITICAL",
+        "reason": "The user references an ultrasound, but the appointment entity is incomplete. Missing details could impact patient preparation and clinic workflow."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to by 'there'? (e.g., room number, department, or specific area within the clinic)",
+        "priority": "HIGH",
+        "reason": "The term 'there' is deictic and unresolved in this context. Without a precise location, User A's intended destination is ambiguous, which could lead to confusion or misdirection within the clinic."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "lab/test|temporal",
+        "ambiguous_phrase": "it's done",
+        "question": "What exactly is 'it' referring to (e.g., which test or procedure), and when will it be considered 'done' (immediate completion, results available, or another milestone)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'it's done' is ambiguous: it is unclear which specific procedure or test is being referenced (e.g., ultrasound, lab test), and what constitutes completion (end of procedure, results ready, etc.). This affects tracking of medical workflow and patient follow-up."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "the technician",
+        "question": "Who specifically is 'the technician'? What is their full name, title, and department?",
+        "priority": "HIGH",
+        "reason": "Identifying the technician is important for accountability, follow-up, and privacy tracking in a medical context."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a few minutes",
+        "question": "What is the exact or estimated duration for 'a few minutes'? Is there a specific expected completion time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'a few minutes' is vague; a precise time estimate is important for scheduling and managing expectations, especially in a clinical workflow."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "after the ultrasound",
+        "question": "When exactly did the ultrasound take place, and is there a follow-up appointment scheduled to address post-procedure symptoms?",
+        "priority": "CRITICAL",
+        "reason": "Temporal clarity is needed to ensure timely follow-up and to correlate symptoms with the procedure."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "your office",
+        "question": "Which specific office is 'your office'? Is it Dr. Lee's office, another provider's, or a different location within the clinic?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for appointment tracking, privacy, and ensuring the user arrives at the correct destination, especially in a multi-provider clinic."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "finished with the scan",
+        "question": "What type of scan was completed (e.g., ultrasound, MRI)? Was it part of the scheduled prenatal consultation or a separate procedure?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the scan type is important for medical record accuracy and for linking the procedure to the correct appointment and follow-up actions."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "credential",
+        "ambiguous_phrase": "access to *my app data*",
+        "question": "What level of access is required (read-only, edit, export)? Who will have access, and how often? Is consent needed for regular access?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and security concerns are paramount; without specifying access level, frequency, and consent, patient data could be exposed or misused."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "config",
+        "ambiguous_phrase": "*my app data*",
+        "question": "Which app is being referenced? What type of data (symptoms, temperature, medication, etc.) is included? What format is the data in?",
+        "priority": "CRITICAL",
+        "reason": "Technical clarity is needed to ensure the correct data is accessed and interpreted; ambiguity could lead to incomplete or incorrect medical advice."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "person",
+        "ambiguous_phrase": "Do you need access",
+        "question": "Who specifically is requesting access (doctor, nurse, admin staff)?",
+        "priority": "CRITICAL",
+        "reason": "Identifying the person requesting access is essential for privacy and accountability; unclear roles may lead to unauthorized data sharing."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "privacy|credential",
+        "ambiguous_phrase": "sharing *it*",
+        "question": "What are the specific access levels, duration, and recipients for sharing 'it'?",
+        "priority": "CRITICAL",
+        "reason": "Sharing sensitive data requires explicit definition of who can access it, for how long, and under what conditions. This is necessary for compliance and user consent."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "medication|appointment|lab/test|person|technical",
+        "ambiguous_phrase": "it",
+        "question": "What does 'it' refer to in this context? Is it a medication, a test, a data-sharing decision, or another entity?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'it' is ambiguous and unresolved. Without knowing what 'it' refers to, it is impossible to provide options or guidance. This gap directly affects the ability to respond meaningfully to the user's request."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "option",
+        "ambiguous_phrase": "my options",
+        "question": "What specific options is the user requesting information about? Are these medical, technical, privacy, or appointment-related options?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'my options' is vague without context. The system cannot enumerate or explain options without knowing the domain (e.g., treatment, data sharing, scheduling). This limits the ability to provide actionable information."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "medication",
+        "ambiguous_phrase": "recommend",
+        "question": "What are the user's current medical conditions, medications, allergies, or dietary restrictions that could affect supplement recommendations?",
+        "priority": "CRITICAL",
+        "reason": "Supplement recommendations should be tailored to individual health status to avoid interactions or contraindications."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "When",
+        "question": "What is the intended timeframe or deadline for obtaining the labs?",
+        "priority": "HIGH",
+        "reason": "The question 'When should I get those labs?' lacks a reference point (e.g., before conception, at next appointment, after starting medication), which is necessary for actionable scheduling and clinical guidance."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Which specific location does 'there' refer to?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference and is ambiguous without explicit resolution. Multiple possible locations exist (e.g., lab, clinic reception, doctor's office), and the intended destination is not specified. This matters for accurate scheduling, directions, and privacy/access control."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "schedule a follow-up or wait for a call",
+        "question": "What is the recommended next step: should the user proactively schedule a follow-up appointment, or will the clinic initiate contact (e.g., after lab results)? If a follow-up is needed, what type, date, time, and location should be specified?",
+        "priority": "CRITICAL",
+        "reason": "The user is unclear about responsibility for scheduling the next appointment, which could result in missed care or delayed follow-up if not clarified."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Consultation Room (where Dr. Lee is expecting Priya for her appointment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 11,
+        "ambiguous_phrase": "Thursday afternoon",
+        "resolved_entity": "Thursday afternoon (the afternoon of the week prior to this appointment, when Priya's spotting began)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "school",
+        "resolved_entity": "Priya's workplace (the school where she teaches)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "my yoga class",
+        "resolved_entity": "Priya's regular yoga class (which she missed due to extra work at school)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "after the spotting",
+        "resolved_entity": "A few hours after Priya noticed spotting (on Thursday afternoon of the previous week)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Priya's cycle tracking records in the Clue app",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Current exam room or consultation area (where Priya and Dr. Lee are meeting)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Ultrasound room (down the hall from the current consultation area)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "it's done",
+        "resolved_entity": "When the ultrasound scan is completed",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "The ultrasound technician",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "back to your office",
+        "resolved_entity": "Dr. Lee's office (for post-ultrasound discussion and follow-up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "my temperature",
+        "resolved_entity": "Priya's basal body temperature (tracked for ovulation monitoring)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "my app data",
+        "resolved_entity": "Priya's menstrual and symptom tracking data from the Clue app",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Priya's app data (from the Clue app)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Priya's treatment options for PCOS and irregular cycles",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 56,
+        "ambiguous_phrase": "those labs",
+        "resolved_entity": "Recommended laboratory tests (for hormonal and metabolic evaluation related to PCOS and fertility)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 58,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Laboratory collection area (in the clinic, where Priya will have her labs drawn after the appointment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 62,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Scheduled follow-up appointment (as agreed with Dr. Lee in this conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 32
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "my office",
+        "question": "What is the exact room number or identifier for 'my office' on the second floor?",
+        "priority": "HIGH",
+        "reason": "The phrase 'my office' is ambiguous without a specific room number or identifier, which is necessary for Priya to locate the correct office, especially in a multi-office setting."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "person",
+        "ambiguous_phrase": "*her* at the front",
+        "question": "Who specifically is 'her' at the front? What is her full name, title, or role?",
+        "priority": "HIGH",
+        "reason": "The identity of the person at the front desk is unclear. This is important for privacy, access, and ensuring the correct staff member is notified and that the patient is directed appropriately."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "get started",
+        "question": "What is the specific purpose or type of the appointment or activity that will begin once the user arrives?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'get started' is vague and does not specify what will occur during the appointment, which is important for user preparation and expectation management."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "When did the spotting start",
+        "question": "What was the exact date and time when the spotting began?",
+        "priority": "HIGH",
+        "reason": "Precise onset timing is essential for medical assessment, differential diagnosis, and correlating with other events (e.g., medication changes, procedures, menstrual cycle)."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "changes in your routine or stress levels",
+        "question": "What were the specific changes in routine or stress levels, and when did they occur relative to the spotting?",
+        "priority": "HIGH",
+        "reason": "Temporal specificity is needed to correlate possible triggers with the onset of symptoms; without exact timing, clinical assessment may be incomplete."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "medication",
+        "ambiguous_phrase": "routine",
+        "question": "Does 'routine' include any changes in medication, supplements, or contraceptive use?",
+        "priority": "CRITICAL",
+        "reason": "Medication changes are a common cause of spotting; explicit clarification is needed to rule out or identify this factor."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "stress levels",
+        "question": "Were there any recent medical appointments, procedures, or interventions that could have affected stress or routine?",
+        "priority": "CRITICAL",
+        "reason": "Medical events may impact stress and routine, and could be relevant to symptom onset."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "at the same time",
+        "question": "What exact dates and times did the abdominal pain and spotting occur? Was there any overlap or specific sequence?",
+        "priority": "HIGH",
+        "reason": "Precise timing is essential to correlate symptoms, assess severity, and guide diagnosis. 'At the same time' is vague without explicit temporal details."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "medical",
+        "ambiguous_phrase": "abdominal pain",
+        "question": "What are the characteristics of the abdominal pain (onset, duration, location, severity, quality, aggravating/relieving factors)?",
+        "priority": "HIGH",
+        "reason": "Understanding the nature of the pain is crucial for differential diagnosis and risk assessment; 'abdominal pain' alone is insufficiently detailed."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "recently",
+        "question": "What is the specific time frame referred to by 'recently' when asking about cycle tracking?",
+        "priority": "HIGH",
+        "reason": "The term 'recently' is ambiguous and could refer to different time spans (days, weeks, months). Precise timing is important for accurate medical assessment of menstrual cycles and ovulation."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "technical",
+        "ambiguous_phrase": "any apps for ovulation",
+        "question": "Which specific ovulation tracking apps (name/version) are being referred to, and what data do they collect?",
+        "priority": "HIGH",
+        "reason": "Different apps may track different data or have varying accuracy. Knowing the specific app(s) used can impact the reliability of the information provided."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "credential",
+        "ambiguous_phrase": "your app logs",
+        "question": "What app(s) are being referenced, and does User B have authorized access to view these logs? Is patient consent documented?",
+        "priority": "CRITICAL",
+        "reason": "Accessing personal app logs may involve sensitive health and privacy data; explicit consent and access level must be clarified to ensure compliance and patient trust."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "config",
+        "ambiguous_phrase": "your app logs",
+        "question": "Which app log files are intended for review (e.g., ovulation tracking, symptom diary)? What is the format and location of these logs?",
+        "priority": "HIGH",
+        "reason": "Without specifying the app and log format/location, the request is ambiguous and may lead to confusion or incomplete data review."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once we're done with the exam",
+        "question": "What is the exact time or sequence for reviewing the app logs? Is this immediately after the exam or at a later appointment?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect workflow and patient expectations; precise timing ensures clarity and proper scheduling."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "this exam table",
+        "question": "Which exam table is being referred to, and is its location and specifications fully documented?",
+        "priority": "HIGH",
+        "reason": "Although 'this exam table' is resolved to 'Exam Table 2, Dr. Lee's Office' via GPS/Wifi, there is no information about its specifications, condition, or privacy status, which may be relevant for medical documentation and patient comfort."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "User B",
+        "question": "Is User B's full name, title, and role in the examination clearly documented?",
+        "priority": "HIGH",
+        "reason": "For medical and privacy compliance, the examiner's identity and credentials should be explicit, especially when initiating a physical exam."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "exam table",
+        "question": "Has patient privacy and access control for the exam area been confirmed?",
+        "priority": "CRITICAL",
+        "reason": "Physical exams require assurance of privacy and restricted access; this is not explicitly confirmed in the turn."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "order a transvaginal ultrasound",
+        "question": "What is the scheduled date and time for the transvaginal ultrasound appointment?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the test is essential for patient preparation, scheduling, and follow-up. Without a specific date and time, the order is incomplete and may lead to confusion or missed appointments."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "order a transvaginal ultrasound",
+        "question": "Are there any preparation instructions the patient needs to follow before the transvaginal ultrasound?",
+        "priority": "CRITICAL",
+        "reason": "Preparation (e.g., bladder status, fasting) may be required for accurate imaging. Missing instructions could compromise test quality or require rescheduling."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "order a transvaginal ultrasound",
+        "question": "Where specifically will the transvaginal ultrasound take place (e.g., Imaging Suite room number)?",
+        "priority": "CRITICAL",
+        "reason": "While 'Imaging Suite' is referenced, the exact room or location details are not specified, which could cause confusion for the patient or staff."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "order a transvaginal ultrasound",
+        "question": "What is the expected timeline for receiving the results of the transvaginal ultrasound?",
+        "priority": "CRITICAL",
+        "reason": "Patients need to know when to expect results for planning follow-up care and reducing anxiety."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "location",
+        "ambiguous_phrase": "next door",
+        "question": "What is the exact location (room number, suite name) of the imaging suite?",
+        "priority": "HIGH",
+        "reason": "Precise spatial resolution is required for navigation and record-keeping; 'next door' is ambiguous without explicit location details."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "the technician",
+        "question": "Who is the technician (full name, title, contact) responsible for the ultrasound setup?",
+        "priority": "HIGH",
+        "reason": "Identifying the technician is important for privacy, access control, and accountability; 'the technician' lacks specificity."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? Is this the imaging technician, and what is her full name or title?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'her' is ambiguous; without clear identification, privacy, access, and handoff of medical information may be compromised."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "your chart",
+        "question": "What chart is being referred to? Is it a physical document, electronic record, or specific form, and does the user have access to it?",
+        "priority": "CRITICAL",
+        "reason": "Ambiguity about 'chart' could lead to confusion about what needs to be provided, risking incomplete or incorrect information transfer."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as soon as they're uploaded",
+        "question": "What is the expected timeline for results to be uploaded and reviewed (specific date/time or range)?",
+        "priority": "HIGH",
+        "reason": "No timeframe is given for when results will be available or reviewed, which is essential for patient planning and follow-up care."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically does 'her' refer to? What is her full name, title, and role in the imaging suite?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is used without a clear antecedent. For medical privacy, accountability, and patient clarity, the identity and role of the referenced person must be explicit."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "medical",
+        "ambiguous_phrase": "mild cramps",
+        "question": "What procedure, medication, or condition are the mild cramps associated with?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the cause or context (e.g., post-procedure, medication side effect, menstrual cycle), it is unclear what the expected source of cramps is, which could affect clinical guidance."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once you're back",
+        "question": "When exactly is 'back'? Is there a specific date, time, or event that defines when the review will occur?",
+        "priority": "HIGH",
+        "reason": "The timing of the review is unclear, which could lead to missed or delayed follow-up on potentially important findings."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "results show small cysts consistent with PCOS",
+        "question": "What are the detailed findings (number, size, and location of cysts) and the date/time the test was performed?",
+        "priority": "HIGH",
+        "reason": "Detailed findings and timing are necessary for accurate diagnosis, follow-up, and patient understanding."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "medication",
+        "ambiguous_phrase": "potential medication options",
+        "question": "Which specific medications are being considered, including name, dosage, frequency, and timing?",
+        "priority": "CRITICAL",
+        "reason": "Medication recommendations require explicit details for safety, informed consent, and follow-up planning."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "We\u2019ll discuss",
+        "question": "When and where will the discussion about lifestyle changes and medication options take place? Is a follow-up appointment scheduled?",
+        "priority": "CRITICAL",
+        "reason": "Patients need clear information about next steps, including timing and location, to ensure continuity of care."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "We\u2019ll discuss",
+        "question": "What is the specific timeframe for this discussion? Is it happening now, later in the visit, or at a future date?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in timing can lead to confusion about when to expect further information or action."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "medication",
+        "ambiguous_phrase": "potential medication options",
+        "question": "Which specific medications, dosages, and timing are being considered for PCOS management?",
+        "priority": "CRITICAL",
+        "reason": "Medication details are essential for safe and effective treatment planning; lack of specifics may delay care or cause confusion."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "lifestyle changes",
+        "question": "Are there any scheduled follow-up appointments or referrals to support these lifestyle changes (e.g., nutritionist, exercise program)?",
+        "priority": "CRITICAL",
+        "reason": "Appointment details are needed to ensure continuity of care and proper support for recommended interventions."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "location",
+        "ambiguous_phrase": "Yoga and gardening",
+        "question": "Are there recommended locations or programs for yoga and gardening (e.g., clinic classes, community resources)?",
+        "priority": "HIGH",
+        "reason": "Location details can help the patient access appropriate resources and support adherence to lifestyle changes."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "medical",
+        "ambiguous_phrase": "those details",
+        "question": "Which specific details should be monitored to track ovulation more effectively (e.g., basal body temperature, cervical mucus, ovulation predictor kits, cycle dates)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'those details' is vague and does not specify what information the patient should monitor, which is essential for effective ovulation tracking and patient understanding."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "person",
+        "ambiguous_phrase": "you're comfortable",
+        "question": "Who is 'you' in this context? Is it the patient, a third party, or another participant in the conversation?",
+        "priority": "HIGH",
+        "reason": "Pronoun resolution is necessary to ensure the correct individual is being addressed, especially when discussing sensitive information and consent."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "confidential",
+        "question": "What specific information will be kept confidential, and who will have access to it?",
+        "priority": "CRITICAL",
+        "reason": "The term 'confidential' is used without specifying what information is being protected or defining the access controls, which is essential for privacy compliance and clarity in medical contexts."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "medication",
+        "ambiguous_phrase": "potential medication changes",
+        "question": "Which specific medications, dosages, or regimens are being considered for change?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying which medications are under discussion, the user cannot make an informed decision or prepare relevant questions."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "next appointment",
+        "question": "What is the exact date, time, and location of the next appointment?",
+        "priority": "CRITICAL",
+        "reason": "The user may not recall their next appointment details, making it unclear when the alternative discussion would occur."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "Does 'now' refer to the current visit, a specific time slot, or immediate action during this conversation?",
+        "priority": "HIGH",
+        "reason": "Clarifying the timing ensures both parties understand when the discussion would take place if chosen."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "medication",
+        "ambiguous_phrase": "it's",
+        "question": "Which specific medication is being referred to as 'it's'? Name, dosage, frequency, and timing are missing.",
+        "priority": "CRITICAL",
+        "reason": "The medication is not explicitly identified, which is essential for clinical clarity and patient safety."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "monitoring/appointment",
+        "ambiguous_phrase": "We'll monitor closely.",
+        "question": "What is the monitoring plan? What parameters will be tracked, how often, and by whom? Is there a scheduled follow-up appointment?",
+        "priority": "HIGH",
+        "reason": "A vague monitoring statement lacks actionable details, which could lead to missed follow-up or unclear responsibilities."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "lab/test",
+        "ambiguous_phrase": "today",
+        "question": "What is the exact date and time for 'today'? Please specify the scheduled time window for the lab tests.",
+        "priority": "HIGH",
+        "reason": "Temporal reference 'today' is context-dependent and may be unclear if the message is read later or if the patient needs to coordinate timing. Precise scheduling is important for workflow and patient planning."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "location",
+        "ambiguous_phrase": "the blood draw room at the end of the hall",
+        "question": "What is the exact room number or location identifier for 'the blood draw room at the end of the hall'? Please specify for navigation and record-keeping.",
+        "priority": "HIGH",
+        "reason": "The location is described vaguely, which may cause confusion for the patient or staff, especially in a clinic with multiple halls or blood draw rooms. Precise location is needed for operational clarity."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "person",
+        "ambiguous_phrase": "the phlebotomist",
+        "question": "Who is the phlebotomist on duty (full name, title, contact)?",
+        "priority": "HIGH",
+        "reason": "Patient may need to know who to approach for questions or follow-up; lack of identification could cause confusion or privacy concerns."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "answer any questions",
+        "question": "Does the phlebotomist have access to the patient's medical information or only procedural details?",
+        "priority": "CRITICAL",
+        "reason": "Privacy risk if the phlebotomist is not authorized to discuss medical history or results; access boundaries must be clear."
+      },
+      {
+        "turn_id": 61,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "two weeks from today",
+        "question": "What is the exact date for the follow-up appointment?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'two weeks from today' is ambiguous without a reference date; an exact date is required for scheduling and patient clarity."
+      },
+      {
+        "turn_id": 61,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "same time",
+        "question": "What is the specific time of the follow-up appointment?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'same time' assumes prior knowledge of the original appointment time, which is not explicitly stated in this turn; precise timing is necessary for accurate scheduling."
+      },
+      {
+        "turn_id": 63,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "between now and then",
+        "question": "What are the exact dates/times referred to by 'now' and 'then'?",
+        "priority": "HIGH",
+        "reason": "'Now' and 'then' are deictic temporal references. 'Then' likely refers to the follow-up appointment set in Turn 61 ('two weeks from today'), but the exact date/time is not specified in this turn. This ambiguity could cause confusion about the window during which Priya can reach out with concerns."
+      },
+      {
+        "turn_id": 65,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What is the exact date and time referred to by 'then' for the next meeting or appointment?",
+        "priority": "HIGH",
+        "reason": "'Then' is a deictic temporal reference that is ambiguous without explicit resolution to a specific date and time. This is essential for scheduling and ensuring both parties are aligned on the follow-up appointment."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "my office",
+        "resolved_entity": "Dr. Lee's office on the second floor (where the consultation is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Dr. Lee's office on the second floor (where the consultation is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "your app logs",
+        "resolved_entity": "Priya's ovulation and cycle tracking app data (for review after the exam)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "this exam table",
+        "resolved_entity": "Exam table in Dr. Lee's office (for the physical examination)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "next door",
+        "resolved_entity": "Imaging suite adjacent to Dr. Lee's office (for the transvaginal ultrasound)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Imaging technician in the imaging suite (who will assist with the ultrasound)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "your results",
+        "resolved_entity": "Priya's transvaginal ultrasound results (to be reviewed after upload)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "back",
+        "resolved_entity": "Returning to Dr. Lee's office after the ultrasound (to discuss results)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "those details",
+        "resolved_entity": "Ovulation and cycle tracking data (as discussed for monitoring)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time during this appointment (option to discuss medication changes immediately)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 57,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "Blood tests (lab work ordered for Priya, to be done before leaving)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 57,
+        "ambiguous_phrase": "the blood draw room",
+        "resolved_entity": "Blood draw room at the end of the hall (for lab tests before leaving the clinic)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 59,
+        "ambiguous_phrase": "the process",
+        "resolved_entity": "Blood draw procedure (as explained by the phlebotomist)",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 61,
+        "ambiguous_phrase": "two weeks from today",
+        "resolved_entity": "Two weeks after the current appointment date (for the follow-up visit)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 61,
+        "ambiguous_phrase": "same time",
+        "resolved_entity": "Same time of day as the current appointment (for the follow-up in two weeks)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 63,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (between this appointment and the follow-up in two weeks)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 63,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "Scheduled follow-up appointment time (two weeks from today, same time as this appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 65,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "Scheduled follow-up appointment time (two weeks from today, same time as this appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 34
+  }
+}

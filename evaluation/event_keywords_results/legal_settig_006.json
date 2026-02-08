@@ -1,0 +1,927 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "this the right conference room",
+        "question": "Which specific conference room is being referred to, and is it unambiguously identified by the user\u2019s current location metadata?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this the right conference room' is deictic and relies on context. Without explicit confirmation of the room\u2019s identity (e.g., room number, name, or floor), it is ambiguous whether the user is in the correct location for their intended meeting. This could lead to confusion or missed appointments."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "file box",
+        "question": "What are the contents, purpose, and access permissions of the file box?",
+        "priority": "CRITICAL",
+        "reason": "The file box may contain sensitive or relevant documents for the consultation; without details, privacy, access, and relevance cannot be confirmed."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "laptop",
+        "question": "What is the intended use, security status, and access permissions for the laptop during this meeting?",
+        "priority": "CRITICAL",
+        "reason": "The laptop may be used to access or store confidential information; clarification is needed to ensure proper handling and privacy."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "email from them yesterday",
+        "question": "What was the subject or content of the email? Was it related to an appointment, task, or other actionable item?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the email's content, any required actions or preparations may be missed, especially given upcoming consultation."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday",
+        "question": "What is the exact date referred to as 'yesterday'? Is it resolved against the current calendar date?",
+        "priority": "HIGH",
+        "reason": "Temporal reference 'yesterday' needs explicit date for accurate tracking and follow-up."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "person|privacy|credential",
+        "ambiguous_phrase": "you",
+        "question": "Who is the recipient ('you')? Is this a specific person, group, or system? What is their access level?",
+        "priority": "CRITICAL",
+        "reason": "Recipient identity and access level are necessary to evaluate privacy and credential risks, especially if sensitive information is being sent."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "location",
+        "ambiguous_phrase": "locked cabinet at the back of the caf\u00e9",
+        "question": "What are the exact physical security measures for the locked cabinet (e.g., type of lock, who has keys, surveillance)?",
+        "priority": "CRITICAL",
+        "reason": "Physical security details are necessary to assess the adequacy of document protection and access control."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "invoices and contracts",
+        "question": "Are the invoices and contracts organized in a specific way within the cabinet (e.g., folders, labels, chronological order)?",
+        "priority": "HIGH",
+        "reason": "Organization impacts retrieval, audit, and compliance; lack of detail may hinder document management."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "not much else",
+        "question": "What other types of documents or records, if any, are stored elsewhere or in other formats (digital, offsite, etc.)?",
+        "priority": "HIGH",
+        "reason": "Understanding the full scope of document storage is essential for compliance, discovery, and risk assessment."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "person",
+        "ambiguous_phrase": "I keep invoices and contracts",
+        "question": "Who else, if anyone, has access to the locked cabinet besides you?",
+        "priority": "CRITICAL",
+        "reason": "Access control is a key privacy and security concern; unclear access could lead to unauthorized disclosure."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "technical",
+        "ambiguous_phrase": "my phone",
+        "question": "What is the make, model, and operating system version of the phone, and is it secured (e.g., passcode, encryption)?",
+        "priority": "HIGH",
+        "reason": "Device security and technical specifications affect the ability to preserve, collect, or review old texts, and may raise privacy or access concerns."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Some go back years",
+        "question": "What is the exact date range of the oldest and newest texts relevant to the inquiry?",
+        "priority": "HIGH",
+        "reason": "Precise temporal boundaries are needed to determine the scope of review or production, and to assess relevance to any legal or compliance requirements."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "my manager",
+        "question": "What is the manager's full name and contact information?",
+        "priority": "HIGH",
+        "reason": "The manager is referenced as a potential source of records, but her identity and how to contact her are not specified. This is necessary for follow-up or access permissions."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "get my manager involved",
+        "question": "What level of access or authority does the manager have regarding the records in question?",
+        "priority": "CRITICAL",
+        "reason": "Involving a third party in record retrieval may have privacy or access control implications. It is unclear if the manager is authorized to access or share the relevant records."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "location",
+        "ambiguous_phrase": "records that I don\u2019t",
+        "question": "Where are the additional records that the manager might have stored?",
+        "priority": "HIGH",
+        "reason": "The physical or digital location of the manager's records is not specified, which could impact retrieval or access logistics."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact time or event referred to by 'after this'? Is it after the current conversation, after a specific meeting, or another event?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to coordinate when User A will talk to the manager, especially if it relates to a deadline or scheduled event (e.g., the upcoming attorney consultation)."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "talk to her",
+        "question": "Does User A have the necessary authorization or access to obtain the records from the manager? Is there a privacy or access protocol that must be followed?",
+        "priority": "CRITICAL",
+        "reason": "Accessing records may involve privacy or authorization requirements, especially if the manager controls sensitive information."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Which months",
+        "question": "Which months are being referred to as 'most critical'? Is there a specific date range or event context that defines 'critical'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'most critical' is ambiguous without a defined context or criteria. It is unclear which months are relevant to the user's objective (e.g., discovery, record retention, or another process), making it impossible to determine the correct temporal scope for action or review."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "most critical",
+        "question": "What criteria or events determine which months are 'most critical'? Is this related to a legal, operational, or other deadline?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the criteria for 'critical', it is not possible to prioritize or filter relevant records, which may impact compliance or preparation for the upcoming consultation."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "those files in the box",
+        "question": "Which specific files in the box should User A focus on? Are there labels, dates, or categories to identify them?",
+        "priority": "HIGH",
+        "reason": "Without specifying which files, User A may not select the most relevant documents, risking incomplete or incorrect preparation for the upcoming consultation."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "those files",
+        "question": "Is there a deadline or time window for reviewing these files before the consultation at 2:00 PM?",
+        "priority": "HIGH",
+        "reason": "If the files are not reviewed in time, User A may be unprepared for the scheduled attorney consultation."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that deadline",
+        "question": "What is the exact date and time of the deadline being referenced?",
+        "priority": "HIGH",
+        "reason": "The deadline is referenced without specifying its exact date/time, making it impossible to assess urgency or plan actions. Precise temporal information is required for scheduling and compliance."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "deadline",
+        "question": "Which appointment or task is associated with this deadline?",
+        "priority": "CRITICAL",
+        "reason": "The referenced deadline may relate to an appointment or task, but the specific event is not identified. Clarifying the association is necessary to determine context and required actions."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as soon as I have them",
+        "question": "What is the expected or required timeframe for sending the scanned files? Is there a specific deadline or window that must be met?",
+        "priority": "HIGH",
+        "reason": "Without a clear deadline, there is risk of missing time-sensitive requirements, especially since previous turns referenced strictness of deadlines."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "location",
+        "ambiguous_phrase": "send you the scanned files",
+        "question": "Where should the scanned files be sent (email address, upload portal, physical location)?",
+        "priority": "HIGH",
+        "reason": "The destination for sending files is not specified, which could lead to misdelivery or privacy issues."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "technical",
+        "ambiguous_phrase": "scanned files",
+        "question": "What format or specifications are required for the scanned files (PDF, resolution, naming convention)?",
+        "priority": "HIGH",
+        "reason": "Technical requirements for file format are missing, which could result in files being unusable or rejected."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "\u2018him\u2019",
+        "question": "Who specifically is referred to by \u2018him\u2019? What is his full name and role in the context?",
+        "priority": "HIGH",
+        "reason": "Pronoun \u2018him\u2019 is used without clear antecedent or identification, creating ambiguity about which individual is no longer involved. This is essential for privacy, access control, and tracking responsibilities."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "What is Mark's full name and contact information?",
+        "priority": "HIGH",
+        "reason": "Mark is referenced as a key individual (old supervisor) relevant to the supplier problems, but his full identity and contact details are missing, which may be necessary for follow-up or verification."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after the supplier problems started",
+        "question": "When exactly did the supplier problems start, and when did Mark quit?",
+        "priority": "HIGH",
+        "reason": "The timing of Mark's departure relative to the supplier problems is ambiguous. Precise dates are needed to establish a timeline for accountability or investigation."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "technical",
+        "ambiguous_phrase": "some old emails and a memo",
+        "question": "What are the dates, subjects, and contents of the old emails and the memo from Mark?",
+        "priority": "HIGH",
+        "reason": "The description of the documents is vague; without details (dates, subjects, contents), it's unclear if these documents are relevant or sufficient for the intended purpose (e.g., legal discovery, investigation)."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "privacy",
+        "ambiguous_phrase": "documents I have from him",
+        "question": "Do you have permission or legal authority to share Mark's emails and memo, and do these documents contain sensitive or confidential information?",
+        "priority": "CRITICAL",
+        "reason": "Sharing documents from a former supervisor may have privacy or legal implications; access level and consent are not specified."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "three weeks this spring",
+        "question": "What are the exact start and end dates for the three-week absence in spring?",
+        "priority": "HIGH",
+        "reason": "Precise dates are required for timeline reconstruction, calendar alignment, and any downstream legal or medical implications."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "out",
+        "question": "What was the reason for the three-week absence (e.g., medical leave, vacation, other)?",
+        "priority": "CRITICAL",
+        "reason": "The nature of the absence affects privacy, legal, and operational context; without this, downstream entity resolution is incomplete."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sarah",
+        "question": "What is Sarah's full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "Sarah is identified as the manager who handled most orders during User A's absence, but her full identity and contact details are not specified. This is important for follow-up, verification, and access permissions."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What exact dates or time period does 'then' refer to when Sarah handled most of the orders?",
+        "priority": "HIGH",
+        "reason": "The timing of Sarah's involvement is ambiguous. Precise dates are needed to correlate her actions with relevant events, documents, or responsibilities, especially for legal or audit purposes."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "handled most of the orders",
+        "question": "What was Sarah's access level and authority regarding order handling during this period?",
+        "priority": "CRITICAL",
+        "reason": "Sarah's role in handling orders implies access to sensitive information or systems. Clarifying her access level is necessary for privacy, compliance, and accountability."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "handled most of the orders",
+        "question": "Where did Sarah handle the orders (specific location within Riley\u2019s Caf\u00e9 or remotely)?",
+        "priority": "HIGH",
+        "reason": "The physical or digital location where orders were managed is not specified. This matters for tracking workflow, security, and potential retrieval of records."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to by 'here'\u2014which table, in which area of Riley\u2019s Caf\u00e9?",
+        "priority": "HIGH",
+        "reason": "The deictic term 'here' is ambiguous without explicit spatial resolution; multiple tables may exist at the caf\u00e9, and precise identification is necessary for retrieval or action."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "under the table",
+        "question": "Which specific table is being referenced as the location 'under the table'?",
+        "priority": "HIGH",
+        "reason": "Without specifying which table, the location remains ambiguous, especially in a public or multi-table setting like a caf\u00e9."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "the desk next to the window",
+        "question": "Which desk specifically is being referred to, and which window? Is this desk in Riley\u2019s Caf\u00e9, and if so, which area (e.g., conference room, main floor, office)?",
+        "priority": "HIGH",
+        "reason": "Precise spatial identification is needed for retrieval or tracking; multiple desks/windows may exist in the caf\u00e9, leading to ambiguity."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "privacy/credential",
+        "ambiguous_phrase": "sensitive info",
+        "question": "What specific sensitive information was being considered for sharing, and what privacy or access controls are in place for it?",
+        "priority": "CRITICAL",
+        "reason": "The term 'sensitive info' is vague and undefined. Without knowing what information is considered sensitive, or what privacy measures are relevant, it is impossible to assess risk, compliance, or necessary protections."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "\u2018the folder\u2019",
+        "question": "What is the full path, location, and contents of \u2018the folder\u2019 being referenced?",
+        "priority": "HIGH",
+        "reason": "The identity and location of \u2018the folder\u2019 are ambiguous, making it unclear which receipts are being discussed or where they are stored. This is essential for privacy, access, and technical tracking."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "technical",
+        "ambiguous_phrase": "those receipts",
+        "question": "What are the details (type, date, relevance) of the receipts in question?",
+        "priority": "HIGH",
+        "reason": "The nature and specifics of 'those receipts' are not defined, which is necessary to determine their sensitivity, relevance, and handling requirements."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "that\u2019s the one",
+        "question": "What is the exact name or full path of the folder being referenced?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'that\u2019s the one' refers to a folder, but its specific identity (name, location, or path) is not provided, which is necessary for unambiguous retrieval or reference."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last summer",
+        "question": "What are the exact date range(s) covered by 'last summer'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'last summer' is vague and could refer to different months depending on the current date; precise dates are needed for accurate identification of the receipts."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "submit",
+        "question": "Who will have access to the submitted folder or receipts? Is there a defined access level or privacy protocol?",
+        "priority": "CRITICAL",
+        "reason": "Sensitive information may be exposed if access levels and privacy protocols are not specified."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "folder",
+        "question": "What is the exact location or path of the folder to be submitted? Is it physical or digital?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in folder location could lead to submission errors or confusion about the process."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact time or event that 'after this' refers to?",
+        "priority": "HIGH",
+        "reason": "'After this' is a deictic temporal reference that is not explicitly resolved. Without knowing what 'this' refers to (e.g., a specific meeting, task, or time), the timing of when the receipts will be grabbed is ambiguous, which could impact deadlines or coordination with other scheduled events (such as the upcoming attorney consultation)."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "them",
+        "question": "Where exactly are the receipts being grabbed from?",
+        "priority": "HIGH",
+        "reason": "The location of 'them' (the receipts) is not specified in this turn. While previous context mentions 'the folder', it is not clear if the folder is physically present at Riley\u2019s Caf\u00e9 or elsewhere, which could affect the feasibility and timing of the action."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "it feels like a lot",
+        "question": "What specific task(s) or workload is being referred to as 'a lot'? Is there a defined deadline or time window for completion?",
+        "priority": "HIGH",
+        "reason": "Without explicit reference to the task or timeline, it's unclear what 'a lot' entails and whether it aligns with upcoming calendar events or deadlines."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "\u2018later\u2019 this week",
+        "question": "What exact date and time does 'later this week' refer to?",
+        "priority": "HIGH",
+        "reason": "The phrase 'later this week' is temporally ambiguous and must be resolved to a specific date/time for accurate scheduling, forecasting, or follow-up actions."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "finally get some time",
+        "question": "When exactly does User A expect to have time to use their motorcycle? Is this before or after the next scheduled appointment (Consultation: Attorney - Discovery Strategy at 2:00 PM)?",
+        "priority": "HIGH",
+        "reason": "The timing of 'some time' is ambiguous, especially given the upcoming scheduled appointment. Clarifying the timeframe is important for accurate scheduling and context."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "location",
+        "ambiguous_phrase": "the box",
+        "question": "Which specific box is being referenced, and where is it located within Riley\u2019s Caf\u00e9?",
+        "priority": "HIGH",
+        "reason": "Multiple boxes may exist; precise location and identity are needed for tracking and access."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as soon as possible",
+        "question": "What is the exact deadline or expected timeframe for sending the scanned files?",
+        "priority": "HIGH",
+        "reason": "Ambiguous timing can lead to missed deadlines or confusion about urgency, especially with a scheduled consultation approaching."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sarah",
+        "question": "What is Sarah\u2019s role or authority regarding the files and box, and does User A have permission to involve her?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control require clarity on Sarah\u2019s involvement and authorization."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "technical",
+        "ambiguous_phrase": "scanned files",
+        "question": "What are the contents, format, and destination of the scanned files, and are there any privacy or security requirements?",
+        "priority": "CRITICAL",
+        "reason": "Technical and privacy protocols may dictate how files are handled and transmitted."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the next one",
+        "question": "What is the exact date, time, and location of 'the next' meeting?",
+        "priority": "CRITICAL",
+        "reason": "'The next one' is a vague temporal reference. Without explicit details, it is unclear when and where the next meeting will occur, which may lead to missed appointments or scheduling confusion."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Conference room at Riley\u2019s Caf\u00e9 (main location, where the attorney-client meeting is taking place)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time during the attorney-client meeting (when User A is sending the file)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "after this",
+        "resolved_entity": "After the current attorney-client meeting about discovery obligations",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "At this moment during the meeting (when Sarah is at the register in the caf\u00e9)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "right here",
+        "resolved_entity": "Under the table in the conference room at Riley\u2019s Caf\u00e9 (where the file box is located during the meeting)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "the desk next to the window",
+        "resolved_entity": "Desk next to the window in the conference room at Riley\u2019s Caf\u00e9 (where User A placed the item)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "the folder",
+        "resolved_entity": "Folder containing receipts from last summer (as discussed in the context of discovery documents)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "last summer",
+        "resolved_entity": "Summer of the previous year (relative to the current conversation date, i.e., summer 2025)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "after this",
+        "resolved_entity": "After the current attorney-client meeting about discovery obligations",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "later this week",
+        "resolved_entity": "Later in the current week following the attorney-client meeting (i.e., after February 6, 2026, but before the week ends)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 59,
+        "ambiguous_phrase": "the next one",
+        "resolved_entity": "The next scheduled attorney-client meeting regarding the lawsuit and discovery process",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 30
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "let\u2019s get started",
+        "question": "What is the specific purpose, agenda, or type of appointment/meeting being started?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'let\u2019s get started' lacks detail about what the meeting or appointment is for, which is necessary for clarity and proper documentation."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "those documents",
+        "question": "Which documents specifically need to be reviewed? What are their titles, contents, and locations?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying which documents, it's unclear what needs to be prepared or referenced for the meeting, risking inefficiency or oversight."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "credential",
+        "ambiguous_phrase": "admissions request you received from the other side",
+        "question": "Who sent the admissions request, what system or method was used to deliver it, and what access level is required to review it?",
+        "priority": "CRITICAL",
+        "reason": "The sender, delivery method, and access requirements are not specified, which could lead to privacy breaches or inability to locate/review the request."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "person",
+        "ambiguous_phrase": "the other side",
+        "question": "Who specifically is 'the other side'? What are their names, roles, and contact details?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about 'the other side' could cause confusion about who is involved, their authority, and how to respond appropriately."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "soon",
+        "question": "When exactly will the documents be reviewed? Is there a scheduled time or deadline?",
+        "priority": "HIGH",
+        "reason": "The timing for document review is vague, which could affect preparation and scheduling."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "forward me the email",
+        "question": "When is the user expected to forward the email? Is there a deadline or timeframe for this action?",
+        "priority": "HIGH",
+        "reason": "Without a specified timeframe, it is unclear when the review of the requests can begin, which may delay the process if time sensitivity is involved."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "forward me the email",
+        "question": "Does User B have the necessary permissions or access rights to receive and review the email, especially if it contains confidential or privileged information?",
+        "priority": "CRITICAL",
+        "reason": "Forwarding potentially sensitive legal correspondence without confirming access rights could result in a privacy or confidentiality breach."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "the email",
+        "question": "Who is the sender of the email, and who are the intended recipients? Is it clear which email is being referenced if there are multiple related emails?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about which email to forward could lead to miscommunication or reviewing the wrong set of requests."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "location",
+        "ambiguous_phrase": "retain anything mentioned in the requests",
+        "question": "Where should the retained documents (emails, receipts, texts) be stored to ensure proper preservation and access?",
+        "priority": "CRITICAL",
+        "reason": "Proper storage location is necessary to ensure documents are not lost, altered, or inaccessible during litigation."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "we",
+        "question": "Who is specifically responsible for retaining the mentioned documents\u2014User A, User B, or another party?",
+        "priority": "HIGH",
+        "reason": "Clear assignment of responsibility is needed to avoid confusion and ensure compliance with legal obligations."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "entity_completeness",
+        "ambiguous_phrase": "preserve them",
+        "question": "What specific actions are required to 'preserve' these documents (e.g., storage location, format, retention period)?",
+        "priority": "HIGH",
+        "reason": "Lack of explicit preservation instructions may result in improper handling or accidental deletion of required documents."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "logs or receipts related to the supplier",
+        "question": "What is the relevant time period for the logs or receipts that need to be included?",
+        "priority": "HIGH",
+        "reason": "Without a defined time window, it's ambiguous which documents are required for retention, risking over- or under-inclusion."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "logs or receipts",
+        "question": "Where are these logs or receipts stored (physical location, digital system, etc.)?",
+        "priority": "HIGH",
+        "reason": "Knowing the storage location is necessary for effective collection and preservation, especially for litigation."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "March through August last year",
+        "question": "What are the exact start and end dates for 'March through August last year'? (e.g., March 1 to August 31, or are partial months included/excluded?)",
+        "priority": "HIGH",
+        "reason": "Precise date range is required to accurately narrow the scope of the requests and ensure all relevant communications are included or excluded."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next Friday",
+        "question": "What is the exact date for the discovery deadline referred to as 'next Friday'?",
+        "priority": "HIGH",
+        "reason": "Precise deadlines are essential for legal compliance and scheduling; 'next Friday' is ambiguous without a reference date."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "discovery deadline",
+        "question": "What are the specific requirements or deliverables due by the discovery deadline?",
+        "priority": "CRITICAL",
+        "reason": "Knowing exactly what must be completed by the deadline is necessary to ensure all obligations are met and nothing is overlooked."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Late documents",
+        "question": "What is the exact deadline for document submission to avoid exclusion or sanctions?",
+        "priority": "HIGH",
+        "reason": "The phrase 'late documents' is ambiguous without a precise deadline; missing this could result in exclusion or court sanctions, which is a significant legal risk."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "person",
+        "ambiguous_phrase": "Judge Miller",
+        "question": "What is Judge Miller's full name and court assignment?",
+        "priority": "HIGH",
+        "reason": "While Judge Miller is referenced, their full identity and jurisdiction are not specified, which could cause confusion if there are multiple judges with similar names."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "the box",
+        "question": "Which specific box is being referred to for storing the originals? (e.g., location, label, or description of the box)",
+        "priority": "HIGH",
+        "reason": "Without clear identification of the box, there is risk of misplacing or failing to secure the original documents, which could impact evidence integrity and chain of custody."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "until the case is over",
+        "question": "What is the specific end date or event that defines when the case is considered 'over' for document retention purposes?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the retention period could lead to premature disposal or release of originals, potentially violating legal or procedural requirements."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is User B asking about? The antecedent for 'you' is unclear based on prior turns.",
+        "priority": "HIGH",
+        "reason": "Pronoun 'you' lacks a clear referent, making it ambiguous who is being referred to. This could lead to miscommunication about responsibilities or actions."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "not in your possession",
+        "question": "What defines 'possession' in this context? Does it include digital access, physical custody, or both?",
+        "priority": "CRITICAL",
+        "reason": "Legal responsibility may depend on the definition of possession; ambiguity could lead to compliance or liability issues."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is 'you' in this context? Is it User A, a paralegal, or another party?",
+        "priority": "HIGH",
+        "reason": "Responsibility assignment is unclear without explicit identification of the party referenced."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "medical",
+        "ambiguous_phrase": "back injury",
+        "question": "What are the details of the back injury (diagnosis, date of injury, treatment, current status)?",
+        "priority": "HIGH",
+        "reason": "Details about the back injury are necessary to assess medical needs, legal implications, and any required accommodations or documentation."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "during that time",
+        "question": "What is the exact time period being referenced? (e.g., specific dates or date range)",
+        "priority": "HIGH",
+        "reason": "Without a defined time window, it is unclear when the business impact and supplier communications should be evaluated, which is essential for accurate analysis and record-keeping."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "communications with the supplier",
+        "question": "Where did the communications with the supplier take place (e.g., physical location, email, phone)?",
+        "priority": "HIGH",
+        "reason": "Knowing the location or medium of communication may be relevant for privacy, record retrieval, and compliance purposes."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sarah",
+        "question": "Who is Sarah (full name, role, contact information), and does she have authorized access to the relevant records?",
+        "priority": "CRITICAL",
+        "reason": "Without clear identification and access level, privacy and data security may be compromised, and it is unclear if Sarah is the correct person to provide the records."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that period",
+        "question": "What is the exact date range referred to by 'that period'?",
+        "priority": "HIGH",
+        "reason": "The request for records is ambiguous without a defined time window, risking incomplete or irrelevant data retrieval."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "her records",
+        "question": "Where are Sarah's records stored (physical or digital location), and how can they be accessed?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the storage location is necessary for efficient retrieval and to assess any logistical or security concerns."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "where\u2019s the box now?",
+        "question": "What is the precise current location of the physical document box (room, area, or address)?",
+        "priority": "HIGH",
+        "reason": "The question asks for the box's location, but does not specify or confirm the exact place, which is essential for document retrieval, chain of custody, and legal compliance."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "the laptop",
+        "question": "Which laptop is being referred to (make/model, owner, purpose)? Where is it currently located? What data or documents are stored on it?",
+        "priority": "HIGH",
+        "reason": "The reference to 'the laptop' is vague: there is no specification of which laptop, its location, who has access, or what information it contains. This is essential for tracking evidence, privacy, and technical access."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "those dates",
+        "question": "Which exact dates are being referred to for the copies needed?",
+        "priority": "HIGH",
+        "reason": "The phrase 'those dates' is vague and lacks explicit reference to specific dates, which is essential for ensuring the correct documents are copied and for legal compliance."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "March through August last year",
+        "question": "What are the exact start and end dates for 'March through August last year' (e.g., March 1 to August 31, 2023)?",
+        "priority": "HIGH",
+        "reason": "Precise date range is required to ensure only the correct documents are copied and to avoid missing or including unintended records."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later today",
+        "question": "What is the exact time or deadline by which the checklist and timeline will be emailed?",
+        "priority": "HIGH",
+        "reason": "Without a specific time, the recipient cannot plan or follow up effectively, and there is risk of delay or missed expectations."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "technical",
+        "ambiguous_phrase": "checklist and timeline",
+        "question": "What are the contents, format, and purpose of the checklist and timeline being emailed?",
+        "priority": "HIGH",
+        "reason": "The recipient needs to know what to expect, how to use the documents, and whether any technical requirements (e.g., file format, software) are needed."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after Wednesday",
+        "question": "What is the exact date or time period referred to by 'after Wednesday'?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to specific dates/times for clarity and scheduling; 'after Wednesday' is ambiguous without a calendar anchor."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after all this",
+        "question": "What is the specific time frame or event boundary referred to by 'after all this'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after all this' is temporally ambiguous; it is unclear what specific process or set of events must conclude before the break is deserved, which could impact scheduling or obligations."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "\u2018later\u2019 today",
+        "question": "What is the exact time or deadline for when the checklist email will be sent today?",
+        "priority": "HIGH",
+        "reason": "The phrase 'later today' is ambiguous and lacks a specific time reference. Without a clear deadline, recipients may be uncertain when to expect the checklist email, which could impact planning or follow-up actions."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if anything comes up",
+        "question": "What is the expected timeframe or deadline for Tom to reach out if something comes up?",
+        "priority": "HIGH",
+        "reason": "Without a specified timeframe, it is unclear whether Tom should reach out immediately, within the day, or at some later point, which could affect responsiveness and task resolution."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "person",
+        "ambiguous_phrase": "anything",
+        "question": "What types of issues or topics should Tom reach out about? Is there a defined scope or priority for what qualifies as 'anything'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'anything' is vague and could lead to ambiguity about what matters warrant communication, potentially resulting in missed or delayed reporting of important issues."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "last year",
+        "resolved_entity": "March through August of the previous calendar year (relative to the contract dates discussed for discovery)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "next Friday",
+        "resolved_entity": "The Friday following the current conversation date (the discovery deadline for this case)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "the box",
+        "resolved_entity": "Physical storage box containing original business documents relevant to the lawsuit",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "that period",
+        "resolved_entity": "March through August of the previous calendar year (the timeframe relevant to the supplier contract and discovery requests)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "those dates",
+        "resolved_entity": "March through August of the previous calendar year (the period relevant to the supplier contract and discovery requests)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "last year",
+        "resolved_entity": "The previous calendar year relative to the current conversation (referring to March through August for document collection)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 52,
+        "ambiguous_phrase": "later today",
+        "resolved_entity": "After the current meeting/session on the same day as this conversation (when the checklist and timeline will be emailed)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 58,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current meeting/session (when the checklist email will be sent)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 30
+  }
+}

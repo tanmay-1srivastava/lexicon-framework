@@ -1,0 +1,685 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the latest reports",
+        "question": "Which specific reports are being referred to (type, date, version, location)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which reports are needed, there is ambiguity about what should be provided or reviewed, which can delay or compromise the workflow."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the anomaly flagged yesterday",
+        "question": "What is the specific nature, identifier, or details of the anomaly flagged yesterday (e.g., type, system, timestamp, location)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the anomaly flagged yesterday' lacks essential details needed to identify which anomaly is being referenced. Without a unique identifier, type, or context, it is ambiguous\u2014especially in a lab environment where multiple anomalies may be tracked. This can lead to confusion, miscommunication, or failure to address the correct issue."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday",
+        "question": "What is the exact date and time referred to by 'yesterday'?",
+        "priority": "HIGH",
+        "reason": "The term 'yesterday' is relative and can be ambiguous without a reference date. For accurate tracking and audit purposes, the exact date and time of the flagged anomaly should be specified."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to? Please specify the full name, title, or role of the person being referenced.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' lacks a clear antecedent in the prior context, making it ambiguous whose response is being requested. Accurate identification is necessary for proper tracking of communications and responsibilities."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Did you update the log?",
+        "question": "When was the log supposed to be updated, and has it been updated as of now?",
+        "priority": "HIGH",
+        "reason": "The timing of the log update is important for traceability and audit purposes, especially in a research or compliance context."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "config",
+        "ambiguous_phrase": "protocol revision from the coordinator",
+        "question": "Which protocol was revised, what is the new version or label, and where is the updated protocol located?",
+        "priority": "HIGH",
+        "reason": "Without specifying the protocol, version, or location, it is unclear which document or procedure is being referenced, which could lead to miscommunication or use of outdated protocols in a biomedical research setting."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "the coordinator",
+        "question": "Who is the coordinator (full name, title, department), and do they have authority to revise protocols?",
+        "priority": "CRITICAL",
+        "reason": "Identifying the coordinator is necessary for accountability and ensuring that protocol changes are authorized and traceable."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "timing on the next incubation",
+        "question": "What is the exact timing or schedule for the next incubation, and are there any changes to the previously scheduled time (Friday, 9:00 AM)?",
+        "priority": "HIGH",
+        "reason": "The phrase references 'timing' but does not specify whether the scheduled incubation time is being changed, what the new proposed time is, or what adjustments are under consideration. This is essential for accurate scheduling and protocol adherence."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "plan for tomorrow morning",
+        "question": "What is the exact time for 'tomorrow morning'? Is it aligned with the existing 'Team Protocol Review \u2013 8:30 AM' or the 'Scheduled incubation: Friday, 9:00 AM', or is a new time being proposed?",
+        "priority": "CRITICAL",
+        "reason": "Precise timing is essential for scheduling and coordination, especially when multiple calendar events are close together. Ambiguity could cause conflicts or missed actions."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "where can I find it?",
+        "question": "What is the exact location, system, or platform where 'it' can be accessed (e.g., shared drive path, email inbox, physical location)?",
+        "priority": "CRITICAL",
+        "reason": "The request for location is vague; without specifying the type of resource or its storage medium, it is unclear where the user should look, which could delay access to critical information."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "When exactly does 'later' refer to? Is there a specific deadline or time frame for the review?",
+        "priority": "HIGH",
+        "reason": "'Later' is a vague temporal reference. Without a specific time or deadline, it is unclear when the review will occur, which could impact coordination or time-sensitive tasks."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "technical",
+        "ambiguous_phrase": "maintenance request",
+        "question": "Which equipment is the maintenance request for, and has the request form been completed with all required details (type, location, issue description)?",
+        "priority": "HIGH",
+        "reason": "Without specifying the equipment and confirming completion of the maintenance request, facilities may not know what needs attention or have sufficient information to proceed."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "notify facilities",
+        "question": "Who specifically in the facilities team will be notified, and what is their contact information or access level?",
+        "priority": "CRITICAL",
+        "reason": "Identifying the recipient ensures the notification reaches the correct party and clarifies responsibility for follow-up."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "notify facilities",
+        "question": "When will facilities be notified, and what is the expected timeline for their response or action?",
+        "priority": "HIGH",
+        "reason": "Knowing the timing helps track progress and set expectations for maintenance resolution."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "Can you forward me the request email?",
+        "question": "Who is the sender and recipient of the request email? Is User A authorized to receive this information?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are important; without specifying sender/recipient and confirming authorization, sensitive information could be improperly shared."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "sample IDs for phase three",
+        "question": "Which specific sample IDs are being referenced for phase three, and where is the verification record located?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification of the sample IDs and their verification status, there is risk of data misattribution or experimental error. The location of the verification record is also necessary for audit and traceability."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "phase three",
+        "question": "What are the exact start and end dates/times for 'phase three' of the experiment?",
+        "priority": "HIGH",
+        "reason": "The timeframe for 'phase three' is not defined, which could lead to confusion about which data or samples are relevant for verification."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "person",
+        "ambiguous_phrase": "Who ran the final assay?",
+        "question": "What is the full name, title, department, and contact information of the person who performed the final assay?",
+        "priority": "HIGH",
+        "reason": "Identifying the responsible individual is essential for accountability, follow-up questions, and compliance with lab protocols. The current phrasing lacks any specific person details."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "lab/test",
+        "ambiguous_phrase": "final assay",
+        "question": "What is the exact type, date, time, and location of the 'final assay' referenced?",
+        "priority": "HIGH",
+        "reason": "The term 'final assay' is ambiguous without specifying which assay, when it was performed, and where. This information is necessary for accurate tracking and validation of experimental results."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "his notes",
+        "question": "Whose notes are being referred to? Specify the full name or identifier of 'he'.",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'his' is unclear in this turn, making it ambiguous whose notes should be added to the report. This is essential for accurate documentation and attribution."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "shared drive",
+        "question": "Which shared drive is being referenced? Specify the full path or name.",
+        "priority": "HIGH",
+        "reason": "Without the exact location or name of the shared drive, it is unclear where to find or place the notes, risking misplacement or access issues."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "box of new pipette tips",
+        "question": "Which specific box of new pipette tips is being referred to (brand, size, lot number, location)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'box of new pipette tips' is ambiguous; multiple types, sizes, or brands may exist in the lab. Without specifying which box, there is risk of using incorrect consumables, which could affect experimental results or inventory tracking."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who specifically is 'you' in this context (full name or role)?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'you' is used without clear antecedent in this turn. For audit trails or accountability, it is important to know which lab member was responsible for retrieving the pipette tips."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "in a minute",
+        "question": "What is the exact timeframe for 'in a minute'? Is there a deadline or urgency associated with retrieving the items?",
+        "priority": "HIGH",
+        "reason": "The phrase 'in a minute' is vague and does not specify an exact time. In a lab environment, timing can be critical for workflow and coordination."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "config",
+        "ambiguous_phrase": "protocol document",
+        "question": "Which version or file path of the protocol document is being referenced?",
+        "priority": "HIGH",
+        "reason": "Without specifying the version or location, it's unclear which protocol document should be updated or checked, risking confusion or errors in the workflow."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "person",
+        "ambiguous_phrase": "coordinator",
+        "question": "Who specifically is the coordinator (full name, title, department)?",
+        "priority": "HIGH",
+        "reason": "The identity of the coordinator is not specified, which could cause ambiguity if there are multiple coordinators or if someone needs to verify the changes."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after the coordinator's changes",
+        "question": "When were the coordinator's changes made, and what is the expected deadline for updating the protocol document?",
+        "priority": "HIGH",
+        "reason": "The timing of the changes and the update deadline are not specified, which could lead to missed deadlines or outdated documentation being used."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "committee",
+        "question": "Which committee is being referenced? What are the names or roles of its members?",
+        "priority": "HIGH",
+        "reason": "The committee's composition is unclear, which affects targeted communication and accountability for protocol review."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "config",
+        "ambiguous_phrase": "new version",
+        "question": "What is the exact label, version number, or filename of the 'new version' being circulated?",
+        "priority": "HIGH",
+        "reason": "Lack of specificity about the document version could result in confusion or distribution of outdated protocols."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "archive the old document",
+        "question": "Which specific document should be archived (exact file name and location), and where should it be archived (destination path, permissions)?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the exact document and archive location, there is risk of archiving the wrong file or failing to meet compliance/traceability requirements."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow\u2019s session",
+        "question": "What is the exact date and time of 'tomorrow\u2019s session' being referenced?",
+        "priority": "HIGH",
+        "reason": "The phrase 'tomorrow\u2019s session' is temporally ambiguous without explicit date/time. While the calendar_next metadata suggests a 'Team Protocol Review \u2013 8:30 AM', explicit confirmation is needed to ensure all parties are referencing the same event, especially for documentation or scheduling purposes."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "results in tomorrow\u2019s session",
+        "question": "What specific results are expected to be presented or discussed in the session?",
+        "priority": "CRITICAL",
+        "reason": "The term 'results' is vague; it is unclear whether this refers to protocol document feedback, experimental data, or another deliverable. Clarifying this ensures all participants are prepared and expectations are aligned."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this time",
+        "question": "What is the specific event or session being referred to by 'this time'?",
+        "priority": "HIGH",
+        "reason": "'This time' is a deictic reference that lacks explicit temporal resolution. Without knowing which event or session is meant, the context of the statement is ambiguous, especially for record-keeping or future reference."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "tomorrow morning",
+        "resolved_entity": "Next morning following this team discussion (planned time for follow-up experiment review and action items)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "Protocol revision document from the coordinator (referenced in previous turns)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current team meeting/session (when User A will review the protocol revision document)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "in a minute",
+        "resolved_entity": "Shortly after the current conversation (User A will retrieve the box of new pipette tips)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "tomorrow\u2019s session",
+        "resolved_entity": "Next scheduled team meeting for experiment results review (planned for tomorrow morning as discussed in turn 17)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 4,
+        "entity_type": "technical",
+        "ambiguous_phrase": "them",
+        "question": "What specific items/documents is User B referring to when saying 'let me grab them from my desk'?",
+        "priority": "HIGH",
+        "reason": "The referent for 'them' is not specified in this turn, making it unclear what User B intends to retrieve. This ambiguity could impact task completion or communication clarity."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I did. I spoke to him about the issue.",
+        "question": "When exactly did the conversation with Alex Lee take place?",
+        "priority": "HIGH",
+        "reason": "The timing of the discussion may impact experiment progress, follow-up actions, or coordination with other scheduled events."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the issue",
+        "question": "What specific issue was discussed with Alex Lee?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the issue, it is unclear what was addressed or if further action is required."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Was anyone else present during the conversation with Alex Lee, or was it a private discussion?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the participants is important for privacy, accountability, and follow-up."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "config",
+        "ambiguous_phrase": "electronic document",
+        "question": "Which electronic document was changed (name, version, location, format, and purpose)?",
+        "priority": "HIGH",
+        "reason": "Without specifying which document was modified, it is unclear what changes were made, where to find the document, or its relevance to the ongoing work."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I can send it over",
+        "question": "When will the document be sent (exact time or deadline)?",
+        "priority": "HIGH",
+        "reason": "Timing of document delivery may impact downstream tasks or meetings, especially with an upcoming experiment results discussion."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who does 'she' refer to? Please specify the full name or role.",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent, making it ambiguous who performed the sharing action. This is essential for accountability and traceability."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday afternoon",
+        "question": "What is the exact date and time referred to by 'yesterday afternoon'?",
+        "priority": "HIGH",
+        "reason": "Temporal reference is relative and not resolved to a specific date/time, which is necessary for accurate record-keeping and follow-up."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "config|document",
+        "ambiguous_phrase": "it",
+        "question": "What specific document or item did 'she' share? Please specify the file name, type, or content.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'it' is used without specifying what was shared, leading to ambiguity about the subject of the action. This is crucial for clarity and operational continuity."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow or wait until Monday",
+        "question": "What are the exact dates being referred to as 'tomorrow' and 'Monday'?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling is required for experiment planning; ambiguous temporal references can lead to miscommunication or missed appointments."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "set the next experiment",
+        "question": "What is the exact time and location for the proposed experiment appointment?",
+        "priority": "CRITICAL",
+        "reason": "Experiment appointments require clear time and location details for resource allocation and participant coordination."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "config",
+        "ambiguous_phrase": "the updated compound storage plan",
+        "question": "Which version or label of the compound storage plan is being referenced, and where is it located?",
+        "priority": "HIGH",
+        "reason": "The reference to an 'updated compound storage plan' lacks version, location, and authorship details, which are necessary for team members to identify and access the correct document."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What specific event or time does 'after this' refer to?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after this' is temporally ambiguous; it is unclear what event or meeting is being referenced, which could lead to misalignment in follow-up actions."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "'Drug Storage'",
+        "question": "What are the access permissions for the 'Drug Storage' folder? Who can view or edit its contents?",
+        "priority": "CRITICAL",
+        "reason": "If the folder contains sensitive or regulated information, it is essential to confirm who has access to ensure privacy and compliance with lab protocols."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "'Drug Storage'",
+        "question": "What specific file or document contains the updated compound storage plan within the 'Drug Storage' folder?",
+        "priority": "HIGH",
+        "reason": "The folder may contain multiple files; specifying the exact file name or version is necessary to avoid ambiguity and ensure the correct document is referenced."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "HARDWARE/EQUIPMENT",
+        "ambiguous_phrase": "equipment malfunction",
+        "question": "Which specific equipment experienced the malfunction (type, description, location, specifications)?",
+        "priority": "HIGH",
+        "reason": "Without identifying the exact equipment, it is impossible to assess the impact, assign responsibility, or initiate repairs."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "LAB/TEST",
+        "ambiguous_phrase": "new entry in the test log",
+        "question": "What is the date, time, and content of the new test log entry regarding the malfunction?",
+        "priority": "HIGH",
+        "reason": "The details of the log entry are necessary to understand the nature, timing, and severity of the malfunction."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "DIRECTORY/FOLDER",
+        "ambiguous_phrase": "test log",
+        "question": "Where is the test log located (full path, access permissions)?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the location and access of the test log is required for verification and follow-up."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "HARDWARE/EQUIPMENT",
+        "ambiguous_phrase": "The PCR machine",
+        "question": "Which specific PCR machine is being referred to (e.g., model, serial number, or lab location if multiple exist)?",
+        "priority": "HIGH",
+        "reason": "Precise identification is necessary for troubleshooting, maintenance logs, and to avoid confusion if multiple PCR machines are present in the lab."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "TECHNICAL/TEMPORAL",
+        "ambiguous_phrase": "since Monday",
+        "question": "What is the exact date corresponding to 'Monday' (e.g., June 3, 2024)?",
+        "priority": "HIGH",
+        "reason": "Exact dates are required for accurate incident tracking, reporting, and correlating with other events or logs."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact date and time referred to by 'this morning'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this morning' is relative and lacks a specific timestamp, which is necessary for audit trails and time-sensitive actions."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "deployment|task|temporal",
+        "ambiguous_phrase": "Will do.",
+        "question": "What specific action will User B perform, and what is the deadline or expected completion time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Will do.' is a minimal confirmation lacking explicit detail about the task, its scope, and timing. Without specifying the action or deadline, there is ambiguity about what is being confirmed and when it will be completed, which is essential for tracking task resolution and accountability."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her'? What is her full name, title, and role in the lab?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'her' is used without clear antecedent; identity and access level of the person who double-checked is unknown, which is essential for accountability and privacy tracking."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "just before lunch",
+        "question": "What exact time did Sam finish it? Please specify the time (e.g., 11:45 AM).",
+        "priority": "HIGH",
+        "reason": "Precise timing may be critical for experiment tracking, data integrity, or audit trails. 'Just before lunch' is ambiguous and could lead to confusion about when the task was completed."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "What is Sam's full name and role in the lab?",
+        "priority": "HIGH",
+        "reason": "There may be multiple people named Sam, or external reviewers may require full identification for accountability or follow-up."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "technical",
+        "ambiguous_phrase": "them",
+        "question": "What specific files or data were uploaded? Please specify filenames, types, or dataset identifiers.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'them' is ambiguous\u2014without specifying what was uploaded, it is unclear which files or datasets are now available, which can impact data tracking, reproducibility, and downstream analysis."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact date and time of the upload?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for version control, audit logs, and correlating uploads with other events or deadlines."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "by the fridge",
+        "question": "Which fridge is being referred to? Is it the main lab fridge, a specific unit, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'by the fridge' is spatially vague. In a lab with multiple fridges or storage areas, specifying which fridge is critical for accurate retrieval or identification."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "everything's current now",
+        "question": "What is the exact reference time or date for 'current'? Does this mean all data/files are up to date as of today, this hour, or another specific timestamp?",
+        "priority": "HIGH",
+        "reason": "Without a precise timestamp, 'current' is ambiguous\u2014this could impact data validity, audit trails, or downstream analysis if updates occurred after the user's statement."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "technical",
+        "ambiguous_phrase": "everything",
+        "question": "What specific items or datasets are included in 'everything'? Is there a checklist or inventory confirming all required files, configurations, or results are up to date?",
+        "priority": "HIGH",
+        "reason": "The scope of 'everything' is undefined; missing or outdated items could be overlooked, leading to incomplete analysis or reporting errors."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I'll handle that",
+        "question": "When will User B handle the task? Is there a deadline or expected completion time?",
+        "priority": "HIGH",
+        "reason": "No timing or deadline is specified, which is essential for accountability and coordination, especially in a lab environment with scheduled discussions."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last time",
+        "question": "What specific event or incident is being referred to as 'last time'?",
+        "priority": "HIGH",
+        "reason": "Without clarification, it is unclear what type of 'surprise' occurred previously, which could impact risk assessment or preparation for future events."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "right now",
+        "resolved_entity": "Current time (when User A is in the Data Analysis Room during the team discussion)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "my desk",
+        "resolved_entity": "User A's personal workspace within the Biomedical Research Lab (where experiment data is stored)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "Thursday",
+        "resolved_entity": "The most recent Thursday before the current conversation (when the reagent batch from Sigma arrived for the experiment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "send it over",
+        "resolved_entity": "Share the updated electronic document with the team (via email or shared drive as per lab protocol)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "yesterday afternoon",
+        "resolved_entity": "Afternoon of the day before the current conversation (when the document was shared by a team member)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The day after the current conversation (potential date for the next experiment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "Monday",
+        "resolved_entity": "The upcoming Monday after the current conversation (alternative date for the next experiment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "after this",
+        "resolved_entity": "After the current team discussion session (when User A will check with the team)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "shared drive",
+        "resolved_entity": "Lab's shared digital storage system (where the 'Drug Storage' plan is located)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "before I forget",
+        "resolved_entity": "Prior to the end of the current team discussion (reminder to mention the new test log entry)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "since Monday",
+        "resolved_entity": "From the most recent Monday up to the current conversation (period during which the PCR machine has been malfunctioning)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "this morning",
+        "resolved_entity": "Morning of the current conversation date (when User A sent the information)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "this morning",
+        "resolved_entity": "Morning of the current conversation date (when User A uploaded the files)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "over by the fridge",
+        "resolved_entity": "Area near the laboratory refrigerator (where the referenced item is located)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "before we wrap up",
+        "resolved_entity": "Before the end of the current team discussion session (final opportunity to address outstanding items)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (when all documentation and updates are confirmed as current)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

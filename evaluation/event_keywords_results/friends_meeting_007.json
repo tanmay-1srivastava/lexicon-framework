@@ -1,0 +1,918 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring specifically to Dolores Park, or a more precise location within the park (e.g., entrance, playground, specific area)?",
+        "priority": "HIGH",
+        "reason": "Precise location is important for meeting coordination, navigation, and context-aware actions. 'Here' is resolved to Dolores Park via GPS, but lacks granularity within the park."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Heading over now",
+        "question": "What is the expected arrival time at the playground?",
+        "priority": "HIGH",
+        "reason": "Without a clear time estimate, coordination or planning for meeting at the playground may be ambiguous."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after today",
+        "question": "What specific time or event does 'after today' refer to? Is it immediately after arriving at the park, after a particular activity, or after a scheduled event?",
+        "priority": "HIGH",
+        "reason": "'After today' is temporally vague and could refer to different points in time. Clarifying this is important for scheduling or contextual actions, especially given the upcoming calendar event."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "location",
+        "ambiguous_phrase": "sugar",
+        "question": "Where does the user intend to get 'some sugar'? Is this a reference to a specific location (e.g., a cafe, food stand, or picnic area) within Dolores Park or nearby?",
+        "priority": "HIGH",
+        "reason": "The phrase 'could use some sugar' is ambiguous regarding location and action. Clarifying where or how the user intends to obtain sugar is important for spatial tracking and potential follow-up actions."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in the immediate context, making it ambiguous who is being discussed. This is essential for understanding the conversation and any related actions or responsibilities."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "a shift at the cafe",
+        "question": "What are the specific details (time, duration) of the shift at the cafe?",
+        "priority": "CRITICAL",
+        "reason": "While the cafe is resolved as 'Bean Cycle Cafe, Valencia St', the timing and duration of the shift are not specified. This information is important for scheduling, coordination, or follow-up."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to? Please specify the full name or clear identifier.",
+        "priority": "HIGH",
+        "reason": "The pronoun 'him' is used without a clear antecedent in this turn, making it ambiguous who User A is waiting to spot. This is essential for accurate tracking and coordination."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What is the specific time frame referred to by 'later'?",
+        "priority": "HIGH",
+        "reason": "The term 'later' is vague and could refer to any time after the current moment; a specific time or time window is needed for clarity and scheduling."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she'? The specific identity of the person being referenced is missing.",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent in prior turns, making it ambiguous who is being discussed. This is essential for resolving any further questions about her actions or contributions."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Did she say which snacks she's bringing?",
+        "question": "What are the specific snacks being brought, and is there confirmation of her attendance?",
+        "priority": "CRITICAL",
+        "reason": "The question asks about snacks, but there is no information on what snacks are being brought or confirmation that 'she' will attend. This is important for planning and expectations for the group event."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "config",
+        "ambiguous_phrase": "Which playlist is on?",
+        "question": "What is the name or source of the current playlist being played?",
+        "priority": "HIGH",
+        "reason": "The user is asking for specific information about the audio environment, but no details about the playlist (name, owner, platform, or contents) are provided. This is necessary for clarity, especially if multiple playlists are possible or if others may want to join or change it."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before we start",
+        "question": "What is the exact start time or event being referenced?",
+        "priority": "HIGH",
+        "reason": "The phrase 'before we start' is temporally vague\u2014it's unclear what activity is starting and when. This matters for scheduling, coordination, and ensuring all participants are aware of the timeline."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Brownie, definitely.",
+        "question": "What is the context or timing for choosing 'Brownie'? Is this for a snack order, a group snack selection, or another purpose, and when is it needed?",
+        "priority": "HIGH",
+        "reason": "The selection of 'Brownie' lacks explicit context\u2014it's unclear what event or time this choice applies to, which could lead to confusion about preparation or delivery."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "chemistry final",
+        "question": "What is the exact date, time, and location of the chemistry final?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'next week' is vague; for scheduling, reminders, and support, the precise date, time, and location of the exam are required."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "Liam",
+        "question": "What is Liam's full name and role (e.g., tutor, classmate, study partner)?",
+        "priority": "HIGH",
+        "reason": "Only the first name 'Liam' is given; full identification is needed for clarity, especially if there are multiple Liams or for privacy/access tracking."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' specifically referring to in this context?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'him' is ambiguous without explicit antecedent; clarity is needed to ensure correct person is referenced for note-sharing."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "ask him for notes",
+        "question": "Does User A have permission or access to receive notes from 'him'? Is sharing allowed?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access level for academic materials are not defined; sharing notes may require explicit permission or policy compliance."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I get lost",
+        "question": "When or under what specific circumstances would User A ask for notes? Is there a defined time or trigger?",
+        "priority": "HIGH",
+        "reason": "Temporal trigger for action ('if I get lost') is vague; specifying when User A would request notes clarifies workflow and expectations."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam? What is Sam's full name and relationship to User A?",
+        "priority": "HIGH",
+        "reason": "Sam is referenced as holding Monopoly, but there is no identifying information. This is important for tracking participants and privacy/access."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "location",
+        "ambiguous_phrase": "Monopoly\u2019s with Sam",
+        "question": "Where is Monopoly being played with Sam? Is it at Dolores Park or another location?",
+        "priority": "HIGH",
+        "reason": "The location of the Monopoly game is unclear, which could impact spatial tracking and context for appointments or privacy."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Just the cards",
+        "question": "What cards are being referred to? Is this related to an event, appointment, or specific activity?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'Just the cards' is vague and could refer to a game, study materials, or another activity. Clarification is needed for accurate entity tracking."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for now",
+        "question": "What is the specific time frame or duration intended by 'for now'? When will the activity (playing Uno) end or be re-evaluated?",
+        "priority": "HIGH",
+        "reason": "'For now' is temporally vague and does not specify how long Uno will be played or when/if a switch to another activity (e.g., Monopoly) will occur. This could impact scheduling, coordination, or expectations for subsequent activities."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess? What is Jess's full name or unique identifier?",
+        "priority": "HIGH",
+        "reason": "The reference to 'Jess' assumes prior knowledge of this person's identity. If there are multiple people named Jess or if Jess has not been explicitly identified in previous turns, this could cause confusion about who is being addressed or taking action."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Go for it",
+        "question": "What specific action or event is Jess being prompted to begin, and at what exact time should this occur?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Go for it' is vague without explicit context about what Jess is supposed to do (e.g., start the Uno game, play a card, etc.) and when. This could lead to ambiguity in group coordination or record-keeping."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to? Is it Jess or another person at the table?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'her' lacks a clear antecedent; without explicit identification, conversation context and actions are ambiguous."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "What is Sam's full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "Only a first name is given for Sam, which could lead to confusion if there are multiple people named Sam in the group."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who is 'he' referring to? Is it Brian or another person?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'he' could be ambiguous if there are multiple males in context; explicit reference ensures clarity."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person",
+        "ambiguous_phrase": "Did he confirm with you?",
+        "question": "What does 'confirm' mean in this context? Confirm attendance, time, or something else?",
+        "priority": "HIGH",
+        "reason": "The nature of the confirmation is unspecified, which could lead to misunderstandings about expectations or plans."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "location",
+        "ambiguous_phrase": "the cooler",
+        "question": "Which cooler is being referred to? Is there more than one cooler present at the location?",
+        "priority": "HIGH",
+        "reason": "If there are multiple coolers or if the location of the cooler is not clear, the request could be ambiguous and lead to confusion about which cooler to retrieve drinks from."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "those drinks from the cooler",
+        "question": "Where is the cooler located within Dolores Park, and is the lemonade accessible to the person being asked?",
+        "priority": "CRITICAL",
+        "reason": "The request for lemonade assumes shared context about the location and contents of the cooler, but does not specify its exact location or accessibility, which could lead to confusion if multiple coolers or locations exist."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess? What is Jess's full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "Jess is referenced as a participant, but there is no clear identification or context for who Jess is. This could lead to confusion if there are multiple people named Jess or if Jess's role is unclear."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "person",
+        "ambiguous_phrase": "Is Jess playing Monopoly with us too?",
+        "question": "Who is included in 'us'? What are the names or identifiers of all current Monopoly players?",
+        "priority": "HIGH",
+        "reason": "The group composition is ambiguous. Without a clear list of participants, it is unclear who 'us' refers to, which could cause confusion about who is involved in the game."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "tokens",
+        "question": "Are all required Monopoly tokens present and accounted for, and what is their current physical location?",
+        "priority": "HIGH",
+        "reason": "The physical presence and completeness of the tokens are necessary for gameplay; missing or incomplete information could delay or prevent setup."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "technical|object",
+        "ambiguous_phrase": "that stack of bills",
+        "question": "Which specific stack of bills is being referred to? (e.g., Monopoly money, denomination, location on the board/table, or physical cash?)",
+        "priority": "HIGH",
+        "reason": "The phrase 'that stack of bills' is ambiguous in the context of a board game (Monopoly) where multiple stacks of bills of different denominations may exist. Clarifying which stack is meant is necessary for accurate action and to avoid confusion among participants."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "person",
+        "ambiguous_phrase": "Who\u2019s starting first round?",
+        "question": "Who is designated to start the first round? Is there a specific person, or is the selection process unclear?",
+        "priority": "HIGH",
+        "reason": "The identity of the starting player is ambiguous, which is critical for game flow and fairness. Without clarification, participants may be confused or dispute the order."
+      },
+      {
+        "turn_id": 61,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Who is Sam? What is Sam's full name and role in the game?",
+        "priority": "HIGH",
+        "reason": "Identifying Sam is necessary for clarity, especially if there are multiple participants or if Sam's actions impact game outcomes."
+      },
+      {
+        "turn_id": 63,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "This is going well",
+        "question": "What is the timeframe or outcome being referenced by 'going well'? Is there a specific goal, deadline, or event that defines success or failure?",
+        "priority": "HIGH",
+        "reason": "The phrase 'going well' is subjective and lacks context about what constitutes 'well' in this scenario, making it unclear whether there are temporal or outcome-based criteria being referenced."
+      },
+      {
+        "turn_id": 63,
+        "entity_type": "location",
+        "ambiguous_phrase": "I\u2019m broke",
+        "question": "Is 'broke' referring to the game context (e.g., Monopoly, Uno, etc.) or real-life finances? What is the specific location or system where this status applies?",
+        "priority": "HIGH",
+        "reason": "The term 'broke' could refer to in-game currency or real-world finances; without explicit context, the location or system affected is ambiguous."
+      },
+      {
+        "turn_id": 65,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "hospital fees",
+        "question": "What hospital fees are being referenced? Is there a specific medical appointment, procedure, or event triggering this payment?",
+        "priority": "CRITICAL",
+        "reason": "Without details about the hospital fees (type, date, reason, location), it is unclear what medical event or appointment is involved, which is essential for tracking medical/financial obligations."
+      },
+      {
+        "turn_id": 65,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Pay hospital fees",
+        "question": "When are the hospital fees due? Is there a deadline or specific time for payment?",
+        "priority": "HIGH",
+        "reason": "Temporal information is missing; knowing the payment deadline is important for scheduling and compliance."
+      },
+      {
+        "turn_id": 69,
+        "entity_type": "person",
+        "ambiguous_phrase": "she",
+        "question": "Who is 'she' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'she' lacks a clear antecedent, making it ambiguous who is being discussed. This is essential for understanding the subject of the statement and any related actions or attributes."
+      },
+      {
+        "turn_id": 71,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this time",
+        "question": "What is the specific time or event being referenced by 'this time'? Is it related to a particular appointment, activity, or deadline?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity prevents clear tracking of what User A is committing to pay attention to, which may impact scheduling, reminders, or follow-up actions."
+      },
+      {
+        "turn_id": 73,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Six",
+        "question": "Does 'Six' refer to 6:00 PM, and is this the start time of the Chemistry Exam Study Group or another event?",
+        "priority": "HIGH",
+        "reason": "Temporal precision is required to confirm the exact event and ensure correct scheduling, especially since 'six' could refer to different events or times."
+      },
+      {
+        "turn_id": 73,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "around five-thirty",
+        "question": "Is 'around five-thirty' the intended departure time, and does this allow sufficient travel time to the event at 6:00 PM?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in departure time could result in being late for the scheduled event; explicit confirmation of timing is needed."
+      },
+      {
+        "turn_id": 75,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before I leave",
+        "question": "What exact time should the reminder be set for? (e.g., 5:30 PM, or a specific number of minutes before leaving)",
+        "priority": "HIGH",
+        "reason": "The system cannot schedule an accurate reminder without a precise time; 'before I leave' is ambiguous and could lead to a missed or mistimed reminder."
+      },
+      {
+        "turn_id": 79,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Next time",
+        "question": "When exactly is 'next time'? What date and time is being referred to?",
+        "priority": "HIGH",
+        "reason": "'Next time' is vague and does not specify a concrete date or event, which is important for planning or tracking commitments."
+      },
+      {
+        "turn_id": 81,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "first",
+        "question": "What is the expected end time for 'this epic game' and how does it relate to the next scheduled event (Chemistry Exam Study Group at 6:00 PM)?",
+        "priority": "HIGH",
+        "reason": "The timing of finishing the game is ambiguous and may conflict with the upcoming calendar event. Clarifying the time window is important for schedule management."
+      },
+      {
+        "turn_id": 81,
+        "entity_type": "location",
+        "ambiguous_phrase": "this epic game",
+        "question": "Where exactly is 'this epic game' taking place within Dolores Park (e.g., field, playground, picnic area)?",
+        "priority": "HIGH",
+        "reason": "While the general location is Dolores Park, the specific spot for the game is not defined, which could be relevant for coordination or future reference."
+      },
+      {
+        "turn_id": 81,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "finish this epic game",
+        "question": "Is 'finishing this epic game' considered an appointment or event that should be tracked or scheduled formally?",
+        "priority": "CRITICAL",
+        "reason": "If this activity affects other scheduled events, it may need to be tracked as an appointment to avoid conflicts."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Dolores Park (where the afternoon picnic is happening with friends to help Carlos unwind)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "Heading over now",
+        "resolved_entity": "Playground area at Dolores Park (where the group is meeting for the picnic)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "for a few minutes before we start",
+        "resolved_entity": "Short break to relax before starting games and activities at the picnic",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 73,
+        "ambiguous_phrase": "I'll head out around five-thirty so I\u2019m not late",
+        "resolved_entity": "Leaving Dolores Park around 5:30 PM to arrive on time for the Chemistry Exam Study Group (scheduled for 6:00 PM)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context and Calendar Metadata"
+      },
+      {
+        "turn_id": 75,
+        "ambiguous_phrase": "before I leave",
+        "resolved_entity": "Before leaving Dolores Park to attend the Chemistry Exam Study Group",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 81,
+        "ambiguous_phrase": "first, though",
+        "resolved_entity": "Before leaving for the Chemistry Exam Study Group, finish the current Monopoly game with friends at the picnic",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 41
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 4,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess? What is Jess's full name and relationship to the group?",
+        "priority": "HIGH",
+        "reason": "Jess is mentioned as bringing brownies, but her identity and connection to the group are not specified, which could be relevant for context or privacy."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "location",
+        "ambiguous_phrase": "space on the blanket",
+        "question": "Where exactly is the blanket located within the park? Is it still by the big oak tree near the playground?",
+        "priority": "HIGH",
+        "reason": "The phrase references a specific spot ('the blanket'), but does not confirm if the location remains the same as previously stated. Precise location is important for meeting up."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "We saved you some space",
+        "question": "How long will the space on the blanket be saved? Is there a time window for arrival?",
+        "priority": "HIGH",
+        "reason": "Temporal expectations are unclear; knowing if there is a deadline for arrival could affect planning."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "might be late",
+        "question": "How late might Brian be? Is there an estimated arrival time or updated ETA?",
+        "priority": "HIGH",
+        "reason": "The phrase 'might be late' is vague and does not specify how much delay to expect, which is important for planning and coordination."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "around 2",
+        "question": "What is the exact time Brian is expected to finish? Is it exactly 2:00 PM or an approximate window?",
+        "priority": "HIGH",
+        "reason": "Precise timing is important for coordination, especially since the event (Board Games at Dolores Park) is scheduled for 2:00 PM. Ambiguity could lead to confusion about when to expect Brian."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "finishes",
+        "question": "What activity or appointment is Brian finishing at 2? Is it work, a meeting, or another commitment?",
+        "priority": "CRITICAL",
+        "reason": "Knowing what Brian is finishing provides context for possible delays or location, which may affect his arrival time."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "let's start with a quick round",
+        "question": "What is the exact start time for the 'quick round'? Is it now, or after a specific event or person's arrival?",
+        "priority": "HIGH",
+        "reason": "The timing of the activity is ambiguous, especially since other participants (e.g., Brian, Sam) may not have arrived yet. This affects coordination and scheduling."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "quick round",
+        "question": "What is the duration or expected end time of the 'quick round'? How does it fit with the scheduled 'Board Games at Dolores Park at 2:00 PM'?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing the duration, there could be conflicts with the upcoming scheduled event, affecting planning."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Maybe around 3",
+        "question": "What is the exact expected arrival time for Sam? Is 'around 3' a confirmed time or an estimate?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for planning and coordination, especially since the calendar event is at 2:00 PM and Sam's arrival may affect group activities."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "she\u2019ll be here",
+        "question": "Does 'here' refer to the current location (16th St Mission BART Station) or the event location (Dolores Park)?",
+        "priority": "HIGH",
+        "reason": "Clarifying Sam's arrival location is important for meeting logistics and ensuring everyone is in the correct place."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "her tutoring session",
+        "question": "What is the end time of Sam's tutoring session? Is there a possibility of delay?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the session's end time helps assess the reliability of the estimated arrival and plan accordingly."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "mentioned hummus and pita",
+        "question": "When did 'she' mention bringing hummus and pita?",
+        "priority": "HIGH",
+        "reason": "The timing of the mention is unclear; knowing when this was said could affect planning or expectations for the event."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Jess put on her indie mix",
+        "question": "When did Jess put on her indie mix? Is this happening now, or was it earlier?",
+        "priority": "HIGH",
+        "reason": "Temporal context is unclear; knowing when the music started may affect understanding of current activity or mood."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess? Is she part of the group, or a third party? What is her role in the current context?",
+        "priority": "HIGH",
+        "reason": "Jess is mentioned without prior introduction or role definition; clarity on her identity and involvement is needed."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "her indie mix",
+        "question": "Where is the indie mix being played? Is it at the current location (16th St Mission BART Station), or somewhere else?",
+        "priority": "HIGH",
+        "reason": "Location of the music playback is ambiguous; this affects spatial context and group activity."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "first",
+        "question": "Where is the food (brownie or fruit) being offered? Is it at the current location (16th St Mission BART Station), or at the next event location (Dolores Park), or somewhere else?",
+        "priority": "HIGH",
+        "reason": "The spatial context of where the food is available is unclear, which could impact coordination and expectations for the group."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "first",
+        "question": "First relative to what event or time? Is this before leaving for Dolores Park, before Sam arrives, or another reference point?",
+        "priority": "HIGH",
+        "reason": "The temporal reference for 'first' is ambiguous, which could cause confusion about the sequence of activities."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "School's a lot right now",
+        "question": "What specific time frame does 'right now' refer to? Is this a temporary situation (e.g., finals week) or ongoing workload?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect planning for future events or commitments; knowing the duration or expected end of 'busy' period is important for scheduling."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "study partner",
+        "question": "Who is the user's study partner? (Full name or unique identifier needed.)",
+        "priority": "HIGH",
+        "reason": "The identity of the study partner is ambiguous; knowing who the study partner is may be important for coordination, privacy, or context continuity."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "person",
+        "ambiguous_phrase": "He",
+        "question": "Who is 'he' referring to as the study partner?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without explicit reference in this turn. While previous resolutions suggest 'Brian' may be the antecedent, there is no direct confirmation in this turn, creating ambiguity about the identity of the study partner."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "Monopoly board or just the cards",
+        "question": "Which physical game components were actually brought\u2014does 'cards' refer to Chance/Community Chest cards, or a travel version, and is the full board present?",
+        "priority": "HIGH",
+        "reason": "The success of the planned board game event depends on having the correct components; ambiguity could lead to incomplete setup or inability to play."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "location",
+        "ambiguous_phrase": "did you bring",
+        "question": "Where are the Monopoly items currently located\u2014are they with the user at the BART station, or already at Dolores Park?",
+        "priority": "HIGH",
+        "reason": "Knowing the physical location of the game components is important for coordinating setup and avoiding delays at the event."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What exact location does 'here' refer to?",
+        "priority": "HIGH",
+        "reason": "While location metadata suggests '16th St Mission BART Station', it is not explicitly confirmed that 'here' refers to this location. Precise location is important for meeting logistics."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess? What is her full name and her relationship to the group?",
+        "priority": "HIGH",
+        "reason": "Jess is referenced as wanting to go and being optimistic, but her identity and role in the group are not specified. This could affect privacy, access, and coordination."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "wants to go",
+        "question": "What event does Jess want to go to? Is it the Board Games at Dolores Park at 2:00 PM or another event?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'wants to go' is ambiguous without explicit linkage to a specific appointment or event, which is necessary for coordination and planning."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "go",
+        "question": "Where does Jess want to go? Is the destination Dolores Park, the current location, or somewhere else?",
+        "priority": "HIGH",
+        "reason": "The destination is not specified, which is essential for logistical planning and meeting arrangements."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "wasn\u2019t sure because of work",
+        "question": "Is there a conflicting appointment or work shift for Brian at the time of the Board Games at Dolores Park event?",
+        "priority": "CRITICAL",
+        "reason": "Determining if Brian has a work-related conflict is essential to confirm his availability for the scheduled event."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "an hour ago",
+        "question": "What is the exact timestamp of when 'he' texted 'maybe'?",
+        "priority": "HIGH",
+        "reason": "Relative time ('an hour ago') is ambiguous without a reference point; for precise coordination or record-keeping, the exact time is needed."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "if he updates",
+        "question": "What is the deadline or time window for expecting an update from 'he'?",
+        "priority": "CRITICAL",
+        "reason": "Without a specified time window, it's unclear how long to wait for an update before making decisions about the upcoming event (e.g., Board Games at Dolores Park)."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when she gets settled",
+        "question": "What is the specific time or condition that defines 'when she gets settled'?",
+        "priority": "HIGH",
+        "reason": "The timing for switching games is vague; a clear trigger or time is needed for coordination."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "Here you go",
+        "question": "What is the specific location where the item is being handed over?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and, despite location metadata, does not specify the exact spot of the handoff, which could be important for coordination or tracking."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Is 'Sam' the same individual referenced in previous turns, and what is her full name or identifying information?",
+        "priority": "HIGH",
+        "reason": "While Sam is referenced in prior context, there is no explicit confirmation of her identity in this turn, which could cause ambiguity if multiple Sams are involved."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "set up the board in a minute",
+        "question": "What is the exact time when the board setup will occur?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'in a minute' is vague and does not provide a specific timestamp, which could be important for scheduling or coordination."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I always gamble too early.",
+        "question": "When does 'too early' occur in the context of the game? Is there a specific phase or turn this refers to?",
+        "priority": "HIGH",
+        "reason": "The timing of 'gambling too early' is vague and could impact understanding of gameplay or strategy discussion."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "location",
+        "ambiguous_phrase": "She brought everything",
+        "question": "Where did Sam bring 'everything' to? Is it the current location (16th St Mission BART Station) or the intended event location (Dolores Park)?",
+        "priority": "HIGH",
+        "reason": "The spatial context is unclear; knowing where the items are is important for logistics and planning, especially since the calendar event is at Dolores Park but current metadata is at the BART station."
+      },
+      {
+        "turn_id": 56,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "Does Sam have permission or access to bring and use 'everything' for the board game event?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access considerations are relevant if 'everything' includes items belonging to others or requiring special access."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "location",
+        "ambiguous_phrase": "Here you go.",
+        "question": "What does 'here' refer to? Is it a physical location, a digital file, or an object being handed over? If physical, where exactly is 'here' (e.g., at 16th St Mission BART Station, or another location)?",
+        "priority": "HIGH",
+        "reason": "The deictic reference 'here' is ambiguous without explicit spatial resolution. It is unclear what or where is being referenced, which could lead to confusion about the context or action being performed."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "person",
+        "ambiguous_phrase": "me",
+        "question": "Who is 'me' in this context? Is it User B or another participant?",
+        "priority": "HIGH",
+        "reason": "Clarifying 'me' is important to avoid confusion about the sequence, especially if the speaker is not clearly identified."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "What is Jess's full identity (e.g., last name or distinguishing info) to avoid confusion if there are multiple people named Jess?",
+        "priority": "HIGH",
+        "reason": "If there are multiple people with the same name, this could cause ambiguity in the sequence."
+      },
+      {
+        "turn_id": 60,
+        "entity_type": "person",
+        "ambiguous_phrase": "Sam",
+        "question": "What is Sam's full identity (e.g., last name or distinguishing info) to avoid confusion if there are multiple people named Sam?",
+        "priority": "HIGH",
+        "reason": "If there are multiple people with the same name, this could cause ambiguity in the sequence."
+      },
+      {
+        "turn_id": 62,
+        "entity_type": "person",
+        "ambiguous_phrase": "She\u2019s unstoppable.",
+        "question": "Who is 'she' referring to in this context?",
+        "priority": "HIGH",
+        "reason": "Pronoun 'she' is used without a clear antecedent in the immediate turn, creating ambiguity about which person is being discussed. Accurate identification is necessary for context continuity and privacy tracking."
+      },
+      {
+        "turn_id": 62,
+        "entity_type": "location",
+        "ambiguous_phrase": "Park Place",
+        "question": "Is 'Park Place' referring to a physical location, or is it a reference to the Monopoly board game?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Did you land on Park Place?' could refer to either a real-world location or a game context. Clarification is needed to resolve spatial ambiguity and ensure accurate entity tracking."
+      },
+      {
+        "turn_id": 64,
+        "entity_type": "location",
+        "ambiguous_phrase": "Here\u2019s a community chest",
+        "question": "Where is the community chest located or being presented? Is it a physical object at the current location or a virtual/game element?",
+        "priority": "HIGH",
+        "reason": "The spatial reference 'here' is ambiguous given the location metadata; clarification is needed to resolve whether this is a physical or virtual action."
+      },
+      {
+        "turn_id": 66,
+        "entity_type": "location",
+        "ambiguous_phrase": "pita",
+        "question": "Where is the pita being offered or sourced from? Is it available at the current location (16th St Mission BART Station), or is it being brought from elsewhere?",
+        "priority": "HIGH",
+        "reason": "Clarifying the location of the pita is relevant for logistical planning and immediate context, especially if food sharing is involved in a public transit setting."
+      },
+      {
+        "turn_id": 68,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact time or event that 'after this' refers to?",
+        "priority": "HIGH",
+        "reason": "'After this' is a deictic temporal reference that is ambiguous without knowing when the current game will end or what the next scheduled activity is. This could impact planning or coordination with others."
+      },
+      {
+        "turn_id": 68,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Who is Jess (full name or unique identifier) and is she present or expected to arrive?",
+        "priority": "HIGH",
+        "reason": "Jess is referenced as the person who brought Codenames, but her identity and presence are not confirmed, which could affect whether the game is actually available."
+      },
+      {
+        "turn_id": 68,
+        "entity_type": "technical",
+        "ambiguous_phrase": "Codenames",
+        "question": "Is 'Codenames' physically present and available to play, or is this an assumption?",
+        "priority": "HIGH",
+        "reason": "The statement 'Jess brought Codenames, I think' introduces uncertainty about whether the game is actually available, which could affect activity planning."
+      },
+      {
+        "turn_id": 72,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "your exam later",
+        "question": "What is the exact time, location, and subject of the exam?",
+        "priority": "HIGH",
+        "reason": "The phrase 'exam later' is temporally vague and lacks key details needed for scheduling, preparation, and potential conflicts with other calendar events."
+      },
+      {
+        "turn_id": 72,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "What time\u2019s your study group?",
+        "question": "When and where is the study group scheduled to meet?",
+        "priority": "HIGH",
+        "reason": "The study group time is explicitly requested but not provided; without this, it's impossible to confirm scheduling or resolve potential overlaps with the exam or other events."
+      },
+      {
+        "turn_id": 74,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before then",
+        "question": "What exact time does 'then' refer to? Is it the study group time or another event?",
+        "priority": "HIGH",
+        "reason": "'Then' is a deictic temporal reference that is not explicitly resolved in this turn. Without a specific time, it is unclear what deadline the group is aiming to finish by, which could impact scheduling and coordination."
+      },
+      {
+        "turn_id": 76,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "you\u2019re prepared",
+        "question": "Prepared for what specific event or appointment? Is it the exam, the study group, or another activity?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'you\u2019re prepared' references an event or task, but does not specify which one. Given prior context about an exam and a study group, it is ambiguous which appointment or activity the user is being reassured about. This matters for accurate tracking and support of the user's schedule."
+      },
+      {
+        "turn_id": 80,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Deal! And maybe less Monopoly.",
+        "question": "Which board games (other than Monopoly) are being considered for the event at Dolores Park at 2:00 PM?",
+        "priority": "CRITICAL",
+        "reason": "The phrase suggests a change or preference regarding the games to be played, but does not specify which alternatives are agreed upon. This could impact preparation or expectations for the appointment."
+      },
+      {
+        "turn_id": 82,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "Ready when you are!",
+        "question": "What is the exact time or trigger for the next action or meeting? Is it the scheduled 'Board Games at Dolores Park at 2:00 PM', or something else?",
+        "priority": "HIGH",
+        "reason": "The phrase does not specify what event or time is being referenced, which could lead to confusion about when to proceed or meet, especially with a scheduled event upcoming."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Area by the big oak tree near the playground at Dolores Park (where the group is meeting for the picnic)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "soon",
+        "resolved_entity": "Shortly after 2:00 PM (when Carlos usually finishes work, as discussed in conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "after her tutoring session. Maybe around 3.",
+        "resolved_entity": "After Sam's tutoring session, approximately 3:00 PM (when Sam is expected to arrive at the picnic)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "when she gets here",
+        "resolved_entity": "When Sam arrives at the picnic area by the big oak tree near the playground at Dolores Park",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 74,
+        "ambiguous_phrase": "before then",
+        "resolved_entity": "Before Carlos's study group meeting later today (as referenced in conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 82,
+        "ambiguous_phrase": "when you are",
+        "resolved_entity": "When you are ready to start the next activity or game at the picnic (as discussed in conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 41
+  }
+}

@@ -1,0 +1,753 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after so many people were here",
+        "question": "When exactly were 'so many people' present? What was the date and time range of their visit?",
+        "priority": "HIGH",
+        "reason": "The timing of the guests' presence is ambiguous, which could impact context for follow-up actions, cleaning schedules, or calendar events."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the weekend",
+        "question": "Which specific dates does 'the weekend' refer to?",
+        "priority": "HIGH",
+        "reason": "The term 'the weekend' is vague; resolving it to exact dates is important for linking events to calendar entries or for follow-up scheduling."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "After Mark stayed over",
+        "question": "What is the exact time frame being referenced after Mark's overnight stay? Is it immediately after, the following day, or a longer period?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity affects understanding of how long User A lacked time alone and may impact scheduling or emotional context."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "person",
+        "ambiguous_phrase": "Mark",
+        "question": "Is Mark a roommate, friend, family member, or another relation? What is his access level to the apartment?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying Mark's relationship and access level is important for privacy and context, especially since he stayed overnight."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "once every few months",
+        "question": "What is the exact frequency or schedule for Mark's visits (e.g., which months, specific dates, or intervals)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'once every few months' is vague and lacks a defined time window, making it impossible to schedule, track, or enforce the limitation on visits. Precise temporal resolution is required for calendar management and planning."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "late nights",
+        "question": "What is the exact time considered 'late night' for guest visits?",
+        "priority": "HIGH",
+        "reason": "Without a defined time, 'late nights' is ambiguous and prevents clear enforcement or communication of the end time for guests."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "set an end time for guests",
+        "question": "What specific end time is being proposed for guests to leave?",
+        "priority": "HIGH",
+        "reason": "The effectiveness of the routine depends on a clear, actionable end time; without it, the suggestion cannot be implemented."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "location",
+        "ambiguous_phrase": "our home",
+        "question": "Which specific location or area within the home is being referred to as the 'haven'? Is this the entire apartment, a particular room, or a designated space?",
+        "priority": "HIGH",
+        "reason": "Clarifying the scope of 'home' is important for actionable changes or improvements, especially if specific areas are meant to be prioritized for privacy or comfort."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "feel like our haven",
+        "question": "Is there a specific timeframe or deadline for when the home should start feeling like a haven? Are there planned actions or milestones?",
+        "priority": "HIGH",
+        "reason": "Temporal clarity is needed to track progress and set expectations for when changes should be implemented."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the one on *Thursday*",
+        "question": "What is the nature or purpose of the Thursday event? Is it a guest visit, a quiet evening, or something else?",
+        "priority": "CRITICAL",
+        "reason": "While 'Thursday' is resolved to 'Quiet Evening: 7:00 PM' on the calendar, the phrase 'the one on Thursday' is vague in context\u2014it's unclear if both parties understand what event is being referenced, especially since previous turns discuss guest visits and routines. This could lead to miscommunication about expectations for that evening."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time range referred to by 'tonight'?",
+        "priority": "HIGH",
+        "reason": "'Tonight' is a relative temporal reference and should be resolved to a specific date/time window for clarity, especially if actions or events are being scheduled or tracked."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Does 'here' refer specifically to Oliver & Zoe's Apartment, or a particular room or area within it?",
+        "priority": "HIGH",
+        "reason": "'Here' is a deictic spatial reference. While location metadata suggests the apartment, it is not explicit if a more granular location is intended, which may be relevant for context-sensitive actions or automations."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "person",
+        "ambiguous_phrase": "anyone",
+        "question": "Who specifically qualifies as 'anyone'? Does this include family, close friends, building staff, delivery personnel, or only social guests?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about who is subject to the 'no unannounced guests' rule could lead to misunderstandings or privacy breaches."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "no unannounced guests at all",
+        "question": "Are there any exceptions to the 'no unannounced guests' rule (e.g., emergencies, building management, scheduled maintenance)?",
+        "priority": "HIGH",
+        "reason": "Not specifying exceptions could cause issues in urgent or necessary situations, impacting privacy and access control."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this week",
+        "question": "What is the exact date and time Jess is scheduled to drop off the package?",
+        "priority": "HIGH",
+        "reason": "Without a specific date/time, coordination and confirmation of the package drop-off cannot be ensured; potential for missed or delayed delivery."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Does Jess have authorized access to the apartment for the drop-off, or does someone need to be present?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are important; unclear if Jess can enter or needs someone to let her in."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after 11 PM",
+        "question": "What is the exact end time for 'quiet hours'? When do quiet hours end in the morning?",
+        "priority": "HIGH",
+        "reason": "The start of quiet hours is specified, but the end time is not. This creates ambiguity about when normal activities or guests are allowed again, which is important for setting clear expectations."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Should we use the same time every night?",
+        "question": "What is the exact start and end time for 'quiet hours' each night?",
+        "priority": "HIGH",
+        "reason": "The calendar event 'Quiet Evening: 7:00 PM' is present, but the proposed 'quiet hours' lacks a defined time window. Without specifying the exact hours, the schedule cannot be consistently applied or communicated."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "every night",
+        "question": "Does 'every night' refer to all days of the week, or are there exceptions (e.g., weekends, specific dates)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'every night' is ambiguous without confirmation of which days are included. This affects planning and potential conflicts with other events."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What are the exact start and end dates for 'next week' being referenced for the calendar update?",
+        "priority": "HIGH",
+        "reason": "Precise date range is needed to avoid ambiguity in scheduling and ensure all relevant events are correctly updated."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "update the calendar",
+        "question": "What specific events or quiet hours are being added or modified on the calendar for next week?",
+        "priority": "CRITICAL",
+        "reason": "Without explicit details, it's unclear which events or quiet hours are being scheduled, risking miscommunication or missed updates."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "more stressful for me than I realized",
+        "question": "When did the hosting begin, and how long is it expected to continue?",
+        "priority": "HIGH",
+        "reason": "Understanding the timeframe of the hosting situation is important for planning and managing stress, as well as for coordinating quiet hours and other arrangements."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last minute",
+        "question": "When exactly did 'she' invite herself? What is the specific date and time?",
+        "priority": "HIGH",
+        "reason": "The phrase 'last minute' is vague and does not specify when the invitation occurred, which is important for calendar management and understanding the urgency or impact on scheduling."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "draft something",
+        "question": "What is the deadline or intended timing for drafting and sending this message? Is there a specific event or timeframe it relates to?",
+        "priority": "HIGH",
+        "reason": "Without a clear timeframe, it's unclear when the draft needs to be completed, which could impact planning or coordination."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "config",
+        "ambiguous_phrase": "'House Guests Policy'",
+        "question": "What are the contents, version, location, and access permissions of the 'House Guests Policy' being referenced?",
+        "priority": "CRITICAL",
+        "reason": "Without details about the policy's contents, storage location, and who can access or edit it, the action ('add it') is ambiguous and may not be actionable or auditable."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "add it",
+        "question": "When will the addition to the 'House Guests Policy' occur, and is there a deadline or timeframe for completion?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may affect planning or coordination, especially if the policy update is time-sensitive or impacts upcoming events."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "location",
+        "ambiguous_phrase": "front desk",
+        "question": "Which specific front desk is being referenced (building, floor, staff contact)?",
+        "priority": "HIGH",
+        "reason": "The location 'front desk' is ambiguous without specifying which desk in the building or complex, which could lead to confusion or failed retrieval."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What is the exact time reference for 'now'? When will User A return?",
+        "priority": "HIGH",
+        "reason": "'Now' is a vague temporal reference. Without a specific time or expected duration, it's unclear when User A will return or how long the check will take."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "location",
+        "ambiguous_phrase": "check",
+        "question": "Where exactly is User A going to check? Is it the front desk, a specific room, or another location?",
+        "priority": "HIGH",
+        "reason": "The action 'check' lacks a precise location in this turn. While previous context suggests the front desk, it is not explicitly stated here, which could lead to ambiguity if the context shifts."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "location",
+        "ambiguous_phrase": "the desk",
+        "question": "Which specific desk is being referred to (e.g., front desk, apartment desk, building lobby desk)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the desk' is ambiguous in a multi-room or multi-unit context; precise location is necessary for clarity and for others to retrieve the package if needed."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "shared folder",
+        "question": "What is the full path or location of the 'shared folder'? Is it on a local device, network drive, or cloud platform?",
+        "priority": "HIGH",
+        "reason": "The folder's location is necessary to determine access requirements and ensure the correct credentials are provided."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "credential",
+        "ambiguous_phrase": "my login",
+        "question": "What level of access is being requested (read, write, admin)?",
+        "priority": "CRITICAL",
+        "reason": "Access level determines what actions can be performed and impacts privacy/security; sharing credentials without clarity could lead to unintended data exposure."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "credential",
+        "ambiguous_phrase": "my login",
+        "question": "Is it safe or permitted to share personal login credentials for this folder, or should a dedicated/shared account be used?",
+        "priority": "CRITICAL",
+        "reason": "Sharing personal credentials may violate security policies or best practices, risking unauthorized access or audit issues."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "credential",
+        "ambiguous_phrase": "permissions",
+        "question": "Which permissions are being reviewed (e.g., for which folder, file, or system), and who are the users or groups affected?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the scope (which permissions, for what resource, and for whom), it is unclear what access or privacy risks are being addressed or if the correct permissions will be reviewed."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a regular thing",
+        "question": "What is the intended frequency and schedule for making this review a regular thing (e.g., weekly, monthly, specific day/time)?",
+        "priority": "HIGH",
+        "reason": "Without a defined schedule, it is unclear when or how often the review should occur, which may lead to missed expectations or lack of follow-through."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "this review",
+        "question": "What is the scope and format of 'this review' (e.g., topics covered, participants, duration, location)?",
+        "priority": "CRITICAL",
+        "reason": "The nature of the review is not specified, which could cause confusion about what is being made regular and who should be involved."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "person",
+        "ambiguous_phrase": "Want a cup of tea?",
+        "question": "Who is being offered the cup of tea\u2014does 'you' refer to a specific person present, or is it a general offer?",
+        "priority": "HIGH",
+        "reason": "Clarifying the recipient is important for context, especially if multiple people are present or if the conversation is being logged for task tracking."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "location",
+        "ambiguous_phrase": "cup of tea",
+        "question": "Where is the tea being offered or expected to be consumed\u2014kitchen, living room, or elsewhere in the apartment?",
+        "priority": "HIGH",
+        "reason": "Location context may be relevant for tracking activities or for automation (e.g., smart home actions)."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "This evening at Oliver & Zoe's apartment (no guests planned, just the two of them at home)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "Thursday",
+        "resolved_entity": "Upcoming Thursday (the day with a scheduled quiet evening on the calendar)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context and Calendar"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "this week",
+        "resolved_entity": "Current week (the week during which Jess is expected to drop off the package)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (when User A is heading to check at the front desk for the package)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "at the desk",
+        "resolved_entity": "Front desk of Oliver & Zoe's apartment building (where packages are held for residents)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "every night",
+        "resolved_entity": "Each evening at Oliver & Zoe's apartment (the proposed recurring quiet hours for their home)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "next week",
+        "resolved_entity": "The upcoming week (for updating the calendar with quiet hours and guest policy)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "tea",
+        "resolved_entity": "Cup of tea prepared at home (Oliver & Zoe's apartment, as part of their quiet evening together)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What is the specific time or event being referenced as 'now' when it is 'a little quieter'?",
+        "priority": "HIGH",
+        "reason": "'Now' is a deictic temporal reference that is ambiguous without a clear timestamp or event anchor. This matters for accurate timeline tracking and context resolution."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "it",
+        "question": "What is 'it' referring to in 'It\u2019s a little quieter now'? Is this the apartment, a specific room, or the general area?",
+        "priority": "HIGH",
+        "reason": "'It' is a pronoun with an unclear antecedent. Resolving this is important for spatial context, especially if multiple locations are relevant."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday",
+        "question": "What is the exact date referred to by 'yesterday'?",
+        "priority": "HIGH",
+        "reason": "The term 'yesterday' is relative and requires resolution to a specific calendar date for clarity, especially if actions or events are being tracked."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "overnight",
+        "question": "What is the exact time frame considered as 'overnight' for the purpose of setting boundaries?",
+        "priority": "HIGH",
+        "reason": "Defining the start and end times for 'overnight' is necessary to ensure clarity and enforceability of any boundaries discussed."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "late",
+        "question": "What exact time does Jess stay until? Is 'late' after midnight, or another specific hour?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to assess boundary-setting for overnight stays and to resolve ambiguity about Jess's behavior."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "Jess stays late sometimes",
+        "question": "Does Jess have explicit permission or access level to stay late or overnight? Is this documented or agreed upon?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are important for household boundaries; unclear if Jess's late stays are authorized."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "guests",
+        "question": "Does 'guests' include all visitors (friends, family, partners), or are there exceptions (e.g., roommates' significant others)?",
+        "priority": "HIGH",
+        "reason": "Clarifying who counts as a 'guest' is important for consistent enforcement and to avoid conflict."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "unless it\u2019s already discussed",
+        "question": "What is the process for 'discussing' exceptions\u2014does it require both roommates' approval, and how far in advance must it be discussed?",
+        "priority": "HIGH",
+        "reason": "Lack of a clear process for exceptions could result in last-minute surprises or disagreements."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "a few evenings a week",
+        "question": "Which specific evenings and times are being proposed to block off?",
+        "priority": "HIGH",
+        "reason": "Without specifying exact days and times, it is unclear when these evenings are intended to occur, making scheduling and calendar coordination impossible."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time referred to by 'tonight'?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity can lead to miscommunication about plans; calendar resolution is required for scheduling."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "send the new policy",
+        "question": "What is the access level or method for sending the new policy to Mark, Jess, and Lena (e.g., email, printed copy, shared drive)?",
+        "priority": "CRITICAL",
+        "reason": "The method of delivery and access level are important for privacy and ensuring the intended recipients receive the policy securely."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "location",
+        "ambiguous_phrase": "front desk",
+        "question": "Is the 'front desk' staffed at the expected delivery time, and are there any access or drop-off restrictions?",
+        "priority": "CRITICAL",
+        "reason": "Unclear if the front desk can securely receive the item, which could impact privacy and successful handoff."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "leave it at the front desk",
+        "question": "What is the expected time window for the drop-off, and who will be responsible for pickup?",
+        "priority": "CRITICAL",
+        "reason": "Missing temporal details could result in missed or delayed retrieval of the item."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "coming up",
+        "question": "Does 'coming up' require prior authorization or notification to building staff, and is there a privacy concern with visitor access?",
+        "priority": "CRITICAL",
+        "reason": "Visitor access protocols may affect privacy and security; unclear if rules are being followed."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Thursday",
+        "question": "What is the exact date for 'Thursday'? Is it clearly defined in the current context?",
+        "priority": "HIGH",
+        "reason": "Temporal references must be resolved to a specific date to avoid scheduling errors or miscommunication."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "front desk",
+        "question": "Is the exact location of the 'front desk' specified (e.g., building, floor, desk number)?",
+        "priority": "HIGH",
+        "reason": "Precise location details are important for package delivery and retrieval, especially in multi-unit buildings."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the package",
+        "question": "Is the package's access protocol or recipient authorization defined for pickup at the front desk?",
+        "priority": "CRITICAL",
+        "reason": "Without clear access instructions, there may be privacy or security risks regarding who can retrieve the package."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "11 PM every night",
+        "question": "What is the start and end date for 'every night'? Is this arrangement indefinite or for a specific period?",
+        "priority": "HIGH",
+        "reason": "Without explicit start/end dates, the duration of the arrangement is ambiguous, which could lead to scheduling conflicts or misunderstandings."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "11 PM every night",
+        "question": "What is the purpose of the 11 PM nightly event? Is it a meeting, a delivery, or another type of appointment?",
+        "priority": "CRITICAL",
+        "reason": "The nature of the recurring event is unclear, which could affect preparation or expectations for those involved."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after *Lena* was here",
+        "question": "What is the exact time or date when Lena was present?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after Lena was here' is temporally vague; without a specific timestamp or date, it is unclear when the observed anxiety occurred, which may be important for tracking events or behaviors."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her' referring to in this context\u2014does it mean Lena, Jess, or another person?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is ambiguous in this turn. Although Lena was mentioned in the previous turn, prior entity resolutions have also flagged 'her' as Jess in other contexts. Without explicit clarification, it is unclear which person User B is referring to, which could lead to misunderstandings about who should be informed about the plans."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next time",
+        "question": "What is the specific time or event being referred to by 'next time'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next time' is temporally vague. Without a specific reference point (date, event, or trigger), it is unclear when the user expects this action to occur, which could cause confusion or missed expectations."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "we have plans",
+        "question": "What are the specific details of the 'plans' being referenced (date, time, nature of plans)?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'we have plans' lacks detail about what the plans are, when they occur, and their nature. This information is necessary for proper scheduling and communication, especially if it is to be relayed to a third party."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "config",
+        "ambiguous_phrase": "our rules",
+        "question": "What are the specific rules being referred to? Are they documented anywhere, and what is their intended format and scope?",
+        "priority": "HIGH",
+        "reason": "The phrase 'our rules' is ambiguous\u2014without explicit definition, it is unclear what rules are being referenced, their content, or how they should be shared or enforced. This is essential for clarity, privacy, and potential technical documentation."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "the shared folder",
+        "question": "What is the full path, contents, permissions, and purpose of the shared folder?",
+        "priority": "CRITICAL",
+        "reason": "The location and access permissions of the shared folder are not specified, which is necessary to ensure both users can edit and access the intended files securely."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "the kitchen",
+        "question": "Which specific kitchen is being referred to (e.g., apartment unit, floor, shared space)?",
+        "priority": "HIGH",
+        "reason": "Precise location is needed for clarity, especially if there are multiple kitchens in the building or shared spaces."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that note",
+        "question": "When was the note from Jess left in the kitchen?",
+        "priority": "HIGH",
+        "reason": "Timing of the note may affect its relevance or urgency; without a timestamp, it's unclear if the note is current or outdated."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jess",
+        "question": "Is Jess authorized to leave notes in the kitchen, and who else has access to read or act on them?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are important if the kitchen is a shared or semi-public space."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "location",
+        "ambiguous_phrase": "it's there",
+        "question": "What exactly does 'there' refer to? Is it the kitchen, the apartment, or another location?",
+        "priority": "HIGH",
+        "reason": "The deictic reference 'there' is ambiguous; without clear spatial resolution, the recipient may not know where to check for the note."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "the concierge",
+        "question": "Who specifically is 'the concierge'? Is there a name or contact method for this person?",
+        "priority": "HIGH",
+        "reason": "Referring to a third party ('the concierge') without specifying identity or access details may hinder follow-up or privacy tracking."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "our shared folder",
+        "question": "What is the exact full path and access permissions of the shared folder being referenced?",
+        "priority": "CRITICAL",
+        "reason": "Precise identification of the shared folder is necessary to ensure both parties are updating and accessing the correct location, especially if multiple shared folders exist."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "config",
+        "ambiguous_phrase": "the new guest limits",
+        "question": "What are the specific values or details for the 'new guest limits' to be updated in the shared folder?",
+        "priority": "HIGH",
+        "reason": "Without explicit guest limit values, the update cannot be performed accurately, leading to potential miscommunication or policy violations."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "While you\u2019re gone",
+        "question": "What is the exact time window during which the update will occur (i.e., when is 'you' gone and when will the update be completed)?",
+        "priority": "HIGH",
+        "reason": "Clarifying the time frame is important for coordination and to avoid conflicting edits or missed updates."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "the folder",
+        "question": "What is the full path, contents, permissions, and specific purpose of 'the folder' being updated?",
+        "priority": "CRITICAL",
+        "reason": "The reference to 'the folder' is ambiguous; without specifying which folder, its location, or its contents, it is unclear what is being updated and who has access. This is important for technical tracking and privacy."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "finish updating",
+        "question": "What is the expected completion time or deadline for finishing the folder update?",
+        "priority": "HIGH",
+        "reason": "No specific timeline is provided for when the update will be completed, which could impact coordination or expectations."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "who else can see it",
+        "question": "Who currently has access permissions to the shared folder, and what are their specific access levels?",
+        "priority": "CRITICAL",
+        "reason": "Privacy and access control are directly referenced but not specified; without knowing who else can see the folder, there is a risk of unauthorized access or data leakage."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "deictic",
+        "ambiguous_phrase": "this",
+        "question": "What specifically does 'this' refer to (e.g., the folder, the permissions, the guest limits, or another aspect)?",
+        "priority": "CRITICAL",
+        "reason": "'This' is a deictic reference without a clear antecedent in the immediate turn, making it ambiguous what improvement is being referenced. This could impact understanding of what action or change is being confirmed as 'better.'"
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "every month",
+        "question": "What is the exact date or schedule for the monthly action? (e.g., first of the month, last Sunday, etc.)",
+        "priority": "HIGH",
+        "reason": "Without a specific recurring date, it is unclear when the action should be performed, which could lead to missed or inconsistent execution."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tonight",
+        "question": "What is the exact date and time window referred to as 'tonight'?",
+        "priority": "HIGH",
+        "reason": "The term 'tonight' is deictic and requires resolution to a specific date and time window for accurate scheduling or automation."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 2,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (after guests have left and the apartment is quieter)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "after *them* left yesterday",
+        "resolved_entity": "After Mark, Jess, and possibly Lena left the apartment yesterday (end of the recent hosting weekend)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "This evening (the night following the hectic weekend, when no guests are expected)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "Thursday",
+        "resolved_entity": "Upcoming Thursday (the evening reserved for just Oliver and Zoe, with no guests)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "the front desk",
+        "resolved_entity": "Front desk of Oliver & Zoe's apartment building (where packages are to be left instead of guests coming up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "that note",
+        "resolved_entity": "The note left by Jess in the kitchen (regarding the recent guest visit or boundaries)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The kitchen (where Jess's note was left)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "While you\u2019re gone",
+        "resolved_entity": "While Zoe is out of the apartment (during Zoe's absence)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 52,
+        "ambiguous_phrase": "tonight",
+        "resolved_entity": "This evening (the quiet night reserved for Oliver and Zoe after setting new guest boundaries)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  }
+}

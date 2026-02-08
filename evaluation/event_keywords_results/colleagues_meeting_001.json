@@ -1,0 +1,772 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' (the meeting location) unambiguously clear to all participants, especially remote or late-joining members?",
+        "priority": "HIGH",
+        "reason": "While 'here' is resolved via metadata (GPS, wifi, location_semantic), the turn itself does not specify the meeting room. If others are joining remotely or referencing the transcript later, the exact location may be unclear without external metadata."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "projector's working",
+        "question": "Is the projector present in the Glass-walled Meeting Room, and if so, what are its specifications, current status, and location within the room?",
+        "priority": "HIGH",
+        "reason": "The user's question assumes a projector exists and is functional, but there is no explicit confirmation of its presence, operational status, or technical details. This is essential for meeting readiness and troubleshooting."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "person",
+        "ambiguous_phrase": "someone",
+        "question": "Who is responsible for confirming the projector's status? Is there a designated technical support person or team?",
+        "priority": "HIGH",
+        "reason": "Without a clear point of contact, responsibility for checking the equipment is ambiguous, which could delay resolution and impact meeting efficiency."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "project deadlines",
+        "question": "Which specific project deadlines are being referred to, and what are their exact dates/times?",
+        "priority": "HIGH",
+        "reason": "Without specifying which deadlines or their exact timing, team members may be unclear about which projects or deliverables are under discussion, risking misalignment and missed deadlines."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "config",
+        "ambiguous_phrase": "the same file",
+        "question": "Which specific file is being referred to? (e.g., file name, location, version)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the same file' is ambiguous without explicit identification; multiple files may exist, and actions or updates could be misapplied if the file is not clearly specified."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact timestamp or time window when the file was updated?",
+        "priority": "HIGH",
+        "reason": "Precise timing of the update may be important for version control, audit trails, or ensuring team members are referencing the latest changes."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "main folder",
+        "question": "What is the exact full path or location of the 'main folder'? Is it on a local drive, shared network, or cloud platform (e.g., Google Drive, SharePoint)?",
+        "priority": "HIGH",
+        "reason": "Without the precise location or access method, users may not be able to locate the 'SaaS Project - Weekly Agenda' file, leading to confusion or delays."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "technical",
+        "ambiguous_phrase": "blockers",
+        "question": "What specific blockers or issues have team members encountered since last week? Who is affected, and what is the impact?",
+        "priority": "HIGH",
+        "reason": "The term 'blockers' is vague and non-specific; without details on the nature of the issues, responsible persons, and impact, it is impossible to track or resolve impediments to project progress."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "since last week",
+        "question": "What is the exact date range being referenced by 'since last week'?",
+        "priority": "HIGH",
+        "reason": "The timeframe for reported issues is ambiguous; without a clear date range, it is unclear which incidents or blockers should be reported or discussed."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "config",
+        "ambiguous_phrase": "the authentication module",
+        "question": "Which specific authentication module is being referenced (e.g., file name, version, system, or location)?",
+        "priority": "CRITICAL",
+        "reason": "There may be multiple authentication modules or components; without specifying which one, there is risk of miscommunication or action on the wrong system."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "person",
+        "ambiguous_phrase": "Priya",
+        "question": "What is Priya's exact role or responsibility regarding the authentication module (e.g., owner, developer, reviewer)?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying Priya's involvement is necessary to determine if she is the correct point of contact for blockers or issues."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "technical",
+        "ambiguous_phrase": "error logs from then",
+        "question": "Which error logs are being requested? What is the exact time period or event ('then') being referenced?",
+        "priority": "HIGH",
+        "reason": "Without specifying the time frame or event, it is unclear which error logs should be retrieved. This could lead to incomplete or incorrect troubleshooting."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What is the exact date/time or event referred to by 'then'? Is it the time of the authentication module issue, or another incident?",
+        "priority": "CRITICAL",
+        "reason": "Temporal ambiguity prevents accurate identification of relevant logs and may delay resolution of the issue."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "DEPLOYMENT/TASK",
+        "ambiguous_phrase": "deployment progress",
+        "question": "What is the current status of the deployment progress? Which system is being deployed, what is the deadline, and what are the success criteria?",
+        "priority": "HIGH",
+        "reason": "The deployment/task entity lacks key attributes: system, deadline, and success criteria. Without these, it's unclear what is being tracked or how progress will be measured."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "HARDWARE/EQUIPMENT",
+        "ambiguous_phrase": "that server upgrade",
+        "question": "Which server is being upgraded (type, description, location, specifications), and what is the scope of the upgrade?",
+        "priority": "HIGH",
+        "reason": "The reference to 'that server upgrade' is vague; the specific server, its location, and upgrade details are not specified, making it hard to track technical progress or assign responsibility."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "TEMPORAL",
+        "ambiguous_phrase": "now",
+        "question": "What is the exact time reference for 'now'? Is there a deadline or milestone for this deployment progress update?",
+        "priority": "HIGH",
+        "reason": "The term 'now' is relative and may cause ambiguity in reporting or tracking progress, especially if updates are needed for future reference."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow morning",
+        "question": "What is the exact date and time window for 'tomorrow morning' testing?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling is required to ensure all parties are aligned and available; 'tomorrow morning' is ambiguous without a specific time."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "location",
+        "ambiguous_phrase": "testing",
+        "question": "Where will the coordinated testing take place (physical location or system environment)?",
+        "priority": "HIGH",
+        "reason": "The location or environment for testing is not specified, which is necessary for logistical and technical preparation."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "your other meeting",
+        "question": "What is the exact time, title, and duration of Jordan's other meeting?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'your other meeting' is ambiguous\u2014no details are given about the meeting's scheduled time, which is necessary for coordinating tasks and avoiding scheduling conflicts."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date for 'tomorrow' as referenced in this context?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling requires an exact date to avoid confusion, especially for cross-timezone or calendar integration."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "plan for 9:30 Pacific, tomorrow",
+        "question": "What is the purpose and location of the 9:30 Pacific appointment?",
+        "priority": "CRITICAL",
+        "reason": "The appointment's purpose and location are not specified, which could lead to misalignment or missed attendance."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "config",
+        "ambiguous_phrase": "a new board in Asana",
+        "question": "What is the exact name, purpose, and access permissions for the new Asana board being set up?",
+        "priority": "CRITICAL",
+        "reason": "Without specifying the board's name, purpose, and who will have access, team members may not be able to locate or use the board effectively, leading to confusion or missed tasks."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "credential",
+        "ambiguous_phrase": "I have their emails from the previous board",
+        "question": "What is the access level or permissions that will be assigned to these emails on the new Asana board?",
+        "priority": "CRITICAL",
+        "reason": "Access level is not specified, which is important for privacy and security\u2014different permissions (viewer, editor, admin) have different implications."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "QA lead",
+        "question": "Who is the QA lead? What is their full name, contact information, and access level for the Asana board?",
+        "priority": "CRITICAL",
+        "reason": "The identity and contact details of the QA lead are not specified. Without this information, the correct person may not be included, and privacy/access cannot be verified."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "person",
+        "ambiguous_phrase": "Andrew, the new guy",
+        "question": "What is Andrew's full name, role/title, and contact information?",
+        "priority": "HIGH",
+        "reason": "Andrew is referenced as 'the new guy', but lacks identification and role clarity, which is necessary for onboarding, permissions, and communication."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "person",
+        "ambiguous_phrase": "Priya is on authentication",
+        "question": "What is Priya's specific role/title and scope of responsibility regarding authentication?",
+        "priority": "CRITICAL",
+        "reason": "Priya is mentioned as handling authentication, but her exact responsibilities and authority are unclear, which may impact task assignment and access control."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "credential",
+        "ambiguous_phrase": "authentication",
+        "question": "What authentication system is Priya managing, and what are the access levels or credentials involved?",
+        "priority": "CRITICAL",
+        "reason": "Authentication is a sensitive technical area; without specifying the system or credentials, there is a risk of privacy, security, and access issues."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "config",
+        "ambiguous_phrase": "the latest version",
+        "question": "What is the exact version number of GitHub Desktop being referenced?",
+        "priority": "HIGH",
+        "reason": "Relying on 'latest version' is ambiguous, as the version may change or differ across systems. Exact versioning is required for reproducibility, troubleshooting, and compliance."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after our meeting",
+        "question": "What is the exact time or deadline for the update after the meeting?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after our meeting' is ambiguous without a specific time reference. If the meeting is delayed or rescheduled, the timing for the update becomes unclear, which could impact task completion and coordination."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later today",
+        "question": "What is the latest acceptable time for the update to be completed today?",
+        "priority": "HIGH",
+        "reason": "The phrase 'later today' lacks a concrete deadline, which could lead to missed expectations or confusion about when the update must be finished."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "config",
+        "ambiguous_phrase": "update it",
+        "question": "Which specific file, document, or configuration is to be updated?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'it' is ambiguous without explicit reference to the target of the update, risking errors or updates to the wrong resource."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "they",
+        "question": "What specific files or documents are referred to by 'they' in the folder labeled 'Meeting Notes \u2013 2024'?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'they' is ambiguous\u2014it's unclear which files or notes are being referenced. This could lead to confusion about which documents to access or review."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "folder labeled 'Meeting Notes \u2013 2024'",
+        "question": "What is the full path or location of the 'Meeting Notes \u2013 2024' folder (e.g., shared drive, local machine, cloud service)?",
+        "priority": "HIGH",
+        "reason": "The folder's location is not specified, which may prevent users from finding it if there are multiple storage systems or similar folder names."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "permissions",
+        "question": "Who has access to the 'Meeting Notes \u2013 2024' folder and what are their permission levels?",
+        "priority": "CRITICAL",
+        "reason": "Access permissions are not defined, which could lead to privacy or access issues if sensitive information is stored in the folder."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "DIRECTORY/FOLDER",
+        "ambiguous_phrase": "that folder",
+        "question": "What is the full path and contents of 'that folder'? Are permissions and purpose clearly defined?",
+        "priority": "CRITICAL",
+        "reason": "'That folder' is referenced only by label ('Meeting Notes \u2013 2024') in prior context, but its full path, contents, permissions, and purpose are not explicitly stated. This can cause confusion if there are similarly named folders or if access needs to be verified."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Any final questions or concerns?",
+        "question": "Is there a defined process or deadline for submitting final questions or concerns after the meeting concludes?",
+        "priority": "CRITICAL",
+        "reason": "Lack of clarity on post-meeting follow-up could result in unresolved issues or missed feedback opportunities."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before noon",
+        "question": "What is the exact date and time deadline for circulation? Is 'before noon' referring to today, and if so, what is today's date?",
+        "priority": "HIGH",
+        "reason": "Temporal precision is required to ensure the circulation occurs by the intended deadline, especially for coordination and accountability. 'Before noon' is ambiguous without a specific date."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "I'll CC Priya",
+        "question": "What is Priya's required access level or reason for being CC'd on this communication?",
+        "priority": "CRITICAL",
+        "reason": "Mentioning a third party (Priya) in a CC without specifying her role, access level, or necessity for inclusion could raise privacy or compliance concerns, especially if sensitive information is being shared."
+      },
+      {
+        "turn_id": 59,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What exact date and time does 'then' refer to?",
+        "priority": "HIGH",
+        "reason": "'See you then' uses 'then' as a temporal reference, but does not specify the exact date and time. While the calendar metadata suggests a 'Weekly Team Meeting (10:00am-11:00am)' is next, the phrase is ambiguous without explicit confirmation that this is the intended reference. This could lead to confusion if multiple events are scheduled or if context changes."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Glass-walled Meeting Room at TechStartup HQ (where the weekly team meeting is held)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "this place",
+        "resolved_entity": "Glass-walled Meeting Room at TechStartup HQ (current meeting location)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "this morning",
+        "resolved_entity": "Earlier today (the morning of the current meeting day)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "main folder",
+        "resolved_entity": "'Main folder' for the SaaS project shared with the team (contains project documents and agendas)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "The time when the authentication module issue with Priya occurred (as previously discussed in the meeting)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time during the meeting (when deployment progress is being discussed)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "this side",
+        "resolved_entity": "The server environment currently being discussed (either the dev server or the staging server, as referenced in Ben's earlier update)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "tomorrow morning",
+        "resolved_entity": "The morning of the day after the current meeting (for coordinated testing with the team)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The day after the current meeting (when the next coordinated testing is planned)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "9:30 Pacific",
+        "resolved_entity": "9:30 AM Pacific Time (scheduled time for the next coordinated testing session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "after our meeting",
+        "resolved_entity": "After the current weekly team meeting concludes",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "later today",
+        "resolved_entity": "Sometime after the current meeting, before the end of the current day",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "the folder labeled 'Meeting Notes \u2013 2024'",
+        "resolved_entity": "'Meeting Notes \u2013 2024' folder in the team's shared drive (contains notes from this year's meetings)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "that folder",
+        "resolved_entity": "'Meeting Notes \u2013 2024' folder in the team's shared drive (as just referenced)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "before noon",
+        "resolved_entity": "Before 12:00 PM (midday) on the current meeting day",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 56,
+        "ambiguous_phrase": "next time",
+        "resolved_entity": "At the next team meeting or future similar event",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 59,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "At the next scheduled meeting or agreed-upon time (as referenced in the conversation's closing)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 27
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' referring to a specific physical location, virtual meeting space, or another context?",
+        "priority": "HIGH",
+        "reason": "The phrase 'here' is deictic and ambiguous without explicit resolution; knowing the exact location is essential for context, access, and privacy. Although metadata resolves 'here' to 'Home Office, Portland', the turn itself does not specify this, which could cause confusion if metadata is unavailable."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "config",
+        "ambiguous_phrase": "that document",
+        "question": "What is the exact name, location, or version of the document being referenced?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that document' is ambiguous; without a clear identifier, it is unclear which file is being discussed, which could lead to confusion or errors in collaboration."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What is the exact date or time range for 'last week' to accurately identify the referenced shared file?",
+        "priority": "HIGH",
+        "reason": "The reference to 'last week' is relative and could be misinterpreted without a specific date, especially if multiple files were shared in different weeks."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her'\u2014the person referenced as having discussed the module last Thursday?",
+        "priority": "HIGH",
+        "reason": "The identity of 'her' is unclear, which is necessary to determine context, responsibility, and potential follow-up."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last Thursday",
+        "question": "What is the exact date for 'last Thursday'?",
+        "priority": "HIGH",
+        "reason": "Precise temporal reference is needed for accurate tracking of discussions and actions."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who is 'her'? What is her full name or role?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' is used without a clear antecedent, making it unclear whose suggestion is being referenced. This is essential for tracking responsibility and follow-up."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later today",
+        "question": "What is the specific time or deadline for sending the files? Can you provide an exact time or window?",
+        "priority": "HIGH",
+        "reason": "The phrase 'later today' is vague; a precise time is needed to coordinate expectations and ensure timely delivery, especially with upcoming calendar events."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "technical",
+        "ambiguous_phrase": "other device",
+        "question": "Which device are the files stored on? Please specify the device type, location, or identifier.",
+        "priority": "HIGH",
+        "reason": "Knowing which device holds the files is important for troubleshooting, privacy, and access control, especially if multiple devices are involved."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What exact date and time does 'later' refer to for scheduling testing?",
+        "priority": "HIGH",
+        "reason": "'Later' is ambiguous and must be resolved to a specific time to coordinate testing and avoid scheduling conflicts."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "at that time when the East Coast team logs in",
+        "question": "What is the precise login time for the East Coast team?",
+        "priority": "HIGH",
+        "reason": "Testing coordination requires an exact time for the East Coast team's login to ensure all participants are available."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "config",
+        "ambiguous_phrase": "that tool we demoed last week",
+        "question": "Which specific tool is being referred to for tracking test results? Please provide the tool name and version.",
+        "priority": "HIGH",
+        "reason": "The reference to 'that tool' is ambiguous; without specifying which tool, it is unclear what system or software should be used for tracking, which could lead to miscommunication or errors in test result management."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "person",
+        "ambiguous_phrase": "East Coast guys",
+        "question": "Who specifically are the 'East Coast guys'? What are their full names, roles, and contact details?",
+        "priority": "HIGH",
+        "reason": "Without explicit identification, it's unclear who needs to be added, risking miscommunication or omission of key team members."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "credential",
+        "ambiguous_phrase": "add",
+        "question": "What access level or permissions are required for the 'East Coast guys'? Which system or tool are they being added to?",
+        "priority": "CRITICAL",
+        "reason": "Adding users without specifying access levels or target systems can lead to privacy breaches or technical errors."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Should I add... or will you do that?",
+        "question": "By when should the 'East Coast guys' be added? Is there a deadline or time window for this action?",
+        "priority": "HIGH",
+        "reason": "Lack of a clear timeline may delay onboarding or coordination for upcoming tasks or meetings."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "Priya or the new guy",
+        "question": "Who is the current QA lead? Is it Priya (full name, title) or the 'new guy' (full name, title)?",
+        "priority": "HIGH",
+        "reason": "The identity of the QA lead is ambiguous; without explicit confirmation of name and role, responsibilities and communication may be misdirected."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "the new guy",
+        "question": "What is the full name and title of 'the new guy'? Is he officially designated as QA lead?",
+        "priority": "HIGH",
+        "reason": "Referring to 'the new guy' lacks specificity; this could cause confusion or privacy issues if the individual's identity and access level are not clarified."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to? Is it Priya, the new QA lead, or another individual?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'him' is ambiguous; without clear identification, the intended recipient of the loop-in action is unknown, which could lead to miscommunication or privacy/access issues."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "loop him in",
+        "question": "What access level or permissions will 'him' be granted when looped in? Is this appropriate for the context?",
+        "priority": "CRITICAL",
+        "reason": "Looping in a third party may involve sharing sensitive information; without specifying access level, there is a risk of privacy or security breach."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "config",
+        "ambiguous_phrase": "it",
+        "question": "What exactly is 'it' referring to? (e.g., which software, module, or configuration needs updating?)",
+        "priority": "HIGH",
+        "reason": "Without knowing what 'it' refers to, it's impossible to provide relevant troubleshooting steps or determine the impact of updating."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now or later",
+        "question": "What is the recommended or required time window for performing the update? Is there a deadline or preferred timing based on team schedule or dependencies?",
+        "priority": "HIGH",
+        "reason": "The timing of the update may affect system stability, team workflow, or meeting schedules; clarity is needed to avoid conflicts."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "technical",
+        "ambiguous_phrase": "issues updating",
+        "question": "What specific issues were encountered during the update process? (e.g., error messages, failed steps, system incompatibility)",
+        "priority": "HIGH",
+        "reason": "Understanding the nature of the issues is necessary for effective troubleshooting and to prevent repeated failures."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I hit any snags",
+        "question": "What is the timeframe or deadline for User B to reach out if issues occur?",
+        "priority": "HIGH",
+        "reason": "Without a defined timeframe, it is unclear how urgent or time-sensitive the follow-up should be, which could impact project timelines or support availability."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "config|directory|hardware|credential",
+        "ambiguous_phrase": "The one with the green icon?",
+        "question": "Which specific item, file, folder, application, or credential is being referred to by 'the one with the green icon'? What is its name, location, or purpose?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the one with the green icon' is ambiguous and lacks entity resolution. Without specifying which item is meant, technical actions or troubleshooting cannot proceed accurately."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact event or time referred to by 'after this'? Is it the current conversation, a specific task, or the upcoming meeting?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity prevents clear scheduling or follow-up; without resolving 'after this', recipients may not know when to expect the summary."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What is the exact date or event being referenced as 'last week'?",
+        "priority": "HIGH",
+        "reason": "The timing of the previous discussion about snacks is unclear, which could cause confusion about which meeting or context is being referenced."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "those snacks we talked about",
+        "question": "Which meeting or event was the snack arrangement discussed for?",
+        "priority": "CRITICAL",
+        "reason": "It is ambiguous which appointment or meeting the snack arrangement applies to, making it unclear if the question is relevant to the current or a past/future event."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What specific location does 'there' refer to for the snack?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference without explicit resolution in this turn. It is unclear where User B wishes to teleport for a snack\u2014whether it is another participant's location, a specific office, or another place discussed previously. This ambiguity could impact understanding of intent or logistics."
+      },
+      {
+        "turn_id": 55,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "for a snack",
+        "question": "Is 'snack' referring to a specific time (e.g., during the meeting, after the meeting), or is it a general desire?",
+        "priority": "HIGH",
+        "reason": "The timing of the snack is not specified. If this relates to a scheduled event or break, clarifying the time could be important for coordination."
+      },
+      {
+        "turn_id": 58,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "that time tomorrow",
+        "question": "What is the exact date and time referred to by 'that time tomorrow'? Is it 10:00am-11:00am as per the calendar, or another time?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling is necessary to avoid confusion about when the next meeting or event is taking place. 'That time tomorrow' is ambiguous without explicit confirmation."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "that document",
+        "resolved_entity": "The shared file referenced in last week's team meeting (the one Emma distributed for project coordination)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "that module",
+        "resolved_entity": "The software module discussed with the female team member (likely Priya or another colleague) during last Thursday's meeting",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "later today",
+        "resolved_entity": "Later on the current day of the conversation (after the ongoing meeting or work session, on 2026-02-06)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current meeting or scheduled session (at a time to be determined by the team)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "at that time when the East Coast team logs in",
+        "resolved_entity": "At the time when the East Coast team typically joins the meeting (likely their standard login time for cross-timezone collaboration)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "that tool we demoed last week",
+        "resolved_entity": "The project tracking tool demonstrated during last week's team meeting (used for tracking test results)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (moment of sending the message during the ongoing meeting or work session)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current meeting or work session (at a time to be determined by User A)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "The one with the green icon",
+        "resolved_entity": "The application or file with a green icon (likely the project tracking tool or shared document referenced earlier)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "after this",
+        "resolved_entity": "After the current team meeting (the ongoing weekly team meeting coordinated by Emma)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 52,
+        "ambiguous_phrase": "those snacks we talked about last week",
+        "resolved_entity": "The snacks discussed during last week's team meeting (possibly brought to the in-person conference room in Seattle)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 55,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The glass-walled conference room in the Seattle office (where the in-person team is meeting and snacks are available)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 58,
+        "ambiguous_phrase": "that time tomorrow",
+        "resolved_entity": "The scheduled time for the next team meeting tomorrow (same time as today's meeting, i.e., 10:00am-11:00am, as per the team's regular schedule)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context and Calendar"
+      }
+    ],
+    "transcript_turns": 17
+  }
+}

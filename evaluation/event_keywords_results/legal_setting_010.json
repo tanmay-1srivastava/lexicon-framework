@@ -1,0 +1,938 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "go over everything",
+        "question": "What specific topics, documents, or agenda items are to be reviewed during this meeting?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'go over everything' is vague and does not specify what is to be discussed or reviewed, which could lead to misalignment or missed topics during the meeting."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "shared folder",
+        "question": "What is the exact path or name of the 'shared folder' where the item was dropped?",
+        "priority": "HIGH",
+        "reason": "Without the precise folder location, the recipient may not be able to locate the file, leading to confusion or delays."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "last week",
+        "question": "What are the exact dates covered by 'last week'?",
+        "priority": "HIGH",
+        "reason": "The time frame for 'last week' is not explicitly defined, which could lead to confusion about which summary is being referenced, especially if multiple summaries exist."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "the area by the access road",
+        "question": "Which exact area is being referenced by 'the area by the access road'? Is this a specific parcel, section, or feature on the property map?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'the area by the access road' is spatially vague and lacks precise definition. Without clear identification, subsequent actions, discussions, or decisions regarding this location may be misdirected or misunderstood."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later today",
+        "question": "What is the exact time window when User A will check the runoff again later today?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for coordination and follow-up, especially if actions or decisions depend on when the runoff is checked."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Is 'there' referring to the same specific area by the access road, or a different part of the subject property?",
+        "priority": "CRITICAL",
+        "reason": "Clarifying the exact location is important for accurate reporting and to avoid confusion about which runoff area is being assessed."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "config",
+        "ambiguous_phrase": "remediation plan",
+        "question": "What is the exact content, format, and version of the remediation plan referenced by the seller?",
+        "priority": "HIGH",
+        "reason": "The remediation plan is referenced as a key document, but no details are provided about its existence, content, or format. This is essential for due diligence and compliance."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "credential",
+        "ambiguous_phrase": "docs from him",
+        "question": "What specific documents were sent by the seller, and do you have access to them?",
+        "priority": "CRITICAL",
+        "reason": "It's unclear which documents (if any) were received from the seller, and whether the user has access or needs permission to review them."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "person",
+        "ambiguous_phrase": "the seller",
+        "question": "Who is the seller (full name, contact info, role), and what is their authority to provide the remediation plan?",
+        "priority": "CRITICAL",
+        "reason": "The seller is referenced but not identified, which could cause confusion or issues with follow-up or verification."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "person",
+        "ambiguous_phrase": "I trust your judgement",
+        "question": "Who is being given authority to revise the document? Is their role or responsibility clearly defined?",
+        "priority": "CRITICAL",
+        "reason": "The recipient of the trust and responsibility is not explicitly identified in this turn, which could lead to confusion if multiple parties are involved."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "permit for the new parking area",
+        "question": "What is the current status of the permit application (approved, pending, denied), and what is the expected timeline for a response from the city?",
+        "priority": "CRITICAL",
+        "reason": "The permit status directly impacts project scheduling and compliance; lack of clarity could delay construction or violate regulations."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "did you hear back from the city?",
+        "question": "Who at the city is responsible for communicating about the permit, and what is their contact information?",
+        "priority": "HIGH",
+        "reason": "Identifying the responsible city official is necessary for follow-up and escalation if there are delays or issues."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "did you hear back",
+        "question": "When was the permit application submitted, and what is the expected or deadline date for the city's response?",
+        "priority": "HIGH",
+        "reason": "Knowing submission and response dates is important for tracking progress and ensuring timely follow-up."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "person",
+        "ambiguous_phrase": "the same person",
+        "question": "Who is 'the same person' being referred to? What is their full name, title, department, and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of the person handling the zoning request is ambiguous. Without explicit identification, it is unclear who is responsible, which may impact follow-up, accountability, and privacy/access tracking."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "zoning request last time",
+        "question": "When did the previous zoning request occur, and what were its details (date, time, location, outcome)?",
+        "priority": "CRITICAL",
+        "reason": "The reference to 'last time' is temporally vague. Without specifics, it is difficult to track the timeline of related appointments or actions, which may affect process continuity and documentation."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "her",
+        "question": "Who specifically is 'her'? What is her full name, title, and role in this context?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'her' lacks a clear antecedent, making it unclear which individual is being referenced for form signing. This is essential for privacy, authorization, and workflow clarity."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "forms I need to sign",
+        "question": "What are the specific forms that need to be signed? What is their purpose, deadline, and location for signing?",
+        "priority": "CRITICAL",
+        "reason": "The request references forms but does not specify which forms, their purpose, or any deadlines, which is necessary for proper task tracking and compliance."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "is that in yet?",
+        "question": "What is the expected delivery date or deadline for the title report, and has it been received as of now?",
+        "priority": "HIGH",
+        "reason": "The timing of the title report is critical for transaction progress, but the current status and expected timeline are not specified, which could impact scheduling and next steps."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "person",
+        "ambiguous_phrase": "title report",
+        "question": "Who is responsible for providing or receiving the title report (e.g., title company, specific contact)?",
+        "priority": "HIGH",
+        "reason": "Knowing the responsible party is important for follow-up and accountability, but no person or organization is referenced."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "immediately",
+        "question": "What is the exact timeframe or deadline by which User A wants to settle the amount?",
+        "priority": "HIGH",
+        "reason": "The term 'immediately' is vague and could lead to misaligned expectations or delays if not clarified, especially in a transactional or legal context."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "location",
+        "ambiguous_phrase": "that office",
+        "question": "Which office is 'that office' referring to? Is it David's Office, 14th Floor, Union Tower, Downtown Denver, or another location?",
+        "priority": "HIGH",
+        "reason": "The phrase 'that office' is ambiguous without explicit confirmation. Multiple offices or locations may be relevant in the conversation or context, and precise location is necessary for clarity and action."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "10",
+        "question": "What is the exact date of the meeting at 10?",
+        "priority": "CRITICAL",
+        "reason": "The time '10' is specified, but the date is missing. Without the date, the appointment cannot be unambiguously scheduled or confirmed."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "anything special",
+        "question": "Are there any specific items, documents, or materials required for the meeting at David's Office, or any special preparation needed?",
+        "priority": "CRITICAL",
+        "reason": "The user is asking if special preparation or items are needed for the appointment, but no details have been provided. This could impact the success of the meeting if requirements are unclear."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the meeting",
+        "question": "What is the exact purpose and required documents for the meeting? Is the original lease mandatory for this meeting?",
+        "priority": "CRITICAL",
+        "reason": "Without knowing if the original lease is required, User A cannot determine if returning home is necessary, which could impact timing and meeting preparedness."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Should I swing by before the meeting?",
+        "question": "Is there enough time to go home and retrieve the lease before the meeting starts at 10:00 AM?",
+        "priority": "HIGH",
+        "reason": "User A's ability to retrieve the lease depends on the time available before the meeting; lack of timing details may affect punctuality."
+      },
+      {
+        "turn_id": 43,
+        "entity_type": "person|appointment",
+        "ambiguous_phrase": "the seller",
+        "question": "Who is the seller (full name and contact), and what is the seller's confirmed status for the closing appointment (date, time, location)?",
+        "priority": "HIGH",
+        "reason": "The identity and attendance confirmation of the seller are essential for the closing appointment to proceed as planned. Without explicit confirmation, there is risk of miscommunication or a failed meeting."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "config",
+        "ambiguous_phrase": "the latest version of the closing checklist",
+        "question": "What is the exact file name, version number, or date of the 'latest version' of the closing checklist being requested?",
+        "priority": "HIGH",
+        "reason": "Without specifying the exact version or file, there is risk of sending an outdated or incorrect checklist, which could impact the accuracy and completeness of the closing process."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "config",
+        "ambiguous_phrase": "the redline",
+        "question": "What is the specific document or file being referred to as 'the redline' (e.g., contract name, version, or date)?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about which redline document to send could result in sending the wrong file, causing confusion or delays in the closing process."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "What exact time or event does 'then' refer to for touching base? Is it after the meeting, or some other trigger?",
+        "priority": "HIGH",
+        "reason": "Temporal ambiguity may cause missed or delayed follow-up if both parties do not share the same understanding of when to reconnect."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after my meeting",
+        "question": "What is the specific time of 'after my meeting'? Is it immediately after the scheduled 'Closing Prep Call with Samantha, 2:00 PM', or at another time?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed for coordination, especially if urgent matters arise or if others are waiting for a check-in."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "person",
+        "ambiguous_phrase": "if anything urgent pops up",
+        "question": "Who is responsible for determining what qualifies as 'urgent'? Is there a protocol or contact method for reporting urgent issues?",
+        "priority": "HIGH",
+        "reason": "Lack of clarity on escalation protocol may result in missed or delayed responses to urgent matters."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (when David is at his desk and ready to review documents with Samantha)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "this morning",
+        "resolved_entity": "Earlier today (the morning of the current conversation date, when David uploaded the document to the shared folder)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 7,
+        "ambiguous_phrase": "that the area by the access road",
+        "resolved_entity": "The section of the property located adjacent to the access road (as referenced in the due diligence discussion)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The area by the access road on the property (where David checked runoff conditions yesterday)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "yesterday",
+        "resolved_entity": "The previous day (relative to the current conversation date, when David visited the area by the access road)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "later today",
+        "resolved_entity": "Later on the current day (after this conversation, when David can re-check the area by the access road)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "last time",
+        "resolved_entity": "The previous occasion when a zoning request was handled for this property acquisition (prior interaction with the city official)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "that office",
+        "resolved_entity": "The office where the closing meeting will take place (referenced earlier in the conversation as the meeting location for David and Samantha)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The office where the closing meeting is scheduled (the same location referenced in Turn 35)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "at 10",
+        "resolved_entity": "10:00 AM (the scheduled time for the closing meeting at the referenced office)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "before the meeting",
+        "resolved_entity": "Prior to the scheduled closing meeting at the office (referenced as 'there' at 10:00 AM)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "then",
+        "resolved_entity": "After the current meeting (David will check in with Samantha following his scheduled meeting at the closing office)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 24
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the file",
+        "question": "Which file does User B have open? (e.g., filename, version, location, purpose)",
+        "priority": "HIGH",
+        "reason": "Without specifying which file is open, it's unclear what document is being referenced, which could lead to confusion or errors in collaboration."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "technical",
+        "ambiguous_phrase": "upload",
+        "question": "Where should the Phase I report be uploaded? (e.g., system, folder path, access permissions)",
+        "priority": "CRITICAL",
+        "reason": "The destination for the upload is unspecified, which is essential for ensuring the report is accessible to the correct parties and stored securely."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "technical",
+        "ambiguous_phrase": "Phase I report",
+        "question": "Which Phase I report is being referenced? (e.g., project name, date, version)",
+        "priority": "HIGH",
+        "reason": "There may be multiple Phase I reports; specifying which one is needed avoids ambiguity and potential miscommunication."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "person",
+        "ambiguous_phrase": "the environmental consultant",
+        "question": "Who is the environmental consultant (full name, contact information, organization)?",
+        "priority": "HIGH",
+        "reason": "The identity and contact details of the environmental consultant are not specified, which is necessary to confirm correct forwarding and for accountability."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before noon",
+        "question": "What is the exact date and time deadline for forwarding (e.g., 'before noon' on which date)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'before noon' is ambiguous without a specific date, which could lead to missed deadlines or confusion about the required action time."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "location",
+        "ambiguous_phrase": "north boundary",
+        "question": "What is the precise location or coordinates of the 'north boundary' referenced for the site runoff issue?",
+        "priority": "HIGH",
+        "reason": "Exact location is needed to assess the severity, responsible parties, and potential remediation steps for the runoff issue."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "person",
+        "ambiguous_phrase": "seller's rep",
+        "question": "Who specifically is the 'seller's rep' being flagged about the runoff issue (name, contact info, role)?",
+        "priority": "HIGH",
+        "reason": "Identifying the responsible contact is necessary for follow-up, accountability, and ensuring the issue is properly communicated."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "location",
+        "ambiguous_phrase": "where the fence curves near the drainage ditch",
+        "question": "What are the exact coordinates or a more precise description of the location where the fence curves near the drainage ditch?",
+        "priority": "HIGH",
+        "reason": "The phrase lacks specific spatial data (coordinates, map reference, or landmark details), which is essential for environmental assessment, legal documentation, and communication with consultants or contractors."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after you\u2019re back from your meeting",
+        "question": "Which specific meeting is being referenced, and at what exact time is the user expected to be back?",
+        "priority": "HIGH",
+        "reason": "The timing for when the photos should be taken and sent is ambiguous; without knowing which meeting or its end time, the task deadline is unclear and may cause delays or missed expectations."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "location",
+        "ambiguous_phrase": "a few photos",
+        "question": "Which specific location(s) or subject(s) should the photos capture?",
+        "priority": "HIGH",
+        "reason": "It is unclear what exactly needs to be photographed; without specifying the area or subject, the recipient may not receive the intended information, leading to incomplete documentation."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "person",
+        "ambiguous_phrase": "He",
+        "question": "Who specifically is 'he' referring to? (Full name, role, and contact if relevant)",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'he' is not specified in this turn or immediately prior turns, making it unclear who sent the outline and who will be followed up with. This affects accountability and next steps."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "follow up this afternoon",
+        "question": "What is the exact time for the follow-up this afternoon? Is it scheduled or tentative?",
+        "priority": "CRITICAL",
+        "reason": "The timing of the follow-up is vague ('this afternoon') and not linked to a specific calendar event, which could lead to missed or delayed communication."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "config",
+        "ambiguous_phrase": "attachments",
+        "question": "What specific attachments were missing? (File names, types, or expected contents)",
+        "priority": "HIGH",
+        "reason": "The nature of the missing attachments is not specified, which could hinder effective follow-up and resolution."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "his office",
+        "question": "Who specifically is 'he'? What is the full name, title, and contact information for the person whose office is referenced?",
+        "priority": "HIGH",
+        "reason": "The identity of 'he' is not explicitly stated in this turn or immediately prior context, making it unclear which office is being referenced for follow-up actions. This is essential for task assignment and privacy/access tracking."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by 3",
+        "question": "Does 'by 3' refer to 3:00 PM today (June 18, 2024), or another date/time? Is this deadline aligned with the user's calendar or local time zone?",
+        "priority": "HIGH",
+        "reason": "The exact temporal deadline is ambiguous; without a resolved date/time, follow-up actions may be mistimed or missed."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "ask you to do that",
+        "question": "What specific task or action is being requested if there is no response by the deadline? Is this related to sending photos, following up on missing attachments, or another task?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'do that' is vague and lacks explicit task definition, which is necessary for clear delegation and completion tracking."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "person",
+        "ambiguous_phrase": "did you see my edits",
+        "question": "Who is the intended recipient of this question\u2014does 'you' refer to User A or another party?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the recipient could lead to miscommunication or missed review of the indemnification clause."
+      },
+      {
+        "turn_id": 15,
+        "entity_type": "config",
+        "ambiguous_phrase": "new draft",
+        "question": "Is 'Draft 3 of Purchase Agreement' the only version under consideration, or are there other drafts or documents that may contain relevant edits?",
+        "priority": "HIGH",
+        "reason": "Clarifying which draft is being referenced ensures all parties are reviewing the correct document and prevents version control issues."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after closing",
+        "question": "What is the exact date and time of 'closing' being referenced?",
+        "priority": "HIGH",
+        "reason": "The scope of responsibility depends on the precise definition of 'after closing'; without an exact date/time, liability boundaries are ambiguous."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "person",
+        "ambiguous_phrase": "the buyer",
+        "question": "Who is the specific individual or entity acting as 'the buyer'?",
+        "priority": "HIGH",
+        "reason": "Legal liability attaches to a defined party; without specifying the buyer, responsibility cannot be clearly assigned."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "pre-existing issues",
+        "question": "What is the cutoff date or event that defines 'pre-existing' issues?",
+        "priority": "HIGH",
+        "reason": "Determining what counts as 'pre-existing' requires a clear temporal reference; otherwise, disputes may arise."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by the end of the day",
+        "question": "What is the exact deadline (date and time) for sending the revised redline?",
+        "priority": "HIGH",
+        "reason": "The phrase 'by the end of the day' is ambiguous without a specific date and time, which is necessary for tracking deliverables and accountability."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "technical",
+        "ambiguous_phrase": "revised redline",
+        "question": "Which document version or file is being referred to as the 'revised redline'? Where will it be stored or sent?",
+        "priority": "HIGH",
+        "reason": "Without specifying the document version or storage location, there is risk of confusion or misdelivery, especially if multiple drafts exist."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "person",
+        "ambiguous_phrase": "I\u2019ll email",
+        "question": "Who is the intended recipient of the email containing the revised redline?",
+        "priority": "HIGH",
+        "reason": "The recipient is not specified, which could lead to miscommunication or failure to deliver the document to the correct party."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "their coordinator",
+        "question": "Who specifically is 'their coordinator'? What is her full name, title, and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'their coordinator' is unclear, which is necessary for follow-up, accountability, and documentation."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next Friday",
+        "question": "What is the exact date referred to as 'next Friday'?",
+        "priority": "HIGH",
+        "reason": "Precise deadlines are essential for tracking approvals and ensuring timely follow-up; 'next Friday' is ambiguous without a specific date."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "it should be approved",
+        "question": "What specifically is being approved? (e.g., which document, application, or process?)",
+        "priority": "CRITICAL",
+        "reason": "The subject of the approval is not specified, making it unclear what milestone or deliverable is being referenced."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "barring any surprises",
+        "question": "What are the possible 'surprises' that could delay approval, and what contingency plans are in place if approval is not granted by the expected date?",
+        "priority": "HIGH",
+        "reason": "Unspecified risks could impact the timeline; understanding potential blockers is important for project management."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "her info",
+        "question": "What is Amy Torres's full contact information (e.g., email, phone number, organization, role/title)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'her info' is vague; full contact details are necessary for records, future correspondence, and to ensure proper privacy/access controls."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as soon as I get anything",
+        "question": "What is the expected timeframe or deadline for receiving information from Amy Torres's office?",
+        "priority": "HIGH",
+        "reason": "Without a defined timeframe, it's unclear when follow-up should occur or if escalation is needed if no response is received."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "person",
+        "ambiguous_phrase": "her office",
+        "question": "Is 'her office' referring to Amy Torres, and if so, what is the full contact information and role of Amy Torres?",
+        "priority": "HIGH",
+        "reason": "While Amy Torres was mentioned previously, her full role and contact details may not be fully established for all parties, which could cause confusion in communication or escalation."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "person",
+        "ambiguous_phrase": "seller\u2019s agent",
+        "question": "Who is the seller\u2019s agent? (full name and contact details)",
+        "priority": "HIGH",
+        "reason": "The seller\u2019s agent is referenced as a third party, but their identity and contact information are not specified, which may be necessary for follow-up or access control."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this morning",
+        "question": "What is the exact date and time the document arrived?",
+        "priority": "HIGH",
+        "reason": "Precise timing of document receipt may be important for deadlines, tracking, or compliance, and 'this morning' is ambiguous without a resolved date/time."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "document",
+        "ambiguous_phrase": "a lien from a prior contractor",
+        "question": "What are the details of the lien (amount, contractor name, date filed, property affected)?",
+        "priority": "HIGH",
+        "reason": "The nature and specifics of the lien are not provided, which are critical for assessing the risk and next steps in the transaction."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "technical",
+        "ambiguous_phrase": "generic reference to unpaid work",
+        "question": "What are the specific details of the unpaid work referenced in the document (e.g., contractor name, amount owed, dates, nature of work, associated lien details)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'generic reference to unpaid work' is ambiguous and lacks essential details needed to assess the risk, resolve the lien, or determine next steps in the transaction."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before our next call",
+        "question": "When exactly is the 'next call' scheduled to occur?",
+        "priority": "HIGH",
+        "reason": "The timing of when details will be shared is unclear, which could impact coordination and deadlines for resolving the lien issue."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "as soon as I confirm it",
+        "question": "By what specific deadline or time will the exact figure be confirmed and provided?",
+        "priority": "HIGH",
+        "reason": "The timing for when the exact figure will be delivered is ambiguous, which may impact downstream tasks or decisions that depend on this information."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "closing date is still set for the 23rd",
+        "question": "What is the exact month and year of the closing date? Is it June 23, 2024, or another date?",
+        "priority": "CRITICAL",
+        "reason": "Temporal precision is required for legal and scheduling purposes; ambiguity could cause missed deadlines or confusion."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "title company's main office",
+        "question": "What is the full address (street, city, zip) and room number of the title company's main office where the conference room is reserved?",
+        "priority": "HIGH",
+        "reason": "Exact location details are necessary for attendees and logistical planning; 'main office' is not sufficiently specific."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "conference room is reserved",
+        "question": "What is the reservation time window for the conference room (start and end time)?",
+        "priority": "CRITICAL",
+        "reason": "Precise timing is needed to avoid scheduling conflicts and ensure all parties are present for the closing."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "location",
+        "ambiguous_phrase": "the big building across from Civic Center Park",
+        "question": "What is the exact name and street address of the 'big building' referenced?",
+        "priority": "HIGH",
+        "reason": "The building is identified only by a relative description, which is ambiguous and could refer to multiple buildings. For legal, logistical, or appointment purposes, the precise building name and address are required to avoid confusion or misdelivery."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location of the meeting at 9:45? Is it the title company's main office (Suite 2200, 17th Street) or another location?",
+        "priority": "CRITICAL",
+        "reason": "The location for the appointment is not explicitly stated in this turn, and multiple locations have been referenced in prior context. This could cause confusion about where User B will meet the attorney."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "their attorney",
+        "question": "Who is 'their attorney'? What is the full name and contact information of the attorney User B will be meeting?",
+        "priority": "HIGH",
+        "reason": "The identity of 'their attorney' is not specified, which is important for both security and preparation for the meeting."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "any original documents that weren\u2019t already scanned",
+        "question": "Which specific original documents are required to be brought to the closing?",
+        "priority": "CRITICAL",
+        "reason": "The phrase is vague and could lead to missing essential documents at closing, potentially delaying or invalidating the process."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "government-issued ID",
+        "question": "Is there a specific type of government-issued ID required (e.g., driver's license, passport), or are all forms acceptable?",
+        "priority": "CRITICAL",
+        "reason": "Some closings require specific forms of identification; lack of clarity could result in bringing an unacceptable ID."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "closing binder",
+        "question": "What documents are included in the closing binder, and does the recipient need to review or sign any of them in advance?",
+        "priority": "CRITICAL",
+        "reason": "Knowing the contents and required actions for the closing binder ensures all parties are prepared and nothing is overlooked."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when you get home",
+        "question": "What is the exact expected time or deadline for sending the scanned version?",
+        "priority": "HIGH",
+        "reason": "The phrase 'when you get home' is vague and does not specify a clear deadline, which could lead to delays or misunderstandings about when the document is needed."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "config|credential|privacy",
+        "ambiguous_phrase": "email it to me",
+        "question": "Is it safe and permitted to send the scanned version via regular email, or are there privacy/security requirements (e.g., encryption, secure portal) for transmitting this document?",
+        "priority": "CRITICAL",
+        "reason": "Sending sensitive documents by email may violate privacy or security protocols if not properly protected; explicit confirmation of secure transmission method is required."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "they\u2019ll accept the scanned version",
+        "question": "Who specifically is 'they'? Is it the attorney, the client, or another party? What is their contact or role?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'they' is unclear, which could cause confusion about who is authorizing acceptance of the scanned document."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who specifically is 'he' referring to? (Full name and role/title required.)",
+        "priority": "HIGH",
+        "reason": "The identity of the person expected to attend is unclear, which is essential for access, privacy, and coordination."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "person",
+        "ambiguous_phrase": "his assistant",
+        "question": "Who is 'his assistant'? (Full name and contact details needed.)",
+        "priority": "HIGH",
+        "reason": "The assistant is relaying critical attendance information; their identity and authority should be confirmed for reliability and follow-up."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "tomorrow",
+        "question": "What is the exact date for 'tomorrow'?",
+        "priority": "HIGH",
+        "reason": "Precise scheduling is required for confirmation and calendar management; 'tomorrow' is ambiguous without a reference date."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "he\u2019ll be there in person",
+        "question": "What is the exact time and location of the expected in-person attendance?",
+        "priority": "CRITICAL",
+        "reason": "Appointment details are incomplete; time and location are necessary for logistical planning and confirmation."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "Anything else on your mind?",
+        "question": "Are there any additional appointments, deadlines, or tasks that need to be addressed or scheduled?",
+        "priority": "HIGH",
+        "reason": "The open-ended question invites further topics, but does not specify if all critical appointments or deadlines have been covered, potentially missing important actions or follow-ups."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "if I hear anything new",
+        "question": "What is the specific timeframe or deadline for providing updates? Is there a cutoff date or event after which updates are no longer relevant?",
+        "priority": "HIGH",
+        "reason": "Without a defined timeframe, it is unclear how long User B is expected to monitor for new information or when the obligation to provide updates ends. This could lead to missed deadlines or ongoing uncertainty."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "soon",
+        "question": "What is the specific time or date for the next communication or meeting?",
+        "priority": "HIGH",
+        "reason": "The phrase 'Talk soon' is temporally vague and does not specify when the next contact will occur. This could lead to missed follow-up or scheduling confusion, especially in a legal or transactional context."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 4,
+        "ambiguous_phrase": "before noon",
+        "resolved_entity": "Before 12:00 PM today (prior to midday on the current conversation date, for forwarding the Phase I report to the environmental consultant)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "on site",
+        "resolved_entity": "At the property being acquired (the subject of the due diligence and environmental review)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "where the fence curves near the drainage ditch",
+        "resolved_entity": "North boundary of the property, by the main gate, at the location where the fence curves near the drainage ditch (site runoff issue area)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 10,
+        "ambiguous_phrase": "after you\u2019re back from your meeting",
+        "resolved_entity": "After you return from your current or upcoming meeting (the next time you are available following your meeting)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "this afternoon",
+        "resolved_entity": "Later today, in the afternoon hours (on the current conversation date, after midday)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "by 3",
+        "resolved_entity": "By 3:00 PM today (on the current conversation date, as a deadline for hearing back from the office)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "by the end of the day",
+        "resolved_entity": "By the end of today (before the close of business on the current conversation date)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "next Friday",
+        "resolved_entity": "The Friday of the following week from today (the next Friday after the current conversation date, as the expected approval date)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "as soon as I get anything from her office",
+        "resolved_entity": "Immediately after receiving any communication or documents from Amy Torres's office (the new contact for the matter)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "this morning",
+        "resolved_entity": "Earlier today, in the morning hours (on the current conversation date, referring to the arrival of the document)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "before our next call",
+        "resolved_entity": "Prior to the next scheduled or anticipated phone call between User A and Samantha (timing based on their ongoing coordination)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "as soon as I confirm it",
+        "resolved_entity": "Immediately after I verify the exact figure (timing contingent on confirmation of the lien amount)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the 23rd",
+        "resolved_entity": "The 23rd day of the current month (scheduled closing date for the property acquisition)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the conference room",
+        "resolved_entity": "Conference room at the title company's main office (reserved for the closing on the 23rd)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "it\u2019s on 17th Street, the big building across from Civic Center Park. Suite 2200.",
+        "resolved_entity": "Title company's main office, Suite 2200, in the large building on 17th Street across from Civic Center Park (location for the closing)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Title company's main office, Suite 2200, 17th Street across from Civic Center Park (location for the closing)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "by 9:45",
+        "resolved_entity": "By 9:45 AM on the closing date (the 23rd, to review paperwork before the closing appointment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "any original documents that weren\u2019t already scanned",
+        "resolved_entity": "Any physical documents related to the property acquisition that have not yet been digitized and sent electronically",
+        "resolution_type": "contextual",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "when you get home",
+        "resolved_entity": "After you return to your residence (the next opportunity after leaving your current location)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "tomorrow",
+        "resolved_entity": "The day after the current conversation date (when User A will get final confirmation about the seller's representative's attendance)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 26
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 1,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "Is 'here' fully resolved to a specific, unambiguous location for all participants?",
+        "priority": "HIGH",
+        "reason": "'here' is a deictic reference that could be ambiguous without explicit resolution. Although metadata suggests 'Mina's Office, 22nd Floor, River North Tower, Chicago', confirmation is needed that all parties interpret 'here' identically, especially if context is shared with remote or asynchronous participants."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday",
+        "question": "What is the exact date of the focus group session?",
+        "priority": "HIGH",
+        "reason": "Temporal references like 'yesterday' are ambiguous without a known reference date; exact date is needed for accurate scheduling and record-keeping."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "focus group at the conference center yesterday",
+        "question": "What were the scheduled start and end times for the focus group session?",
+        "priority": "CRITICAL",
+        "reason": "Precise timing is important for cross-referencing with other events, attendance, and documentation."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the exact time or deadline when the summary will be sent?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after this' is temporally vague and does not specify when the summary will be delivered, which could impact planning or expectations for follow-up actions."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "summary from their coordinator",
+        "question": "Is User B authorized to receive the summary from Sarah Lim, and are there any privacy or access restrictions on sharing this document?",
+        "priority": "CRITICAL",
+        "reason": "Sharing third-party summaries may have privacy or access implications; confirmation of permission or access level is required before transmission."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "technical",
+        "ambiguous_phrase": "home button",
+        "question": "What is the current location, format, and visibility status of the home button on each page?",
+        "priority": "HIGH",
+        "reason": "Without knowing the existing implementation, it's unclear what changes are needed or how visibility can be improved."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "config",
+        "ambiguous_phrase": "this version",
+        "question": "Which specific version or configuration is being referenced for moving the home button to the top-left?",
+        "priority": "HIGH",
+        "reason": "Without specifying the exact version, it is unclear where the UI change should be applied, risking misalignment or deployment to the wrong build."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "the shared folder",
+        "question": "What is the full path, contents, permissions, and purpose of 'the shared folder'?",
+        "priority": "CRITICAL",
+        "reason": "Without the full path and permissions, the recipient cannot locate or access the folder. Contents and purpose are also undefined, which may cause confusion about what is being shared."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "credential",
+        "ambiguous_phrase": "I'll grant you access",
+        "question": "What access level will be granted (read, write, admin), and when will access be provided?",
+        "priority": "CRITICAL",
+        "reason": "The recipient does not know what level of access they will receive or the timing, which could impact their ability to complete tasks."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after this",
+        "question": "What is the specific time or event that defines 'after this'?",
+        "priority": "HIGH",
+        "reason": "The timing of access is ambiguous; 'after this' could refer to after the conversation, meeting, or another event, which may cause delays or confusion."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "then",
+        "question": "When exactly will the check for approval occur after starting with three?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to coordinate workflow and ensure deadlines are met."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "person",
+        "ambiguous_phrase": "Angela Brooks",
+        "question": "What is Angela Brooks's full title, contact information, and department?",
+        "priority": "HIGH",
+        "reason": "Angela Brooks is identified as overseeing content, but her role, contact details, and department are not specified. This is important for clarifying her authority, communication, and escalation paths."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "overseeing content",
+        "question": "What is Angela Brooks's access level and permissions regarding the shared folder and testimonial content?",
+        "priority": "CRITICAL",
+        "reason": "Angela Brooks's oversight role implies access to sensitive content, but her specific permissions and access level are not defined. This is essential for privacy, security, and compliance."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "person",
+        "ambiguous_phrase": "the designer",
+        "question": "Who specifically is 'the designer'? What is their full name and contact information?",
+        "priority": "HIGH",
+        "reason": "The identity of 'the designer' is unclear, which may cause confusion regarding responsibility and follow-up for asset delivery."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "config",
+        "ambiguous_phrase": "the updated one",
+        "question": "Which specific document, file, or asset is being referred to as 'the updated one'? Please provide its name, version, location, or format.",
+        "priority": "HIGH",
+        "reason": "Without clear identification, it is impossible to determine which updated item is being referenced, leading to potential confusion or errors in subsequent actions."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before stand-up tomorrow",
+        "question": "What is the exact date and time of 'stand-up tomorrow'? Please specify the calendar event or time window.",
+        "priority": "HIGH",
+        "reason": "Precise timing is required to ensure tasks are completed before the correct deadline. Ambiguity could result in missed deliverables."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the same time",
+        "question": "What is the exact time being referenced by 'the same time'?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the same time' is ambiguous without explicit reference to which prior time is meant. For scheduling or coordination, the exact time must be specified to avoid confusion."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "location",
+        "ambiguous_phrase": "the conference room",
+        "question": "Which specific conference room is being referenced?",
+        "priority": "HIGH",
+        "reason": "The location 'the conference room' is not uniquely identified. There may be multiple conference rooms in the building or floor, so specifying which one is necessary for attendees to find the correct location."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the landing page",
+        "question": "Which specific landing page should be focused on (e.g., URL, project name, or version)?",
+        "priority": "HIGH",
+        "reason": "Multiple landing pages may exist; without clarification, work may be misdirected or duplicated."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the new testimonials section",
+        "question": "Where is the 'new testimonials section' located (e.g., which page, file, or design spec), and what defines it as 'new'?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about the location and scope of the 'new testimonials section' could lead to confusion about what to update or review."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by end of day",
+        "question": "What is the exact deadline (date and time) for 'end of day'? Is it today, and what time does 'end of day' refer to in this organizational context?",
+        "priority": "HIGH",
+        "reason": "The phrase 'by end of day' is temporally vague. Without a precise timestamp, there is risk of missed deadlines or confusion, especially if team members are in different time zones or have varying definitions of 'end of day'."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who specifically is 'him' that should be tagged in the update email?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'him' is used without a clear antecedent in the immediate or recent context, making it ambiguous who should be tagged. This could result in the update email not reaching the intended recipient or causing confusion among team members."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "hardware/equipment",
+        "ambiguous_phrase": "their devices",
+        "question": "What specific devices were used when experiencing slowness? (e.g., device models, OS versions, browsers)",
+        "priority": "HIGH",
+        "reason": "Knowing the exact devices is necessary to reproduce and diagnose the performance issue with the mobile prototype."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that appointment",
+        "question": "Which appointment is being referred to? What are its type, date, time, location, and any prep instructions?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'that appointment' is deictic and ambiguous; without explicit resolution, it is unclear which appointment is being discussed, which could lead to confusion about scheduling, preparation, or next actions."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "deployment/task",
+        "ambiguous_phrase": "this",
+        "question": "What specific task, project, or deliverable is being referred to as 'this' that was completed under tight deadlines?",
+        "priority": "HIGH",
+        "reason": "The phrase 'making this happen' is deictic and lacks a clear referent in this turn. Without explicit context, it is ambiguous what was accomplished, which is critical for tracking project status, accountability, and follow-up actions."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Mina's Office, 22nd Floor, River North Tower, Chicago (where Mina and Lucas are meeting to finalize wireframes and functional details for the microsite)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context and Location Metadata"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "the conference center",
+        "resolved_entity": "Conference center where the focus group was held yesterday (location of user navigation feedback session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 5,
+        "ambiguous_phrase": "their coordinator",
+        "resolved_entity": "Coordinator of the focus group at the conference center (person responsible for organizing and summarizing focus group feedback)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "this version",
+        "resolved_entity": "The current iteration of the microsite wireframes being discussed in this meeting",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "the main one",
+        "resolved_entity": "The main home button on the landing page of the microsite",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 17,
+        "ambiguous_phrase": "the shared folder",
+        "resolved_entity": "Shared project folder containing assets and documents for the microsite (to which Mina will grant Lucas access)",
+        "resolution_type": "spatial (digital workspace)",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Angela Brooks (the content overseer for the project)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 23,
+        "ambiguous_phrase": "that",
+        "resolved_entity": "The updated wireframe or design asset being referenced in the conversation",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 25,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The design asset or file being sent by the designer (expected arrival around 6 PM)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "The updated one",
+        "resolved_entity": "The updated version of the wireframe or document that includes stakeholder requests",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "those new tasks",
+        "resolved_entity": "The new tasks identified from stakeholder feedback to be added to the project backlog before the next stand-up meeting",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the same time",
+        "resolved_entity": "The same time as the previous meeting or stand-up (as agreed in the ongoing project schedule)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "the conference room",
+        "resolved_entity": "The conference room used for team meetings (location for the next scheduled meeting at the same time)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Angela Brooks (the content overseer for the project, who will send notes)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "those stakeholders",
+        "resolved_entity": "Project stakeholders who will attend the upcoming meeting",
+        "resolution_type": "person/group",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "the new testimonials section",
+        "resolved_entity": "The newly added testimonials section on the landing page of the microsite",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "The assets or deliverables discussed earlier (to be sent by end of day)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 39,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "The designer sending over assets (to be tagged in the update email)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 41,
+        "ambiguous_phrase": "their devices",
+        "resolved_entity": "Devices used by focus group participants at the conference center (where the mobile prototype was tested and found slow)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 43,
+        "ambiguous_phrase": "the dev team",
+        "resolved_entity": "The development team responsible for the microsite project",
+        "resolution_type": "person/group",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "that appointment",
+        "resolved_entity": "The upcoming scheduled meeting or review session (as referenced in the ongoing project discussion)",
+        "resolution_type": "temporal/event",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "The designer sending over assets (if he needs clarification on any assets)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 49,
+        "ambiguous_phrase": "this",
+        "resolved_entity": "The successful completion of the microsite project tasks under tight deadlines",
+        "resolution_type": "object/event",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the latest feedback",
+        "question": "What specific feedback is being referred to as 'the latest'? Is there a timestamp, version, or source for this feedback?",
+        "priority": "HIGH",
+        "reason": "Without specifying which feedback is 'the latest', there is ambiguity about which set of comments or reviews should be discussed or acted upon. This could lead to confusion or missed updates."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "config",
+        "ambiguous_phrase": "that document",
+        "question": "Which specific document is being referenced? (e.g., file name, version, location, or content type)",
+        "priority": "HIGH",
+        "reason": "The phrase 'that document' is ambiguous\u2014without clear identification, it is impossible to know which document's specific points are being requested, risking miscommunication or sharing the wrong information."
+      },
+      {
+        "turn_id": 8,
+        "entity_type": "config",
+        "ambiguous_phrase": "this wireframe",
+        "question": "Is 'this wireframe' referring to the current homepage wireframe (version 1.2, Lucas\u2019s workspace), or could there be ambiguity if multiple wireframes are open or referenced?",
+        "priority": "HIGH",
+        "reason": "Precise identification of which wireframe to adjust is necessary to avoid changes to the wrong version or file, especially if multiple wireframes exist in the workspace."
+      },
+      {
+        "turn_id": 10,
+        "entity_type": "person",
+        "ambiguous_phrase": "the client",
+        "question": "Which client is being referenced? Is there a full name, company, or contact detail available?",
+        "priority": "HIGH",
+        "reason": "Identifying the specific client is necessary to confirm whose preferences are being discussed and to avoid miscommunication, especially if multiple clients are involved."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "that section under the hero image",
+        "question": "Which specific section under the hero image is being referenced? (e.g., is it the 'Features', 'Intro', or another labeled section in the wireframe?)",
+        "priority": "HIGH",
+        "reason": "The phrase 'that section' is deictic and ambiguous without explicit reference to a labeled section in the wireframe. This could lead to confusion about which part of the layout is being discussed or reviewed."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "person",
+        "ambiguous_phrase": "any new feedback",
+        "question": "Who is expected to provide the new feedback (e.g., client, team lead, designer)?",
+        "priority": "HIGH",
+        "reason": "It is unclear whose feedback is being requested or referenced, which could delay action or misdirect follow-up if multiple parties are involved."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "technical",
+        "ambiguous_phrase": "those testimonials",
+        "question": "Which specific testimonials are being referred to? (e.g., client names, number, format, location)",
+        "priority": "HIGH",
+        "reason": "Without specifying which testimonials are needed, it is unclear what content is expected, from whom, and in what format. This can lead to miscommunication or delays if the wrong testimonials are prepared or delivered."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "person",
+        "ambiguous_phrase": "the project manager",
+        "question": "What is the full name and role of 'the project manager' being referenced?",
+        "priority": "HIGH",
+        "reason": "The title 'project manager' is generic; specifying the individual's identity ensures clarity and proper assignment of responsibility or attribution."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "person",
+        "ambiguous_phrase": "he",
+        "question": "Who specifically is 'he'? What is his full name, role, and contact information?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent in prior context, making it unclear who is responsible for sending 'everything'. This is essential for accountability and follow-up."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "by end of day",
+        "question": "What is the exact date and time for 'end of day'? Is there a specific deadline (e.g., 5:00 PM CST, today\u2019s date)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'end of day' is ambiguous without a specific timestamp, especially in collaborative or cross-timezone environments. Precise deadlines are needed for tracking and escalation."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "yesterday's list",
+        "question": "What is the exact date and version of 'yesterday's list' being referenced?",
+        "priority": "HIGH",
+        "reason": "Without a specific date or version, it is unclear which set of acceptance criteria should be used, risking misalignment or outdated requirements."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "config",
+        "ambiguous_phrase": "the updated one",
+        "question": "What is the exact version or timestamp of 'the updated' acceptance criteria list?",
+        "priority": "HIGH",
+        "reason": "The term 'updated one' is ambiguous without a clear reference to a version, timestamp, or file, which could lead to referencing the wrong criteria."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after our call",
+        "question": "What is the exact time or event referred to as 'after our call'? Which call is being referenced, and when does it end?",
+        "priority": "HIGH",
+        "reason": "Precise timing is needed to determine when the backlog review should occur, especially if multiple calls or meetings are scheduled."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "config",
+        "ambiguous_phrase": "the backlog",
+        "question": "Which specific backlog is being referenced (e.g., project, sprint, UI tasks)? Where is it located or tracked?",
+        "priority": "HIGH",
+        "reason": "Clarifying which backlog ensures the user reviews the correct set of tasks or items, avoiding confusion or missed work."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "the stand-up",
+        "question": "What is the exact date, time, and location of 'the stand-up' meeting?",
+        "priority": "CRITICAL",
+        "reason": "The user is asking to confirm the timing of a recurring event ('the stand-up'), but no explicit date, time, or location is provided or confirmed. This is essential for scheduling and attendance, especially if the time may have changed."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "person",
+        "ambiguous_phrase": "that coordinator",
+        "question": "Which coordinator is being referenced? Full name or role is missing.",
+        "priority": "HIGH",
+        "reason": "The identity of 'that coordinator' is ambiguous, making it unclear who is being asked about. This could impact meeting planning, attendance, and follow-up actions."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the demo",
+        "question": "Which demo is being referenced? What is its scope, version, and intended features?",
+        "priority": "HIGH",
+        "reason": "Ambiguity about which demo to prepare could result in preparing the wrong materials or an outdated version, impacting effectiveness and relevance."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "right now, or later",
+        "question": "What is the exact deadline or time window for sending the wireframes?",
+        "priority": "HIGH",
+        "reason": "The timing for sending the wireframes is ambiguous; without a specific deadline or time window, the sender may miss an important review or coordination event."
+      },
+      {
+        "turn_id": 36,
+        "entity_type": "technical",
+        "ambiguous_phrase": "the wireframes",
+        "question": "Which specific wireframes are being referred to (e.g., homepage, all pages, version number)?",
+        "priority": "HIGH",
+        "reason": "It is unclear which wireframes need to be sent; ambiguity could result in sending incomplete or incorrect files."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "person",
+        "ambiguous_phrase": "the designer",
+        "question": "Who specifically is 'the designer'? (full name, contact, role)",
+        "priority": "HIGH",
+        "reason": "It's unclear which individual should be looped in; ambiguity could cause miscommunication or privacy issues if the wrong person is contacted."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "privacy/access",
+        "ambiguous_phrase": "loop *the designer* in on changes",
+        "question": "What is the designer's access level or permission regarding these changes?",
+        "priority": "CRITICAL",
+        "reason": "Involving a third party without confirming their access rights or permissions could lead to unauthorized information sharing."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "that focus group",
+        "question": "Which specific focus group is being referenced? (e.g., name, participants, session date/location)",
+        "priority": "HIGH",
+        "reason": "Without clear identification of the focus group, feedback cannot be attributed or contextualized; ambiguity may lead to confusion about which group's input is being discussed."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Any other feedback",
+        "question": "What is the timeframe for the feedback? Is it from the most recent session, or cumulative from multiple sessions?",
+        "priority": "HIGH",
+        "reason": "Temporal context is needed to ensure feedback is relevant and up-to-date; lack of timeframe may result in outdated or irrelevant information being considered."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "config",
+        "ambiguous_phrase": "that version",
+        "question": "Which exact version should speed be prioritized for? Is it homepage wireframe v1.2 or another version?",
+        "priority": "HIGH",
+        "reason": "Without clear version identification, prioritization instructions may be misapplied to the wrong wireframe or configuration, leading to workflow errors."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "technical",
+        "ambiguous_phrase": "prioritize speed",
+        "question": "What does 'prioritize speed' specifically mean in this context? Is it page load time, design iteration speed, or another metric?",
+        "priority": "HIGH",
+        "reason": "Ambiguity in 'speed' could result in misaligned optimization efforts (e.g., focusing on development velocity vs. UI performance), affecting project outcomes."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after lunch",
+        "question": "What is the exact time window for 'after lunch'? When will the action actually occur?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after lunch' is vague and does not specify a concrete time, which can lead to misalignment or missed expectations, especially with a scheduled meeting at 2:00 PM."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "config",
+        "ambiguous_phrase": "the backlog",
+        "question": "Which specific backlog (project, system, or tool) should be updated?",
+        "priority": "HIGH",
+        "reason": "Multiple backlogs may exist (e.g., Jira, Trello, local files); without specifying which one, the update could be applied to the wrong place."
+      },
+      {
+        "turn_id": 46,
+        "entity_type": "config",
+        "ambiguous_phrase": "your modifications",
+        "question": "Which modifications are being referred to (e.g., file names, commit IDs, or a summary of changes)?",
+        "priority": "HIGH",
+        "reason": "The exact set of modifications is not specified, risking incomplete or incorrect backlog updates."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "here",
+        "question": "What is the exact location referred to as 'here'? Is it Lucas's Workspace, UI Lab, River North Tower, Chicago, or another area?",
+        "priority": "HIGH",
+        "reason": "'Here' is a deictic reference and could be ambiguous if User B is not physically in the same location as the metadata suggests. Precise spatial resolution is needed for clarity, especially since weather is location-dependent."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "my section",
+        "question": "What is the exact location referred to as 'my section'? Is this a different workspace, floor, or building? Please specify.",
+        "priority": "HIGH",
+        "reason": "'My section' is vague and could refer to a different area within the building or even a remote location. This matters for understanding the weather discrepancy and for spatial tracking."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "About the weather",
+        "question": "What is the time frame for the weather conditions mentioned (sunlight and rain)? Are these current, forecasted, or historical?",
+        "priority": "HIGH",
+        "reason": "Temporal context is missing for the weather report. Knowing whether the sunlight and rain are happening now or at different times is important for situational awareness."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later today",
+        "question": "What specific time or time window does 'later today' refer to?",
+        "priority": "HIGH",
+        "reason": "'Later today' is vague and could conflict with scheduled events (e.g., 'UX Review with Mina, 2:00 PM'). Without a defined time, urgent matters may be delayed or missed."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "right now",
+        "resolved_entity": "Current time (moment of this message, during wireframe review discussion)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 8,
+        "ambiguous_phrase": "this wireframe",
+        "resolved_entity": "The wireframe currently under review in the conversation (latest version being discussed for layout adjustments)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "all CTAs",
+        "resolved_entity": "All call-to-action buttons on the promotional microsite (as referenced in the client feedback discussion)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "the main one",
+        "resolved_entity": "The primary call-to-action button on the microsite (main CTA under the hero image or as previously identified)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "that section",
+        "resolved_entity": "The section under the hero image on the microsite (currently being discussed for feedback updates)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 16,
+        "ambiguous_phrase": "those testimonials",
+        "resolved_entity": "The set of user testimonials intended for inclusion on the microsite (as referenced in the feedback discussion)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 18,
+        "ambiguous_phrase": "just three",
+        "resolved_entity": "Three testimonials (the number being considered for display on the microsite)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "The project manager (person responsible for project oversight, as clarified in the conversation)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "that corner",
+        "resolved_entity": "The section of the microsite where the newsletter form is located (specific area under discussion for image inclusion)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "he",
+        "resolved_entity": "The person responsible for sending the required materials by end of day (likely a team member or stakeholder referenced earlier)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "yesterday's list",
+        "resolved_entity": "The acceptance criteria list compiled during the previous day's session (referenced for comparison with the updated list)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "the updated one",
+        "resolved_entity": "The most recent version of the acceptance criteria list (updated since yesterday's session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "the backlog",
+        "resolved_entity": "The project backlog for the promotional microsite (list of outstanding tasks and features)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "the stand-up",
+        "resolved_entity": "The team's daily stand-up meeting (regular project status check-in, typically scheduled for 10 AM)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "that coordinator",
+        "resolved_entity": "The project coordinator (person responsible for organizing or facilitating the meeting, as referenced in the conversation)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "the demo",
+        "resolved_entity": "The demonstration of the microsite (prepared for stakeholders or team members referenced as 'them')",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "right now",
+        "resolved_entity": "Current time (moment of this message, during wireframe delivery discussion)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "After the current session or discussion (a time following the present conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 38,
+        "ambiguous_phrase": "the designer",
+        "resolved_entity": "The team member responsible for design tasks on the microsite (referenced for inclusion in change notifications)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "that focus group",
+        "resolved_entity": "The user focus group that provided feedback on the microsite (as referenced in the ongoing feedback discussion)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "that version",
+        "resolved_entity": "The specific version of the microsite currently under review (referenced for prioritizing speed improvements)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "them",
+        "resolved_entity": "The group or individuals previously referenced for follow-up after lunch (likely stakeholders or team members)",
+        "resolution_type": "person",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "the backlog",
+        "resolved_entity": "The project backlog for the promotional microsite (list of outstanding tasks and features)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "your modifications",
+        "resolved_entity": "Lucas's recent changes to the microsite (modifications discussed during this session)",
+        "resolution_type": "object",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Lucas's Workspace, UI Lab, River North Tower, Chicago (User A's current location during the collaboration session)",
+        "resolution_type": "spatial",
+        "metadata_source": "Metadata (location_semantic)"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "my section",
+        "resolved_entity": "The area or workspace where User A is currently located (distinct from Lucas's workspace, possibly another part of the office or building)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "A time after the current session, but before the end of today (for urgent follow-up if needed)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "Current date (the day of this conversation, February 6, 2026)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 25
+  }
+}

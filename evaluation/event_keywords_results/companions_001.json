@@ -1,0 +1,914 @@
+{
+  "user_a": {
+    "user": "User A",
+    "info_gaps": [
+      {
+        "turn_id": 2,
+        "entity_type": "location",
+        "ambiguous_phrase": "bathroom",
+        "question": "Which specific bathroom is being referred to (e.g., master, guest, shared)?",
+        "priority": "HIGH",
+        "reason": "The apartment may have more than one bathroom; task assignment could be ambiguous without clarification."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this week",
+        "question": "What are the exact start and end dates/times for 'this week'?",
+        "priority": "HIGH",
+        "reason": "Without precise dates, responsibility timing is unclear and could lead to missed or overlapping tasks."
+      },
+      {
+        "turn_id": 2,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "checklist time",
+        "question": "What items are included in the checklist and what are their deadlines?",
+        "priority": "CRITICAL",
+        "reason": "Checklist tasks are referenced but not specified, making it impossible to verify completion or assign responsibility."
+      },
+      {
+        "turn_id": 3,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "Is the location of the scrub brush ('there') fully resolved and unambiguous for all parties? Is 'bathroom cabinet' sufficient detail, or is a more precise location (e.g., shelf, drawer) needed?",
+        "priority": "HIGH",
+        "reason": "While 'there' is resolved to 'bathroom cabinet' per known resolutions, the exact placement within the cabinet is not specified. This could matter for repeatability or for others trying to locate the item."
+      },
+      {
+        "turn_id": 4,
+        "entity_type": "location",
+        "ambiguous_phrase": "Tub",
+        "question": "Which specific tub is being referred to (e.g., master bathroom, guest bathroom)?",
+        "priority": "HIGH",
+        "reason": "The apartment may have more than one bathroom or tub; specifying which tub is being cleaned is important for clarity in multi-bathroom contexts."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "location",
+        "ambiguous_phrase": "Counters",
+        "question": "Which counters are being referred to (bathroom, kitchen, or other specific area)?",
+        "priority": "HIGH",
+        "reason": "The location of the counters is not specified, which could lead to confusion about the cleaning sequence or area."
+      },
+      {
+        "turn_id": 5,
+        "entity_type": "location",
+        "ambiguous_phrase": "swap the towels",
+        "question": "Which towels are being swapped and in which location (bathroom, kitchen, or other)?",
+        "priority": "HIGH",
+        "reason": "It is unclear which towels are being referenced, which could affect the completeness of the cleaning checklist."
+      },
+      {
+        "turn_id": 6,
+        "entity_type": "location",
+        "ambiguous_phrase": "laundry pile",
+        "question": "Where exactly is the laundry pile located within the apartment (room, area, or container)?",
+        "priority": "HIGH",
+        "reason": "Precise spatial resolution is needed for automation or assistance; 'laundry pile' is vague and could refer to multiple possible locations."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "person",
+        "ambiguous_phrase": "Jamie",
+        "question": "What is Jamie's relationship to User A (roommate, partner, landlord, etc.) and does Jamie have access or authority regarding the cleaning tasks?",
+        "priority": "CRITICAL",
+        "reason": "Jamie is referenced as a third party whose appreciation is important, but their role, access, and expectations are undefined. This matters for privacy and access control, especially if cleaning tasks involve shared or private spaces."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "this time",
+        "question": "What is the reference point for 'this time'? Has there been a previous instance where Jamie did not appreciate the effort, and when did that occur?",
+        "priority": "HIGH",
+        "reason": "The phrase 'this time' implies a prior event or pattern, but no temporal details are provided. Understanding timing is important for tracking recurring tasks or expectations."
+      },
+      {
+        "turn_id": 7,
+        "entity_type": "location",
+        "ambiguous_phrase": "Done!",
+        "question": "Which specific area or task is now completed? Is it the bathroom, kitchen, or another location within the apartment?",
+        "priority": "HIGH",
+        "reason": "The completion statement lacks explicit reference to the area or task finished. This matters for clarity in multi-step cleaning or maintenance routines."
+      },
+      {
+        "turn_id": 13,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now",
+        "question": "What exact time does 'now' refer to? Is there a specific task or event being initiated at this moment?",
+        "priority": "HIGH",
+        "reason": "'Now' is a vague temporal reference. Without a precise timestamp or linkage to a scheduled event (e.g., the upcoming 'Laundry Pickup at 11:00 AM'), it is unclear when the action is intended to occur, which may impact coordination or tracking of tasks."
+      },
+      {
+        "turn_id": 17,
+        "entity_type": "location",
+        "ambiguous_phrase": "the living room",
+        "question": "Which exact area or task in the living room is User A referring to (e.g., vacuuming, dusting, organizing)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the living room' is spatially broad and does not specify the intended action or sub-location, which could lead to confusion about responsibilities or task division."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Let\u2019s add it",
+        "question": "What exactly is being added, and to which list, schedule, or system is it being added? Is there a specific time or deadline for this addition?",
+        "priority": "HIGH",
+        "reason": "The action 'add it' is vague without specifying what is being added (e.g., a cleaning task, a reminder, a calendar event), where it is being added, or when it should occur. This prevents clear task tracking or scheduling."
+      },
+      {
+        "turn_id": 19,
+        "entity_type": "location",
+        "ambiguous_phrase": "Olive\u2019s fur is everywhere lately",
+        "question": "Which specific areas or rooms are most affected by Olive's fur? Is the cleaning task meant to target the entire apartment or specific locations?",
+        "priority": "HIGH",
+        "reason": "While 'everywhere' is used, the actual scope of the cleaning task is ambiguous. Knowing the precise locations ensures the task is actionable and not overly broad."
+      },
+      {
+        "turn_id": 21,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Tomorrow morning",
+        "question": "What is the exact time window for 'tomorrow morning'? Is it before or after the 11:00 AM laundry pickup?",
+        "priority": "HIGH",
+        "reason": "The phrase 'tomorrow morning' is ambiguous without a specific time. Scheduling or coordination may fail if the exact time is not clarified, especially since there is a fixed appointment at 11:00 AM."
+      },
+      {
+        "turn_id": 24,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bin outside",
+        "question": "Which specific bin outside is being referred to (e.g., trash, recycling, compost, location on property)?",
+        "priority": "HIGH",
+        "reason": "The phrase 'the bin outside' is vague; specifying which bin is important for proper waste sorting and compliance with building or city policies."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "before I leave",
+        "question": "What is the exact time or deadline for 'before I leave'? When is User A leaving?",
+        "priority": "HIGH",
+        "reason": "The phrase 'before I leave' is temporally ambiguous; without a specific time or deadline, it is unclear when the action will occur, which may impact coordination or scheduling, especially given the upcoming calendar event (Laundry Pickup at 11:00 AM)."
+      },
+      {
+        "turn_id": 26,
+        "entity_type": "location",
+        "ambiguous_phrase": "I'll check",
+        "question": "What is User A checking, and where? The object or area to be checked is unspecified.",
+        "priority": "HIGH",
+        "reason": "The action 'I'll check' lacks a clear referent for what or where is being checked, which creates ambiguity about the task or responsibility being referenced."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when I head out",
+        "question": "At what exact time will User A 'head out' to get the item?",
+        "priority": "HIGH",
+        "reason": "The phrase 'when I head out' is temporally vague. Without a specific time, it is unclear when the action will occur, which could impact coordination or deadlines (e.g., laundry pickup at 11:00 AM)."
+      },
+      {
+        "turn_id": 28,
+        "entity_type": "location",
+        "ambiguous_phrase": "get it",
+        "question": "What exactly is User A planning to 'get' and from where?",
+        "priority": "HIGH",
+        "reason": "The referent for 'it' is not specified in this turn or immediately prior turns, making the object and location of the retrieval ambiguous. This could cause confusion about what task is being confirmed."
+      },
+      {
+        "turn_id": 30,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "What day was it again?",
+        "question": "Which event or task is 'it' referring to, and what is the exact date?",
+        "priority": "HIGH",
+        "reason": "'It' is a pronoun with an unclear antecedent; without knowing which event or task is being referenced, the exact date cannot be determined. This creates ambiguity in scheduling or task tracking."
+      },
+      {
+        "turn_id": 32,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "that time",
+        "question": "What is the exact date and time of the appointment being referenced?",
+        "priority": "CRITICAL",
+        "reason": "User A confirms blocking off 'that time' on their calendar, but the specific appointment time is not stated in this turn or the immediately preceding context. Without explicit date/time, the calendar action may be ambiguous or incorrect."
+      },
+      {
+        "turn_id": 34,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What specific location does 'there' refer to?",
+        "priority": "HIGH",
+        "reason": "The deictic term 'there' is used without explicit resolution in this turn, leaving the destination or place unclear. This is necessary for tracking spatial entities and understanding the context of the statement."
+      },
+      {
+        "turn_id": 38,
+        "entity_type": "location",
+        "ambiguous_phrase": "cloudy",
+        "question": "Is the weather description ('Just cloudy. Typical Seattle.') referring specifically to the current location (Sophie & Jamie's Apartment, Capitol Hill, Seattle), or is it a general statement about Seattle as a whole?",
+        "priority": "HIGH",
+        "reason": "The weather report is vague and does not specify whether it applies to the immediate location or the broader Seattle area. This matters if precise local conditions are needed for planning or context."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "person",
+        "ambiguous_phrase": "him",
+        "question": "Who is 'him' referring to in the context of the rent transfer?",
+        "priority": "HIGH",
+        "reason": "The identity of 'him' is unclear, which is essential for tracking communication and responsibility regarding the rent transfer."
+      },
+      {
+        "turn_id": 40,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the rent transfer",
+        "question": "What is the deadline or expected timeframe for the rent transfer response?",
+        "priority": "HIGH",
+        "reason": "Without a specified timeframe, it's ambiguous when a response is expected or if a follow-up is needed."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "when you do",
+        "question": "What is the deadline or specific date/time by which the rent transfer must be confirmed to avoid late fees?",
+        "priority": "HIGH",
+        "reason": "Without a clear deadline, there is risk of missing the rent payment window and incurring late fees. The temporal reference is vague and needs explicit resolution."
+      },
+      {
+        "turn_id": 42,
+        "entity_type": "person",
+        "ambiguous_phrase": "you",
+        "question": "Who is responsible for confirming the rent transfer\u2014User B or another party?",
+        "priority": "HIGH",
+        "reason": "Responsibility is not explicitly assigned, which could lead to confusion or missed action regarding the rent transfer."
+      },
+      {
+        "turn_id": 44,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the list",
+        "question": "What is the scope and deadline for 'the list'? Is it a shopping list, a chores list, or another type? When does it need to be completed?",
+        "priority": "HIGH",
+        "reason": "Without knowing what 'the list' refers to and its deadline, it's impossible to determine what additional items might be needed or whether time-sensitive tasks are being missed."
+      },
+      {
+        "turn_id": 48,
+        "entity_type": "location",
+        "ambiguous_phrase": "where",
+        "question": "What is the specific destination or location being referred to?",
+        "priority": "HIGH",
+        "reason": "The phrase 'where do you want to go?' references a location, but no explicit destination is provided. This is necessary to resolve the intent and plan any related actions (e.g., directions, scheduling, transportation)."
+      },
+      {
+        "turn_id": 50,
+        "entity_type": "location",
+        "ambiguous_phrase": "it\u2019s close",
+        "question": "What specific location is being referred to as 'close'?",
+        "priority": "HIGH",
+        "reason": "The antecedent for 'it' is not explicitly stated in this turn, making the referenced location ambiguous. This matters for clarity, especially if location-specific actions or directions are required."
+      },
+      {
+        "turn_id": 52,
+        "entity_type": "location",
+        "ambiguous_phrase": "there",
+        "question": "What is the exact location referred to as 'there'? Is it confirmed and unambiguous for all participants?",
+        "priority": "HIGH",
+        "reason": "'There' is a deictic reference that requires explicit resolution to a specific location. Without confirmation, there is risk of miscommunication about the meeting place."
+      },
+      {
+        "turn_id": 54,
+        "entity_type": "directory/folder",
+        "ambiguous_phrase": "that folder with the receipts",
+        "question": "Which specific folder is being referred to? (e.g., location, label, appearance, or contents needed to identify it)",
+        "priority": "HIGH",
+        "reason": "There may be multiple folders containing receipts or documents; without a clear identifier, the recipient may not know which folder to bring, leading to confusion or delay in updating expenses."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 1,
+        "ambiguous_phrase": "here",
+        "resolved_entity": "Sophie & Jamie's Apartment (where User A is currently located and referencing the quiet atmosphere)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 3,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "Location where the scrub brush was left (likely in the bathroom, as User A is starting bathroom cleaning tasks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 6,
+        "ambiguous_phrase": "one",
+        "resolved_entity": "The towel currently in the bathroom (which is stained and needs replacing)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 13,
+        "ambiguous_phrase": "now",
+        "resolved_entity": "Current time (message sent time, while User A is actively cleaning and wants to continue with the next task)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 15,
+        "ambiguous_phrase": "Here you go",
+        "resolved_entity": "Handing over an item just discussed or needed for cleaning (likely a cleaning tool or checklist, as per the ongoing tasks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 19,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "A new cleaning task related to Olive\u2019s fur (to be added to the chore list)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 21,
+        "ambiguous_phrase": "tomorrow morning",
+        "resolved_entity": "The morning of the next day after the conversation date (2026-02-07), when User A will pick up laundry at 11:00 AM",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 24,
+        "ambiguous_phrase": "bin outside",
+        "resolved_entity": "The outdoor trash/recycling bin for the apartment building (where User A took the item)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 26,
+        "ambiguous_phrase": "before I leave",
+        "resolved_entity": "Before User A leaves the apartment (likely for laundry pickup or another errand)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 28,
+        "ambiguous_phrase": "when I head out",
+        "resolved_entity": "When User A leaves the apartment for their next errand (likely laundry pickup at 11:00 AM tomorrow)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 30,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The calendar event or appointment previously discussed (User A is asking to confirm the day of this event)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 32,
+        "ambiguous_phrase": "that time",
+        "resolved_entity": "The specific time of the event or appointment just discussed (to be blocked off on User A's calendar)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 34,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The location just discussed as a better place for 'her' (likely Olive, the pet cat)\u2014possibly the couch or another comfortable spot in the apartment",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 36,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Olive, the pet cat (who is full and napping on the couch)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 40,
+        "ambiguous_phrase": "him",
+        "resolved_entity": "The person responsible for the rent transfer (likely the landlord or property manager)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 42,
+        "ambiguous_phrase": "when you do",
+        "resolved_entity": "When the other person hears back from the person responsible for the rent transfer",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 44,
+        "ambiguous_phrase": "the list",
+        "resolved_entity": "The shared household chore or to-do list being updated by User A and Jamie",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 46,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "The item just mentioned for the list (a new task or responsibility)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 48,
+        "ambiguous_phrase": "where",
+        "resolved_entity": "The location where the other person wants to go (likely for an outing or errand, as discussed in the conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 50,
+        "ambiguous_phrase": "It\u2019s close",
+        "resolved_entity": "The location just agreed upon for the outing (a nearby place, so no umbrella is needed)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 52,
+        "ambiguous_phrase": "there",
+        "resolved_entity": "The nearby location just agreed upon for the outing (destination for meeting up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 54,
+        "ambiguous_phrase": "that folder with the receipts",
+        "resolved_entity": "The specific folder containing receipts needed to update household expenses",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 56,
+        "ambiguous_phrase": "everything",
+        "resolved_entity": "All the items or tasks discussed for the current session (e.g., chores, errands, expenses)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 58,
+        "ambiguous_phrase": "she",
+        "resolved_entity": "Olive, the pet cat (who is purring on the couch)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 31
+  },
+  "user_b": {
+    "user": "User B",
+    "info_gaps": [
+      {
+        "turn_id": 8,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bathroom",
+        "question": "Which specific bathroom is being referred to, if there are multiple bathrooms in Sophie & Jamie's Apartment?",
+        "priority": "HIGH",
+        "reason": "If the apartment has more than one bathroom, it is unclear which one was handled. This could affect clarity for cleaning, maintenance, or follow-up tasks."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "location",
+        "ambiguous_phrase": "under the sink",
+        "question": "Which sink is being referred to\u2014kitchen or bathroom?",
+        "priority": "HIGH",
+        "reason": "The apartment likely has multiple sinks; specifying which sink is essential to accurately identify the location of the cleaner and confirm its use."
+      },
+      {
+        "turn_id": 9,
+        "entity_type": "technical",
+        "ambiguous_phrase": "that new cleaner",
+        "question": "What is the exact product name and type of the 'new cleaner'?",
+        "priority": "HIGH",
+        "reason": "Multiple cleaning products may be stored under the sink; specifying the exact product ensures clarity about which cleaner was used."
+      },
+      {
+        "turn_id": 11,
+        "entity_type": "person",
+        "ambiguous_phrase": "mom",
+        "question": "Who specifically is 'mom' referring to (full name or relationship to User B and/or other parties)?",
+        "priority": "HIGH",
+        "reason": "The reference to 'mom' is ambiguous without context\u2014it's unclear whose mother is being referenced, which could be relevant for understanding the emotional or relational context of the statement."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "next week",
+        "question": "What are the exact start and end dates for 'next week' being referenced?",
+        "priority": "HIGH",
+        "reason": "'Next week' is a relative term and needs to be resolved to specific calendar dates to avoid confusion about which week's checklist is being updated."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "now, or later",
+        "question": "What is the specific time window for 'now' and what is the deadline or latest acceptable time for 'later'?",
+        "priority": "HIGH",
+        "reason": "Without clear timeframes, it's ambiguous when the checklist update is expected, which could lead to missed or delayed updates."
+      },
+      {
+        "turn_id": 12,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "update the checklist",
+        "question": "Is there a scheduled appointment or task entry for updating the checklist, and if so, what are its details (date, time, location)?",
+        "priority": "CRITICAL",
+        "reason": "If this is a recurring or scheduled task, explicit details would help ensure it is tracked and completed on time."
+      },
+      {
+        "turn_id": 14,
+        "entity_type": "location",
+        "ambiguous_phrase": "hand me that marker",
+        "question": "Is the location of the green marker unambiguous to all parties present, or could there be multiple green markers in the apartment?",
+        "priority": "HIGH",
+        "reason": "While the known resolution maps 'that marker' to the green dry-erase marker attached to the fridge, if there are multiple green markers in the apartment, the request could be ambiguous to someone unfamiliar with the context."
+      },
+      {
+        "turn_id": 16,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "kitchen duty",
+        "question": "For which date or time period is User B marking themselves for kitchen duty?",
+        "priority": "HIGH",
+        "reason": "The statement does not specify whether the kitchen duty assignment is for today, this week, next week, or another time frame. This is important for scheduling and clarity in shared responsibilities."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "add vacuuming to the list",
+        "question": "For which specific date(s) or time period is vacuuming being considered for addition to the cleaning checklist?",
+        "priority": "HIGH",
+        "reason": "The timing of the task is unclear\u2014whether vacuuming is to be added as a recurring weekly task, a one-time addition for next week, or for a different schedule. This affects planning and division of labor."
+      },
+      {
+        "turn_id": 18,
+        "entity_type": "location",
+        "ambiguous_phrase": "vacuuming",
+        "question": "Which specific area(s) of the apartment are intended to be vacuumed (e.g., living room, bedrooms, hallway)?",
+        "priority": "HIGH",
+        "reason": "The scope of the vacuuming task is ambiguous. Clarifying the location is necessary for accurate task assignment and to avoid misunderstandings."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "schedule it for later today, or tomorrow morning",
+        "question": "What specific time is being proposed for the scheduled activity? Is there a conflict with the existing calendar event (Grocery Shopping at 1:00 PM)?",
+        "priority": "HIGH",
+        "reason": "The phrase proposes two vague time windows without specifying an exact time, which is necessary for scheduling and to avoid conflicts with existing appointments."
+      },
+      {
+        "turn_id": 20,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "schedule it",
+        "question": "What is the exact activity or task being scheduled? Is it cleaning, vacuuming, or another specific task?",
+        "priority": "CRITICAL",
+        "reason": "The pronoun 'it' is ambiguous; without clear reference, the appointment cannot be properly scheduled or tracked."
+      },
+      {
+        "turn_id": 22,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after you\u2019re back",
+        "question": "What is the exact time or event that 'after you\u2019re back' refers to?",
+        "priority": "HIGH",
+        "reason": "The timing of the vacuuming task is ambiguous; 'after you\u2019re back' does not specify a concrete time or event, which could lead to scheduling conflicts or missed expectations, especially with a calendar event (Grocery Shopping at 1:00 PM) upcoming."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "Did you already empty the trash",
+        "question": "When was the trash in the bathroom last emptied?",
+        "priority": "HIGH",
+        "reason": "The timing of the last trash removal is unclear, which affects whether the task needs to be done now or can be deferred."
+      },
+      {
+        "turn_id": 23,
+        "entity_type": "location",
+        "ambiguous_phrase": "the bathroom",
+        "question": "Which bathroom is being referred to, if there is more than one in the apartment?",
+        "priority": "HIGH",
+        "reason": "If the apartment has multiple bathrooms, it is ambiguous which one is meant, potentially leading to incomplete task coverage."
+      },
+      {
+        "turn_id": 25,
+        "entity_type": "location",
+        "ambiguous_phrase": "the recycling",
+        "question": "Which recycling bin or location is being referred to (e.g., kitchen, hallway, building common area)?",
+        "priority": "HIGH",
+        "reason": "The apartment may have multiple recycling bins (e.g., in kitchen, hallway, or a shared building area). Without specifying which recycling bin, the request is ambiguous and could lead to confusion or incomplete action."
+      },
+      {
+        "turn_id": 27,
+        "entity_type": "location",
+        "ambiguous_phrase": "the lobby",
+        "question": "Which specific lobby is being referred to (e.g., building address, floor, or area within the building)?",
+        "priority": "HIGH",
+        "reason": "The apartment may have multiple lobbies or shared spaces; without specifying which lobby, the recipient may be confused about where to retrieve the package."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "maintenance next week",
+        "question": "What are the exact dates and times for the scheduled maintenance?",
+        "priority": "HIGH",
+        "reason": "The phrase 'next week' is ambiguous and needs to be resolved to a specific date range to ensure proper planning and avoid missed events."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "location",
+        "ambiguous_phrase": "maintenance",
+        "question": "Which areas of the apartment or building will be affected by the maintenance?",
+        "priority": "HIGH",
+        "reason": "Knowing the specific location(s) impacted is necessary for preparation and access planning."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "person",
+        "ambiguous_phrase": "building manager",
+        "question": "Who is the building manager referenced in the note (full name and contact info)?",
+        "priority": "HIGH",
+        "reason": "Identifying the building manager is important for follow-up questions or clarifications about the maintenance."
+      },
+      {
+        "turn_id": 29,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "note from the building manager",
+        "question": "Are there any required actions or appointments for residents related to the maintenance?",
+        "priority": "CRITICAL",
+        "reason": "If residents need to be present or take action, this should be clarified to avoid missed requirements."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment|temporal",
+        "ambiguous_phrase": "Wednesday, I think. He said 'between noon and two'.",
+        "question": "What is the exact date (month/day/year) for 'Wednesday'? Which Wednesday is being referred to?",
+        "priority": "HIGH",
+        "reason": "The reference to 'Wednesday' is ambiguous without a specific date, making it unclear when the maintenance is scheduled. This is essential for accurate scheduling and preparation."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "person",
+        "ambiguous_phrase": "He said",
+        "question": "Who is 'he'? What is the full name or role of the person who provided this information?",
+        "priority": "HIGH",
+        "reason": "The pronoun 'he' is used without a clear antecedent, making it unclear who communicated the maintenance window. This is important for verification or follow-up."
+      },
+      {
+        "turn_id": 31,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "'between noon and two'",
+        "question": "What is the exact time window for the appointment? Is it 12:00 PM to 2:00 PM local time?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'between noon and two' could be interpreted differently (e.g., 12:00\u20132:00 PM or 12:00\u20132:00 AM). Explicit clarification ensures correct scheduling."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "location",
+        "ambiguous_phrase": "my room",
+        "question": "Which specific room is 'my room'? Is it Sophie\u2019s or Jamie\u2019s room, and what are its attributes (location, access, suitability for Olive)?",
+        "priority": "CRITICAL",
+        "reason": "Ambiguity about which room is being referred to could impact logistics and privacy, especially if Olive has specific needs or restrictions."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "while they work",
+        "question": "What is the exact time window for 'while they work'? When will the maintenance start and end?",
+        "priority": "HIGH",
+        "reason": "The duration and timing of the maintenance are not specified, which is important for planning and ensuring Olive\u2019s comfort and safety."
+      },
+      {
+        "turn_id": 33,
+        "entity_type": "person",
+        "ambiguous_phrase": "they",
+        "question": "Who does 'they' refer to? Is it the maintenance crew, building staff, or someone else?",
+        "priority": "HIGH",
+        "reason": "Clarifying the antecedent of 'they' is necessary for understanding who will be present and any privacy or access concerns."
+      },
+      {
+        "turn_id": 35,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "already",
+        "question": "At what specific time or feeding schedule is 'already' referring to? Is there a set feeding time or frequency?",
+        "priority": "HIGH",
+        "reason": "The timing of the feeding is unclear; without a reference point, it's ambiguous whether the feeding is overdue, early, or on schedule."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "the weather report for today",
+        "question": "What is the exact date referred to as 'today'?",
+        "priority": "HIGH",
+        "reason": "The term 'today' is relative and requires explicit resolution to a calendar date for clarity, especially if this conversation is referenced later or across time zones."
+      },
+      {
+        "turn_id": 37,
+        "entity_type": "location",
+        "ambiguous_phrase": "the weather report",
+        "question": "Which location's weather report is being referenced?",
+        "priority": "HIGH",
+        "reason": "While the local metadata suggests Seattle, the weather report could pertain to a different location if not explicitly stated, leading to possible confusion."
+      },
+      {
+        "turn_id": 39,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "so far",
+        "question": "What is the specific time window being referenced by 'so far'? (e.g., up to what time is it dry?)",
+        "priority": "HIGH",
+        "reason": "'So far' is a vague temporal reference; without a clear time window, it's ambiguous when the dryness is being observed and for how long it is expected to last."
+      },
+      {
+        "turn_id": 41,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "I\u2019ll check my messages",
+        "question": "Which messages (platform, sender, or topic) will be checked, and by when will this be done?",
+        "priority": "HIGH",
+        "reason": "The commitment to check messages is vague\u2014there is no indication of which messaging platform, which messages, or a timeframe for completion. This could delay follow-up actions if time-sensitive."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "location",
+        "ambiguous_phrase": "the shelves",
+        "question": "Which shelves specifically need to be dusted? (e.g., living room, kitchen, bedroom, etc.)",
+        "priority": "HIGH",
+        "reason": "The phrase 'the shelves' is ambiguous in a multi-room apartment; specifying location is necessary for clear task execution."
+      },
+      {
+        "turn_id": 45,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "We should dust",
+        "question": "When should the dusting of the shelves take place? Is it before the next calendar event (Grocery Shopping at 1:00 PM) or at another specific time?",
+        "priority": "HIGH",
+        "reason": "No explicit timing is given, which could lead to scheduling conflicts or missed tasks."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "later",
+        "question": "What specific time is meant by 'later' for grabbing coffee?",
+        "priority": "HIGH",
+        "reason": "'Later' is vague and could conflict with the scheduled calendar event ('Grocery Shopping at 1:00 PM'). Precise timing is needed to avoid overlap and ensure clarity."
+      },
+      {
+        "turn_id": 47,
+        "entity_type": "location",
+        "ambiguous_phrase": "grab coffee",
+        "question": "Where is the intended location for grabbing coffee?",
+        "priority": "HIGH",
+        "reason": "The location for grabbing coffee is unspecified. This is important for coordination, especially if leaving the apartment is required."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "location",
+        "ambiguous_phrase": "Vivace, the place on Broadway",
+        "question": "Which exact Vivace location on Broadway is being referred to? (There may be multiple Vivace cafes or similar-named places on Broadway in Seattle.)",
+        "priority": "HIGH",
+        "reason": "Ambiguity in the location could lead to confusion or miscoordination, especially if there are multiple Vivace locations or entrances on Broadway."
+      },
+      {
+        "turn_id": 49,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "Want to grab coffee later? How about Vivace...",
+        "question": "What is the proposed time for meeting at Vivace? Is it before or after the scheduled grocery shopping at 1:00 PM?",
+        "priority": "CRITICAL",
+        "reason": "Temporal ambiguity may cause scheduling conflicts with existing calendar events, and the lack of a specific time prevents proper planning."
+      },
+      {
+        "turn_id": 51,
+        "entity_type": "temporal",
+        "ambiguous_phrase": "after your laundry",
+        "question": "What is the expected end time for the laundry? Is 'noon' a confirmed, feasible time given the laundry schedule?",
+        "priority": "HIGH",
+        "reason": "The phrase 'after your laundry' is temporally vague\u2014without knowing when laundry will finish, the feasibility of meeting at noon is uncertain. This is especially important given the next calendar event (grocery shopping at 1:00 PM), so precise timing is needed to avoid overlap."
+      },
+      {
+        "turn_id": 53,
+        "entity_type": "location",
+        "ambiguous_phrase": "us a table",
+        "question": "Is the table being reserved at Vivace on Broadway, or is there ambiguity about which location or area within Vivace is intended?",
+        "priority": "HIGH",
+        "reason": "While Vivace on Broadway was previously mentioned, there is no explicit confirmation in this turn that the table will be at that specific location or if any special reservation or seating area is intended. This could cause confusion if there are multiple Vivace locations or seating areas."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "person",
+        "ambiguous_phrase": "Olive approves",
+        "question": "Who is Olive, and what is Olive's role or authority in this context?",
+        "priority": "CRITICAL",
+        "reason": "The approval is attributed to 'Olive', but there is no information about Olive's identity, relationship to the participants, or why Olive's approval is relevant. This could impact privacy, authority, or process validation."
+      },
+      {
+        "turn_id": 57,
+        "entity_type": "appointment",
+        "ambiguous_phrase": "we're all set",
+        "question": "What specific event or appointment is now confirmed as 'all set'? Is there a time, location, or agenda?",
+        "priority": "CRITICAL",
+        "reason": "The phrase 'we're all set' implies a finalized plan, but there is no explicit mention of what is confirmed (e.g., meeting, reservation, task). This is essential for clarity and tracking next actions."
+      }
+    ],
+    "resolutions": [
+      {
+        "turn_id": 9,
+        "ambiguous_phrase": "that new cleaner under the sink",
+        "resolved_entity": "the new cleaning product stored under the kitchen sink (recently purchased for household cleaning tasks)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 12,
+        "ambiguous_phrase": "now, or later",
+        "resolved_entity": "now: immediately (current time in the conversation); later: at a time after this conversation, but before next week's chores begin",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 14,
+        "ambiguous_phrase": "that marker",
+        "resolved_entity": "the green marker (used for updating the chore checklist, likely located nearby during the conversation)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 20,
+        "ambiguous_phrase": "later today, or tomorrow morning",
+        "resolved_entity": "later today: any time after this conversation on the current day (Saturday); tomorrow morning: the morning of the next day (Sunday) after this conversation",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 22,
+        "ambiguous_phrase": "after you\u2019re back",
+        "resolved_entity": "after Jamie returns from their current outing or errand (the next time Jamie is back at the apartment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 27,
+        "ambiguous_phrase": "the lobby",
+        "resolved_entity": "the lobby of Sophie & Jamie's apartment building (where packages are delivered and picked up)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 29,
+        "ambiguous_phrase": "that note from the building manager",
+        "resolved_entity": "the written message or notice from the building manager regarding upcoming maintenance next week (likely posted or delivered to the apartment)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 31,
+        "ambiguous_phrase": "between noon and two",
+        "resolved_entity": "the time window between 12:00 PM and 2:00 PM on Wednesday (when maintenance is scheduled to occur in the apartment)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 33,
+        "ambiguous_phrase": "my room",
+        "resolved_entity": "Sophie's bedroom in the apartment (where Olive, the pet, will be moved during maintenance)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 35,
+        "ambiguous_phrase": "her",
+        "resolved_entity": "Olive, the pet (likely a cat or small animal living with Sophie and Jamie)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 37,
+        "ambiguous_phrase": "today",
+        "resolved_entity": "the current day of the conversation (Saturday, February 6, 2026)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 45,
+        "ambiguous_phrase": "last time",
+        "resolved_entity": "the previous cleaning session or the last time Sophie cleaned the apartment (prior to this conversation)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 47,
+        "ambiguous_phrase": "later",
+        "resolved_entity": "after the current set of chores or activities, but before the end of the day (suggesting a coffee outing after chores are done)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 51,
+        "ambiguous_phrase": "after your laundry",
+        "resolved_entity": "after Jamie finishes doing their laundry (the next activity before going for coffee at noon)",
+        "resolution_type": "temporal",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 53,
+        "ambiguous_phrase": "a table",
+        "resolved_entity": "a table at Vivace, the coffee place on Broadway (where Sophie and Jamie plan to meet for coffee)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      },
+      {
+        "turn_id": 55,
+        "ambiguous_phrase": "it",
+        "resolved_entity": "the item previously discussed (likely the marker or checklist, located on Sophie's desk)",
+        "resolution_type": "spatial",
+        "metadata_source": "Conversation Context"
+      }
+    ],
+    "transcript_turns": 27
+  }
+}
