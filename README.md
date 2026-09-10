@@ -123,6 +123,13 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+## Evaluation
+### Qwen model output
+```
+python qwen_metrics_predictions.py
+```
+To generate the resolution output from the qwen model.
+
 Key dependencies:
 - `openai` (Azure OpenAI SDK)
 - `numpy`
