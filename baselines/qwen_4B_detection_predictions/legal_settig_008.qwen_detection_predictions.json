@@ -1,0 +1,2902 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "C:\\Users\\amart\\Desktop\\PhD projects\\lexicon-framework\\data_generation\\event_keywords\\generated_datasets\\legal_settig_008.json",
+  "metrics": {
+    "ground_truth_ambiguities": 15,
+    "qwen_predicted_ambiguities": 99,
+    "detected_ground_truth_ambiguities": 5,
+    "missed_ground_truth_ambiguities": 10,
+    "detected_but_bad_resolution": 0,
+    "true_positives": 5,
+    "false_negatives": 10,
+    "false_positive_ambiguities": 94,
+    "detection_recall": 0.3333333333333333,
+    "detection_precision": 0.050505050505050504,
+    "detection_f1": 0.08771929824561404,
+    "true_positive_rate_at_0_70": 0.3333333333333333,
+    "strict_end_to_end_precision_at_0_70": 0.050505050505050504,
+    "end_to_end_f1_at_0_70": 0.08771929824561404,
+    "false_positive_discovery_rate": 0.9494949494949495,
+    "false_positives_per_turn": 1.5161290322580645,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 62,
+    "median_latency_per_turn_s": 13.44408105011098,
+    "mean_latency_per_turn_s": 14.626655280650143,
+    "total_prompt_tokens": 83803,
+    "total_output_tokens": 3409
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "I'm here on the third floor, just outside the big conference room.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the big conference room"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Liu & Kirkpatrick Law Offices: 200 SW Market St, Portland, OR, Floor 3",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the big conference room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 3.9910937000531703,
+        "ollama_total_s": 3.9895055,
+        "model_load_s": 0.0030906,
+        "prompt_eval_s": 1.537066,
+        "generation_s": 2.35334,
+        "prompt_tokens": 435,
+        "output_tokens": 34,
+        "total_tokens": 469,
+        "generation_tokens_per_s": 14.447551140081755
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Perfect, I see you near the elevators. Let's head into Conference Room 3B.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Conference Room 3B",
+          "ground_truth_ambiguous_phrase": "Conference Room 3B",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Conference Room 3B (Liu & Kirkpatrick Law Offices)",
+          "ground_truth_resolution": "Law office conference room 3B",
+          "resolution_similarity": 0.8602341993947415,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "Conference Room 3B",
+          "resolved_entity": "Conference Room 3B (Liu & Kirkpatrick Law Offices)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 6.598252599826083,
+        "ollama_total_s": 6.5965952,
+        "model_load_s": 0.0031734,
+        "prompt_eval_s": 1.819639,
+        "generation_s": 4.768987,
+        "prompt_tokens": 469,
+        "output_tokens": 68,
+        "total_tokens": 537,
+        "generation_tokens_per_s": 14.258793324452341
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Right, this place is a lot quieter than the lobby. Thanks.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Liu & Kirkpatrick Law Offices - Conference Room 3B",
+          "ground_truth_resolution": "Liu & Kirkpatrick Law Offices",
+          "resolution_similarity": 0.8744923771677342,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices - Conference Room 3B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.086474000010639,
+        "ollama_total_s": 5.0850969,
+        "model_load_s": 0.003069,
+        "prompt_eval_s": 1.979088,
+        "generation_s": 3.074135,
+        "prompt_tokens": 486,
+        "output_tokens": 44,
+        "total_tokens": 530,
+        "generation_tokens_per_s": 14.312969339342612
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Yes, we use this room for confidential meetings. Please take that chair by the window.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that chair",
+          "ground_truth_ambiguous_phrase": "that chair",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the chair by the window in Conference Room 3B",
+          "ground_truth_resolution": "Window-side chair in Conference Room 3B",
+          "resolution_similarity": 0.8631719284563603,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this room",
+          "resolved_entity": "Conference Room 3B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this room",
+          "resolved_entity": "Conference Room 3B"
+        },
+        {
+          "ambiguous_phrase": "that chair",
+          "resolved_entity": "the chair by the window in Conference Room 3B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.012911299942061,
+        "ollama_total_s": 7.0115301,
+        "model_load_s": 0.0025503,
+        "prompt_eval_s": 2.245685,
+        "generation_s": 4.730294,
+        "prompt_tokens": 517,
+        "output_tokens": 67,
+        "total_tokens": 584,
+        "generation_tokens_per_s": 14.164024477125524
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Great, I appreciate the sunlight. My arthritis feels better when it's bright.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices - Conference Room 3B"
+        },
+        {
+          "ambiguous_phrase": "the chair",
+          "resolved_entity": "the chair by the window"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the sunlight",
+          "ground_truth_resolution": "Window-facing Conference Room 3B",
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices - Conference Room 3B"
+        },
+        {
+          "ambiguous_phrase": "the chair",
+          "resolved_entity": "the chair by the window"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.329879899974912,
+        "ollama_total_s": 7.328412,
+        "model_load_s": 0.0030738,
+        "prompt_eval_s": 2.409197,
+        "generation_s": 4.885495,
+        "prompt_tokens": 540,
+        "output_tokens": 69,
+        "total_tokens": 609,
+        "generation_tokens_per_s": 14.12344092052085
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Of course. To begin, you mentioned concerns about your healthcare proxy after your hospital visit last week. Can you tell me more about what happened then?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your healthcare proxy",
+          "resolved_entity": "healthcare proxy (User A's healthcare proxy)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "then",
+          "ground_truth_resolution": "Last Monday, 8:00 AM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your healthcare proxy",
+          "resolved_entity": "healthcare proxy (User A's healthcare proxy)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.799130399944261,
+        "ollama_total_s": 5.7977706,
+        "model_load_s": 0.0035778,
+        "prompt_eval_s": 2.791599,
+        "generation_s": 2.95712,
+        "prompt_tokens": 593,
+        "output_tokens": 41,
+        "total_tokens": 634,
+        "generation_tokens_per_s": 13.86484146737366
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Last Monday, I was admitted to St. Vincent for chest pain. The person listed on my proxy couldn't be reached, and the nurses seemed unsure about my wishes.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Last Monday",
+          "resolved_entity": "2023-10-03"
+        },
+        {
+          "ambiguous_phrase": "the person",
+          "resolved_entity": "the person listed on User A's proxy"
+        },
+        {
+          "ambiguous_phrase": "the nurses",
+          "resolved_entity": "nurses at St. Vincent Hospital"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Last Monday",
+          "resolved_entity": "2023-10-03"
+        },
+        {
+          "ambiguous_phrase": "the person",
+          "resolved_entity": "the person listed on User A's proxy"
+        },
+        {
+          "ambiguous_phrase": "the nurses",
+          "resolved_entity": "nurses at St. Vincent Hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.996112399967387,
+        "ollama_total_s": 9.9944847,
+        "model_load_s": 0.0021446,
+        "prompt_eval_s": 3.172228,
+        "generation_s": 6.779103,
+        "prompt_tokens": 640,
+        "output_tokens": 96,
+        "total_tokens": 736,
+        "generation_tokens_per_s": 14.161165570135164
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Was it your cousin, Mark Porter, who was listed?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Was it your cousin, Mark Porter",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "him",
+          "ground_truth_resolution": "Mark Porter (James's cousin)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Was it your cousin, Mark Porter",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.890400000149384,
+        "ollama_total_s": 5.8893519,
+        "model_load_s": 0.0034769,
+        "prompt_eval_s": 3.141524,
+        "generation_s": 2.698003,
+        "prompt_tokens": 639,
+        "output_tokens": 38,
+        "total_tokens": 677,
+        "generation_tokens_per_s": 14.084491381217886
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, him. He's been traveling a lot, so I think someone else should have access.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.791556499898434,
+        "ollama_total_s": 5.790453,
+        "model_load_s": 0.0035961,
+        "prompt_eval_s": 3.474654,
+        "generation_s": 2.273928,
+        "prompt_tokens": 676,
+        "output_tokens": 32,
+        "total_tokens": 708,
+        "generation_tokens_per_s": 14.072565182362853
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Understood. We can update the document and designate a different proxy. Did anyone help you at the hospital with your decisions?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the Power of Attorney document (from User A's hospital visit last week)"
+        },
+        {
+          "ambiguous_phrase": "the proxy",
+          "resolved_entity": "the healthcare proxy (for User A's hospital visit last week)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the Power of Attorney document (from User A's hospital visit last week)"
+        },
+        {
+          "ambiguous_phrase": "the proxy",
+          "resolved_entity": "the healthcare proxy (for User A's hospital visit last week)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.369080600095913,
+        "ollama_total_s": 9.3686043,
+        "model_load_s": 0.0043378,
+        "prompt_eval_s": 3.78099,
+        "generation_s": 5.53749,
+        "prompt_tokens": 717,
+        "output_tokens": 77,
+        "total_tokens": 794,
+        "generation_tokens_per_s": 13.905216984590492
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "My friend Linda was there, and she spoke to the doctor for me when I was groggy.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "My friend Linda",
+          "ground_truth_ambiguous_phrase": "My friend Linda",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Linda (User A's friend)",
+          "ground_truth_resolution": "Linda Matthews",
+          "resolution_similarity": 0.7426454060244373,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the doctor",
+          "resolved_entity": "Doctor at St. Vincent Hospital"
+        },
+        {
+          "ambiguous_phrase": "when I was groggy",
+          "resolved_entity": "When User A was groggy after hospital admission"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "My friend Linda",
+          "resolved_entity": "Linda (User A's friend)"
+        },
+        {
+          "ambiguous_phrase": "the doctor",
+          "resolved_entity": "Doctor at St. Vincent Hospital"
+        },
+        {
+          "ambiguous_phrase": "when I was groggy",
+          "resolved_entity": "When User A was groggy after hospital admission"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.112465299898759,
+        "ollama_total_s": 11.1110556,
+        "model_load_s": 0.0033215,
+        "prompt_eval_s": 3.991775,
+        "generation_s": 7.072809,
+        "prompt_tokens": 744,
+        "output_tokens": 99,
+        "total_tokens": 843,
+        "generation_tokens_per_s": 13.997267563707714
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Linda sounds reliable. Would you like her to be your new proxy?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda (User A's friend who was present at the hospital)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda (User A's friend who was present at the hospital)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.432845499832183,
+        "ollama_total_s": 7.4315223,
+        "model_load_s": 0.0079775,
+        "prompt_eval_s": 4.236479,
+        "generation_s": 3.140939,
+        "prompt_tokens": 762,
+        "output_tokens": 44,
+        "total_tokens": 806,
+        "generation_tokens_per_s": 14.00854967256607
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Yes, I trust her to act in my best interest.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 6.745490400120616,
+        "ollama_total_s": 6.7437947,
+        "model_load_s": 0.0032708,
+        "prompt_eval_s": 4.387949,
+        "generation_s": 2.308333,
+        "prompt_tokens": 781,
+        "output_tokens": 32,
+        "total_tokens": 813,
+        "generation_tokens_per_s": 13.862817886327491
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Perfect. I'll need Linda's full legal name and contact information for the paperwork. Do you have it with you?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda (User A's friend who was present at the hospital)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her",
+          "ground_truth_resolution": "Linda Matthews",
+          "resolution_source": "User A Phone Contacts"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda (User A's friend who was present at the hospital)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.006397400051355,
+        "ollama_total_s": 8.0050779,
+        "model_load_s": 0.0032748,
+        "prompt_eval_s": 4.769031,
+        "generation_s": 3.193287,
+        "prompt_tokens": 827,
+        "output_tokens": 44,
+        "total_tokens": 871,
+        "generation_tokens_per_s": 13.778905560320759
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "I have her number in my phone. Her name is Linda Matthews.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.327882600016892,
+        "ollama_total_s": 7.3259682,
+        "model_load_s": 0.0032802,
+        "prompt_eval_s": 4.879588,
+        "generation_s": 2.39543,
+        "prompt_tokens": 841,
+        "output_tokens": 33,
+        "total_tokens": 874,
+        "generation_tokens_per_s": 13.776232242227907
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Thank you. Now, let's talk about the powers you want to grant. Would you like her to access your medical records or only make decisions when you're incapacitated?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.870900199981406,
+        "ollama_total_s": 7.8697671,
+        "model_load_s": 0.0032519,
+        "prompt_eval_s": 5.42055,
+        "generation_s": 2.39662,
+        "prompt_tokens": 907,
+        "output_tokens": 33,
+        "total_tokens": 940,
+        "generation_tokens_per_s": 13.769391893583464
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Only when I'm unable to speak for myself, not for routine matters.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Only when I'm unable to speak for myself",
+          "resolved_entity": "the healthcare proxy"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Only when I'm unable to speak for myself",
+          "resolved_entity": "the healthcare proxy"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.440002799965441,
+        "ollama_total_s": 8.438565,
+        "model_load_s": 0.0025804,
+        "prompt_eval_s": 5.432938,
+        "generation_s": 2.952425,
+        "prompt_tokens": 912,
+        "output_tokens": 41,
+        "total_tokens": 953,
+        "generation_tokens_per_s": 13.886889590760138
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Understood. We'll specify limited authority for that in the consent order. You mentioned before that you're concerned about confidentiality. Can you clarify what aspects worry you most?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the consent order"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the healthcare proxy document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the consent order"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the healthcare proxy document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.75500819995068,
+        "ollama_total_s": 11.7536298,
+        "model_load_s": 0.0027984,
+        "prompt_eval_s": 5.962368,
+        "generation_s": 5.734973,
+        "prompt_tokens": 975,
+        "output_tokens": 78,
+        "total_tokens": 1053,
+        "generation_tokens_per_s": 13.600761503149187
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Just that my medical information doesn't get shared with anyone else except Linda and my doctor, Dr. Singh.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my medical information",
+          "resolved_entity": "the medical information of User A"
+        },
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda Matthews (from User A's phone)"
+        },
+        {
+          "ambiguous_phrase": "Dr. Singh",
+          "resolved_entity": "Dr. Singh (the doctor from User A's medical records)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my doctor, Dr. Singh",
+          "ground_truth_resolution": "Dr. Arun Singh, Lakeview Medical Center",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my medical information",
+          "resolved_entity": "the medical information of User A"
+        },
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda Matthews (from User A's phone)"
+        },
+        {
+          "ambiguous_phrase": "Dr. Singh",
+          "resolved_entity": "Dr. Singh (the doctor from User A's medical records)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.506584400078282,
+        "ollama_total_s": 13.505072,
+        "model_load_s": 0.003357,
+        "prompt_eval_s": 6.126979,
+        "generation_s": 7.31604,
+        "prompt_tokens": 995,
+        "output_tokens": 100,
+        "total_tokens": 1095,
+        "generation_tokens_per_s": 13.668596672516825
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Absolutely. The confidentiality agreement will restrict disclosure to only your proxy and Dr. Singh. I'll draft that language.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your proxy",
+          "resolved_entity": "Linda Matthews"
+        },
+        {
+          "ambiguous_phrase": "Dr. Singh",
+          "resolved_entity": "Dr. Singh"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your proxy",
+          "resolved_entity": "Linda Matthews"
+        },
+        {
+          "ambiguous_phrase": "Dr. Singh",
+          "resolved_entity": "Dr. Singh"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.803338600089774,
+        "ollama_total_s": 10.8018628,
+        "model_load_s": 0.0051602,
+        "prompt_eval_s": 6.444949,
+        "generation_s": 4.281901,
+        "prompt_tokens": 1029,
+        "output_tokens": 58,
+        "total_tokens": 1087,
+        "generation_tokens_per_s": 13.545385565897014
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Thank you, that puts my mind at ease. What else do I need to sign for this update?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this update",
+          "resolved_entity": "the document update for healthcare proxy"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this update",
+          "resolved_entity": "the document update for healthcare proxy"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.449959099991247,
+        "ollama_total_s": 9.4481417,
+        "model_load_s": 0.0031613,
+        "prompt_eval_s": 6.657396,
+        "generation_s": 2.732133,
+        "prompt_tokens": 1058,
+        "output_tokens": 37,
+        "total_tokens": 1095,
+        "generation_tokens_per_s": 13.54253251946373
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "You'll need to sign the new power of attorney, the amended consent order, and the confidentiality agreement. I'll explain each as we go.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the new power of attorney",
+          "resolved_entity": "the new power of attorney (amended consent order)"
+        },
+        {
+          "ambiguous_phrase": "the amended consent order",
+          "resolved_entity": "the amended consent order (consent order)"
+        },
+        {
+          "ambiguous_phrase": "the confidentiality agreement",
+          "resolved_entity": "the confidentiality agreement (confidentiality agreement)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the new power of attorney",
+          "resolved_entity": "the new power of attorney (amended consent order)"
+        },
+        {
+          "ambiguous_phrase": "the amended consent order",
+          "resolved_entity": "the amended consent order (consent order)"
+        },
+        {
+          "ambiguous_phrase": "the confidentiality agreement",
+          "resolved_entity": "the confidentiality agreement (confidentiality agreement)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.803506800206378,
+        "ollama_total_s": 14.8017202,
+        "model_load_s": 0.0034477,
+        "prompt_eval_s": 7.09045,
+        "generation_s": 7.643674,
+        "prompt_tokens": 1105,
+        "output_tokens": 103,
+        "total_tokens": 1208,
+        "generation_tokens_per_s": 13.475195305294287
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Sounds good. Is there a filing fee for these forms?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "these forms",
+          "resolved_entity": "the new power of attorney, the amended consent order, and the confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "these forms",
+          "resolved_entity": "the new power of attorney, the amended consent order, and the confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.68869850016199,
+        "ollama_total_s": 10.6868157,
+        "model_load_s": 0.0030661,
+        "prompt_eval_s": 7.153842,
+        "generation_s": 3.465219,
+        "prompt_tokens": 1110,
+        "output_tokens": 46,
+        "total_tokens": 1156,
+        "generation_tokens_per_s": 13.274774263906552
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "There's a $60 statutory fee for the power of attorney filing with Multnomah County, payable at the clerk's office.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the power of attorney",
+          "resolved_entity": "the power of attorney document being updated in the current context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the power of attorney",
+          "resolved_entity": "the power of attorney document being updated in the current context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.93332750000991,
+        "ollama_total_s": 10.9315473,
+        "model_load_s": 0.0058703,
+        "prompt_eval_s": 7.612127,
+        "generation_s": 3.247166,
+        "prompt_tokens": 1162,
+        "output_tokens": 44,
+        "total_tokens": 1206,
+        "generation_tokens_per_s": 13.550277380337192
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Alright, I'll bring my checkbook for that.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the $60 statutory fee for the power of attorney filing with Multnomah County",
+          "ground_truth_resolution": "Statutory $60 filing fee for power of attorney",
+          "resolution_similarity": 0.8065820340144899,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the $60 statutory fee for the power of attorney filing with Multnomah County"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.240981900133193,
+        "ollama_total_s": 11.2389737,
+        "model_load_s": 0.0032739,
+        "prompt_eval_s": 7.671456,
+        "generation_s": 3.496498,
+        "prompt_tokens": 1167,
+        "output_tokens": 47,
+        "total_tokens": 1214,
+        "generation_tokens_per_s": 13.442021130857219
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "You can also pay by card if you prefer. Do you plan to file it today or later?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the power of attorney filing with Multnomah County"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the power of attorney filing with Multnomah County"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.036309300223365,
+        "ollama_total_s": 11.035018,
+        "model_load_s": 0.0030763,
+        "prompt_eval_s": 7.949948,
+        "generation_s": 3.012611,
+        "prompt_tokens": 1206,
+        "output_tokens": 40,
+        "total_tokens": 1246,
+        "generation_tokens_per_s": 13.277519069006917
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "I'd like to file today, if possible. Is there anything else I need from Mark before we remove him?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "2024-05-28"
+        },
+        {
+          "ambiguous_phrase": "Mark",
+          "resolved_entity": "Mark Porter"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        },
+        {
+          "ambiguous_phrase": "remove him",
+          "resolved_entity": "remove Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "2024-05-28"
+        },
+        {
+          "ambiguous_phrase": "Mark",
+          "resolved_entity": "Mark Porter"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        },
+        {
+          "ambiguous_phrase": "remove him",
+          "resolved_entity": "remove Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.26138769998215,
+        "ollama_total_s": 16.2600799,
+        "model_load_s": 0.0034761,
+        "prompt_eval_s": 8.264026,
+        "generation_s": 7.919569,
+        "prompt_tokens": 1242,
+        "output_tokens": 105,
+        "total_tokens": 1347,
+        "generation_tokens_per_s": 13.258297263399056
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "No, as long as you notify him in writing of the change. I can prepare that notice for you to sign.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.181604199809954,
+        "ollama_total_s": 11.1805625,
+        "model_load_s": 0.0033649,
+        "prompt_eval_s": 8.659836,
+        "generation_s": 2.441657,
+        "prompt_tokens": 1277,
+        "output_tokens": 32,
+        "total_tokens": 1309,
+        "generation_tokens_per_s": 13.105853934438784
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Please do, I haven't talked to him since he left for California.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "since he left for California",
+          "ground_truth_resolution": "Mark Porter's current location: San Francisco, CA",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.347696700133383,
+        "ollama_total_s": 11.3453852,
+        "model_load_s": 0.0066583,
+        "prompt_eval_s": 8.838847,
+        "generation_s": 2.42746,
+        "prompt_tokens": 1293,
+        "output_tokens": 32,
+        "total_tokens": 1325,
+        "generation_tokens_per_s": 13.182503522200161
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "I'll draft an email notice. Do you want me to send it directly, or should you review it first?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the email notice"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the email notice"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.777312400052324,
+        "ollama_total_s": 11.7749951,
+        "model_load_s": 0.0031676,
+        "prompt_eval_s": 9.175673,
+        "generation_s": 2.509804,
+        "prompt_tokens": 1334,
+        "output_tokens": 33,
+        "total_tokens": 1367,
+        "generation_tokens_per_s": 13.148437089111342
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "I'd like to review it before it's sent.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the email notice"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the email notice"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.804051799932495,
+        "ollama_total_s": 11.8026011,
+        "model_load_s": 0.0032928,
+        "prompt_eval_s": 9.216158,
+        "generation_s": 2.508609,
+        "prompt_tokens": 1343,
+        "output_tokens": 33,
+        "total_tokens": 1376,
+        "generation_tokens_per_s": 13.15470047344963
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "That's fine. Now, is there anyone else who might need access to your legal documents in case of emergency?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your legal documents",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your legal documents",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.543703999835998,
+        "ollama_total_s": 12.5421459,
+        "model_load_s": 0.0034371,
+        "prompt_eval_s": 9.651088,
+        "generation_s": 2.813243,
+        "prompt_tokens": 1388,
+        "output_tokens": 37,
+        "total_tokens": 1425,
+        "generation_tokens_per_s": 13.152081068005858
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Just Linda and Dr. Singh, no one else.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Just Linda and Dr. Singh, no one else.",
+          "resolved_entity": "Linda Matthews (from Turn 15) and Dr. Singh (from Turn 19)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Just Linda and Dr. Singh, no one else.",
+          "resolved_entity": "Linda Matthews (from Turn 15) and Dr. Singh (from Turn 19)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.301975199952722,
+        "ollama_total_s": 14.3003948,
+        "model_load_s": 0.0036079,
+        "prompt_eval_s": 9.724556,
+        "generation_s": 4.494802,
+        "prompt_tokens": 1397,
+        "output_tokens": 59,
+        "total_tokens": 1456,
+        "generation_tokens_per_s": 13.1262734153807
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Got it. I'll make a note to limit access. For the amended order, do you want to include language about end-of-life wishes, or keep it focused on medical decision-making?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the amended order",
+          "resolved_entity": "the amended power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the amended order",
+          "resolved_entity": "the amended power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.38157770014368,
+        "ollama_total_s": 13.3795473,
+        "model_load_s": 0.0022432,
+        "prompt_eval_s": 10.383644,
+        "generation_s": 2.915842,
+        "prompt_tokens": 1472,
+        "output_tokens": 38,
+        "total_tokens": 1510,
+        "generation_tokens_per_s": 13.03225620592611
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Let's keep it focused for now. I may update it later if needed.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.956802999833599,
+        "ollama_total_s": 12.9553115,
+        "model_load_s": 0.0031213,
+        "prompt_eval_s": 10.417659,
+        "generation_s": 2.452442,
+        "prompt_tokens": 1476,
+        "output_tokens": 32,
+        "total_tokens": 1508,
+        "generation_tokens_per_s": 13.048218877347558
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Makes sense. For the signature process, can you sign electronically, or would you prefer paper and pen?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the signature process",
+          "resolved_entity": "the electronic signature process for the amended power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the signature process",
+          "resolved_entity": "the electronic signature process for the amended power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.169591000070795,
+        "ollama_total_s": 14.1679033,
+        "model_load_s": 0.0030831,
+        "prompt_eval_s": 10.790574,
+        "generation_s": 3.290691,
+        "prompt_tokens": 1512,
+        "output_tokens": 43,
+        "total_tokens": 1555,
+        "generation_tokens_per_s": 13.06716431290571
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "I'd rather sign in person, my hands get stiff with digital forms.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "I'd rather sign in person",
+          "resolved_entity": "the document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "I'd rather sign in person",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.948571300134063,
+        "ollama_total_s": 13.9467105,
+        "model_load_s": 0.0021672,
+        "prompt_eval_s": 10.961236,
+        "generation_s": 2.895476,
+        "prompt_tokens": 1531,
+        "output_tokens": 37,
+        "total_tokens": 1568,
+        "generation_tokens_per_s": 12.778555235823056
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "No problem. I'll print everything out. After signing, you'll get copies of all documents.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 6,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 6,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the confidential meeting with User A"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the power of attorney update"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the confidential meeting with User A"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the power of attorney update"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 24.213759100064635,
+        "ollama_total_s": 24.2125629,
+        "model_load_s": 0.0036118,
+        "prompt_eval_s": 11.246466,
+        "generation_s": 12.873993,
+        "prompt_tokens": 1566,
+        "output_tokens": 164,
+        "total_tokens": 1730,
+        "generation_tokens_per_s": 12.738860429705065
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Good. What about witnesses, does someone need to be present?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "witnesses",
+          "resolved_entity": "the witnesses required for the power of attorney filing"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "witnesses",
+          "resolved_entity": "the witnesses required for the power of attorney filing"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.706334999995306,
+        "ollama_total_s": 14.7054377,
+        "model_load_s": 0.0037857,
+        "prompt_eval_s": 11.39212,
+        "generation_s": 3.216148,
+        "prompt_tokens": 1582,
+        "output_tokens": 41,
+        "total_tokens": 1623,
+        "generation_tokens_per_s": 12.748169549411283
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Yes, Oregon law requires one witness or a notary. Our paralegal, Rebecca, is available in the next room.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the next room",
+          "resolved_entity": "Conference Room 3B"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "our paralegal, Rebecca",
+          "ground_truth_resolution": "Rebecca Jennings",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the next room",
+          "resolved_entity": "Conference Room 3B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.839194900123402,
+        "ollama_total_s": 14.8383431,
+        "model_load_s": 0.0037249,
+        "prompt_eval_s": 11.822805,
+        "generation_s": 2.911641,
+        "prompt_tokens": 1631,
+        "output_tokens": 37,
+        "total_tokens": 1668,
+        "generation_tokens_per_s": 12.707610587981142
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Rebecca helped me last time, she's very nice. Let's ask her again.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (paralegal at Liu & Kirkpatrick Law Offices)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (paralegal at Liu & Kirkpatrick Law Offices)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.517271199962124,
+        "ollama_total_s": 15.5158752,
+        "model_load_s": 0.0031891,
+        "prompt_eval_s": 11.984818,
+        "generation_s": 3.437855,
+        "prompt_tokens": 1650,
+        "output_tokens": 44,
+        "total_tokens": 1694,
+        "generation_tokens_per_s": 12.798678245592091
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "I'll invite her in when we're ready. Now, let's review the current document to confirm what needs changing.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.110169399995357,
+        "ollama_total_s": 15.108581,
+        "model_load_s": 0.0035849,
+        "prompt_eval_s": 12.413508,
+        "generation_s": 2.601936,
+        "prompt_tokens": 1690,
+        "output_tokens": 33,
+        "total_tokens": 1723,
+        "generation_tokens_per_s": 12.68286383677385
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Let me see the part about Mark—he was listed as the sole proxy, right?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Mark",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Mark",
+          "resolved_entity": "Mark Porter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.230784599902108,
+        "ollama_total_s": 15.2299103,
+        "model_load_s": 0.0035845,
+        "prompt_eval_s": 12.600935,
+        "generation_s": 2.534532,
+        "prompt_tokens": 1710,
+        "output_tokens": 32,
+        "total_tokens": 1742,
+        "generation_tokens_per_s": 12.625605042666654
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Yes, that's correct. We will revise it to list Linda as sole proxy.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.394262500107288,
+        "ollama_total_s": 15.3924699,
+        "model_load_s": 0.003659,
+        "prompt_eval_s": 12.771035,
+        "generation_s": 2.525847,
+        "prompt_tokens": 1737,
+        "output_tokens": 32,
+        "total_tokens": 1769,
+        "generation_tokens_per_s": 12.669017561237872
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Does Linda need to sign anything today, or can she come by later?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Linda",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.819696999853477,
+        "ollama_total_s": 15.8170016,
+        "model_load_s": 0.006309,
+        "prompt_eval_s": 13.013874,
+        "generation_s": 2.703319,
+        "prompt_tokens": 1760,
+        "output_tokens": 34,
+        "total_tokens": 1794,
+        "generation_tokens_per_s": 12.577132036581698
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "She needs to sign the acceptance as proxy, but she can do it later. I'll email the form to her if you agree.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.466536399908364,
+        "ollama_total_s": 16.4651237,
+        "model_load_s": 0.0036241,
+        "prompt_eval_s": 13.699707,
+        "generation_s": 2.662468,
+        "prompt_tokens": 1809,
+        "output_tokens": 33,
+        "total_tokens": 1842,
+        "generation_tokens_per_s": 12.394515164125917
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Yes, please email her. She's at work downtown until 4pm.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "she's at work downtown until 4pm",
+          "ground_truth_resolution": "Linda Matthews, Work address: 1100 SW 6th Ave, Portland, OR",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Linda Matthews"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.666616899892688,
+        "ollama_total_s": 16.6652251,
+        "model_load_s": 0.0033022,
+        "prompt_eval_s": 13.914764,
+        "generation_s": 2.649226,
+        "prompt_tokens": 1824,
+        "output_tokens": 33,
+        "total_tokens": 1857,
+        "generation_tokens_per_s": 12.456468417567999
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Great, I'll send it after we're done. Is there anything unclear about the changes today?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the changes today",
+          "resolved_entity": "the changes to the power of attorney document that User A and User B are discussing in the current context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the changes today",
+          "resolved_entity": "the changes to the power of attorney document that User A and User B are discussing in the current context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.73413429991342,
+        "ollama_total_s": 18.7331565,
+        "model_load_s": 0.0033923,
+        "prompt_eval_s": 14.071227,
+        "generation_s": 4.559486,
+        "prompt_tokens": 1858,
+        "output_tokens": 52,
+        "total_tokens": 1910,
+        "generation_tokens_per_s": 11.404794312341348
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "No, it's all clear. Thank you for the thorough explanation.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 19.361707699950784,
+        "ollama_total_s": 19.3598138,
+        "model_load_s": 0.0033018,
+        "prompt_eval_s": 15.699037,
+        "generation_s": 3.561602,
+        "prompt_tokens": 1876,
+        "output_tokens": 32,
+        "total_tokens": 1908,
+        "generation_tokens_per_s": 8.98472092052958
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "You're welcome. I'll go print the documents. Would you like water or tea while you wait?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the documents",
+          "resolved_entity": "the power of attorney, the amended consent order, and the confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the documents",
+          "resolved_entity": "the power of attorney, the amended consent order, and the confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 21.06567280017771,
+        "ollama_total_s": 21.0644427,
+        "model_load_s": 0.0034469,
+        "prompt_eval_s": 16.03857,
+        "generation_s": 4.912741,
+        "prompt_tokens": 1914,
+        "output_tokens": 45,
+        "total_tokens": 1959,
+        "generation_tokens_per_s": 9.159855974495706
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Just water, thanks. My throat gets dry with all this talking.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the document"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the document"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 22.59175350004807,
+        "ollama_total_s": 22.5903445,
+        "model_load_s": 0.0037033,
+        "prompt_eval_s": 16.218037,
+        "generation_s": 6.262576,
+        "prompt_tokens": 1931,
+        "output_tokens": 57,
+        "total_tokens": 1988,
+        "generation_tokens_per_s": 9.101685951595638
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Coming right up. I'll return with the papers and Rebecca in five minutes.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the papers",
+          "resolved_entity": "the new power of attorney, amended consent order, and confidentiality agreement"
+        },
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (the paralegal available in the next room)"
+        },
+        {
+          "ambiguous_phrase": "five minutes",
+          "resolved_entity": "five minutes from the current time"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the papers",
+          "resolved_entity": "the new power of attorney, amended consent order, and confidentiality agreement"
+        },
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (the paralegal available in the next room)"
+        },
+        {
+          "ambiguous_phrase": "five minutes",
+          "resolved_entity": "five minutes from the current time"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 28.15518829994835,
+        "ollama_total_s": 28.1536104,
+        "model_load_s": 0.0033334,
+        "prompt_eval_s": 16.574646,
+        "generation_s": 11.306727,
+        "prompt_tokens": 1959,
+        "output_tokens": 102,
+        "total_tokens": 2061,
+        "generation_tokens_per_s": 9.021178277321102
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Alright, I'll stay here by the window.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices - Conference Room 3B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices - Conference Room 3B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 21.60188589990139,
+        "ollama_total_s": 21.6006359,
+        "model_load_s": 0.0042078,
+        "prompt_eval_s": 16.688249,
+        "generation_s": 4.781619,
+        "prompt_tokens": 1973,
+        "output_tokens": 43,
+        "total_tokens": 2016,
+        "generation_tokens_per_s": 8.992770022036469
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "(leaves room briefly)",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "(leaves room briefly)",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "(leaves room briefly)",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 20.841372200055048,
+        "ollama_total_s": 20.8400775,
+        "model_load_s": 0.0031398,
+        "prompt_eval_s": 16.837956999,
+        "generation_s": 3.890139,
+        "prompt_tokens": 1984,
+        "output_tokens": 35,
+        "total_tokens": 2019,
+        "generation_tokens_per_s": 8.997107815427675
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "(humming quietly to himself, looking at birds outside)",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 7,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 7,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the current meeting with User B"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the power of attorney update"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Liu & Kirkpatrick Law Offices"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the current meeting with User B"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the power of attorney update"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 39.48614119994454,
+        "ollama_total_s": 39.4850425,
+        "model_load_s": 0.0036746,
+        "prompt_eval_s": 17.225815,
+        "generation_s": 22.146869,
+        "prompt_tokens": 2012,
+        "output_tokens": 191,
+        "total_tokens": 2203,
+        "generation_tokens_per_s": 8.62424390553807
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "(returns with documents and Rebecca)",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the amended power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the amended power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 21.682643700158224,
+        "ollama_total_s": 21.6813371,
+        "model_load_s": 0.0036858,
+        "prompt_eval_s": 17.389527,
+        "generation_s": 4.171076,
+        "prompt_tokens": 2024,
+        "output_tokens": 37,
+        "total_tokens": 2061,
+        "generation_tokens_per_s": 8.870612762749946
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User B",
+      "text": "Ready to sign? Rebecca will witness your signature.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (paralegal at Liu & Kirkpatrick Law Offices)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Rebecca",
+          "resolved_entity": "Rebecca (paralegal at Liu & Kirkpatrick Law Offices)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 22.64254379994236,
+        "ollama_total_s": 22.6415966,
+        "model_load_s": 0.003661,
+        "prompt_eval_s": 17.587093,
+        "generation_s": 4.937579,
+        "prompt_tokens": 2048,
+        "output_tokens": 44,
+        "total_tokens": 2092,
+        "generation_tokens_per_s": 8.91124982506609
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User A",
+      "text": "Absolutely. Thank you both for your help.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 22.07322150003165,
+        "ollama_total_s": 22.071841,
+        "model_load_s": 0.0031891,
+        "prompt_eval_s": 17.83202,
+        "generation_s": 4.127634,
+        "prompt_tokens": 2066,
+        "output_tokens": 36,
+        "total_tokens": 2102,
+        "generation_tokens_per_s": 8.721703523132138
+      }
+    },
+    {
+      "turn_id": 59,
+      "speaker": "User B",
+      "text": "It's our pleasure. Once you're done, I'll scan the documents for your records. We can file them with the county clerk immediately if you'd like.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the documents",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the documents",
+          "resolved_entity": "the power of attorney, amended consent order, and confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 23.628553699934855,
+        "ollama_total_s": 23.6272141,
+        "model_load_s": 0.0031674,
+        "prompt_eval_s": 18.584994,
+        "generation_s": 4.928265,
+        "prompt_tokens": 2133,
+        "output_tokens": 43,
+        "total_tokens": 2176,
+        "generation_tokens_per_s": 8.725180159751963
+      }
+    },
+    {
+      "turn_id": 60,
+      "speaker": "User A",
+      "text": "Perfect. Let's wrap up, I have a birdwatching walk at 3pm in Forest Park.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 6,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 6,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document (amended consent order)"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the current meeting with User A and User B at Liu & Kirkpatrick Law Offices"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A (the person with healthcare concerns)"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the birdwatching walk at 3pm in Forest Park"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel for communication with Linda Matthews"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the amended consent order, power of attorney, and confidentiality agreement"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Forest Park",
+          "ground_truth_resolution": "Forest Park, Portland, OR",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the power of attorney document (amended consent order)"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "the current meeting with User A and User B at Liu & Kirkpatrick Law Offices"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "User A (the person with healthcare concerns)"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "the birdwatching walk at 3pm in Forest Park"
+        },
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the email channel for communication with Linda Matthews"
+        },
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the amended consent order, power of attorney, and confidentiality agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 41.47801770013757,
+        "ollama_total_s": 41.476621,
+        "model_load_s": 0.0031801,
+        "prompt_eval_s": 18.698685,
+        "generation_s": 22.647271,
+        "prompt_tokens": 2154,
+        "output_tokens": 197,
+        "total_tokens": 2351,
+        "generation_tokens_per_s": 8.698619802800964
+      }
+    },
+    {
+      "turn_id": 61,
+      "speaker": "User B",
+      "text": "Enjoy the walk. If you need any further changes, just let me know.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the walk",
+          "resolved_entity": "Forest Park birdwatching walk at 3pm"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the walk",
+          "resolved_entity": "Forest Park birdwatching walk at 3pm"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 23.57138430001214,
+        "ollama_total_s": 23.5698822,
+        "model_load_s": 0.0031912,
+        "prompt_eval_s": 18.853797,
+        "generation_s": 4.587932,
+        "prompt_tokens": 2174,
+        "output_tokens": 41,
+        "total_tokens": 2215,
+        "generation_tokens_per_s": 8.936488160678929
+      }
+    },
+    {
+      "turn_id": 62,
+      "speaker": "User A",
+      "text": "Will do—thanks again!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Will do—thanks again!",
+          "resolved_entity": "User A's acknowledgment of completed tasks and gratitude for assistance"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Will do—thanks again!",
+          "resolved_entity": "User A's acknowledgment of completed tasks and gratitude for assistance"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 24.280914899893105,
+        "ollama_total_s": 24.2796749,
+        "model_load_s": 0.0031651,
+        "prompt_eval_s": 19.007524,
+        "generation_s": 5.153994,
+        "prompt_tokens": 2180,
+        "output_tokens": 45,
+        "total_tokens": 2225,
+        "generation_tokens_per_s": 8.731092818501535
+      }
+    }
+  ]
+}

@@ -1,0 +1,2477 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "C:\\Users\\amart\\Desktop\\PhD projects\\lexicon-framework\\data_generation\\event_keywords\\generated_datasets\\companions_009.json",
+  "metrics": {
+    "ground_truth_ambiguities": 56,
+    "qwen_predicted_ambiguities": 63,
+    "detected_ground_truth_ambiguities": 56,
+    "missed_ground_truth_ambiguities": 0,
+    "detected_but_bad_resolution": 39,
+    "true_positives": 17,
+    "false_negatives": 39,
+    "false_positive_ambiguities": 7,
+    "detection_recall": 1.0,
+    "detection_precision": 0.8888888888888888,
+    "detection_f1": 0.9411764705882353,
+    "true_positive_rate_at_0_70": 0.30357142857142855,
+    "strict_end_to_end_precision_at_0_70": 0.2698412698412698,
+    "end_to_end_f1_at_0_70": 0.2857142857142857,
+    "false_positive_discovery_rate": 0.1111111111111111,
+    "false_positives_per_turn": 0.14,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 50,
+    "median_latency_per_turn_s": 13.28182450006716,
+    "mean_latency_per_turn_s": 13.125103773996234,
+    "total_prompt_tokens": 56156,
+    "total_output_tokens": 2416
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Fresh coffee and I'm ready. Did you see what a mess it is *here*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Emma's Apartment, Living Room",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 4.653534099925309,
+        "ollama_total_s": 4.652137,
+        "model_load_s": 0.0033025,
+        "prompt_eval_s": 1.822636,
+        "generation_s": 2.703086,
+        "prompt_tokens": 470,
+        "output_tokens": 36,
+        "total_tokens": 506,
+        "generation_tokens_per_s": 13.318111225466005
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Yeah, *there* is a mountain of old clothes—I'm still finding socks from last winter.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Emma's Apartment, Bedroom",
+          "resolution_similarity": 0.9460204957865525,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.707684100139886,
+        "ollama_total_s": 5.7061567,
+        "model_load_s": 0.0022579,
+        "prompt_eval_s": 2.304013,
+        "generation_s": 3.371245,
+        "prompt_tokens": 500,
+        "output_tokens": 36,
+        "total_tokens": 536,
+        "generation_tokens_per_s": 10.678547539558828
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Want me to start on the pantry while you tackle *that pile*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that pile",
+          "ground_truth_ambiguous_phrase": "that pile",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the mountain of old clothes",
+          "ground_truth_resolution": "Clothes pile by Mia's bedroom door",
+          "resolution_similarity": 0.6549382092793824,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that pile",
+          "resolved_entity": "the mountain of old clothes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.876039700116962,
+        "ollama_total_s": 5.8749266,
+        "model_load_s": 0.0036139,
+        "prompt_eval_s": 2.4647,
+        "generation_s": 3.373369,
+        "prompt_tokens": 519,
+        "output_tokens": 36,
+        "total_tokens": 555,
+        "generation_tokens_per_s": 10.671823924391314
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Sure, and if you find those blue containers, give them to *me*. I’ll need them for my art supplies.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*me*",
+          "ground_truth_ambiguous_phrase": "me",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Mia",
+          "resolution_similarity": 0.6061745409662237,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*me*",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 6.062844899948686,
+        "ollama_total_s": 6.0614882,
+        "model_load_s": 0.0040818,
+        "prompt_eval_s": 2.889652,
+        "generation_s": 3.125438,
+        "prompt_tokens": 563,
+        "output_tokens": 33,
+        "total_tokens": 596,
+        "generation_tokens_per_s": 10.558520117820287
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Will do! Oh, and don’t forget we need to drop *these boxes* off later.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*these boxes*",
+          "ground_truth_ambiguous_phrase": "these boxes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the boxes from the pantry (User A's task in Turn 3)",
+          "ground_truth_resolution": "Donation boxes by living room table",
+          "resolution_similarity": 0.6302722299439638,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*these boxes*",
+          "resolved_entity": "the boxes from the pantry (User A's task in Turn 3)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.5324555998668075,
+        "ollama_total_s": 7.5307872,
+        "model_load_s": 0.0033561,
+        "prompt_eval_s": 3.072073,
+        "generation_s": 4.421782,
+        "prompt_tokens": 587,
+        "output_tokens": 46,
+        "total_tokens": 633,
+        "generation_tokens_per_s": 10.40304564992123
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Remind me, are we heading to *Goodwill* or *The ARC*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Goodwill",
+          "ground_truth_ambiguous_phrase": "Goodwill",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Donation Drop-off at Goodwill, 1:30 PM",
+          "ground_truth_resolution": "Goodwill NE Broadway, Portland",
+          "resolution_similarity": 0.5884867394687452,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "The ARC",
+          "resolved_entity": "Donation Drop-off at Goodwill, 1:30 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Goodwill",
+          "resolved_entity": "Donation Drop-off at Goodwill, 1:30 PM"
+        },
+        {
+          "ambiguous_phrase": "The ARC",
+          "resolved_entity": "Donation Drop-off at Goodwill, 1:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.819097300060093,
+        "ollama_total_s": 10.817863,
+        "model_load_s": 0.0033642,
+        "prompt_eval_s": 3.2685,
+        "generation_s": 7.508105,
+        "prompt_tokens": 612,
+        "output_tokens": 79,
+        "total_tokens": 691,
+        "generation_tokens_per_s": 10.52196259908459
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "I think *Goodwill*. It’s closer, and we can hit *that intersection* for recycling.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that intersection",
+          "ground_truth_ambiguous_phrase": "that intersection",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the intersection near Goodwill (from context of recycling location)",
+          "ground_truth_resolution": "NE Broadway & 15th Ave",
+          "resolution_similarity": 0.5291259489286511,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Goodwill",
+          "resolved_entity": "Goodwill (Donation Drop-off at Goodwill, 1:30 PM)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Goodwill",
+          "resolved_entity": "Goodwill (Donation Drop-off at Goodwill, 1:30 PM)"
+        },
+        {
+          "ambiguous_phrase": "that intersection",
+          "resolved_entity": "the intersection near Goodwill (from context of recycling location)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.24950459995307,
+        "ollama_total_s": 11.2478581,
+        "model_load_s": 0.0033182,
+        "prompt_eval_s": 3.652125,
+        "generation_s": 7.542474,
+        "prompt_tokens": 645,
+        "output_tokens": 79,
+        "total_tokens": 724,
+        "generation_tokens_per_s": 10.474016880933231
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Okay, I’ll pack everything. Should we leave *now* or after lunch?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*now*",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "1:30 PM (from calendar_next in mobile context)",
+          "ground_truth_resolution": "10:45 AM",
+          "resolution_similarity": 0.5252542777804974,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*now*",
+          "resolved_entity": "1:30 PM (from calendar_next in mobile context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.908425800036639,
+        "ollama_total_s": 7.9065195,
+        "model_load_s": 0.0029804,
+        "prompt_eval_s": 3.741511,
+        "generation_s": 4.121645,
+        "prompt_tokens": 667,
+        "output_tokens": 43,
+        "total_tokens": 710,
+        "generation_tokens_per_s": 10.432727709446107
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Let’s eat first, then go *there* around 1:30.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*there*",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Goodwill",
+          "ground_truth_resolution": "Goodwill NE Broadway, Portland",
+          "resolution_similarity": 0.690229689490479,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*there*",
+          "resolved_entity": "Goodwill"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.163375400006771,
+        "ollama_total_s": 7.1626134,
+        "model_load_s": 0.0041504,
+        "prompt_eval_s": 3.986933,
+        "generation_s": 3.126831,
+        "prompt_tokens": 693,
+        "output_tokens": 33,
+        "total_tokens": 726,
+        "generation_tokens_per_s": 10.553816307948846
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Sounds good. Did you ask *him* about borrowing the folding cart?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Sam (neighbor)",
+          "resolution_similarity": 0.6276692947684079,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.310445700073615,
+        "ollama_total_s": 7.3080854,
+        "model_load_s": 0.0035289,
+        "prompt_eval_s": 4.190374,
+        "generation_s": 3.054348,
+        "prompt_tokens": 717,
+        "output_tokens": 32,
+        "total_tokens": 749,
+        "generation_tokens_per_s": 10.476867730854506
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Yeah, *he* said it’s under *that shelf* in the hallway.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that shelf",
+          "ground_truth_ambiguous_phrase": "that shelf",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the shelf in the hallway",
+          "ground_truth_resolution": "Hallway shelf, Emma's Apartment",
+          "resolution_similarity": 0.7552739711211367,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Sam (neighbor)",
+          "resolution_similarity": 0.5859352850431981,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "that shelf",
+          "resolved_entity": "the shelf in the hallway"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.970592399826273,
+        "ollama_total_s": 9.9693988,
+        "model_load_s": 0.0034442,
+        "prompt_eval_s": 4.42134,
+        "generation_s": 5.503915,
+        "prompt_tokens": 746,
+        "output_tokens": 57,
+        "total_tokens": 803,
+        "generation_tokens_per_s": 10.35626458620818
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Perfect, I’ll grab it. Help me move *this*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this",
+          "ground_truth_ambiguous_phrase": "this",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blue containers",
+          "ground_truth_resolution": "Donation bag",
+          "resolution_similarity": 0.6698864359116555,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the blue containers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.928857199847698,
+        "ollama_total_s": 7.9275292,
+        "model_load_s": 0.003363,
+        "prompt_eval_s": 4.693487,
+        "generation_s": 3.187139,
+        "prompt_tokens": 767,
+        "output_tokens": 33,
+        "total_tokens": 800,
+        "generation_tokens_per_s": 10.354113830617365
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Of course. Also, the flour bin is empty. Should I add it to *our list*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*our list*",
+          "ground_truth_ambiguous_phrase": "our list",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the list of items to be dropped off at Goodwill",
+          "ground_truth_resolution": "Shared grocery list (Emma & Mia)",
+          "resolution_similarity": 0.67002869020671,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*our list*",
+          "resolved_entity": "the list of items to be dropped off at Goodwill"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.313588399905711,
+        "ollama_total_s": 9.3126633,
+        "model_load_s": 0.0035773,
+        "prompt_eval_s": 5.127276,
+        "generation_s": 4.12677,
+        "prompt_tokens": 805,
+        "output_tokens": 43,
+        "total_tokens": 848,
+        "generation_tokens_per_s": 10.419771395061998
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Definitely. I noticed *that jar* is low too, so let’s include that.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that jar",
+          "ground_truth_ambiguous_phrase": "that jar",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the jar mentioned in the previous turn (Turn 13) as being low on flour",
+          "ground_truth_resolution": "Coffee jar, pantry shelf",
+          "resolution_similarity": 0.5673139874514467,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that jar",
+          "resolved_entity": "the jar mentioned in the previous turn (Turn 13) as being low on flour"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.066141800023615,
+        "ollama_total_s": 10.0646745,
+        "model_load_s": 0.0028715,
+        "prompt_eval_s": 5.292375,
+        "generation_s": 4.720032,
+        "prompt_tokens": 831,
+        "output_tokens": 49,
+        "total_tokens": 880,
+        "generation_tokens_per_s": 10.381285550606437
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Done! By the way, have you seen *her* today?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*her*",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma",
+          "ground_truth_resolution": "Alex (third roommate)",
+          "resolution_similarity": 0.6931225431540797,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Emma"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.680939999874681,
+        "ollama_total_s": 8.6775493,
+        "model_load_s": 0.0041469,
+        "prompt_eval_s": 5.541559,
+        "generation_s": 3.088711,
+        "prompt_tokens": 850,
+        "output_tokens": 32,
+        "total_tokens": 882,
+        "generation_tokens_per_s": 10.360308879658861
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "No, but I think she’s volunteering at *the shelter* until *later*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "later",
+          "ground_truth_ambiguous_phrase": "later",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "1:30 PM (Donation Drop-off)",
+          "ground_truth_resolution": "3:00 PM",
+          "resolution_similarity": 0.7107412791287904,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the shelter",
+          "ground_truth_ambiguous_phrase": "the shelter",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Goodwill (Donation Drop-off)",
+          "ground_truth_resolution": "Portland Animal Shelter",
+          "resolution_similarity": 0.6000880605250043,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the shelter",
+          "resolved_entity": "Goodwill (Donation Drop-off)"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "1:30 PM (Donation Drop-off)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.324421799974516,
+        "ollama_total_s": 12.3235825,
+        "model_load_s": 0.0034197,
+        "prompt_eval_s": 5.750108,
+        "generation_s": 6.505906,
+        "prompt_tokens": 882,
+        "output_tokens": 67,
+        "total_tokens": 949,
+        "generation_tokens_per_s": 10.298335082000877
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Right, that explains why it’s quiet. Did you find *those socks*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those socks",
+          "ground_truth_ambiguous_phrase": "those socks",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the socks from last winter (mentioned in Turn 2)",
+          "ground_truth_resolution": "Pair of striped socks, Mia's bedroom",
+          "resolution_similarity": 0.6186768050034267,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those socks",
+          "resolved_entity": "the socks from last winter (mentioned in Turn 2)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.171991200186312,
+        "ollama_total_s": 10.1702107,
+        "model_load_s": 0.0038963,
+        "prompt_eval_s": 6.05347,
+        "generation_s": 4.060799,
+        "prompt_tokens": 908,
+        "output_tokens": 42,
+        "total_tokens": 950,
+        "generation_tokens_per_s": 10.342792145092627
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Yep, and they’re going into *the donation bag*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the donation bag",
+          "ground_truth_ambiguous_phrase": "the donation bag",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation bag (from Goodwill drop-off)",
+          "ground_truth_resolution": "Large tote bag by front door",
+          "resolution_similarity": 0.634324389135325,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the donation bag",
+          "resolved_entity": "the donation bag (from Goodwill drop-off)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.187360499985516,
+        "ollama_total_s": 10.185819,
+        "model_load_s": 0.0033165,
+        "prompt_eval_s": 6.20293,
+        "generation_s": 3.918494,
+        "prompt_tokens": 927,
+        "output_tokens": 41,
+        "total_tokens": 968,
+        "generation_tokens_per_s": 10.463203465412988
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Awesome. Can you hand me *that basket* over *there*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that basket",
+          "ground_truth_ambiguous_phrase": "that basket",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the basket mentioned in Turn 17 (User B: 'Yep, and they’re going into the donation bag.')",
+          "ground_truth_resolution": "Wicker laundry basket by couch",
+          "resolution_similarity": 0.4759417637311501,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "over there",
+          "resolved_entity": "the location described in User B's location_semantic (Emma's Apartment, Bedroom) based on previous context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that basket",
+          "resolved_entity": "the basket mentioned in Turn 17 (User B: 'Yep, and they’re going into the donation bag.')"
+        },
+        {
+          "ambiguous_phrase": "over there",
+          "resolved_entity": "the location described in User B's location_semantic (Emma's Apartment, Bedroom) based on previous context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.191398600116372,
+        "ollama_total_s": 16.1902172,
+        "model_load_s": 0.0040957,
+        "prompt_eval_s": 6.420483,
+        "generation_s": 9.715228,
+        "prompt_tokens": 954,
+        "output_tokens": 96,
+        "total_tokens": 1050,
+        "generation_tokens_per_s": 9.881394445915218
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Here you go. So, what’s the plan for *this weekend*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*this weekend*",
+          "ground_truth_ambiguous_phrase": "this weekend",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the weekend following the current calendar date (next Saturday)",
+          "ground_truth_resolution": "Saturday-Sunday, June 8-9, 2024",
+          "resolution_similarity": 0.6527428956774814,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*this weekend*",
+          "resolved_entity": "the weekend following the current calendar date (next Saturday)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.797650600085035,
+        "ollama_total_s": 10.796081,
+        "model_load_s": 0.0028466,
+        "prompt_eval_s": 6.614601,
+        "generation_s": 4.101285,
+        "prompt_tokens": 981,
+        "output_tokens": 42,
+        "total_tokens": 1023,
+        "generation_tokens_per_s": 10.240692856019516
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Actually, I was thinking about organizing *the bookshelves* tomorrow.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the bookshelves",
+          "ground_truth_ambiguous_phrase": "the bookshelves",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bookshelves in Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Living room bookshelves, Emma's Apartment",
+          "resolution_similarity": 0.8772516671947667,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the bookshelves",
+          "resolved_entity": "the bookshelves in Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.3888385000173,
+        "ollama_total_s": 11.3875654,
+        "model_load_s": 0.0038842,
+        "prompt_eval_s": 6.914527,
+        "generation_s": 4.415026,
+        "prompt_tokens": 1005,
+        "output_tokens": 44,
+        "total_tokens": 1049,
+        "generation_tokens_per_s": 9.965966225340463
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Let’s do it. I’ll sort *that stack* I left by the window.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that stack",
+          "ground_truth_ambiguous_phrase": "that stack",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the stack of old clothes by the window",
+          "ground_truth_resolution": "Stack of books by bay window",
+          "resolution_similarity": 0.6427650558074165,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that stack",
+          "resolved_entity": "the stack of old clothes by the window"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.251225900137797,
+        "ollama_total_s": 11.2500474,
+        "model_load_s": 0.0034334,
+        "prompt_eval_s": 7.199618,
+        "generation_s": 3.996096,
+        "prompt_tokens": 1036,
+        "output_tokens": 39,
+        "total_tokens": 1075,
+        "generation_tokens_per_s": 9.759525296689569
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Great. Should we invite *the coordinator* from the last book swap to join us?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the coordinator",
+          "ground_truth_ambiguous_phrase": "the coordinator",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the coordinator from the last book swap",
+          "ground_truth_resolution": "Jess (Book Swap coordinator)",
+          "resolution_similarity": 0.7658743028170008,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator from the last book swap"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.43055949988775,
+        "ollama_total_s": 11.4294163,
+        "model_load_s": 0.0038671,
+        "prompt_eval_s": 7.450991,
+        "generation_s": 3.905698,
+        "prompt_tokens": 1064,
+        "output_tokens": 38,
+        "total_tokens": 1102,
+        "generation_tokens_per_s": 9.729374877422678
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Good idea! I think *she* would love that.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the coordinator from the last book swap",
+          "ground_truth_resolution": "Jess (Book Swap coordinator)",
+          "resolution_similarity": 0.7658743028170008,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "the coordinator from the last book swap"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.556594599969685,
+        "ollama_total_s": 11.555599,
+        "model_load_s": 0.003509,
+        "prompt_eval_s": 7.651646,
+        "generation_s": 3.828715,
+        "prompt_tokens": 1080,
+        "output_tokens": 37,
+        "total_tokens": 1117,
+        "generation_tokens_per_s": 9.663816711350936
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "I’ll text *her* after we finish *here*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Emma's Apartment, Living Room",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma",
+          "ground_truth_resolution": "Jess (Book Swap coordinator)",
+          "resolution_similarity": 0.6803120198730193,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Emma"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.794583899900317,
+        "ollama_total_s": 13.7932305,
+        "model_load_s": 0.0029751,
+        "prompt_eval_s": 7.918218,
+        "generation_s": 5.808008,
+        "prompt_tokens": 1104,
+        "output_tokens": 56,
+        "total_tokens": 1160,
+        "generation_tokens_per_s": 9.64185999743802
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Cool. Oh, and Mia’s art supplies are all over *that corner*—should I clear them?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that corner",
+          "ground_truth_ambiguous_phrase": "that corner",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the corner where Mia's art supplies are located (based on context of previous turns)",
+          "ground_truth_resolution": "Northwest corner of living room, Emma's Apartment",
+          "resolution_similarity": 0.5461010675230681,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that corner",
+          "resolved_entity": "the corner where Mia's art supplies are located (based on context of previous turns)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.141190600115806,
+        "ollama_total_s": 13.1397525,
+        "model_load_s": 0.0027623,
+        "prompt_eval_s": 8.265721,
+        "generation_s": 4.802447,
+        "prompt_tokens": 1145,
+        "output_tokens": 47,
+        "total_tokens": 1192,
+        "generation_tokens_per_s": 9.786677500032797
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "If you could, that’d be amazing. Also, remind me to check *the mail*, I might get my exam results.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the mail",
+          "ground_truth_ambiguous_phrase": "the mail",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the mail (email or physical mail)",
+          "ground_truth_resolution": "Mail slot in entryway, Emma's Apartment",
+          "resolution_similarity": 0.5931410131317252,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the mail",
+          "resolved_entity": "the mail (email or physical mail)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.67985780001618,
+        "ollama_total_s": 12.6782586,
+        "model_load_s": 0.0033427,
+        "prompt_eval_s": 8.675165,
+        "generation_s": 3.941849,
+        "prompt_tokens": 1185,
+        "output_tokens": 38,
+        "total_tokens": 1223,
+        "generation_tokens_per_s": 9.640146032991117
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Will do. Do you want to sort *those papers* or leave them for *later*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those papers",
+          "ground_truth_ambiguous_phrase": "those papers",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the papers mentioned in the context of sorting (from previous turns)",
+          "ground_truth_resolution": "Medical school paperwork stack, living room desk",
+          "resolution_similarity": 0.5213900494588356,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "the time reference from the calendar event: Donation Drop-off at Goodwill, 1:30 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those papers",
+          "resolved_entity": "the papers mentioned in the context of sorting (from previous turns)"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "the time reference from the calendar event: Donation Drop-off at Goodwill, 1:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.652724700048566,
+        "ollama_total_s": 17.6518959,
+        "model_load_s": 0.0041484,
+        "prompt_eval_s": 8.957676,
+        "generation_s": 8.617992,
+        "prompt_tokens": 1209,
+        "output_tokens": 83,
+        "total_tokens": 1292,
+        "generation_tokens_per_s": 9.631013813890753
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Let’s leave them for *later*—I’m mentally done with paperwork.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "later",
+          "ground_truth_ambiguous_phrase": "later",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the calendar_next event: Donation Drop-off at Goodwill, 1:30 PM",
+          "ground_truth_resolution": "After 5:00 PM today",
+          "resolution_similarity": 0.48172913897453734,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "the calendar_next event: Donation Drop-off at Goodwill, 1:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.112597899977118,
+        "ollama_total_s": 14.1113236,
+        "model_load_s": 0.0032713,
+        "prompt_eval_s": 9.043171,
+        "generation_s": 4.993921,
+        "prompt_tokens": 1231,
+        "output_tokens": 48,
+        "total_tokens": 1279,
+        "generation_tokens_per_s": 9.611685887702269
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Fair. I’ll stack them by *this box*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this box",
+          "ground_truth_ambiguous_phrase": "this box",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blue containers mentioned in Turn 4",
+          "ground_truth_resolution": "File box, under living room desk",
+          "resolution_similarity": 0.4623009546150724,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this box",
+          "resolved_entity": "the blue containers mentioned in Turn 4"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.422458400018513,
+        "ollama_total_s": 13.4205718,
+        "model_load_s": 0.0037705,
+        "prompt_eval_s": 9.264853,
+        "generation_s": 4.054911,
+        "prompt_tokens": 1249,
+        "output_tokens": 39,
+        "total_tokens": 1288,
+        "generation_tokens_per_s": 9.617966954145233
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Thanks. How many trips do you think we’ll need with *all this*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*all this*",
+          "ground_truth_ambiguous_phrase": "all this",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation bag (from Turn 18) + the bookshelves (from Turn 21) + the art supplies (from Turn 26) + the papers (from Turn 28) + the mail (from Turn 27)",
+          "ground_truth_resolution": "Entire donation load for drop-off",
+          "resolution_similarity": 0.5616495431917358,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*all this*",
+          "resolved_entity": "the donation bag (from Turn 18) + the bookshelves (from Turn 21) + the art supplies (from Turn 26) + the papers (from Turn 28) + the mail (from Turn 27)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.543437500018626,
+        "ollama_total_s": 18.541778,
+        "model_load_s": 0.0032221,
+        "prompt_eval_s": 9.616881,
+        "generation_s": 8.85196,
+        "prompt_tokens": 1281,
+        "output_tokens": 84,
+        "total_tokens": 1365,
+        "generation_tokens_per_s": 9.489423811223729
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Maybe two? Depends if *that cart* holds up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that cart",
+          "ground_truth_ambiguous_phrase": "that cart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folding cart mentioned in Turn 10",
+          "ground_truth_resolution": "Sam's folding cart",
+          "resolution_similarity": 0.8340884301940322,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that cart",
+          "resolved_entity": "the folding cart mentioned in Turn 10"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.059533399995416,
+        "ollama_total_s": 14.057947,
+        "model_load_s": 0.0036052,
+        "prompt_eval_s": 9.718627,
+        "generation_s": 4.242189,
+        "prompt_tokens": 1298,
+        "output_tokens": 40,
+        "total_tokens": 1338,
+        "generation_tokens_per_s": 9.429094271848802
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "If *it* wobbles, we can switch to *the big tote*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the big tote",
+          "ground_truth_ambiguous_phrase": "the big tote",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the big tote (from context: User B mentioned 'folding cart' in Turn 32)",
+          "ground_truth_resolution": "Large blue storage tote, Emma's Apartment",
+          "resolution_similarity": 0.6489493464320237,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folding cart",
+          "ground_truth_resolution": "Sam's folding cart",
+          "resolution_similarity": 0.8683434124448898,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the folding cart"
+        },
+        {
+          "ambiguous_phrase": "the big tote",
+          "resolved_entity": "the big tote (from context: User B mentioned 'folding cart' in Turn 32)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.97560100001283,
+        "ollama_total_s": 17.9743778,
+        "model_load_s": 0.0040251,
+        "prompt_eval_s": 10.124287,
+        "generation_s": 7.762655,
+        "prompt_tokens": 1332,
+        "output_tokens": 74,
+        "total_tokens": 1406,
+        "generation_tokens_per_s": 9.53282092273842
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Sounds good. Do you have the receipt for *those donations*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*those donations*",
+          "ground_truth_ambiguous_phrase": "those donations",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation bag (from Turn 18)",
+          "ground_truth_resolution": "Donation items for Goodwill",
+          "resolution_similarity": 0.6865316387921514,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*those donations*",
+          "resolved_entity": "the donation bag (from Turn 18)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.824717300012708,
+        "ollama_total_s": 14.8234105,
+        "model_load_s": 0.0035937,
+        "prompt_eval_s": 10.330986,
+        "generation_s": 4.398793,
+        "prompt_tokens": 1352,
+        "output_tokens": 41,
+        "total_tokens": 1393,
+        "generation_tokens_per_s": 9.32073866626595
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Not yet. They usually email *it*—should be by *tomorrow*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tomorrow",
+          "ground_truth_ambiguous_phrase": "tomorrow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the next calendar day after today",
+          "ground_truth_resolution": "June 9, 2024",
+          "resolution_similarity": 0.5643251004826358,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation drop-off at Goodwill",
+          "ground_truth_resolution": "Donation receipt",
+          "resolution_similarity": 0.7040930480944518,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the donation drop-off at Goodwill"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "the next calendar day after today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.449249800061807,
+        "ollama_total_s": 17.4479286,
+        "model_load_s": 0.0033538,
+        "prompt_eval_s": 10.698958,
+        "generation_s": 6.663462,
+        "prompt_tokens": 1384,
+        "output_tokens": 63,
+        "total_tokens": 1447,
+        "generation_tokens_per_s": 9.454544799685209
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Okay. Did you ever finish *that organizer* you started last week?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that organizer",
+          "ground_truth_ambiguous_phrase": "that organizer",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the organizer User B started last week",
+          "ground_truth_resolution": "Hanging closet organizer, Emma's closet",
+          "resolution_similarity": 0.519119790625474,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that organizer",
+          "resolved_entity": "the organizer User B started last week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.943564399844036,
+        "ollama_total_s": 14.9423732,
+        "model_load_s": 0.0034104,
+        "prompt_eval_s": 10.836209,
+        "generation_s": 4.031152,
+        "prompt_tokens": 1406,
+        "output_tokens": 38,
+        "total_tokens": 1444,
+        "generation_tokens_per_s": 9.426585750177617
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yes, it’s in *the closet*—finally done!",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the closet",
+          "ground_truth_ambiguous_phrase": "the closet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the closet in Emma's Apartment, Living Room (from User A's location_semantic)",
+          "ground_truth_resolution": "Emma's bedroom closet",
+          "resolution_similarity": 0.7683158605477525,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the closet",
+          "resolved_entity": "the closet in Emma's Apartment, Living Room (from User A's location_semantic)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.18681570002809,
+        "ollama_total_s": 16.1854893,
+        "model_load_s": 0.0031262,
+        "prompt_eval_s": 11.041122,
+        "generation_s": 5.05647,
+        "prompt_tokens": 1427,
+        "output_tokens": 48,
+        "total_tokens": 1475,
+        "generation_tokens_per_s": 9.49278844727646
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Amazing. One day we’ll have everything sorted—except *your plants*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*your plants*",
+          "ground_truth_ambiguous_phrase": "your plants",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's plants",
+          "ground_truth_resolution": "Emma's collection of houseplants (living room window)",
+          "resolution_similarity": 0.6456171976242502,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*your plants*",
+          "resolved_entity": "User A's plants"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.242739700013772,
+        "ollama_total_s": 15.2415378,
+        "model_load_s": 0.0034264,
+        "prompt_eval_s": 11.385107,
+        "generation_s": 3.76449,
+        "prompt_tokens": 1456,
+        "output_tokens": 36,
+        "total_tokens": 1492,
+        "generation_tokens_per_s": 9.563048381055602
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Hey, *they* bring life to *this place*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Emma's Apartment, Living Room",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation cart",
+          "ground_truth_resolution": "Emma's houseplants",
+          "resolution_similarity": 0.47908299608241145,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the donation cart"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.88536179997027,
+        "ollama_total_s": 17.8837635,
+        "model_load_s": 0.0033599,
+        "prompt_eval_s": 11.533326,
+        "generation_s": 6.272988,
+        "prompt_tokens": 1476,
+        "output_tokens": 59,
+        "total_tokens": 1535,
+        "generation_tokens_per_s": 9.405406163697428
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "True. By the way, did you hear about *that meeting* for the building tenants?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*that meeting*",
+          "ground_truth_ambiguous_phrase": "that meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the meeting scheduled for building tenants (from Turn 40 context)",
+          "ground_truth_resolution": "Building Tenant Meeting",
+          "resolution_similarity": 0.7806830646109183,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*that meeting*",
+          "resolved_entity": "the meeting scheduled for building tenants (from Turn 40 context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.853637600084767,
+        "ollama_total_s": 16.8520717,
+        "model_load_s": 0.0037618,
+        "prompt_eval_s": 11.941834,
+        "generation_s": 4.785383,
+        "prompt_tokens": 1511,
+        "output_tokens": 45,
+        "total_tokens": 1556,
+        "generation_tokens_per_s": 9.40363603080464
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "No, when is *it*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation drop-off at Goodwill (1:30 PM)",
+          "ground_truth_resolution": "Building Tenant Meeting",
+          "resolution_similarity": 0.3482842308495223,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the donation drop-off at Goodwill (1:30 PM)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.61004039994441,
+        "ollama_total_s": 16.6088301,
+        "model_load_s": 0.0032968,
+        "prompt_eval_s": 11.965868,
+        "generation_s": 4.540346,
+        "prompt_tokens": 1518,
+        "output_tokens": 43,
+        "total_tokens": 1561,
+        "generation_tokens_per_s": 9.470643867229501
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Next Thursday, 7 PM in *the lobby*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the lobby",
+          "ground_truth_ambiguous_phrase": "the lobby",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the lobby of Emma's Apartment, Bedroom (User B's location)",
+          "ground_truth_resolution": "Lobby, Emma's Apartment Building",
+          "resolution_similarity": 0.8227261359117313,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the lobby",
+          "resolved_entity": "the lobby of Emma's Apartment, Bedroom (User B's location)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.88408019999042,
+        "ollama_total_s": 16.8824574,
+        "model_load_s": 0.0028534,
+        "prompt_eval_s": 12.174728,
+        "generation_s": 4.623296,
+        "prompt_tokens": 1544,
+        "output_tokens": 44,
+        "total_tokens": 1588,
+        "generation_tokens_per_s": 9.517019892301942
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Got it. Thanks for telling *me*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "me",
+          "ground_truth_ambiguous_phrase": "me",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Emma",
+          "resolution_similarity": 0.5637962063821524,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "me",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.890241199871525,
+        "ollama_total_s": 15.8889482,
+        "model_load_s": 0.0034603,
+        "prompt_eval_s": 12.387105,
+        "generation_s": 3.403455,
+        "prompt_tokens": 1562,
+        "output_tokens": 32,
+        "total_tokens": 1594,
+        "generation_tokens_per_s": 9.402210400901437
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Of course. If you need help prepping for *your exam*, let *me* know.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*me*",
+          "ground_truth_ambiguous_phrase": "me",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Mia",
+          "resolution_similarity": 0.6061745409662237,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*your exam*",
+          "ground_truth_ambiguous_phrase": "your exam",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "exam",
+          "ground_truth_resolution": "Emma's medical school exam, June 15, 2024",
+          "resolution_similarity": 0.662845802319334,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*your exam*",
+          "resolved_entity": "exam"
+        },
+        {
+          "ambiguous_phrase": "*me*",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.819719900144264,
+        "ollama_total_s": 18.8180152,
+        "model_load_s": 0.0027407,
+        "prompt_eval_s": 12.850521,
+        "generation_s": 5.875224,
+        "prompt_tokens": 1602,
+        "output_tokens": 55,
+        "total_tokens": 1657,
+        "generation_tokens_per_s": 9.361345201476572
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "That means a lot. You’re the best roommate ever.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That",
+          "resolved_entity": "the donation drop-off at Goodwill (from calendar_next in mobile context)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That",
+          "resolved_entity": "the donation drop-off at Goodwill (from calendar_next in mobile context)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 20.04545530001633,
+        "ollama_total_s": 20.0444446,
+        "model_load_s": 0.0039876,
+        "prompt_eval_s": 12.977549,
+        "generation_s": 6.973153,
+        "prompt_tokens": 1616,
+        "output_tokens": 65,
+        "total_tokens": 1681,
+        "generation_tokens_per_s": 9.321464766368958
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Ha, and you make the best coffee. It’s nice *here* when everything’s tidy.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*here*",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emma's Apartment, Living Room",
+          "ground_truth_resolution": "Emma's Apartment, Living Room",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*here*",
+          "resolved_entity": "Emma's Apartment, Living Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.549117099959403,
+        "ollama_total_s": 17.5475952,
+        "model_load_s": 0.0031299,
+        "prompt_eval_s": 13.462526,
+        "generation_s": 3.982713,
+        "prompt_tokens": 1654,
+        "output_tokens": 37,
+        "total_tokens": 1691,
+        "generation_tokens_per_s": 9.29014970448536
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Agreed. Let’s keep *it* this way—for at least a week!",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the donation drop-off at Goodwill (1:30 PM)",
+          "ground_truth_resolution": "Emma's Apartment, Living Room",
+          "resolution_similarity": 0.3798325883500164,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the donation drop-off at Goodwill (1:30 PM)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.382720900001004,
+        "ollama_total_s": 18.3806029,
+        "model_load_s": 0.0032217,
+        "prompt_eval_s": 13.652235,
+        "generation_s": 4.630498,
+        "prompt_tokens": 1678,
+        "output_tokens": 43,
+        "total_tokens": 1721,
+        "generation_tokens_per_s": 9.286258195122857
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Deal. Now, lunch?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "lunch?",
+          "resolved_entity": "lunch"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "lunch?",
+          "resolved_entity": "lunch"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.234308999963105,
+        "ollama_total_s": 17.2330271,
+        "model_load_s": 0.0035138,
+        "prompt_eval_s": 13.643866,
+        "generation_s": 3.504008,
+        "prompt_tokens": 1683,
+        "output_tokens": 33,
+        "total_tokens": 1716,
+        "generation_tokens_per_s": 9.417786717381924
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Absolutely. Sandwiches sound good *today*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*today*",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "today",
+          "ground_truth_resolution": "June 8, 2024",
+          "resolution_similarity": 0.5987579254121256,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*today*",
+          "resolved_entity": "today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.591141700046137,
+        "ollama_total_s": 17.5903381,
+        "model_load_s": 0.0038124,
+        "prompt_eval_s": 13.996684,
+        "generation_s": 3.49133,
+        "prompt_tokens": 1707,
+        "output_tokens": 32,
+        "total_tokens": 1739,
+        "generation_tokens_per_s": 9.165561548177914
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Perfect. I’ll grab *the bread* from *that drawer*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that drawer",
+          "ground_truth_ambiguous_phrase": "that drawer",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the drawer near the kitchen (User B's location in Turn 50)",
+          "ground_truth_resolution": "Kitchen bread drawer",
+          "resolution_similarity": 0.7010686348432288,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "the bread",
+          "ground_truth_ambiguous_phrase": "the bread",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bread from the pantry (User A's reference in Turn 3)",
+          "ground_truth_resolution": "Whole wheat bread loaf",
+          "resolution_similarity": 0.6215813334030269,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the bread",
+          "resolved_entity": "the bread from the pantry (User A's reference in Turn 3)"
+        },
+        {
+          "ambiguous_phrase": "that drawer",
+          "resolved_entity": "the drawer near the kitchen (User B's location in Turn 50)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 22.936723299790174,
+        "ollama_total_s": 22.9353614,
+        "model_load_s": 0.0028487,
+        "prompt_eval_s": 14.216782,
+        "generation_s": 8.604572,
+        "prompt_tokens": 1737,
+        "output_tokens": 80,
+        "total_tokens": 1817,
+        "generation_tokens_per_s": 9.297382833219364
+      }
+    }
+  ]
+}

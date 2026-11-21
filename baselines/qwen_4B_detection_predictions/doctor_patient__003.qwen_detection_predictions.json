@@ -1,0 +1,3196 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "C:\\Users\\amart\\Desktop\\PhD projects\\lexicon-framework\\data_generation\\event_keywords\\generated_datasets\\doctor_patient__003.json",
+  "metrics": {
+    "ground_truth_ambiguities": 43,
+    "qwen_predicted_ambiguities": 99,
+    "detected_ground_truth_ambiguities": 39,
+    "missed_ground_truth_ambiguities": 4,
+    "detected_but_bad_resolution": 15,
+    "true_positives": 24,
+    "false_negatives": 19,
+    "false_positive_ambiguities": 60,
+    "detection_recall": 0.9069767441860465,
+    "detection_precision": 0.3939393939393939,
+    "detection_f1": 0.5492957746478873,
+    "true_positive_rate_at_0_70": 0.5581395348837209,
+    "strict_end_to_end_precision_at_0_70": 0.24242424242424243,
+    "end_to_end_f1_at_0_70": 0.3380281690140845,
+    "false_positive_discovery_rate": 0.6060606060606061,
+    "false_positives_per_turn": 0.9090909090909091,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 66,
+    "median_latency_per_turn_s": 12.644428749918006,
+    "mean_latency_per_turn_s": 12.582436012114737,
+    "total_prompt_tokens": 83007,
+    "total_output_tokens": 3426
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi Dr. Lee, I'm just checking in at the front desk now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "front desk",
+          "ground_truth_resolution": "Downtown Women's Health Clinic Reception",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 2.3444379998836666,
+        "ollama_total_s": 2.3424666,
+        "model_load_s": 0.0042645,
+        "prompt_eval_s": 1.631523,
+        "generation_s": 0.584378,
+        "prompt_tokens": 446,
+        "output_tokens": 9,
+        "total_tokens": 455,
+        "generation_tokens_per_s": 15.400990454808362
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Hello Priya, no rush. When you're ready, come to *my office* on the second floor.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*my office*",
+          "ground_truth_ambiguous_phrase": "my office",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*my office*",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 4.948974899947643,
+        "ollama_total_s": 4.9472721,
+        "model_load_s": 0.0031718,
+        "prompt_eval_s": 1.962051,
+        "generation_s": 2.975458,
+        "prompt_tokens": 485,
+        "output_tokens": 43,
+        "total_tokens": 528,
+        "generation_tokens_per_s": 14.451556701522925
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Okay, I'll be *there* in a couple minutes.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 4.995962199987844,
+        "ollama_total_s": 4.9946093,
+        "model_load_s": 0.0025537,
+        "prompt_eval_s": 2.082813,
+        "generation_s": 2.879486,
+        "prompt_tokens": 497,
+        "output_tokens": 41,
+        "total_tokens": 538,
+        "generation_tokens_per_s": 14.238652315031224
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Great. Just let *her* know at the front that you're here for me.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*her*",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Clinic Receptionist, Ms. Tanya",
+          "resolution_similarity": 0.467331041544329,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 4.660118200117722,
+        "ollama_total_s": 4.6590366,
+        "model_load_s": 0.0030674,
+        "prompt_eval_s": 2.297993,
+        "generation_s": 2.328144,
+        "prompt_tokens": 529,
+        "output_tokens": 33,
+        "total_tokens": 562,
+        "generation_tokens_per_s": 14.174380966125806
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "I told the receptionist, she's printing out *my chart* for you.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my chart",
+          "ground_truth_ambiguous_phrase": "my chart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's medical chart",
+          "ground_truth_resolution": "Patient Chart for Priya Patel",
+          "resolution_similarity": 0.759940416837016,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my chart",
+          "resolved_entity": "User A's medical chart"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.077000299934298,
+        "ollama_total_s": 5.075578,
+        "model_load_s": 0.0036008,
+        "prompt_eval_s": 2.505283,
+        "generation_s": 2.524069,
+        "prompt_tokens": 554,
+        "output_tokens": 36,
+        "total_tokens": 590,
+        "generation_tokens_per_s": 14.262684577957259
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Perfect, thanks. Once you're *here*, we can get started.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 5.597443599952385,
+        "ollama_total_s": 5.5959095,
+        "model_load_s": 0.0030636,
+        "prompt_eval_s": 2.699057,
+        "generation_s": 2.859944,
+        "prompt_tokens": 576,
+        "output_tokens": 41,
+        "total_tokens": 617,
+        "generation_tokens_per_s": 14.33594503948329
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Alright, I'm coming up now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "I'm coming up now",
+          "resolved_entity": "User A's location: Downtown Women's Health Clinic (second floor)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "I'm coming up now",
+          "resolved_entity": "User A's location: Downtown Women's Health Clinic (second floor)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 6.106278900057077,
+        "ollama_total_s": 6.1045668,
+        "model_load_s": 0.0030658,
+        "prompt_eval_s": 2.783766,
+        "generation_s": 3.284322,
+        "prompt_tokens": 586,
+        "output_tokens": 47,
+        "total_tokens": 633,
+        "generation_tokens_per_s": 14.310411707500057
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Welcome, Priya. Please have a seat and let me know how you've been feeling recently.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 5,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 5,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my office",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "receptionist"
+        },
+        {
+          "ambiguous_phrase": "my chart",
+          "resolved_entity": "Priya's medical chart"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my office",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "receptionist"
+        },
+        {
+          "ambiguous_phrase": "my chart",
+          "resolved_entity": "Priya's medical chart"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.579058199888095,
+        "ollama_total_s": 13.5772406,
+        "model_load_s": 0.004821,
+        "prompt_eval_s": 3.057404,
+        "generation_s": 10.469568,
+        "prompt_tokens": 627,
+        "output_tokens": 149,
+        "total_tokens": 776,
+        "generation_tokens_per_s": 14.231723792232879
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "I've been a little anxious, especially with the spotting and pain last week.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting (from the current context: last week's menstrual symptoms)"
+        },
+        {
+          "ambiguous_phrase": "the pain",
+          "resolved_entity": "the pain (from the current context: last week's menstrual symptoms)"
+        },
+        {
+          "ambiguous_phrase": "last week",
+          "resolved_entity": "last week (relative to today, as per calendar_next event)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting (from the current context: last week's menstrual symptoms)"
+        },
+        {
+          "ambiguous_phrase": "the pain",
+          "resolved_entity": "the pain (from the current context: last week's menstrual symptoms)"
+        },
+        {
+          "ambiguous_phrase": "last week",
+          "resolved_entity": "last week (relative to today, as per calendar_next event)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.922843999927863,
+        "ollama_total_s": 10.9215342,
+        "model_load_s": 0.0021302,
+        "prompt_eval_s": 3.218561,
+        "generation_s": 7.661331,
+        "prompt_tokens": 648,
+        "output_tokens": 109,
+        "total_tokens": 757,
+        "generation_tokens_per_s": 14.22729288161548
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "When did the spotting start, and how long did it last?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting (from User A's previous mention in Turn 9)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting (from User A's previous mention in Turn 9)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting (from User A's previous mention in Turn 9)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting (from User A's previous mention in Turn 9)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.857641499955207,
+        "ollama_total_s": 8.8557247,
+        "model_load_s": 0.0030829,
+        "prompt_eval_s": 3.417795,
+        "generation_s": 5.38059,
+        "prompt_tokens": 669,
+        "output_tokens": 76,
+        "total_tokens": 745,
+        "generation_tokens_per_s": 14.124845044874261
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "It started *Thursday afternoon* and lasted until late *Friday*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Thursday afternoon",
+          "ground_truth_ambiguous_phrase": "Thursday afternoon",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Thursday afternoon (from the conversation context)",
+          "ground_truth_resolution": "2024-06-13, 2:00 PM",
+          "resolution_similarity": 0.5997173660327694,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "late Friday",
+          "resolved_entity": "late Friday (from the conversation context)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Friday",
+          "ground_truth_resolution": "2024-06-14",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Thursday afternoon",
+          "resolved_entity": "Thursday afternoon (from the conversation context)"
+        },
+        {
+          "ambiguous_phrase": "late Friday",
+          "resolved_entity": "late Friday (from the conversation context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.20260119996965,
+        "ollama_total_s": 8.2005503,
+        "model_load_s": 0.0029533,
+        "prompt_eval_s": 3.586621,
+        "generation_s": 4.568244,
+        "prompt_tokens": 694,
+        "output_tokens": 65,
+        "total_tokens": 759,
+        "generation_tokens_per_s": 14.228662041694795
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Did you notice if it coincided with any changes in your routine or stress levels?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "Priya's"
+        },
+        {
+          "ambiguous_phrase": "stress levels",
+          "resolved_entity": "the stress levels mentioned in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "Priya's"
+        },
+        {
+          "ambiguous_phrase": "stress levels",
+          "resolved_entity": "the stress levels mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.749354199972004,
+        "ollama_total_s": 9.7480514,
+        "model_load_s": 0.0030659,
+        "prompt_eval_s": 3.898971,
+        "generation_s": 5.795285,
+        "prompt_tokens": 724,
+        "output_tokens": 81,
+        "total_tokens": 805,
+        "generation_tokens_per_s": 13.976879480474214
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "I had some extra work for *school*, and I missed *my yoga class* that day.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my yoga class",
+          "ground_truth_ambiguous_phrase": "my yoga class",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the meeting",
+          "ground_truth_resolution": "Sunrise Yoga Studio",
+          "resolution_similarity": 0.48599091413243645,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "school",
+          "ground_truth_ambiguous_phrase": "school",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Green Lake Elementary School",
+          "resolution_similarity": 0.4959342982255507,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "school",
+          "resolved_entity": "the document"
+        },
+        {
+          "ambiguous_phrase": "my yoga class",
+          "resolved_entity": "the meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.118059000000358,
+        "ollama_total_s": 8.1166754,
+        "model_load_s": 0.0022316,
+        "prompt_eval_s": 4.128374,
+        "generation_s": 3.946429,
+        "prompt_tokens": 757,
+        "output_tokens": 55,
+        "total_tokens": 812,
+        "generation_tokens_per_s": 13.936650070228046
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Did the abdominal pain occur at the same time, or was it separate?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the abdominal pain",
+          "resolved_entity": "abdominal pain from the previous conversation context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the abdominal pain",
+          "resolved_entity": "abdominal pain from the previous conversation context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.375964300008491,
+        "ollama_total_s": 7.3747675,
+        "model_load_s": 0.0030767,
+        "prompt_eval_s": 4.368519,
+        "generation_s": 2.963233,
+        "prompt_tokens": 777,
+        "output_tokens": 41,
+        "total_tokens": 818,
+        "generation_tokens_per_s": 13.83623899976816
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "It came on a few hours *after the spotting*, and was mild but noticeable.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the abdominal pain"
+        },
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting mentioned in Turn 11"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "after the spotting",
+          "ground_truth_resolution": "2024-06-13, 6:00 PM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the abdominal pain"
+        },
+        {
+          "ambiguous_phrase": "the spotting",
+          "resolved_entity": "the spotting mentioned in Turn 11"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.062396300025284,
+        "ollama_total_s": 9.0608312,
+        "model_load_s": 0.0020652,
+        "prompt_eval_s": 4.625498,
+        "generation_s": 4.381618,
+        "prompt_tokens": 806,
+        "output_tokens": 61,
+        "total_tokens": 867,
+        "generation_tokens_per_s": 13.921797838150201
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Have you tracked your cycles recently, or used any apps for ovulation?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your cycles",
+          "resolved_entity": "the user's menstrual cycles"
+        },
+        {
+          "ambiguous_phrase": "apps",
+          "resolved_entity": "ovulation tracking apps"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your cycles",
+          "resolved_entity": "the user's menstrual cycles"
+        },
+        {
+          "ambiguous_phrase": "apps",
+          "resolved_entity": "ovulation tracking apps"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.084285099990666,
+        "ollama_total_s": 9.0828286,
+        "model_load_s": 0.0020534,
+        "prompt_eval_s": 4.768172,
+        "generation_s": 4.270519,
+        "prompt_tokens": 829,
+        "output_tokens": 59,
+        "total_tokens": 888,
+        "generation_tokens_per_s": 13.815650978253462
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "I use *Clue* to track everything, but it's been pretty irregular.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Clue",
+          "ground_truth_ambiguous_phrase": "Clue",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Clue (app name)",
+          "ground_truth_resolution": "Clue Period & Cycle Tracking App",
+          "resolution_similarity": 0.7348778957133629,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "my chart",
+          "resolved_entity": "Priya's medical chart"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's office"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Clue",
+          "resolved_entity": "Clue (app name)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "my chart",
+          "resolved_entity": "Priya's medical chart"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.766485000029206,
+        "ollama_total_s": 12.7653877,
+        "model_load_s": 0.0034313,
+        "prompt_eval_s": 5.014127,
+        "generation_s": 7.693734,
+        "prompt_tokens": 858,
+        "output_tokens": 106,
+        "total_tokens": 964,
+        "generation_tokens_per_s": 13.777445386076513
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Let me take a look at *your app logs* once we're done with the exam.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your app logs",
+          "ground_truth_ambiguous_phrase": "your app logs",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Clue app logs",
+          "ground_truth_resolution": "Clue App Cycle Data June 2024",
+          "resolution_similarity": 0.760224323977155,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your app logs",
+          "resolved_entity": "Clue app logs"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 7.995262299897149,
+        "ollama_total_s": 7.9943034,
+        "model_load_s": 0.0025876,
+        "prompt_eval_s": 5.297212,
+        "generation_s": 2.646878,
+        "prompt_tokens": 889,
+        "output_tokens": 36,
+        "total_tokens": 925,
+        "generation_tokens_per_s": 13.600929094578595
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Sure, I can show you *them*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the app logs from Clue",
+          "ground_truth_resolution": "Clue App Cycle Data June 2024",
+          "resolution_similarity": 0.7386032551634898,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the app logs from Clue"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 8.105282000033185,
+        "ollama_total_s": 8.1036677,
+        "model_load_s": 0.0035741,
+        "prompt_eval_s": 5.386277,
+        "generation_s": 2.657617,
+        "prompt_tokens": 900,
+        "output_tokens": 36,
+        "total_tokens": 936,
+        "generation_tokens_per_s": 13.545969942245252
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Okay, let's get started. Please lie back on *this exam table*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this exam table",
+          "ground_truth_ambiguous_phrase": "this exam table",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the exam table in Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Exam Table 2, Dr. Lee's Office",
+          "resolution_similarity": 0.8513526107668117,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this exam table",
+          "resolved_entity": "the exam table in Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.158443999942392,
+        "ollama_total_s": 9.1569188,
+        "model_load_s": 0.0030694,
+        "prompt_eval_s": 5.67667,
+        "generation_s": 3.41869,
+        "prompt_tokens": 934,
+        "output_tokens": 47,
+        "total_tokens": 981,
+        "generation_tokens_per_s": 13.747956088443235
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Is it normal for spotting to happen between periods like this?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the spotting"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the spotting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.676547199953347,
+        "ollama_total_s": 9.6750247,
+        "model_load_s": 0.0030594,
+        "prompt_eval_s": 5.78532,
+        "generation_s": 3.82768,
+        "prompt_tokens": 951,
+        "output_tokens": 53,
+        "total_tokens": 1004,
+        "generation_tokens_per_s": 13.846507545040337
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "It can happen, but with your background, it's worth investigating further.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "Priya's"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spotting"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "Priya's"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.96066109999083,
+        "ollama_total_s": 9.9589264,
+        "model_load_s": 0.0026381,
+        "prompt_eval_s": 5.985647,
+        "generation_s": 3.921368,
+        "prompt_tokens": 979,
+        "output_tokens": 54,
+        "total_tokens": 1033,
+        "generation_tokens_per_s": 13.770704509242693
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User B",
+      "text": "I'll order a *transvaginal ultrasound* to look for cysts or PCOS indicators.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "transvaginal ultrasound",
+          "ground_truth_ambiguous_phrase": "transvaginal ultrasound",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "transvaginal ultrasound",
+          "ground_truth_resolution": "Transvaginal Pelvic Ultrasound, Imaging Suite",
+          "resolution_similarity": 0.8761770033604025,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "transvaginal ultrasound",
+          "resolved_entity": "transvaginal ultrasound"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.252879299921915,
+        "ollama_total_s": 9.2515384,
+        "model_load_s": 0.0034947,
+        "prompt_eval_s": 6.307298,
+        "generation_s": 2.8793,
+        "prompt_tokens": 1016,
+        "output_tokens": 39,
+        "total_tokens": 1055,
+        "generation_tokens_per_s": 13.544958844163512
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User A",
+      "text": "Is the ultrasound going to be *here* or down the hall?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.571711800061166,
+        "ollama_total_s": 9.5707886,
+        "model_load_s": 0.0035766,
+        "prompt_eval_s": 6.482721,
+        "generation_s": 3.033489,
+        "prompt_tokens": 1033,
+        "output_tokens": 41,
+        "total_tokens": 1074,
+        "generation_tokens_per_s": 13.515789903968665
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User B",
+      "text": "Right *next door*, in *the imaging suite*. The technician will help you get set up.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the imaging suite",
+          "ground_truth_ambiguous_phrase": "the imaging suite",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Imaging Suite (adjacent to Dr. Lee's Office)",
+          "ground_truth_resolution": "Imaging Suite, Room 206, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.8243918827436865,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "next door",
+          "ground_truth_ambiguous_phrase": "next door",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic (next door to the imaging suite)",
+          "ground_truth_resolution": "Imaging Suite, Room 206, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.7796418579176441,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next door",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic (next door to the imaging suite)"
+        },
+        {
+          "ambiguous_phrase": "the imaging suite",
+          "resolved_entity": "Imaging Suite (adjacent to Dr. Lee's Office)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.953739899909124,
+        "ollama_total_s": 12.9523332,
+        "model_load_s": 0.0030656,
+        "prompt_eval_s": 6.81904,
+        "generation_s": 6.065028,
+        "prompt_tokens": 1069,
+        "output_tokens": 82,
+        "total_tokens": 1151,
+        "generation_tokens_per_s": 13.520135438781157
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User A",
+      "text": "Got it, I'll head *there* now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*there*",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the imaging suite",
+          "ground_truth_resolution": "Imaging Suite, Room 206, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.7201843844425111,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*there*",
+          "resolved_entity": "the imaging suite"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.524562900187448,
+        "ollama_total_s": 9.5235743,
+        "model_load_s": 0.003603,
+        "prompt_eval_s": 6.969653,
+        "generation_s": 2.489876,
+        "prompt_tokens": 1081,
+        "output_tokens": 34,
+        "total_tokens": 1115,
+        "generation_tokens_per_s": 13.65529849679261
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User B",
+      "text": "Just give *her* your chart when you arrive.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the receptionist",
+          "ground_truth_resolution": "Ultrasound Technician, Ms. Reynolds",
+          "resolution_similarity": 0.6142678972297276,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "the receptionist"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 9.619332799920812,
+        "ollama_total_s": 9.6177117,
+        "model_load_s": 0.0035833,
+        "prompt_eval_s": 7.132173,
+        "generation_s": 2.41707,
+        "prompt_tokens": 1102,
+        "output_tokens": 33,
+        "total_tokens": 1135,
+        "generation_tokens_per_s": 13.652893792898015
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User A",
+      "text": "Thanks, I'll be back as soon as *it's done*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it's done",
+          "ground_truth_ambiguous_phrase": "it's done",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the ultrasound procedure",
+          "ground_truth_resolution": "Ultrasound Procedure Completed",
+          "resolution_similarity": 0.8490800476630835,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it's done",
+          "resolved_entity": "the ultrasound procedure"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.029830900020897,
+        "ollama_total_s": 10.0287647,
+        "model_load_s": 0.0030589,
+        "prompt_eval_s": 7.347685,
+        "generation_s": 2.610948,
+        "prompt_tokens": 1131,
+        "output_tokens": 35,
+        "total_tokens": 1166,
+        "generation_tokens_per_s": 13.40509270962118
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User B",
+      "text": "I'll review *your results* as soon as they're uploaded.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your results",
+          "ground_truth_ambiguous_phrase": "your results",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the ultrasound results",
+          "ground_truth_resolution": "Ultrasound Report, Priya Patel, 2024-06-14",
+          "resolution_similarity": 0.7094720033161476,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your results",
+          "resolved_entity": "the ultrasound results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.13980000000447,
+        "ollama_total_s": 10.1378947,
+        "model_load_s": 0.0030976,
+        "prompt_eval_s": 7.549243,
+        "generation_s": 2.531226,
+        "prompt_tokens": 1154,
+        "output_tokens": 34,
+        "total_tokens": 1188,
+        "generation_tokens_per_s": 13.432226122835337
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User A",
+      "text": "*The technician* said it'll just take a few minutes.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*The technician*",
+          "ground_truth_ambiguous_phrase": "the technician",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The technician (from Turn 25: 'The technician will help you get set up')",
+          "ground_truth_resolution": "Ultrasound Technician, Ms. Reynolds",
+          "resolution_similarity": 0.4909998161929972,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*The technician*",
+          "resolved_entity": "The technician (from Turn 25: 'The technician will help you get set up')"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.494335900060833,
+        "ollama_total_s": 11.4926718,
+        "model_load_s": 0.0030711,
+        "prompt_eval_s": 7.717396,
+        "generation_s": 3.687584,
+        "prompt_tokens": 1175,
+        "output_tokens": 50,
+        "total_tokens": 1225,
+        "generation_tokens_per_s": 13.5590131641747
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User B",
+      "text": "Let me know if you have any questions for *her*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the receptionist",
+          "ground_truth_resolution": "Ultrasound Technician, Ms. Reynolds",
+          "resolution_similarity": 0.6142678972297276,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "the receptionist"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.450028700055555,
+        "ollama_total_s": 10.4484824,
+        "model_load_s": 0.0040954,
+        "prompt_eval_s": 7.95228,
+        "generation_s": 2.432152,
+        "prompt_tokens": 1199,
+        "output_tokens": 33,
+        "total_tokens": 1232,
+        "generation_tokens_per_s": 13.568230932935114
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User A",
+      "text": "Actually, I asked *her* if cramps after the ultrasound are normal.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the receptionist",
+          "ground_truth_resolution": "Ultrasound Technician, Ms. Reynolds",
+          "resolution_similarity": 0.6142678972297276,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "the receptionist"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 10.656247500097379,
+        "ollama_total_s": 10.6541816,
+        "model_load_s": 0.0020464,
+        "prompt_eval_s": 8.135515,
+        "generation_s": 2.438773,
+        "prompt_tokens": 1228,
+        "output_tokens": 33,
+        "total_tokens": 1261,
+        "generation_tokens_per_s": 13.531394680849756
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User B",
+      "text": "Yes, mild cramps can happen, but if severe pain occurs, let me know immediately.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound procedure"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the ultrasound results"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound procedure"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the ultrasound results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.645440299995244,
+        "ollama_total_s": 12.6442455,
+        "model_load_s": 0.0030677,
+        "prompt_eval_s": 8.442196,
+        "generation_s": 4.138277,
+        "prompt_tokens": 1260,
+        "output_tokens": 55,
+        "total_tokens": 1315,
+        "generation_tokens_per_s": 13.290555465475123
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User A",
+      "text": "Okay, I feel alright for now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Okay, I feel alright for now.",
+          "resolved_entity": "User A's current state of feeling"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Okay, I feel alright for now.",
+          "resolved_entity": "User A's current state of feeling"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 11.844618499977514,
+        "ollama_total_s": 11.842195,
+        "model_load_s": 0.0051435,
+        "prompt_eval_s": 8.500091,
+        "generation_s": 3.260392,
+        "prompt_tokens": 1267,
+        "output_tokens": 43,
+        "total_tokens": 1310,
+        "generation_tokens_per_s": 13.188598180832244
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User B",
+      "text": "Good. Once you're *back*, we'll go over what we found.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "back",
+          "ground_truth_ambiguous_phrase": "back",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "back",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.1952683001291,
+        "ollama_total_s": 12.1935142,
+        "model_load_s": 0.0064534,
+        "prompt_eval_s": 8.934684,
+        "generation_s": 3.176622,
+        "prompt_tokens": 1301,
+        "output_tokens": 41,
+        "total_tokens": 1342,
+        "generation_tokens_per_s": 12.906792183646653
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User A",
+      "text": "I'm finished with the scan and heading *back to your office*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "back to your office",
+          "ground_truth_ambiguous_phrase": "back to your office",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Lee's Office, Downtown Women's Health Clinic",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.9341040013893788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "back to your office",
+          "resolved_entity": "Dr. Lee's Office, Downtown Women's Health Clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.649409499950707,
+        "ollama_total_s": 12.6484393,
+        "model_load_s": 0.0036012,
+        "prompt_eval_s": 9.25472,
+        "generation_s": 3.324624,
+        "prompt_tokens": 1325,
+        "output_tokens": 44,
+        "total_tokens": 1369,
+        "generation_tokens_per_s": 13.23457930881808
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User B",
+      "text": "Welcome *back*. The results show small cysts consistent with PCOS.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Welcome *back*",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the results",
+          "resolved_entity": "the ultrasound results"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "back",
+          "ground_truth_resolution": "Dr. Lee's Office, Room 204, Downtown Women's Health Clinic",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Welcome *back*",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the results",
+          "resolved_entity": "the ultrasound results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.87011169991456,
+        "ollama_total_s": 13.8688061,
+        "model_load_s": 0.0030623,
+        "prompt_eval_s": 9.344466,
+        "generation_s": 4.439971,
+        "prompt_tokens": 1350,
+        "output_tokens": 58,
+        "total_tokens": 1408,
+        "generation_tokens_per_s": 13.063148385428644
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User A",
+      "text": "Is that what could cause all the irregularity and spotting?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the ultrasound"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the ultrasound"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.066477199783549,
+        "ollama_total_s": 12.0651458,
+        "model_load_s": 0.0031076,
+        "prompt_eval_s": 9.527099,
+        "generation_s": 2.453758,
+        "prompt_tokens": 1369,
+        "output_tokens": 32,
+        "total_tokens": 1401,
+        "generation_tokens_per_s": 13.041220853890236
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User B",
+      "text": "Yes. PCOS can disrupt ovulation, which leads to unpredictable cycles.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "PCOS",
+          "resolved_entity": "Polycystic Ovary Syndrome"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "PCOS",
+          "resolved_entity": "Polycystic Ovary Syndrome"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 12.64341719984077,
+        "ollama_total_s": 12.6429849,
+        "model_load_s": 0.0046208,
+        "prompt_eval_s": 9.695549,
+        "generation_s": 2.87457,
+        "prompt_tokens": 1397,
+        "output_tokens": 38,
+        "total_tokens": 1435,
+        "generation_tokens_per_s": 13.219368462065631
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "We’ll discuss some lifestyle changes and potential medication options.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "We’ll discuss some lifestyle changes and potential medication options.",
+          "resolved_entity": "lifestyle changes and potential medication options"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "We’ll discuss some lifestyle changes and potential medication options.",
+          "resolved_entity": "lifestyle changes and potential medication options"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.42215589992702,
+        "ollama_total_s": 13.4208808,
+        "model_load_s": 0.0032717,
+        "prompt_eval_s": 9.846719,
+        "generation_s": 3.476885,
+        "prompt_tokens": 1414,
+        "output_tokens": 46,
+        "total_tokens": 1460,
+        "generation_tokens_per_s": 13.230233384193035
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "What kind of lifestyle changes do you recommend?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "lifestyle changes",
+          "resolved_entity": "lifestyle changes for PCOS management"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "lifestyle changes",
+          "resolved_entity": "lifestyle changes for PCOS management"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.030049099819735,
+        "ollama_total_s": 13.0288623,
+        "model_load_s": 0.0034931,
+        "prompt_eval_s": 10.010325,
+        "generation_s": 2.944419,
+        "prompt_tokens": 1431,
+        "output_tokens": 39,
+        "total_tokens": 1470,
+        "generation_tokens_per_s": 13.245397479095198
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Regular exercise, stress management, and a balanced diet can improve hormonal balance. Yoga and gardening are great, but consistency helps.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 6,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 6,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Regular exercise",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "stress management",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "a balanced diet",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "Yoga",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "gardening",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "consistency",
+          "resolved_entity": "lifestyle recommendation from User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Regular exercise",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "stress management",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "a balanced diet",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "Yoga",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "gardening",
+          "resolved_entity": "lifestyle recommendation from User B"
+        },
+        {
+          "ambiguous_phrase": "consistency",
+          "resolved_entity": "lifestyle recommendation from User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 23.595016000093892,
+        "ollama_total_s": 23.5937278,
+        "model_load_s": 0.0036839,
+        "prompt_eval_s": 10.476555,
+        "generation_s": 13.028839,
+        "prompt_tokens": 1482,
+        "output_tokens": 168,
+        "total_tokens": 1650,
+        "generation_tokens_per_s": 12.89447202471379
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Should I keep tracking *my temperature* and symptoms?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my temperature",
+          "ground_truth_ambiguous_phrase": "my temperature",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the user's body temperature",
+          "ground_truth_resolution": "Basal Body Temperature Data, Clue App",
+          "resolution_similarity": 0.7275982559059282,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my temperature",
+          "resolved_entity": "the user's body temperature"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.352906699990854,
+        "ollama_total_s": 13.3500243,
+        "model_load_s": 0.0045139,
+        "prompt_eval_s": 10.540499,
+        "generation_s": 2.714605,
+        "prompt_tokens": 1489,
+        "output_tokens": 36,
+        "total_tokens": 1525,
+        "generation_tokens_per_s": 13.261597912035084
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Absolutely. Monitoring *those details* lets us track ovulation more effectively.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those details",
+          "ground_truth_ambiguous_phrase": "those details",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the temperature and symptoms",
+          "ground_truth_resolution": "Cycle Symptoms and Basal Temperature, Clue App",
+          "resolution_similarity": 0.6636648955760145,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those details",
+          "resolved_entity": "the temperature and symptoms"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 13.593516000080854,
+        "ollama_total_s": 13.5921734,
+        "model_load_s": 0.0030715,
+        "prompt_eval_s": 10.825466,
+        "generation_s": 2.69059,
+        "prompt_tokens": 1518,
+        "output_tokens": 35,
+        "total_tokens": 1553,
+        "generation_tokens_per_s": 13.008299294950179
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Do you need access to *my app data* regularly?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*my app data*",
+          "ground_truth_ambiguous_phrase": "my app data",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Clue app data (from User A's previous mention of using Clue to track everything)",
+          "ground_truth_resolution": "Clue App Cycle and Symptom Data June 2024",
+          "resolution_similarity": 0.7959915866989601,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*my app data*",
+          "resolved_entity": "Clue app data (from User A's previous mention of using Clue to track everything)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.097427800064906,
+        "ollama_total_s": 15.0958245,
+        "model_load_s": 0.003061,
+        "prompt_eval_s": 11.026343,
+        "generation_s": 3.978335,
+        "prompt_tokens": 1537,
+        "output_tokens": 51,
+        "total_tokens": 1588,
+        "generation_tokens_per_s": 12.819433255369395
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Ideally, yes, but only if you're comfortable. It's sensitive information.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound scan"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "User A's"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the app logs"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound scan"
+        },
+        {
+          "ambiguous_phrase": "your",
+          "resolved_entity": "User A's"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the app logs"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.272657500114292,
+        "ollama_total_s": 17.2713575,
+        "model_load_s": 0.0035958,
+        "prompt_eval_s": 11.184437,
+        "generation_s": 5.985606,
+        "prompt_tokens": 1568,
+        "output_tokens": 77,
+        "total_tokens": 1645,
+        "generation_tokens_per_s": 12.86419453602526
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "I'm okay with sharing *it* for now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*it*",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the app data (Clue)",
+          "ground_truth_resolution": "Clue App Cycle and Symptom Data June 2024",
+          "resolution_similarity": 0.7762153611978129,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the app data (Clue)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.232054200023413,
+        "ollama_total_s": 14.2309193,
+        "model_load_s": 0.0036429,
+        "prompt_eval_s": 11.239539,
+        "generation_s": 2.895592,
+        "prompt_tokens": 1583,
+        "output_tokens": 37,
+        "total_tokens": 1620,
+        "generation_tokens_per_s": 12.778043315494724
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Thank you. We'll keep it confidential.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound procedure"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the app logs"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the ultrasound procedure"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the app logs"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.019695000024512,
+        "ollama_total_s": 16.0181168,
+        "model_load_s": 0.0030636,
+        "prompt_eval_s": 11.590727,
+        "generation_s": 4.347486,
+        "prompt_tokens": 1600,
+        "output_tokens": 55,
+        "total_tokens": 1655,
+        "generation_tokens_per_s": 12.650989560403415
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User B",
+      "text": "Would you like to discuss potential medication changes *now* or wait until your next appointment?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "the current time (10:30 AM, as per calendar_next in mobile context)"
+        },
+        {
+          "ambiguous_phrase": "next appointment",
+          "resolved_entity": "the upcoming prenatal consultation (10:30 AM) as per calendar_next in mobile context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "the current time (10:30 AM, as per calendar_next in mobile context)"
+        },
+        {
+          "ambiguous_phrase": "next appointment",
+          "resolved_entity": "the upcoming prenatal consultation (10:30 AM) as per calendar_next in mobile context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.7939544999972,
+        "ollama_total_s": 18.7923891,
+        "model_load_s": 0.002952,
+        "prompt_eval_s": 11.86957,
+        "generation_s": 6.827832,
+        "prompt_tokens": 1637,
+        "output_tokens": 87,
+        "total_tokens": 1724,
+        "generation_tokens_per_s": 12.741965531665103
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User A",
+      "text": "Can we talk about *it* now? I'd like to know my options.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*it*",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "potential medication changes",
+          "ground_truth_resolution": "Medication Change Discussion: Metformin, Hormone Therapy",
+          "resolution_similarity": 0.7754314510111965,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "potential medication changes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 14.81813559983857,
+        "ollama_total_s": 14.8168784,
+        "model_load_s": 0.0036872,
+        "prompt_eval_s": 12.067506,
+        "generation_s": 2.635435,
+        "prompt_tokens": 1663,
+        "output_tokens": 34,
+        "total_tokens": 1697,
+        "generation_tokens_per_s": 12.901096023996038
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User B",
+      "text": "Sure. We can consider starting metformin or adjusting hormone therapies.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the medication options discussed in the current context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the medication options discussed in the current context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.425548099912703,
+        "ollama_total_s": 15.4243708,
+        "model_load_s": 0.0030718,
+        "prompt_eval_s": 12.344616,
+        "generation_s": 2.994007,
+        "prompt_tokens": 1684,
+        "output_tokens": 38,
+        "total_tokens": 1722,
+        "generation_tokens_per_s": 12.69202109413906
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User A",
+      "text": "Is metformin safe while trying to conceive?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "metformin",
+          "resolved_entity": "metformin (the medication)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "metformin",
+          "resolved_entity": "metformin (the medication)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.645929399877787,
+        "ollama_total_s": 15.6439834,
+        "model_load_s": 0.0032731,
+        "prompt_eval_s": 12.514064,
+        "generation_s": 3.033425,
+        "prompt_tokens": 1700,
+        "output_tokens": 38,
+        "total_tokens": 1738,
+        "generation_tokens_per_s": 12.527093961446221
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User B",
+      "text": "Yes, it's often used for PCOS in women who are TTC. We'll monitor closely.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the woman (User A) who is currently being treated for PCOS"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the woman (User A) who is currently being treated for PCOS"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.312394100008532,
+        "ollama_total_s": 16.3111995,
+        "model_load_s": 0.0034235,
+        "prompt_eval_s": 12.782548,
+        "generation_s": 3.428764,
+        "prompt_tokens": 1740,
+        "output_tokens": 44,
+        "total_tokens": 1784,
+        "generation_tokens_per_s": 12.83261256826075
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User A",
+      "text": "Do you recommend any supplements?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "supplements",
+          "resolved_entity": "supplements for PCOS management"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "supplements",
+          "resolved_entity": "supplements for PCOS management"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 15.830698899924755,
+        "ollama_total_s": 15.8297009,
+        "model_load_s": 0.0038387,
+        "prompt_eval_s": 12.81121,
+        "generation_s": 2.926615,
+        "prompt_tokens": 1742,
+        "output_tokens": 37,
+        "total_tokens": 1779,
+        "generation_tokens_per_s": 12.642592209771356
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User B",
+      "text": "A prenatal multivitamin and inositol can be helpful, but let's review your lab results first.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your lab results",
+          "resolved_entity": "the lab results from the current session (User A's recent lab results for PCOS evaluation)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the prenatal multivitamin and inositol"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your lab results",
+          "resolved_entity": "the lab results from the current session (User A's recent lab results for PCOS evaluation)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the prenatal multivitamin and inositol"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 19.747792199952528,
+        "ollama_total_s": 19.7465044,
+        "model_load_s": 0.0038788,
+        "prompt_eval_s": 13.424662,
+        "generation_s": 6.223079,
+        "prompt_tokens": 1790,
+        "output_tokens": 78,
+        "total_tokens": 1868,
+        "generation_tokens_per_s": 12.533988400275812
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User A",
+      "text": "When should I get *those labs*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those labs",
+          "ground_truth_ambiguous_phrase": "those labs",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the lab tests ordered by Dr. Lee for PCOS evaluation",
+          "ground_truth_resolution": "Hormonal Panel (FSH, LH, estrogen, testosterone), Blood Draw Room",
+          "resolution_similarity": 0.6513078861436578,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those labs",
+          "resolved_entity": "the lab tests ordered by Dr. Lee for PCOS evaluation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.072212900035083,
+        "ollama_total_s": 17.0705563,
+        "model_load_s": 0.0029132,
+        "prompt_eval_s": 13.527569,
+        "generation_s": 3.43744,
+        "prompt_tokens": 1796,
+        "output_tokens": 43,
+        "total_tokens": 1839,
+        "generation_tokens_per_s": 12.509309253397877
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User B",
+      "text": "You can do *them* today before you leave, in *the blood draw room* at the end of the hall.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the blood draw room",
+          "ground_truth_ambiguous_phrase": "the blood draw room",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blood draw room",
+          "ground_truth_resolution": "Blood Draw Room, End of Hall, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.8712567417740341,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blood draw room",
+          "ground_truth_resolution": "Hormonal Panel Labs Scheduled for 2024-06-14",
+          "resolution_similarity": 0.5678753490249735,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the blood draw room"
+        },
+        {
+          "ambiguous_phrase": "the blood draw room",
+          "resolved_entity": "the blood draw room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.85904090013355,
+        "ollama_total_s": 18.8575724,
+        "model_load_s": 0.0035789,
+        "prompt_eval_s": 13.970923,
+        "generation_s": 4.781452,
+        "prompt_tokens": 1847,
+        "output_tokens": 60,
+        "total_tokens": 1907,
+        "generation_tokens_per_s": 12.548489454667745
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User A",
+      "text": "I'll stop by *there* after this.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*there*",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the imaging suite",
+          "ground_truth_resolution": "Blood Draw Room, End of Hall, Downtown Women's Health Clinic",
+          "resolution_similarity": 0.5082024494911532,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*there*",
+          "resolved_entity": "the imaging suite"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 16.842775400029495,
+        "ollama_total_s": 16.8415906,
+        "model_load_s": 0.0030697,
+        "prompt_eval_s": 13.996492,
+        "generation_s": 2.738793,
+        "prompt_tokens": 1852,
+        "output_tokens": 34,
+        "total_tokens": 1886,
+        "generation_tokens_per_s": 12.414227727323679
+      }
+    },
+    {
+      "turn_id": 59,
+      "speaker": "User B",
+      "text": "The phlebotomist can answer any questions about *the process*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the process",
+          "ground_truth_ambiguous_phrase": "the process",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blood draw process",
+          "ground_truth_resolution": "Blood Draw for Hormonal Panel, Standard Phlebotomy Procedure",
+          "resolution_similarity": 0.7879061394211778,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the process",
+          "resolved_entity": "the blood draw process"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 17.271160500124097,
+        "ollama_total_s": 17.2701835,
+        "model_load_s": 0.0025565,
+        "prompt_eval_s": 14.349783,
+        "generation_s": 2.812562,
+        "prompt_tokens": 1884,
+        "output_tokens": 35,
+        "total_tokens": 1919,
+        "generation_tokens_per_s": 12.444170119627586
+      }
+    },
+    {
+      "turn_id": 60,
+      "speaker": "User A",
+      "text": "Thanks. Should I schedule a follow-up or wait for a call?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "a follow-up",
+          "resolved_entity": "the next scheduled appointment after the current visit"
+        },
+        {
+          "ambiguous_phrase": "wait for a call",
+          "resolved_entity": "the next scheduled call with Dr. Lee"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "a follow-up",
+          "resolved_entity": "the next scheduled appointment after the current visit"
+        },
+        {
+          "ambiguous_phrase": "wait for a call",
+          "resolved_entity": "the next scheduled call with Dr. Lee"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 20.365044000092894,
+        "ollama_total_s": 20.3639941,
+        "model_load_s": 0.0042686,
+        "prompt_eval_s": 14.586217,
+        "generation_s": 5.666704,
+        "prompt_tokens": 1906,
+        "output_tokens": 70,
+        "total_tokens": 1976,
+        "generation_tokens_per_s": 12.352859792923716
+      }
+    },
+    {
+      "turn_id": 61,
+      "speaker": "User B",
+      "text": "Let's set up a follow-up for *two weeks from today*, same time if that works for you.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*two weeks from today*",
+          "ground_truth_ambiguous_phrase": "two weeks from today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "two weeks from today (relative time)",
+          "ground_truth_resolution": "2024-06-28, 10:30 AM",
+          "resolution_similarity": 0.46434569029925493,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*two weeks from today*",
+          "resolved_entity": "two weeks from today (relative time)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.33095459989272,
+        "ollama_total_s": 18.329168,
+        "model_load_s": 0.0033972,
+        "prompt_eval_s": 14.914911,
+        "generation_s": 3.297996,
+        "prompt_tokens": 1946,
+        "output_tokens": 41,
+        "total_tokens": 1987,
+        "generation_tokens_per_s": 12.431791912421968
+      }
+    },
+    {
+      "turn_id": 62,
+      "speaker": "User A",
+      "text": "That works. I'll put *it* in my calendar.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the follow-up appointment scheduled for two weeks from today",
+          "ground_truth_resolution": "Follow-up Appointment 2024-06-28, 10:30 AM",
+          "resolution_similarity": 0.7945531687629159,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the follow-up appointment scheduled for two weeks from today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.45697050006129,
+        "ollama_total_s": 18.4556719,
+        "model_load_s": 0.0035797,
+        "prompt_eval_s": 15.132909,
+        "generation_s": 3.199021,
+        "prompt_tokens": 1960,
+        "output_tokens": 40,
+        "total_tokens": 2000,
+        "generation_tokens_per_s": 12.50382538907997
+      }
+    },
+    {
+      "turn_id": 63,
+      "speaker": "User B",
+      "text": "You're welcome, Priya. I'm here if you have any concerns between *now* and then.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*now*",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the current time (10:30 AM, as per calendar_next in mobile context)",
+          "ground_truth_resolution": "2024-06-14, 10:50 AM",
+          "resolution_similarity": 0.5386423666568693,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*then*",
+          "resolved_entity": "the follow-up appointment time (two weeks from today, as per Turn 61)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*now*",
+          "resolved_entity": "the current time (10:30 AM, as per calendar_next in mobile context)"
+        },
+        {
+          "ambiguous_phrase": "*then*",
+          "resolved_entity": "the follow-up appointment time (two weeks from today, as per Turn 61)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 22.672674600034952,
+        "ollama_total_s": 22.6716104,
+        "model_load_s": 0.0035873,
+        "prompt_eval_s": 15.519315,
+        "generation_s": 7.036822,
+        "prompt_tokens": 2001,
+        "output_tokens": 86,
+        "total_tokens": 2087,
+        "generation_tokens_per_s": 12.22142609263102
+      }
+    },
+    {
+      "turn_id": 64,
+      "speaker": "User A",
+      "text": "Thank you so much, Dr. Lee.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the follow-up appointment scheduled for two weeks from today"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the follow-up appointment scheduled for two weeks from today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.779580799862742,
+        "ollama_total_s": 18.7786276,
+        "model_load_s": 0.0035777,
+        "prompt_eval_s": 15.465789,
+        "generation_s": 3.19156,
+        "prompt_tokens": 2007,
+        "output_tokens": 40,
+        "total_tokens": 2047,
+        "generation_tokens_per_s": 12.533055935028639
+      }
+    },
+    {
+      "turn_id": 65,
+      "speaker": "User B",
+      "text": "Take care. See you *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the follow-up appointment scheduled for two weeks from today",
+          "ground_truth_resolution": "2024-06-28, 10:30 AM",
+          "resolution_similarity": 0.45736908257596287,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the follow-up appointment scheduled for two weeks from today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 19.034163300180808,
+        "ollama_total_s": 19.032124,
+        "model_load_s": 0.0020613,
+        "prompt_eval_s": 15.669761,
+        "generation_s": 3.251786,
+        "prompt_tokens": 2026,
+        "output_tokens": 40,
+        "total_tokens": 2066,
+        "generation_tokens_per_s": 12.300932472186053
+      }
+    },
+    {
+      "turn_id": 66,
+      "speaker": "User A",
+      "text": "Bye!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Bye!",
+          "resolved_entity": "the farewell message"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Bye!",
+          "resolved_entity": "the farewell message"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 18.613954400178045,
+        "ollama_total_s": 18.6125575,
+        "model_load_s": 0.0035966,
+        "prompt_eval_s": 15.750718,
+        "generation_s": 2.74661,
+        "prompt_tokens": 2032,
+        "output_tokens": 34,
+        "total_tokens": 2066,
+        "generation_tokens_per_s": 12.378896166547126
+      }
+    }
+  ]
+}
