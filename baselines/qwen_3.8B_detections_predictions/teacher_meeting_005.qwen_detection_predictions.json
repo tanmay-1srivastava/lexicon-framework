@@ -1,0 +1,2903 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/teacher_meeting_005.json",
+  "metrics": {
+    "ground_truth_ambiguities": 25,
+    "qwen_predicted_ambiguities": 73,
+    "detected_ground_truth_ambiguities": 12,
+    "missed_ground_truth_ambiguities": 13,
+    "detected_but_bad_resolution": 7,
+    "true_positives": 5,
+    "false_negatives": 20,
+    "false_positive_ambiguities": 61,
+    "detection_recall": 0.48,
+    "detection_precision": 0.1643835616438356,
+    "detection_f1": 0.24489795918367346,
+    "true_positive_rate_at_0_70": 0.2,
+    "strict_end_to_end_precision_at_0_70": 0.0684931506849315,
+    "end_to_end_f1_at_0_70": 0.1020408163265306,
+    "false_positive_discovery_rate": 0.8356164383561644,
+    "false_positives_per_turn": 0.8970588235294118,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 68,
+    "median_latency_per_turn_s": 0.4426199037116021,
+    "mean_latency_per_turn_s": 0.44832746865337386,
+    "total_prompt_tokens": 91995,
+    "total_output_tokens": 2641
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Okay, I'm at our table—everyone's almost here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Room 302, Lincoln High School, San Francisco",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2475473703816533,
+        "ollama_total_s": 0.246508005,
+        "model_load_s": 0.003035253,
+        "prompt_eval_s": 0.035564,
+        "generation_s": 0.025211,
+        "prompt_tokens": 464,
+        "output_tokens": 6,
+        "total_tokens": 470,
+        "generation_tokens_per_s": 237.9913529808417
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "I see you! I just talked to him about the props, and he said we can use whatever's on that cart.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that cart",
+          "ground_truth_ambiguous_phrase": "that cart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cart in Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Rolling storage cart by the whiteboard, Room 302",
+          "resolution_similarity": 0.7148843635786768,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Mr. Turner (English Literature Teacher)",
+          "resolution_similarity": 0.5461038078648955,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that cart",
+          "resolved_entity": "the cart in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3462020196020603,
+        "ollama_total_s": 0.344985828,
+        "model_load_s": 0.001162299,
+        "prompt_eval_s": 0.035943,
+        "generation_s": 0.30358,
+        "prompt_tokens": 510,
+        "output_tokens": 50,
+        "total_tokens": 560,
+        "generation_tokens_per_s": 164.7012319652151
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Great, thanks! Can you grab it? I'm still setting up over here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the props on the cart",
+          "ground_truth_resolution": "Rolling storage cart with props",
+          "resolution_similarity": 0.7239936255031351,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "over here",
+          "resolved_entity": "Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the props on the cart"
+        },
+        {
+          "ambiguous_phrase": "over here",
+          "resolved_entity": "Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4747438826598227,
+        "ollama_total_s": 0.473331422,
+        "model_load_s": 0.0015745,
+        "prompt_eval_s": 0.040928,
+        "generation_s": 0.387102,
+        "prompt_tokens": 528,
+        "output_tokens": 67,
+        "total_tokens": 595,
+        "generation_tokens_per_s": 173.08099673987735
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Sure thing. Oh, did you see what she wrote on the board?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the board",
+          "ground_truth_ambiguous_phrase": "the board",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "whiteboard in Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Whiteboard at the front of Room 302",
+          "resolution_similarity": 0.7849939739279983,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Ms. Li (Teaching Assistant)",
+          "resolution_similarity": 0.5817979976176791,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the board",
+          "resolved_entity": "whiteboard in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47234769724309444,
+        "ollama_total_s": 0.470821545,
+        "model_load_s": 0.001717193,
+        "prompt_eval_s": 0.041739,
+        "generation_s": 0.358351,
+        "prompt_tokens": 550,
+        "output_tokens": 67,
+        "total_tokens": 617,
+        "generation_tokens_per_s": 186.9675262521941
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Not yet—I'm blocked by that big shelf. Hold on, I'll move.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that big shelf",
+          "ground_truth_ambiguous_phrase": "that big shelf",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "shelf in Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Tall metal bookshelf near entrance, Room 302",
+          "resolution_similarity": 0.7034137680234563,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that big shelf",
+          "resolved_entity": "shelf in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35756666213274,
+        "ollama_total_s": 0.356269791,
+        "model_load_s": 0.00103266,
+        "prompt_eval_s": 0.046103,
+        "generation_s": 0.261521,
+        "prompt_tokens": 578,
+        "output_tokens": 46,
+        "total_tokens": 624,
+        "generation_tokens_per_s": 175.89409645879297
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "It says we're starting with the dinner scene. We need to figure out who takes which part now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It says",
+          "resolved_entity": "the board (referencing the whiteboard or chalkboard in the room)"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B (the group working on the scene setup)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It says",
+          "resolved_entity": "the board (referencing the whiteboard or chalkboard in the room)"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B (the group working on the scene setup)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5045046107843518,
+        "ollama_total_s": 0.503446374,
+        "model_load_s": 0.001184309,
+        "prompt_eval_s": 0.046686,
+        "generation_s": 0.403679,
+        "prompt_tokens": 612,
+        "output_tokens": 77,
+        "total_tokens": 689,
+        "generation_tokens_per_s": 190.7456171859324
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Perfect, that's my favorite part. I'll be the older sister, unless someone else wanted it?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that's my favorite part",
+          "resolved_entity": "the dinner scene"
+        },
+        {
+          "ambiguous_phrase": "the older sister",
+          "resolved_entity": "a role in the dinner scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that's my favorite part",
+          "resolved_entity": "the dinner scene"
+        },
+        {
+          "ambiguous_phrase": "the older sister",
+          "resolved_entity": "a role in the dinner scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45809026900678873,
+        "ollama_total_s": 0.456780989,
+        "model_load_s": 0.004060787,
+        "prompt_eval_s": 0.047603,
+        "generation_s": 0.339657,
+        "prompt_tokens": 642,
+        "output_tokens": 64,
+        "total_tokens": 706,
+        "generation_tokens_per_s": 188.42538207662437
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "I think Jess wanted to, but she's not here yet. Should we wait or just assign it?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her",
+          "ground_truth_resolution": "Jess (Group Member)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.479659671895206,
+        "ollama_total_s": 0.478203438,
+        "model_load_s": 0.001480815,
+        "prompt_eval_s": 0.048477,
+        "generation_s": 0.360702,
+        "prompt_tokens": 672,
+        "output_tokens": 68,
+        "total_tokens": 740,
+        "generation_tokens_per_s": 188.52127240769389
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Let's hold the spot for her. We can look over the lines in the meantime.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "the spot",
+          "resolved_entity": "the older sister role"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "the spot",
+          "resolved_entity": "the older sister role"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4264920735731721,
+        "ollama_total_s": 0.425206445,
+        "model_load_s": 0.001407015,
+        "prompt_eval_s": 0.052849,
+        "generation_s": 0.300218,
+        "prompt_tokens": 696,
+        "output_tokens": 55,
+        "total_tokens": 751,
+        "generation_tokens_per_s": 183.2002078489631
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Good call. The scripts are over there, next to the window.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "over there",
+          "ground_truth_ambiguous_phrase": "over there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Table by the window, Room 302",
+          "resolution_similarity": 0.6352459025190758,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "next to the window",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "over there",
+          "resolved_entity": "Room 302, Lincoln High School, San Francisco"
+        },
+        {
+          "ambiguous_phrase": "next to the window",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5142816668376327,
+        "ollama_total_s": 0.51282359,
+        "model_load_s": 0.001501041,
+        "prompt_eval_s": 0.052598,
+        "generation_s": 0.399142,
+        "prompt_tokens": 717,
+        "output_tokens": 83,
+        "total_tokens": 800,
+        "generation_tokens_per_s": 207.9460442649483
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "I'll grab them in a sec—just organizing our notes.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the scripts"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the scripts"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.29123910097405314,
+        "ollama_total_s": 0.289952224,
+        "model_load_s": 0.001416287,
+        "prompt_eval_s": 0.052161,
+        "generation_s": 0.160566,
+        "prompt_tokens": 739,
+        "output_tokens": 21,
+        "total_tokens": 760,
+        "generation_tokens_per_s": 130.78733978550878
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Did you print the character map? It's somewhere in that folder.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It's somewhere in that folder.",
+          "resolved_entity": "the folder (referencing a previously mentioned folder, likely the one containing the scripts or character-related files)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that folder",
+          "ground_truth_resolution": "Blue student folder on User A's desk",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It's somewhere in that folder.",
+          "resolved_entity": "the folder (referencing a previously mentioned folder, likely the one containing the scripts or character-related files)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43188195396214724,
+        "ollama_total_s": 0.430735678,
+        "model_load_s": 0.001199904,
+        "prompt_eval_s": 0.060751,
+        "generation_s": 0.307244,
+        "prompt_tokens": 764,
+        "output_tokens": 55,
+        "total_tokens": 819,
+        "generation_tokens_per_s": 179.0108187629376
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Yeah, it's right here. Wait—this page is missing. Maybe it slipped under the desk.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this page",
+          "ground_truth_ambiguous_phrase": "this page",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "a page from the character map",
+          "ground_truth_resolution": "Character map for the role-play exercise",
+          "resolution_similarity": 0.7094504922879812,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the character map"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "under the desk",
+          "ground_truth_resolution": "Beneath group workspace, Room 302",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the character map"
+        },
+        {
+          "ambiguous_phrase": "this page",
+          "resolved_entity": "a page from the character map"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43872882099822164,
+        "ollama_total_s": 0.437513778,
+        "model_load_s": 0.001407461,
+        "prompt_eval_s": 0.068643,
+        "generation_s": 0.29074,
+        "prompt_tokens": 802,
+        "output_tokens": 59,
+        "total_tokens": 861,
+        "generation_tokens_per_s": 202.93045332599573
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "I'll check over there. By the way, Mr. Turner asked if our group was ready to present first or second.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "over there",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        },
+        {
+          "ambiguous_phrase": "our group",
+          "resolved_entity": "User A and User B's group (implied by prior dialogue)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "him",
+          "ground_truth_resolution": "Mr. Turner (English Literature Teacher)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "over there",
+          "resolved_entity": "Lincoln High School, San Francisco - Room 302 (Group Desk 4)"
+        },
+        {
+          "ambiguous_phrase": "our group",
+          "resolved_entity": "User A and User B's group (implied by prior dialogue)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5276884669438004,
+        "ollama_total_s": 0.526583298,
+        "model_load_s": 0.001018835,
+        "prompt_eval_s": 0.06894,
+        "generation_s": 0.393032,
+        "prompt_tokens": 841,
+        "output_tokens": 82,
+        "total_tokens": 923,
+        "generation_tokens_per_s": 208.63441144741395
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "I'd rather go second. That way we can see how the other group does it first.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the other group",
+          "resolved_entity": "the other group (from the presentation order decision)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the other group",
+          "resolved_entity": "the other group (from the presentation order decision)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43420634465292096,
+        "ollama_total_s": 0.432835156,
+        "model_load_s": 0.001194485,
+        "prompt_eval_s": 0.069525,
+        "generation_s": 0.291667,
+        "prompt_tokens": 864,
+        "output_tokens": 41,
+        "total_tokens": 905,
+        "generation_tokens_per_s": 140.57126791855094
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "I'll tell him. Also, Jess just texted she's running a bit late but she'll be here soon.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36907524708658457,
+        "ollama_total_s": 0.367810952,
+        "model_load_s": 0.001528478,
+        "prompt_eval_s": 0.074121,
+        "generation_s": 0.199024,
+        "prompt_tokens": 903,
+        "output_tokens": 35,
+        "total_tokens": 938,
+        "generation_tokens_per_s": 175.85818795723128
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "No problem. We can assign lines and catch her up when she gets in.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4536655629053712,
+        "ollama_total_s": 0.45245826,
+        "model_load_s": 0.001391506,
+        "prompt_eval_s": 0.081732,
+        "generation_s": 0.296789,
+        "prompt_tokens": 921,
+        "output_tokens": 51,
+        "total_tokens": 972,
+        "generation_tokens_per_s": 171.83925280249605
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Cool. Do you remember if we're supposed to stay exactly to the script or improvise a little? I wasn't here when he explained.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5121159520931542,
+        "ollama_total_s": 0.510899813,
+        "model_load_s": 0.00133453,
+        "prompt_eval_s": 0.083588,
+        "generation_s": 0.323943,
+        "prompt_tokens": 973,
+        "output_tokens": 56,
+        "total_tokens": 1029,
+        "generation_tokens_per_s": 172.86991847331169
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "He said we could improvise, but we need to stick to the main events. Something about highlighting the core values.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B's group"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B's group"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5198130146600306,
+        "ollama_total_s": 0.518423179,
+        "model_load_s": 0.001586333,
+        "prompt_eval_s": 0.083913,
+        "generation_s": 0.326911,
+        "prompt_tokens": 1002,
+        "output_tokens": 59,
+        "total_tokens": 1061,
+        "generation_tokens_per_s": 180.47725527743023
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Makes sense. Which values are we supposed to focus on for this scene?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this scene",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this scene",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41280948417261243,
+        "ollama_total_s": 0.4115378,
+        "model_load_s": 0.001513556,
+        "prompt_eval_s": 0.082371,
+        "generation_s": 0.213471,
+        "prompt_tokens": 1018,
+        "output_tokens": 34,
+        "total_tokens": 1052,
+        "generation_tokens_per_s": 159.27221964575986
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Family loyalty and honesty—those were on his slide earlier.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those were on his slide earlier",
+          "resolved_entity": "the slide presented by Mr. Turner during the meeting about the presentation order and core values"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "his slide",
+          "ground_truth_resolution": "Mr. Turner’s classroom slide deck: 'Core values in the dinner scene'",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those were on his slide earlier",
+          "resolved_entity": "the slide presented by Mr. Turner during the meeting about the presentation order and core values"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48136277310550213,
+        "ollama_total_s": 0.480109364,
+        "model_load_s": 0.00147803,
+        "prompt_eval_s": 0.091333,
+        "generation_s": 0.303508,
+        "prompt_tokens": 1037,
+        "output_tokens": 52,
+        "total_tokens": 1089,
+        "generation_tokens_per_s": 171.3299155211724
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Okay, let's jot that down. Oh! The other group has started practicing near the door.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "near the door",
+          "ground_truth_ambiguous_phrase": "near the door",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Door of Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Group area by Room 302 entrance",
+          "resolution_similarity": 0.6349840267293876,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the other group",
+          "resolved_entity": "Group Desk 4 (User B's group) at Lincoln High School, San Francisco - Room 302"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the other group",
+          "resolved_entity": "Group Desk 4 (User B's group) at Lincoln High School, San Francisco - Room 302"
+        },
+        {
+          "ambiguous_phrase": "near the door",
+          "resolved_entity": "Door of Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6936301910318434,
+        "ollama_total_s": 0.692350529,
+        "model_load_s": 0.001278811,
+        "prompt_eval_s": 0.091951,
+        "generation_s": 0.512724,
+        "prompt_tokens": 1075,
+        "output_tokens": 90,
+        "total_tokens": 1165,
+        "generation_tokens_per_s": 175.5330353172467
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Should we move over to the window area? It's quieter there.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the window area",
+          "ground_truth_resolution": "Desks by south-facing window, Room 302",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20898347441107035,
+        "ollama_total_s": 0.207865792,
+        "model_load_s": 0.001061817,
+        "prompt_eval_s": 0.092356,
+        "generation_s": 0.025665,
+        "prompt_tokens": 1093,
+        "output_tokens": 6,
+        "total_tokens": 1099,
+        "generation_tokens_per_s": 233.78141437755698
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Yeah, I'll bring the props and the script.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20484535675495863,
+        "ollama_total_s": 0.203726031,
+        "model_load_s": 0.001474683,
+        "prompt_eval_s": 0.091998,
+        "generation_s": 0.02546,
+        "prompt_tokens": 1111,
+        "output_tokens": 6,
+        "total_tokens": 1117,
+        "generation_tokens_per_s": 235.6637863315004
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thanks! Can you pass me that marker? The blue one.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that marker",
+          "ground_truth_ambiguous_phrase": "that marker",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The blue marker in the room, likely on the cart or nearby since markers are commonly used for writing on boards or scripts.",
+          "ground_truth_resolution": "Blue dry-erase marker on table",
+          "resolution_similarity": 0.6954948067623765,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that marker",
+          "resolved_entity": "The blue marker in the room, likely on the cart or nearby since markers are commonly used for writing on boards or scripts."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4887810191139579,
+        "ollama_total_s": 0.487756588,
+        "model_load_s": 0.001160621,
+        "prompt_eval_s": 0.096985,
+        "generation_s": 0.304711,
+        "prompt_tokens": 1136,
+        "output_tokens": 55,
+        "total_tokens": 1191,
+        "generation_tokens_per_s": 180.49889895671635
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Here you go. Do you want the eraser too?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Here you go.",
+          "resolved_entity": "The marker that User A asked for in Turn 25."
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the eraser",
+          "ground_truth_resolution": "Whiteboard eraser by window",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Here you go.",
+          "resolved_entity": "The marker that User A asked for in Turn 25."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44651098642498255,
+        "ollama_total_s": 0.443601691,
+        "model_load_s": 0.001239648,
+        "prompt_eval_s": 0.098423,
+        "generation_s": 0.226231,
+        "prompt_tokens": 1157,
+        "output_tokens": 44,
+        "total_tokens": 1201,
+        "generation_tokens_per_s": 194.4914711069659
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Yes, please. I'll fix our notes on this sheet.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this sheet",
+          "resolved_entity": "the sheet where they are organizing their notes (referenced in Turn 11: 'I'll grab them in a sec—just organizing our notes.')"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this sheet",
+          "resolved_entity": "the sheet where they are organizing their notes (referenced in Turn 11: 'I'll grab them in a sec—just organizing our notes.')"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5457015582360327,
+        "ollama_total_s": 0.544186574,
+        "model_load_s": 0.002540063,
+        "prompt_eval_s": 0.098915,
+        "generation_s": 0.349872,
+        "prompt_tokens": 1181,
+        "output_tokens": 62,
+        "total_tokens": 1243,
+        "generation_tokens_per_s": 177.20766451730918
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Here's the eraser. Also, is this your notebook or mine?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this notebook",
+          "resolved_entity": "User A's notebook"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this",
+          "ground_truth_resolution": "Spiral notebook",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this notebook",
+          "resolved_entity": "User A's notebook"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4247948289848864,
+        "ollama_total_s": 0.423190657,
+        "model_load_s": 0.00150294,
+        "prompt_eval_s": 0.099975,
+        "generation_s": 0.226406,
+        "prompt_tokens": 1208,
+        "output_tokens": 35,
+        "total_tokens": 1243,
+        "generation_tokens_per_s": 154.58954267996432
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "That's yours—I think mine is over by that chair.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That's yours—I think mine is over by that chair.",
+          "resolved_entity": "User A's notebook"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that chair",
+          "ground_truth_resolution": "Seat by the wall, Room 302",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That's yours—I think mine is over by that chair.",
+          "resolved_entity": "User A's notebook"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5026044799014926,
+        "ollama_total_s": 0.501317786,
+        "model_load_s": 0.002032281,
+        "prompt_eval_s": 0.100234,
+        "generation_s": 0.272847,
+        "prompt_tokens": 1227,
+        "output_tokens": 44,
+        "total_tokens": 1271,
+        "generation_tokens_per_s": 161.2625390786778
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Got it. By the way, did you hear what Mr. Turner just told them?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Mr. Turner just told them",
+          "resolved_entity": "Mr. Turner's recent communication to the other group (the other group has started practicing near the door)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "them",
+          "ground_truth_resolution": "Other role-play group",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Mr. Turner just told them",
+          "resolved_entity": "Mr. Turner's recent communication to the other group (the other group has started practicing near the door)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5393537501804531,
+        "ollama_total_s": 0.538065672,
+        "model_load_s": 0.001785677,
+        "prompt_eval_s": 0.100471,
+        "generation_s": 0.311083,
+        "prompt_tokens": 1261,
+        "output_tokens": 55,
+        "total_tokens": 1316,
+        "generation_tokens_per_s": 176.80168958123716
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "No, I missed it. What'd he say?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the script"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the script"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5269148917868733,
+        "ollama_total_s": 0.525617654,
+        "model_load_s": 0.00150509,
+        "prompt_eval_s": 0.114111,
+        "generation_s": 0.297113,
+        "prompt_tokens": 1275,
+        "output_tokens": 54,
+        "total_tokens": 1329,
+        "generation_tokens_per_s": 181.74903151326262
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "He reminded them to focus on the conversation at the table—that's the most important moment.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the table",
+          "ground_truth_ambiguous_phrase": "the table",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the table in Room 302, Lincoln High School, San Francisco",
+          "ground_truth_resolution": "Arrangement of four desks, Room 302",
+          "resolution_similarity": 0.6329530063321261,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the group (User A, User B, and Jess)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Mr. Turner"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the group (User A, User B, and Jess)"
+        },
+        {
+          "ambiguous_phrase": "the table",
+          "resolved_entity": "the table in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7340254900045693,
+        "ollama_total_s": 0.732708695,
+        "model_load_s": 0.00144516,
+        "prompt_eval_s": 0.115671,
+        "generation_s": 0.49595,
+        "prompt_tokens": 1310,
+        "output_tokens": 98,
+        "total_tokens": 1408,
+        "generation_tokens_per_s": 197.60056457304162
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Okay, good tip. Let's open to that section in our scripts.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3889361168257892,
+        "ollama_total_s": 0.387687098,
+        "model_load_s": 0.001255263,
+        "prompt_eval_s": 0.11618,
+        "generation_s": 0.148888,
+        "prompt_tokens": 1332,
+        "output_tokens": 23,
+        "total_tokens": 1355,
+        "generation_tokens_per_s": 154.4785342002042
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Found it. Should I be the youngest sibling or the neighbor?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the youngest sibling",
+          "resolved_entity": "the youngest sibling in the play script"
+        },
+        {
+          "ambiguous_phrase": "the neighbor",
+          "resolved_entity": "the neighbor character in the play script"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the youngest sibling",
+          "resolved_entity": "the youngest sibling in the play script"
+        },
+        {
+          "ambiguous_phrase": "the neighbor",
+          "resolved_entity": "the neighbor character in the play script"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.621057600248605,
+        "ollama_total_s": 0.619768871,
+        "model_load_s": 0.001750751,
+        "prompt_eval_s": 0.116573,
+        "generation_s": 0.380568,
+        "prompt_tokens": 1353,
+        "output_tokens": 66,
+        "total_tokens": 1419,
+        "generation_tokens_per_s": 173.42498581068298
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "The neighbor might be more fun, especially with the dramatic entrance.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27269947808235884,
+        "ollama_total_s": 0.271397216,
+        "model_load_s": 0.001403276,
+        "prompt_eval_s": 0.11731,
+        "generation_s": 0.025592,
+        "prompt_tokens": 1376,
+        "output_tokens": 6,
+        "total_tokens": 1382,
+        "generation_tokens_per_s": 234.4482650828384
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Alright, neighbor it is. Do you want to swap roles for the second run-through?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the neighbor",
+          "resolved_entity": "the neighbor (role in the scene)"
+        },
+        {
+          "ambiguous_phrase": "the second run-through",
+          "resolved_entity": "the second run-through (practice session)"
+        },
+        {
+          "ambiguous_phrase": "the dramatic entrance",
+          "resolved_entity": "the dramatic entrance (scene element)"
+        },
+        {
+          "ambiguous_phrase": "the scripts",
+          "resolved_entity": "the scripts (document containing the play text)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the neighbor",
+          "resolved_entity": "the neighbor (role in the scene)"
+        },
+        {
+          "ambiguous_phrase": "the second run-through",
+          "resolved_entity": "the second run-through (practice session)"
+        },
+        {
+          "ambiguous_phrase": "the dramatic entrance",
+          "resolved_entity": "the dramatic entrance (scene element)"
+        },
+        {
+          "ambiguous_phrase": "the scripts",
+          "resolved_entity": "the scripts (document containing the play text)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7073327419348061,
+        "ollama_total_s": 0.706261792,
+        "model_load_s": 0.001228157,
+        "prompt_eval_s": 0.129108,
+        "generation_s": 0.468674,
+        "prompt_tokens": 1409,
+        "output_tokens": 97,
+        "total_tokens": 1506,
+        "generation_tokens_per_s": 206.96688956502814
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yeah, I think that's a good idea. It'll help us understand both perspectives.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.28258001804351807,
+        "ollama_total_s": 0.281601171,
+        "model_load_s": 0.001530113,
+        "prompt_eval_s": 0.130586999,
+        "generation_s": 0.025347,
+        "prompt_tokens": 1437,
+        "output_tokens": 6,
+        "total_tokens": 1443,
+        "generation_tokens_per_s": 236.71440407148773
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Jess just came in—I'll wave her over. She can take the older sister part.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "the older sister part",
+          "resolved_entity": "the role of the older sister in the scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "the older sister part",
+          "resolved_entity": "the role of the older sister in the scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5522138802334666,
+        "ollama_total_s": 0.550954816,
+        "model_load_s": 0.001182178,
+        "prompt_eval_s": 0.129727,
+        "generation_s": 0.304247,
+        "prompt_tokens": 1465,
+        "output_tokens": 62,
+        "total_tokens": 1527,
+        "generation_tokens_per_s": 203.7817957120366
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Sounds perfect. That leaves me with the mother this time.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That leaves me with the mother this time.",
+          "resolved_entity": "the mother (referring to the character role in the play or scene)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this time",
+          "ground_truth_resolution": "First run-through after Jess's arrival",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That leaves me with the mother this time.",
+          "resolved_entity": "the mother (referring to the character role in the play or scene)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5438929805532098,
+        "ollama_total_s": 0.542773259,
+        "model_load_s": 0.001300839,
+        "prompt_eval_s": 0.13162,
+        "generation_s": 0.288478,
+        "prompt_tokens": 1481,
+        "output_tokens": 51,
+        "total_tokens": 1532,
+        "generation_tokens_per_s": 176.78991118906814
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Let her catch up, then we can start practicing.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jess"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4768497636541724,
+        "ollama_total_s": 0.475581098,
+        "model_load_s": 0.001409661,
+        "prompt_eval_s": 0.131985,
+        "generation_s": 0.198587,
+        "prompt_tokens": 1501,
+        "output_tokens": 38,
+        "total_tokens": 1539,
+        "generation_tokens_per_s": 191.35190118184977
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Can you hand me that copy of the script? The one with all the notes.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that copy of the script",
+          "ground_truth_ambiguous_phrase": "that copy of the script",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "scripts over there, next to the window",
+          "ground_truth_resolution": "Marked-up script with group notes",
+          "resolution_similarity": 0.5503245387809276,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the one with all the notes",
+          "resolved_entity": "the script with the character map and notes mentioned in previous conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that copy of the script",
+          "resolved_entity": "scripts over there, next to the window"
+        },
+        {
+          "ambiguous_phrase": "the one with all the notes",
+          "resolved_entity": "the script with the character map and notes mentioned in previous conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6507220799103379,
+        "ollama_total_s": 0.649589251,
+        "model_load_s": 0.001393681,
+        "prompt_eval_s": 0.137081,
+        "generation_s": 0.382777,
+        "prompt_tokens": 1534,
+        "output_tokens": 78,
+        "total_tokens": 1612,
+        "generation_tokens_per_s": 203.77399896023013
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Here you are. Ready to give it a try?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2983081298880279,
+        "ollama_total_s": 0.297359923,
+        "model_load_s": 0.001231455,
+        "prompt_eval_s": 0.136817,
+        "generation_s": 0.025058,
+        "prompt_tokens": 1549,
+        "output_tokens": 6,
+        "total_tokens": 1555,
+        "generation_tokens_per_s": 239.44448878601645
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Yep. Let's go from the beginning of the dinner scene.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2908124728128314,
+        "ollama_total_s": 0.289882369,
+        "model_load_s": 0.001291047,
+        "prompt_eval_s": 0.137358,
+        "generation_s": 0.02475,
+        "prompt_tokens": 1574,
+        "output_tokens": 6,
+        "total_tokens": 1580,
+        "generation_tokens_per_s": 242.4242424242424
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Do you have the prop bread? I think it's still in the bag over there.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it's still in the bag over there",
+          "resolved_entity": "the bag over there (in Room 302, Lincoln High School, San Francisco)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the bag over there",
+          "ground_truth_resolution": "Reusable shopping bag under group table",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it's still in the bag over there",
+          "resolved_entity": "the bag over there (in Room 302, Lincoln High School, San Francisco)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5427932450547814,
+        "ollama_total_s": 0.541738281,
+        "model_load_s": 0.001073679,
+        "prompt_eval_s": 0.138616,
+        "generation_s": 0.274778,
+        "prompt_tokens": 1607,
+        "output_tokens": 55,
+        "total_tokens": 1662,
+        "generation_tokens_per_s": 200.16158498860898
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "One sec, I'll grab it... Got it. Okay, Jess, you're up!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the prop bread"
+        },
+        {
+          "ambiguous_phrase": "Jess",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the prop bread"
+        },
+        {
+          "ambiguous_phrase": "Jess",
+          "resolved_entity": "Jess"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4687557779252529,
+        "ollama_total_s": 0.467661954,
+        "model_load_s": 0.001294651,
+        "prompt_eval_s": 0.139997,
+        "generation_s": 0.186858,
+        "prompt_tokens": 1637,
+        "output_tokens": 36,
+        "total_tokens": 1673,
+        "generation_tokens_per_s": 192.65966669877662
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Should I do the neighbor's entrance now or wait until the cue?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the neighbor's entrance",
+          "resolved_entity": "The neighbor's entrance refers to the dramatic entrance that User B is supposed to perform as the neighbor, as discussed in Turn 35 where User A suggested it might be more fun."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the neighbor's entrance",
+          "resolved_entity": "The neighbor's entrance refers to the dramatic entrance that User B is supposed to perform as the neighbor, as discussed in Turn 35 where User A suggested it might be more fun."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6294276490807533,
+        "ollama_total_s": 0.628036724,
+        "model_load_s": 0.001136732,
+        "prompt_eval_s": 0.14657,
+        "generation_s": 0.342536,
+        "prompt_tokens": 1656,
+        "output_tokens": 69,
+        "total_tokens": 1725,
+        "generation_tokens_per_s": 201.43868089777425
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Wait for the cue—I'll nod when it's your turn.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3076762929558754,
+        "ollama_total_s": 0.306459532,
+        "model_load_s": 0.001285424,
+        "prompt_eval_s": 0.146389,
+        "generation_s": 0.024984,
+        "prompt_tokens": 1678,
+        "output_tokens": 6,
+        "total_tokens": 1684,
+        "generation_tokens_per_s": 240.15369836695487
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Alright. And should we use the chairs as the table, or just stand?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the chairs",
+          "resolved_entity": "the chairs in Room 302, Lincoln High School, San Francisco"
+        },
+        {
+          "ambiguous_phrase": "the table",
+          "resolved_entity": "the table in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the chairs",
+          "resolved_entity": "the chairs in Room 302, Lincoln High School, San Francisco"
+        },
+        {
+          "ambiguous_phrase": "the table",
+          "resolved_entity": "the table in Room 302, Lincoln High School, San Francisco"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6918032858520746,
+        "ollama_total_s": 0.690613696,
+        "model_load_s": 0.001732296,
+        "prompt_eval_s": 0.146777,
+        "generation_s": 0.39583,
+        "prompt_tokens": 1707,
+        "output_tokens": 81,
+        "total_tokens": 1788,
+        "generation_tokens_per_s": 204.6333021751762
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Let's use the chairs—it'll feel more like a real dinner.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3148118928074837,
+        "ollama_total_s": 0.313743333,
+        "model_load_s": 0.001473127,
+        "prompt_eval_s": 0.149138,
+        "generation_s": 0.024826,
+        "prompt_tokens": 1729,
+        "output_tokens": 6,
+        "total_tokens": 1735,
+        "generation_tokens_per_s": 241.68210746797712
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Cool. Ready when you are.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.35507475724443793,
+        "ollama_total_s": 0.353925814,
+        "model_load_s": 0.001337551,
+        "prompt_eval_s": 0.148035,
+        "generation_s": 0.025054,
+        "prompt_tokens": 1739,
+        "output_tokens": 6,
+        "total_tokens": 1745,
+        "generation_tokens_per_s": 239.48271733056598
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Okay, starting now. (Acts out first line)",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31625443417578936,
+        "ollama_total_s": 0.315164098,
+        "model_load_s": 0.001306766,
+        "prompt_eval_s": 0.149512,
+        "generation_s": 0.025058,
+        "prompt_tokens": 1764,
+        "output_tokens": 6,
+        "total_tokens": 1770,
+        "generation_tokens_per_s": 239.44448878601645
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Nice, keep going.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.33619892783463,
+        "ollama_total_s": 0.335104839,
+        "model_load_s": 0.001372001,
+        "prompt_eval_s": 0.149005,
+        "generation_s": 0.024765,
+        "prompt_tokens": 1773,
+        "output_tokens": 6,
+        "total_tokens": 1779,
+        "generation_tokens_per_s": 242.27740763173836
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Do you want to pause and discuss how we showed honesty in that part?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that part",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that part",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5041655390523374,
+        "ollama_total_s": 0.503084478,
+        "model_load_s": 0.001366831,
+        "prompt_eval_s": 0.160484,
+        "generation_s": 0.182405,
+        "prompt_tokens": 1808,
+        "output_tokens": 34,
+        "total_tokens": 1842,
+        "generation_tokens_per_s": 186.3983991666895
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "Sure. I think your line about the missing money really brought that out.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.35225353902205825,
+        "ollama_total_s": 0.351076158,
+        "model_load_s": 0.001405633,
+        "prompt_eval_s": 0.163167,
+        "generation_s": 0.025131,
+        "prompt_tokens": 1833,
+        "output_tokens": 6,
+        "total_tokens": 1839,
+        "generation_tokens_per_s": 238.7489554733198
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "Thanks! Should we add in more reactions from the mother?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34513032995164394,
+        "ollama_total_s": 0.344047697,
+        "model_load_s": 0.00125469,
+        "prompt_eval_s": 0.163148,
+        "generation_s": 0.025109,
+        "prompt_tokens": 1852,
+        "output_tokens": 6,
+        "total_tokens": 1858,
+        "generation_tokens_per_s": 238.95814249870566
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "Maybe—especially when she realizes the truth.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the truth",
+          "resolved_entity": "the missing money"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the truth",
+          "resolved_entity": "the missing money"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5212794770486653,
+        "ollama_total_s": 0.520066634,
+        "model_load_s": 0.001521028,
+        "prompt_eval_s": 0.163362,
+        "generation_s": 0.199957,
+        "prompt_tokens": 1868,
+        "output_tokens": 38,
+        "total_tokens": 1906,
+        "generation_tokens_per_s": 190.04085878463871
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User A",
+      "text": "I'll try that on the next run. Should we let Jess do her part now?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3676934880204499,
+        "ollama_total_s": 0.366320156,
+        "model_load_s": 0.002755028,
+        "prompt_eval_s": 0.177561,
+        "generation_s": 0.025604,
+        "prompt_tokens": 1905,
+        "output_tokens": 6,
+        "total_tokens": 1911,
+        "generation_tokens_per_s": 234.33838462740198
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User B",
+      "text": "Yes, I'll give her the script. Let's take it from the scene after dinner.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the scene after dinner",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the scene after dinner",
+          "resolved_entity": "the dinner scene"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5702827190980315,
+        "ollama_total_s": 0.569050526,
+        "model_load_s": 0.001370017,
+        "prompt_eval_s": 0.178201,
+        "generation_s": 0.229023,
+        "prompt_tokens": 1935,
+        "output_tokens": 36,
+        "total_tokens": 1971,
+        "generation_tokens_per_s": 157.18945258773135
+      }
+    },
+    {
+      "turn_id": 59,
+      "speaker": "User A",
+      "text": "Okay, resetting the stage... Ready!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.37668761191889644,
+        "ollama_total_s": 0.37546789,
+        "model_load_s": 0.001549648,
+        "prompt_eval_s": 0.179589,
+        "generation_s": 0.026547,
+        "prompt_tokens": 1942,
+        "output_tokens": 6,
+        "total_tokens": 1948,
+        "generation_tokens_per_s": 226.01423889705052
+      }
+    },
+    {
+      "turn_id": 60,
+      "speaker": "User B",
+      "text": "Great. Oh, the bell rings in ten—do we have time for one more practice?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.38879096787422895,
+        "ollama_total_s": 0.387655268,
+        "model_load_s": 0.001396079,
+        "prompt_eval_s": 0.179961,
+        "generation_s": 0.040586,
+        "prompt_tokens": 1982,
+        "output_tokens": 6,
+        "total_tokens": 1988,
+        "generation_tokens_per_s": 147.83422855171736
+      }
+    },
+    {
+      "turn_id": 61,
+      "speaker": "User A",
+      "text": "Definitely. Let's do a quick run-through, then write our reflections.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.37805377086624503,
+        "ollama_total_s": 0.376750312,
+        "model_load_s": 0.001340828,
+        "prompt_eval_s": 0.182065,
+        "generation_s": 0.024943,
+        "prompt_tokens": 2004,
+        "output_tokens": 6,
+        "total_tokens": 2010,
+        "generation_tokens_per_s": 240.5484504670649
+      }
+    },
+    {
+      "turn_id": 62,
+      "speaker": "User B",
+      "text": "Deal. By the way, are we supposed to upload the reflection to the portal or hand it in?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the reflection",
+          "resolved_entity": "the reflection on the dinner scene performance"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the reflection",
+          "resolved_entity": "the reflection on the dinner scene performance"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5915661891922355,
+        "ollama_total_s": 0.590113811,
+        "model_load_s": 0.001284063,
+        "prompt_eval_s": 0.185217,
+        "generation_s": 0.233961,
+        "prompt_tokens": 2040,
+        "output_tokens": 38,
+        "total_tokens": 2078,
+        "generation_tokens_per_s": 162.42023243190104
+      }
+    },
+    {
+      "turn_id": 63,
+      "speaker": "User A",
+      "text": "Upload it—he said he'd check them online later today.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Upload it—he said he'd check them online later today.",
+          "resolved_entity": "the reflection"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Upload it—he said he'd check them online later today.",
+          "resolved_entity": "the reflection"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6107179638929665,
+        "ollama_total_s": 0.609374779,
+        "model_load_s": 0.001907976,
+        "prompt_eval_s": 0.185808,
+        "generation_s": 0.25084,
+        "prompt_tokens": 2053,
+        "output_tokens": 42,
+        "total_tokens": 2095,
+        "generation_tokens_per_s": 167.43741030138733
+      }
+    },
+    {
+      "turn_id": 64,
+      "speaker": "User B",
+      "text": "Cool. One last thing—do you know if we're supposed to include our notes or just the answers?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.39354799361899495,
+        "ollama_total_s": 0.3924219,
+        "model_load_s": 0.001448146,
+        "prompt_eval_s": 0.1872,
+        "generation_s": 0.026292,
+        "prompt_tokens": 2095,
+        "output_tokens": 6,
+        "total_tokens": 2101,
+        "generation_tokens_per_s": 228.20629849383843
+      }
+    },
+    {
+      "turn_id": 65,
+      "speaker": "User A",
+      "text": "Answers only, but notes help us write better responses.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3938677101396024,
+        "ollama_total_s": 0.392724921,
+        "model_load_s": 0.001603303,
+        "prompt_eval_s": 0.187536,
+        "generation_s": 0.025474,
+        "prompt_tokens": 2105,
+        "output_tokens": 6,
+        "total_tokens": 2111,
+        "generation_tokens_per_s": 235.53427023631937
+      }
+    },
+    {
+      "turn_id": 66,
+      "speaker": "User B",
+      "text": "Alright, let's finish strong!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3863191702403128,
+        "ollama_total_s": 0.38529015,
+        "model_load_s": 0.00136927,
+        "prompt_eval_s": 0.187085,
+        "generation_s": 0.024552,
+        "prompt_tokens": 2118,
+        "output_tokens": 6,
+        "total_tokens": 2124,
+        "generation_tokens_per_s": 244.37927663734115
+      }
+    },
+    {
+      "turn_id": 67,
+      "speaker": "User A",
+      "text": "Ready when you are. (Smiles)",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3972069318406284,
+        "ollama_total_s": 0.39613651,
+        "model_load_s": 0.003217781,
+        "prompt_eval_s": 0.187711,
+        "generation_s": 0.024977,
+        "prompt_tokens": 2139,
+        "output_tokens": 6,
+        "total_tokens": 2145,
+        "generation_tokens_per_s": 240.22100332305723
+      }
+    },
+    {
+      "turn_id": 68,
+      "speaker": "User B",
+      "text": "Let's go!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3903342690318823,
+        "ollama_total_s": 0.389136886,
+        "model_load_s": 0.001326234,
+        "prompt_eval_s": 0.188508,
+        "generation_s": 0.02523,
+        "prompt_tokens": 2148,
+        "output_tokens": 6,
+        "total_tokens": 2154,
+        "generation_tokens_per_s": 237.81212841854935
+      }
+    }
+  ]
+}

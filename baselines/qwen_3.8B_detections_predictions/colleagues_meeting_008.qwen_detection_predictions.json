@@ -1,0 +1,2410 @@
+{
+  "dataset_id": "scenario_protocol_001_biology_lab_coordination",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/colleagues_meeting_008.json",
+  "metrics": {
+    "ground_truth_ambiguities": 25,
+    "qwen_predicted_ambiguities": 55,
+    "detected_ground_truth_ambiguities": 7,
+    "missed_ground_truth_ambiguities": 18,
+    "detected_but_bad_resolution": 3,
+    "true_positives": 4,
+    "false_negatives": 21,
+    "false_positive_ambiguities": 48,
+    "detection_recall": 0.28,
+    "detection_precision": 0.12727272727272726,
+    "detection_f1": 0.175,
+    "true_positive_rate_at_0_70": 0.16,
+    "strict_end_to_end_precision_at_0_70": 0.07272727272727272,
+    "end_to_end_f1_at_0_70": 0.09999999999999999,
+    "false_positive_discovery_rate": 0.8727272727272727,
+    "false_positives_per_turn": 0.8421052631578947,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 57,
+    "median_latency_per_turn_s": 0.37386511312797666,
+    "mean_latency_per_turn_s": 0.3763026298971422,
+    "total_prompt_tokens": 63805,
+    "total_output_tokens": 1846
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "I'm already here by the centrifuge. Did you bring the sample?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Charles University Molecular Biology Lab, Room 314",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21355666825547814,
+        "ollama_total_s": 0.212415118,
+        "model_load_s": 0.001224373,
+        "prompt_eval_s": 0.036573,
+        "generation_s": 0.02477,
+        "prompt_tokens": 468,
+        "output_tokens": 6,
+        "total_tokens": 474,
+        "generation_tokens_per_s": 242.22850222042794
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Yes, it's on the counter next to the big fridge. Check if it's labeled correctly.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sample"
+        },
+        {
+          "ambiguous_phrase": "next to the big fridge",
+          "resolved_entity": "counter in Room 316"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "counter next to the big fridge",
+          "ground_truth_resolution": "Lab counter adjacent to main fridge in Room 314",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sample"
+        },
+        {
+          "ambiguous_phrase": "next to the big fridge",
+          "resolved_entity": "counter in Room 316"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37143543316051364,
+        "ollama_total_s": 0.370055491,
+        "model_load_s": 0.001108925,
+        "prompt_eval_s": 0.035654,
+        "generation_s": 0.329706,
+        "prompt_tokens": 502,
+        "output_tokens": 62,
+        "total_tokens": 564,
+        "generation_tokens_per_s": 188.04632005483674
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Okay, got it. The label says 'Test Group B', right?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "'Test Group B'",
+          "ground_truth_resolution": "Sample labeled 'Test Group B' on counter",
+          "resolution_source": "User A notebook"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.10971689783036709,
+        "ollama_total_s": 0.108557713,
+        "model_load_s": 0.001317895,
+        "prompt_eval_s": 0.037024,
+        "generation_s": 0.025034,
+        "prompt_tokens": 521,
+        "output_tokens": 6,
+        "total_tokens": 527,
+        "generation_tokens_per_s": 239.6740433011105
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "That's the one. When you're ready, let’s start prepping the reagents.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That's the one",
+          "resolved_entity": "The sample labeled 'Test Group B'"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That's the one",
+          "resolved_entity": "The sample labeled 'Test Group B'"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.2943626861087978,
+        "ollama_total_s": 0.293184083,
+        "model_load_s": 0.001133345,
+        "prompt_eval_s": 0.040971,
+        "generation_s": 0.202626,
+        "prompt_tokens": 553,
+        "output_tokens": 40,
+        "total_tokens": 593,
+        "generation_tokens_per_s": 197.40803253284375
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Sure, let's do that now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "now",
+          "ground_truth_resolution": "Current time: 14:02",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.11417861608788371,
+        "ollama_total_s": 0.112890011,
+        "model_load_s": 0.001454643,
+        "prompt_eval_s": 0.041238,
+        "generation_s": 0.024874,
+        "prompt_tokens": 559,
+        "output_tokens": 6,
+        "total_tokens": 565,
+        "generation_tokens_per_s": 241.2157272654177
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Do you remember if Anna put the buffer in the fridge or left it out?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Anna",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the buffer",
+          "resolved_entity": "the buffer"
+        },
+        {
+          "ambiguous_phrase": "the fridge",
+          "resolved_entity": "the big fridge"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Anna",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the buffer",
+          "resolved_entity": "the buffer"
+        },
+        {
+          "ambiguous_phrase": "the fridge",
+          "resolved_entity": "the big fridge"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4902772856876254,
+        "ollama_total_s": 0.489039466,
+        "model_load_s": 0.00366016,
+        "prompt_eval_s": 0.045828,
+        "generation_s": 0.394115,
+        "prompt_tokens": 592,
+        "output_tokens": 77,
+        "total_tokens": 669,
+        "generation_tokens_per_s": 195.37444654479023
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "She mentioned she left it here. I’ll check the shelf.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Charles University Molecular Biology Lab, Room 314",
+          "ground_truth_resolution": "Lab shelf in Room 314",
+          "resolution_similarity": 0.6950166438105159,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the buffer"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the buffer"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.548502242192626,
+        "ollama_total_s": 0.547091952,
+        "model_load_s": 0.001569021,
+        "prompt_eval_s": 0.047149,
+        "generation_s": 0.432078,
+        "prompt_tokens": 611,
+        "output_tokens": 83,
+        "total_tokens": 694,
+        "generation_tokens_per_s": 192.09494581996768
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Good. Also, did you update the notebook after the last trial?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.12689595809206367,
+        "ollama_total_s": 0.125867871,
+        "model_load_s": 0.001173722,
+        "prompt_eval_s": 0.04694,
+        "generation_s": 0.024896,
+        "prompt_tokens": 635,
+        "output_tokens": 6,
+        "total_tokens": 641,
+        "generation_tokens_per_s": 241.00257069408738
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, I documented everything in this notebook. It’s right here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It’s right here.",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this notebook",
+          "ground_truth_resolution": "User A's lab notebook, Paper log, Room 314",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It’s right here.",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.32685797521844506,
+        "ollama_total_s": 0.325451887,
+        "model_load_s": 0.001298949,
+        "prompt_eval_s": 0.046656,
+        "generation_s": 0.22255,
+        "prompt_tokens": 658,
+        "output_tokens": 44,
+        "total_tokens": 702,
+        "generation_tokens_per_s": 197.70838013929455
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Perfect. Let's make sure all the hypotheses are clear. Did you see what Martin wrote under controls?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "what Martin wrote under controls",
+          "resolved_entity": "Martin's notes under the 'controls' section in the shared notebook"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "what Martin wrote under controls",
+          "resolved_entity": "Martin's notes under the 'controls' section in the shared notebook"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37386511312797666,
+        "ollama_total_s": 0.372576157,
+        "model_load_s": 0.001051522,
+        "prompt_eval_s": 0.051917,
+        "generation_s": 0.266148,
+        "prompt_tokens": 697,
+        "output_tokens": 47,
+        "total_tokens": 744,
+        "generation_tokens_per_s": 176.59347430752814
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "I think he specified a new control. Let me check his section.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "his section",
+          "ground_truth_ambiguous_phrase": "his section",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Martin's section in the notebook",
+          "ground_truth_resolution": "Martin's entry in shared lab notebook",
+          "resolution_similarity": 0.9001122998766999,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Martin"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Martin"
+        },
+        {
+          "ambiguous_phrase": "his section",
+          "resolved_entity": "Martin's section in the notebook"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4394638719968498,
+        "ollama_total_s": 0.438074117,
+        "model_load_s": 0.001483253,
+        "prompt_eval_s": 0.052812,
+        "generation_s": 0.311752,
+        "prompt_tokens": 714,
+        "output_tokens": 57,
+        "total_tokens": 771,
+        "generation_tokens_per_s": 182.83764017552414
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "If he changed the protocol, we need to update the schedule. Did Lina mention when the next review is?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Martin"
+        },
+        {
+          "ambiguous_phrase": "the next review",
+          "resolved_entity": "Lab Progress Review Meeting - 2024-06-09T15:00"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Martin"
+        },
+        {
+          "ambiguous_phrase": "the next review",
+          "resolved_entity": "Lab Progress Review Meeting - 2024-06-09T15:00"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.519216672051698,
+        "ollama_total_s": 0.51795891,
+        "model_load_s": 0.00122308,
+        "prompt_eval_s": 0.06008,
+        "generation_s": 0.391727,
+        "prompt_tokens": 756,
+        "output_tokens": 74,
+        "total_tokens": 830,
+        "generation_tokens_per_s": 188.9070704853125
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Yes, she said we'll meet again tomorrow afternoon.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "2024-06-10"
+        },
+        {
+          "ambiguous_phrase": "afternoon",
+          "resolved_entity": "15:00"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "tomorrow afternoon",
+          "ground_truth_resolution": "2024-06-09T15:00",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "2024-06-10"
+        },
+        {
+          "ambiguous_phrase": "afternoon",
+          "resolved_entity": "15:00"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6787998140789568,
+        "ollama_total_s": 0.677328687,
+        "model_load_s": 0.001284481,
+        "prompt_eval_s": 0.06083,
+        "generation_s": 0.553666,
+        "prompt_tokens": 765,
+        "output_tokens": 111,
+        "total_tokens": 876,
+        "generation_tokens_per_s": 200.48187896674168
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Alright, so that's at the usual place?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that's at the usual place",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that's at the usual place",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41074725426733494,
+        "ollama_total_s": 0.409443612,
+        "model_load_s": 0.001440852,
+        "prompt_eval_s": 0.062661,
+        "generation_s": 0.264541,
+        "prompt_tokens": 784,
+        "output_tokens": 46,
+        "total_tokens": 830,
+        "generation_tokens_per_s": 173.88608949085395
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Yes, same lab room.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "same lab room",
+          "ground_truth_ambiguous_phrase": "same lab room",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Charles University Molecular Biology Lab, Room 314",
+          "ground_truth_resolution": "Charles University Molecular Biology Lab, Room 314",
+          "resolution_similarity": 0.9998253663358367,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "same lab room",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.32925886381417513,
+        "ollama_total_s": 0.328005948,
+        "model_load_s": 0.001627156,
+        "prompt_eval_s": 0.062806,
+        "generation_s": 0.181656,
+        "prompt_tokens": 796,
+        "output_tokens": 32,
+        "total_tokens": 828,
+        "generation_tokens_per_s": 176.1571321618884
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Did anyone check with her about the procedural update?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "the procedural update",
+          "resolved_entity": "the next review"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "the procedural update",
+          "resolved_entity": "the next review"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38924464024603367,
+        "ollama_total_s": 0.387961785,
+        "model_load_s": 0.001296926,
+        "prompt_eval_s": 0.069431,
+        "generation_s": 0.244025,
+        "prompt_tokens": 820,
+        "output_tokens": 39,
+        "total_tokens": 859,
+        "generation_tokens_per_s": 159.81969060547075
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "I believe Anna confirmed it with her earlier.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the procedural update"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her",
+          "ground_truth_resolution": "Lina Petrov",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the procedural update"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3194239279255271,
+        "ollama_total_s": 0.31791588,
+        "model_load_s": 0.001466721,
+        "prompt_eval_s": 0.069206,
+        "generation_s": 0.17517,
+        "prompt_tokens": 838,
+        "output_tokens": 33,
+        "total_tokens": 871,
+        "generation_tokens_per_s": 188.3884226751156
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Okay, then we should prepare according to the new guidelines.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17291082022711635,
+        "ollama_total_s": 0.17164523,
+        "model_load_s": 0.002030004,
+        "prompt_eval_s": 0.069966,
+        "generation_s": 0.024636,
+        "prompt_tokens": 863,
+        "output_tokens": 6,
+        "total_tokens": 869,
+        "generation_tokens_per_s": 243.54603019970773
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Definitely. Where did Martin say to store the reagent after the run?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Where did Martin say to store the reagent after the run?",
+          "resolved_entity": "the reagent"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the reagent",
+          "ground_truth_resolution": "Experimental reagent for Test Group B",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Where did Martin say to store the reagent after the run?",
+          "resolved_entity": "the reagent"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41421954333782196,
+        "ollama_total_s": 0.413052617,
+        "model_load_s": 0.00137042,
+        "prompt_eval_s": 0.073293,
+        "generation_s": 0.256005,
+        "prompt_tokens": 892,
+        "output_tokens": 44,
+        "total_tokens": 936,
+        "generation_tokens_per_s": 171.8716431319701
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "He told me to leave it in the cold room, but I'll double-check.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Martin"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the reagent"
+        },
+        {
+          "ambiguous_phrase": "the cold room",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "cold room",
+          "ground_truth_resolution": "Cold storage facility, Room 318",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Martin"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the reagent"
+        },
+        {
+          "ambiguous_phrase": "the cold room",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6285805706866086,
+        "ollama_total_s": 0.627263798,
+        "model_load_s": 0.001325043,
+        "prompt_eval_s": 0.082003,
+        "generation_s": 0.424237,
+        "prompt_tokens": 920,
+        "output_tokens": 85,
+        "total_tokens": 1005,
+        "generation_tokens_per_s": 200.35970459908023
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Alright, I'm about to finish prepping this. Did you bring the control sample?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the current prepping task"
+        },
+        {
+          "ambiguous_phrase": "the control sample",
+          "resolved_entity": "the sample referred to in previous discussions (likely the control sample for the experiment)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "control sample",
+          "ground_truth_resolution": "Sample labeled 'Control' in smaller tube",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the current prepping task"
+        },
+        {
+          "ambiguous_phrase": "the control sample",
+          "resolved_entity": "the sample referred to in previous discussions (likely the control sample for the experiment)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5520577658899128,
+        "ollama_total_s": 0.550664337,
+        "model_load_s": 0.00158245,
+        "prompt_eval_s": 0.082717,
+        "generation_s": 0.383992,
+        "prompt_tokens": 949,
+        "output_tokens": 71,
+        "total_tokens": 1020,
+        "generation_tokens_per_s": 184.8996854101127
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Yes, it's with the buffer. Use the smaller tube.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it's with the buffer",
+          "resolved_entity": "the buffer (referent from prior conversation)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it's with the buffer",
+          "resolved_entity": "the buffer (referent from prior conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44636008283123374,
+        "ollama_total_s": 0.445128835,
+        "model_load_s": 0.001987333,
+        "prompt_eval_s": 0.083048,
+        "generation_s": 0.272021,
+        "prompt_tokens": 967,
+        "output_tokens": 42,
+        "total_tokens": 1009,
+        "generation_tokens_per_s": 154.39984412968116
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Got it. Which rack should I use for this?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this",
+          "ground_truth_ambiguous_phrase": "this",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the control sample",
+          "ground_truth_resolution": "Control sample tube",
+          "resolution_similarity": 0.7798253222704231,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the control sample"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36959901126101613,
+        "ollama_total_s": 0.368388358,
+        "model_load_s": 0.001740546,
+        "prompt_eval_s": 0.082989,
+        "generation_s": 0.205804,
+        "prompt_tokens": 986,
+        "output_tokens": 33,
+        "total_tokens": 1019,
+        "generation_tokens_per_s": 160.3467376727372
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Try the yellow rack; it's for controls.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it's for controls",
+          "resolved_entity": "the yellow rack"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "yellow rack",
+          "ground_truth_resolution": "Yellow test tube rack for control samples",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it's for controls",
+          "resolved_entity": "the yellow rack"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.33500884380191565,
+        "ollama_total_s": 0.333793192,
+        "model_load_s": 0.001752287,
+        "prompt_eval_s": 0.083616,
+        "generation_s": 0.156906,
+        "prompt_tokens": 1005,
+        "output_tokens": 25,
+        "total_tokens": 1030,
+        "generation_tokens_per_s": 159.33106445897545
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Okay, placed. Now, do you remember if anyone reserved the PCR machine?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the PCR machine",
+          "resolved_entity": "PCR machine in the lab (location: Charles University Molecular Biology Lab, Room 314)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the PCR machine",
+          "resolved_entity": "PCR machine in the lab (location: Charles University Molecular Biology Lab, Room 314)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5144534828141332,
+        "ollama_total_s": 0.513087642,
+        "model_load_s": 0.001429527,
+        "prompt_eval_s": 0.091442,
+        "generation_s": 0.320171,
+        "prompt_tokens": 1037,
+        "output_tokens": 51,
+        "total_tokens": 1088,
+        "generation_tokens_per_s": 159.28987947065787
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "I think Lina did. She said it's available after 2 pm.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "PCR machine"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "after 2 pm",
+          "ground_truth_resolution": "2024-06-09T14:00 onwards",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Lina"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "PCR machine"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46925531886518,
+        "ollama_total_s": 0.467911612,
+        "model_load_s": 0.001489829,
+        "prompt_eval_s": 0.091816,
+        "generation_s": 0.294437,
+        "prompt_tokens": 1063,
+        "output_tokens": 53,
+        "total_tokens": 1116,
+        "generation_tokens_per_s": 180.00455105846072
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Great, so we'll run the test then.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "then",
+          "ground_truth_resolution": "After 2 pm today",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22951668221503496,
+        "ollama_total_s": 0.228050318,
+        "model_load_s": 0.001572986,
+        "prompt_eval_s": 0.092385,
+        "generation_s": 0.025589,
+        "prompt_tokens": 1077,
+        "output_tokens": 6,
+        "total_tokens": 1083,
+        "generation_tokens_per_s": 234.47575129938645
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Did you set up the spreadsheet for tracking results?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21351257106289268,
+        "ollama_total_s": 0.212310178,
+        "model_load_s": 0.001425159,
+        "prompt_eval_s": 0.091994,
+        "generation_s": 0.025338,
+        "prompt_tokens": 1097,
+        "output_tokens": 6,
+        "total_tokens": 1103,
+        "generation_tokens_per_s": 236.79848448969926
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "I started it, but haven't finalized the format yet.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spreadsheet for tracking results"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the spreadsheet for tracking results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3365138447843492,
+        "ollama_total_s": 0.335353551,
+        "model_load_s": 0.001405726,
+        "prompt_eval_s": 0.091941,
+        "generation_s": 0.152445,
+        "prompt_tokens": 1121,
+        "output_tokens": 24,
+        "total_tokens": 1145,
+        "generation_tokens_per_s": 157.43382859391912
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "No worries. We can review it together after this.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.222479744348675,
+        "ollama_total_s": 0.22129679,
+        "model_load_s": 0.001760692,
+        "prompt_eval_s": 0.097837,
+        "generation_s": 0.025355,
+        "prompt_tokens": 1141,
+        "output_tokens": 6,
+        "total_tokens": 1147,
+        "generation_tokens_per_s": 236.63971603234077
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Sounds good. Also, did you notice the freezer temp was higher earlier?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the freezer",
+          "resolved_entity": "the big fridge"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "freezer temp",
+          "ground_truth_resolution": "Temperature reading of main lab freezer",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the freezer",
+          "resolved_entity": "the big fridge"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4059652928262949,
+        "ollama_total_s": 0.40461819,
+        "model_load_s": 0.001425145,
+        "prompt_eval_s": 0.098017,
+        "generation_s": 0.212132,
+        "prompt_tokens": 1170,
+        "output_tokens": 34,
+        "total_tokens": 1204,
+        "generation_tokens_per_s": 160.27756302679464
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Yeah, I checked it. I think the maintenance guy was fixing it this morning.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the freezer"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "maintenance guy",
+          "ground_truth_resolution": "Lab maintenance staff - Jan Novak",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the freezer"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39470087504014373,
+        "ollama_total_s": 0.393626459,
+        "model_load_s": 0.00112532,
+        "prompt_eval_s": 0.099527,
+        "generation_s": 0.204403,
+        "prompt_tokens": 1199,
+        "output_tokens": 32,
+        "total_tokens": 1231,
+        "generation_tokens_per_s": 156.55347524253557
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Hope it's okay now. If not, we should log it.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22600991697981954,
+        "ollama_total_s": 0.224681666,
+        "model_load_s": 0.001433586,
+        "prompt_eval_s": 0.100213,
+        "generation_s": 0.026272,
+        "prompt_tokens": 1220,
+        "output_tokens": 6,
+        "total_tokens": 1226,
+        "generation_tokens_per_s": 228.38002436053594
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Agreed. Have you seen the new reagent inventory list?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the new reagent inventory list",
+          "resolved_entity": "the new reagent inventory list"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the new reagent inventory list",
+          "resolved_entity": "the new reagent inventory list"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42000817600637674,
+        "ollama_total_s": 0.418838925,
+        "model_load_s": 0.001785521,
+        "prompt_eval_s": 0.100287,
+        "generation_s": 0.215648,
+        "prompt_tokens": 1242,
+        "output_tokens": 30,
+        "total_tokens": 1272,
+        "generation_tokens_per_s": 139.11559578572488
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Lina sent it out last night. It's in the shared folder.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the reagent inventory list"
+        },
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the reagent inventory list"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "shared folder",
+          "ground_truth_resolution": "Research group shared drive, ‘Reagent_Inventory_2024’",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the reagent inventory list"
+        },
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "the reagent inventory list"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5192295187152922,
+        "ollama_total_s": 0.517839607,
+        "model_load_s": 0.001133415,
+        "prompt_eval_s": 0.114445,
+        "generation_s": 0.300483,
+        "prompt_tokens": 1269,
+        "output_tokens": 59,
+        "total_tokens": 1328,
+        "generation_tokens_per_s": 196.35054229357402
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Alright, I'll download it after this.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the new reagent inventory list"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the new reagent inventory list"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39613483799621463,
+        "ollama_total_s": 0.394821719,
+        "model_load_s": 0.00142539,
+        "prompt_eval_s": 0.113625,
+        "generation_s": 0.153738,
+        "prompt_tokens": 1282,
+        "output_tokens": 25,
+        "total_tokens": 1307,
+        "generation_tokens_per_s": 162.6143178654594
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Also, who’s responsible for ordering the next batch of primers?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2477393001317978,
+        "ollama_total_s": 0.246633996,
+        "model_load_s": 0.00126514,
+        "prompt_eval_s": 0.115828,
+        "generation_s": 0.02601,
+        "prompt_tokens": 1311,
+        "output_tokens": 6,
+        "total_tokens": 1317,
+        "generation_tokens_per_s": 230.6805074971165
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Anna volunteered, but I'm not sure if she already did it.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Anna",
+          "ground_truth_resolution": "Anna Szabo",
+          "resolution_similarity": 0.8366855584168086,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the procedural update"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Anna"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the procedural update"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42826323909685016,
+        "ollama_total_s": 0.426979592,
+        "model_load_s": 0.001554346,
+        "prompt_eval_s": 0.115593,
+        "generation_s": 0.207378,
+        "prompt_tokens": 1335,
+        "output_tokens": 36,
+        "total_tokens": 1371,
+        "generation_tokens_per_s": 173.59604201024217
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "We should check with her after the run.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Anna"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Anna"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4293869882822037,
+        "ollama_total_s": 0.428229413,
+        "model_load_s": 0.000952457,
+        "prompt_eval_s": 0.116816,
+        "generation_s": 0.202707,
+        "prompt_tokens": 1349,
+        "output_tokens": 31,
+        "total_tokens": 1380,
+        "generation_tokens_per_s": 152.93009121539956
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Definitely. Are you ready to start the protocol?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.28499736078083515,
+        "ollama_total_s": 0.283773115,
+        "model_load_s": 0.001534382,
+        "prompt_eval_s": 0.117387,
+        "generation_s": 0.025904,
+        "prompt_tokens": 1371,
+        "output_tokens": 6,
+        "total_tokens": 1377,
+        "generation_tokens_per_s": 231.62445954292772
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Yes, everything's set here.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Charles University Molecular Biology Lab, Room 314"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4039602209813893,
+        "ollama_total_s": 0.402647422,
+        "model_load_s": 0.00128027,
+        "prompt_eval_s": 0.117057,
+        "generation_s": 0.184176,
+        "prompt_tokens": 1384,
+        "output_tokens": 30,
+        "total_tokens": 1414,
+        "generation_tokens_per_s": 162.88767266093302
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Okay, I’ll monitor from the bench. Let me know if you need anything.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2667982019484043,
+        "ollama_total_s": 0.265443348,
+        "model_load_s": 0.001367706,
+        "prompt_eval_s": 0.130050999,
+        "generation_s": 0.025788,
+        "prompt_tokens": 1421,
+        "output_tokens": 6,
+        "total_tokens": 1427,
+        "generation_tokens_per_s": 232.66635644485808
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Will do. By the way, do you know if Lina wants the results uploaded today or tomorrow?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Lina wants the results uploaded today or tomorrow",
+          "resolved_entity": "Lina's preference for uploading results (referencing the Lab Progress Review Meeting - 2024-06-09T15:00)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "today or tomorrow",
+          "ground_truth_resolution": "Request for results upload deadline",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Lina wants the results uploaded today or tomorrow",
+          "resolved_entity": "Lina's preference for uploading results (referencing the Lab Progress Review Meeting - 2024-06-09T15:00)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6556857391260564,
+        "ollama_total_s": 0.654561249,
+        "model_load_s": 0.001781605,
+        "prompt_eval_s": 0.13016,
+        "generation_s": 0.406893,
+        "prompt_tokens": 1456,
+        "output_tokens": 71,
+        "total_tokens": 1527,
+        "generation_tokens_per_s": 174.49304854101692
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "She asked for them by tomorrow morning.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the results"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "tomorrow morning",
+          "ground_truth_resolution": "2024-06-10T09:00",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.40936553617939353,
+        "ollama_total_s": 0.408084362,
+        "model_load_s": 0.001825432,
+        "prompt_eval_s": 0.130776,
+        "generation_s": 0.163619,
+        "prompt_tokens": 1461,
+        "output_tokens": 21,
+        "total_tokens": 1482,
+        "generation_tokens_per_s": 128.34695237105717
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Alright, I'll prepare the files tonight.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27404223242774606,
+        "ollama_total_s": 0.272803034,
+        "model_load_s": 0.001561753,
+        "prompt_eval_s": 0.131954,
+        "generation_s": 0.025451,
+        "prompt_tokens": 1481,
+        "output_tokens": 6,
+        "total_tokens": 1487,
+        "generation_tokens_per_s": 235.7471219205532
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Let’s make sure they're in the right format this time.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the files"
+        },
+        {
+          "ambiguous_phrase": "this time",
+          "resolved_entity": "the current attempt to prepare the files"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the files"
+        },
+        {
+          "ambiguous_phrase": "this time",
+          "resolved_entity": "the current attempt to prepare the files"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5244139209389687,
+        "ollama_total_s": 0.523222819,
+        "model_load_s": 0.001696082,
+        "prompt_eval_s": 0.132229,
+        "generation_s": 0.260089999,
+        "prompt_tokens": 1508,
+        "output_tokens": 42,
+        "total_tokens": 1550,
+        "generation_tokens_per_s": 161.4825643488122
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Absolutely. Do you have the template Lina prefers?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the template Lina prefers",
+          "ground_truth_ambiguous_phrase": "template Lina prefers",
+          "phrase_match_score": 0.9130434782608695,
+          "predicted_resolution": "the template Lina prefers",
+          "ground_truth_resolution": "Lab result upload template v3.xlsx",
+          "resolution_similarity": 0.48538751616222725,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the template Lina prefers",
+          "resolved_entity": "the template Lina prefers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5153372818604112,
+        "ollama_total_s": 0.514052512,
+        "model_load_s": 0.001459429,
+        "prompt_eval_s": 0.137182,
+        "generation_s": 0.233804,
+        "prompt_tokens": 1527,
+        "output_tokens": 39,
+        "total_tokens": 1566,
+        "generation_tokens_per_s": 166.80638483516105
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Yeah, it's saved on my laptop. I'll share it after the run.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the template Lina prefers"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the template Lina prefers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41189304227009416,
+        "ollama_total_s": 0.410878777,
+        "model_load_s": 0.001070764,
+        "prompt_eval_s": 0.138586,
+        "generation_s": 0.149691,
+        "prompt_tokens": 1560,
+        "output_tokens": 24,
+        "total_tokens": 1584,
+        "generation_tokens_per_s": 160.33028037757782
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Perfect. Anything else before we start?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3078854479826987,
+        "ollama_total_s": 0.30642904,
+        "model_load_s": 0.002077696,
+        "prompt_eval_s": 0.138791,
+        "generation_s": 0.025996,
+        "prompt_tokens": 1569,
+        "output_tokens": 6,
+        "total_tokens": 1575,
+        "generation_tokens_per_s": 230.80473919064474
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Just double-check the timer and make sure that document is filled in.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that document",
+          "ground_truth_ambiguous_phrase": "that document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document mentioned in the conversation, likely referring to the spreadsheet for tracking results or the reagent inventory list",
+          "ground_truth_resolution": "Lab protocol checklist, Paper document",
+          "resolution_similarity": 0.6686862258906748,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that document",
+          "resolved_entity": "the document mentioned in the conversation, likely referring to the spreadsheet for tracking results or the reagent inventory list"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5208575567230582,
+        "ollama_total_s": 0.519472562,
+        "model_load_s": 0.001642694,
+        "prompt_eval_s": 0.138573,
+        "generation_s": 0.233428,
+        "prompt_tokens": 1599,
+        "output_tokens": 41,
+        "total_tokens": 1640,
+        "generation_tokens_per_s": 175.64302482992613
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Done. Timer set and the documentation is updated.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3040974708274007,
+        "ollama_total_s": 0.30276829,
+        "model_load_s": 0.001428127,
+        "prompt_eval_s": 0.139884,
+        "generation_s": 0.025659,
+        "prompt_tokens": 1615,
+        "output_tokens": 6,
+        "total_tokens": 1621,
+        "generation_tokens_per_s": 233.83608090728399
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Great. Let's get this protocol underway.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.30922036711126566,
+        "ollama_total_s": 0.307910077,
+        "model_load_s": 0.001553738,
+        "prompt_eval_s": 0.140558,
+        "generation_s": 0.025215,
+        "prompt_tokens": 1633,
+        "output_tokens": 6,
+        "total_tokens": 1639,
+        "generation_tokens_per_s": 237.9535990481856
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Starting now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3150509879924357,
+        "ollama_total_s": 0.313680518,
+        "model_load_s": 0.001464501,
+        "prompt_eval_s": 0.139304,
+        "generation_s": 0.025409,
+        "prompt_tokens": 1640,
+        "output_tokens": 6,
+        "total_tokens": 1646,
+        "generation_tokens_per_s": 236.1368019205793
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "All right, fingers crossed!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31162575632333755,
+        "ollama_total_s": 0.309784073,
+        "model_load_s": 0.001423384,
+        "prompt_eval_s": 0.146596,
+        "generation_s": 0.025704,
+        "prompt_tokens": 1659,
+        "output_tokens": 6,
+        "total_tokens": 1665,
+        "generation_tokens_per_s": 233.4267040149393
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "Haha, yeah, let's hope for some solid results.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32201554207131267,
+        "ollama_total_s": 0.320450847,
+        "model_load_s": 0.001445766,
+        "prompt_eval_s": 0.14837,
+        "generation_s": 0.025703,
+        "prompt_tokens": 1689,
+        "output_tokens": 6,
+        "total_tokens": 1695,
+        "generation_tokens_per_s": 233.43578570594872
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "By the way, did you see the new joke Lina posted in the group chat?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the new joke Lina posted in the group chat",
+          "resolved_entity": "the new joke Lina posted in the group chat"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the new joke Lina posted in the group chat",
+          "resolved_entity": "the new joke Lina posted in the group chat"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5478660790249705,
+        "ollama_total_s": 0.546521531,
+        "model_load_s": 0.001430759,
+        "prompt_eval_s": 0.149035,
+        "generation_s": 0.251381,
+        "prompt_tokens": 1722,
+        "output_tokens": 38,
+        "total_tokens": 1760,
+        "generation_tokens_per_s": 151.16496473480493
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User A",
+      "text": "No, but I heard it was hilarious. Maybe it'll bring us luck!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3364268122240901,
+        "ollama_total_s": 0.335093734,
+        "model_load_s": 0.001460929,
+        "prompt_eval_s": 0.14993,
+        "generation_s": 0.02551,
+        "prompt_tokens": 1746,
+        "output_tokens": 6,
+        "total_tokens": 1752,
+        "generation_tokens_per_s": 235.2018816150529
+      }
+    }
+  ]
+}

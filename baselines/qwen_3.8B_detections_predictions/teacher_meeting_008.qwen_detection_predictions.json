@@ -1,0 +1,2316 @@
+{
+  "dataset_id": "scenario_protocol_001_leo_science_class",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/teacher_meeting_008.json",
+  "metrics": {
+    "ground_truth_ambiguities": 33,
+    "qwen_predicted_ambiguities": 53,
+    "detected_ground_truth_ambiguities": 9,
+    "missed_ground_truth_ambiguities": 24,
+    "detected_but_bad_resolution": 3,
+    "true_positives": 6,
+    "false_negatives": 27,
+    "false_positive_ambiguities": 44,
+    "detection_recall": 0.2727272727272727,
+    "detection_precision": 0.16981132075471697,
+    "detection_f1": 0.20930232558139536,
+    "true_positive_rate_at_0_70": 0.18181818181818182,
+    "strict_end_to_end_precision_at_0_70": 0.11320754716981132,
+    "end_to_end_f1_at_0_70": 0.13953488372093023,
+    "false_positive_discovery_rate": 0.8301886792452831,
+    "false_positives_per_turn": 0.8301886792452831,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 53,
+    "median_latency_per_turn_s": 0.39524919679388404,
+    "mean_latency_per_turn_s": 0.406346865481574,
+    "total_prompt_tokens": 62694,
+    "total_output_tokens": 1913
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "I'm at our table now—are we supposed to start or wait for Ms. Davis?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "our table",
+          "ground_truth_resolution": "Table 3, Room 204, Maple Grove Elementary, Austin",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2237466531805694,
+        "ollama_total_s": 0.222749518,
+        "model_load_s": 0.001388785,
+        "prompt_eval_s": 0.03589,
+        "generation_s": 0.02527,
+        "prompt_tokens": 483,
+        "output_tokens": 6,
+        "total_tokens": 489,
+        "generation_tokens_per_s": 237.4356944994064
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Let’s wait until she finishes talking by the whiteboard. She said to listen up first.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "she finishes talking by the whiteboard",
+          "ground_truth_resolution": "Whiteboard area, North wall, Room 204",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3902668822556734,
+        "ollama_total_s": 0.389229426,
+        "model_load_s": 0.0010091,
+        "prompt_eval_s": 0.036157,
+        "generation_s": 0.313259,
+        "prompt_tokens": 512,
+        "output_tokens": 55,
+        "total_tokens": 567,
+        "generation_tokens_per_s": 175.5735669206631
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Right, I see her over there. I think she’s showing something with that weird box.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that weird box",
+          "ground_truth_ambiguous_phrase": "that weird box",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the box mentioned in the context (likely related to the Science Experiment: Simple Circuits)",
+          "ground_truth_resolution": "Classroom Power Supply Unit",
+          "resolution_similarity": 0.5927270346009003,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "over there",
+          "ground_truth_resolution": "Near the whiteboard, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "that weird box",
+          "resolved_entity": "the box mentioned in the context (likely related to the Science Experiment: Simple Circuits)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47099904902279377,
+        "ollama_total_s": 0.469715558,
+        "model_load_s": 0.001293772,
+        "prompt_eval_s": 0.041396,
+        "generation_s": 0.37495,
+        "prompt_tokens": 540,
+        "output_tokens": 71,
+        "total_tokens": 611,
+        "generation_tokens_per_s": 189.35858114415254
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Yeah, that's the power supply she mentioned in the last lesson.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "weird box"
+        },
+        {
+          "ambiguous_phrase": "the last lesson",
+          "resolved_entity": "previous science lesson on electricity"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "weird box"
+        },
+        {
+          "ambiguous_phrase": "the last lesson",
+          "resolved_entity": "previous science lesson on electricity"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.52692482015118,
+        "ollama_total_s": 0.525875297,
+        "model_load_s": 0.001113356,
+        "prompt_eval_s": 0.042028,
+        "generation_s": 0.422848,
+        "prompt_tokens": 558,
+        "output_tokens": 81,
+        "total_tokens": 639,
+        "generation_tokens_per_s": 191.5581958528833
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Did you grab the wires from the supply shelf already?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the supply shelf",
+          "resolved_entity": "supply shelf in Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the wires",
+          "ground_truth_resolution": "Electrical wires for science experiment, Supply shelf, Room 204",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the supply shelf",
+          "resolved_entity": "supply shelf in Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39791932376101613,
+        "ollama_total_s": 0.396596538,
+        "model_load_s": 0.003227102,
+        "prompt_eval_s": 0.04187,
+        "generation_s": 0.276601,
+        "prompt_tokens": 575,
+        "output_tokens": 46,
+        "total_tokens": 621,
+        "generation_tokens_per_s": 166.3045325215744
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "No, I thought you got them. They said only one person from the group should go.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "the group"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "the group"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.2951829992234707,
+        "ollama_total_s": 0.293722317,
+        "model_load_s": 0.001249582,
+        "prompt_eval_s": 0.046896,
+        "generation_s": 0.164563,
+        "prompt_tokens": 611,
+        "output_tokens": 21,
+        "total_tokens": 632,
+        "generation_tokens_per_s": 127.61070228423158
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "I’ll go get them. I see Lucas over by the shelf, too; he’s probably getting their stuff.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "their stuff",
+          "resolved_entity": "the wires from the supply shelf"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the wires from the supply shelf"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the shelf",
+          "ground_truth_resolution": "Supply shelf, West side of Room 204",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their stuff",
+          "resolved_entity": "the wires from the supply shelf"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the wires from the supply shelf"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4635325581766665,
+        "ollama_total_s": 0.462075249,
+        "model_load_s": 0.001422232,
+        "prompt_eval_s": 0.047026,
+        "generation_s": 0.349259,
+        "prompt_tokens": 647,
+        "output_tokens": 62,
+        "total_tokens": 709,
+        "generation_tokens_per_s": 177.51868956848642
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Ask him if he saw any extra batteries. We might need more if ours are weak.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucas",
+          "ground_truth_resolution": "Lucas Rivera, classmate assigned to Table 4",
+          "resolution_similarity": 0.7092736139329512,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "ours",
+          "resolved_entity": "the group's batteries"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Lucas"
+        },
+        {
+          "ambiguous_phrase": "ours",
+          "resolved_entity": "the group's batteries"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4268353180959821,
+        "ollama_total_s": 0.425537234,
+        "model_load_s": 0.001265956,
+        "prompt_eval_s": 0.047607,
+        "generation_s": 0.307082,
+        "prompt_tokens": 669,
+        "output_tokens": 55,
+        "total_tokens": 724,
+        "generation_tokens_per_s": 179.10525527383564
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "[returns] I got the wires and batteries. Lucas said there’s more by the window if we run out.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Lucas said there’s more by the window",
+          "resolved_entity": "Lucas (User B's peer in the classroom, likely a group member)"
+        },
+        {
+          "ambiguous_phrase": "by the window",
+          "resolved_entity": "A location within Room 204, Maple Grove Elementary, Austin (specifically near the window)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "more by the window",
+          "ground_truth_resolution": "Battery supplies, Windowsill area, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Lucas said there’s more by the window",
+          "resolved_entity": "Lucas (User B's peer in the classroom, likely a group member)"
+        },
+        {
+          "ambiguous_phrase": "by the window",
+          "resolved_entity": "A location within Room 204, Maple Grove Elementary, Austin (specifically near the window)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6250487430952489,
+        "ollama_total_s": 0.623824353,
+        "model_load_s": 0.000994611,
+        "prompt_eval_s": 0.051954,
+        "generation_s": 0.478123,
+        "prompt_tokens": 705,
+        "output_tokens": 94,
+        "total_tokens": 799,
+        "generation_tokens_per_s": 196.6021295775355
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Perfect. Okay, let's build the first circuit like she drew on that poster.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that poster",
+          "ground_truth_ambiguous_phrase": "that poster",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the poster mentioned in the previous conversation (referencing the circuit diagram)",
+          "ground_truth_resolution": "Circuit diagram poster, next to teacher's desk, Room 204",
+          "resolution_similarity": 0.8061462060315379,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "that poster",
+          "resolved_entity": "the poster mentioned in the previous conversation (referencing the circuit diagram)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49948881519958377,
+        "ollama_total_s": 0.498188349,
+        "model_load_s": 0.001603557,
+        "prompt_eval_s": 0.052609,
+        "generation_s": 0.35873,
+        "prompt_tokens": 728,
+        "output_tokens": 66,
+        "total_tokens": 794,
+        "generation_tokens_per_s": 183.9823822930895
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Which poster? The one near the door, or the one by the big desk?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the one by the big desk",
+          "ground_truth_ambiguous_phrase": "the one by the big desk",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "poster by the big desk in Room 204, Maple Grove Elementary, Austin",
+          "ground_truth_resolution": "Poster board next to teacher’s desk, Room 204",
+          "resolution_similarity": 0.7583704064011556,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "the one near the door",
+          "ground_truth_ambiguous_phrase": "the one near the door",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "poster near the door in Room 204, Maple Grove Elementary, Austin",
+          "ground_truth_resolution": "Poster board near classroom door, Room 204",
+          "resolution_similarity": 0.7723819437901513,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the one near the door",
+          "resolved_entity": "poster near the door in Room 204, Maple Grove Elementary, Austin"
+        },
+        {
+          "ambiguous_phrase": "the one by the big desk",
+          "resolved_entity": "poster by the big desk in Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5971565144136548,
+        "ollama_total_s": 0.596002179,
+        "model_load_s": 0.001094598,
+        "prompt_eval_s": 0.060784,
+        "generation_s": 0.473777,
+        "prompt_tokens": 755,
+        "output_tokens": 91,
+        "total_tokens": 846,
+        "generation_tokens_per_s": 192.0734860493439
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "The one next to her desk! It shows the battery, wires, and bulb in a loop.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It shows the battery, wires, and bulb in a loop.",
+          "resolved_entity": "The poster near her desk (the one mentioned in Turn 12)."
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the one next to her desk",
+          "ground_truth_resolution": "Poster board next to Ms. Davis’s desk",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It shows the battery, wires, and bulb in a loop.",
+          "resolved_entity": "The poster near her desk (the one mentioned in Turn 12)."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47735571721568704,
+        "ollama_total_s": 0.476020136,
+        "model_load_s": 0.001426977,
+        "prompt_eval_s": 0.062401,
+        "generation_s": 0.312681,
+        "prompt_tokens": 788,
+        "output_tokens": 56,
+        "total_tokens": 844,
+        "generation_tokens_per_s": 179.09626744189765
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "I see it now. Should I connect the red wire to the plus side like in that diagram?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that diagram",
+          "ground_truth_ambiguous_phrase": "that diagram",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the diagram on the poster next to her desk",
+          "ground_truth_resolution": "Circuit diagram on poster by Ms. Davis’s desk",
+          "resolution_similarity": 0.7490382086139358,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that diagram",
+          "resolved_entity": "the diagram on the poster next to her desk"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35475368285551667,
+        "ollama_total_s": 0.353357277,
+        "model_load_s": 0.001572083,
+        "prompt_eval_s": 0.062277,
+        "generation_s": 0.208428,
+        "prompt_tokens": 818,
+        "output_tokens": 40,
+        "total_tokens": 858,
+        "generation_tokens_per_s": 191.91279482603105
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Yeah. And then the black wire to the other side. Make sure the bulb is twisted in tight.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1814953270368278,
+        "ollama_total_s": 0.180546375,
+        "model_load_s": 0.001155372,
+        "prompt_eval_s": 0.068799,
+        "generation_s": 0.025062,
+        "prompt_tokens": 850,
+        "output_tokens": 6,
+        "total_tokens": 856,
+        "generation_tokens_per_s": 239.40627244433804
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Okay, it's all set. Want to flip the switch?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the circuit setup"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the circuit setup"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36268666200339794,
+        "ollama_total_s": 0.361529982,
+        "model_load_s": 0.001344269,
+        "prompt_eval_s": 0.068653,
+        "generation_s": 0.209228,
+        "prompt_tokens": 865,
+        "output_tokens": 33,
+        "total_tokens": 898,
+        "generation_tokens_per_s": 157.72267574129657
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "[flips switch] Oh, it works! The bulb turned on!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17821137607097626,
+        "ollama_total_s": 0.177083932,
+        "model_load_s": 0.001644284,
+        "prompt_eval_s": 0.072989,
+        "generation_s": 0.024752,
+        "prompt_tokens": 891,
+        "output_tokens": 6,
+        "total_tokens": 897,
+        "generation_tokens_per_s": 242.40465416936004
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Cool! Let’s try the other material she gave us. The foil strip. Do you have it?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "the foil strip",
+          "resolved_entity": "material provided by Ms. Davis"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the other material she gave us",
+          "ground_truth_resolution": "Foil strip handed out by Ms. Davis",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "the foil strip",
+          "resolved_entity": "material provided by Ms. Davis"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48278631921857595,
+        "ollama_total_s": 0.481602326,
+        "model_load_s": 0.001287513,
+        "prompt_eval_s": 0.081024,
+        "generation_s": 0.320509,
+        "prompt_tokens": 929,
+        "output_tokens": 60,
+        "total_tokens": 989,
+        "generation_tokens_per_s": 187.2022314505989
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "I left it by the blue tray. Can you grab it from there?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the foil strip"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "by the blue tray"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the blue tray",
+          "ground_truth_resolution": "Blue material tray, Table 3, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the foil strip"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "by the blue tray"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4846609919331968,
+        "ollama_total_s": 0.483390495,
+        "model_load_s": 0.001453022,
+        "prompt_eval_s": 0.081048,
+        "generation_s": 0.289623,
+        "prompt_tokens": 948,
+        "output_tokens": 56,
+        "total_tokens": 1004,
+        "generation_tokens_per_s": 193.35480952824878
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "[returns] Got it. Do we swap it for one of the wires?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the foil strip"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the foil strip"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.29790112003684044,
+        "ollama_total_s": 0.296755127,
+        "model_load_s": 0.001423988,
+        "prompt_eval_s": 0.082448,
+        "generation_s": 0.138214,
+        "prompt_tokens": 974,
+        "output_tokens": 22,
+        "total_tokens": 996,
+        "generation_tokens_per_s": 159.17345565572228
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Yeah, try using it instead of the black one.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the black one",
+          "resolved_entity": "the black wire"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the black one",
+          "resolved_entity": "the black wire"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39524919679388404,
+        "ollama_total_s": 0.394045722,
+        "model_load_s": 0.001731368,
+        "prompt_eval_s": 0.082603,
+        "generation_s": 0.216936,
+        "prompt_tokens": 991,
+        "output_tokens": 35,
+        "total_tokens": 1026,
+        "generation_tokens_per_s": 161.33790611055795
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Okay, now the light is dimmer. Should we write it down?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20641449512913823,
+        "ollama_total_s": 0.205364281,
+        "model_load_s": 0.001389075,
+        "prompt_eval_s": 0.082794,
+        "generation_s": 0.025633,
+        "prompt_tokens": 1020,
+        "output_tokens": 6,
+        "total_tokens": 1026,
+        "generation_tokens_per_s": 234.0732649319237
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Ms. Davis wants us to record everything on the worksheet she put on our table.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "our table",
+          "resolved_entity": "the table in Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the worksheet she put on our table",
+          "ground_truth_resolution": "Simple Circuits Experiment Worksheet, Table 3, Room 204",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "our table",
+          "resolved_entity": "the table in Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3784151840955019,
+        "ollama_total_s": 0.377259637,
+        "model_load_s": 0.001282995,
+        "prompt_eval_s": 0.091363,
+        "generation_s": 0.191081,
+        "prompt_tokens": 1049,
+        "output_tokens": 34,
+        "total_tokens": 1083,
+        "generation_tokens_per_s": 177.93501185361183
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Which sheet? Is it the one that says 'Experiment 3' at the top?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Which sheet?",
+          "resolved_entity": "the worksheet she put on our table"
+        },
+        {
+          "ambiguous_phrase": "the one that says 'Experiment 3' at the top",
+          "resolved_entity": "the worksheet she put on our table"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the one that says 'Experiment 3'",
+          "ground_truth_resolution": "Worksheet titled 'Experiment 3', Table 3, Room 204",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Which sheet?",
+          "resolved_entity": "the worksheet she put on our table"
+        },
+        {
+          "ambiguous_phrase": "the one that says 'Experiment 3' at the top",
+          "resolved_entity": "the worksheet she put on our table"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6213380638509989,
+        "ollama_total_s": 0.620018039,
+        "model_load_s": 0.001325262,
+        "prompt_eval_s": 0.092105,
+        "generation_s": 0.424088,
+        "prompt_tokens": 1078,
+        "output_tokens": 75,
+        "total_tokens": 1153,
+        "generation_tokens_per_s": 176.8500877176435
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "No, it's the one that has the big drawing of a battery and wires.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the one that has the big drawing of a battery and wires",
+          "resolved_entity": "the worksheet"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the one that has the big drawing",
+          "ground_truth_resolution": "Worksheet with diagram of battery and wires, Table 3, Room 204",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the one that has the big drawing of a battery and wires",
+          "resolved_entity": "the worksheet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3553786748088896,
+        "ollama_total_s": 0.354281831,
+        "model_load_s": 0.001537599,
+        "prompt_eval_s": 0.092751,
+        "generation_s": 0.170739,
+        "prompt_tokens": 1104,
+        "output_tokens": 32,
+        "total_tokens": 1136,
+        "generation_tokens_per_s": 187.42056589297115
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Okay, I found it. I’ll write down our results. What did you notice?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2100753546692431,
+        "ollama_total_s": 0.208910835,
+        "model_load_s": 0.001392234,
+        "prompt_eval_s": 0.092786,
+        "generation_s": 0.025401,
+        "prompt_tokens": 1133,
+        "output_tokens": 6,
+        "total_tokens": 1139,
+        "generation_tokens_per_s": 236.2111727884729
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "The foil makes the light dimmer than the wire. Write that. Did you want to try the plastic next?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2133781360462308,
+        "ollama_total_s": 0.212606056,
+        "model_load_s": 0.001349669,
+        "prompt_eval_s": 0.097884,
+        "generation_s": 0.024751,
+        "prompt_tokens": 1171,
+        "output_tokens": 6,
+        "total_tokens": 1177,
+        "generation_tokens_per_s": 242.41444790109492
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Sure. Do you know where she put the plastic strips?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "the plastic strips",
+          "resolved_entity": "the plastic strips"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "plastic strips",
+          "ground_truth_resolution": "Plastic strips in blue bin near window, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "the plastic strips",
+          "resolved_entity": "the plastic strips"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6048000250011683,
+        "ollama_total_s": 0.603606732,
+        "model_load_s": 0.001286588,
+        "prompt_eval_s": 0.097914,
+        "generation_s": 0.412972,
+        "prompt_tokens": 1182,
+        "output_tokens": 79,
+        "total_tokens": 1261,
+        "generation_tokens_per_s": 191.29626221632458
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "I think she left them in the bin near the window. Can you check there?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the plastic strips"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "the bin near the window"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the bin near the window",
+          "ground_truth_resolution": "Blue bin on the windowsill, Room 204",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the plastic strips"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "the bin near the window"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6286450889892876,
+        "ollama_total_s": 0.62733216,
+        "model_load_s": 0.001424301,
+        "prompt_eval_s": 0.099772,
+        "generation_s": 0.41335,
+        "prompt_tokens": 1214,
+        "output_tokens": 79,
+        "total_tokens": 1293,
+        "generation_tokens_per_s": 191.12132575299384
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "[returns] Found the plastic. It’s next to that big stack of papers.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that big stack of papers",
+          "ground_truth_ambiguous_phrase": "that big stack of papers",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the big stack of papers near the window (from the bin where the plastic strips were mentioned earlier)",
+          "ground_truth_resolution": "Stack of experiment worksheets, Windowsill, Room 204",
+          "resolution_similarity": 0.5886339283743879,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that big stack of papers",
+          "resolved_entity": "the big stack of papers near the window (from the bin where the plastic strips were mentioned earlier)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5553338541649282,
+        "ollama_total_s": 0.553930452,
+        "model_load_s": 0.001435144,
+        "prompt_eval_s": 0.100433,
+        "generation_s": 0.342737,
+        "prompt_tokens": 1240,
+        "output_tokens": 53,
+        "total_tokens": 1293,
+        "generation_tokens_per_s": 154.63752089794798
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Awesome. Let’s test it. Replace the foil with the plastic and try the switch.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2829346931539476,
+        "ollama_total_s": 0.281793164,
+        "model_load_s": 0.001327046,
+        "prompt_eval_s": 0.11372,
+        "generation_s": 0.0264,
+        "prompt_tokens": 1270,
+        "output_tokens": 6,
+        "total_tokens": 1276,
+        "generation_tokens_per_s": 227.27272727272728
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "[tries] Nothing happens. The bulb stays off.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2397156460210681,
+        "ollama_total_s": 0.238851217,
+        "model_load_s": 0.001484721,
+        "prompt_eval_s": 0.112867,
+        "generation_s": 0.025614,
+        "prompt_tokens": 1283,
+        "output_tokens": 6,
+        "total_tokens": 1289,
+        "generation_tokens_per_s": 234.24689622862496
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Write down 'plastic doesn’t let the light turn on.' Ms. Davis said that means it’s an insulator.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Ms. Davis",
+          "ground_truth_resolution": "Ms. Davis, Science teacher, Room 204",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24065395584329963,
+        "ollama_total_s": 0.239747448,
+        "model_load_s": 0.001089392,
+        "prompt_eval_s": 0.1153,
+        "generation_s": 0.024788,
+        "prompt_tokens": 1333,
+        "output_tokens": 6,
+        "total_tokens": 1339,
+        "generation_tokens_per_s": 242.05260609972566
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "What does 'insulator' really mean again?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "insulator",
+          "resolved_entity": "a material that does not allow electricity to pass through, as demonstrated by the plastic strip which prevented the bulb from lighting up"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "insulator",
+          "resolved_entity": "a material that does not allow electricity to pass through, as demonstrated by the plastic strip which prevented the bulb from lighting up"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.469450491014868,
+        "ollama_total_s": 0.468309546,
+        "model_load_s": 0.001199532,
+        "prompt_eval_s": 0.115389,
+        "generation_s": 0.250888,
+        "prompt_tokens": 1338,
+        "output_tokens": 44,
+        "total_tokens": 1382,
+        "generation_tokens_per_s": 175.377060680463
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "I think Ms. Davis said it doesn’t let electricity pass through. Maybe we should ask her again.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2770964619703591,
+        "ollama_total_s": 0.276032331,
+        "model_load_s": 0.002808297,
+        "prompt_eval_s": 0.117113,
+        "generation_s": 0.048378,
+        "prompt_tokens": 1380,
+        "output_tokens": 6,
+        "total_tokens": 1386,
+        "generation_tokens_per_s": 124.02331638348011
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "She’s over with Jason’s group right now. Let’s wait until she comes here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Jason’s group",
+          "ground_truth_resolution": "Table 5, Jason Nguyen and classmates, Room 204",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Davis"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Room 204, Maple Grove Elementary, Austin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5795773952268064,
+        "ollama_total_s": 0.578410463,
+        "model_load_s": 0.001466897,
+        "prompt_eval_s": 0.129104,
+        "generation_s": 0.343037,
+        "prompt_tokens": 1405,
+        "output_tokens": 63,
+        "total_tokens": 1468,
+        "generation_tokens_per_s": 183.653658351723
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Okay. Want to try the paperclip while we wait? I saw it by your elbow.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your elbow",
+          "ground_truth_ambiguous_phrase": "your elbow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's elbow",
+          "ground_truth_resolution": "Right edge of Table 3, Room 204, User A’s position",
+          "resolution_similarity": 0.5492372967701801,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the paperclip"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the paperclip"
+        },
+        {
+          "ambiguous_phrase": "your elbow",
+          "resolved_entity": "User B's elbow"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5594903700985014,
+        "ollama_total_s": 0.558343944,
+        "model_load_s": 0.001559836,
+        "prompt_eval_s": 0.130606,
+        "generation_s": 0.31153,
+        "prompt_tokens": 1435,
+        "output_tokens": 57,
+        "total_tokens": 1492,
+        "generation_tokens_per_s": 182.9679324623632
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Here it is. Do I just hook it up instead of a wire?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Here it is.",
+          "resolved_entity": "The paperclip that User B mentioned in Turn 36, which was located by User A's elbow."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Here it is.",
+          "resolved_entity": "The paperclip that User B mentioned in Turn 36, which was located by User A's elbow."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5103425718843937,
+        "ollama_total_s": 0.509249246,
+        "model_load_s": 0.00115258,
+        "prompt_eval_s": 0.130559,
+        "generation_s": 0.263971999,
+        "prompt_tokens": 1456,
+        "output_tokens": 53,
+        "total_tokens": 1509,
+        "generation_tokens_per_s": 200.77887124687038
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Yeah, do it. Let’s see if the bulb turns on.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27788981795310974,
+        "ollama_total_s": 0.276773154,
+        "model_load_s": 0.001092946,
+        "prompt_eval_s": 0.131852,
+        "generation_s": 0.025024,
+        "prompt_tokens": 1479,
+        "output_tokens": 6,
+        "total_tokens": 1485,
+        "generation_tokens_per_s": 239.769820971867
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "[connects] The light comes on! Not as bright, though.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2883154549635947,
+        "ollama_total_s": 0.287318907,
+        "model_load_s": 0.001344095,
+        "prompt_eval_s": 0.131967,
+        "generation_s": 0.024859,
+        "prompt_tokens": 1504,
+        "output_tokens": 6,
+        "total_tokens": 1510,
+        "generation_tokens_per_s": 241.36127760569613
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Write that down, too. We’ll show her when she gets here.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "We’ll show her when she gets here.",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "We’ll show her when she gets here.",
+          "resolved_entity": "Ms. Davis"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45872805872932076,
+        "ollama_total_s": 0.457578219,
+        "model_load_s": 0.001252781,
+        "prompt_eval_s": 0.135932,
+        "generation_s": 0.173769,
+        "prompt_tokens": 1530,
+        "output_tokens": 29,
+        "total_tokens": 1559,
+        "generation_tokens_per_s": 166.88822517249912
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "I see Ms. Davis coming this way. Should I ask about the insulator thing or do you want to?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the insulator thing",
+          "resolved_entity": "insulator"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Table 3, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the insulator thing",
+          "resolved_entity": "insulator"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4678996242582798,
+        "ollama_total_s": 0.466716903,
+        "model_load_s": 0.001252286,
+        "prompt_eval_s": 0.137841,
+        "generation_s": 0.213744,
+        "prompt_tokens": 1571,
+        "output_tokens": 35,
+        "total_tokens": 1606,
+        "generation_tokens_per_s": 163.74728647353845
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "You can ask. I’ll make sure the results are ready.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.30052684899419546,
+        "ollama_total_s": 0.299340807,
+        "model_load_s": 0.001314957,
+        "prompt_eval_s": 0.138577,
+        "generation_s": 0.02554,
+        "prompt_tokens": 1584,
+        "output_tokens": 6,
+        "total_tokens": 1590,
+        "generation_tokens_per_s": 234.92560689115115
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "[to Ms. Davis] Ms. Davis, could you explain what an insulator is again? We tried the plastic, and nothing happened.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Ms. Davis",
+          "ground_truth_resolution": "Ms. Davis, Science teacher, Room 204",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3087341240607202,
+        "ollama_total_s": 0.307552623,
+        "model_load_s": 0.001303728,
+        "prompt_eval_s": 0.139957,
+        "generation_s": 0.024891,
+        "prompt_tokens": 1638,
+        "output_tokens": 6,
+        "total_tokens": 1644,
+        "generation_tokens_per_s": 241.0509822827528
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "[listens]",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31128903990611434,
+        "ollama_total_s": 0.310193896,
+        "model_load_s": 0.003342739,
+        "prompt_eval_s": 0.139307,
+        "generation_s": 0.025073,
+        "prompt_tokens": 1627,
+        "output_tokens": 6,
+        "total_tokens": 1633,
+        "generation_tokens_per_s": 239.30124037809594
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Thanks! That makes sense now. We’ll write that down.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31603374890983105,
+        "ollama_total_s": 0.314907542,
+        "model_load_s": 0.001509244,
+        "prompt_eval_s": 0.145685,
+        "generation_s": 0.025049,
+        "prompt_tokens": 1660,
+        "output_tokens": 6,
+        "total_tokens": 1666,
+        "generation_tokens_per_s": 239.53052018044633
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Looks like it’s almost time to clean up. Ms. Davis is erasing the board.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the board",
+          "ground_truth_resolution": "Whiteboard, North end, Room 204",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3202033890411258,
+        "ollama_total_s": 0.319179802,
+        "model_load_s": 0.001556864,
+        "prompt_eval_s": 0.146068,
+        "generation_s": 0.024704,
+        "prompt_tokens": 1695,
+        "output_tokens": 6,
+        "total_tokens": 1701,
+        "generation_tokens_per_s": 242.87564766839378
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Do you want to pack up the wires? I’ll stack these papers over here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "these papers",
+          "resolved_entity": "the big stack of papers"
+        },
+        {
+          "ambiguous_phrase": "pack up the wires",
+          "resolved_entity": "the wires"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "these papers over here",
+          "ground_truth_resolution": "Worksheets on Table 3, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "these papers",
+          "resolved_entity": "the big stack of papers"
+        },
+        {
+          "ambiguous_phrase": "pack up the wires",
+          "resolved_entity": "the wires"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6294727209024131,
+        "ollama_total_s": 0.628195623,
+        "model_load_s": 0.001273184,
+        "prompt_eval_s": 0.147609,
+        "generation_s": 0.330219,
+        "prompt_tokens": 1720,
+        "output_tokens": 60,
+        "total_tokens": 1780,
+        "generation_tokens_per_s": 181.697600683183
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Sure. Where do the batteries go?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Where do the batteries go?",
+          "resolved_entity": "the battery compartment or storage location for batteries, likely near the materials shelf or the table where they were previously stored"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the batteries",
+          "ground_truth_resolution": "AA batteries used for experiment, Table 3, Room 204",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Where do the batteries go?",
+          "resolved_entity": "the battery compartment or storage location for batteries, likely near the materials shelf or the table where they were previously stored"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5400333502329886,
+        "ollama_total_s": 0.538614293,
+        "model_load_s": 0.001536091,
+        "prompt_eval_s": 0.14932,
+        "generation_s": 0.229536,
+        "prompt_tokens": 1729,
+        "output_tokens": 45,
+        "total_tokens": 1774,
+        "generation_tokens_per_s": 196.04767879548308
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "I think she said they go in the red bin by the door.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they go in the red bin by the door",
+          "resolved_entity": "the batteries"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the red bin by the door",
+          "ground_truth_resolution": "Red bin near main door, Room 204",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they go in the red bin by the door",
+          "resolved_entity": "the batteries"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49858690006658435,
+        "ollama_total_s": 0.497425483,
+        "model_load_s": 0.001218055,
+        "prompt_eval_s": 0.149436,
+        "generation_s": 0.210228,
+        "prompt_tokens": 1759,
+        "output_tokens": 40,
+        "total_tokens": 1799,
+        "generation_tokens_per_s": 190.26961204026105
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Okay, I’ll put them there. Are you coming to the next club meeting after this?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the next club meeting",
+          "ground_truth_ambiguous_phrase": "the next club meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the next club meeting after the current session at Maple Grove Elementary",
+          "ground_truth_resolution": "Young Artists’ Club, Room 110, Maple Grove Elementary",
+          "resolution_similarity": 0.7448577644116751,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the next club meeting",
+          "resolved_entity": "the next club meeting after the current session at Maple Grove Elementary"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5659571988508105,
+        "ollama_total_s": 0.564582539,
+        "model_load_s": 0.001694339,
+        "prompt_eval_s": 0.161806,
+        "generation_s": 0.230167,
+        "prompt_tokens": 1793,
+        "output_tokens": 45,
+        "total_tokens": 1838,
+        "generation_tokens_per_s": 195.51021649497972
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Yeah, in the art room, right? Right after this period?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this period",
+          "resolved_entity": "the current class period (Science Experiment: Simple Circuits)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the art room",
+          "ground_truth_resolution": "Room 110, Maple Grove Elementary, Austin",
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "ambiguous_phrase": "right after this period",
+          "ground_truth_resolution": "Immediately after Science class, 10:45 AM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this period",
+          "resolved_entity": "the current class period (Science Experiment: Simple Circuits)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4854646800085902,
+        "ollama_total_s": 0.48412897,
+        "model_load_s": 0.00119752,
+        "prompt_eval_s": 0.162219,
+        "generation_s": 0.186747,
+        "prompt_tokens": 1812,
+        "output_tokens": 32,
+        "total_tokens": 1844,
+        "generation_tokens_per_s": 171.35482765452724
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Yep. Bring your drawing stuff. See you there!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3511380460113287,
+        "ollama_total_s": 0.349818363,
+        "model_load_s": 0.001742601,
+        "prompt_eval_s": 0.163882,
+        "generation_s": 0.025069,
+        "prompt_tokens": 1830,
+        "output_tokens": 6,
+        "total_tokens": 1836,
+        "generation_tokens_per_s": 239.3394231919901
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "See you!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.35086833592504263,
+        "ollama_total_s": 0.349332854,
+        "model_load_s": 0.003886888,
+        "prompt_eval_s": 0.162761,
+        "generation_s": 0.025146,
+        "prompt_tokens": 1835,
+        "output_tokens": 6,
+        "total_tokens": 1841,
+        "generation_tokens_per_s": 238.60653781913624
+      }
+    }
+  ]
+}

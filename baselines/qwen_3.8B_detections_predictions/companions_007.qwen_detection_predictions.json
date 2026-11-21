@@ -1,0 +1,2257 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/companions_007.json",
+  "metrics": {
+    "ground_truth_ambiguities": 31,
+    "qwen_predicted_ambiguities": 63,
+    "detected_ground_truth_ambiguities": 26,
+    "missed_ground_truth_ambiguities": 5,
+    "detected_but_bad_resolution": 8,
+    "true_positives": 18,
+    "false_negatives": 13,
+    "false_positive_ambiguities": 37,
+    "detection_recall": 0.8387096774193549,
+    "detection_precision": 0.4126984126984127,
+    "detection_f1": 0.553191489361702,
+    "true_positive_rate_at_0_70": 0.5806451612903226,
+    "strict_end_to_end_precision_at_0_70": 0.2857142857142857,
+    "end_to_end_f1_at_0_70": 0.3829787234042553,
+    "false_positive_discovery_rate": 0.5873015873015873,
+    "false_positives_per_turn": 0.7708333333333334,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 48,
+    "median_latency_per_turn_s": 0.44900540192611516,
+    "mean_latency_per_turn_s": 0.45674803789976676,
+    "total_prompt_tokens": 54882,
+    "total_output_tokens": 2154
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "I just got back home, Luna's super excited—she's bouncing all over *here*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8571788535051714,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3158362740650773,
+        "ollama_total_s": 0.314681132,
+        "model_load_s": 0.001402992,
+        "prompt_eval_s": 0.035652,
+        "generation_s": 0.128065,
+        "prompt_tokens": 479,
+        "output_tokens": 23,
+        "total_tokens": 502,
+        "generation_tokens_per_s": 179.5962987545387
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Wish I could see her now. I'm still at *work* but I'll leave as soon as I finish this call.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "work",
+          "ground_truth_ambiguous_phrase": "work",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown Office",
+          "ground_truth_resolution": "Downtown Office, 39.950894,-75.157570",
+          "resolution_similarity": 0.9179731840057858,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "work",
+          "resolved_entity": "Downtown Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.40605340991169214,
+        "ollama_total_s": 0.404614936,
+        "model_load_s": 0.001308563,
+        "prompt_eval_s": 0.037133,
+        "generation_s": 0.307558,
+        "prompt_tokens": 521,
+        "output_tokens": 54,
+        "total_tokens": 575,
+        "generation_tokens_per_s": 175.57663920301212
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "No worries, Luna's happy. Did you remember to feed her *earlier*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "earlier",
+          "ground_truth_ambiguous_phrase": "earlier",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Earlier than the current time (when User A is speaking), likely referring to before the time of the previous conversation or before Luna's current state of being happy.",
+          "ground_truth_resolution": "Dog Feeding - 8:00 AM",
+          "resolution_similarity": 0.3426360336230794,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "earlier",
+          "resolved_entity": "Earlier than the current time (when User A is speaking), likely referring to before the time of the previous conversation or before Luna's current state of being happy."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41446988098323345,
+        "ollama_total_s": 0.413371266,
+        "model_load_s": 0.001761148,
+        "prompt_eval_s": 0.041441,
+        "generation_s": 0.311741,
+        "prompt_tokens": 539,
+        "output_tokens": 62,
+        "total_tokens": 601,
+        "generation_tokens_per_s": 198.88304714490556
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "I meant to, but I was running late. Did you get a chance to check if her bowl's empty?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her bowl",
+          "resolved_entity": "Luna's bowl"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her bowl",
+          "resolved_entity": "Luna's bowl"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3170278761535883,
+        "ollama_total_s": 0.315901637,
+        "model_load_s": 0.001401854,
+        "prompt_eval_s": 0.046502,
+        "generation_s": 0.211878,
+        "prompt_tokens": 576,
+        "output_tokens": 35,
+        "total_tokens": 611,
+        "generation_tokens_per_s": 165.18940144800308
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Yeah, it's empty, so I'll fill it now. Next time, maybe set a reminder before you leave *there*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Downtown Office, 39.950894,-75.157570",
+          "resolution_similarity": 0.6120781266602631,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3119626580737531,
+        "ollama_total_s": 0.310821429,
+        "model_load_s": 0.001490791,
+        "prompt_eval_s": 0.047117,
+        "generation_s": 0.207738,
+        "prompt_tokens": 616,
+        "output_tokens": 34,
+        "total_tokens": 650,
+        "generation_tokens_per_s": 163.6676968104054
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Good idea. I can add it to my phone when I'm back at *home*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "home",
+          "ground_truth_ambiguous_phrase": "home",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8559275562536353,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.2994111622683704,
+        "ollama_total_s": 0.298375161,
+        "model_load_s": 0.001015366,
+        "prompt_eval_s": 0.047254,
+        "generation_s": 0.198455,
+        "prompt_tokens": 636,
+        "output_tokens": 34,
+        "total_tokens": 670,
+        "generation_tokens_per_s": 171.3234738353783
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Or, I can set one for *both* of us. That way, whoever's *here* at feeding time can do it.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8559275562536353,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Downtown Office"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Downtown Office"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5251131127588451,
+        "ollama_total_s": 0.523758474,
+        "model_load_s": 0.00131367,
+        "prompt_eval_s": 0.048154,
+        "generation_s": 0.41709,
+        "prompt_tokens": 682,
+        "output_tokens": 79,
+        "total_tokens": 761,
+        "generation_tokens_per_s": 189.40756191709224
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Perfect. By the way, who's taking Luna for her *evening walk* today?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "who's taking Luna for her *evening walk* today?",
+          "resolved_entity": "User A"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "evening walk",
+          "ground_truth_resolution": "Dog Walking - 6:30 PM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "who's taking Luna for her *evening walk* today?",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38038148498162627,
+        "ollama_total_s": 0.379176855,
+        "model_load_s": 0.00146286,
+        "prompt_eval_s": 0.052195,
+        "generation_s": 0.2521,
+        "prompt_tokens": 701,
+        "output_tokens": 43,
+        "total_tokens": 744,
+        "generation_tokens_per_s": 170.5672352241174
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "I have a work call at 6:15, so I can't. Can you do it when you get *here*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8559275562536353,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Downtown Office"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Downtown Office"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5216364432126284,
+        "ollama_total_s": 0.520451272,
+        "model_load_s": 0.001575823,
+        "prompt_eval_s": 0.052031,
+        "generation_s": 0.409846,
+        "prompt_tokens": 747,
+        "output_tokens": 79,
+        "total_tokens": 826,
+        "generation_tokens_per_s": 192.75532761085873
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Should be fine. I think I can make it by *then* if the call doesn't run late.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the time of the client call (5:30 PM) or the feeding time (when User B gets back home)",
+          "ground_truth_resolution": "6:30 PM",
+          "resolution_similarity": 0.5850484238219258,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the time of the client call (5:30 PM) or the feeding time (when User B gets back home)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5500904871150851,
+        "ollama_total_s": 0.548876481,
+        "model_load_s": 0.001037461,
+        "prompt_eval_s": 0.062252,
+        "generation_s": 0.39467,
+        "prompt_tokens": 774,
+        "output_tokens": 54,
+        "total_tokens": 828,
+        "generation_tokens_per_s": 136.82316872323713
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "If you're delayed, maybe *Sarah* could help? She said she’s around tonight.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Sarah",
+          "ground_truth_ambiguous_phrase": "Sarah",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sarah (not explicitly identified in the context, but referenced in the current turn as someone available tonight)",
+          "ground_truth_resolution": "Sarah Gomez (Neighbor, Dog Helper)",
+          "resolution_similarity": 0.4929565610078648,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Sarah",
+          "resolved_entity": "Sarah (not explicitly identified in the context, but referenced in the current turn as someone available tonight)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4249167353846133,
+        "ollama_total_s": 0.423607923,
+        "model_load_s": 0.001418898,
+        "prompt_eval_s": 0.06934,
+        "generation_s": 0.27957,
+        "prompt_tokens": 800,
+        "output_tokens": 49,
+        "total_tokens": 849,
+        "generation_tokens_per_s": 175.2691633580141
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "That's true. Does she have a spare key to *this place*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8571788535051714,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35982987377792597,
+        "ollama_total_s": 0.358210732,
+        "model_load_s": 0.001247459,
+        "prompt_eval_s": 0.068836,
+        "generation_s": 0.21594,
+        "prompt_tokens": 823,
+        "output_tokens": 35,
+        "total_tokens": 858,
+        "generation_tokens_per_s": 162.08205983143466
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Yep, I gave her one last week after the pet emergency.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3643222162500024,
+        "ollama_total_s": 0.362970864,
+        "model_load_s": 0.001600552,
+        "prompt_eval_s": 0.06954,
+        "generation_s": 0.209649,
+        "prompt_tokens": 843,
+        "output_tokens": 35,
+        "total_tokens": 878,
+        "generation_tokens_per_s": 166.94570448702353
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Awesome. Should I text *her* and let her know, just in case?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sarah",
+          "ground_truth_resolution": "Sarah Gomez",
+          "resolution_similarity": 0.856211782911632,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Sarah"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44865898694843054,
+        "ollama_total_s": 0.447426391,
+        "model_load_s": 0.001299116,
+        "prompt_eval_s": 0.069685,
+        "generation_s": 0.306775,
+        "prompt_tokens": 874,
+        "output_tokens": 55,
+        "total_tokens": 929,
+        "generation_tokens_per_s": 179.28449189145138
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Yes, please. I’ll let Luna know she's coming if needed.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Sarah"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Sarah"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5648212390951812,
+        "ollama_total_s": 0.563380711,
+        "model_load_s": 0.00150237,
+        "prompt_eval_s": 0.07356,
+        "generation_s": 0.40097,
+        "prompt_tokens": 897,
+        "output_tokens": 76,
+        "total_tokens": 973,
+        "generation_tokens_per_s": 189.54036461580668
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Got it. Also, where is Luna's leash? Is it still in *the basket* by the door?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the basket",
+          "ground_truth_ambiguous_phrase": "the basket",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the basket by the door (at Priya's Apartment)",
+          "ground_truth_resolution": "Entryway Basket, Priya's Apartment",
+          "resolution_similarity": 0.8044955126676419,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the basket",
+          "resolved_entity": "the basket by the door (at Priya's Apartment)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4493518169037998,
+        "ollama_total_s": 0.448034183,
+        "model_load_s": 0.001470112,
+        "prompt_eval_s": 0.082035,
+        "generation_s": 0.280601,
+        "prompt_tokens": 938,
+        "output_tokens": 42,
+        "total_tokens": 980,
+        "generation_tokens_per_s": 149.67872530746504
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "That's right, but the harness is in *the closet*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the closet",
+          "ground_truth_ambiguous_phrase": "the closet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment closet",
+          "ground_truth_resolution": "Hallway Closet, Priya's Apartment",
+          "resolution_similarity": 0.9416880523874079,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the closet",
+          "resolved_entity": "Priya's Apartment closet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4062447822652757,
+        "ollama_total_s": 0.40495576,
+        "model_load_s": 0.00154468,
+        "prompt_eval_s": 0.082729,
+        "generation_s": 0.217061,
+        "prompt_tokens": 953,
+        "output_tokens": 36,
+        "total_tokens": 989,
+        "generation_tokens_per_s": 165.85199552199612
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Thanks. And what about *her* favorite toy? Should I bring it for the walk?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3782904981635511,
+        "ollama_total_s": 0.37727544,
+        "model_load_s": 0.001406264,
+        "prompt_eval_s": 0.083323,
+        "generation_s": 0.206831,
+        "prompt_tokens": 987,
+        "output_tokens": 33,
+        "total_tokens": 1020,
+        "generation_tokens_per_s": 159.55055093288723
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "She loves the blue ball. It’s in *her bed* right now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her bed",
+          "ground_truth_ambiguous_phrase": "her bed",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Luna's Pet Bed, Living Room",
+          "resolution_similarity": 0.7493707929998149,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her bed",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49229568522423506,
+        "ollama_total_s": 0.490902106,
+        "model_load_s": 0.001407529,
+        "prompt_eval_s": 0.08305,
+        "generation_s": 0.307549,
+        "prompt_tokens": 1010,
+        "output_tokens": 56,
+        "total_tokens": 1066,
+        "generation_tokens_per_s": 182.08480599839373
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Alright, I'll grab it. Is there anything else I need to know for *tonight*?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "The current night, referring to the night of the conversation, which is the same night as the planned evening walk and feeding schedule."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "The current night, referring to the night of the conversation, which is the same night as the planned evening walk and feeding schedule."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48754289699718356,
+        "ollama_total_s": 0.48641751,
+        "model_load_s": 0.001295431,
+        "prompt_eval_s": 0.091805,
+        "generation_s": 0.2807,
+        "prompt_tokens": 1046,
+        "output_tokens": 56,
+        "total_tokens": 1102,
+        "generation_tokens_per_s": 199.50124688279303
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Just remember not to go near *the construction site* at Elm and 11th. It's noisy and Luna gets nervous.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the construction site",
+          "ground_truth_ambiguous_phrase": "the construction site",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Construction site at Elm and 11th",
+          "ground_truth_resolution": "Elm and 11th Streets, Philadelphia",
+          "resolution_similarity": 0.6974560519673535,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the construction site",
+          "resolved_entity": "Construction site at Elm and 11th"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42078175814822316,
+        "ollama_total_s": 0.419649197,
+        "model_load_s": 0.001512575,
+        "prompt_eval_s": 0.092033,
+        "generation_s": 0.244097,
+        "prompt_tokens": 1089,
+        "output_tokens": 41,
+        "total_tokens": 1130,
+        "generation_tokens_per_s": 167.96601351102225
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Thanks for the heads-up. Should I stick to the *park route*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the park route",
+          "resolved_entity": "Park Route (Downtown Park)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "park route",
+          "ground_truth_resolution": "Spruce Park Route",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the park route",
+          "resolved_entity": "Park Route (Downtown Park)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4827967109158635,
+        "ollama_total_s": 0.481470427,
+        "model_load_s": 0.001412464,
+        "prompt_eval_s": 0.092085,
+        "generation_s": 0.283675,
+        "prompt_tokens": 1104,
+        "output_tokens": 38,
+        "total_tokens": 1142,
+        "generation_tokens_per_s": 133.95611174759847
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Yes, go through *Spruce Park* instead, like last time.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Spruce Park",
+          "ground_truth_ambiguous_phrase": "Spruce Park",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Spruce Park",
+          "ground_truth_resolution": "Spruce Park, Philadelphia",
+          "resolution_similarity": 0.9027247103842506,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Spruce Park",
+          "resolved_entity": "Spruce Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4079462857916951,
+        "ollama_total_s": 0.406567661,
+        "model_load_s": 0.001479446,
+        "prompt_eval_s": 0.093274,
+        "generation_s": 0.217506,
+        "prompt_tokens": 1128,
+        "output_tokens": 35,
+        "total_tokens": 1163,
+        "generation_tokens_per_s": 160.91510119261076
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Sounds good. How late do you expect your call to run?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2311879456974566,
+        "ollama_total_s": 0.230144627,
+        "model_load_s": 0.001559234,
+        "prompt_eval_s": 0.098548,
+        "generation_s": 0.02529,
+        "prompt_tokens": 1149,
+        "output_tokens": 6,
+        "total_tokens": 1155,
+        "generation_tokens_per_s": 237.2479240806643
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Should be over by 7. If you're back late, leave Luna's dinner in *her bowl* and text me.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her bowl",
+          "ground_truth_ambiguous_phrase": "her bowl",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Luna's bowl",
+          "ground_truth_resolution": "Luna's Food Bowl, Kitchen",
+          "resolution_similarity": 0.8436573848338965,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her bowl",
+          "resolved_entity": "Luna's bowl"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5069380640052259,
+        "ollama_total_s": 0.505761018,
+        "model_load_s": 0.001415811,
+        "prompt_eval_s": 0.098685,
+        "generation_s": 0.313499,
+        "prompt_tokens": 1198,
+        "output_tokens": 56,
+        "total_tokens": 1254,
+        "generation_tokens_per_s": 178.62895894404764
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Will do. Did you already prep *her food*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her food",
+          "ground_truth_ambiguous_phrase": "her food",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Luna's food",
+          "ground_truth_resolution": "Luna's Fresh Chicken, Kitchen, Priya's Apartment",
+          "resolution_similarity": 0.8012572278752332,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her food",
+          "resolved_entity": "Luna's food"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4232841366901994,
+        "ollama_total_s": 0.422264645,
+        "model_load_s": 0.002848783,
+        "prompt_eval_s": 0.09975,
+        "generation_s": 0.219804,
+        "prompt_tokens": 1206,
+        "output_tokens": 35,
+        "total_tokens": 1241,
+        "generation_tokens_per_s": 159.23277101417628
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Just about to mix it now. Fresh chicken tonight!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24178856564685702,
+        "ollama_total_s": 0.240733321,
+        "model_load_s": 0.0012742,
+        "prompt_eval_s": 0.100798,
+        "generation_s": 0.02575,
+        "prompt_tokens": 1226,
+        "output_tokens": 6,
+        "total_tokens": 1232,
+        "generation_tokens_per_s": 233.0097087378641
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Lucky Luna. By the way, did you refill *her water*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her water",
+          "ground_truth_ambiguous_phrase": "her water",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Luna's water bowl",
+          "ground_truth_resolution": "Luna's Water Bowl, Kitchen",
+          "resolution_similarity": 0.9042113256990573,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her water",
+          "resolved_entity": "Luna's water bowl"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4133005910553038,
+        "ollama_total_s": 0.412339854,
+        "model_load_s": 0.001387987,
+        "prompt_eval_s": 0.100639,
+        "generation_s": 0.218515,
+        "prompt_tokens": 1256,
+        "output_tokens": 36,
+        "total_tokens": 1292,
+        "generation_tokens_per_s": 164.74841544058762
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Yep, filled and chilled—she likes it cool.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.26240483298897743,
+        "ollama_total_s": 0.261512981,
+        "model_load_s": 0.001279269,
+        "prompt_eval_s": 0.114446,
+        "generation_s": 0.044624,
+        "prompt_tokens": 1272,
+        "output_tokens": 6,
+        "total_tokens": 1278,
+        "generation_tokens_per_s": 134.45679455001795
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Haha, she's spoiled already. Did you get that new *dog tracker* from the store?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "that new *dog tracker*",
+          "resolved_entity": "dog tracker"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "dog tracker",
+          "ground_truth_resolution": "Tractive GPS Tracker for Pets",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Luna"
+        },
+        {
+          "ambiguous_phrase": "that new *dog tracker*",
+          "resolved_entity": "dog tracker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6455264971591532,
+        "ollama_total_s": 0.644513669,
+        "model_load_s": 0.001653058,
+        "prompt_eval_s": 0.115017,
+        "generation_s": 0.41327,
+        "prompt_tokens": 1313,
+        "output_tokens": 79,
+        "total_tokens": 1392,
+        "generation_tokens_per_s": 191.1583226462119
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Yes, it's charging *on my desk*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "on my desk",
+          "ground_truth_ambiguous_phrase": "on my desk",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's desk in Priya's Apartment",
+          "ground_truth_resolution": "Priya's Work Desk, Bedroom",
+          "resolution_similarity": 0.774156716498776,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "on my desk",
+          "resolved_entity": "User A's desk in Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4841144513338804,
+        "ollama_total_s": 0.48283833,
+        "model_load_s": 0.001327218,
+        "prompt_eval_s": 0.116641,
+        "generation_s": 0.238724,
+        "prompt_tokens": 1324,
+        "output_tokens": 41,
+        "total_tokens": 1365,
+        "generation_tokens_per_s": 171.74645196963857
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Great, I'll put it on Luna before the walk.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dog tracker"
+        },
+        {
+          "ambiguous_phrase": "before the walk",
+          "resolved_entity": "the evening walk"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dog tracker"
+        },
+        {
+          "ambiguous_phrase": "before the walk",
+          "resolved_entity": "the evening walk"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5347126107662916,
+        "ollama_total_s": 0.533717891,
+        "model_load_s": 0.001210532,
+        "prompt_eval_s": 0.117272,
+        "generation_s": 0.305995,
+        "prompt_tokens": 1347,
+        "output_tokens": 57,
+        "total_tokens": 1404,
+        "generation_tokens_per_s": 186.27755355479664
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Remember to sync it with *the phone app*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the phone app",
+          "ground_truth_ambiguous_phrase": "the phone app",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's phone app (since User B is at the Downtown Office and mentioned syncing with the phone app in the context of their own device)",
+          "ground_truth_resolution": "Tractive Mobile App (Priya's Phone)",
+          "resolution_similarity": 0.6562678838753756,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the phone app",
+          "resolved_entity": "User B's phone app (since User B is at the Downtown Office and mentioned syncing with the phone app in the context of their own device)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5733644426800311,
+        "ollama_total_s": 0.572136962,
+        "model_load_s": 0.0032852,
+        "prompt_eval_s": 0.116979,
+        "generation_s": 0.327748,
+        "prompt_tokens": 1367,
+        "output_tokens": 60,
+        "total_tokens": 1427,
+        "generation_tokens_per_s": 183.06747867263874
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Will do. Anything else for tomorrow morning?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow morning",
+          "resolved_entity": "Tomorrow morning (relative time)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow morning",
+          "resolved_entity": "Tomorrow morning (relative time)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41035353392362595,
+        "ollama_total_s": 0.409113007,
+        "model_load_s": 0.001517912,
+        "prompt_eval_s": 0.117365,
+        "generation_s": 0.166447,
+        "prompt_tokens": 1384,
+        "output_tokens": 27,
+        "total_tokens": 1411,
+        "generation_tokens_per_s": 162.21379778548126
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "I have an early meeting, so can you take Luna to *the vet* at 9?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the vet",
+          "ground_truth_ambiguous_phrase": "the vet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The vet is a context-dependent entity referring to a specific veterinary clinic. Based on the conversation, it is likely referring to a vet that Luna needs to visit, but the exact name or location is not specified in the current turn.",
+          "ground_truth_resolution": "Walnut Street Animal Clinic",
+          "resolution_similarity": 0.49480440981389584,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the vet",
+          "resolved_entity": "The vet is a context-dependent entity referring to a specific veterinary clinic. Based on the conversation, it is likely referring to a vet that Luna needs to visit, but the exact name or location is not specified in the current turn."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6211629640311003,
+        "ollama_total_s": 0.620019525,
+        "model_load_s": 0.001160086,
+        "prompt_eval_s": 0.130985999,
+        "generation_s": 0.369655,
+        "prompt_tokens": 1425,
+        "output_tokens": 76,
+        "total_tokens": 1501,
+        "generation_tokens_per_s": 205.59711081954796
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Sure. Is *her vaccination card* in *the folder* by the fridge?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her vaccination card",
+          "ground_truth_ambiguous_phrase": "her vaccination card",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Luna's vaccination card",
+          "ground_truth_resolution": "Luna's Vaccination Record",
+          "resolution_similarity": 0.9260983490359427,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the folder by the fridge",
+          "resolved_entity": "the folder by the fridge in Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the folder",
+          "ground_truth_resolution": "Red Folder, Fridge Area",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her vaccination card",
+          "resolved_entity": "Luna's vaccination card"
+        },
+        {
+          "ambiguous_phrase": "the folder by the fridge",
+          "resolved_entity": "the folder by the fridge in Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6241455222479999,
+        "ollama_total_s": 0.622493949,
+        "model_load_s": 0.001100527,
+        "prompt_eval_s": 0.131341,
+        "generation_s": 0.369109,
+        "prompt_tokens": 1449,
+        "output_tokens": 70,
+        "total_tokens": 1519,
+        "generation_tokens_per_s": 189.64587696317346
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yep, it's in *the red folder* next to the treat container.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the red folder",
+          "ground_truth_ambiguous_phrase": "the red folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the red folder",
+          "ground_truth_resolution": "Red Folder, Fridge Area",
+          "resolution_similarity": 0.7577226508392625,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the treat container",
+          "resolved_entity": "the treat container"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the red folder",
+          "resolved_entity": "the red folder"
+        },
+        {
+          "ambiguous_phrase": "the treat container",
+          "resolved_entity": "the treat container"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5931735979393125,
+        "ollama_total_s": 0.592018305,
+        "model_load_s": 0.001420116,
+        "prompt_eval_s": 0.131536,
+        "generation_s": 0.328037,
+        "prompt_tokens": 1474,
+        "output_tokens": 59,
+        "total_tokens": 1533,
+        "generation_tokens_per_s": 179.85775994781076
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Perfect. After the vet, do you want to meet up at *the cafe*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the cafe",
+          "ground_truth_ambiguous_phrase": "the cafe",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Cafe near Priya's Apartment",
+          "ground_truth_resolution": "Bean & Brew, Walnut Street",
+          "resolution_similarity": 0.6027643665958714,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the cafe",
+          "resolved_entity": "Cafe near Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4990783901885152,
+        "ollama_total_s": 0.498036889,
+        "model_load_s": 0.001564979,
+        "prompt_eval_s": 0.133896999,
+        "generation_s": 0.245691,
+        "prompt_tokens": 1504,
+        "output_tokens": 38,
+        "total_tokens": 1542,
+        "generation_tokens_per_s": 154.66582007480943
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Absolutely. Let's go to *Bean & Brew* on Walnut.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Bean & Brew",
+          "resolved_entity": "Bean & Brew on Walnut"
+        },
+        {
+          "ambiguous_phrase": "on Walnut",
+          "resolved_entity": "Bean & Brew on Walnut"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Bean & Brew",
+          "resolved_entity": "Bean & Brew on Walnut"
+        },
+        {
+          "ambiguous_phrase": "on Walnut",
+          "resolved_entity": "Bean & Brew on Walnut"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6391174430027604,
+        "ollama_total_s": 0.63796978,
+        "model_load_s": 0.001768412,
+        "prompt_eval_s": 0.136623,
+        "generation_s": 0.367226,
+        "prompt_tokens": 1524,
+        "output_tokens": 62,
+        "total_tokens": 1586,
+        "generation_tokens_per_s": 168.83336147222693
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Bean & Brew, got it. Should I bring Luna or leave her *at home*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "at home",
+          "ground_truth_ambiguous_phrase": "at home",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's Apartment",
+          "ground_truth_resolution": "Priya's Apartment, 39.952583,-75.165222",
+          "resolution_similarity": 0.8559275562536353,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "at home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4735118509270251,
+        "ollama_total_s": 0.471927626,
+        "model_load_s": 0.001269638,
+        "prompt_eval_s": 0.137705,
+        "generation_s": 0.184616,
+        "prompt_tokens": 1558,
+        "output_tokens": 35,
+        "total_tokens": 1593,
+        "generation_tokens_per_s": 189.58270139099537
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Bring Luna—she loves their dog-friendly patio.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "their dog-friendly patio",
+          "resolved_entity": "Bean & Brew's patio"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their dog-friendly patio",
+          "resolved_entity": "Bean & Brew's patio"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5058800959959626,
+        "ollama_total_s": 0.504750192,
+        "model_load_s": 0.00106192,
+        "prompt_eval_s": 0.138708,
+        "generation_s": 0.242081,
+        "prompt_tokens": 1569,
+        "output_tokens": 38,
+        "total_tokens": 1607,
+        "generation_tokens_per_s": 156.97225308884217
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Will do. What time?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "What time?",
+          "resolved_entity": "Client Call - 5:30 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "What time?",
+          "resolved_entity": "Client Call - 5:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4383325013332069,
+        "ollama_total_s": 0.436913774,
+        "model_load_s": 0.00147718,
+        "prompt_eval_s": 0.139121,
+        "generation_s": 0.162688,
+        "prompt_tokens": 1581,
+        "output_tokens": 29,
+        "total_tokens": 1610,
+        "generation_tokens_per_s": 178.25531077891424
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Let's meet there around 11:30.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5665498180314898,
+        "ollama_total_s": 0.5652025,
+        "model_load_s": 0.001444732,
+        "prompt_eval_s": 0.138967,
+        "generation_s": 0.302425,
+        "prompt_tokens": 1609,
+        "output_tokens": 57,
+        "total_tokens": 1666,
+        "generation_tokens_per_s": 188.47648177234024
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Sounds perfect. Anything special I should bring?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.29286114079877734,
+        "ollama_total_s": 0.291540632,
+        "model_load_s": 0.001511814,
+        "prompt_eval_s": 0.139744,
+        "generation_s": 0.025717,
+        "prompt_tokens": 1625,
+        "output_tokens": 6,
+        "total_tokens": 1631,
+        "generation_tokens_per_s": 233.30870630322354
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Just Luna's leash and water bottle. Maybe her *favorite treats*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her favorite treats",
+          "resolved_entity": "the blue ball"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "favorite treats",
+          "ground_truth_resolution": "Luna's Peanut Butter Biscuits",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her favorite treats",
+          "resolved_entity": "the blue ball"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49932610569521785,
+        "ollama_total_s": 0.497892262,
+        "model_load_s": 0.0012271,
+        "prompt_eval_s": 0.145703,
+        "generation_s": 0.213927,
+        "prompt_tokens": 1656,
+        "output_tokens": 35,
+        "total_tokens": 1691,
+        "generation_tokens_per_s": 163.6072118058964
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Alright, got everything. Oh, weather says it might rain later—is the patio covered?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the patio",
+          "resolved_entity": "Bean & Brew on Walnut (dog-friendly patio)"
+        },
+        {
+          "ambiguous_phrase": "the patio",
+          "resolved_entity": "Priya's Apartment (patio)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the patio",
+          "resolved_entity": "Bean & Brew on Walnut (dog-friendly patio)"
+        },
+        {
+          "ambiguous_phrase": "the patio",
+          "resolved_entity": "Priya's Apartment (patio)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6806427300907671,
+        "ollama_total_s": 0.679302572,
+        "model_load_s": 0.001461539,
+        "prompt_eval_s": 0.147195,
+        "generation_s": 0.402839,
+        "prompt_tokens": 1687,
+        "output_tokens": 67,
+        "total_tokens": 1754,
+        "generation_tokens_per_s": 166.3195470150606
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Yes, it's sheltered. No worries.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3086285060271621,
+        "ollama_total_s": 0.307499329,
+        "model_load_s": 0.001381358,
+        "prompt_eval_s": 0.148772,
+        "generation_s": 0.026002,
+        "prompt_tokens": 1699,
+        "output_tokens": 6,
+        "total_tokens": 1705,
+        "generation_tokens_per_s": 230.7514806553342
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Great. See you there tomorrow—with Luna!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The day after the current day"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The day after the current day"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Priya's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.724737205542624,
+        "ollama_total_s": 0.72345397,
+        "model_load_s": 0.001500392,
+        "prompt_eval_s": 0.148264,
+        "generation_s": 0.428764,
+        "prompt_tokens": 1717,
+        "output_tokens": 83,
+        "total_tokens": 1800,
+        "generation_tokens_per_s": 193.5796848616022
+      }
+    }
+  ]
+}

@@ -1,0 +1,2386 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/ta_Student_001.json",
+  "metrics": {
+    "ground_truth_ambiguities": 50,
+    "qwen_predicted_ambiguities": 58,
+    "detected_ground_truth_ambiguities": 38,
+    "missed_ground_truth_ambiguities": 12,
+    "detected_but_bad_resolution": 21,
+    "true_positives": 17,
+    "false_negatives": 33,
+    "false_positive_ambiguities": 20,
+    "detection_recall": 0.76,
+    "detection_precision": 0.6551724137931034,
+    "detection_f1": 0.7037037037037037,
+    "true_positive_rate_at_0_70": 0.34,
+    "strict_end_to_end_precision_at_0_70": 0.29310344827586204,
+    "end_to_end_f1_at_0_70": 0.31481481481481477,
+    "false_positive_discovery_rate": 0.3448275862068966,
+    "false_positives_per_turn": 0.4,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 50,
+    "median_latency_per_turn_s": 0.4470969575922936,
+    "mean_latency_per_turn_s": 0.44374081182293595,
+    "total_prompt_tokens": 57270,
+    "total_output_tokens": 1966
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hey Mark, I’m *here*—just got in.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "Science Building, Room 302, University of Minnesota",
+          "resolution_similarity": 0.9998769418762566,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36781285982578993,
+        "ollama_total_s": 0.366704949,
+        "model_load_s": 0.00131315,
+        "prompt_eval_s": 0.035885,
+        "generation_s": 0.162365,
+        "prompt_tokens": 484,
+        "output_tokens": 31,
+        "total_tokens": 515,
+        "generation_tokens_per_s": 190.92784775043881
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Glad you made it, Elena. Could you join *that table* with Clara and Raj?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that table",
+          "ground_truth_ambiguous_phrase": "that table",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the table in Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "Group table by the window (nearest Room 302 windows)",
+          "resolution_similarity": 0.49775576966530055,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that table",
+          "resolved_entity": "the table in Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3674308070912957,
+        "ollama_total_s": 0.365807868,
+        "model_load_s": 0.001727008,
+        "prompt_eval_s": 0.037862,
+        "generation_s": 0.273218,
+        "prompt_tokens": 519,
+        "output_tokens": 46,
+        "total_tokens": 565,
+        "generation_tokens_per_s": 168.36372420557942
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Sure, I see them by the window. Is that *container* in the middle for our experiment?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Clara and Raj"
+        },
+        {
+          "ambiguous_phrase": "that container",
+          "resolved_entity": "the container in the middle"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "container",
+          "ground_truth_resolution": "Plastic experiment container on group table",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Clara and Raj"
+        },
+        {
+          "ambiguous_phrase": "that container",
+          "resolved_entity": "the container in the middle"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4311981266364455,
+        "ollama_total_s": 0.430206182,
+        "model_load_s": 0.001066838,
+        "prompt_eval_s": 0.042044,
+        "generation_s": 0.330841,
+        "prompt_tokens": 550,
+        "output_tokens": 59,
+        "total_tokens": 609,
+        "generation_tokens_per_s": 178.33339882299958
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Yes, use *that one*. Grab *this worksheet* from the stack on the corner, too.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this worksheet",
+          "ground_truth_ambiguous_phrase": "this worksheet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the worksheet in the stack on the corner",
+          "ground_truth_resolution": "Experiment worksheet, 'Chemical Reaction: Observations'",
+          "resolution_similarity": 0.5457689161810552,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that one",
+          "resolved_entity": "the container in the middle for their experiment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that one",
+          "resolved_entity": "the container in the middle for their experiment"
+        },
+        {
+          "ambiguous_phrase": "this worksheet",
+          "resolved_entity": "the worksheet in the stack on the corner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5355281559750438,
+        "ollama_total_s": 0.534650114,
+        "model_load_s": 0.001120726,
+        "prompt_eval_s": 0.046637,
+        "generation_s": 0.434751,
+        "prompt_tokens": 580,
+        "output_tokens": 67,
+        "total_tokens": 647,
+        "generation_tokens_per_s": 154.1112038845224
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Okay, got it. Clara said she didn't get the *instructions* yet.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "instructions",
+          "ground_truth_ambiguous_phrase": "instructions",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the worksheet mentioned in Turn 4",
+          "ground_truth_resolution": "Step-by-step procedure sheet for today's experiment",
+          "resolution_similarity": 0.5779232326190529,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "instructions",
+          "resolved_entity": "the worksheet mentioned in Turn 4"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4929513237439096,
+        "ollama_total_s": 0.491939164,
+        "model_load_s": 0.001133237,
+        "prompt_eval_s": 0.047011,
+        "generation_s": 0.273637,
+        "prompt_tokens": 602,
+        "output_tokens": 37,
+        "total_tokens": 639,
+        "generation_tokens_per_s": 135.21563238889476
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Tell *her* to check *the folder* near the door—that’s where I put them.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the folder",
+          "ground_truth_ambiguous_phrase": "the folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folder near the door",
+          "ground_truth_resolution": "Blue folder near the entrance door to Room 302",
+          "resolution_similarity": 0.7348033115099978,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Clara",
+          "ground_truth_resolution": "Clara (Elena's peer)",
+          "resolution_similarity": 0.8923597477588312,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the instructions"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Clara"
+        },
+        {
+          "ambiguous_phrase": "the folder",
+          "resolved_entity": "the folder near the door"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the instructions"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6203692308627069,
+        "ollama_total_s": 0.619449486,
+        "model_load_s": 0.00119439,
+        "prompt_eval_s": 0.048405,
+        "generation_s": 0.417051,
+        "prompt_tokens": 634,
+        "output_tokens": 78,
+        "total_tokens": 712,
+        "generation_tokens_per_s": 187.02748584705466
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "I’ll get them for her. Raj asked if we need to use *those gloves*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those gloves",
+          "ground_truth_ambiguous_phrase": "those gloves",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the gloves mentioned in the previous context (likely the ones being discussed for the experiment)",
+          "ground_truth_resolution": "Latex gloves supplied for experiment",
+          "resolution_similarity": 0.7642585321284652,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the instructions mentioned in Turn 5"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those gloves",
+          "resolved_entity": "the gloves mentioned in the previous context (likely the ones being discussed for the experiment)"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the instructions mentioned in Turn 5"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.522858593147248,
+        "ollama_total_s": 0.521802777,
+        "model_load_s": 0.001138126,
+        "prompt_eval_s": 0.048847,
+        "generation_s": 0.365556,
+        "prompt_tokens": 661,
+        "output_tokens": 73,
+        "total_tokens": 734,
+        "generation_tokens_per_s": 199.69580584096553
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Yes, please. The chemicals in *this experiment* can stain.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this experiment",
+          "ground_truth_ambiguous_phrase": "this experiment",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the experiment mentioned in the previous conversation, likely referring to the chemistry recitation experiment discussed in the context",
+          "ground_truth_resolution": "Chemical reaction activity using household chemicals",
+          "resolution_similarity": 0.6746127239592652,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this experiment",
+          "resolved_entity": "the experiment mentioned in the previous conversation, likely referring to the chemistry recitation experiment discussed in the context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4597851261496544,
+        "ollama_total_s": 0.458607236,
+        "model_load_s": 0.001928514,
+        "prompt_eval_s": 0.047503,
+        "generation_s": 0.28973,
+        "prompt_tokens": 679,
+        "output_tokens": 51,
+        "total_tokens": 730,
+        "generation_tokens_per_s": 176.02595519966866
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "I’ll let *him* know. Are we mixing *these powders* first or adding water?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "these powders",
+          "ground_truth_ambiguous_phrase": "these powders",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the powders mentioned in the experiment context",
+          "ground_truth_resolution": "Experimental powders: baking soda and citric acid",
+          "resolution_similarity": 0.8126974786155263,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Mark",
+          "ground_truth_resolution": "Raj (Elena's peer)",
+          "resolution_similarity": 0.6327488864538281,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Mark"
+        },
+        {
+          "ambiguous_phrase": "these powders",
+          "resolved_entity": "the powders mentioned in the experiment context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.523715095128864,
+        "ollama_total_s": 0.52254862,
+        "model_load_s": 0.001224639,
+        "prompt_eval_s": 0.052141,
+        "generation_s": 0.345242,
+        "prompt_tokens": 716,
+        "output_tokens": 60,
+        "total_tokens": 776,
+        "generation_tokens_per_s": 173.79113781057924
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Start by mixing *those*. Then add water from *the pitcher* on your table.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the pitcher",
+          "ground_truth_ambiguous_phrase": "the pitcher",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the pitcher on your table",
+          "ground_truth_resolution": "Plastic water pitcher on group table",
+          "resolution_similarity": 0.712516017753626,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "those",
+          "ground_truth_ambiguous_phrase": "those",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "those powders",
+          "ground_truth_resolution": "Experimental powders (see above)",
+          "resolution_similarity": 0.8519472311803357,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "those powders"
+        },
+        {
+          "ambiguous_phrase": "the pitcher",
+          "resolved_entity": "the pitcher on your table"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.471968128811568,
+        "ollama_total_s": 0.47064236,
+        "model_load_s": 0.001177254,
+        "prompt_eval_s": 0.052313,
+        "generation_s": 0.321606,
+        "prompt_tokens": 742,
+        "output_tokens": 58,
+        "total_tokens": 800,
+        "generation_tokens_per_s": 180.3448940629217
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "The *pitcher* is empty—should we refill from *that sink*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that sink",
+          "ground_truth_ambiguous_phrase": "that sink",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sink in Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "Sink adjacent to Room 302 entrance",
+          "resolution_similarity": 0.6757568579372104,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the pitcher",
+          "resolved_entity": "the pitcher on your table"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the pitcher",
+          "resolved_entity": "the pitcher on your table"
+        },
+        {
+          "ambiguous_phrase": "that sink",
+          "resolved_entity": "the sink in Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5354169718921185,
+        "ollama_total_s": 0.534265882,
+        "model_load_s": 0.001184843,
+        "prompt_eval_s": 0.052375,
+        "generation_s": 0.375269,
+        "prompt_tokens": 768,
+        "output_tokens": 71,
+        "total_tokens": 839,
+        "generation_tokens_per_s": 189.19761557709268
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Yes, use *the sink closest to the podium*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the sink closest to the podium",
+          "ground_truth_ambiguous_phrase": "the sink closest to the podium",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "sink closest to the podium (Science Building, Room 302, University of Minnesota)",
+          "ground_truth_resolution": "Front-right sink in Room 302 nearest the instructor podium",
+          "resolution_similarity": 0.6908309358673004,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the sink closest to the podium",
+          "resolved_entity": "sink closest to the podium (Science Building, Room 302, University of Minnesota)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5144496522843838,
+        "ollama_total_s": 0.512965693,
+        "model_load_s": 0.00118906,
+        "prompt_eval_s": 0.060738,
+        "generation_s": 0.330655,
+        "prompt_tokens": 785,
+        "output_tokens": 53,
+        "total_tokens": 838,
+        "generation_tokens_per_s": 160.2879133840408
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "On it. I'll go now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22166326502338052,
+        "ollama_total_s": 0.220431865,
+        "model_load_s": 0.00407113,
+        "prompt_eval_s": 0.062333,
+        "generation_s": 0.02602,
+        "prompt_tokens": 799,
+        "output_tokens": 6,
+        "total_tokens": 805,
+        "generation_tokens_per_s": 230.59185242121444
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Once you’ve got water, start timing the reaction. Use *the timer* on *my desk*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my desk",
+          "ground_truth_ambiguous_phrase": "my desk",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "desk located in Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "TA Mark's desk at the front of Room 302",
+          "resolution_similarity": 0.5793624502428761,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "the timer",
+          "ground_truth_ambiguous_phrase": "the timer",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "timer on User B's desk",
+          "ground_truth_resolution": "Digital kitchen timer",
+          "resolution_similarity": 0.6314399326491931,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the timer",
+          "resolved_entity": "timer on User B's desk"
+        },
+        {
+          "ambiguous_phrase": "my desk",
+          "resolved_entity": "desk located in Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5328602059744298,
+        "ollama_total_s": 0.531691359,
+        "model_load_s": 0.001189724,
+        "prompt_eval_s": 0.068919,
+        "generation_s": 0.400499,
+        "prompt_tokens": 845,
+        "output_tokens": 72,
+        "total_tokens": 917,
+        "generation_tokens_per_s": 179.77572977710307
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Clara’s got *the timer* now. I’ll set it for one minute.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the timer",
+          "ground_truth_ambiguous_phrase": "the timer",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the timer on my desk",
+          "ground_truth_resolution": "Digital timer currently held by Clara",
+          "resolution_similarity": 0.7853234611446124,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the timer",
+          "resolved_entity": "the timer on my desk"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38304281421005726,
+        "ollama_total_s": 0.382141836,
+        "model_load_s": 0.00110845,
+        "prompt_eval_s": 0.069588,
+        "generation_s": 0.222766,
+        "prompt_tokens": 868,
+        "output_tokens": 36,
+        "total_tokens": 904,
+        "generation_tokens_per_s": 161.60455365720082
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Great. While you wait, discuss the hypothesis. Raj mentioned *an idea* last week.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "an idea",
+          "ground_truth_ambiguous_phrase": "an idea",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the hypothesis",
+          "ground_truth_resolution": "Hypothesis: temperature affects reaction rate (proposed by Raj)",
+          "resolution_similarity": 0.6274309359239882,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "an idea",
+          "resolved_entity": "the hypothesis"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4151407512836158,
+        "ollama_total_s": 0.414099634,
+        "model_load_s": 0.001172406,
+        "prompt_eval_s": 0.073056,
+        "generation_s": 0.218887,
+        "prompt_tokens": 898,
+        "output_tokens": 33,
+        "total_tokens": 931,
+        "generation_tokens_per_s": 150.76272231790833
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Right, he thinks temperature changes the reaction rate. Should we test that today?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Raj"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the hypothesis"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Raj"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the hypothesis"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4577190726995468,
+        "ollama_total_s": 0.456434226,
+        "model_load_s": 0.001756608,
+        "prompt_eval_s": 0.073449,
+        "generation_s": 0.239415,
+        "prompt_tokens": 921,
+        "output_tokens": 36,
+        "total_tokens": 957,
+        "generation_tokens_per_s": 150.36651838857216
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Yes. Try running *the experiment* with warm water after this round.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the experiment",
+          "ground_truth_ambiguous_phrase": "the experiment",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the experiment (referencing the ongoing chemistry experiment discussed in prior turns)",
+          "ground_truth_resolution": "Same chemical reaction using warm water",
+          "resolution_similarity": 0.6600474388507711,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the experiment",
+          "resolved_entity": "the experiment (referencing the ongoing chemistry experiment discussed in prior turns)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4934684382751584,
+        "ollama_total_s": 0.49212412,
+        "model_load_s": 0.001376773,
+        "prompt_eval_s": 0.081944,
+        "generation_s": 0.278924,
+        "prompt_tokens": 945,
+        "output_tokens": 44,
+        "total_tokens": 989,
+        "generation_tokens_per_s": 157.74906426123243
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Perfect. I’ll ask *him* to help set it up. Is *the kettle* in the storage room?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the kettle",
+          "ground_truth_ambiguous_phrase": "the kettle",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the kettle",
+          "ground_truth_resolution": "Electric kettle for heating water, stored in Room 302 cabinet",
+          "resolution_similarity": 0.8283882733837832,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Raj",
+          "ground_truth_resolution": "Raj (Elena's peer)",
+          "resolution_similarity": 0.8167852204696111,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Raj"
+        },
+        {
+          "ambiguous_phrase": "the kettle",
+          "resolved_entity": "the kettle"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5218333313241601,
+        "ollama_total_s": 0.520734033,
+        "model_load_s": 0.001401751,
+        "prompt_eval_s": 0.083181,
+        "generation_s": 0.306908,
+        "prompt_tokens": 988,
+        "output_tokens": 54,
+        "total_tokens": 1042,
+        "generation_tokens_per_s": 175.94849270791246
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Yes, in *the cabinet* on your left when you enter.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the cabinet",
+          "ground_truth_ambiguous_phrase": "the cabinet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cabinet on the left when entering the Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "Storage cabinet on left inside Room 302",
+          "resolution_similarity": 0.6932453543360906,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the cabinet",
+          "resolved_entity": "the cabinet on the left when entering the Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.505925287026912,
+        "ollama_total_s": 0.504582401,
+        "model_load_s": 0.001701417,
+        "prompt_eval_s": 0.083457,
+        "generation_s": 0.300751,
+        "prompt_tokens": 1002,
+        "output_tokens": 51,
+        "total_tokens": 1053,
+        "generation_tokens_per_s": 169.57549600832584
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Found it. Clara’s writing down the results—should we use *that chart* Mark gave us?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that chart",
+          "ground_truth_ambiguous_phrase": "that chart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the chart Mark gave us",
+          "ground_truth_resolution": "Comparison chart for experiment results ('Mark's chart')",
+          "resolution_similarity": 0.7434960190645359,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that chart",
+          "resolved_entity": "the chart Mark gave us"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4191605690866709,
+        "ollama_total_s": 0.417699034,
+        "model_load_s": 0.001537399,
+        "prompt_eval_s": 0.091297,
+        "generation_s": 0.220737,
+        "prompt_tokens": 1040,
+        "output_tokens": 36,
+        "total_tokens": 1076,
+        "generation_tokens_per_s": 163.09001209584258
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Absolutely. The chart helps compare your findings. Ask *her* to write both sets.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Clara",
+          "ground_truth_resolution": "Clara (Elena's peer)",
+          "resolution_similarity": 0.8923597477588312,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Clara"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.370781313162297,
+        "ollama_total_s": 0.369569277,
+        "model_load_s": 0.001021708,
+        "prompt_eval_s": 0.091956,
+        "generation_s": 0.197167,
+        "prompt_tokens": 1065,
+        "output_tokens": 32,
+        "total_tokens": 1097,
+        "generation_tokens_per_s": 162.2989648369149
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Will do. When’s the *quiz* scheduled?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the quiz",
+          "resolved_entity": "the quiz scheduled for today"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "quiz",
+          "ground_truth_resolution": "Chemistry formative assessment scheduled Thursday, 9 AM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the quiz",
+          "resolved_entity": "the quiz scheduled for today"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37096157763153315,
+        "ollama_total_s": 0.369973787,
+        "model_load_s": 0.001168095,
+        "prompt_eval_s": 0.092264,
+        "generation_s": 0.18682,
+        "prompt_tokens": 1079,
+        "output_tokens": 25,
+        "total_tokens": 1104,
+        "generation_tokens_per_s": 133.81864896692002
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "It’s on *Thursday at 9 AM*. You’ll get details in *the syllabus*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It’s on *Thursday at 9 AM*.",
+          "resolved_entity": "Quiz scheduled for Thursday at 9 AM"
+        },
+        {
+          "ambiguous_phrase": "You’ll get details in *the syllabus*.",
+          "resolved_entity": "University course syllabus"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the syllabus",
+          "ground_truth_resolution": "Course syllabus, 'Chemistry 1101, Spring 2024'",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It’s on *Thursday at 9 AM*.",
+          "resolved_entity": "Quiz scheduled for Thursday at 9 AM"
+        },
+        {
+          "ambiguous_phrase": "You’ll get details in *the syllabus*.",
+          "resolved_entity": "University course syllabus"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.636480008251965,
+        "ollama_total_s": 0.635178145,
+        "model_load_s": 0.001390558,
+        "prompt_eval_s": 0.092999,
+        "generation_s": 0.445248,
+        "prompt_tokens": 1120,
+        "output_tokens": 79,
+        "total_tokens": 1199,
+        "generation_tokens_per_s": 177.42920799195056
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thanks. Where do we turn in *the worksheet*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the worksheet",
+          "ground_truth_ambiguous_phrase": "the worksheet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the worksheet from the stack on the corner",
+          "ground_truth_resolution": "Completed experiment worksheet",
+          "resolution_similarity": 0.6349596554865381,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the worksheet",
+          "resolved_entity": "the worksheet from the stack on the corner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.330703753978014,
+        "ollama_total_s": 0.329555712,
+        "model_load_s": 0.00136447,
+        "prompt_eval_s": 0.093002,
+        "generation_s": 0.140181,
+        "prompt_tokens": 1133,
+        "output_tokens": 28,
+        "total_tokens": 1161,
+        "generation_tokens_per_s": 199.74176243570813
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Leave it in *the tray* at the front after you finish.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the tray",
+          "ground_truth_ambiguous_phrase": "the tray",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the tray at the front",
+          "ground_truth_resolution": "Submission tray at front of Room 302",
+          "resolution_similarity": 0.7320992129787882,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the tray",
+          "resolved_entity": "the tray at the front"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.34805442206561565,
+        "ollama_total_s": 0.346877393,
+        "model_load_s": 0.001756738,
+        "prompt_eval_s": 0.098657,
+        "generation_s": 0.158235,
+        "prompt_tokens": 1159,
+        "output_tokens": 25,
+        "total_tokens": 1184,
+        "generation_tokens_per_s": 157.99285872278574
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Raj just asked if *he* needs to email you the chart.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Raj",
+          "ground_truth_resolution": "Raj (Elena's peer)",
+          "resolution_similarity": 0.8138161167032522,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Raj"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3761130669154227,
+        "ollama_total_s": 0.375122098,
+        "model_load_s": 0.001545572,
+        "prompt_eval_s": 0.098851,
+        "generation_s": 0.169997,
+        "prompt_tokens": 1184,
+        "output_tokens": 32,
+        "total_tokens": 1216,
+        "generation_tokens_per_s": 188.23861597557604
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "No, just upload it to *Canvas* by *tonight*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tonight",
+          "ground_truth_ambiguous_phrase": "tonight",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The current night, likely referring to the night of the current day based on the context of the deadline.",
+          "ground_truth_resolution": "Submission deadline: 11:59 PM today",
+          "resolution_similarity": 0.5602797944003054,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Canvas",
+          "ground_truth_resolution": "University learning platform (canvas.umn.edu)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "The current night, likely referring to the night of the current day based on the context of the deadline."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4496984682045877,
+        "ollama_total_s": 0.448737838,
+        "model_load_s": 0.001137142,
+        "prompt_eval_s": 0.099475,
+        "generation_s": 0.255032,
+        "prompt_tokens": 1209,
+        "output_tokens": 51,
+        "total_tokens": 1260,
+        "generation_tokens_per_s": 199.974905109947
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Got it. Clara wondered what the main focus for the next *reading assignment* is.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the next reading assignment",
+          "resolved_entity": "reading assignment for the upcoming class session"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "reading assignment",
+          "ground_truth_resolution": "Next assignment: Chapter 6 (Equilibrium), pages 115–130",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the next reading assignment",
+          "resolved_entity": "reading assignment for the upcoming class session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42099685268476605,
+        "ollama_total_s": 0.419935105,
+        "model_load_s": 0.00129813,
+        "prompt_eval_s": 0.100521,
+        "generation_s": 0.202721,
+        "prompt_tokens": 1240,
+        "output_tokens": 29,
+        "total_tokens": 1269,
+        "generation_tokens_per_s": 143.0537536811677
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "It covers equilibrium. Check *Chapter 6*, pages 115 to 130.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It covers equilibrium.",
+          "resolved_entity": "The reading assignment"
+        },
+        {
+          "ambiguous_phrase": "Check *Chapter 6*",
+          "resolved_entity": "The textbook"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Chapter 6",
+          "ground_truth_resolution": "Chapter 6: Equilibrium (textbook)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It covers equilibrium.",
+          "resolved_entity": "The reading assignment"
+        },
+        {
+          "ambiguous_phrase": "Check *Chapter 6*",
+          "resolved_entity": "The textbook"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6124790231697261,
+        "ollama_total_s": 0.611225319,
+        "model_load_s": 0.001463214,
+        "prompt_eval_s": 0.114835,
+        "generation_s": 0.341311,
+        "prompt_tokens": 1274,
+        "output_tokens": 61,
+        "total_tokens": 1335,
+        "generation_tokens_per_s": 178.72263126591292
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Do we need to answer *the discussion questions* at the end?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the discussion questions",
+          "ground_truth_ambiguous_phrase": "the discussion questions",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the discussion questions at the end of the reading assignment (Chapter 6, pages 115 to 130)",
+          "ground_truth_resolution": "End-of-chapter discussion questions (Chapter 6)",
+          "resolution_similarity": 0.8064713931751469,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the discussion questions",
+          "resolved_entity": "the discussion questions at the end of the reading assignment (Chapter 6, pages 115 to 130)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48629015404731035,
+        "ollama_total_s": 0.485081958,
+        "model_load_s": 0.001543039,
+        "prompt_eval_s": 0.113547,
+        "generation_s": 0.257482,
+        "prompt_tokens": 1291,
+        "output_tokens": 47,
+        "total_tokens": 1338,
+        "generation_tokens_per_s": 182.53703171483832
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Yes, those are due *by Wednesday midnight* on Canvas.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "by Wednesday midnight",
+          "ground_truth_ambiguous_phrase": "by Wednesday midnight",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the deadline for the discussion questions",
+          "ground_truth_resolution": "Due: Wednesday, 11:59 PM",
+          "resolution_similarity": 0.6443194718777863,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "the discussion questions"
+        },
+        {
+          "ambiguous_phrase": "Canvas",
+          "resolved_entity": "the learning management system"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "the discussion questions"
+        },
+        {
+          "ambiguous_phrase": "by Wednesday midnight",
+          "resolved_entity": "the deadline for the discussion questions"
+        },
+        {
+          "ambiguous_phrase": "Canvas",
+          "resolved_entity": "the learning management system"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5557578131556511,
+        "ollama_total_s": 0.554693317,
+        "model_load_s": 0.001631056,
+        "prompt_eval_s": 0.115599,
+        "generation_s": 0.318614,
+        "prompt_tokens": 1313,
+        "output_tokens": 60,
+        "total_tokens": 1373,
+        "generation_tokens_per_s": 188.3156421249537
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Should we email you anything if we finish early?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2692773141898215,
+        "ollama_total_s": 0.26821848,
+        "model_load_s": 0.001295557,
+        "prompt_eval_s": 0.116384,
+        "generation_s": 0.044607,
+        "prompt_tokens": 1330,
+        "output_tokens": 6,
+        "total_tokens": 1336,
+        "generation_tokens_per_s": 134.5080368552021
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "If you’re done, you can upload, no need to email. Let *me* know if you have questions.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Let *me* know if you have questions.",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "me",
+          "ground_truth_resolution": "Mark (TA)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Let *me* know if you have questions.",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39499006094411016,
+        "ollama_total_s": 0.393803395,
+        "model_load_s": 0.001368227,
+        "prompt_eval_s": 0.116498,
+        "generation_s": 0.175193,
+        "prompt_tokens": 1378,
+        "output_tokens": 29,
+        "total_tokens": 1407,
+        "generation_tokens_per_s": 165.5317278658394
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Is *the lab session* next week still at *the usual place*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the usual place",
+          "ground_truth_ambiguous_phrase": "the usual place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "Science Building, Room 302",
+          "resolution_similarity": 0.8539195747812538,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the lab session",
+          "resolved_entity": "Lab Session: Chemistry Recitation with Mark (Next Week)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "lab session",
+          "ground_truth_resolution": "Next scheduled hands-on lab, Chemistry 1101",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the lab session",
+          "resolved_entity": "Lab Session: Chemistry Recitation with Mark (Next Week)"
+        },
+        {
+          "ambiguous_phrase": "the usual place",
+          "resolved_entity": "Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6918626301921904,
+        "ollama_total_s": 0.690533735,
+        "model_load_s": 0.001530538,
+        "prompt_eval_s": 0.12932,
+        "generation_s": 0.433943,
+        "prompt_tokens": 1396,
+        "output_tokens": 76,
+        "total_tokens": 1472,
+        "generation_tokens_per_s": 175.13820939616494
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Actually, it’s in *Room 305* instead of here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it’s in *Room 305* instead of here.",
+          "resolved_entity": "Science Building, Room 305, University of Minnesota"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Room 305",
+          "ground_truth_resolution": "Science Building, Room 305",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it’s in *Room 305* instead of here.",
+          "resolved_entity": "Science Building, Room 305, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5350757711566985,
+        "ollama_total_s": 0.533937594,
+        "model_load_s": 0.001155409,
+        "prompt_eval_s": 0.130169,
+        "generation_s": 0.275856,
+        "prompt_tokens": 1422,
+        "output_tokens": 54,
+        "total_tokens": 1476,
+        "generation_tokens_per_s": 195.7543065947451
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Good to know. Clara wanted to ask about *office hours*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "office hours",
+          "ground_truth_ambiguous_phrase": "office hours",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "University of Minnesota Chemistry Office Hours",
+          "ground_truth_resolution": "TA Mark’s office hours: Tuesday, 1–2 PM",
+          "resolution_similarity": 0.5189408494363549,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "office hours",
+          "resolved_entity": "University of Minnesota Chemistry Office Hours"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44831182109192014,
+        "ollama_total_s": 0.447076583,
+        "model_load_s": 0.001295277,
+        "prompt_eval_s": 0.130476,
+        "generation_s": 0.190572,
+        "prompt_tokens": 1444,
+        "output_tokens": 26,
+        "total_tokens": 1470,
+        "generation_tokens_per_s": 136.43137501836577
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "I’ll be in *the TA lounge* tomorrow from 1 to 2 PM.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the TA lounge",
+          "ground_truth_ambiguous_phrase": "the TA lounge",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Science Building, Room 302, University of Minnesota",
+          "ground_truth_resolution": "TA Lounge, Science Building, 2nd Floor",
+          "resolution_similarity": 0.6932068190833712,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the TA lounge",
+          "resolved_entity": "Science Building, Room 302, University of Minnesota"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4458820940926671,
+        "ollama_total_s": 0.44481137,
+        "model_load_s": 0.001349285,
+        "prompt_eval_s": 0.132482,
+        "generation_s": 0.178469,
+        "prompt_tokens": 1476,
+        "output_tokens": 33,
+        "total_tokens": 1509,
+        "generation_tokens_per_s": 184.90606211723045
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Thanks, I’ll pass that along. Raj mentioned *the email* you sent last night. Can you confirm what attachments were included?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the email",
+          "ground_truth_ambiguous_phrase": "the email",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the email sent last night by User B",
+          "ground_truth_resolution": "Mark’s group email, sent Monday night",
+          "resolution_similarity": 0.6840569556585895,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the email",
+          "resolved_entity": "the email sent last night by User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4595308620482683,
+        "ollama_total_s": 0.458509925,
+        "model_load_s": 0.001065279,
+        "prompt_eval_s": 0.136839,
+        "generation_s": 0.205442,
+        "prompt_tokens": 1522,
+        "output_tokens": 39,
+        "total_tokens": 1561,
+        "generation_tokens_per_s": 189.83460051985475
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "I attached the *practice problems* and the *grading rubric*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "practice problems",
+          "ground_truth_resolution": "Chemistry practice problems (PDF attachment)",
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "ambiguous_phrase": "grading rubric",
+          "ground_truth_resolution": "Quiz grading rubric (PDF attachment)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32442218204960227,
+        "ollama_total_s": 0.323530602,
+        "model_load_s": 0.001078243,
+        "prompt_eval_s": 0.136557,
+        "generation_s": 0.02631,
+        "prompt_tokens": 1535,
+        "output_tokens": 6,
+        "total_tokens": 1541,
+        "generation_tokens_per_s": 228.05017103762827
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Perfect. Clara is worried she missed *the practice problems*—can she get another copy?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the practice problems",
+          "ground_truth_ambiguous_phrase": "the practice problems",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "practice problems attached in Turn 40",
+          "ground_truth_resolution": "Chemistry practice problems (hard copy in folder)",
+          "resolution_similarity": 0.7072368203316716,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the practice problems",
+          "resolved_entity": "practice problems attached in Turn 40"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43975230399519205,
+        "ollama_total_s": 0.438548416,
+        "model_load_s": 0.001194206,
+        "prompt_eval_s": 0.137022,
+        "generation_s": 0.17175,
+        "prompt_tokens": 1568,
+        "output_tokens": 29,
+        "total_tokens": 1597,
+        "generation_tokens_per_s": 168.85007278020376
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Yes, I put a few extra in *the folder* by the door.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the folder",
+          "ground_truth_ambiguous_phrase": "the folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folder by the door",
+          "ground_truth_resolution": "Blue folder near Room 302 door",
+          "resolution_similarity": 0.6926865694855663,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the folder",
+          "resolved_entity": "the folder by the door"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4091518050990999,
+        "ollama_total_s": 0.40802235,
+        "model_load_s": 0.001167326,
+        "prompt_eval_s": 0.139078,
+        "generation_s": 0.140266,
+        "prompt_tokens": 1591,
+        "output_tokens": 25,
+        "total_tokens": 1616,
+        "generation_tokens_per_s": 178.2327862775013
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Thanks. When do grades for *the quiz* come out?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the quiz",
+          "ground_truth_ambiguous_phrase": "the quiz",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the quiz scheduled on Thursday at 9 AM",
+          "ground_truth_resolution": "Chemistry formative assessment, results Friday afternoon",
+          "resolution_similarity": 0.5442420846709936,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the quiz",
+          "resolved_entity": "the quiz scheduled on Thursday at 9 AM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41946867341175675,
+        "ollama_total_s": 0.418547996,
+        "model_load_s": 0.001185398,
+        "prompt_eval_s": 0.13932,
+        "generation_s": 0.156504,
+        "prompt_tokens": 1611,
+        "output_tokens": 29,
+        "total_tokens": 1640,
+        "generation_tokens_per_s": 185.2987783059858
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "You’ll see results Friday afternoon, posted on Canvas.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2918183649890125,
+        "ollama_total_s": 0.290773988,
+        "model_load_s": 0.001163302,
+        "prompt_eval_s": 0.141193,
+        "generation_s": 0.025186,
+        "prompt_tokens": 1630,
+        "output_tokens": 6,
+        "total_tokens": 1636,
+        "generation_tokens_per_s": 238.22758675454617
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "One last thing—do you need our *student IDs* for the worksheet?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3111419780179858,
+        "ollama_total_s": 0.309878108,
+        "model_load_s": 0.001293184,
+        "prompt_eval_s": 0.145875,
+        "generation_s": 0.025422,
+        "prompt_tokens": 1661,
+        "output_tokens": 6,
+        "total_tokens": 1667,
+        "generation_tokens_per_s": 236.0160490913382
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Yes, put your *ID number* in the top right corner.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "ID number",
+          "ground_truth_resolution": "Student university ID number",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.315701921004802,
+        "ollama_total_s": 0.314434758,
+        "model_load_s": 0.001210341,
+        "prompt_eval_s": 0.146236,
+        "generation_s": 0.024997,
+        "prompt_tokens": 1683,
+        "output_tokens": 6,
+        "total_tokens": 1689,
+        "generation_tokens_per_s": 240.02880345641478
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "All set. Clara asked if the weather will affect lab next week.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "lab next week",
+          "resolved_entity": "lab session next week"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "lab next week",
+          "resolved_entity": "lab session next week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5241328519769013,
+        "ollama_total_s": 0.522856502,
+        "model_load_s": 0.001400421,
+        "prompt_eval_s": 0.147244,
+        "generation_s": 0.224441,
+        "prompt_tokens": 1707,
+        "output_tokens": 36,
+        "total_tokens": 1743,
+        "generation_tokens_per_s": 160.3985011651169
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "No worries—the lab’s indoors!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32499287743121386,
+        "ollama_total_s": 0.323748417,
+        "model_load_s": 0.001507683,
+        "prompt_eval_s": 0.148484,
+        "generation_s": 0.025238,
+        "prompt_tokens": 1717,
+        "output_tokens": 6,
+        "total_tokens": 1723,
+        "generation_tokens_per_s": 237.73674617640066
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Great, thanks for everything, Mark. See you *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the scheduled meeting time for the lab session",
+          "ground_truth_resolution": "Next week’s recitation (Tuesday, 10 AM)",
+          "resolution_similarity": 0.530802076764467,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the scheduled meeting time for the lab session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46381251979619265,
+        "ollama_total_s": 0.462749853,
+        "model_load_s": 0.00386656,
+        "prompt_eval_s": 0.148757,
+        "generation_s": 0.164426,
+        "prompt_tokens": 1748,
+        "output_tokens": 27,
+        "total_tokens": 1775,
+        "generation_tokens_per_s": 164.2076070694416
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "See you next week, Elena!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3651002999395132,
+        "ollama_total_s": 0.364075883,
+        "model_load_s": 0.001073734,
+        "prompt_eval_s": 0.150075,
+        "generation_s": 0.025633,
+        "prompt_tokens": 1758,
+        "output_tokens": 6,
+        "total_tokens": 1764,
+        "generation_tokens_per_s": 234.0732649319237
+      }
+    }
+  ]
+}

@@ -1,0 +1,2312 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/legal_setting_005.json",
+  "metrics": {
+    "ground_truth_ambiguities": 39,
+    "qwen_predicted_ambiguities": 72,
+    "detected_ground_truth_ambiguities": 37,
+    "missed_ground_truth_ambiguities": 2,
+    "detected_but_bad_resolution": 23,
+    "true_positives": 14,
+    "false_negatives": 25,
+    "false_positive_ambiguities": 35,
+    "detection_recall": 0.9487179487179487,
+    "detection_precision": 0.5138888888888888,
+    "detection_f1": 0.6666666666666666,
+    "true_positive_rate_at_0_70": 0.358974358974359,
+    "strict_end_to_end_precision_at_0_70": 0.19444444444444445,
+    "end_to_end_f1_at_0_70": 0.25225225225225223,
+    "false_positive_discovery_rate": 0.4861111111111111,
+    "false_positives_per_turn": 0.7608695652173914,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 46,
+    "median_latency_per_turn_s": 0.4803891566116363,
+    "mean_latency_per_turn_s": 0.4884232548571637,
+    "total_prompt_tokens": 53310,
+    "total_output_tokens": 2341
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi Alan, I’m just logging in from *here*. Thanks for making time.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Nina Desai Home Office",
+          "ground_truth_resolution": "Nina Desai Home Office",
+          "resolution_similarity": 0.9999162278945178,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Nina Desai Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3580970079638064,
+        "ollama_total_s": 0.356877004,
+        "model_load_s": 0.001356514,
+        "prompt_eval_s": 0.036537,
+        "generation_s": 0.143129,
+        "prompt_tokens": 499,
+        "output_tokens": 25,
+        "total_tokens": 524,
+        "generation_tokens_per_s": 174.66760754284596
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "No problem, Nina. I’m in the conference room *now*, so we’ve got privacy.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "now",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's current location in the conference room at the Morris & Patel Law Office",
+          "ground_truth_resolution": "10:32 AM",
+          "resolution_similarity": 0.511277906163121,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "User B's current location in the conference room at the Morris & Patel Law Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3999824798665941,
+        "ollama_total_s": 0.398792214,
+        "model_load_s": 0.001065169,
+        "prompt_eval_s": 0.040878,
+        "generation_s": 0.303942,
+        "prompt_tokens": 531,
+        "output_tokens": 46,
+        "total_tokens": 577,
+        "generation_tokens_per_s": 151.34466444255813
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Perfect. I’ve got the contract pulled up. It’s on this screen.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It’s on this screen",
+          "resolved_entity": "User A's device screen in Nina Desai Home Office"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this screen",
+          "ground_truth_resolution": "Primary monitor at Nina's Home Office",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It’s on this screen",
+          "resolved_entity": "User A's device screen in Nina Desai Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3587277918122709,
+        "ollama_total_s": 0.357653248,
+        "model_load_s": 0.001385572,
+        "prompt_eval_s": 0.041603,
+        "generation_s": 0.2562,
+        "prompt_tokens": 552,
+        "output_tokens": 45,
+        "total_tokens": 597,
+        "generation_tokens_per_s": 175.64402810304452
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Good. Could you scan and send me *that document*? I want to double-check the payment clause.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that document",
+          "ground_truth_ambiguous_phrase": "that document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the contract",
+          "ground_truth_resolution": "Freelance Design Services Agreement - CloudBright.pdf",
+          "resolution_similarity": 0.6264571226999831,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that document",
+          "resolved_entity": "the contract"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.31612328812479973,
+        "ollama_total_s": 0.314669383,
+        "model_load_s": 0.001467702,
+        "prompt_eval_s": 0.046332,
+        "generation_s": 0.219318,
+        "prompt_tokens": 589,
+        "output_tokens": 33,
+        "total_tokens": 622,
+        "generation_tokens_per_s": 150.46644598254588
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Already done—sent to your email. Sorry, I just really need to get *it* sorted.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the contract",
+          "ground_truth_resolution": "Unpaid invoice/payment issue",
+          "resolution_similarity": 0.5308227188016577,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3417823249474168,
+        "ollama_total_s": 0.340446123,
+        "model_load_s": 0.001338328,
+        "prompt_eval_s": 0.047236,
+        "generation_s": 0.210958,
+        "prompt_tokens": 618,
+        "output_tokens": 32,
+        "total_tokens": 650,
+        "generation_tokens_per_s": 151.6889617838622
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Understandable. I see the package was delivered on May 2nd, right?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.14856656035408378,
+        "ollama_total_s": 0.147531107,
+        "model_load_s": 0.00143859,
+        "prompt_eval_s": 0.047055,
+        "generation_s": 0.024985,
+        "prompt_tokens": 641,
+        "output_tokens": 6,
+        "total_tokens": 647,
+        "generation_tokens_per_s": 240.14408645187112
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Yeah, I finished everything by then, sent them the files on that day.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Alan Morris"
+        },
+        {
+          "ambiguous_phrase": "that day",
+          "resolved_entity": "May 2nd"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Alan Morris"
+        },
+        {
+          "ambiguous_phrase": "that day",
+          "resolved_entity": "May 2nd"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42856818716973066,
+        "ollama_total_s": 0.427232774,
+        "model_load_s": 0.00174026,
+        "prompt_eval_s": 0.04744,
+        "generation_s": 0.320353,
+        "prompt_tokens": 664,
+        "output_tokens": 56,
+        "total_tokens": 720,
+        "generation_tokens_per_s": 174.80716584517705
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "The client—*her*—that’s Julie Chen, correct?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Julie Chen",
+          "ground_truth_resolution": "Julie Chen (client coordinator, CloudBright)",
+          "resolution_similarity": 0.7708283810671342,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3449525758624077,
+        "ollama_total_s": 0.343500226,
+        "model_load_s": 0.002107309,
+        "prompt_eval_s": 0.048469,
+        "generation_s": 0.204962,
+        "prompt_tokens": 685,
+        "output_tokens": 33,
+        "total_tokens": 718,
+        "generation_tokens_per_s": 161.00545466964607
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, Julie from CloudBright. She’s the coordinator I dealt with.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She’s the coordinator I dealt with.",
+          "resolved_entity": "Julie from CloudBright"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She’s the coordinator I dealt with.",
+          "resolved_entity": "Julie from CloudBright"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3594847028143704,
+        "ollama_total_s": 0.358271792,
+        "model_load_s": 0.001658549,
+        "prompt_eval_s": 0.052177,
+        "generation_s": 0.250338,
+        "prompt_tokens": 710,
+        "output_tokens": 41,
+        "total_tokens": 751,
+        "generation_tokens_per_s": 163.77857137150573
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Have you followed up with *her* since then?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Julie Chen",
+          "ground_truth_resolution": "Julie Chen",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47346347803249955,
+        "ollama_total_s": 0.472215218,
+        "model_load_s": 0.001535735,
+        "prompt_eval_s": 0.053125,
+        "generation_s": 0.310546,
+        "prompt_tokens": 728,
+        "output_tokens": 55,
+        "total_tokens": 783,
+        "generation_tokens_per_s": 177.1074172586348
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Three emails, one call. No answer after the first reply, which just said, 'We’ll process this soon.'",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4265926438383758,
+        "ollama_total_s": 0.425470332,
+        "model_load_s": 0.001245484,
+        "prompt_eval_s": 0.062174,
+        "generation_s": 0.303265,
+        "prompt_tokens": 777,
+        "output_tokens": 54,
+        "total_tokens": 831,
+        "generation_tokens_per_s": 178.06209091058975
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Alright. About *this agreement*, I notice there’s a net-30 clause. So, first payment should have been due in early June.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this agreement",
+          "ground_truth_ambiguous_phrase": "this agreement",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the contract mentioned in Turn 3 (\"It’s on this screen\") and referenced in Turn 4 (\"scan and send me that document\")",
+          "ground_truth_resolution": "Freelance Design Services Agreement - CloudBright.pdf",
+          "resolution_similarity": 0.520404141274361,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this agreement",
+          "resolved_entity": "the contract mentioned in Turn 3 (\"It’s on this screen\") and referenced in Turn 4 (\"scan and send me that document\")"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5015727132558823,
+        "ollama_total_s": 0.500149723,
+        "model_load_s": 0.000973334,
+        "prompt_eval_s": 0.068511,
+        "generation_s": 0.349336,
+        "prompt_tokens": 822,
+        "output_tokens": 61,
+        "total_tokens": 883,
+        "generation_tokens_per_s": 174.61698765658278
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "That’s right. I was hoping not to push, but it’s been three months.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "this agreement",
+          "resolved_entity": "the contract"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "this agreement",
+          "resolved_entity": "the contract"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47856589034199715,
+        "ollama_total_s": 0.477220306,
+        "model_load_s": 0.001453847,
+        "prompt_eval_s": 0.069013,
+        "generation_s": 0.298827,
+        "prompt_tokens": 838,
+        "output_tokens": 54,
+        "total_tokens": 892,
+        "generation_tokens_per_s": 180.7065626600006
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "I’ll draft *the demand letter* today. It’ll reference *that section* about late fees and your rights.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that section",
+          "ground_truth_ambiguous_phrase": "that section",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "section about late fees and rights (referenced in the agreement)",
+          "ground_truth_resolution": "Section 4.2 – Net-30 and late payment terms",
+          "resolution_similarity": 0.6560154154667627,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the demand letter",
+          "ground_truth_ambiguous_phrase": "the demand letter",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "demand letter (to be drafted by User B)",
+          "ground_truth_resolution": "Draft legal payment demand letter for CloudBright",
+          "resolution_similarity": 0.699245962984069,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the demand letter",
+          "resolved_entity": "demand letter (to be drafted by User B)"
+        },
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "section about late fees and rights (referenced in the agreement)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5239967717789114,
+        "ollama_total_s": 0.522803224,
+        "model_load_s": 0.001122457,
+        "prompt_eval_s": 0.070039,
+        "generation_s": 0.386153,
+        "prompt_tokens": 878,
+        "output_tokens": 73,
+        "total_tokens": 951,
+        "generation_tokens_per_s": 189.04423894155943
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Okay. Is it risky to mention legal action in this first letter?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this first letter",
+          "resolved_entity": "the demand letter"
+        },
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the net-30 clause"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this first letter",
+          "resolved_entity": "the demand letter"
+        },
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the net-30 clause"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5468882787972689,
+        "ollama_total_s": 0.545494187,
+        "model_load_s": 0.003643139,
+        "prompt_eval_s": 0.072941,
+        "generation_s": 0.343068,
+        "prompt_tokens": 892,
+        "output_tokens": 61,
+        "total_tokens": 953,
+        "generation_tokens_per_s": 177.80731516783845
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Generally, it’s standard to state you’ll seek remedies if payment isn’t received by a certain date. We’ll keep the tone professional.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20498099410906434,
+        "ollama_total_s": 0.203796056,
+        "model_load_s": 0.00153755,
+        "prompt_eval_s": 0.082473,
+        "generation_s": 0.02495,
+        "prompt_tokens": 944,
+        "output_tokens": 6,
+        "total_tokens": 950,
+        "generation_tokens_per_s": 240.4809619238477
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Alright, just worried about burning bridges—*they’re* pretty connected in the Portland tech scene.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they’re",
+          "ground_truth_ambiguous_phrase": "they're",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Julie Chen and Alan Morris",
+          "ground_truth_resolution": "CloudBright staff and leadership",
+          "resolution_similarity": 0.6084863726499724,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they’re",
+          "resolved_entity": "Julie Chen and Alan Morris"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39789546094834805,
+        "ollama_total_s": 0.396871233,
+        "model_load_s": 0.001443051,
+        "prompt_eval_s": 0.082764,
+        "generation_s": 0.222232,
+        "prompt_tokens": 966,
+        "output_tokens": 37,
+        "total_tokens": 1003,
+        "generation_tokens_per_s": 166.4926743223298
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Understood. If *they* respond, we can discuss mediation. That keeps things private and often leads to a settlement without court.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 7,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 6,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Julie Chen and CloudBright (the client)",
+          "ground_truth_resolution": "CloudBright (client)",
+          "resolution_similarity": 0.8044675788737694,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "Julie Chen and CloudBright (the client)"
+        },
+        {
+          "ambiguous_phrase": "that document",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        },
+        {
+          "ambiguous_phrase": "this agreement",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the net-30 clause"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "Julie Chen and CloudBright (the client)"
+        },
+        {
+          "ambiguous_phrase": "that document",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Julie Chen"
+        },
+        {
+          "ambiguous_phrase": "this agreement",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "that section",
+          "resolved_entity": "the net-30 clause"
+        },
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "Julie Chen and CloudBright (the client)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 1.073240602388978,
+        "ollama_total_s": 1.072028737,
+        "model_load_s": 0.001223919,
+        "prompt_eval_s": 0.082288,
+        "generation_s": 0.913269,
+        "prompt_tokens": 1010,
+        "output_tokens": 180,
+        "total_tokens": 1190,
+        "generation_tokens_per_s": 197.09417488166136
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "How does *that process* work? I’ve never done mediation.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that process",
+          "ground_truth_ambiguous_phrase": "that process",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "mediation",
+          "ground_truth_resolution": "Mediation procedure for commercial contract disputes",
+          "resolution_similarity": 0.7740972213234618,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that process",
+          "resolved_entity": "mediation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.395770066883415,
+        "ollama_total_s": 0.394594687,
+        "model_load_s": 0.001504697,
+        "prompt_eval_s": 0.082762,
+        "generation_s": 0.221835,
+        "prompt_tokens": 1021,
+        "output_tokens": 33,
+        "total_tokens": 1054,
+        "generation_tokens_per_s": 148.75921292852794
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "The mediator is neutral, usually appointed by *the bar association*. Both sides share their perspective at *the session*. It’s less formal than a hearing.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the session",
+          "ground_truth_ambiguous_phrase": "the session",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "mediation session",
+          "ground_truth_resolution": "Mediation session (potentially online or in person)",
+          "resolution_similarity": 0.9360866734160451,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the bar association",
+          "ground_truth_ambiguous_phrase": "the bar association",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Bar Association of Oregon",
+          "ground_truth_resolution": "Multnomah County Bar Association",
+          "resolution_similarity": 0.7335813166719235,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the bar association",
+          "resolved_entity": "Bar Association of Oregon"
+        },
+        {
+          "ambiguous_phrase": "the session",
+          "resolved_entity": "mediation session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.539106662850827,
+        "ollama_total_s": 0.537936662,
+        "model_load_s": 0.00102785,
+        "prompt_eval_s": 0.092378,
+        "generation_s": 0.327131,
+        "prompt_tokens": 1079,
+        "output_tokens": 59,
+        "total_tokens": 1138,
+        "generation_tokens_per_s": 180.35588189440926
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Do I have to be *there* in person?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Morris & Patel Law Office - Conference Room",
+          "ground_truth_resolution": "Mediation location (Zoom or physical office)",
+          "resolution_similarity": 0.6002168134508069,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Morris & Patel Law Office - Conference Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.447881355881691,
+        "ollama_total_s": 0.446765118,
+        "model_load_s": 0.001295174,
+        "prompt_eval_s": 0.091993,
+        "generation_s": 0.245796,
+        "prompt_tokens": 1080,
+        "output_tokens": 39,
+        "total_tokens": 1119,
+        "generation_tokens_per_s": 158.66816384318705
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Not necessarily. Many mediations are via Zoom. You can participate from *here* or anywhere private.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Morris & Patel Law Office - Conference Room",
+          "ground_truth_resolution": "Nina Desai Home Office",
+          "resolution_similarity": 0.5809623652800915,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that process",
+          "resolved_entity": "mediation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Morris & Patel Law Office - Conference Room"
+        },
+        {
+          "ambiguous_phrase": "that process",
+          "resolved_entity": "mediation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5412992513738573,
+        "ollama_total_s": 0.53988318,
+        "model_load_s": 0.001975132,
+        "prompt_eval_s": 0.092825,
+        "generation_s": 0.334613,
+        "prompt_tokens": 1121,
+        "output_tokens": 61,
+        "total_tokens": 1182,
+        "generation_tokens_per_s": 182.30014972520493
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Okay, that feels easier.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23672639578580856,
+        "ollama_total_s": 0.23559507,
+        "model_load_s": 0.001325441,
+        "prompt_eval_s": 0.093013,
+        "generation_s": 0.026505,
+        "prompt_tokens": 1122,
+        "output_tokens": 6,
+        "total_tokens": 1128,
+        "generation_tokens_per_s": 226.37238256932653
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "We should always keep *your financials* confidential. Anything you share for mediation stays between us unless you agree to disclose.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your financials",
+          "ground_truth_ambiguous_phrase": "your financials",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's financial information",
+          "ground_truth_resolution": "Nina Desai’s bank records, business accounts, and invoices",
+          "resolution_similarity": 0.6661075627158464,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your financials",
+          "resolved_entity": "User A's financial information"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42663622088730335,
+        "ollama_total_s": 0.425554471,
+        "model_load_s": 0.00152746,
+        "prompt_eval_s": 0.098555,
+        "generation_s": 0.239019,
+        "prompt_tokens": 1176,
+        "output_tokens": 37,
+        "total_tokens": 1213,
+        "generation_tokens_per_s": 154.79940925198414
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thanks. I'm nervous about losing clients if word gets *out* about this.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "out",
+          "ground_truth_ambiguous_phrase": "out",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the agreement or the situation regarding the payment clause and legal action",
+          "ground_truth_resolution": "Public or industry circulation of the dispute",
+          "resolution_similarity": 0.5922129713083358,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "out",
+          "resolved_entity": "the agreement or the situation regarding the payment clause and legal action"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47416328405961394,
+        "ollama_total_s": 0.473053954,
+        "model_load_s": 0.001192395,
+        "prompt_eval_s": 0.099608,
+        "generation_s": 0.248994,
+        "prompt_tokens": 1195,
+        "output_tokens": 42,
+        "total_tokens": 1237,
+        "generation_tokens_per_s": 168.67876334369504
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Ethical rules are strict here. Only *the parties* and the mediator know the details.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the parties",
+          "ground_truth_ambiguous_phrase": "the parties",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Nina Desai and CloudBright/Julie Chen",
+          "resolution_similarity": 0.5366699744835733,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Morris & Patel Law Office - Conference Room"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the parties",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Morris & Patel Law Office - Conference Room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5247608716599643,
+        "ollama_total_s": 0.523894198,
+        "model_load_s": 0.001172952,
+        "prompt_eval_s": 0.100913,
+        "generation_s": 0.32792,
+        "prompt_tokens": 1226,
+        "output_tokens": 64,
+        "total_tokens": 1290,
+        "generation_tokens_per_s": 195.16955354964625
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Good to know. What’s the risk if *they* just ignore the demand letter?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client (Julie Chen's company) and possibly the client's associates",
+          "ground_truth_resolution": "CloudBright (client)",
+          "resolution_similarity": 0.5273131306845149,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the client (Julie Chen's company) and possibly the client's associates"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47717491816729307,
+        "ollama_total_s": 0.475996651,
+        "model_load_s": 0.001118886,
+        "prompt_eval_s": 0.100959,
+        "generation_s": 0.276934,
+        "prompt_tokens": 1253,
+        "output_tokens": 45,
+        "total_tokens": 1298,
+        "generation_tokens_per_s": 162.49359053059572
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "We’d likely file a small claims suit at *the courthouse* downtown. There's a deadline—*the statute*—for contract claims in Oregon.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the statute",
+          "ground_truth_ambiguous_phrase": "the statute",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Oregon Statute of Limitations for Contract Claims",
+          "ground_truth_resolution": "Oregon Statute of Limitations for Written Contracts",
+          "resolution_similarity": 0.9364077448890316,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the courthouse",
+          "ground_truth_ambiguous_phrase": "the courthouse",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Portland City Courthouse",
+          "ground_truth_resolution": "Multnomah County Courthouse, Portland",
+          "resolution_similarity": 0.8201525405614604,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the courthouse",
+          "resolved_entity": "Portland City Courthouse"
+        },
+        {
+          "ambiguous_phrase": "the statute",
+          "resolved_entity": "Oregon Statute of Limitations for Contract Claims"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6032726871781051,
+        "ollama_total_s": 0.601879846,
+        "model_load_s": 0.00133148,
+        "prompt_eval_s": 0.115651,
+        "generation_s": 0.362428,
+        "prompt_tokens": 1307,
+        "output_tokens": 64,
+        "total_tokens": 1371,
+        "generation_tokens_per_s": 176.5867979295198
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "How long do I have before I lose the right to sue?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the statute",
+          "resolved_entity": "the statute of limitations for contract claims in Oregon"
+        },
+        {
+          "ambiguous_phrase": "the courthouse",
+          "resolved_entity": "the courthouse downtown"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the statute",
+          "resolved_entity": "the statute of limitations for contract claims in Oregon"
+        },
+        {
+          "ambiguous_phrase": "the courthouse",
+          "resolved_entity": "the courthouse downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5647276118397713,
+        "ollama_total_s": 0.563469474,
+        "model_load_s": 0.001482324,
+        "prompt_eval_s": 0.115614,
+        "generation_s": 0.341667,
+        "prompt_tokens": 1312,
+        "output_tokens": 63,
+        "total_tokens": 1375,
+        "generation_tokens_per_s": 184.39006400969365
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Six years in Oregon for written contracts. So, you’re well within *that window*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that window",
+          "ground_truth_ambiguous_phrase": "that window",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the six-year statute of limitations for written contracts in Oregon",
+          "ground_truth_resolution": "Six-year limitation period from execution date",
+          "resolution_similarity": 0.7184292650577075,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that window",
+          "resolved_entity": "the six-year statute of limitations for written contracts in Oregon"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.485053323674947,
+        "ollama_total_s": 0.48371791,
+        "model_load_s": 0.00161207,
+        "prompt_eval_s": 0.116306,
+        "generation_s": 0.218696,
+        "prompt_tokens": 1347,
+        "output_tokens": 42,
+        "total_tokens": 1389,
+        "generation_tokens_per_s": 192.04740827449976
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Whew, that's a relief. Does *that step* hurt my professional rep permanently?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that step",
+          "ground_truth_ambiguous_phrase": "that step",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "filing a small claims suit at the courthouse downtown",
+          "ground_truth_resolution": "Filing a small claims lawsuit",
+          "resolution_similarity": 0.815921138474887,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that step",
+          "resolved_entity": "filing a small claims suit at the courthouse downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4822124228812754,
+        "ollama_total_s": 0.480903321,
+        "model_load_s": 0.00140692,
+        "prompt_eval_s": 0.116945,
+        "generation_s": 0.258482,
+        "prompt_tokens": 1376,
+        "output_tokens": 41,
+        "total_tokens": 1417,
+        "generation_tokens_per_s": 158.618395091341
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Litigation’s public record, but mediation or a settlement isn’t. Filing is a last resort if *they* don’t resolve this at *the meeting*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the meeting*",
+          "ground_truth_ambiguous_phrase": "the meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The legal consultation meeting between Nina Desai and Alan Morris scheduled for 10:30AM",
+          "ground_truth_resolution": "Settlement negotiation or mediation session",
+          "resolution_similarity": 0.5536058258071322,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*they*",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The client (Julie Chen) and possibly the company or individuals associated with CloudBright",
+          "ground_truth_resolution": "CloudBright (client)",
+          "resolution_similarity": 0.7563875388945283,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*they*",
+          "resolved_entity": "The client (Julie Chen) and possibly the company or individuals associated with CloudBright"
+        },
+        {
+          "ambiguous_phrase": "*the meeting*",
+          "resolved_entity": "The legal consultation meeting between Nina Desai and Alan Morris scheduled for 10:30AM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6890436350367963,
+        "ollama_total_s": 0.687597524,
+        "model_load_s": 0.001570594,
+        "prompt_eval_s": 0.130505,
+        "generation_s": 0.422302,
+        "prompt_tokens": 1435,
+        "output_tokens": 89,
+        "total_tokens": 1524,
+        "generation_tokens_per_s": 210.74965309186317
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Makes sense. How should I answer if someone inquires about *it*—the dispute?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dispute",
+          "ground_truth_resolution": "Ongoing payment dispute with CloudBright",
+          "resolution_similarity": 0.6785403068117346,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4202885399572551,
+        "ollama_total_s": 0.419199692,
+        "model_load_s": 0.001356181,
+        "prompt_eval_s": 0.131228,
+        "generation_s": 0.167862,
+        "prompt_tokens": 1449,
+        "output_tokens": 32,
+        "total_tokens": 1481,
+        "generation_tokens_per_s": 190.6327816897213
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "You can say you’re working through a billing matter professionally and confidentially, without naming *them*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 9,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 8,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client",
+          "ground_truth_resolution": "CloudBright and Julie Chen",
+          "resolution_similarity": 0.5921894713098276,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Julie Chen (the client)"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the agreement"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the meeting"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the statute"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the window"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the step"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Julie Chen (the client)"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the agreement"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the client"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the meeting"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the statute"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the window"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the step"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 1.2529376540333033,
+        "ollama_total_s": 1.251522949,
+        "model_load_s": 0.001568305,
+        "prompt_eval_s": 0.13153,
+        "generation_s": 0.98433,
+        "prompt_tokens": 1482,
+        "output_tokens": 204,
+        "total_tokens": 1686,
+        "generation_tokens_per_s": 207.24756941269695
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Alright. If we settle, how is *that agreement* enforced?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that agreement",
+          "ground_truth_ambiguous_phrase": "that agreement",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the agreement mentioned in the context of the dispute with the client (Julie Chen from CloudBright) regarding the payment clause and the demand letter",
+          "ground_truth_resolution": "Signed mediation settlement contract",
+          "resolution_similarity": 0.5376517166846155,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that agreement",
+          "resolved_entity": "the agreement mentioned in the context of the dispute with the client (Julie Chen from CloudBright) regarding the payment clause and the demand letter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.588030681014061,
+        "ollama_total_s": 0.586589558,
+        "model_load_s": 0.001163034,
+        "prompt_eval_s": 0.132014,
+        "generation_s": 0.298261,
+        "prompt_tokens": 1499,
+        "output_tokens": 59,
+        "total_tokens": 1558,
+        "generation_tokens_per_s": 197.81332457143242
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "*The mediator* will have both parties sign a written settlement. If *they* don’t pay as agreed, the document is enforceable in court.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the parties involved in the dispute",
+          "ground_truth_resolution": "CloudBright (client)",
+          "resolution_similarity": 0.38646258004775025,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that agreement",
+          "resolved_entity": "the written settlement agreement"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the mediator",
+          "ground_truth_resolution": "Neutral third-party mediator (assigned by the court/bar)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the parties involved in the dispute"
+        },
+        {
+          "ambiguous_phrase": "that agreement",
+          "resolved_entity": "the written settlement agreement"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5645544691942632,
+        "ollama_total_s": 0.563589194,
+        "model_load_s": 0.001421933,
+        "prompt_eval_s": 0.137519,
+        "generation_s": 0.299602,
+        "prompt_tokens": 1556,
+        "output_tokens": 60,
+        "total_tokens": 1616,
+        "generation_tokens_per_s": 200.26568580984107
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Great to have *that option*. And what if the amount is less than my invoice?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that option",
+          "resolved_entity": "the settlement agreement through mediation"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that option",
+          "resolved_entity": "the settlement agreement through mediation"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5686776041984558,
+        "ollama_total_s": 0.567714848,
+        "model_load_s": 0.001238095,
+        "prompt_eval_s": 0.137812,
+        "generation_s": 0.291442,
+        "prompt_tokens": 1572,
+        "output_tokens": 57,
+        "total_tokens": 1629,
+        "generation_tokens_per_s": 195.57922331029846
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "You get to decide, but I’ll advise on whether *the offer* is fair based on your contract.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the offer",
+          "ground_truth_ambiguous_phrase": "the offer",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the settlement offer from the client (Julie Chen's side) discussed in the mediation process",
+          "ground_truth_resolution": "Proposed settlement amount from CloudBright",
+          "resolution_similarity": 0.5461659907761036,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the offer",
+          "resolved_entity": "the settlement offer from the client (Julie Chen's side) discussed in the mediation process"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5495358142070472,
+        "ollama_total_s": 0.548525449,
+        "model_load_s": 0.001275245,
+        "prompt_eval_s": 0.139558,
+        "generation_s": 0.281589,
+        "prompt_tokens": 1608,
+        "output_tokens": 49,
+        "total_tokens": 1657,
+        "generation_tokens_per_s": 174.01247918064982
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Okay, I’ll trust your judgment.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3019799003377557,
+        "ollama_total_s": 0.301054521,
+        "model_load_s": 0.001397288,
+        "prompt_eval_s": 0.139637,
+        "generation_s": 0.025168,
+        "prompt_tokens": 1612,
+        "output_tokens": 6,
+        "total_tokens": 1618,
+        "generation_tokens_per_s": 238.39796567069294
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "I’ll email a draft of *the letter* soon. Let me know as soon as *they* respond.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client (Julie Chen)",
+          "ground_truth_resolution": "CloudBright (client)",
+          "resolution_similarity": 0.6331403093687703,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the letter",
+          "ground_truth_ambiguous_phrase": "the letter",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the demand letter",
+          "ground_truth_resolution": "Draft legal demand letter for payment",
+          "resolution_similarity": 0.8093725813094986,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the letter",
+          "resolved_entity": "the demand letter"
+        },
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the client (Julie Chen)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6014416189864278,
+        "ollama_total_s": 0.60002562,
+        "model_load_s": 0.001328994,
+        "prompt_eval_s": 0.146364,
+        "generation_s": 0.293797,
+        "prompt_tokens": 1660,
+        "output_tokens": 59,
+        "total_tokens": 1719,
+        "generation_tokens_per_s": 200.81893280053916
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Will do. If I get another client like *this one*, I'll ask for advice sooner.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this one",
+          "ground_truth_ambiguous_phrase": "this one",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Julie Chen (the client from CloudBright)",
+          "ground_truth_resolution": "Any high-value freelance client similar to CloudBright",
+          "resolution_similarity": 0.7234322578120866,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this one",
+          "resolved_entity": "Julie Chen (the client from CloudBright)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4918232928030193,
+        "ollama_total_s": 0.490424518,
+        "model_load_s": 0.001174352,
+        "prompt_eval_s": 0.147307,
+        "generation_s": 0.207975,
+        "prompt_tokens": 1687,
+        "output_tokens": 40,
+        "total_tokens": 1727,
+        "generation_tokens_per_s": 192.33080899146532
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Absolutely—a well-written contract protects you. I can review *it* before you sign next time.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the contract",
+          "ground_truth_resolution": "Future freelance design contract",
+          "resolution_similarity": 0.6985035595244273,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the next signing of the contract"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the contract"
+        },
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the next signing of the contract"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5898278066888452,
+        "ollama_total_s": 0.58868481,
+        "model_load_s": 0.001271847,
+        "prompt_eval_s": 0.148716,
+        "generation_s": 0.288952,
+        "prompt_tokens": 1717,
+        "output_tokens": 58,
+        "total_tokens": 1775,
+        "generation_tokens_per_s": 200.72537999390903
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Thanks, Alan. I feel better just having you in my corner.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "my corner",
+          "resolved_entity": "Nina Desai Home Office"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "my corner",
+          "resolved_entity": "Nina Desai Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5961292241699994,
+        "ollama_total_s": 0.594799097,
+        "model_load_s": 0.00131042,
+        "prompt_eval_s": 0.150999,
+        "generation_s": 0.288504,
+        "prompt_tokens": 1735,
+        "output_tokens": 58,
+        "total_tokens": 1793,
+        "generation_tokens_per_s": 201.0370740093725
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Happy to help, Nina. We’ll get *this* sorted.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this",
+          "ground_truth_ambiguous_phrase": "this",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dispute",
+          "ground_truth_resolution": "Unpaid invoice/payment dispute with CloudBright",
+          "resolution_similarity": 0.6516852262873453,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the dispute"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49043581914156675,
+        "ollama_total_s": 0.489065027,
+        "model_load_s": 0.001626252,
+        "prompt_eval_s": 0.14957,
+        "generation_s": 0.171138,
+        "prompt_tokens": 1759,
+        "output_tokens": 32,
+        "total_tokens": 1791,
+        "generation_tokens_per_s": 186.9836038752352
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Alright, I’ll let you know if anything changes *on my end*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "on my end",
+          "ground_truth_ambiguous_phrase": "on my end",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Nina Desai Home Office",
+          "ground_truth_resolution": "Nina's freelance business activities, communications, or payments",
+          "resolution_similarity": 0.6585721830236008,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "on my end",
+          "resolved_entity": "Nina Desai Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.521557548083365,
+        "ollama_total_s": 0.51987996,
+        "model_load_s": 0.001444411,
+        "prompt_eval_s": 0.161546,
+        "generation_s": 0.200856,
+        "prompt_tokens": 1787,
+        "output_tokens": 38,
+        "total_tokens": 1825,
+        "generation_tokens_per_s": 189.1902656629625
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Sounds good. Take care!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3589392900466919,
+        "ollama_total_s": 0.357724445,
+        "model_load_s": 0.001324472,
+        "prompt_eval_s": 0.162144,
+        "generation_s": 0.025137,
+        "prompt_tokens": 1793,
+        "output_tokens": 6,
+        "total_tokens": 1799,
+        "generation_tokens_per_s": 238.6919680152763
+      }
+    }
+  ]
+}

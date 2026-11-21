@@ -1,0 +1,2761 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/friends_meeting_004.json",
+  "metrics": {
+    "ground_truth_ambiguities": 49,
+    "qwen_predicted_ambiguities": 72,
+    "detected_ground_truth_ambiguities": 46,
+    "missed_ground_truth_ambiguities": 3,
+    "detected_but_bad_resolution": 24,
+    "true_positives": 22,
+    "false_negatives": 27,
+    "false_positive_ambiguities": 26,
+    "detection_recall": 0.9387755102040817,
+    "detection_precision": 0.6388888888888888,
+    "detection_f1": 0.7603305785123966,
+    "true_positive_rate_at_0_70": 0.4489795918367347,
+    "strict_end_to_end_precision_at_0_70": 0.3055555555555556,
+    "end_to_end_f1_at_0_70": 0.3636363636363636,
+    "false_positive_discovery_rate": 0.3611111111111111,
+    "false_positives_per_turn": 0.4482758620689655,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 58,
+    "median_latency_per_turn_s": 0.4694875981658697,
+    "mean_latency_per_turn_s": 0.46657179647671254,
+    "total_prompt_tokens": 68665,
+    "total_output_tokens": 2554
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Just got *here*, you know I had to run from school like a crazy person.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Lucca Trattoria, Seattle Downtown",
+          "resolution_similarity": 0.9998492693830736,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39610518189147115,
+        "ollama_total_s": 0.39495699,
+        "model_load_s": 0.001176186,
+        "prompt_eval_s": 0.035719,
+        "generation_s": 0.149976,
+        "prompt_tokens": 478,
+        "output_tokens": 28,
+        "total_tokens": 506,
+        "generation_tokens_per_s": 186.6965381127647
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "No kidding! I saw the traffic outside *your place*—total gridlock.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*your place*",
+          "ground_truth_ambiguous_phrase": "your place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Jessica's Apartment, Belltown, Seattle",
+          "resolution_similarity": 0.7080556321949012,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*your place*",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3239040058106184,
+        "ollama_total_s": 0.322893334,
+        "model_load_s": 0.001008719,
+        "prompt_eval_s": 0.036156,
+        "generation_s": 0.234334,
+        "prompt_tokens": 503,
+        "output_tokens": 41,
+        "total_tokens": 544,
+        "generation_tokens_per_s": 174.9639403586334
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Honestly. But at least I made it before *everyone else*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "everyone else",
+          "ground_truth_ambiguous_phrase": "everyone else",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's friends (implied by the context of the Friends Dinner at Lucca Trattoria)",
+          "ground_truth_resolution": "Sam, Chris, Rachel, Maya",
+          "resolution_similarity": 0.4859031300627563,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "everyone else",
+          "resolved_entity": "User B's friends (implied by the context of the Friends Dinner at Lucca Trattoria)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38596197590231895,
+        "ollama_total_s": 0.384733976,
+        "model_load_s": 0.001166054,
+        "prompt_eval_s": 0.037895,
+        "generation_s": 0.293922,
+        "prompt_tokens": 523,
+        "output_tokens": 52,
+        "total_tokens": 575,
+        "generation_tokens_per_s": 176.91768564449072
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Sam texted, they're stuck by *that construction* near the market.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that construction",
+          "ground_truth_ambiguous_phrase": "that construction",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Construction near the market (referenced in the context of User B's location and prior conversation about traffic and gridlock)",
+          "ground_truth_resolution": "Pike Place Market - Roadwork Zone",
+          "resolution_similarity": 0.7174068995208852,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that construction",
+          "resolved_entity": "Construction near the market (referenced in the context of User B's location and prior conversation about traffic and gridlock)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42862939508631825,
+        "ollama_total_s": 0.427524446,
+        "model_load_s": 0.00113115,
+        "prompt_eval_s": 0.041576,
+        "generation_s": 0.332259,
+        "prompt_tokens": 550,
+        "output_tokens": 54,
+        "total_tokens": 604,
+        "generation_tokens_per_s": 162.5238142533385
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Figures. That spot’s been a nightmare since last month.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That spot",
+          "resolved_entity": "The construction site near the market (referenced in Turn 4)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That spot",
+          "resolved_entity": "The construction site near the market (referenced in Turn 4)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3841312020085752,
+        "ollama_total_s": 0.383083943,
+        "model_load_s": 0.001036102,
+        "prompt_eval_s": 0.042238,
+        "generation_s": 0.284909,
+        "prompt_tokens": 568,
+        "output_tokens": 44,
+        "total_tokens": 612,
+        "generation_tokens_per_s": 154.4352758249125
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Rachel's already *here*, by the window, waving.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 5,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Lucca Trattoria, Seattle Downtown",
+          "resolution_similarity": 0.9998492693830736,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        },
+        {
+          "ambiguous_phrase": "your place",
+          "resolved_entity": "Apartment - Belltown, Seattle"
+        },
+        {
+          "ambiguous_phrase": "everyone else",
+          "resolved_entity": "Friends Dinner at Lucca Trattoria"
+        },
+        {
+          "ambiguous_phrase": "that construction",
+          "resolved_entity": "construction near the market"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        },
+        {
+          "ambiguous_phrase": "your place",
+          "resolved_entity": "Apartment - Belltown, Seattle"
+        },
+        {
+          "ambiguous_phrase": "everyone else",
+          "resolved_entity": "Friends Dinner at Lucca Trattoria"
+        },
+        {
+          "ambiguous_phrase": "that construction",
+          "resolved_entity": "construction near the market"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8411453231237829,
+        "ollama_total_s": 0.839973539,
+        "model_load_s": 0.001368324,
+        "prompt_eval_s": 0.046512,
+        "generation_s": 0.723575,
+        "prompt_tokens": 588,
+        "output_tokens": 147,
+        "total_tokens": 735,
+        "generation_tokens_per_s": 203.1579311059669
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "I see *her*, classic Rachel, always gets the best seat.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Rachel",
+          "ground_truth_resolution": "Rachel",
+          "resolution_similarity": 0.9998693074275995,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.304499264806509,
+        "ollama_total_s": 0.303178731,
+        "model_load_s": 0.001421863,
+        "prompt_eval_s": 0.046985,
+        "generation_s": 0.199409,
+        "prompt_tokens": 613,
+        "output_tokens": 31,
+        "total_tokens": 644,
+        "generation_tokens_per_s": 155.45938247521426
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Chris said he'd come straight *after work*, so he'll probably be late.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "after work",
+          "ground_truth_ambiguous_phrase": "after work",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Chris's work schedule (context-dependent, not explicitly defined in the conversation or mobile context)",
+          "ground_truth_resolution": "Chris’s job - Amazon South Lake Union",
+          "resolution_similarity": 0.7347307142094299,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "after work",
+          "resolved_entity": "Chris's work schedule (context-dependent, not explicitly defined in the conversation or mobile context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.467626113910228,
+        "ollama_total_s": 0.466077585,
+        "model_load_s": 0.001410396,
+        "prompt_eval_s": 0.047679,
+        "generation_s": 0.357011,
+        "prompt_tokens": 642,
+        "output_tokens": 48,
+        "total_tokens": 690,
+        "generation_tokens_per_s": 134.4496388066474
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Ha! Some things never change. Oh, check out *this place*, the menu looks amazing.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Lucca Trattoria, Seattle Downtown",
+          "resolution_similarity": 0.9998492693830736,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36390452226623893,
+        "ollama_total_s": 0.362632618,
+        "model_load_s": 0.001402442,
+        "prompt_eval_s": 0.048124,
+        "generation_s": 0.23672,
+        "prompt_tokens": 674,
+        "output_tokens": 40,
+        "total_tokens": 714,
+        "generation_tokens_per_s": 168.97600540723215
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Love the vibe. That mural over *there* is gorgeous.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Wall with Italian mural near the entrance",
+          "resolution_similarity": 0.4365170096732326,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4888789178803563,
+        "ollama_total_s": 0.487768168,
+        "model_load_s": 0.001190309,
+        "prompt_eval_s": 0.052551,
+        "generation_s": 0.357022,
+        "prompt_tokens": 691,
+        "output_tokens": 68,
+        "total_tokens": 759,
+        "generation_tokens_per_s": 190.46445317095305
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Let’s order some *wine* while we wait for the others.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.14636539574712515,
+        "ollama_total_s": 0.145154999,
+        "model_load_s": 0.001084568,
+        "prompt_eval_s": 0.052579,
+        "generation_s": 0.024546,
+        "prompt_tokens": 716,
+        "output_tokens": 6,
+        "total_tokens": 722,
+        "generation_tokens_per_s": 244.43901246638964
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Red or white? Or should we ask *her* opinion?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Rachel",
+          "ground_truth_resolution": "Rachel",
+          "resolution_similarity": 0.9998693074275995,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.31017762888222933,
+        "ollama_total_s": 0.308909263,
+        "model_load_s": 0.001401659,
+        "prompt_eval_s": 0.05187,
+        "generation_s": 0.191424,
+        "prompt_tokens": 738,
+        "output_tokens": 31,
+        "total_tokens": 769,
+        "generation_tokens_per_s": 161.9441658308258
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Rachel’s the expert, let’s go with whatever she picks.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Rachel"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Rachel"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4280414148233831,
+        "ollama_total_s": 0.426836482,
+        "model_load_s": 0.00135631,
+        "prompt_eval_s": 0.060254,
+        "generation_s": 0.295554,
+        "prompt_tokens": 761,
+        "output_tokens": 51,
+        "total_tokens": 812,
+        "generation_tokens_per_s": 172.55729917375507
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Speaking of experts, did *he* finally get that promotion?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Chris",
+          "ground_truth_resolution": "Chris",
+          "resolution_similarity": 0.9996150689575688,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Chris"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3473560572601855,
+        "ollama_total_s": 0.346025077,
+        "model_load_s": 0.001561522,
+        "prompt_eval_s": 0.063816,
+        "generation_s": 0.204001,
+        "prompt_tokens": 784,
+        "output_tokens": 31,
+        "total_tokens": 815,
+        "generation_tokens_per_s": 151.96003941157153
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Chris? Yeah, he got it last week!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Chris"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Chris"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3470501098781824,
+        "ollama_total_s": 0.346011004,
+        "model_load_s": 0.001163667,
+        "prompt_eval_s": 0.068504,
+        "generation_s": 0.200628,
+        "prompt_tokens": 801,
+        "output_tokens": 31,
+        "total_tokens": 832,
+        "generation_tokens_per_s": 154.51482345435332
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Awesome. He’ll be insufferable *tonight*, then.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He’ll be insufferable tonight",
+          "resolved_entity": "Chris"
+        },
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "The evening of the Friends Dinner at Lucca Trattoria"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He’ll be insufferable tonight",
+          "resolved_entity": "Chris"
+        },
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "The evening of the Friends Dinner at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5147771569900215,
+        "ollama_total_s": 0.513194737,
+        "model_load_s": 0.001700209,
+        "prompt_eval_s": 0.069536,
+        "generation_s": 0.367067,
+        "prompt_tokens": 829,
+        "output_tokens": 70,
+        "total_tokens": 899,
+        "generation_tokens_per_s": 190.70088022077715
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "No doubt. Oh, check this—Rachel just texted a meme to *the group*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the group",
+          "ground_truth_ambiguous_phrase": "the group",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the group of people at Lucca Trattoria, including User A, User B, Rachel, and possibly others",
+          "ground_truth_resolution": "Jessica, Maya, Chris, Sam, Rachel (Group Message)",
+          "resolution_similarity": 0.5604377525562637,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the group",
+          "resolved_entity": "the group of people at Lucca Trattoria, including User A, User B, Rachel, and possibly others"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48839012812823057,
+        "ollama_total_s": 0.486918506,
+        "model_load_s": 0.002319382,
+        "prompt_eval_s": 0.070262,
+        "generation_s": 0.332319,
+        "prompt_tokens": 865,
+        "output_tokens": 55,
+        "total_tokens": 920,
+        "generation_tokens_per_s": 165.50362753859997
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Ha! Classic. Show it to *Sam* when they get in.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Sam",
+          "ground_truth_ambiguous_phrase": "Sam",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam (referent is ambiguous, but likely a friend based on context; no exact name or ID resolved from context)",
+          "ground_truth_resolution": "Sam",
+          "resolution_similarity": 0.673763578739942,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Sam",
+          "resolved_entity": "Sam (referent is ambiguous, but likely a friend based on context; no exact name or ID resolved from context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48351059295237064,
+        "ollama_total_s": 0.482440041,
+        "model_load_s": 0.000988668,
+        "prompt_eval_s": 0.073024,
+        "generation_s": 0.328885,
+        "prompt_tokens": 885,
+        "output_tokens": 53,
+        "total_tokens": 938,
+        "generation_tokens_per_s": 161.1505541450659
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Will do. Oh, I love *that candleholder* on the table.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that candleholder",
+          "ground_truth_ambiguous_phrase": "that candleholder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the candleholder on the table at Lucca Trattoria, Seattle Downtown",
+          "ground_truth_resolution": "Handmade ceramic candleholder on table 5",
+          "resolution_similarity": 0.6884972371915866,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that candleholder",
+          "resolved_entity": "the candleholder on the table at Lucca Trattoria, Seattle Downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43236674927175045,
+        "ollama_total_s": 0.431306201,
+        "model_load_s": 0.001236541,
+        "prompt_eval_s": 0.081907,
+        "generation_s": 0.266901,
+        "prompt_tokens": 912,
+        "output_tokens": 48,
+        "total_tokens": 960,
+        "generation_tokens_per_s": 179.8419638742455
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Me too—should we ask if *we* can buy one?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "we",
+          "ground_truth_ambiguous_phrase": "we",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B and User A",
+          "ground_truth_resolution": "Jessica & User B",
+          "resolution_similarity": 0.677120074430857,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User B and User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42714930791407824,
+        "ollama_total_s": 0.426052037,
+        "model_load_s": 0.001264884,
+        "prompt_eval_s": 0.081316,
+        "generation_s": 0.215722,
+        "prompt_tokens": 934,
+        "output_tokens": 35,
+        "total_tokens": 969,
+        "generation_tokens_per_s": 162.24585345954515
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Maybe. After *dinner*, we can check with the manager.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "after dinner",
+          "resolved_entity": "the dinner at Lucca Trattoria"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "dinner",
+          "ground_truth_resolution": "Tonight, 7–9pm",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "after dinner",
+          "resolved_entity": "the dinner at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4069268233142793,
+        "ollama_total_s": 0.405580773,
+        "model_load_s": 0.001581843,
+        "prompt_eval_s": 0.083155,
+        "generation_s": 0.236043,
+        "prompt_tokens": 958,
+        "output_tokens": 40,
+        "total_tokens": 998,
+        "generation_tokens_per_s": 169.46064911901644
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "So, same deal as last time? Rachel covers the bill and we Venmo her *later*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "later",
+          "ground_truth_ambiguous_phrase": "later",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "a future time after the current moment, likely referring to after the dinner or after Rachel covers the bill",
+          "ground_truth_resolution": "Venmo transfer after dinner",
+          "resolution_similarity": 0.562307079585893,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User B and User A, referring to the two people in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "a future time after the current moment, likely referring to after the dinner or after Rachel covers the bill"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User B and User A, referring to the two people in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5752232689410448,
+        "ollama_total_s": 0.573776013,
+        "model_load_s": 0.001604502,
+        "prompt_eval_s": 0.083645,
+        "generation_s": 0.401081,
+        "prompt_tokens": 996,
+        "output_tokens": 83,
+        "total_tokens": 1079,
+        "generation_tokens_per_s": 206.94074264300727
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Works for me. I owe her for *last month* anyway.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "last month",
+          "ground_truth_ambiguous_phrase": "last month",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the month prior to the current month",
+          "ground_truth_resolution": "Previous monthly dinner at Pho Bac",
+          "resolution_similarity": 0.5190129675903465,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "last month",
+          "resolved_entity": "the month prior to the current month"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4029225348494947,
+        "ollama_total_s": 0.401708801,
+        "model_load_s": 0.001249379,
+        "prompt_eval_s": 0.082165,
+        "generation_s": 0.226491,
+        "prompt_tokens": 1013,
+        "output_tokens": 38,
+        "total_tokens": 1051,
+        "generation_tokens_per_s": 167.77708606522998
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Speaking of owing, did you ever get *that book* I lent you?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that book",
+          "ground_truth_ambiguous_phrase": "that book",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the book User B lent to User A",
+          "ground_truth_resolution": "‘Educated’ by Tara Westover",
+          "resolution_similarity": 0.4965320530404617,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that book",
+          "resolved_entity": "the book User B lent to User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4052793621085584,
+        "ollama_total_s": 0.40426909,
+        "model_load_s": 0.001151165,
+        "prompt_eval_s": 0.09129,
+        "generation_s": 0.234127,
+        "prompt_tokens": 1041,
+        "output_tokens": 39,
+        "total_tokens": 1080,
+        "generation_tokens_per_s": 166.57625989313493
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Yes! Finished it yesterday, will bring it to *the party* tomorrow.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the party",
+          "ground_truth_ambiguous_phrase": "the party",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Monthly Friends Dinner",
+          "ground_truth_resolution": "Maya’s Birthday Party, Saturday, 7pm, Maya’s House",
+          "resolution_similarity": 0.5706951007385614,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the party",
+          "resolved_entity": "Monthly Friends Dinner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4150078119710088,
+        "ollama_total_s": 0.413637872,
+        "model_load_s": 0.001389453,
+        "prompt_eval_s": 0.093174,
+        "generation_s": 0.208278,
+        "prompt_tokens": 1067,
+        "output_tokens": 34,
+        "total_tokens": 1101,
+        "generation_tokens_per_s": 163.24335743573494
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Great. Oh, Sam just walked in—look at *him*, always smiling.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam",
+          "ground_truth_resolution": "Sam",
+          "resolution_similarity": 0.9996116903819312,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the party",
+          "resolved_entity": "Monthly Friends Dinner"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Sam"
+        },
+        {
+          "ambiguous_phrase": "the party",
+          "resolved_entity": "Monthly Friends Dinner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48778984462842345,
+        "ollama_total_s": 0.486499884,
+        "model_load_s": 0.001310684,
+        "prompt_eval_s": 0.092439,
+        "generation_s": 0.312841,
+        "prompt_tokens": 1095,
+        "output_tokens": 54,
+        "total_tokens": 1149,
+        "generation_tokens_per_s": 172.61164617169746
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Right on time for *the food*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the food",
+          "ground_truth_ambiguous_phrase": "the food",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the food at Lucca Trattoria",
+          "ground_truth_resolution": "Appetizers arriving at Lucca Trattoria, 7:15pm",
+          "resolution_similarity": 0.6966419163670867,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the food",
+          "resolved_entity": "the food at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37131645483896136,
+        "ollama_total_s": 0.370268717,
+        "model_load_s": 0.001213432,
+        "prompt_eval_s": 0.092307,
+        "generation_s": 0.174414,
+        "prompt_tokens": 1106,
+        "output_tokens": 29,
+        "total_tokens": 1135,
+        "generation_tokens_per_s": 166.27105622255092
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Speaking of which, did you see what *they’re* ordering?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they’re",
+          "ground_truth_ambiguous_phrase": "they’re",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam and Rachel",
+          "ground_truth_resolution": "Rachel and Sam",
+          "resolution_similarity": 0.9440486892100342,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they’re",
+          "resolved_entity": "Sam and Rachel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3992096143774688,
+        "ollama_total_s": 0.398022661,
+        "model_load_s": 0.001122784,
+        "prompt_eval_s": 0.093291,
+        "generation_s": 0.206357,
+        "prompt_tokens": 1135,
+        "output_tokens": 34,
+        "total_tokens": 1169,
+        "generation_tokens_per_s": 164.76300779716703
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Rachel’s going for the ravioli, Sam’s eyeing the lasagna. What about *us*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "us",
+          "ground_truth_ambiguous_phrase": "us",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Jessica and User B",
+          "resolution_similarity": 0.7364689221267784,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "us",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39443768840283155,
+        "ollama_total_s": 0.393247423,
+        "model_load_s": 0.001276364,
+        "prompt_eval_s": 0.099174,
+        "generation_s": 0.189783,
+        "prompt_tokens": 1177,
+        "output_tokens": 35,
+        "total_tokens": 1212,
+        "generation_tokens_per_s": 184.42115468719538
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Let’s split the gnocchi and that salad. Oh, here comes *that waiter* again.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that waiter",
+          "ground_truth_ambiguous_phrase": "that waiter",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the waiter at Lucca Trattoria",
+          "ground_truth_resolution": "Marco, server at Lucca Trattoria",
+          "resolution_similarity": 0.700098058919121,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that salad",
+          "resolved_entity": "the salad at Lucca Trattoria"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that waiter",
+          "resolved_entity": "the waiter at Lucca Trattoria"
+        },
+        {
+          "ambiguous_phrase": "that salad",
+          "resolved_entity": "the salad at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6238233619369566,
+        "ollama_total_s": 0.622530122,
+        "model_load_s": 0.001653495,
+        "prompt_eval_s": 0.099993,
+        "generation_s": 0.37289,
+        "prompt_tokens": 1206,
+        "output_tokens": 69,
+        "total_tokens": 1275,
+        "generation_tokens_per_s": 185.04116495481242
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Got it. I’ll ask *him* if the gnocchi has pine nuts—I can’t have those.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the waiter",
+          "ground_truth_resolution": "Marco",
+          "resolution_similarity": 0.49974137221342296,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "the waiter"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3943849839270115,
+        "ollama_total_s": 0.392945576,
+        "model_load_s": 0.001410425,
+        "prompt_eval_s": 0.100503,
+        "generation_s": 0.173337,
+        "prompt_tokens": 1241,
+        "output_tokens": 32,
+        "total_tokens": 1273,
+        "generation_tokens_per_s": 184.61147937255174
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Good call. Remember what happened *last time*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "last time",
+          "ground_truth_ambiguous_phrase": "last time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the previous dinner at Lucca Trattoria where someone had an allergic reaction to pine nuts",
+          "ground_truth_resolution": "Dinner at Pho Bac, Jessica’s pine nut allergy incident",
+          "resolution_similarity": 0.7603358969409209,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "the previous dinner at Lucca Trattoria where someone had an allergic reaction to pine nuts"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5092252120375633,
+        "ollama_total_s": 0.507975746,
+        "model_load_s": 0.001365814,
+        "prompt_eval_s": 0.100532,
+        "generation_s": 0.300561,
+        "prompt_tokens": 1250,
+        "output_tokens": 50,
+        "total_tokens": 1300,
+        "generation_tokens_per_s": 166.35558172883373
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "How could I forget! Allergies are no joke.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2369246482849121,
+        "ollama_total_s": 0.235952048,
+        "model_load_s": 0.001217547,
+        "prompt_eval_s": 0.114207,
+        "generation_s": 0.026165,
+        "prompt_tokens": 1273,
+        "output_tokens": 6,
+        "total_tokens": 1279,
+        "generation_tokens_per_s": 229.31396904261416
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "So, about the weekend getaway—where are *we* thinking of going?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "we",
+          "ground_truth_ambiguous_phrase": "we",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B and User A",
+          "ground_truth_resolution": "Jessica, User B, Rachel, Sam, Chris, Maya",
+          "resolution_similarity": 0.6246077025816753,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User B and User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4519062680192292,
+        "ollama_total_s": 0.450846642,
+        "model_load_s": 0.001289362,
+        "prompt_eval_s": 0.114947,
+        "generation_s": 0.228239,
+        "prompt_tokens": 1303,
+        "output_tokens": 35,
+        "total_tokens": 1338,
+        "generation_tokens_per_s": 153.34802553463695
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Rachel mentioned *that cabin* near the lake.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that cabin",
+          "ground_truth_ambiguous_phrase": "that cabin",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cabin near the lake (referenced in the context of Rachel's mention)",
+          "ground_truth_resolution": "Blue Heron Lake Cabin, Lake Sammamish",
+          "resolution_similarity": 0.6625557873600127,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that cabin",
+          "resolved_entity": "the cabin near the lake (referenced in the context of Rachel's mention)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5351988822221756,
+        "ollama_total_s": 0.533953608,
+        "model_load_s": 0.00132999,
+        "prompt_eval_s": 0.116051,
+        "generation_s": 0.295545,
+        "prompt_tokens": 1317,
+        "output_tokens": 46,
+        "total_tokens": 1363,
+        "generation_tokens_per_s": 155.64465648209242
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "The one she rented last spring? That was *amazing*.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Rachel"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "that cabin"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "that cabin"
+        },
+        {
+          "ambiguous_phrase": "last spring",
+          "resolved_entity": "last spring"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Rachel"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "that cabin"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "that cabin"
+        },
+        {
+          "ambiguous_phrase": "last spring",
+          "resolved_entity": "last spring"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7245368538424373,
+        "ollama_total_s": 0.723170594,
+        "model_load_s": 0.001494054,
+        "prompt_eval_s": 0.11698,
+        "generation_s": 0.493219,
+        "prompt_tokens": 1345,
+        "output_tokens": 95,
+        "total_tokens": 1440,
+        "generation_tokens_per_s": 192.61220674791522
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yeah, I’d love to go *there* again.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "that cabin near the lake",
+          "ground_truth_resolution": "Blue Heron Lake Cabin, Lake Sammamish",
+          "resolution_similarity": 0.7440764044796104,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "that cabin near the lake"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4995469879359007,
+        "ollama_total_s": 0.498249637,
+        "model_load_s": 0.001613648,
+        "prompt_eval_s": 0.116997,
+        "generation_s": 0.229166,
+        "prompt_tokens": 1365,
+        "output_tokens": 35,
+        "total_tokens": 1400,
+        "generation_tokens_per_s": 152.72771702608588
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Who’s driving *this time*? Last time Sam’s car nearly broke down!",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this time",
+          "ground_truth_ambiguous_phrase": "this time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the previous instance of driving to the restaurant (Lucca Trattoria) or the previous dinner event",
+          "ground_truth_resolution": "Upcoming weekend getaway",
+          "resolution_similarity": 0.518623839137409,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Last time",
+          "resolved_entity": "the previous instance of driving to the restaurant (Lucca Trattoria) or the previous dinner event"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this time",
+          "resolved_entity": "the previous instance of driving to the restaurant (Lucca Trattoria) or the previous dinner event"
+        },
+        {
+          "ambiguous_phrase": "Last time",
+          "resolved_entity": "the previous instance of driving to the restaurant (Lucca Trattoria) or the previous dinner event"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7684309207834303,
+        "ollama_total_s": 0.767014061,
+        "model_load_s": 0.001488199,
+        "prompt_eval_s": 0.129654,
+        "generation_s": 0.509993,
+        "prompt_tokens": 1397,
+        "output_tokens": 93,
+        "total_tokens": 1490,
+        "generation_tokens_per_s": 182.3554440943307
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Rachel offered to drive, so at least we’ll survive *the trip*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the trip",
+          "ground_truth_ambiguous_phrase": "the trip",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cabin trip near the lake",
+          "ground_truth_resolution": "Drive to Lake Sammamish cabin",
+          "resolution_similarity": 0.7617366615000514,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the trip",
+          "resolved_entity": "the cabin trip near the lake"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45348627027124166,
+        "ollama_total_s": 0.452496633,
+        "model_load_s": 0.00129212,
+        "prompt_eval_s": 0.130054,
+        "generation_s": 0.19233,
+        "prompt_tokens": 1422,
+        "output_tokens": 37,
+        "total_tokens": 1459,
+        "generation_tokens_per_s": 192.3776841886341
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Let’s set a date *now* while everyone’s here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "now",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "current moment in the context of the conversation",
+          "ground_truth_resolution": "Tonight, during dinner",
+          "resolution_similarity": 0.5396841448687622,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "the current location of User B, which is Apartment - Belltown, Seattle"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "current moment in the context of the conversation"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "the current location of User B, which is Apartment - Belltown, Seattle"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.546651273034513,
+        "ollama_total_s": 0.545401346,
+        "model_load_s": 0.001317585,
+        "prompt_eval_s": 0.131101,
+        "generation_s": 0.274199,
+        "prompt_tokens": 1442,
+        "output_tokens": 55,
+        "total_tokens": 1497,
+        "generation_tokens_per_s": 200.5842472073202
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Let’s do next Saturday if *everyone* is free.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "everyone",
+          "ground_truth_ambiguous_phrase": "everyone",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the group of friends (Rachel, Sam, Chris, and User A/B)",
+          "ground_truth_resolution": "Jessica, User B, Rachel, Sam, Chris, Maya",
+          "resolution_similarity": 0.7414475078600529,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "everyone",
+          "resolved_entity": "the group of friends (Rachel, Sam, Chris, and User A/B)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.519556722138077,
+        "ollama_total_s": 0.518266239,
+        "model_load_s": 0.002449183,
+        "prompt_eval_s": 0.130781,
+        "generation_s": 0.259664,
+        "prompt_tokens": 1463,
+        "output_tokens": 45,
+        "total_tokens": 1508,
+        "generation_tokens_per_s": 173.30088113870232
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "I’ll check my calendar. Looks good, but *Chris* may have work stuff.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Chris",
+          "ground_truth_ambiguous_phrase": "Chris",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Chris (from previous mentions, confirmed in Turn 15 as the one who got the promotion)",
+          "ground_truth_resolution": "Chris",
+          "resolution_similarity": 0.5410956794364884,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Chris",
+          "resolved_entity": "Chris (from previous mentions, confirmed in Turn 15 as the one who got the promotion)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4783052997663617,
+        "ollama_total_s": 0.477132091,
+        "model_load_s": 0.001288562,
+        "prompt_eval_s": 0.132154,
+        "generation_s": 0.235362,
+        "prompt_tokens": 1497,
+        "output_tokens": 39,
+        "total_tokens": 1536,
+        "generation_tokens_per_s": 165.70219491676653
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Let’s check with him—he’s just coming in.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Chris"
+        },
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Chris"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Chris"
+        },
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Chris"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5483994130045176,
+        "ollama_total_s": 0.547456935,
+        "model_load_s": 0.001344337,
+        "prompt_eval_s": 0.132882,
+        "generation_s": 0.289405,
+        "prompt_tokens": 1511,
+        "output_tokens": 51,
+        "total_tokens": 1562,
+        "generation_tokens_per_s": 176.2236312434132
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Perfect timing. Oh, weather’s supposed to be sunny *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the time after the planned weekend getaway",
+          "ground_truth_resolution": "Next Saturday, sunny forecast",
+          "resolution_similarity": 0.6242545227764139,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the time after the planned weekend getaway"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4713490824215114,
+        "ollama_total_s": 0.470066088,
+        "model_load_s": 0.001329087,
+        "prompt_eval_s": 0.13668,
+        "generation_s": 0.221022,
+        "prompt_tokens": 1540,
+        "output_tokens": 37,
+        "total_tokens": 1577,
+        "generation_tokens_per_s": 167.40414981314078
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Awesome, makes packing easier. Oh, did you bring *that charger* I asked for?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that charger",
+          "ground_truth_ambiguous_phrase": "that charger",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the charger User A asked for previously",
+          "ground_truth_resolution": "iPhone charger, 6ft, white",
+          "resolution_similarity": 0.6337407726727969,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that charger",
+          "resolved_entity": "the charger User A asked for previously"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5097388820722699,
+        "ollama_total_s": 0.508596792,
+        "model_load_s": 0.001244074,
+        "prompt_eval_s": 0.138226,
+        "generation_s": 0.23506,
+        "prompt_tokens": 1573,
+        "output_tokens": 38,
+        "total_tokens": 1611,
+        "generation_tokens_per_s": 161.66085254828556
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Yep, got it in my bag. Remind me to give it to you before *we leave*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "we leave",
+          "ground_truth_ambiguous_phrase": "we leave",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the Friends Dinner at Lucca Trattoria",
+          "ground_truth_resolution": "End of dinner, tonight",
+          "resolution_similarity": 0.6893430535404881,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we leave",
+          "resolved_entity": "the Friends Dinner at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5304173217155039,
+        "ollama_total_s": 0.529395474,
+        "model_load_s": 0.001243632,
+        "prompt_eval_s": 0.139986,
+        "generation_s": 0.247709,
+        "prompt_tokens": 1608,
+        "output_tokens": 41,
+        "total_tokens": 1649,
+        "generation_tokens_per_s": 165.51679591779063
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Thanks! So, who’s taking pictures *tonight*? Last time, all I got was blurry pasta.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tonight",
+          "ground_truth_ambiguous_phrase": "tonight",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Monthly Friends Dinner",
+          "ground_truth_resolution": "Lucca Trattoria, Monthly Friends Dinner, 7–9pm",
+          "resolution_similarity": 0.7594088096769973,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "Monthly Friends Dinner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4256397606804967,
+        "ollama_total_s": 0.424311171,
+        "model_load_s": 0.001149239,
+        "prompt_eval_s": 0.141165,
+        "generation_s": 0.158642,
+        "prompt_tokens": 1642,
+        "output_tokens": 23,
+        "total_tokens": 1665,
+        "generation_tokens_per_s": 144.98052218201988
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Rachel brought her fancy camera—she’s on it.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she’s on it",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Rachel",
+          "ground_truth_resolution": "Rachel",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she’s on it",
+          "resolved_entity": "Rachel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.510725892148912,
+        "ollama_total_s": 0.50949271,
+        "model_load_s": 0.001472245,
+        "prompt_eval_s": 0.147104,
+        "generation_s": 0.226591,
+        "prompt_tokens": 1651,
+        "output_tokens": 34,
+        "total_tokens": 1685,
+        "generation_tokens_per_s": 150.05009025071607
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Perfect. Oh, I see *that dessert cart* rolling our way.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that dessert cart",
+          "ground_truth_ambiguous_phrase": "that dessert cart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "dessert cart at Lucca Trattoria",
+          "ground_truth_resolution": "Rolling dessert trolley, Lucca Trattoria",
+          "resolution_similarity": 0.8783166901078401,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that dessert cart",
+          "resolved_entity": "dessert cart at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5788900889456272,
+        "ollama_total_s": 0.577592995,
+        "model_load_s": 0.001766167,
+        "prompt_eval_s": 0.147964,
+        "generation_s": 0.259685999,
+        "prompt_tokens": 1680,
+        "output_tokens": 42,
+        "total_tokens": 1722,
+        "generation_tokens_per_s": 161.73378681073984
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Time to indulge! I call dibs on *that tiramisu*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that tiramisu",
+          "ground_truth_ambiguous_phrase": "that tiramisu",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dessert item currently being offered at the restaurant (Lucca Trattoria) based on the context of the dessert cart mentioned in the previous turn",
+          "ground_truth_resolution": "Tiramisu, dessert menu item #3",
+          "resolution_similarity": 0.6828337006116333,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that tiramisu",
+          "resolved_entity": "the dessert item currently being offered at the restaurant (Lucca Trattoria) based on the context of the dessert cart mentioned in the previous turn"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6392728048376739,
+        "ollama_total_s": 0.638032576,
+        "model_load_s": 0.001167329,
+        "prompt_eval_s": 0.14863,
+        "generation_s": 0.318921,
+        "prompt_tokens": 1707,
+        "output_tokens": 63,
+        "total_tokens": 1770,
+        "generation_tokens_per_s": 197.54108384208
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Deal—as long as I get a bite of *your gelato*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your gelato",
+          "ground_truth_ambiguous_phrase": "your gelato",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's gelato",
+          "ground_truth_resolution": "Vanilla gelato ordered by User B",
+          "resolution_similarity": 0.8250848545597903,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your gelato",
+          "resolved_entity": "User B's gelato"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4851664751768112,
+        "ollama_total_s": 0.484011842,
+        "model_load_s": 0.001443943,
+        "prompt_eval_s": 0.149327,
+        "generation_s": 0.191422,
+        "prompt_tokens": 1731,
+        "output_tokens": 26,
+        "total_tokens": 1757,
+        "generation_tokens_per_s": 135.82555819080355
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "You got it. Next up: figuring out *the bill* before Rachel hunts us down.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the bill",
+          "ground_truth_ambiguous_phrase": "the bill",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bill at Lucca Trattoria",
+          "ground_truth_resolution": "Total for dinner, itemized receipt",
+          "resolution_similarity": 0.588693248970589,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the bill",
+          "resolved_entity": "the bill at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5381520157679915,
+        "ollama_total_s": 0.536927798,
+        "model_load_s": 0.001377779,
+        "prompt_eval_s": 0.150227,
+        "generation_s": 0.244675,
+        "prompt_tokens": 1764,
+        "output_tokens": 40,
+        "total_tokens": 1804,
+        "generation_tokens_per_s": 163.48217022580974
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "True. I’ll Venmo her *after dinner*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "after dinner",
+          "ground_truth_ambiguous_phrase": "after dinner",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The dinner at Lucca Trattoria, which is the event they are currently attending.",
+          "ground_truth_resolution": "Tonight, after 9pm",
+          "resolution_similarity": 0.5342248562681796,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "after dinner",
+          "resolved_entity": "The dinner at Lucca Trattoria, which is the event they are currently attending."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5768003528937697,
+        "ollama_total_s": 0.575405476,
+        "model_load_s": 0.001198981,
+        "prompt_eval_s": 0.16234,
+        "generation_s": 0.252686,
+        "prompt_tokens": 1779,
+        "output_tokens": 49,
+        "total_tokens": 1828,
+        "generation_tokens_per_s": 193.9165604742645
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "Okay, let’s make plans for *next time* now, before everyone gets too sleepy.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next time",
+          "ground_truth_ambiguous_phrase": "next time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Monthly Friends Dinner",
+          "ground_truth_resolution": "Friends Dinner, July",
+          "resolution_similarity": 0.8172743732802735,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "Monthly Friends Dinner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.467436739243567,
+        "ollama_total_s": 0.466277636,
+        "model_load_s": 0.001131295,
+        "prompt_eval_s": 0.161918,
+        "generation_s": 0.173626,
+        "prompt_tokens": 1815,
+        "output_tokens": 23,
+        "total_tokens": 1838,
+        "generation_tokens_per_s": 132.46863948947737
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "Agreed. Let’s pick a new spot, maybe that tapas place Maya mentioned?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that tapas place Maya mentioned",
+          "resolved_entity": "Maya mentioned tapas place"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that tapas place",
+          "ground_truth_resolution": "El Alma Tapas Bar, Capitol Hill",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that tapas place Maya mentioned",
+          "resolved_entity": "Maya mentioned tapas place"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47585742687806487,
+        "ollama_total_s": 0.474666326,
+        "model_load_s": 0.00134145,
+        "prompt_eval_s": 0.165223,
+        "generation_s": 0.170296,
+        "prompt_tokens": 1842,
+        "output_tokens": 26,
+        "total_tokens": 1868,
+        "generation_tokens_per_s": 152.6753417578804
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "Love it. I’ll ping *her* for details.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Rachel",
+          "ground_truth_resolution": "Maya",
+          "resolution_similarity": 0.6899062460059908,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the Friends Dinner"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Rachel"
+        },
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the Friends Dinner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5379299446940422,
+        "ollama_total_s": 0.536665325,
+        "model_load_s": 0.001640358,
+        "prompt_eval_s": 0.164808,
+        "generation_s": 0.213149,
+        "prompt_tokens": 1858,
+        "output_tokens": 37,
+        "total_tokens": 1895,
+        "generation_tokens_per_s": 173.58749044095913
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User A",
+      "text": "Great—can’t wait! This night was exactly what I needed.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.33187311701476574,
+        "ollama_total_s": 0.330851507,
+        "model_load_s": 0.001538713,
+        "prompt_eval_s": 0.165477,
+        "generation_s": 0.02618,
+        "prompt_tokens": 1884,
+        "output_tokens": 6,
+        "total_tokens": 1890,
+        "generation_tokens_per_s": 229.1825821237586
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User B",
+      "text": "Same. Best therapy ever. Let’s remember to bring board games *next time*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next time",
+          "ground_truth_ambiguous_phrase": "next time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the upcoming Friends Dinner at Lucca Trattoria",
+          "ground_truth_resolution": "Friends Dinner, July",
+          "resolution_similarity": 0.804348631613131,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the upcoming Friends Dinner at Lucca Trattoria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5234533459879458,
+        "ollama_total_s": 0.522042725,
+        "model_load_s": 0.001338437,
+        "prompt_eval_s": 0.179498,
+        "generation_s": 0.184467,
+        "prompt_tokens": 1916,
+        "output_tokens": 31,
+        "total_tokens": 1947,
+        "generation_tokens_per_s": 168.05173825128614
+      }
+    }
+  ]
+}

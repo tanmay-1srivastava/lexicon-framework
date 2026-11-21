@@ -1,0 +1,2699 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/doctor_patient__006.json",
+  "metrics": {
+    "ground_truth_ambiguities": 68,
+    "qwen_predicted_ambiguities": 82,
+    "detected_ground_truth_ambiguities": 62,
+    "missed_ground_truth_ambiguities": 6,
+    "detected_but_bad_resolution": 28,
+    "true_positives": 34,
+    "false_negatives": 34,
+    "false_positive_ambiguities": 20,
+    "detection_recall": 0.9117647058823529,
+    "detection_precision": 0.7560975609756098,
+    "detection_f1": 0.8266666666666665,
+    "true_positive_rate_at_0_70": 0.5,
+    "strict_end_to_end_precision_at_0_70": 0.4146341463414634,
+    "end_to_end_f1_at_0_70": 0.45333333333333337,
+    "false_positive_discovery_rate": 0.24390243902439024,
+    "false_positives_per_turn": 0.4,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 50,
+    "median_latency_per_turn_s": 0.4955568411387503,
+    "mean_latency_per_turn_s": 0.521053251279518,
+    "total_prompt_tokens": 64543,
+    "total_output_tokens": 2738
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi, Dr. Kim. I'm *here* now, just wrapped up my run.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Buffalo Bayou Park (Running Trail Entrance)",
+          "ground_truth_resolution": "Buffalo Bayou Park (Running Trail Entrance)",
+          "resolution_similarity": 0.9998963162544624,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3463593749329448,
+        "ollama_total_s": 0.34513395,
+        "model_load_s": 0.001385787,
+        "prompt_eval_s": 0.035891,
+        "generation_s": 0.142728,
+        "prompt_tokens": 496,
+        "output_tokens": 29,
+        "total_tokens": 525,
+        "generation_tokens_per_s": 203.18367804495264
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Great to hear, Ahmed. Are you still at *that place* you told me about last week?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that place",
+          "ground_truth_ambiguous_phrase": "that place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Buffalo Bayou Park (Running Trail Entrance)",
+          "ground_truth_resolution": "Buffalo Bayou Park (Running Trail Entrance)",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.32975571183487773,
+        "ollama_total_s": 0.32874191,
+        "model_load_s": 0.001130167,
+        "prompt_eval_s": 0.040983,
+        "generation_s": 0.239092,
+        "prompt_tokens": 528,
+        "output_tokens": 40,
+        "total_tokens": 568,
+        "generation_tokens_per_s": 167.29961688387735
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Yeah, the usual trail. The weather is perfect, so I stayed longer than *last time*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "last time",
+          "ground_truth_ambiguous_phrase": "last time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's previous visit to Buffalo Bayou Park (Running Trail Entrance)",
+          "ground_truth_resolution": "Previous run session (Tuesday, 6:00 PM)",
+          "resolution_similarity": 0.5067921977374978,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "User A's previous visit to Buffalo Bayou Park (Running Trail Entrance)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3558455682359636,
+        "ollama_total_s": 0.354657555,
+        "model_load_s": 0.001363543,
+        "prompt_eval_s": 0.041801,
+        "generation_s": 0.255057,
+        "prompt_tokens": 558,
+        "output_tokens": 45,
+        "total_tokens": 603,
+        "generation_tokens_per_s": 176.43115068396477
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "That's wonderful. So, *now*, how are you feeling after the run? Any changes in those palpitations or your mood?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "the previous run at Buffalo Bayou Park"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "now",
+          "ground_truth_resolution": "5:05 PM, current time",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "the previous run at Buffalo Bayou Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45572596974670887,
+        "ollama_total_s": 0.454638851,
+        "model_load_s": 0.001165957,
+        "prompt_eval_s": 0.046422,
+        "generation_s": 0.360321,
+        "prompt_tokens": 600,
+        "output_tokens": 68,
+        "total_tokens": 668,
+        "generation_tokens_per_s": 188.7206130089559
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "I feel calmer *now*. My heart isn't racing like it used to. Running really helps, especially when I do it in the *evening*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "evening",
+          "ground_truth_ambiguous_phrase": "evening",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The time of day when User A runs, inferred from the context of the running trail and the mention of the run in the evening.",
+          "ground_truth_resolution": "Typical running time: 5:30–6:30 PM",
+          "resolution_similarity": 0.5863870878848937,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "The current moment, referring to the present state of calmness following the run, distinct from the previous 'now' mentioned in Turn 4."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "The current moment, referring to the present state of calmness following the run, distinct from the previous 'now' mentioned in Turn 4."
+        },
+        {
+          "ambiguous_phrase": "evening",
+          "resolved_entity": "The time of day when User A runs, inferred from the context of the running trail and the mention of the run in the evening."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6116517372429371,
+        "ollama_total_s": 0.610254824,
+        "model_load_s": 0.001442722,
+        "prompt_eval_s": 0.047479,
+        "generation_s": 0.506092,
+        "prompt_tokens": 648,
+        "output_tokens": 104,
+        "total_tokens": 752,
+        "generation_tokens_per_s": 205.49623388632898
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "That’s promising. About your sleep, have you noticed an improvement since you started running here?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 5,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 5,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "The previous run at Buffalo Bayou Park"
+        },
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "The current moment during the conversation"
+        },
+        {
+          "ambiguous_phrase": "evening",
+          "resolved_entity": "The time of day when User A runs, typically in the evening"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "The previous run at Buffalo Bayou Park"
+        },
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "The current moment during the conversation"
+        },
+        {
+          "ambiguous_phrase": "evening",
+          "resolved_entity": "The time of day when User A runs, typically in the evening"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8634420912712812,
+        "ollama_total_s": 0.862166449,
+        "model_load_s": 0.001336896,
+        "prompt_eval_s": 0.047912,
+        "generation_s": 0.75206,
+        "prompt_tokens": 662,
+        "output_tokens": 154,
+        "total_tokens": 816,
+        "generation_tokens_per_s": 204.7708959391538
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Actually, yes. I fall asleep faster after exercise. But I had trouble on *Tuesday night* because *he* called me late.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Tuesday night",
+          "ground_truth_ambiguous_phrase": "Tuesday night",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The night of the check-in call with Dr. Kim",
+          "ground_truth_resolution": "Tuesday, 11:30 PM",
+          "resolution_similarity": 0.509062550230051,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Kim",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "resolution_similarity": 0.6667285713013067,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (meeting invite)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Dr. Kim"
+        },
+        {
+          "ambiguous_phrase": "Tuesday night",
+          "resolved_entity": "The night of the check-in call with Dr. Kim"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48104098392650485,
+        "ollama_total_s": 0.479747582,
+        "model_load_s": 0.001096257,
+        "prompt_eval_s": 0.05248,
+        "generation_s": 0.358873,
+        "prompt_tokens": 708,
+        "output_tokens": 64,
+        "total_tokens": 772,
+        "generation_tokens_per_s": 178.3360687485545
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Who called you late? Was it *the project coordinator* again?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "the project coordinator"
+        },
+        {
+          "ambiguous_phrase": "the project coordinator",
+          "resolved_entity": "the project coordinator"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "the project coordinator"
+        },
+        {
+          "ambiguous_phrase": "the project coordinator",
+          "resolved_entity": "the project coordinator"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4350150302052498,
+        "ollama_total_s": 0.433327301,
+        "model_load_s": 0.00107701,
+        "prompt_eval_s": 0.052327,
+        "generation_s": 0.316608,
+        "prompt_tokens": 717,
+        "output_tokens": 57,
+        "total_tokens": 774,
+        "generation_tokens_per_s": 180.0333535476046
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yeah, *him*. He wanted me to review *those docs* urgently.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those docs",
+          "ground_truth_ambiguous_phrase": "those docs",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project documents",
+          "ground_truth_resolution": "Project documentation (API specs, design files)",
+          "resolution_similarity": 0.7768364200083944,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (task details)"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project coordinator",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "resolution_similarity": 0.810633484786058,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "the project coordinator"
+        },
+        {
+          "ambiguous_phrase": "those docs",
+          "resolved_entity": "the project documents"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4089270932599902,
+        "ollama_total_s": 0.407643482,
+        "model_load_s": 0.001423376,
+        "prompt_eval_s": 0.052533,
+        "generation_s": 0.279146,
+        "prompt_tokens": 744,
+        "output_tokens": 56,
+        "total_tokens": 800,
+        "generation_tokens_per_s": 200.61186619188524
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Were you able to set boundaries as we discussed during *your last session*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your last session",
+          "ground_truth_ambiguous_phrase": "your last session",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Therapy follow-up: Ahmed @ 5:00 PM",
+          "ground_truth_resolution": "CBT session, Thursday 4:00 PM",
+          "resolution_similarity": 0.6373256987386833,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your last session",
+          "resolved_entity": "Therapy follow-up: Ahmed @ 5:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4143343139439821,
+        "ollama_total_s": 0.412875718,
+        "model_load_s": 0.001460645,
+        "prompt_eval_s": 0.062159,
+        "generation_s": 0.260786999,
+        "prompt_tokens": 771,
+        "output_tokens": 46,
+        "total_tokens": 817,
+        "generation_tokens_per_s": 176.38916117900493
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "I tried. I told *him* that I couldn't work at night, but he insisted. I felt anxious, but I managed my breathing with the *CBT exercise* you showed me.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "CBT exercise",
+          "ground_truth_ambiguous_phrase": "CBT exercise",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the CBT breathing technique demonstrated in your last session",
+          "ground_truth_resolution": "Diaphragmatic Breathing Drill",
+          "resolution_similarity": 0.7668159164973775,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (therapy notes)"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project coordinator",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "resolution_similarity": 0.810633484786058,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "the project coordinator"
+        },
+        {
+          "ambiguous_phrase": "CBT exercise",
+          "resolved_entity": "the CBT breathing technique demonstrated in your last session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4801262919791043,
+        "ollama_total_s": 0.479121122,
+        "model_load_s": 0.001253185,
+        "prompt_eval_s": 0.069263,
+        "generation_s": 0.344312,
+        "prompt_tokens": 845,
+        "output_tokens": 64,
+        "total_tokens": 909,
+        "generation_tokens_per_s": 185.87792467297103
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "That’s progress, Ahmed. You used *the tool* at a difficult moment. How did it feel compared to previous strategies?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the tool",
+          "resolved_entity": "the CBT exercise"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the tool",
+          "resolved_entity": "the CBT exercise"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37089464580640197,
+        "ollama_total_s": 0.369600794,
+        "model_load_s": 0.001471126,
+        "prompt_eval_s": 0.069721,
+        "generation_s": 0.223541,
+        "prompt_tokens": 867,
+        "output_tokens": 35,
+        "total_tokens": 902,
+        "generation_tokens_per_s": 156.57083040694997
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "It was better than just trying to distract myself. I still woke up at 3AM, but I got back to sleep within *twenty minutes* using *the breathing sequence*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the breathing sequence",
+          "ground_truth_ambiguous_phrase": "the breathing sequence",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "CBT exercise",
+          "ground_truth_resolution": "Diaphragmatic Breathing Drill",
+          "resolution_similarity": 0.7087053889565257,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (therapy notes)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the tool",
+          "resolved_entity": "CBT exercise"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "twenty minutes",
+          "ground_truth_resolution": "20 minutes duration (3:00–3:20 AM)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the breathing sequence",
+          "resolved_entity": "CBT exercise"
+        },
+        {
+          "ambiguous_phrase": "the tool",
+          "resolved_entity": "CBT exercise"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4818133320659399,
+        "ollama_total_s": 0.48015407,
+        "model_load_s": 0.001609486,
+        "prompt_eval_s": 0.082084,
+        "generation_s": 0.313217,
+        "prompt_tokens": 925,
+        "output_tokens": 58,
+        "total_tokens": 983,
+        "generation_tokens_per_s": 185.1751341721554
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "That’s great. Let’s talk about *that episode* you mentioned last month, with palpitations in *your office*. Has anything similar happened since?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your office",
+          "ground_truth_ambiguous_phrase": "your office",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Memorial Hermann Medical Plaza (Office 402)",
+          "ground_truth_resolution": "Workplace: WeWork Downtown, Suite 802",
+          "resolution_similarity": 0.5559159635274555,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that episode",
+          "ground_truth_ambiguous_phrase": "that episode",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the episode with palpitations mentioned in the previous conversation",
+          "ground_truth_resolution": "Palpitations at office, reported last month",
+          "resolution_similarity": 0.7495031665169456,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (health log)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that episode",
+          "resolved_entity": "the episode with palpitations mentioned in the previous conversation"
+        },
+        {
+          "ambiguous_phrase": "your office",
+          "resolved_entity": "Memorial Hermann Medical Plaza (Office 402)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5579368760809302,
+        "ollama_total_s": 0.556625365,
+        "model_load_s": 0.001391595,
+        "prompt_eval_s": 0.082678,
+        "generation_s": 0.38512,
+        "prompt_tokens": 960,
+        "output_tokens": 73,
+        "total_tokens": 1033,
+        "generation_tokens_per_s": 189.55130868300787
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "No, not at *work*. The last time was at *home*, after a stressful call with *them* about the deadline.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project coordinator",
+          "ground_truth_resolution": "Development Team (Slack group)",
+          "resolution_similarity": 0.5854304644878903,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Slack contacts)"
+        },
+        {
+          "predicted_ambiguous_phrase": "home",
+          "ground_truth_ambiguous_phrase": "home",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Buffalo Bayou Park (Running Trail Entrance)",
+          "ground_truth_resolution": "Ahmed's Apartment, Midtown",
+          "resolution_similarity": 0.6072440817275812,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "work",
+          "resolved_entity": "Memorial Hermann Medical Plaza (Office 402)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "work",
+          "resolved_entity": "Memorial Hermann Medical Plaza (Office 402)"
+        },
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Buffalo Bayou Park (Running Trail Entrance)"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the project coordinator"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6219957559369504,
+        "ollama_total_s": 0.620563612,
+        "model_load_s": 0.001772434,
+        "prompt_eval_s": 0.083263,
+        "generation_s": 0.442684,
+        "prompt_tokens": 993,
+        "output_tokens": 92,
+        "total_tokens": 1085,
+        "generation_tokens_per_s": 207.82318764626686
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Did you use any techniques, or was it a spontaneous resolution?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1955920639447868,
+        "ollama_total_s": 0.194252032,
+        "model_load_s": 0.001362637,
+        "prompt_eval_s": 0.083213,
+        "generation_s": 0.025175,
+        "prompt_tokens": 1002,
+        "output_tokens": 6,
+        "total_tokens": 1008,
+        "generation_tokens_per_s": 238.33167825223435
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "I did the *grounding technique* from *your worksheet*. It took a few tries.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the grounding technique",
+          "ground_truth_ambiguous_phrase": "grounding technique",
+          "phrase_match_score": 0.9047619047619048,
+          "predicted_resolution": "a specific technique taught by Dr. Kim in the therapy sessions",
+          "ground_truth_resolution": "5-4-3-2-1 Sensory Grounding Exercise",
+          "resolution_similarity": 0.45696739359999033,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar (therapy worksheet)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your worksheet",
+          "resolved_entity": "the worksheet provided by Dr. Kim in the therapy sessions"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your worksheet",
+          "resolved_entity": "the worksheet provided by Dr. Kim in the therapy sessions"
+        },
+        {
+          "ambiguous_phrase": "the grounding technique",
+          "resolved_entity": "a specific technique taught by Dr. Kim in the therapy sessions"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5447637368924916,
+        "ollama_total_s": 0.543432893,
+        "model_load_s": 0.001616265,
+        "prompt_eval_s": 0.090664,
+        "generation_s": 0.371901,
+        "prompt_tokens": 1037,
+        "output_tokens": 75,
+        "total_tokens": 1112,
+        "generation_tokens_per_s": 201.6665725555995
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "That’s fine. As long as it helps. Can you describe how *it* works for you?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the grounding technique",
+          "ground_truth_resolution": "5-4-3-2-1 Sensory Grounding Exercise",
+          "resolution_similarity": 0.7463828924710375,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the grounding technique"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39884292194619775,
+        "ollama_total_s": 0.397622242,
+        "model_load_s": 0.001417052,
+        "prompt_eval_s": 0.091872,
+        "generation_s": 0.205694,
+        "prompt_tokens": 1070,
+        "output_tokens": 33,
+        "total_tokens": 1103,
+        "generation_tokens_per_s": 160.43248709247717
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Sure. When I feel overwhelmed, I sit down and go through *the steps*—five things I can see, four I can touch, and so on. It slows me down.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the steps",
+          "ground_truth_ambiguous_phrase": "the steps",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the grounding technique from the worksheet",
+          "ground_truth_resolution": "5 things you see, 4 you touch, 3 you hear, 2 you smell, 1 you taste",
+          "resolution_similarity": 0.3985855140264232,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the steps",
+          "resolved_entity": "the grounding technique from the worksheet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4304748410359025,
+        "ollama_total_s": 0.428960825,
+        "model_load_s": 0.003004128,
+        "prompt_eval_s": 0.093446,
+        "generation_s": 0.234551,
+        "prompt_tokens": 1135,
+        "output_tokens": 37,
+        "total_tokens": 1172,
+        "generation_tokens_per_s": 157.7482082787965
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Excellent. Did you share *that technique* with anyone else, or are you keeping it personal for now?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that technique",
+          "ground_truth_ambiguous_phrase": "that technique",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the grounding technique from your worksheet",
+          "ground_truth_resolution": "5-4-3-2-1 Sensory Grounding Exercise",
+          "resolution_similarity": 0.7376082807013998,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that technique",
+          "resolved_entity": "the grounding technique from your worksheet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4465737226419151,
+        "ollama_total_s": 0.445211827,
+        "model_load_s": 0.001147429,
+        "prompt_eval_s": 0.098577,
+        "generation_s": 0.228515,
+        "prompt_tokens": 1151,
+        "output_tokens": 37,
+        "total_tokens": 1188,
+        "generation_tokens_per_s": 161.91497275889986
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "I told *my roommate* about it. He saw me doing *it* when I got anxious.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the grounding technique (referenced in the conversation)",
+          "ground_truth_resolution": "5-4-3-2-1 Sensory Grounding Exercise",
+          "resolution_similarity": 0.7324181696301055,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "my roommate",
+          "ground_truth_ambiguous_phrase": "my roommate",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's roommate (not explicitly identified in context)",
+          "ground_truth_resolution": "Daniel Brooks",
+          "resolution_similarity": 0.5053738399951678,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (emergency contact)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my roommate",
+          "resolved_entity": "User B's roommate (not explicitly identified in context)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the grounding technique (referenced in the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6201378698460758,
+        "ollama_total_s": 0.618759053,
+        "model_load_s": 0.001626855,
+        "prompt_eval_s": 0.099105,
+        "generation_s": 0.40305,
+        "prompt_tokens": 1181,
+        "output_tokens": 69,
+        "total_tokens": 1250,
+        "generation_tokens_per_s": 171.19464086341645
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "That’s great peer support. Now, about your CBT homework—did you complete *the sleep journal* for this week?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the sleep journal",
+          "ground_truth_ambiguous_phrase": "the sleep journal",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep journal (CBT homework assignment)",
+          "ground_truth_resolution": "CBT Sleep Diary Worksheet",
+          "resolution_similarity": 0.9025993099555458,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (therapy assignment)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the sleep journal",
+          "resolved_entity": "the sleep journal (CBT homework assignment)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5077041396871209,
+        "ollama_total_s": 0.506623829,
+        "model_load_s": 0.001210497,
+        "prompt_eval_s": 0.100782,
+        "generation_s": 0.269067,
+        "prompt_tokens": 1222,
+        "output_tokens": 40,
+        "total_tokens": 1262,
+        "generation_tokens_per_s": 148.66185745557797
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Yes, I filled *it* out every night except *Wednesday*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Wednesday",
+          "ground_truth_ambiguous_phrase": "Wednesday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Wednesday (specific day of the week)",
+          "ground_truth_resolution": "Wednesday, last week",
+          "resolution_similarity": 0.8091380877234275,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep journal",
+          "ground_truth_resolution": "CBT Sleep Diary Worksheet",
+          "resolution_similarity": 0.8343342507245725,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sleep journal"
+        },
+        {
+          "ambiguous_phrase": "Wednesday",
+          "resolved_entity": "Wednesday (specific day of the week)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.497145492117852,
+        "ollama_total_s": 0.49606901,
+        "model_load_s": 0.001180505,
+        "prompt_eval_s": 0.100683,
+        "generation_s": 0.297503,
+        "prompt_tokens": 1236,
+        "output_tokens": 59,
+        "total_tokens": 1295,
+        "generation_tokens_per_s": 198.31732789249182
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Any patterns or triggers you noticed in *the entries*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the entries",
+          "ground_truth_ambiguous_phrase": "the entries",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep journal entries",
+          "ground_truth_resolution": "CBT Sleep Diary data for week",
+          "resolution_similarity": 0.7789343456115536,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the entries",
+          "resolved_entity": "the sleep journal entries"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46555566089227796,
+        "ollama_total_s": 0.464277938,
+        "model_load_s": 0.001859123,
+        "prompt_eval_s": 0.101087,
+        "generation_s": 0.249096,
+        "prompt_tokens": 1255,
+        "output_tokens": 35,
+        "total_tokens": 1290,
+        "generation_tokens_per_s": 140.50807720718117
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Mostly stress after meetings with *the team*, or late-night messages from *him*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project coordinator (contextually refers to the person who called User A late, as mentioned in Turn 7 and Turn 9)",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "resolution_similarity": 0.6423089309309579,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the team",
+          "ground_truth_ambiguous_phrase": "the team",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team (contextually refers to User A's workplace team, as per the conversation about meetings and stress)",
+          "ground_truth_resolution": "Development Team (Slack group)",
+          "resolution_similarity": 0.7240801602110862,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the team",
+          "resolved_entity": "the team (contextually refers to User A's workplace team, as per the conversation about meetings and stress)"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "the project coordinator (contextually refers to the person who called User A late, as mentioned in Turn 7 and Turn 9)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7672249018214643,
+        "ollama_total_s": 0.765979986,
+        "model_load_s": 0.001201697,
+        "prompt_eval_s": 0.11419,
+        "generation_s": 0.535885999,
+        "prompt_tokens": 1290,
+        "output_tokens": 97,
+        "total_tokens": 1387,
+        "generation_tokens_per_s": 181.00864769934026
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Let’s focus on boundary setting. Do you remember what we discussed at *your previous appointment*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your previous appointment",
+          "ground_truth_ambiguous_phrase": "your previous appointment",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "your last session",
+          "ground_truth_resolution": "CBT session, Thursday 4:00 PM",
+          "resolution_similarity": 0.4969235799846187,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your previous appointment",
+          "resolved_entity": "your last session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42278766026720405,
+        "ollama_total_s": 0.421442055,
+        "model_load_s": 0.001096137,
+        "prompt_eval_s": 0.116411,
+        "generation_s": 0.188131,
+        "prompt_tokens": 1321,
+        "output_tokens": 35,
+        "total_tokens": 1356,
+        "generation_tokens_per_s": 186.04057810780787
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Yes, to keep work communications off after *8 pm*. I failed once, but I’m improving.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "8 pm",
+          "ground_truth_ambiguous_phrase": "8 pm",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "8:00 PM",
+          "ground_truth_resolution": "8:00 PM (boundary for work communications)",
+          "resolution_similarity": 0.6623457573005077,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "work communications",
+          "resolved_entity": "work-related messages"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "8 pm",
+          "resolved_entity": "8:00 PM"
+        },
+        {
+          "ambiguous_phrase": "work communications",
+          "resolved_entity": "work-related messages"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5052192020229995,
+        "ollama_total_s": 0.504048702,
+        "model_load_s": 0.001114934,
+        "prompt_eval_s": 0.117131,
+        "generation_s": 0.268911,
+        "prompt_tokens": 1353,
+        "output_tokens": 42,
+        "total_tokens": 1395,
+        "generation_tokens_per_s": 156.18550375403015
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "That’s part of progress. Did you use *the notification settings* we configured together?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the notification settings",
+          "ground_truth_ambiguous_phrase": "the notification settings",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the notification settings configured during the previous session (likely related to work communications off after 8 pm)",
+          "ground_truth_resolution": "Slack & Email notification preferences on phone",
+          "resolution_similarity": 0.713524180883991,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (settings meeting)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the notification settings",
+          "resolved_entity": "the notification settings configured during the previous session (likely related to work communications off after 8 pm)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4838185212574899,
+        "ollama_total_s": 0.482812621,
+        "model_load_s": 0.001250996,
+        "prompt_eval_s": 0.117359,
+        "generation_s": 0.257278,
+        "prompt_tokens": 1378,
+        "output_tokens": 51,
+        "total_tokens": 1429,
+        "generation_tokens_per_s": 198.22915290075326
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Yes, but *Slack* somehow bypassed *them* on Tuesday.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Slack",
+          "ground_truth_ambiguous_phrase": "Slack",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Slack (communication platform)",
+          "ground_truth_resolution": "Slack mobile app, version 23.6.1",
+          "resolution_similarity": 0.7897094187926539,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (device log)"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team",
+          "ground_truth_resolution": "Slack & Email notification preferences",
+          "resolution_similarity": 0.4979447473403029,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the team"
+        },
+        {
+          "ambiguous_phrase": "Slack",
+          "resolved_entity": "Slack (communication platform)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5241791559383273,
+        "ollama_total_s": 0.522888572,
+        "model_load_s": 0.001535753,
+        "prompt_eval_s": 0.129655,
+        "generation_s": 0.270176,
+        "prompt_tokens": 1402,
+        "output_tokens": 57,
+        "total_tokens": 1459,
+        "generation_tokens_per_s": 210.97358758735044
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "We may need to update *that app's* permissions. I’ll send you instructions.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that app's",
+          "ground_truth_ambiguous_phrase": "that app's",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Slack",
+          "ground_truth_resolution": "Slack mobile app",
+          "resolution_similarity": 0.9197542279878499,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (device log)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that app's",
+          "resolved_entity": "Slack"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49396819015964866,
+        "ollama_total_s": 0.492771293,
+        "model_load_s": 0.0017713,
+        "prompt_eval_s": 0.130496,
+        "generation_s": 0.212723,
+        "prompt_tokens": 1432,
+        "output_tokens": 34,
+        "total_tokens": 1466,
+        "generation_tokens_per_s": 159.83227013534034
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Thanks. Can you email *them* to me, or just send *the document* in chat?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the document",
+          "ground_truth_ambiguous_phrase": "the document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "those docs",
+          "ground_truth_resolution": "Notification Setup Instructions (PDF)",
+          "resolution_similarity": 0.6416516566124432,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project coordinator",
+          "ground_truth_resolution": "Slack & Email notification instructions",
+          "resolution_similarity": 0.4952514411056959,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the project coordinator"
+        },
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "those docs"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5328214881010354,
+        "ollama_total_s": 0.531621647,
+        "model_load_s": 0.001103945,
+        "prompt_eval_s": 0.131731,
+        "generation_s": 0.273949,
+        "prompt_tokens": 1466,
+        "output_tokens": 55,
+        "total_tokens": 1521,
+        "generation_tokens_per_s": 200.76729610255924
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Sure, I’ll send *it* right after our call.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Notification Setup Instructions (PDF)",
+          "resolution_similarity": 0.6475419363081384,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3846057797782123,
+        "ollama_total_s": 0.383451826,
+        "model_load_s": 0.001491343,
+        "prompt_eval_s": 0.132047,
+        "generation_s": 0.13428,
+        "prompt_tokens": 1481,
+        "output_tokens": 21,
+        "total_tokens": 1502,
+        "generation_tokens_per_s": 156.38963360142984
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Appreciate it. By the way, did you see *the note* from my cardiologist in *my records*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my records",
+          "ground_truth_ambiguous_phrase": "my records",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's medical records",
+          "ground_truth_resolution": "Ahmed's EHR (electronic health record)",
+          "resolution_similarity": 0.7585011211712794,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the note",
+          "ground_truth_ambiguous_phrase": "the note",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cardiologist's note in User A's medical records",
+          "ground_truth_resolution": "Cardiologist's note (Dr. Patel, 5/26)",
+          "resolution_similarity": 0.8338310595137302,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (medical record)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the note",
+          "resolved_entity": "the cardiologist's note in User A's medical records"
+        },
+        {
+          "ambiguous_phrase": "my records",
+          "resolved_entity": "User A's medical records"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5856197942048311,
+        "ollama_total_s": 0.584454839,
+        "model_load_s": 0.001226998,
+        "prompt_eval_s": 0.136916,
+        "generation_s": 0.332722,
+        "prompt_tokens": 1529,
+        "output_tokens": 67,
+        "total_tokens": 1596,
+        "generation_tokens_per_s": 201.36931131695528
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Yes, I reviewed *it* this morning. No concerns on the heart echo, so we can keep focusing on anxiety.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the note from my cardiologist in my records",
+          "ground_truth_resolution": "Cardiologist's note (Dr. Patel, 5/26)",
+          "resolution_similarity": 0.8043314076398935,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the note from my cardiologist in my records"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4546217620372772,
+        "ollama_total_s": 0.453398339,
+        "model_load_s": 0.001385022,
+        "prompt_eval_s": 0.138223,
+        "generation_s": 0.189977,
+        "prompt_tokens": 1563,
+        "output_tokens": 39,
+        "total_tokens": 1602,
+        "generation_tokens_per_s": 205.2880085484032
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Perfect. How about the sleep tracker you mentioned last week?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the sleep tracker you mentioned last week",
+          "resolved_entity": "the sleep tracker"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "sleep tracker",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the sleep tracker you mentioned last week",
+          "resolved_entity": "the sleep tracker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4914545309729874,
+        "ollama_total_s": 0.490221531,
+        "model_load_s": 0.0014015,
+        "prompt_eval_s": 0.137949,
+        "generation_s": 0.230377,
+        "prompt_tokens": 1572,
+        "output_tokens": 39,
+        "total_tokens": 1611,
+        "generation_tokens_per_s": 169.2877327163736
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "We can try *it* starting *Monday*. You’ll get a link to download *the app*, and I’ll monitor *your sleep data* remotely.",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 4,
+        "true_positives": 4,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your sleep data",
+          "ground_truth_ambiguous_phrase": "your sleep data",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Ahmed's sleep data",
+          "ground_truth_resolution": "SleepMonitorX health metrics (sleep duration, quality)",
+          "resolution_similarity": 0.7768159866585838,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the app",
+          "ground_truth_ambiguous_phrase": "the app",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker app",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "resolution_similarity": 0.837417204935723,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "Monday",
+          "ground_truth_ambiguous_phrase": "Monday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "next Monday",
+          "ground_truth_resolution": "Monday, next week",
+          "resolution_similarity": 0.8110034377536207,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "resolution_similarity": 0.8151029446261886,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sleep tracker"
+        },
+        {
+          "ambiguous_phrase": "Monday",
+          "resolved_entity": "next Monday"
+        },
+        {
+          "ambiguous_phrase": "the app",
+          "resolved_entity": "the sleep tracker app"
+        },
+        {
+          "ambiguous_phrase": "your sleep data",
+          "resolved_entity": "Ahmed's sleep data"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7643247940577567,
+        "ollama_total_s": 0.76274195,
+        "model_load_s": 0.001526049,
+        "prompt_eval_s": 0.140378,
+        "generation_s": 0.49872,
+        "prompt_tokens": 1634,
+        "output_tokens": 104,
+        "total_tokens": 1738,
+        "generation_tokens_per_s": 208.5338466474174
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Is *my data* shared with anyone else, or just *you*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my data",
+          "ground_truth_ambiguous_phrase": "my data",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's personal data from the sleep tracker app",
+          "ground_truth_resolution": "SleepMonitorX health metrics",
+          "resolution_similarity": 0.7127374887211788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B (Dr. Kim)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my data",
+          "resolved_entity": "User A's personal data from the sleep tracker app"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B (Dr. Kim)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6168082598596811,
+        "ollama_total_s": 0.615516593,
+        "model_load_s": 0.001519868,
+        "prompt_eval_s": 0.140634,
+        "generation_s": 0.329532,
+        "prompt_tokens": 1644,
+        "output_tokens": 66,
+        "total_tokens": 1710,
+        "generation_tokens_per_s": 200.28403918284113
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Only with *me* and your primary care doctor, and only if you consent. It’s encrypted.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "me",
+          "ground_truth_resolution": "Dr. Kim (Ahmed's physician)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31912498781457543,
+        "ollama_total_s": 0.317664662,
+        "model_load_s": 0.00174744,
+        "prompt_eval_s": 0.147264,
+        "generation_s": 0.025317,
+        "prompt_tokens": 1680,
+        "output_tokens": 6,
+        "total_tokens": 1686,
+        "generation_tokens_per_s": 236.9949046095509
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Great. I’d like to keep *it* private except for health professionals.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker",
+          "ground_truth_resolution": "SleepMonitorX health metrics",
+          "resolution_similarity": 0.7890252450597717,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sleep tracker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49998227693140507,
+        "ollama_total_s": 0.498662585,
+        "model_load_s": 0.001689945,
+        "prompt_eval_s": 0.147751,
+        "generation_s": 0.203994,
+        "prompt_tokens": 1701,
+        "output_tokens": 33,
+        "total_tokens": 1734,
+        "generation_tokens_per_s": 161.76946380775905
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Understood. I’ll confirm *your privacy preferences* before activating *the tracker*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the tracker",
+          "ground_truth_ambiguous_phrase": "the tracker",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "sleep tracker",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "resolution_similarity": 0.8325488673395549,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "your privacy preferences",
+          "ground_truth_ambiguous_phrase": "your privacy preferences",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's privacy preferences",
+          "ground_truth_resolution": "Ahmed's privacy choices in SleepMonitorX",
+          "resolution_similarity": 0.6901884105819595,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your privacy preferences",
+          "resolved_entity": "User B's privacy preferences"
+        },
+        {
+          "ambiguous_phrase": "the tracker",
+          "resolved_entity": "sleep tracker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6448573227971792,
+        "ollama_total_s": 0.643499613,
+        "model_load_s": 0.00152393,
+        "prompt_eval_s": 0.150007,
+        "generation_s": 0.322827,
+        "prompt_tokens": 1731,
+        "output_tokens": 59,
+        "total_tokens": 1790,
+        "generation_tokens_per_s": 182.7604258627686
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Thanks, Dr. Kim. How long should I use *the app* before we review *the results*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the results",
+          "ground_truth_ambiguous_phrase": "the results",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep data results",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "resolution_similarity": 0.6613861128553227,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the app",
+          "ground_truth_ambiguous_phrase": "the app",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker app",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "resolution_similarity": 0.8377751695725322,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the app",
+          "resolved_entity": "the sleep tracker app"
+        },
+        {
+          "ambiguous_phrase": "the results",
+          "resolved_entity": "the sleep data results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6027254909276962,
+        "ollama_total_s": 0.60158775,
+        "model_load_s": 0.001519278,
+        "prompt_eval_s": 0.150209,
+        "generation_s": 0.323793,
+        "prompt_tokens": 1769,
+        "output_tokens": 59,
+        "total_tokens": 1828,
+        "generation_tokens_per_s": 182.2151806864262
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Try it for *two weeks*. We’ll discuss *the report* at *your next appointment*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your next appointment",
+          "ground_truth_ambiguous_phrase": "your next appointment",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the scheduled therapy follow-up at 5:00 PM",
+          "ground_truth_resolution": "CBT follow-up: Monday, two weeks from now, 5:00 PM",
+          "resolution_similarity": 0.6523284238690529,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the report",
+          "ground_truth_ambiguous_phrase": "the report",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker report",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "resolution_similarity": 0.8294515452635032,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "two weeks",
+          "ground_truth_resolution": "14 days starting Monday",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the report",
+          "resolved_entity": "the sleep tracker report"
+        },
+        {
+          "ambiguous_phrase": "your next appointment",
+          "resolved_entity": "the scheduled therapy follow-up at 5:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6758655081503093,
+        "ollama_total_s": 0.674852297,
+        "model_load_s": 0.00107145,
+        "prompt_eval_s": 0.162504,
+        "generation_s": 0.364447,
+        "prompt_tokens": 1798,
+        "output_tokens": 68,
+        "total_tokens": 1866,
+        "generation_tokens_per_s": 186.58405748984077
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Sounds good. At *that time*, should I send *the data* to both of you?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the data",
+          "ground_truth_ambiguous_phrase": "the data",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sleep tracker data",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "resolution_similarity": 0.7177475160676658,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that time",
+          "ground_truth_ambiguous_phrase": "that time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the check-in call with Dr. Kim at 5:00 PM",
+          "ground_truth_resolution": "CBT follow-up: Monday, two weeks from now, 5:00 PM",
+          "resolution_similarity": 0.47147723431120175,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "the check-in call with Dr. Kim at 5:00 PM"
+        },
+        {
+          "ambiguous_phrase": "the data",
+          "resolved_entity": "the sleep tracker data"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6758527546189725,
+        "ollama_total_s": 0.674793386,
+        "model_load_s": 0.001325089,
+        "prompt_eval_s": 0.164245,
+        "generation_s": 0.35062,
+        "prompt_tokens": 1827,
+        "output_tokens": 70,
+        "total_tokens": 1897,
+        "generation_tokens_per_s": 199.6463407677828
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Yes, just upload *it* to your portal. I’ll handle *the sharing*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the sharing",
+          "ground_truth_ambiguous_phrase": "the sharing",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "sharing of the data with the primary care doctor",
+          "ground_truth_resolution": "Transfer of sleep data to EHR",
+          "resolution_similarity": 0.6108346059063916,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the app",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "resolution_similarity": 0.6104503413371413,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the app"
+        },
+        {
+          "ambiguous_phrase": "the sharing",
+          "resolved_entity": "sharing of the data with the primary care doctor"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6384037281386554,
+        "ollama_total_s": 0.636955035,
+        "model_load_s": 0.001704659,
+        "prompt_eval_s": 0.164548,
+        "generation_s": 0.309794,
+        "prompt_tokens": 1855,
+        "output_tokens": 61,
+        "total_tokens": 1916,
+        "generation_tokens_per_s": 196.90504012343686
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Alright. By the way, I heard from *her* today—my cousin from Dallas. She’s also doing CBT, said *her therapist* recommended similar exercises.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*her therapist*",
+          "ground_truth_ambiguous_phrase": "her therapist",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The therapist of User A's cousin from Dallas",
+          "ground_truth_resolution": "Sarah Sultan's CBT provider (Dr. Maya Lin)",
+          "resolution_similarity": 0.6194361612677545,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*her*",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's cousin from Dallas",
+          "ground_truth_resolution": "Sarah Sultan (Ahmed's cousin)",
+          "resolution_similarity": 0.5553595667807955,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "User A's cousin from Dallas"
+        },
+        {
+          "ambiguous_phrase": "*her therapist*",
+          "resolved_entity": "The therapist of User A's cousin from Dallas"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.665336606092751,
+        "ollama_total_s": 0.66428889,
+        "model_load_s": 0.001203043,
+        "prompt_eval_s": 0.179065,
+        "generation_s": 0.339369,
+        "prompt_tokens": 1916,
+        "output_tokens": 67,
+        "total_tokens": 1983,
+        "generation_tokens_per_s": 197.4252215140452
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "That’s nice to hear. Do you talk to *her* regularly?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "User A's cousin from Dallas"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "User A's cousin from Dallas"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4880242506042123,
+        "ollama_total_s": 0.487005206,
+        "model_load_s": 0.001152985,
+        "prompt_eval_s": 0.179209,
+        "generation_s": 0.155951,
+        "prompt_tokens": 1921,
+        "output_tokens": 25,
+        "total_tokens": 1946,
+        "generation_tokens_per_s": 160.30676302171835
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Once or twice a week—she checks in on *me*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "me",
+          "ground_truth_resolution": "Ahmed",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3725620610639453,
+        "ollama_total_s": 0.371306354,
+        "model_load_s": 0.001326037,
+        "prompt_eval_s": 0.180092,
+        "generation_s": 0.042656,
+        "prompt_tokens": 1944,
+        "output_tokens": 6,
+        "total_tokens": 1950,
+        "generation_tokens_per_s": 140.6601650412603
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Family support matters. Anything else you want to cover *today*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "today",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "2023-10-10",
+          "ground_truth_resolution": "Monday, 5:00 PM",
+          "resolution_similarity": 0.46127906867356055,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "Check-in call with Dr. Kim at 5:00 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "2023-10-10"
+        },
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "Check-in call with Dr. Kim at 5:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.663330587092787,
+        "ollama_total_s": 0.662137841,
+        "model_load_s": 0.001493953,
+        "prompt_eval_s": 0.181289,
+        "generation_s": 0.30947,
+        "prompt_tokens": 1968,
+        "output_tokens": 57,
+        "total_tokens": 2025,
+        "generation_tokens_per_s": 184.18586615827058
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Not really. Just hoping *tomorrow* is as peaceful as *now*. Thank you for all your help.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "now",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The current moment, referring to the time when the conversation is taking place (the exact time is not specified in the context).",
+          "ground_truth_resolution": "Monday, 5:15 PM",
+          "resolution_similarity": 0.4149791796103942,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "tomorrow",
+          "ground_truth_ambiguous_phrase": "tomorrow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The upcoming day after today, which is the day following the current date (the exact date is not specified in the context).",
+          "ground_truth_resolution": "Tuesday, next day",
+          "resolution_similarity": 0.7262304447690788,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The upcoming day after today, which is the day following the current date (the exact date is not specified in the context)."
+        },
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "The current moment, referring to the time when the conversation is taking place (the exact time is not specified in the context)."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.836233600974083,
+        "ollama_total_s": 0.835100991,
+        "model_load_s": 0.001291736,
+        "prompt_eval_s": 0.182413,
+        "generation_s": 0.49798,
+        "prompt_tokens": 2010,
+        "output_tokens": 100,
+        "total_tokens": 2110,
+        "generation_tokens_per_s": 200.81127756134785
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "You’re doing great, Ahmed. Keep up the routine. I’ll check on you at *that time* next week.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that time",
+          "ground_truth_ambiguous_phrase": "that time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "5:00 PM",
+          "ground_truth_resolution": "Monday, next week, 5:00 PM",
+          "resolution_similarity": 0.725862383486704,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "5:00 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "5:00 PM"
+        },
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "5:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6212541228160262,
+        "ollama_total_s": 0.620062654,
+        "model_load_s": 0.001283035,
+        "prompt_eval_s": 0.186329,
+        "generation_s": 0.244193,
+        "prompt_tokens": 2047,
+        "output_tokens": 44,
+        "total_tokens": 2091,
+        "generation_tokens_per_s": 180.1853451982653
+      }
+    }
+  ]
+}

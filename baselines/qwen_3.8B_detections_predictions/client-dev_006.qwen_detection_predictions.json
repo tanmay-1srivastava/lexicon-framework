@@ -1,0 +1,1934 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/client-dev_006.json",
+  "metrics": {
+    "ground_truth_ambiguities": 16,
+    "qwen_predicted_ambiguities": 28,
+    "detected_ground_truth_ambiguities": 3,
+    "missed_ground_truth_ambiguities": 13,
+    "detected_but_bad_resolution": 1,
+    "true_positives": 2,
+    "false_negatives": 14,
+    "false_positive_ambiguities": 25,
+    "detection_recall": 0.1875,
+    "detection_precision": 0.10714285714285714,
+    "detection_f1": 0.13636363636363635,
+    "true_positive_rate_at_0_70": 0.125,
+    "strict_end_to_end_precision_at_0_70": 0.07142857142857142,
+    "end_to_end_f1_at_0_70": 0.09090909090909091,
+    "false_positive_discovery_rate": 0.8928571428571429,
+    "false_positives_per_turn": 0.49019607843137253,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 51,
+    "median_latency_per_turn_s": 0.30488466937094927,
+    "mean_latency_per_turn_s": 0.3231923480828603,
+    "total_prompt_tokens": 55108,
+    "total_output_tokens": 1231
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "I'm in the office, just wrapping up email. Are you ready in the conference room?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the office",
+          "ground_truth_resolution": "Omar's Office, Healthcare Consultancy Suite, Downtown Dubai",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20914207817986608,
+        "ollama_total_s": 0.207866683,
+        "model_load_s": 0.001384006,
+        "prompt_eval_s": 0.036138,
+        "generation_s": 0.025408,
+        "prompt_tokens": 493,
+        "output_tokens": 6,
+        "total_tokens": 499,
+        "generation_tokens_per_s": 236.14609571788412
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Yes, we're all set here. Maria and most of the devs are already present.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Conference Room B, DXB Software Park",
+          "ground_truth_resolution": "Conference Room B, DXB Software Park",
+          "resolution_similarity": 0.9998687417928372,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "we're all set here",
+          "resolved_entity": "Conference Room B, DXB Software Park"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we're all set here",
+          "resolved_entity": "Conference Room B, DXB Software Park"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Conference Room B, DXB Software Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4448617920279503,
+        "ollama_total_s": 0.44335852,
+        "model_load_s": 0.001446075,
+        "prompt_eval_s": 0.036589,
+        "generation_s": 0.366367,
+        "prompt_tokens": 519,
+        "output_tokens": 69,
+        "total_tokens": 588,
+        "generation_tokens_per_s": 188.3357398455647
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Great, I'll connect now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.11881144717335701,
+        "ollama_total_s": 0.117588291,
+        "model_load_s": 0.001515567,
+        "prompt_eval_s": 0.037288,
+        "generation_s": 0.024914,
+        "prompt_tokens": 524,
+        "output_tokens": 6,
+        "total_tokens": 530,
+        "generation_tokens_per_s": 240.82844986754438
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Maria's pulling up the sprint review presentation. She'll start soon.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.283929284196347,
+        "ollama_total_s": 0.282385345,
+        "model_load_s": 0.001249803,
+        "prompt_eval_s": 0.041121,
+        "generation_s": 0.188545,
+        "prompt_tokens": 554,
+        "output_tokens": 31,
+        "total_tokens": 585,
+        "generation_tokens_per_s": 164.4169826831791
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Sounds good. Is Alex there?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "there",
+          "ground_truth_resolution": "Conference Room B, DXB Software Park",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.12622091779485345,
+        "ollama_total_s": 0.124612759,
+        "model_load_s": 0.001180717,
+        "prompt_eval_s": 0.041548,
+        "generation_s": 0.024864,
+        "prompt_tokens": 563,
+        "output_tokens": 6,
+        "total_tokens": 569,
+        "generation_tokens_per_s": 241.3127413127413
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "He just walked in. Got his laptop and the test reports.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "He",
+          "ground_truth_ambiguous_phrase": "He",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Alex",
+          "ground_truth_resolution": "Alex (Software Tester)",
+          "resolution_similarity": 0.782631207362961,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Alex"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.29043504083529115,
+        "ollama_total_s": 0.289009347,
+        "model_load_s": 0.001379105,
+        "prompt_eval_s": 0.045845,
+        "generation_s": 0.196882,
+        "prompt_tokens": 591,
+        "output_tokens": 31,
+        "total_tokens": 622,
+        "generation_tokens_per_s": 157.45471907030608
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Perfect. He'll help clarify the integration defects.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He'll help clarify the integration defects.",
+          "resolved_entity": "Alex"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He'll help clarify the integration defects.",
+          "resolved_entity": "Alex"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3272755881771445,
+        "ollama_total_s": 0.325953443,
+        "model_load_s": 0.001541975,
+        "prompt_eval_s": 0.046714,
+        "generation_s": 0.219375,
+        "prompt_tokens": 607,
+        "output_tokens": 37,
+        "total_tokens": 644,
+        "generation_tokens_per_s": 168.66096866096868
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Maria's ready. Should we begin?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1340363221243024,
+        "ollama_total_s": 0.132667874,
+        "model_load_s": 0.00159636,
+        "prompt_eval_s": 0.046817,
+        "generation_s": 0.025447,
+        "prompt_tokens": 622,
+        "output_tokens": 6,
+        "total_tokens": 628,
+        "generation_tokens_per_s": 235.78417888159703
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, let's do it.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.12245308002457023,
+        "ollama_total_s": 0.121296727,
+        "model_load_s": 0.001200442,
+        "prompt_eval_s": 0.046536,
+        "generation_s": 0.024834,
+        "prompt_tokens": 637,
+        "output_tokens": 6,
+        "total_tokens": 643,
+        "generation_tokens_per_s": 241.60425223483935
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Maria: During the last sprint cycle, we tackled patient registration and scheduling. Our main findings from testing: about seven minor defects during system integration.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.14280337234959006,
+        "ollama_total_s": 0.141867474,
+        "model_load_s": 0.001459517,
+        "prompt_eval_s": 0.051325,
+        "generation_s": 0.024796,
+        "prompt_tokens": 699,
+        "output_tokens": 6,
+        "total_tokens": 705,
+        "generation_tokens_per_s": 241.97451201806746
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Thanks, Maria. Were these in the new module or the old one?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "these",
+          "resolved_entity": "the seven minor defects during system integration"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "these",
+          "resolved_entity": "the seven minor defects during system integration"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3292398378252983,
+        "ollama_total_s": 0.328067419,
+        "model_load_s": 0.00134155,
+        "prompt_eval_s": 0.05124,
+        "generation_s": 0.222461,
+        "prompt_tokens": 710,
+        "output_tokens": 37,
+        "total_tokens": 747,
+        "generation_tokens_per_s": 166.32128777628438
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Maria: All were in the new patient intake module. We managed to fix five; two are still pending.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "new patient intake module",
+          "ground_truth_resolution": "Patient Intake Module in Patient Management System",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.15350136812776327,
+        "ollama_total_s": 0.152267474,
+        "model_load_s": 0.004172311,
+        "prompt_eval_s": 0.052478,
+        "generation_s": 0.025459,
+        "prompt_tokens": 749,
+        "output_tokens": 6,
+        "total_tokens": 755,
+        "generation_tokens_per_s": 235.67304293177267
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Let's flag those for priority. Alex, did your team review the failed test cases?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "the two pending defects in the new patient intake module"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "the two pending defects in the new patient intake module"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30488466937094927,
+        "ollama_total_s": 0.303606635,
+        "model_load_s": 0.001248575,
+        "prompt_eval_s": 0.061764,
+        "generation_s": 0.169328,
+        "prompt_tokens": 773,
+        "output_tokens": 29,
+        "total_tokens": 802,
+        "generation_tokens_per_s": 171.26523670036852
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Alex: Yes, we saw issues mostly around the form validation and API calls. Some data wasn't updating as expected.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "form validation and API calls",
+          "ground_truth_resolution": "Registration Form Validation and Scheduling API Endpoints",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17268710816279054,
+        "ollama_total_s": 0.17157843,
+        "model_load_s": 0.00139712,
+        "prompt_eval_s": 0.062107,
+        "generation_s": 0.025034,
+        "prompt_tokens": 813,
+        "output_tokens": 6,
+        "total_tokens": 819,
+        "generation_tokens_per_s": 239.6740433011105
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Were any defects related to the document upload feature?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.15696836216375232,
+        "ollama_total_s": 0.155889033,
+        "model_load_s": 0.00126709,
+        "prompt_eval_s": 0.068056,
+        "generation_s": 0.025129,
+        "prompt_tokens": 819,
+        "output_tokens": 6,
+        "total_tokens": 825,
+        "generation_tokens_per_s": 238.76795734012498
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Alex: No, all document uploads worked fine. The trouble was with the scheduling component.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "document uploads",
+          "ground_truth_resolution": "Document Upload Feature in Patient Management System",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.16127844993025064,
+        "ollama_total_s": 0.160245641,
+        "model_load_s": 0.00141968,
+        "prompt_eval_s": 0.068459,
+        "generation_s": 0.02459,
+        "prompt_tokens": 855,
+        "output_tokens": 6,
+        "total_tokens": 861,
+        "generation_tokens_per_s": 244.00162667751118
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Noted. Maria, how did acceptance testing go?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Maria",
+          "resolved_entity": "Maria (from User B's context, as she is part of the Dev Team and involved in the sprint retrospective)"
+        },
+        {
+          "ambiguous_phrase": "acceptance testing",
+          "resolved_entity": "Acceptance testing related to the Patient Management System, as mentioned in the sprint retrospective context"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Maria",
+          "resolved_entity": "Maria (from User B's context, as she is part of the Dev Team and involved in the sprint retrospective)"
+        },
+        {
+          "ambiguous_phrase": "acceptance testing",
+          "resolved_entity": "Acceptance testing related to the Patient Management System, as mentioned in the sprint retrospective context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6005013701505959,
+        "ollama_total_s": 0.599341577,
+        "model_load_s": 0.001440193,
+        "prompt_eval_s": 0.068426,
+        "generation_s": 0.461667,
+        "prompt_tokens": 869,
+        "output_tokens": 90,
+        "total_tokens": 959,
+        "generation_tokens_per_s": 194.94570762042773
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Maria: We got feedback from two UAT groups. The main concern was user onboarding speed.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "two UAT groups",
+          "ground_truth_resolution": "Emirates Clinic UAT Group, Private Hospital UAT Group",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.19697264907881618,
+        "ollama_total_s": 0.195835501,
+        "model_load_s": 0.00128361,
+        "prompt_eval_s": 0.072969,
+        "generation_s": 0.025452,
+        "prompt_tokens": 908,
+        "output_tokens": 6,
+        "total_tokens": 914,
+        "generation_tokens_per_s": 235.73785950023574
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Was that the team from the Emirates clinic, or another group?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Was that the team from the Emirates clinic, or another group?",
+          "resolved_entity": "the team from the Emirates clinic"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Was that the team from the Emirates clinic, or another group?",
+          "resolved_entity": "the team from the Emirates clinic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4444634672254324,
+        "ollama_total_s": 0.443250865,
+        "model_load_s": 0.001405129,
+        "prompt_eval_s": 0.072771,
+        "generation_s": 0.278136,
+        "prompt_tokens": 924,
+        "output_tokens": 47,
+        "total_tokens": 971,
+        "generation_tokens_per_s": 168.98208070871803
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Maria: It was from Emirates clinic, plus one private hospital. Their coordinator sent us the report.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Their coordinator",
+          "ground_truth_resolution": "Lead Coordinator, Private Hospital UAT Group",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.26370106311514974,
+        "ollama_total_s": 0.262315276,
+        "model_load_s": 0.001831367,
+        "prompt_eval_s": 0.081557,
+        "generation_s": 0.026069,
+        "prompt_tokens": 961,
+        "output_tokens": 6,
+        "total_tokens": 967,
+        "generation_tokens_per_s": 230.1584257163681
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Did you share the coordinator's feedback with Alex?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator's feedback",
+          "resolved_entity": "the coordinator from Emirates clinic and the private hospital"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator's feedback",
+          "resolved_entity": "the coordinator from Emirates clinic and the private hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45535811875015497,
+        "ollama_total_s": 0.454108621,
+        "model_load_s": 0.0014257,
+        "prompt_eval_s": 0.082208,
+        "generation_s": 0.245688,
+        "prompt_tokens": 971,
+        "output_tokens": 42,
+        "total_tokens": 1013,
+        "generation_tokens_per_s": 170.94852007424052
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Maria: Yes, I forwarded their document to him last night.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "their document",
+          "resolved_entity": "the coordinator's feedback report from Emirates clinic and the private hospital"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "document",
+          "ground_truth_resolution": "UAT Feedback Report",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their document",
+          "resolved_entity": "the coordinator's feedback report from Emirates clinic and the private hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4239155692048371,
+        "ollama_total_s": 0.422608946,
+        "model_load_s": 0.003271586,
+        "prompt_eval_s": 0.083067,
+        "generation_s": 0.262497,
+        "prompt_tokens": 997,
+        "output_tokens": 43,
+        "total_tokens": 1040,
+        "generation_tokens_per_s": 163.81139593976314
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Alex, any insights from their feedback?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "their feedback",
+          "resolved_entity": "the coordinator's feedback from the Emirates clinic and the private hospital"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their feedback",
+          "resolved_entity": "the coordinator's feedback from the Emirates clinic and the private hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3883326458744705,
+        "ollama_total_s": 0.38686351,
+        "model_load_s": 0.001323387,
+        "prompt_eval_s": 0.082131,
+        "generation_s": 0.189885,
+        "prompt_tokens": 1010,
+        "output_tokens": 32,
+        "total_tokens": 1042,
+        "generation_tokens_per_s": 168.52305342707427
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Alex: They want faster login, and clearer status messages. We'll address that in the next sprint.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "The UAT groups from Emirates clinic and the private hospital"
+        },
+        {
+          "ambiguous_phrase": "We",
+          "resolved_entity": "Alex and his team"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "The UAT groups from Emirates clinic and the private hospital"
+        },
+        {
+          "ambiguous_phrase": "We",
+          "resolved_entity": "Alex and his team"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5243746279738843,
+        "ollama_total_s": 0.522853201,
+        "model_load_s": 0.00145194,
+        "prompt_eval_s": 0.091624,
+        "generation_s": 0.348125,
+        "prompt_tokens": 1054,
+        "output_tokens": 64,
+        "total_tokens": 1118,
+        "generation_tokens_per_s": 183.84201077199282
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Excellent. It's critical for regulatory compliance that these changes are logged.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "these changes",
+          "resolved_entity": "the changes related to the document upload feature and the scheduling component mentioned in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "these changes",
+          "resolved_entity": "the changes related to the document upload feature and the scheduling component mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3735746177844703,
+        "ollama_total_s": 0.372321265,
+        "model_load_s": 0.001877458,
+        "prompt_eval_s": 0.091645,
+        "generation_s": 0.192332,
+        "prompt_tokens": 1071,
+        "output_tokens": 36,
+        "total_tokens": 1107,
+        "generation_tokens_per_s": 187.1763409105089
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Maria: We're updating the change log. Shall I email it to you once done?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20898212818428874,
+        "ollama_total_s": 0.207801964,
+        "model_load_s": 0.001397197,
+        "prompt_eval_s": 0.092405,
+        "generation_s": 0.025617,
+        "prompt_tokens": 1103,
+        "output_tokens": 6,
+        "total_tokens": 1109,
+        "generation_tokens_per_s": 234.21946363742825
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Yes, please.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2061127540655434,
+        "ollama_total_s": 0.204960603,
+        "model_load_s": 0.001433695,
+        "prompt_eval_s": 0.091855,
+        "generation_s": 0.025681,
+        "prompt_tokens": 1103,
+        "output_tokens": 6,
+        "total_tokens": 1109,
+        "generation_tokens_per_s": 233.6357618472801
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "By the way, did you see the new QA protocol draft? It's on the drive.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It's on the drive.",
+          "resolved_entity": "The drive refers to a shared storage or network drive accessible to both users, likely the team's shared drive given the context of the QA protocol draft and previous discussions about files and test reports."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It's on the drive.",
+          "resolved_entity": "The drive refers to a shared storage or network drive accessible to both users, likely the team's shared drive given the context of the QA protocol draft and previous discussions about files and test reports."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5371372560039163,
+        "ollama_total_s": 0.535983639,
+        "model_load_s": 0.001102967,
+        "prompt_eval_s": 0.096968,
+        "generation_s": 0.350682,
+        "prompt_tokens": 1147,
+        "output_tokens": 71,
+        "total_tokens": 1218,
+        "generation_tokens_per_s": 202.46262996104733
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "I did. The section on test coverage is promising. Did the QA lead review it?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "QA lead",
+          "ground_truth_resolution": "Fatima Al-Farsi (QA Lead)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23454917315393686,
+        "ollama_total_s": 0.233427331,
+        "model_load_s": 0.001569594,
+        "prompt_eval_s": 0.09863,
+        "generation_s": 0.024755,
+        "prompt_tokens": 1174,
+        "output_tokens": 6,
+        "total_tokens": 1180,
+        "generation_tokens_per_s": 242.3752777216724
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Maria: She looked over it yesterday and suggested a couple of edits.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She looked over it yesterday and suggested a couple of edits.",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She looked over it yesterday and suggested a couple of edits.",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44570303382351995,
+        "ollama_total_s": 0.444371132,
+        "model_load_s": 0.001340473,
+        "prompt_eval_s": 0.098292,
+        "generation_s": 0.242881,
+        "prompt_tokens": 1194,
+        "output_tokens": 41,
+        "total_tokens": 1235,
+        "generation_tokens_per_s": 168.8069466117152
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Can you send me her notes?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her notes",
+          "resolved_entity": "Maria's notes from the sprint retrospective"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her notes",
+          "resolved_entity": "Maria's notes from the sprint retrospective"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4663339559920132,
+        "ollama_total_s": 0.465027461,
+        "model_load_s": 0.003367823,
+        "prompt_eval_s": 0.099894,
+        "generation_s": 0.250651,
+        "prompt_tokens": 1204,
+        "output_tokens": 38,
+        "total_tokens": 1242,
+        "generation_tokens_per_s": 151.6052200071015
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Maria: Will do. They're in her latest email.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "They're in her latest email.",
+          "resolved_entity": "Maria's latest email containing the QA lead's notes"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her latest email",
+          "ground_truth_resolution": "Fatima’s QA Notes Email (Yesterday)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They're in her latest email.",
+          "resolved_entity": "Maria's latest email containing the QA lead's notes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4617690755985677,
+        "ollama_total_s": 0.460179955,
+        "model_load_s": 0.001357421,
+        "prompt_eval_s": 0.099946,
+        "generation_s": 0.262529,
+        "prompt_tokens": 1231,
+        "output_tokens": 45,
+        "total_tokens": 1276,
+        "generation_tokens_per_s": 171.40963474511386
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "If you need, I can check with the compliance manager on acceptance criteria.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24407352413982153,
+        "ollama_total_s": 0.242750312,
+        "model_load_s": 0.001447784,
+        "prompt_eval_s": 0.100695,
+        "generation_s": 0.02572,
+        "prompt_tokens": 1259,
+        "output_tokens": 6,
+        "total_tokens": 1265,
+        "generation_tokens_per_s": 233.28149300155522
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Maria: Yes, that would help. She's always thorough.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She's always thorough",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "compliance manager",
+          "ground_truth_resolution": "Dr. Tariq Al-Khalifa (Compliance Manager)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She's always thorough",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42449533008039,
+        "ollama_total_s": 0.423455353,
+        "model_load_s": 0.001375218,
+        "prompt_eval_s": 0.112423,
+        "generation_s": 0.212192,
+        "prompt_tokens": 1280,
+        "output_tokens": 34,
+        "total_tokens": 1314,
+        "generation_tokens_per_s": 160.2322424973609
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "I’ll ring her after this session.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Maria"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41500556701794267,
+        "ollama_total_s": 0.41370518,
+        "model_load_s": 0.00119781,
+        "prompt_eval_s": 0.114563,
+        "generation_s": 0.197955,
+        "prompt_tokens": 1293,
+        "output_tokens": 31,
+        "total_tokens": 1324,
+        "generation_tokens_per_s": 156.60124775832892
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Before we wrap up, do we need to review anything else today?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2620677468366921,
+        "ollama_total_s": 0.26076447,
+        "model_load_s": 0.001671081,
+        "prompt_eval_s": 0.116137,
+        "generation_s": 0.025588,
+        "prompt_tokens": 1323,
+        "output_tokens": 6,
+        "total_tokens": 1329,
+        "generation_tokens_per_s": 234.4849148038143
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Let’s check the onboarding workflow one last time. Has the training guide been updated?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24609080282971263,
+        "ollama_total_s": 0.244848052,
+        "model_load_s": 0.001240478,
+        "prompt_eval_s": 0.1157,
+        "generation_s": 0.025478,
+        "prompt_tokens": 1355,
+        "output_tokens": 6,
+        "total_tokens": 1361,
+        "generation_tokens_per_s": 235.4972917811445
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Maria: The new guide is in that folder you used for last month’s docs.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that folder",
+          "ground_truth_ambiguous_phrase": "that folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "last month’s docs folder",
+          "ground_truth_resolution": "Onboarding Documents Folder (HealthcareConsultancy/Docs/2024_05)",
+          "resolution_similarity": 0.6939062903078289,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that folder",
+          "resolved_entity": "last month’s docs folder"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4359693992882967,
+        "ollama_total_s": 0.434574736,
+        "model_load_s": 0.001104419,
+        "prompt_eval_s": 0.116119,
+        "generation_s": 0.215423,
+        "prompt_tokens": 1381,
+        "output_tokens": 36,
+        "total_tokens": 1417,
+        "generation_tokens_per_s": 167.11307520552586
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Great, I’ll pull it up from there.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "from there",
+          "resolved_entity": "Conference Room B, DXB Software Park"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "from there",
+          "resolved_entity": "Conference Room B, DXB Software Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4416336789727211,
+        "ollama_total_s": 0.440542289,
+        "model_load_s": 0.001210269,
+        "prompt_eval_s": 0.129589,
+        "generation_s": 0.202846,
+        "prompt_tokens": 1394,
+        "output_tokens": 39,
+        "total_tokens": 1433,
+        "generation_tokens_per_s": 192.2640821115526
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Alex: I can show you the draft version after the meeting.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3004413601011038,
+        "ollama_total_s": 0.299305119,
+        "model_load_s": 0.004219648,
+        "prompt_eval_s": 0.129751,
+        "generation_s": 0.024731,
+        "prompt_tokens": 1420,
+        "output_tokens": 6,
+        "total_tokens": 1426,
+        "generation_tokens_per_s": 242.61048886013506
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Thanks, Alex. That’ll help.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27211319003254175,
+        "ollama_total_s": 0.270920024,
+        "model_load_s": 0.00136986,
+        "prompt_eval_s": 0.129734,
+        "generation_s": 0.024622,
+        "prompt_tokens": 1433,
+        "output_tokens": 6,
+        "total_tokens": 1439,
+        "generation_tokens_per_s": 243.68450978799447
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Anything else before we finish?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2797817550599575,
+        "ollama_total_s": 0.278431778,
+        "model_load_s": 0.001183367,
+        "prompt_eval_s": 0.129844,
+        "generation_s": 0.024409,
+        "prompt_tokens": 1447,
+        "output_tokens": 6,
+        "total_tokens": 1453,
+        "generation_tokens_per_s": 245.81097136302182
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Just confirming—who will handle the pending defects?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "who will handle the pending defects?",
+          "resolved_entity": "Alex"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "who will handle the pending defects?",
+          "resolved_entity": "Alex"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.476276574190706,
+        "ollama_total_s": 0.475056399,
+        "model_load_s": 0.001426977,
+        "prompt_eval_s": 0.129805,
+        "generation_s": 0.219852,
+        "prompt_tokens": 1469,
+        "output_tokens": 36,
+        "total_tokens": 1505,
+        "generation_tokens_per_s": 163.7465203864418
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Maria: The junior devs will start on them tomorrow morning.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the pending defects"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "junior devs",
+          "ground_truth_resolution": "Junior Software Developers, DXB Dev Team",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the pending defects"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3872726410627365,
+        "ollama_total_s": 0.385989053,
+        "model_load_s": 0.001628377,
+        "prompt_eval_s": 0.131929,
+        "generation_s": 0.124216,
+        "prompt_tokens": 1494,
+        "output_tokens": 22,
+        "total_tokens": 1516,
+        "generation_tokens_per_s": 177.11083918335802
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Perfect. Let’s review their progress by the afternoon.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "their progress",
+          "resolved_entity": "the junior devs' progress on the pending defects"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "afternoon",
+          "ground_truth_resolution": "May 28th, 2024, 3:00 PM",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their progress",
+          "resolved_entity": "the junior devs' progress on the pending defects"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4715443798340857,
+        "ollama_total_s": 0.470161336,
+        "model_load_s": 0.001489271,
+        "prompt_eval_s": 0.132197,
+        "generation_s": 0.208503,
+        "prompt_tokens": 1514,
+        "output_tokens": 40,
+        "total_tokens": 1554,
+        "generation_tokens_per_s": 191.84376243986898
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Maria: Will do. I’ll send an update at 3:00 PM.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.29671519808471203,
+        "ollama_total_s": 0.29558721,
+        "model_load_s": 0.001485147,
+        "prompt_eval_s": 0.136921,
+        "generation_s": 0.0252,
+        "prompt_tokens": 1549,
+        "output_tokens": 6,
+        "total_tokens": 1555,
+        "generation_tokens_per_s": 238.0952380952381
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Thanks, Maria. I appreciate the team's effort.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2962951441295445,
+        "ollama_total_s": 0.295109251,
+        "model_load_s": 0.001407331,
+        "prompt_eval_s": 0.136744,
+        "generation_s": 0.025071,
+        "prompt_tokens": 1563,
+        "output_tokens": 6,
+        "total_tokens": 1569,
+        "generation_tokens_per_s": 239.32033026205576
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "No problem! By the way, did you see the weather today? It’s surprisingly cool for Dubai.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the weather today",
+          "resolved_entity": "Current weather conditions in Dubai (contextually inferred from the conversation about Dubai and the mention of 'cool for Dubai')"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the weather today",
+          "resolved_entity": "Current weather conditions in Dubai (contextually inferred from the conversation about Dubai and the mention of 'cool for Dubai')"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5737816048786044,
+        "ollama_total_s": 0.572285255,
+        "model_load_s": 0.001567256,
+        "prompt_eval_s": 0.137887,
+        "generation_s": 0.299777,
+        "prompt_tokens": 1604,
+        "output_tokens": 54,
+        "total_tokens": 1658,
+        "generation_tokens_per_s": 180.13389953198543
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "I noticed, quite pleasant!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3074633330106735,
+        "ollama_total_s": 0.306097187,
+        "model_load_s": 0.00189953,
+        "prompt_eval_s": 0.139702,
+        "generation_s": 0.024665,
+        "prompt_tokens": 1605,
+        "output_tokens": 6,
+        "total_tokens": 1611,
+        "generation_tokens_per_s": 243.25967970808838
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Anyway, see you at the next sprint review.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3341541322879493,
+        "ollama_total_s": 0.332911483,
+        "model_load_s": 0.001672882,
+        "prompt_eval_s": 0.139219,
+        "generation_s": 0.025443,
+        "prompt_tokens": 1629,
+        "output_tokens": 6,
+        "total_tokens": 1635,
+        "generation_tokens_per_s": 235.82124749439924
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Absolutely. Have a productive day, all!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.30732416594401,
+        "ollama_total_s": 0.306301079,
+        "model_load_s": 0.001480721,
+        "prompt_eval_s": 0.139949,
+        "generation_s": 0.025119,
+        "prompt_tokens": 1647,
+        "output_tokens": 6,
+        "total_tokens": 1653,
+        "generation_tokens_per_s": 238.86301206258213
+      }
+    }
+  ]
+}

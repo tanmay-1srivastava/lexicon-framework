@@ -1,0 +1,2532 @@
+{
+  "dataset_id": "scenario_protocol_002",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/doctor_patient__009.json",
+  "metrics": {
+    "ground_truth_ambiguities": 58,
+    "qwen_predicted_ambiguities": 61,
+    "detected_ground_truth_ambiguities": 55,
+    "missed_ground_truth_ambiguities": 3,
+    "detected_but_bad_resolution": 34,
+    "true_positives": 21,
+    "false_negatives": 37,
+    "false_positive_ambiguities": 6,
+    "detection_recall": 0.9482758620689655,
+    "detection_precision": 0.9016393442622951,
+    "detection_f1": 0.9243697478991596,
+    "true_positive_rate_at_0_70": 0.3620689655172414,
+    "strict_end_to_end_precision_at_0_70": 0.3442622950819672,
+    "end_to_end_f1_at_0_70": 0.35294117647058826,
+    "false_positive_discovery_rate": 0.09836065573770492,
+    "false_positives_per_turn": 0.11538461538461539,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 52,
+    "median_latency_per_turn_s": 0.4528371444903314,
+    "mean_latency_per_turn_s": 0.44556271235566014,
+    "total_prompt_tokens": 56216,
+    "total_output_tokens": 2291
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi, Dr. Carter. I'm *here* at Baltic Coffee. Just wanted to check in before work.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "resolution_similarity": 0.9999119659558307,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Baltic Coffee Roasters, Williamsburg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5319098890759051,
+        "ollama_total_s": 0.530386038,
+        "model_load_s": 0.001246978,
+        "prompt_eval_s": 0.036025,
+        "generation_s": 0.244181,
+        "prompt_tokens": 467,
+        "output_tokens": 39,
+        "total_tokens": 506,
+        "generation_tokens_per_s": 159.71758654440762
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Hi Isabella. Glad you reached out. How are you feeling *today*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "today",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Today, referring to the current day, which is the day of the conversation between User A and User B.",
+          "ground_truth_resolution": "Current Day: Thursday, May 4th",
+          "resolution_similarity": 0.6335985864994743,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "Today, referring to the current day, which is the day of the conversation between User A and User B."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3044301881454885,
+        "ollama_total_s": 0.303430626,
+        "model_load_s": 0.001204584,
+        "prompt_eval_s": 0.03612,
+        "generation_s": 0.215207,
+        "prompt_tokens": 487,
+        "output_tokens": 41,
+        "total_tokens": 528,
+        "generation_tokens_per_s": 190.51424907182385
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Much better *now*, no rash or swelling since I took *it*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "now",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the current moment in time, referring to the time since User A took the medication",
+          "ground_truth_resolution": "Thursday, May 4th, 10:18 AM",
+          "resolution_similarity": 0.478314516896924,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the medication (presumably taken by User A)",
+          "ground_truth_resolution": "Cetirizine Antihistamine",
+          "resolution_similarity": 0.6214468278889754,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (medication schedule)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the medication (presumably taken by User A)"
+        },
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "the current moment in time, referring to the time since User A took the medication"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47331587690860033,
+        "ollama_total_s": 0.472049983,
+        "model_load_s": 0.001356808,
+        "prompt_eval_s": 0.036709,
+        "generation_s": 0.390673,
+        "prompt_tokens": 511,
+        "output_tokens": 74,
+        "total_tokens": 585,
+        "generation_tokens_per_s": 189.41672447289676
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "That's great. Did you remember to bring *those tablets* with you?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those tablets",
+          "ground_truth_ambiguous_phrase": "those tablets",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the tablets mentioned in the previous context (likely referring to the medication or device discussed in the conversation)",
+          "ground_truth_resolution": "Cetirizine Antihistamine Tablets",
+          "resolution_similarity": 0.6143454551243502,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (medication schedule)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those tablets",
+          "resolved_entity": "the tablets mentioned in the previous context (likely referring to the medication or device discussed in the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3736088811419904,
+        "ollama_total_s": 0.372201327,
+        "model_load_s": 0.001526748,
+        "prompt_eval_s": 0.041232,
+        "generation_s": 0.280014,
+        "prompt_tokens": 536,
+        "output_tokens": 50,
+        "total_tokens": 586,
+        "generation_tokens_per_s": 178.56250044640626
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Yes, I have *them* in my bag.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "those tablets",
+          "ground_truth_resolution": "Cetirizine Antihistamine Tablets",
+          "resolution_similarity": 0.5749408542472982,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (medication schedule)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "those tablets"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.2956764972768724,
+        "ollama_total_s": 0.294398483,
+        "model_load_s": 0.003498574,
+        "prompt_eval_s": 0.041482,
+        "generation_s": 0.20288,
+        "prompt_tokens": 551,
+        "output_tokens": 32,
+        "total_tokens": 583,
+        "generation_tokens_per_s": 157.72870662460568
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Good. When is your next shift at *the hospital*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the hospital",
+          "ground_truth_ambiguous_phrase": "the hospital",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "NYU Langone Hospital",
+          "ground_truth_resolution": "NYU Langone Hospital",
+          "resolution_similarity": 0.9999087156760595,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the hospital",
+          "resolved_entity": "NYU Langone Hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.31854130513966084,
+        "ollama_total_s": 0.31737629,
+        "model_load_s": 0.001553388,
+        "prompt_eval_s": 0.046041,
+        "generation_s": 0.219877,
+        "prompt_tokens": 575,
+        "output_tokens": 36,
+        "total_tokens": 611,
+        "generation_tokens_per_s": 163.72790241817017
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "I head *there* after lunch, around 3.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dr. Carter's Office, NYU Langone",
+          "ground_truth_resolution": "NYU Langone Hospital",
+          "resolution_similarity": 0.8341636077107172,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Dr. Carter's Office, NYU Langone"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3379766559228301,
+        "ollama_total_s": 0.336842313,
+        "model_load_s": 0.001326555,
+        "prompt_eval_s": 0.046412,
+        "generation_s": 0.236977,
+        "prompt_tokens": 595,
+        "output_tokens": 40,
+        "total_tokens": 635,
+        "generation_tokens_per_s": 168.79275203922745
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Will you have a chance to eat something *before*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "before",
+          "ground_truth_ambiguous_phrase": "before",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "before lunch",
+          "ground_truth_resolution": "Before 3:00 PM today",
+          "resolution_similarity": 0.720364063097932,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "before",
+          "resolved_entity": "before lunch"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30435787281021476,
+        "ollama_total_s": 0.30329001,
+        "model_load_s": 0.001099492,
+        "prompt_eval_s": 0.046931,
+        "generation_s": 0.200511,
+        "prompt_tokens": 616,
+        "output_tokens": 32,
+        "total_tokens": 648,
+        "generation_tokens_per_s": 159.59224182214442
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, I’m grabbing a sandwich *here* and meeting Ava at *her place* after.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her place",
+          "ground_truth_ambiguous_phrase": "her place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Ava's location (not explicitly resolved, but inferred to be a private location associated with Ava)",
+          "ground_truth_resolution": "Ava's Apartment, Williamsburg",
+          "resolution_similarity": 0.703525732268044,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Baltic Coffee Roasters, Williamsburg"
+        },
+        {
+          "ambiguous_phrase": "her place",
+          "resolved_entity": "Ava's location (not explicitly resolved, but inferred to be a private location associated with Ava)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4683079170063138,
+        "ollama_total_s": 0.466869926,
+        "model_load_s": 0.001327454,
+        "prompt_eval_s": 0.047389,
+        "generation_s": 0.367538,
+        "prompt_tokens": 653,
+        "output_tokens": 78,
+        "total_tokens": 731,
+        "generation_tokens_per_s": 212.22295381702028
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Ava is your roommate, right? She still helping you keep track of allergens?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Ava"
+        },
+        {
+          "ambiguous_phrase": "keep track of allergens",
+          "resolved_entity": "the allergens mentioned in previous conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Ava"
+        },
+        {
+          "ambiguous_phrase": "keep track of allergens",
+          "resolved_entity": "the allergens mentioned in previous conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45658104307949543,
+        "ollama_total_s": 0.455364383,
+        "model_load_s": 0.001091234,
+        "prompt_eval_s": 0.047984,
+        "generation_s": 0.334472,
+        "prompt_tokens": 679,
+        "output_tokens": 62,
+        "total_tokens": 741,
+        "generation_tokens_per_s": 185.36678705541868
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "She’s being super supportive, made *that list* of safe foods for me.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that list",
+          "ground_truth_ambiguous_phrase": "that list",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the list of safe foods for me",
+          "ground_truth_resolution": "List of Safe Foods for Isabella",
+          "resolution_similarity": 0.8582154886800091,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (shared doc)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that list",
+          "resolved_entity": "the list of safe foods for me"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3701874380931258,
+        "ollama_total_s": 0.368760601,
+        "model_load_s": 0.001516858,
+        "prompt_eval_s": 0.052623,
+        "generation_s": 0.257586,
+        "prompt_tokens": 705,
+        "output_tokens": 38,
+        "total_tokens": 743,
+        "generation_tokens_per_s": 147.523545534307
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Did you get the results for *the other test* we ordered?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the other test",
+          "ground_truth_ambiguous_phrase": "the other test",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the second allergen test (not the one mentioned in Turn 11)",
+          "ground_truth_resolution": "Patch Test for Contact Allergens",
+          "resolution_similarity": 0.7100066330354337,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the other test",
+          "resolved_entity": "the second allergen test (not the one mentioned in Turn 11)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4399046082980931,
+        "ollama_total_s": 0.438488035,
+        "model_load_s": 0.000931756,
+        "prompt_eval_s": 0.052757,
+        "generation_s": 0.322389,
+        "prompt_tokens": 726,
+        "output_tokens": 47,
+        "total_tokens": 773,
+        "generation_tokens_per_s": 145.78661182608587
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "*They* sent an email this morning but I haven’t opened *it* yet.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the email",
+          "ground_truth_resolution": "Lab Results Email",
+          "resolution_similarity": 0.6359395173114446,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "They",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the clinic or medical team",
+          "ground_truth_resolution": "NYU Langone Lab Results Team",
+          "resolution_similarity": 0.5598344184492471,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "the clinic or medical team"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the email"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46562467981129885,
+        "ollama_total_s": 0.464267879,
+        "model_load_s": 0.001199107,
+        "prompt_eval_s": 0.06062,
+        "generation_s": 0.317025,
+        "prompt_tokens": 757,
+        "output_tokens": 56,
+        "total_tokens": 813,
+        "generation_tokens_per_s": 176.64222064505952
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Let me know what *it* says. We’ll go over *those results* at your follow-up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*those results*",
+          "ground_truth_ambiguous_phrase": "those results",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the results for the other test",
+          "ground_truth_resolution": "Patch Test Results",
+          "resolution_similarity": 0.7081191191873198,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the email"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the email"
+        },
+        {
+          "ambiguous_phrase": "*those results*",
+          "resolved_entity": "the results for the other test"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45292114093899727,
+        "ollama_total_s": 0.451669352,
+        "model_load_s": 0.001311311,
+        "prompt_eval_s": 0.062498,
+        "generation_s": 0.297644,
+        "prompt_tokens": 794,
+        "output_tokens": 60,
+        "total_tokens": 854,
+        "generation_tokens_per_s": 201.58309927295693
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Sure, I‘ll forward *them* once I check.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "those results",
+          "ground_truth_resolution": "Patch Test Results (electronically forwarded document)",
+          "resolution_similarity": 0.708044393967014,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "those results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35843287874013186,
+        "ollama_total_s": 0.357173987,
+        "model_load_s": 0.001392042,
+        "prompt_eval_s": 0.068557,
+        "generation_s": 0.207244,
+        "prompt_tokens": 808,
+        "output_tokens": 32,
+        "total_tokens": 840,
+        "generation_tokens_per_s": 154.40736523132153
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Great. Planning to go for another dance class *this week*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this week",
+          "ground_truth_ambiguous_phrase": "this week",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the current week in the context of the conversation",
+          "ground_truth_resolution": "Week of May 1st–7th",
+          "resolution_similarity": 0.6534582679045137,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this week",
+          "resolved_entity": "the current week in the context of the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3467212817631662,
+        "ollama_total_s": 0.345400552,
+        "model_load_s": 0.001326404,
+        "prompt_eval_s": 0.06929,
+        "generation_s": 0.206639,
+        "prompt_tokens": 833,
+        "output_tokens": 29,
+        "total_tokens": 862,
+        "generation_tokens_per_s": 140.34136827994715
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Yes, supposed to meet *them* at the studio on Thursday evening.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Ava and possibly others mentioned in the context",
+          "ground_truth_resolution": "Ballroom Dance Friends",
+          "resolution_similarity": 0.42228549288886813,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "Ava and possibly others mentioned in the context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38480857713148,
+        "ollama_total_s": 0.383507156,
+        "model_load_s": 0.00164711,
+        "prompt_eval_s": 0.069864,
+        "generation_s": 0.23155,
+        "prompt_tokens": 859,
+        "output_tokens": 39,
+        "total_tokens": 898,
+        "generation_tokens_per_s": 168.43014467717555
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "At *the same place* as last time?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the same place",
+          "ground_truth_ambiguous_phrase": "the same place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Williamsburg Dance Studio, 56 Metropolitan Ave.",
+          "resolution_similarity": 0.49358535663918757,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the same place",
+          "resolved_entity": "Baltic Coffee Roasters, Williamsburg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39659351110458374,
+        "ollama_total_s": 0.395291263,
+        "model_load_s": 0.001298079,
+        "prompt_eval_s": 0.070057,
+        "generation_s": 0.244606,
+        "prompt_tokens": 874,
+        "output_tokens": 41,
+        "total_tokens": 915,
+        "generation_tokens_per_s": 167.61649346295675
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Yes, *there* on Metropolitan Avenue.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Metropolitan Avenue",
+          "ground_truth_resolution": "Williamsburg Dance Studio, 56 Metropolitan Ave.",
+          "resolution_similarity": 0.5706320562039978,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Metropolitan Avenue"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3519916022196412,
+        "ollama_total_s": 0.350823451,
+        "model_load_s": 0.001162562,
+        "prompt_eval_s": 0.073557,
+        "generation_s": 0.190475,
+        "prompt_tokens": 892,
+        "output_tokens": 33,
+        "total_tokens": 925,
+        "generation_tokens_per_s": 173.25108281926762
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Remember to check the air quality *before you go*, just in case.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "before you go",
+          "ground_truth_ambiguous_phrase": "before you go",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "before leaving Dr. Carter's Office, NYU Langone",
+          "ground_truth_resolution": "Before Thursday, May 4th, 7:00 PM",
+          "resolution_similarity": 0.4222634580175146,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "before you go",
+          "resolved_entity": "before leaving Dr. Carter's Office, NYU Langone"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36524673411622643,
+        "ollama_total_s": 0.364033423,
+        "model_load_s": 0.001164777,
+        "prompt_eval_s": 0.081949,
+        "generation_s": 0.193466,
+        "prompt_tokens": 923,
+        "output_tokens": 33,
+        "total_tokens": 956,
+        "generation_tokens_per_s": 170.57260707307745
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Good idea. *Yesterday* was pretty bad, pollen everywhere.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Yesterday",
+          "ground_truth_ambiguous_phrase": "yesterday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The previous day, referring to the day before today, which was a day with high pollen levels.",
+          "ground_truth_resolution": "Wednesday, May 3rd",
+          "resolution_similarity": 0.5440875061641218,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Yesterday",
+          "resolved_entity": "The previous day, referring to the day before today, which was a day with high pollen levels."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41423010220751166,
+        "ollama_total_s": 0.413144989,
+        "model_load_s": 0.00117094,
+        "prompt_eval_s": 0.083013,
+        "generation_s": 0.246251,
+        "prompt_tokens": 944,
+        "output_tokens": 49,
+        "total_tokens": 993,
+        "generation_tokens_per_s": 198.98396351689942
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Yeah, *it* was high all over New York.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "pollen levels",
+          "ground_truth_resolution": "Pollen Count",
+          "resolution_similarity": 0.8531030790753643,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (weather source)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "pollen levels"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3872951278463006,
+        "ollama_total_s": 0.386396201,
+        "model_load_s": 0.001052188,
+        "prompt_eval_s": 0.082447,
+        "generation_s": 0.222659,
+        "prompt_tokens": 965,
+        "output_tokens": 33,
+        "total_tokens": 998,
+        "generation_tokens_per_s": 148.20869580838863
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Drank extra water to help. Ava even got *that air purifier* set up at home.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that air purifier",
+          "ground_truth_ambiguous_phrase": "that air purifier",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the air purifier mentioned in the context of improving air quality before a dance class",
+          "ground_truth_resolution": "Honeywell HEPA Air Purifier",
+          "resolution_similarity": 0.6131937778942748,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that air purifier",
+          "resolved_entity": "the air purifier mentioned in the context of improving air quality before a dance class"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4630797659046948,
+        "ollama_total_s": 0.461682319,
+        "model_load_s": 0.00508172,
+        "prompt_eval_s": 0.083223,
+        "generation_s": 0.279774,
+        "prompt_tokens": 1005,
+        "output_tokens": 49,
+        "total_tokens": 1054,
+        "generation_tokens_per_s": 175.14136410102438
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Smart move. Are you still using *that cream* for your hands?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that cream",
+          "ground_truth_ambiguous_phrase": "that cream",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cream mentioned previously in the conversation (likely a topical cream for skin allergies or irritation)",
+          "ground_truth_resolution": "Hydrocortisone Topical Ointment",
+          "resolution_similarity": 0.6760526546865219,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (medication schedule)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that cream",
+          "resolved_entity": "the cream mentioned previously in the conversation (likely a topical cream for skin allergies or irritation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45824251789599657,
+        "ollama_total_s": 0.457111231,
+        "model_load_s": 0.00112867,
+        "prompt_eval_s": 0.090758,
+        "generation_s": 0.273339,
+        "prompt_tokens": 1024,
+        "output_tokens": 48,
+        "total_tokens": 1072,
+        "generation_tokens_per_s": 175.6061154829717
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Stopped *it* after the swelling went down.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the cream",
+          "ground_truth_resolution": "Hydrocortisone Topical Ointment",
+          "resolution_similarity": 0.5353483428811247,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the cream"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36826671240851283,
+        "ollama_total_s": 0.367008552,
+        "model_load_s": 0.00154678,
+        "prompt_eval_s": 0.091593,
+        "generation_s": 0.186261,
+        "prompt_tokens": 1040,
+        "output_tokens": 32,
+        "total_tokens": 1072,
+        "generation_tokens_per_s": 171.80193384551785
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Any plans for photography *this weekend*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this weekend",
+          "ground_truth_ambiguous_phrase": "this weekend",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the weekend starting from the current date (contextually determined from the conversation history and current date context)",
+          "ground_truth_resolution": "May 6th–7th",
+          "resolution_similarity": 0.6430640568944175,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this weekend",
+          "resolved_entity": "the weekend starting from the current date (contextually determined from the conversation history and current date context)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5573665872216225,
+        "ollama_total_s": 0.55620854,
+        "model_load_s": 0.001244667,
+        "prompt_eval_s": 0.092274,
+        "generation_s": 0.377326,
+        "prompt_tokens": 1058,
+        "output_tokens": 50,
+        "total_tokens": 1108,
+        "generation_tokens_per_s": 132.5114092323349
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Thinking about shooting *at the park* with a few friends, but depends on the pollen count.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "at the park",
+          "ground_truth_ambiguous_phrase": "at the park",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "a public park in New York City (not Baltic Coffee Roasters)",
+          "ground_truth_resolution": "McCarren Park, Williamsburg",
+          "resolution_similarity": 0.7261766669797245,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the pollen count",
+          "resolved_entity": "current air quality index for pollen in New York City"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "at the park",
+          "resolved_entity": "a public park in New York City (not Baltic Coffee Roasters)"
+        },
+        {
+          "ambiguous_phrase": "the pollen count",
+          "resolved_entity": "current air quality index for pollen in New York City"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5088191167451441,
+        "ollama_total_s": 0.507342359,
+        "model_load_s": 0.001235859,
+        "prompt_eval_s": 0.093013,
+        "generation_s": 0.327803,
+        "prompt_tokens": 1099,
+        "output_tokens": 60,
+        "total_tokens": 1159,
+        "generation_tokens_per_s": 183.03676293383526
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Central Park or *the smaller one* by your apartment?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the smaller one by your apartment",
+          "resolved_entity": "the smaller park near User B's apartment (location: Dr. Carter's Office, NYU Langone)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the smaller one",
+          "ground_truth_resolution": "McCarren Park, Williamsburg",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the smaller one by your apartment",
+          "resolved_entity": "the smaller park near User B's apartment (location: Dr. Carter's Office, NYU Langone)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5291276457719505,
+        "ollama_total_s": 0.52791169,
+        "model_load_s": 0.001461055,
+        "prompt_eval_s": 0.092623,
+        "generation_s": 0.343159,
+        "prompt_tokens": 1113,
+        "output_tokens": 56,
+        "total_tokens": 1169,
+        "generation_tokens_per_s": 163.1896584382167
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "*The smaller one*, McCarren Park. Less crowded.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the smaller one",
+          "ground_truth_ambiguous_phrase": "the smaller one",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "McCarren Park",
+          "ground_truth_resolution": "McCarren Park, Williamsburg",
+          "resolution_similarity": 0.9122217327253916,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "McCarren Park"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the smaller one",
+          "resolved_entity": "McCarren Park"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "McCarren Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.520287083927542,
+        "ollama_total_s": 0.518830865,
+        "model_load_s": 0.001573546,
+        "prompt_eval_s": 0.098209,
+        "generation_s": 0.325655,
+        "prompt_tokens": 1136,
+        "output_tokens": 59,
+        "total_tokens": 1195,
+        "generation_tokens_per_s": 181.17332760129585
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Good call. Make sure to check for blooming *plants* before you go.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "plants",
+          "ground_truth_resolution": "Blooming Catkin Willows, Azaleas, Dandelions",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24858095264062285,
+        "ollama_total_s": 0.247554298,
+        "model_load_s": 0.001319127,
+        "prompt_eval_s": 0.098584,
+        "generation_s": 0.024816,
+        "prompt_tokens": 1168,
+        "output_tokens": 6,
+        "total_tokens": 1174,
+        "generation_tokens_per_s": 241.77949709864603
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Will do. I’ll avoid *those flowering bushes* on the west side.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those flowering bushes",
+          "ground_truth_ambiguous_phrase": "those flowering bushes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blooming plants mentioned in Turn 30 by User B, specifically the flowering bushes on the west side of Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Azalea Bushes, McCarren Park, West Side",
+          "resolution_similarity": 0.5966348154206633,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those flowering bushes",
+          "resolved_entity": "the blooming plants mentioned in Turn 30 by User B, specifically the flowering bushes on the west side of Baltic Coffee Roasters, Williamsburg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5672884779050946,
+        "ollama_total_s": 0.566314979,
+        "model_load_s": 0.001301584,
+        "prompt_eval_s": 0.09908,
+        "generation_s": 0.373833,
+        "prompt_tokens": 1193,
+        "output_tokens": 62,
+        "total_tokens": 1255,
+        "generation_tokens_per_s": 165.84945684302883
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "You mentioned a rash after the picnic—was *someone* else affected?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "someone",
+          "ground_truth_ambiguous_phrase": "someone",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A or others at the picnic",
+          "ground_truth_resolution": "Josh, Ava’s Photography Group",
+          "resolution_similarity": 0.46230731250314444,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "someone",
+          "resolved_entity": "User A or others at the picnic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45275314804166555,
+        "ollama_total_s": 0.451501937,
+        "model_load_s": 0.001331491,
+        "prompt_eval_s": 0.100624,
+        "generation_s": 0.257411,
+        "prompt_tokens": 1217,
+        "output_tokens": 37,
+        "total_tokens": 1254,
+        "generation_tokens_per_s": 143.73900105279105
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Yeah, *that guy* Josh also had symptoms.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that guy",
+          "ground_truth_ambiguous_phrase": "that guy",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Josh",
+          "ground_truth_resolution": "Josh",
+          "resolution_similarity": 0.9997680994466388,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that guy",
+          "resolved_entity": "Josh"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4178687483072281,
+        "ollama_total_s": 0.416432654,
+        "model_load_s": 0.001275491,
+        "prompt_eval_s": 0.101107,
+        "generation_s": 0.199629,
+        "prompt_tokens": 1234,
+        "output_tokens": 32,
+        "total_tokens": 1266,
+        "generation_tokens_per_s": 160.29735158719424
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Is he a colleague from *the hospital*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the hospital",
+          "ground_truth_ambiguous_phrase": "the hospital",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "NYU Langone Hospital",
+          "ground_truth_resolution": "NYU Langone Hospital",
+          "resolution_similarity": 0.9999087156760595,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the hospital",
+          "resolved_entity": "NYU Langone Hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42592210695147514,
+        "ollama_total_s": 0.424664113,
+        "model_load_s": 0.001086002,
+        "prompt_eval_s": 0.101592,
+        "generation_s": 0.220678,
+        "prompt_tokens": 1253,
+        "output_tokens": 36,
+        "total_tokens": 1289,
+        "generation_tokens_per_s": 163.13361549406827
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "No, met *him* through Ava’s photography group.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Josh",
+          "ground_truth_resolution": "Josh",
+          "resolution_similarity": 0.9997680994466388,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Josh"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4286824348382652,
+        "ollama_total_s": 0.427464741,
+        "model_load_s": 0.001323549,
+        "prompt_eval_s": 0.114487,
+        "generation_s": 0.210308,
+        "prompt_tokens": 1277,
+        "output_tokens": 31,
+        "total_tokens": 1308,
+        "generation_tokens_per_s": 147.40285676246268
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Did you and *him* eat the same foods at the picnic?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Josh",
+          "ground_truth_resolution": "Josh",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Josh"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43937349785119295,
+        "ollama_total_s": 0.438283042,
+        "model_load_s": 0.001708379,
+        "prompt_eval_s": 0.116027,
+        "generation_s": 0.200372,
+        "prompt_tokens": 1303,
+        "output_tokens": 31,
+        "total_tokens": 1334,
+        "generation_tokens_per_s": 154.71223524244905
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "We both had *that salad* and *the fruit platter*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the fruit platter",
+          "ground_truth_ambiguous_phrase": "the fruit platter",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the fruit platter from the picnic mentioned earlier in the conversation",
+          "ground_truth_resolution": "Strawberries, Melon, Kiwi",
+          "resolution_similarity": 0.5592779677763468,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that salad",
+          "ground_truth_ambiguous_phrase": "that salad",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the salad from the picnic mentioned earlier in the conversation",
+          "ground_truth_resolution": "Spring Greens, Pine Nuts, Strawberries",
+          "resolution_similarity": 0.5852224238140058,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that salad",
+          "resolved_entity": "the salad from the picnic mentioned earlier in the conversation"
+        },
+        {
+          "ambiguous_phrase": "the fruit platter",
+          "resolved_entity": "the fruit platter from the picnic mentioned earlier in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6989094959571958,
+        "ollama_total_s": 0.697406461,
+        "model_load_s": 0.001660662,
+        "prompt_eval_s": 0.11681,
+        "generation_s": 0.459391,
+        "prompt_tokens": 1329,
+        "output_tokens": 75,
+        "total_tokens": 1404,
+        "generation_tokens_per_s": 163.2596198009974
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "I'll make a note. Did you use *your EpiPen* at any time?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your EpiPen",
+          "ground_truth_ambiguous_phrase": "your EpiPen",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "EpiPen (User A's EpiPen, as it is referred to as 'your' in the context of User A's possession)",
+          "ground_truth_resolution": "Isabella’s Personal Epinephrine Injector",
+          "resolution_similarity": 0.7737473988881586,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your EpiPen",
+          "resolved_entity": "EpiPen (User A's EpiPen, as it is referred to as 'your' in the context of User A's possession)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6039177565835416,
+        "ollama_total_s": 0.602808723,
+        "model_load_s": 0.001510263,
+        "prompt_eval_s": 0.117722,
+        "generation_s": 0.361673,
+        "prompt_tokens": 1362,
+        "output_tokens": 61,
+        "total_tokens": 1423,
+        "generation_tokens_per_s": 168.66064096573422
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "No, didn’t need *it*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the medication (referencing the antihistamine or allergen medication mentioned earlier in the conversation)",
+          "ground_truth_resolution": "Isabella’s Personal Epinephrine Injector",
+          "resolution_similarity": 0.5765982025489772,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the medication (referencing the antihistamine or allergen medication mentioned earlier in the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49363864492625,
+        "ollama_total_s": 0.492607007,
+        "model_load_s": 0.001355601,
+        "prompt_eval_s": 0.117224,
+        "generation_s": 0.246868,
+        "prompt_tokens": 1371,
+        "output_tokens": 49,
+        "total_tokens": 1420,
+        "generation_tokens_per_s": 198.48664063386101
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Keep *it* with you regardless. How’s everything with *your schedule* next week?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your schedule",
+          "ground_truth_ambiguous_phrase": "your schedule",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's schedule",
+          "ground_truth_resolution": "Isabella’s Shift Calendar for Next Week",
+          "resolution_similarity": 0.6205463542665401,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the EpiPen",
+          "ground_truth_resolution": "Isabella’s Personal Epinephrine Injector",
+          "resolution_similarity": 0.8331184800146716,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the EpiPen"
+        },
+        {
+          "ambiguous_phrase": "your schedule",
+          "resolved_entity": "User B's schedule"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5656954110600054,
+        "ollama_total_s": 0.564462066,
+        "model_load_s": 0.001103935,
+        "prompt_eval_s": 0.129788,
+        "generation_s": 0.286121,
+        "prompt_tokens": 1410,
+        "output_tokens": 58,
+        "total_tokens": 1468,
+        "generation_tokens_per_s": 202.71144026478308
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Pretty packed, only free *on Tuesday afternoon* for appointments.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "on Tuesday afternoon",
+          "ground_truth_ambiguous_phrase": "on Tuesday afternoon",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Tuesday afternoon at Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Tuesday, May 9th, 1:00–4:00 PM",
+          "resolution_similarity": 0.4209227106690878,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "on Tuesday afternoon",
+          "resolved_entity": "Tuesday afternoon at Baltic Coffee Roasters, Williamsburg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5041625369340181,
+        "ollama_total_s": 0.502712244,
+        "model_load_s": 0.00118689,
+        "prompt_eval_s": 0.130336999,
+        "generation_s": 0.251971,
+        "prompt_tokens": 1427,
+        "output_tokens": 42,
+        "total_tokens": 1469,
+        "generation_tokens_per_s": 166.68584876831065
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Alright, I’ll book *that slot* for a check-up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that slot",
+          "ground_truth_ambiguous_phrase": "that slot",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the free slot on Tuesday afternoon for appointments",
+          "ground_truth_resolution": "Tuesday, May 9th, 2:00 PM",
+          "resolution_similarity": 0.6308586959586018,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that slot",
+          "resolved_entity": "the free slot on Tuesday afternoon for appointments"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4564642352052033,
+        "ollama_total_s": 0.455091209,
+        "model_load_s": 0.001450169,
+        "prompt_eval_s": 0.131181999,
+        "generation_s": 0.200973,
+        "prompt_tokens": 1452,
+        "output_tokens": 39,
+        "total_tokens": 1491,
+        "generation_tokens_per_s": 194.05591795912883
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Sounds good. Should I bring *anything* besides my allergy log?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "anything",
+          "ground_truth_ambiguous_phrase": "anything",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "nothing specific, as the context does not indicate a specific item to bring",
+          "ground_truth_resolution": "Prescription Bottle, Allergy Log, Lab Results",
+          "resolution_similarity": 0.4993147891241452,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "anything",
+          "resolved_entity": "nothing specific, as the context does not indicate a specific item to bring"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44188625970855355,
+        "ollama_total_s": 0.440767586,
+        "model_load_s": 0.001468614,
+        "prompt_eval_s": 0.131449999,
+        "generation_s": 0.194074,
+        "prompt_tokens": 1476,
+        "output_tokens": 33,
+        "total_tokens": 1509,
+        "generation_tokens_per_s": 170.03823283902017
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Bring *last week's prescription* and the test results.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "last week's prescription",
+          "ground_truth_ambiguous_phrase": "last week's prescription",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the prescription from last week",
+          "ground_truth_resolution": "Cetirizine Prescription, April 28th–May 4th",
+          "resolution_similarity": 0.6879166576895427,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "test results",
+          "ground_truth_resolution": "Patch Test and IgE Results",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "last week's prescription",
+          "resolved_entity": "the prescription from last week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4810950420796871,
+        "ollama_total_s": 0.479894857,
+        "model_load_s": 0.000945264,
+        "prompt_eval_s": 0.132442,
+        "generation_s": 0.232671,
+        "prompt_tokens": 1496,
+        "output_tokens": 38,
+        "total_tokens": 1534,
+        "generation_tokens_per_s": 163.32074044466222
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User B",
+      "text": "Also, would you mind sharing *your location history* for the past few days? It helps with exposure mapping.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your location history",
+          "ground_truth_ambiguous_phrase": "your location history",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's location history",
+          "ground_truth_resolution": "GPS Logs for May 1st–4th",
+          "resolution_similarity": 0.6726562570556003,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your location history",
+          "resolved_entity": "User B's location history"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47977621015161276,
+        "ollama_total_s": 0.478741898,
+        "model_load_s": 0.001523014,
+        "prompt_eval_s": 0.13731,
+        "generation_s": 0.22266,
+        "prompt_tokens": 1540,
+        "output_tokens": 37,
+        "total_tokens": 1577,
+        "generation_tokens_per_s": 166.17263989939818
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User A",
+      "text": "Sure, *I'll send it* along with my log.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "I'll send it",
+          "ground_truth_ambiguous_phrase": "I'll send it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document or file mentioned in the context, likely referring to the allergy log or test results",
+          "ground_truth_resolution": "Location History to be shared via secure message",
+          "resolution_similarity": 0.5057601394032114,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "I'll send it",
+          "resolved_entity": "the document or file mentioned in the context, likely referring to the allergy log or test results"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5264846119098365,
+        "ollama_total_s": 0.525231647,
+        "model_load_s": 0.001166084,
+        "prompt_eval_s": 0.138213,
+        "generation_s": 0.264190999,
+        "prompt_tokens": 1553,
+        "output_tokens": 51,
+        "total_tokens": 1604,
+        "generation_tokens_per_s": 193.04215583817071
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User B",
+      "text": "Thanks. By the way, did you see *that article* about seasonal allergies in dancers?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that article",
+          "ground_truth_ambiguous_phrase": "that article",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the article about seasonal allergies in dancers",
+          "ground_truth_resolution": "NY Times: Spring Allergies in NYC Dancers, May 3rd Edition",
+          "resolution_similarity": 0.7958035299602069,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that article",
+          "resolved_entity": "the article about seasonal allergies in dancers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4497421192936599,
+        "ollama_total_s": 0.448510473,
+        "model_load_s": 0.001300716,
+        "prompt_eval_s": 0.138608,
+        "generation_s": 0.186756,
+        "prompt_tokens": 1588,
+        "output_tokens": 38,
+        "total_tokens": 1626,
+        "generation_tokens_per_s": 203.47405170382746
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User A",
+      "text": "Ava mentioned *it*. Pretty funny they used a photo from our dance studio.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "that article about seasonal allergies in dancers",
+          "ground_truth_resolution": "NY Times Article",
+          "resolution_similarity": 0.4478822992454144,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "that article about seasonal allergies in dancers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47118831193074584,
+        "ollama_total_s": 0.470145552,
+        "model_load_s": 0.001149616,
+        "prompt_eval_s": 0.139335,
+        "generation_s": 0.194608,
+        "prompt_tokens": 1612,
+        "output_tokens": 37,
+        "total_tokens": 1649,
+        "generation_tokens_per_s": 190.12579133437475
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User B",
+      "text": "Small world! Let’s catch up *at that time* for your call. Anything urgent *right now*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "right now",
+          "ground_truth_ambiguous_phrase": "right now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "current moment (contextually determined based on the conversation)",
+          "ground_truth_resolution": "10:20 AM, Thursday, May 4th",
+          "resolution_similarity": 0.41344725701290275,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "at that time",
+          "ground_truth_ambiguous_phrase": "at that time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Follow-up call with Dr. Carter at 2:00 PM",
+          "ground_truth_resolution": "2:00 PM, Thursday, May 4th",
+          "resolution_similarity": 0.5616906598990673,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "at that time",
+          "resolved_entity": "Follow-up call with Dr. Carter at 2:00 PM"
+        },
+        {
+          "ambiguous_phrase": "right now",
+          "resolved_entity": "current moment (contextually determined based on the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6451711938716471,
+        "ollama_total_s": 0.643898027,
+        "model_load_s": 0.001393418,
+        "prompt_eval_s": 0.146694,
+        "generation_s": 0.370743,
+        "prompt_tokens": 1651,
+        "output_tokens": 76,
+        "total_tokens": 1727,
+        "generation_tokens_per_s": 204.99375578230743
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User A",
+      "text": "No, just sipping coffee *here* and making today's to-do list.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "ground_truth_resolution": "Baltic Coffee Roasters, Williamsburg",
+          "resolution_similarity": 0.9999119659558307,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Baltic Coffee Roasters, Williamsburg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5157840922474861,
+        "ollama_total_s": 0.514664465,
+        "model_load_s": 0.004089083,
+        "prompt_eval_s": 0.147315,
+        "generation_s": 0.187069,
+        "prompt_tokens": 1672,
+        "output_tokens": 39,
+        "total_tokens": 1711,
+        "generation_tokens_per_s": 208.47922424346095
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User B",
+      "text": "Alright, text *me* if anything crops up. See you *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the follow-up call with Dr. Carter at 2:00 PM",
+          "ground_truth_resolution": "2:00 PM, Thursday, May 4th",
+          "resolution_similarity": 0.5705063655010587,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "me",
+          "ground_truth_ambiguous_phrase": "me",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Dr. Carter",
+          "resolution_similarity": 0.5818812765220089,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "me",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the follow-up call with Dr. Carter at 2:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5433825491927564,
+        "ollama_total_s": 0.542195819,
+        "model_load_s": 0.001170093,
+        "prompt_eval_s": 0.147929,
+        "generation_s": 0.264325,
+        "prompt_tokens": 1699,
+        "output_tokens": 49,
+        "total_tokens": 1748,
+        "generation_tokens_per_s": 185.3778492386267
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User A",
+      "text": "Will do, thanks Dr. Carter.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.30763996625319123,
+        "ollama_total_s": 0.306819633,
+        "model_load_s": 0.00127511,
+        "prompt_eval_s": 0.148893,
+        "generation_s": 0.025137,
+        "prompt_tokens": 1708,
+        "output_tokens": 6,
+        "total_tokens": 1714,
+        "generation_tokens_per_s": 238.6919680152763
+      }
+    }
+  ]
+}

@@ -1,0 +1,2099 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/doctor_patient__004.json",
+  "metrics": {
+    "ground_truth_ambiguities": 38,
+    "qwen_predicted_ambiguities": 52,
+    "detected_ground_truth_ambiguities": 32,
+    "missed_ground_truth_ambiguities": 6,
+    "detected_but_bad_resolution": 16,
+    "true_positives": 16,
+    "false_negatives": 22,
+    "false_positive_ambiguities": 20,
+    "detection_recall": 0.8421052631578947,
+    "detection_precision": 0.6153846153846154,
+    "detection_f1": 0.7111111111111111,
+    "true_positive_rate_at_0_70": 0.42105263157894735,
+    "strict_end_to_end_precision_at_0_70": 0.3076923076923077,
+    "end_to_end_f1_at_0_70": 0.35555555555555557,
+    "false_positive_discovery_rate": 0.38461538461538464,
+    "false_positives_per_turn": 0.4444444444444444,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 45,
+    "median_latency_per_turn_s": 0.44561677891761065,
+    "mean_latency_per_turn_s": 0.4331828059628606,
+    "total_prompt_tokens": 53300,
+    "total_output_tokens": 1855
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Good morning, doctor. I'm just settling in *here* with my coffee. Ready to talk.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Carlos' Apartment - Kitchen",
+          "ground_truth_resolution": "Carlos' Apartment - Kitchen",
+          "resolution_similarity": 0.9998375254448095,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4149944861419499,
+        "ollama_total_s": 0.413695561,
+        "model_load_s": 0.001595924,
+        "prompt_eval_s": 0.032238,
+        "generation_s": 0.213757,
+        "prompt_tokens": 452,
+        "output_tokens": 35,
+        "total_tokens": 487,
+        "generation_tokens_per_s": 163.73732790037286
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Morning, Carlos. Glad you're *home*. Are you comfortable to start the check-in now?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "home",
+          "ground_truth_ambiguous_phrase": "home",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Carlos' Apartment - Kitchen",
+          "ground_truth_resolution": "Carlos' Apartment - Kitchen",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "home",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.40100066270679235,
+        "ollama_total_s": 0.399879173,
+        "model_load_s": 0.001476171,
+        "prompt_eval_s": 0.035921,
+        "generation_s": 0.317772,
+        "prompt_tokens": 480,
+        "output_tokens": 59,
+        "total_tokens": 539,
+        "generation_tokens_per_s": 185.6677114409073
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Yes, I'm in my kitchen. Had a good breakfast - eggs and avocado. No toast this time.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my kitchen",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my kitchen",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Carlos' Apartment - Kitchen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4065253478474915,
+        "ollama_total_s": 0.405170945,
+        "model_load_s": 0.00143116,
+        "prompt_eval_s": 0.036881,
+        "generation_s": 0.32337,
+        "prompt_tokens": 513,
+        "output_tokens": 60,
+        "total_tokens": 573,
+        "generation_tokens_per_s": 185.54596901382317
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "That's excellent. Skipping the bread helps reduce those refined carbs. How have you been feeling lately?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That's excellent",
+          "resolved_entity": "User A's breakfast choice (skipping the bread)"
+        },
+        {
+          "ambiguous_phrase": "those refined carbs",
+          "resolved_entity": "Refined carbohydrates from bread, referring to User A's breakfast"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That's excellent",
+          "resolved_entity": "User A's breakfast choice (skipping the bread)"
+        },
+        {
+          "ambiguous_phrase": "those refined carbs",
+          "resolved_entity": "Refined carbohydrates from bread, referring to User A's breakfast"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48308852268382907,
+        "ollama_total_s": 0.481792629,
+        "model_load_s": 0.001409046,
+        "prompt_eval_s": 0.041137,
+        "generation_s": 0.387701,
+        "prompt_tokens": 540,
+        "output_tokens": 75,
+        "total_tokens": 615,
+        "generation_tokens_per_s": 193.4480437244165
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Much better, actually. Less tired than *before*. The tingling in my feet is still *there*, but not as bad.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the tingling sensation in User A's feet, which is still present but less severe",
+          "ground_truth_resolution": "Carlos' feet",
+          "resolution_similarity": 0.5514181317015245,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A medical history"
+        },
+        {
+          "predicted_ambiguous_phrase": "before",
+          "ground_truth_ambiguous_phrase": "before",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the previous state of fatigue or tiredness before the current improvement",
+          "ground_truth_resolution": "Previous follow-up two weeks ago",
+          "resolution_similarity": 0.5777071714547379,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "before",
+          "resolved_entity": "the previous state of fatigue or tiredness before the current improvement"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "the tingling sensation in User A's feet, which is still present but less severe"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5100177051499486,
+        "ollama_total_s": 0.50875931,
+        "model_load_s": 0.001219289,
+        "prompt_eval_s": 0.046308,
+        "generation_s": 0.406602,
+        "prompt_tokens": 583,
+        "output_tokens": 78,
+        "total_tokens": 661,
+        "generation_tokens_per_s": 191.83378340490208
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Good to hear. About the tingling: have you noticed it more at *night* or during the *day*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "day",
+          "ground_truth_ambiguous_phrase": "day",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "daytime",
+          "ground_truth_resolution": "8 AM – 5 PM",
+          "resolution_similarity": 0.6501605657787017,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "night",
+          "ground_truth_ambiguous_phrase": "night",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "nighttime",
+          "ground_truth_resolution": "8 PM – 12 AM",
+          "resolution_similarity": 0.7002132219598509,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "night",
+          "resolved_entity": "nighttime"
+        },
+        {
+          "ambiguous_phrase": "day",
+          "resolved_entity": "daytime"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.455168176908046,
+        "ollama_total_s": 0.45390987,
+        "model_load_s": 0.001427244,
+        "prompt_eval_s": 0.04715,
+        "generation_s": 0.323064,
+        "prompt_tokens": 615,
+        "output_tokens": 53,
+        "total_tokens": 668,
+        "generation_tokens_per_s": 164.05418121486764
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Mostly in the evenings, after dinner. Sometimes when I'm on my feet at *work*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "work",
+          "ground_truth_ambiguous_phrase": "work",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's workplace (not explicitly named, inferred from context of being on one's feet at work during the day)",
+          "ground_truth_resolution": "Mango Bay Restaurant",
+          "resolution_similarity": 0.33979177016041395,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "work",
+          "resolved_entity": "User A's workplace (not explicitly named, inferred from context of being on one's feet at work during the day)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45591597026214004,
+        "ollama_total_s": 0.454730267,
+        "model_load_s": 0.001289292,
+        "prompt_eval_s": 0.047923,
+        "generation_s": 0.348448,
+        "prompt_tokens": 640,
+        "output_tokens": 53,
+        "total_tokens": 693,
+        "generation_tokens_per_s": 152.10303976490036
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Your last labs looked improved. Your glucose average dropped to 110, and kidney function was stable. We'll continue with insulin, but I want to add *metformin*, as we discussed.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "metformin",
+          "ground_truth_resolution": "Metformin 500mg tablet",
+          "resolution_source": "User B medical records"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.14268934121355414,
+        "ollama_total_s": 0.141623432,
+        "model_load_s": 0.001359595,
+        "prompt_eval_s": 0.052374,
+        "generation_s": 0.02534,
+        "prompt_tokens": 712,
+        "output_tokens": 6,
+        "total_tokens": 718,
+        "generation_tokens_per_s": 236.7797947908445
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Ok. I'll pick up *it* from the pharmacy later. Should I start *tonight* or wait until tomorrow?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "metformin",
+          "ground_truth_resolution": "Metformin prescription",
+          "resolution_similarity": 0.8941704219681958,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B medical records"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "the current night (based on the context of the conversation and the calendar event 'Diabetes Follow-Up Appointment')"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "metformin"
+        },
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "the current night (based on the context of the conversation and the calendar event 'Diabetes Follow-Up Appointment')"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.500295686069876,
+        "ollama_total_s": 0.499018691,
+        "model_load_s": 0.001147731,
+        "prompt_eval_s": 0.051888,
+        "generation_s": 0.389391,
+        "prompt_tokens": 731,
+        "output_tokens": 74,
+        "total_tokens": 805,
+        "generation_tokens_per_s": 190.0403450516319
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "You can start *tonight*, with dinner. Also, let's reduce your *insulin* dose by 2 units. Take 18 units at *bedtime*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "bedtime",
+          "ground_truth_ambiguous_phrase": "bedtime",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the time when the patient is supposed to take the insulin dose (contextually linked to the schedule and routine)",
+          "ground_truth_resolution": "Approx. 11 PM",
+          "resolution_similarity": 0.46864713322817486,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "insulin",
+          "ground_truth_ambiguous_phrase": "insulin",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "insulin dose (referencing the ongoing discussion about diabetes management and dosage adjustments)",
+          "ground_truth_resolution": "Insulin glargine (Lantus)",
+          "resolution_similarity": 0.7429856251007688,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B medical records"
+        },
+        {
+          "predicted_ambiguous_phrase": "tonight",
+          "ground_truth_ambiguous_phrase": "tonight",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "current night (based on the context of the conversation and the mention of dinner and bedtime)",
+          "ground_truth_resolution": "Current calendar day at dinner time",
+          "resolution_similarity": 0.7109709804821034,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tonight",
+          "resolved_entity": "current night (based on the context of the conversation and the mention of dinner and bedtime)"
+        },
+        {
+          "ambiguous_phrase": "insulin",
+          "resolved_entity": "insulin dose (referencing the ongoing discussion about diabetes management and dosage adjustments)"
+        },
+        {
+          "ambiguous_phrase": "bedtime",
+          "resolved_entity": "the time when the patient is supposed to take the insulin dose (contextually linked to the schedule and routine)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7741400031372905,
+        "ollama_total_s": 0.772669101,
+        "model_load_s": 0.001430612,
+        "prompt_eval_s": 0.062166,
+        "generation_s": 0.621291,
+        "prompt_tokens": 790,
+        "output_tokens": 124,
+        "total_tokens": 914,
+        "generation_tokens_per_s": 199.5844137449279
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Will do. Just to confirm: metformin with dinner, insulin 18 units before I go to bed?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "metformin"
+        },
+        {
+          "ambiguous_phrase": "insulin",
+          "resolved_entity": "insulin dose"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "metformin"
+        },
+        {
+          "ambiguous_phrase": "insulin",
+          "resolved_entity": "insulin dose"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4180128308944404,
+        "ollama_total_s": 0.416801383,
+        "model_load_s": 0.001340023,
+        "prompt_eval_s": 0.068367,
+        "generation_s": 0.277656,
+        "prompt_tokens": 811,
+        "output_tokens": 56,
+        "total_tokens": 867,
+        "generation_tokens_per_s": 201.68842020341717
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Exactly. How many steps are you getting each *day* lately?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.18809730792418122,
+        "ollama_total_s": 0.18678883,
+        "model_load_s": 0.001492846,
+        "prompt_eval_s": 0.068742,
+        "generation_s": 0.043673,
+        "prompt_tokens": 825,
+        "output_tokens": 6,
+        "total_tokens": 831,
+        "generation_tokens_per_s": 137.38465413413323
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "I average about 7,500 steps. I walk to the *market* and sometimes salsa dance at *that place* downtown.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "market",
+          "ground_truth_ambiguous_phrase": "market",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the local market downtown",
+          "ground_truth_resolution": "Publix Super Market",
+          "resolution_similarity": 0.6474148339623993,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "that place",
+          "ground_truth_ambiguous_phrase": "that place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the salsa dance location downtown",
+          "ground_truth_resolution": "Havana Rhythms Dance Studio",
+          "resolution_similarity": 0.7147031684141176,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that place",
+          "resolved_entity": "the salsa dance location downtown"
+        },
+        {
+          "ambiguous_phrase": "market",
+          "resolved_entity": "the local market downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4567830367013812,
+        "ollama_total_s": 0.455330487,
+        "model_load_s": 0.001491672,
+        "prompt_eval_s": 0.069453,
+        "generation_s": 0.317876,
+        "prompt_tokens": 879,
+        "output_tokens": 59,
+        "total_tokens": 938,
+        "generation_tokens_per_s": 185.60696623840744
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "That's great. Is your weight trending down? Last record was 204 pounds.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your weight",
+          "resolved_entity": "User A's weight"
+        },
+        {
+          "ambiguous_phrase": "Last record",
+          "resolved_entity": "Previous weight record of User A (204 pounds)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your weight",
+          "resolved_entity": "User A's weight"
+        },
+        {
+          "ambiguous_phrase": "Last record",
+          "resolved_entity": "Previous weight record of User A (204 pounds)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5181638346984982,
+        "ollama_total_s": 0.517181372,
+        "model_load_s": 0.00157194,
+        "prompt_eval_s": 0.073347,
+        "generation_s": 0.352127,
+        "prompt_tokens": 898,
+        "output_tokens": 66,
+        "total_tokens": 964,
+        "generation_tokens_per_s": 187.4323752509748
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Checked on *it* this morning: 198.6! Feeling lighter, jeans fit better.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "metformin",
+          "ground_truth_resolution": "User A's weight",
+          "resolution_similarity": 0.4507971535336373,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A smart scale Bluetooth sync"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "metformin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36996429366990924,
+        "ollama_total_s": 0.368568894,
+        "model_load_s": 0.001361169,
+        "prompt_eval_s": 0.081911,
+        "generation_s": 0.203736,
+        "prompt_tokens": 933,
+        "output_tokens": 33,
+        "total_tokens": 966,
+        "generation_tokens_per_s": 161.97431970785723
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Fantastic. Any episodes of low blood sugar? Dizziness, sweating, after *exercise* or *meals*?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "weight"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "weight"
+        },
+        {
+          "ambiguous_phrase": "exercise",
+          "resolved_entity": "physical activity"
+        },
+        {
+          "ambiguous_phrase": "meals",
+          "resolved_entity": "eating"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "weight"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "weight"
+        },
+        {
+          "ambiguous_phrase": "exercise",
+          "resolved_entity": "physical activity"
+        },
+        {
+          "ambiguous_phrase": "meals",
+          "resolved_entity": "eating"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6208918080665171,
+        "ollama_total_s": 0.619675534,
+        "model_load_s": 0.001428641,
+        "prompt_eval_s": 0.082734,
+        "generation_s": 0.449719,
+        "prompt_tokens": 969,
+        "output_tokens": 93,
+        "total_tokens": 1062,
+        "generation_tokens_per_s": 206.7957991545832
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "No, not really. Once after dancing at *the club*, I felt a bit shaky but it passed quickly.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the club",
+          "ground_truth_ambiguous_phrase": "the club",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "that place downtown",
+          "ground_truth_resolution": "Conga Room Salsa Club",
+          "resolution_similarity": 0.5783558752647947,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the club",
+          "resolved_entity": "that place downtown"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3888977156020701,
+        "ollama_total_s": 0.387744985,
+        "model_load_s": 0.001246164,
+        "prompt_eval_s": 0.08339,
+        "generation_s": 0.212152,
+        "prompt_tokens": 1001,
+        "output_tokens": 34,
+        "total_tokens": 1035,
+        "generation_tokens_per_s": 160.26245333534447
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Good. Remember to keep *glucose tablets* with you if you're active. Also, did you inform your manager about your new medication?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your new medication",
+          "resolved_entity": "metformin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "glucose tablets",
+          "ground_truth_resolution": "Dextrose tablets 4g",
+          "resolution_source": "User B medical records"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your new medication",
+          "resolved_entity": "metformin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3718281341716647,
+        "ollama_total_s": 0.370728101,
+        "model_load_s": 0.001069283,
+        "prompt_eval_s": 0.091169,
+        "generation_s": 0.183414,
+        "prompt_tokens": 1046,
+        "output_tokens": 35,
+        "total_tokens": 1081,
+        "generation_tokens_per_s": 190.82512785283566
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Yes, I told *her* last week. She's supportive, even offered to adjust my shifts if I need to.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Restaurant Manager Maria Lopez",
+          "resolution_similarity": 0.5626294259310894,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A contact list"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.391311249230057,
+        "ollama_total_s": 0.390065879,
+        "model_load_s": 0.001835656,
+        "prompt_eval_s": 0.092168,
+        "generation_s": 0.201111,
+        "prompt_tokens": 1077,
+        "output_tokens": 32,
+        "total_tokens": 1109,
+        "generation_tokens_per_s": 159.11611000890053
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Great support. Any plans for fishing or salsa this weekend? Be sure to stay hydrated and snack wisely.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22971418034285307,
+        "ollama_total_s": 0.228779068,
+        "model_load_s": 0.001539373,
+        "prompt_eval_s": 0.092574,
+        "generation_s": 0.026338,
+        "prompt_tokens": 1104,
+        "output_tokens": 6,
+        "total_tokens": 1110,
+        "generation_tokens_per_s": 227.80773027564734
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Going to *the bay* early Saturday, then dancing at *Juan's Place* in the evening. I’ll bring almonds for snacks, skip the empanadas.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Juan's Place",
+          "ground_truth_ambiguous_phrase": "Juan's Place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Dancing venue (referenced in prior conversation as a place for salsa dancing)",
+          "ground_truth_resolution": "Juan's Place Salsa Club",
+          "resolution_similarity": 0.6599528365044663,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the bay",
+          "ground_truth_ambiguous_phrase": "the bay",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Bay (location, likely a public area near the user's location)",
+          "ground_truth_resolution": "Biscayne Bay, Miami",
+          "resolution_similarity": 0.7067212174236666,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the bay",
+          "resolved_entity": "Bay (location, likely a public area near the user's location)"
+        },
+        {
+          "ambiguous_phrase": "Juan's Place",
+          "resolved_entity": "Dancing venue (referenced in prior conversation as a place for salsa dancing)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6430518450215459,
+        "ollama_total_s": 0.64176987,
+        "model_load_s": 0.001370463,
+        "prompt_eval_s": 0.097923,
+        "generation_s": 0.449958,
+        "prompt_tokens": 1161,
+        "output_tokens": 80,
+        "total_tokens": 1241,
+        "generation_tokens_per_s": 177.7943719191569
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Smart choices. Did you refill your *test strips* and *lancets*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "test strips",
+          "ground_truth_resolution": "OneTouch Ultra Test Strips",
+          "resolution_source": "User B medical records"
+        },
+        {
+          "ambiguous_phrase": "lancets",
+          "ground_truth_resolution": "OneTouch Fine Point Lancets",
+          "resolution_source": "User B medical records"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22602153988555074,
+        "ollama_total_s": 0.225006814,
+        "model_load_s": 0.001125389,
+        "prompt_eval_s": 0.098827,
+        "generation_s": 0.025925,
+        "prompt_tokens": 1173,
+        "output_tokens": 6,
+        "total_tokens": 1179,
+        "generation_tokens_per_s": 231.43683702989392
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Picked up *them* yesterday. Pharmacy was packed, but I got everything.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "test strips and lancets",
+          "ground_truth_resolution": "Test strips and lancets",
+          "resolution_similarity": 0.9686143945640606,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (pharmacy run)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "test strips and lancets"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4139072368852794,
+        "ollama_total_s": 0.412707929,
+        "model_load_s": 0.001301268,
+        "prompt_eval_s": 0.098461,
+        "generation_s": 0.226791,
+        "prompt_tokens": 1199,
+        "output_tokens": 35,
+        "total_tokens": 1234,
+        "generation_tokens_per_s": 154.32711174605694
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Excellent. Let's schedule your next check-in for two weeks from *now*. Does Thursday work?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "now",
+          "ground_truth_ambiguous_phrase": "now",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "current time (relative to the current turn)",
+          "ground_truth_resolution": "Current day and time",
+          "resolution_similarity": 0.7121630832908993,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "now",
+          "resolved_entity": "current time (relative to the current turn)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4547307100147009,
+        "ollama_total_s": 0.453560517,
+        "model_load_s": 0.00143408,
+        "prompt_eval_s": 0.100878,
+        "generation_s": 0.229912,
+        "prompt_tokens": 1232,
+        "output_tokens": 38,
+        "total_tokens": 1270,
+        "generation_tokens_per_s": 165.28062911026828
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thursday sounds good. Same time as *today*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "today",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the current day (the day of the conversation)",
+          "ground_truth_resolution": "Current date",
+          "resolution_similarity": 0.7320294319370435,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "the current day (the day of the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4118955498561263,
+        "ollama_total_s": 0.410906866,
+        "model_load_s": 0.001237649,
+        "prompt_eval_s": 0.100681,
+        "generation_s": 0.209787,
+        "prompt_tokens": 1244,
+        "output_tokens": 39,
+        "total_tokens": 1283,
+        "generation_tokens_per_s": 185.902844313518
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Yes, 10 AM. I'll send you the appointment link. Anything else you want to discuss?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.26728596771135926,
+        "ollama_total_s": 0.266207406,
+        "model_load_s": 0.001181791,
+        "prompt_eval_s": 0.113617,
+        "generation_s": 0.025828,
+        "prompt_tokens": 1287,
+        "output_tokens": 6,
+        "total_tokens": 1293,
+        "generation_tokens_per_s": 232.30602446956792
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Just one thing: I noticed my blood pressure monitor shows higher readings in the *morning*. Should I worry about *that*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "my blood pressure monitor shows higher readings in the morning",
+          "ground_truth_resolution": "Morning high blood pressure readings",
+          "resolution_similarity": 0.8468107871320549,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A BP monitor readings"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "my blood pressure monitor shows higher readings in the morning"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "my blood pressure monitor shows higher readings in the morning"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "my blood pressure monitor shows higher readings in the morning"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5598197760991752,
+        "ollama_total_s": 0.558646486,
+        "model_load_s": 0.001281041,
+        "prompt_eval_s": 0.115395,
+        "generation_s": 0.340703,
+        "prompt_tokens": 1329,
+        "output_tokens": 69,
+        "total_tokens": 1398,
+        "generation_tokens_per_s": 202.52243156062613
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Morning spikes can happen. What's your average reading at *that time*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that time",
+          "ground_truth_ambiguous_phrase": "that time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the morning",
+          "ground_truth_resolution": "Morning: 6 AM – 8 AM",
+          "resolution_similarity": 0.736212901347202,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the morning spikes"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "the morning"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the morning spikes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5623689079657197,
+        "ollama_total_s": 0.560943173,
+        "model_load_s": 0.00142748,
+        "prompt_eval_s": 0.116867,
+        "generation_s": 0.317593,
+        "prompt_tokens": 1344,
+        "output_tokens": 55,
+        "total_tokens": 1399,
+        "generation_tokens_per_s": 173.17762041354814
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Usually around 140/88 early, goes down by *afternoon*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "afternoon",
+          "ground_truth_ambiguous_phrase": "afternoon",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the time of day, referring to the period after morning, likely in the context of Carlos' daily blood pressure readings",
+          "ground_truth_resolution": "2 PM – 6 PM",
+          "resolution_similarity": 0.48393957460133896,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "afternoon",
+          "resolved_entity": "the time of day, referring to the period after morning, likely in the context of Carlos' daily blood pressure readings"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5273611191660166,
+        "ollama_total_s": 0.52603846,
+        "model_load_s": 0.001356062,
+        "prompt_eval_s": 0.117206,
+        "generation_s": 0.273207,
+        "prompt_tokens": 1376,
+        "output_tokens": 54,
+        "total_tokens": 1430,
+        "generation_tokens_per_s": 197.6523295523175
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Let's track *those numbers* for a week. If it's consistently high, we'll adjust your meds.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those numbers",
+          "ground_truth_ambiguous_phrase": "those numbers",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "blood pressure readings in the morning",
+          "ground_truth_resolution": "BP readings (morning and afternoon)",
+          "resolution_similarity": 0.834894126633611,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A BP monitor"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those numbers",
+          "resolved_entity": "blood pressure readings in the morning"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4492812459357083,
+        "ollama_total_s": 0.448031221,
+        "model_load_s": 0.001135644,
+        "prompt_eval_s": 0.130959,
+        "generation_s": 0.193462,
+        "prompt_tokens": 1413,
+        "output_tokens": 37,
+        "total_tokens": 1450,
+        "generation_tokens_per_s": 191.25202882219764
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Will do. Should I record *them* in my phone or write it in a notebook?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blood pressure readings in the morning",
+          "ground_truth_resolution": "BP readings log",
+          "resolution_similarity": 0.601479314763875,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A phone app"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the blood pressure readings in the morning"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44561677891761065,
+        "ollama_total_s": 0.444437876,
+        "model_load_s": 0.001183085,
+        "prompt_eval_s": 0.130485999,
+        "generation_s": 0.191388,
+        "prompt_tokens": 1438,
+        "output_tokens": 37,
+        "total_tokens": 1475,
+        "generation_tokens_per_s": 193.3245553535227
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Phone is fine. Just send me the log before we meet *next time*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next time",
+          "ground_truth_ambiguous_phrase": "next time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the next scheduled check-in for User A, which was previously set for two weeks from now",
+          "ground_truth_resolution": "Next appointment: Thursday, two weeks from now, 10 AM",
+          "resolution_similarity": 0.6384536591917911,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the next scheduled check-in for User A, which was previously set for two weeks from now"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5340375336818397,
+        "ollama_total_s": 0.532452331,
+        "model_load_s": 0.002998431,
+        "prompt_eval_s": 0.131249,
+        "generation_s": 0.275315,
+        "prompt_tokens": 1463,
+        "output_tokens": 49,
+        "total_tokens": 1512,
+        "generation_tokens_per_s": 177.97795252710534
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Okay. I’ll send it. By the way, I read about a new diet—low-GI foods. Is *that* worth trying?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "low-GI foods"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "low-GI foods"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4129271418787539,
+        "ollama_total_s": 0.4119862,
+        "model_load_s": 0.001469066,
+        "prompt_eval_s": 0.13234,
+        "generation_s": 0.169877,
+        "prompt_tokens": 1516,
+        "output_tokens": 34,
+        "total_tokens": 1550,
+        "generation_tokens_per_s": 200.14481065712252
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Absolutely. Low-GI is ideal for diabetes. Go for brown rice, quinoa, lentils. Avoid white bread and pastries.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2941086650826037,
+        "ollama_total_s": 0.293091982,
+        "model_load_s": 0.00134173,
+        "prompt_eval_s": 0.13793,
+        "generation_s": 0.025076,
+        "prompt_tokens": 1552,
+        "output_tokens": 6,
+        "total_tokens": 1558,
+        "generation_tokens_per_s": 239.27261126176424
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Perfect. Do I need to avoid *fruit*? I like mangoes.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "fruit",
+          "ground_truth_resolution": "Fresh mangoes and assorted fruit",
+          "resolution_source": "User A fridge (smart appliance log)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.29648681404069066,
+        "ollama_total_s": 0.295351966,
+        "model_load_s": 0.001324858,
+        "prompt_eval_s": 0.136974,
+        "generation_s": 0.024975,
+        "prompt_tokens": 1566,
+        "output_tokens": 6,
+        "total_tokens": 1572,
+        "generation_tokens_per_s": 240.24024024024024
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Mangoes are high sugar, have them in moderation. Berries are better. Limit *it* to once or twice a week.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Limit *it* to once or twice a week.",
+          "resolved_entity": "mangoes"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "it",
+          "ground_truth_resolution": "Mangoes",
+          "resolution_source": "User A fridge (smart appliance log)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Limit *it* to once or twice a week.",
+          "resolved_entity": "mangoes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4927868531085551,
+        "ollama_total_s": 0.491734336,
+        "model_load_s": 0.00131422,
+        "prompt_eval_s": 0.138569,
+        "generation_s": 0.216635,
+        "prompt_tokens": 1615,
+        "output_tokens": 42,
+        "total_tokens": 1657,
+        "generation_tokens_per_s": 193.87448934844323
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Got it. One more concern: my insurance called about a medication approval. Do you need to talk to *them*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the insurance company",
+          "ground_truth_resolution": "Insurance representatives",
+          "resolution_similarity": 0.7798097884813301,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A phone contacts"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the insurance company"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4557363451458514,
+        "ollama_total_s": 0.454536356,
+        "model_load_s": 0.001424388,
+        "prompt_eval_s": 0.140009,
+        "generation_s": 0.17599,
+        "prompt_tokens": 1647,
+        "output_tokens": 33,
+        "total_tokens": 1680,
+        "generation_tokens_per_s": 187.51065401443262
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Yes, I'll contact *your carrier* today. They may need more paperwork for the metformin prescription.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "your carrier",
+          "ground_truth_ambiguous_phrase": "your carrier",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Insurance Carrier for User A",
+          "ground_truth_resolution": "Humana Health Insurance",
+          "resolution_similarity": 0.657248123573728,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B EHR (insurance info)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your carrier",
+          "resolved_entity": "Insurance Carrier for User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5352543289773166,
+        "ollama_total_s": 0.534051808,
+        "model_load_s": 0.001132841,
+        "prompt_eval_s": 0.146805,
+        "generation_s": 0.250678,
+        "prompt_tokens": 1678,
+        "output_tokens": 36,
+        "total_tokens": 1714,
+        "generation_tokens_per_s": 143.61052824739306
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Thanks, doctor. Also, should I bring *anything* for my next visit?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "anything",
+          "ground_truth_ambiguous_phrase": "anything",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "nothing specific, as the phrase is general and does not refer to a specific item or context",
+          "ground_truth_resolution": "Blood pressure log, glucose log, medication list",
+          "resolution_similarity": 0.3784548873463487,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B appointment checklist"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "anything",
+          "resolved_entity": "nothing specific, as the phrase is general and does not refer to a specific item or context"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5775993899442255,
+        "ollama_total_s": 0.576444608,
+        "model_load_s": 0.001198265,
+        "prompt_eval_s": 0.14879,
+        "generation_s": 0.276084,
+        "prompt_tokens": 1699,
+        "output_tokens": 48,
+        "total_tokens": 1747,
+        "generation_tokens_per_s": 173.8601295257965
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Just your glucose log and your blood pressure records. If you have questions, jot *them* down.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "questions",
+          "ground_truth_resolution": "Questions for next visit",
+          "resolution_similarity": 0.7373652341015566,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A phone notes"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the glucose log and the blood pressure records"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the glucose log and the blood pressure records"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "questions"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6031888509169221,
+        "ollama_total_s": 0.602185986,
+        "model_load_s": 0.001391094,
+        "prompt_eval_s": 0.149051,
+        "generation_s": 0.290289,
+        "prompt_tokens": 1734,
+        "output_tokens": 58,
+        "total_tokens": 1792,
+        "generation_tokens_per_s": 199.80088808049908
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Will do. I appreciate all your help. I feel like I'm finally making progress.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3204511320218444,
+        "ollama_total_s": 0.319355454,
+        "model_load_s": 0.00162766,
+        "prompt_eval_s": 0.149875,
+        "generation_s": 0.025853,
+        "prompt_tokens": 1759,
+        "output_tokens": 6,
+        "total_tokens": 1765,
+        "generation_tokens_per_s": 232.0813832050439
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "You're doing great, Carlos. Proud of you. Keep up the good work.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34299846086651087,
+        "ollama_total_s": 0.341630371,
+        "model_load_s": 0.001401156,
+        "prompt_eval_s": 0.160777,
+        "generation_s": 0.024935,
+        "prompt_tokens": 1785,
+        "output_tokens": 6,
+        "total_tokens": 1791,
+        "generation_tokens_per_s": 240.62562662923602
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Thanks, doc. Looking forward to reporting even better numbers *next time*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next time",
+          "ground_truth_ambiguous_phrase": "next time",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the next scheduled check-in appointment",
+          "ground_truth_resolution": "Next appointment: Thursday, two weeks from current date, 10 AM",
+          "resolution_similarity": 0.6920221533966205,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next time",
+          "resolved_entity": "the next scheduled check-in appointment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47576576517894864,
+        "ollama_total_s": 0.474572978,
+        "model_load_s": 0.001863731,
+        "prompt_eval_s": 0.161425,
+        "generation_s": 0.158154,
+        "prompt_tokens": 1810,
+        "output_tokens": 26,
+        "total_tokens": 1836,
+        "generation_tokens_per_s": 164.39672724053773
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "I believe in you. See you soon, Carlos. Bye for now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3449947009794414,
+        "ollama_total_s": 0.344021727,
+        "model_load_s": 0.001137311,
+        "prompt_eval_s": 0.163851,
+        "generation_s": 0.02528,
+        "prompt_tokens": 1834,
+        "output_tokens": 6,
+        "total_tokens": 1840,
+        "generation_tokens_per_s": 237.34177215189874
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Thanks! Have a good one, doctor.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34804931562393904,
+        "ollama_total_s": 0.346974995,
+        "model_load_s": 0.001491341,
+        "prompt_eval_s": 0.163275,
+        "generation_s": 0.025833,
+        "prompt_tokens": 1847,
+        "output_tokens": 6,
+        "total_tokens": 1853,
+        "generation_tokens_per_s": 232.26106143305077
+      }
+    }
+  ]
+}

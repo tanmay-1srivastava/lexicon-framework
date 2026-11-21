@@ -1,0 +1,2175 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/teacher_meeting_003.json",
+  "metrics": {
+    "ground_truth_ambiguities": 30,
+    "qwen_predicted_ambiguities": 53,
+    "detected_ground_truth_ambiguities": 13,
+    "missed_ground_truth_ambiguities": 17,
+    "detected_but_bad_resolution": 8,
+    "true_positives": 5,
+    "false_negatives": 25,
+    "false_positive_ambiguities": 40,
+    "detection_recall": 0.43333333333333335,
+    "detection_precision": 0.24528301886792453,
+    "detection_f1": 0.3132530120481928,
+    "true_positive_rate_at_0_70": 0.16666666666666666,
+    "strict_end_to_end_precision_at_0_70": 0.09433962264150944,
+    "end_to_end_f1_at_0_70": 0.12048192771084337,
+    "false_positive_discovery_rate": 0.7547169811320755,
+    "false_positives_per_turn": 0.8163265306122449,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 49,
+    "median_latency_per_turn_s": 0.4241938800550997,
+    "mean_latency_per_turn_s": 0.4282659154803473,
+    "total_prompt_tokens": 57363,
+    "total_output_tokens": 2035
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hey, I’m finally here. Sorry I was a bit late—hallway traffic was wild.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Lincoln High School, Art Room 204",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2284204661846161,
+        "ollama_total_s": 0.226973634,
+        "model_load_s": 0.00135528,
+        "prompt_eval_s": 0.032271,
+        "generation_s": 0.025418,
+        "prompt_tokens": 455,
+        "output_tokens": 6,
+        "total_tokens": 461,
+        "generation_tokens_per_s": 236.05319065229367
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "No worries, take a seat by the big window. We’re just getting started with the creative prompt for today.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.06963480683043599,
+        "ollama_total_s": 0.068500537,
+        "model_load_s": 0.003587362,
+        "prompt_eval_s": 0.035605,
+        "generation_s": 0.024807,
+        "prompt_tokens": 490,
+        "output_tokens": 6,
+        "total_tokens": 496,
+        "generation_tokens_per_s": 241.86721489902044
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Thanks! I love sitting here. The light’s perfect for painting.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Lincoln High School, Art Room 204",
+          "ground_truth_resolution": "Seat by the big window, Art Room 204",
+          "resolution_similarity": 0.6326988521450448,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the light",
+          "resolved_entity": "The light from the big window in the Art Room 204"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        },
+        {
+          "ambiguous_phrase": "the light",
+          "resolved_entity": "The light from the big window in the Art Room 204"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4348512068390846,
+        "ollama_total_s": 0.433767347,
+        "model_load_s": 0.001336741,
+        "prompt_eval_s": 0.035913,
+        "generation_s": 0.358092,
+        "prompt_tokens": 504,
+        "output_tokens": 75,
+        "total_tokens": 579,
+        "generation_tokens_per_s": 209.44338326463588
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Good to hear. So, today we’ll be combining storytelling with visual elements. I’ve left some sample pieces on that table near the cabinet.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that table near the cabinet",
+          "ground_truth_ambiguous_phrase": "that table near the cabinet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the table near the cabinet in Lincoln High School, Staff Room (1st floor)",
+          "ground_truth_resolution": "Table adjacent to art supply cabinet, Art Room 204",
+          "resolution_similarity": 0.5642305233280642,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that table near the cabinet",
+          "resolved_entity": "the table near the cabinet in Lincoln High School, Staff Room (1st floor)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35852907970547676,
+        "ollama_total_s": 0.357538211,
+        "model_load_s": 0.001007789,
+        "prompt_eval_s": 0.041412,
+        "generation_s": 0.25596,
+        "prompt_tokens": 557,
+        "output_tokens": 50,
+        "total_tokens": 607,
+        "generation_tokens_per_s": 195.34302234724174
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "I see them. I really like the one with all the swirling blues. Did you make that, Ms. Chen?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the sample pieces"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the one with all the swirling blues"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the sample pieces"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the one with all the swirling blues"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4469698900356889,
+        "ollama_total_s": 0.445847514,
+        "model_load_s": 0.001553279,
+        "prompt_eval_s": 0.045961,
+        "generation_s": 0.324811,
+        "prompt_tokens": 585,
+        "output_tokens": 59,
+        "total_tokens": 644,
+        "generation_tokens_per_s": 181.64409456576286
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "That was actually made by Sam last year. For your own piece, try to connect it to something meaningful for you.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That was actually made by Sam last year.",
+          "resolved_entity": "the one with all the swirling blues"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Sam",
+          "ground_truth_resolution": "Samuel Gutierrez, Grade 10, Classmate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That was actually made by Sam last year.",
+          "resolved_entity": "the one with all the swirling blues"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3913655951619148,
+        "ollama_total_s": 0.390010808,
+        "model_load_s": 0.001528638,
+        "prompt_eval_s": 0.047063,
+        "generation_s": 0.254348,
+        "prompt_tokens": 618,
+        "output_tokens": 44,
+        "total_tokens": 662,
+        "generation_tokens_per_s": 172.99133470677967
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Okay, I’m thinking about using colors from my grandma’s garden, but I’m not sure about layout.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.16386243794113398,
+        "ollama_total_s": 0.162683505,
+        "model_load_s": 0.001446385,
+        "prompt_eval_s": 0.047303,
+        "generation_s": 0.024911,
+        "prompt_tokens": 647,
+        "output_tokens": 6,
+        "total_tokens": 653,
+        "generation_tokens_per_s": 240.8574525310104
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Why not make a quick sketch? There’s extra paper by the supply shelf. You can also ask Jade for layout tips—she’s great at collage work.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "There’s extra paper by the supply shelf.",
+          "resolved_entity": "extra paper by the supply shelf (location in the art room)"
+        },
+        {
+          "ambiguous_phrase": "ask Jade for layout tips",
+          "resolved_entity": "Jade (a person in the art room, known for collage work)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "supply shelf",
+          "ground_truth_resolution": "Wooden supply shelf, north wall, Art Room 204",
+          "resolution_source": "User B GPS + Wifi"
+        },
+        {
+          "ambiguous_phrase": "Jade",
+          "ground_truth_resolution": "Jade Lin, Grade 11, Classmate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "There’s extra paper by the supply shelf.",
+          "resolved_entity": "extra paper by the supply shelf (location in the art room)"
+        },
+        {
+          "ambiguous_phrase": "ask Jade for layout tips",
+          "resolved_entity": "Jade (a person in the art room, known for collage work)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.562059739138931,
+        "ollama_total_s": 0.560732632,
+        "model_load_s": 0.001365401,
+        "prompt_eval_s": 0.051649,
+        "generation_s": 0.456741,
+        "prompt_tokens": 698,
+        "output_tokens": 86,
+        "total_tokens": 784,
+        "generation_tokens_per_s": 188.29051913447665
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Good idea. Hey Jade, can you help me figure out how to start this?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the creative project (Creative Expression Project - Due: March 30th)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the creative project (Creative Expression Project - Due: March 30th)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39199778623878956,
+        "ollama_total_s": 0.390709365,
+        "model_load_s": 0.001416039,
+        "prompt_eval_s": 0.051865,
+        "generation_s": 0.259994,
+        "prompt_tokens": 709,
+        "output_tokens": 45,
+        "total_tokens": 754,
+        "generation_tokens_per_s": 173.08091725193657
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Sure! Do you want to work at this table or over there by the easels?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "over there by the easels",
+          "ground_truth_ambiguous_phrase": "over there by the easels",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the area by the easels",
+          "ground_truth_resolution": "Easel area, southwest corner, Art Room 204",
+          "resolution_similarity": 0.7107295114331142,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "this table",
+          "ground_truth_ambiguous_phrase": "this table",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the table near the cabinet",
+          "ground_truth_resolution": "Table by the window, Art Room 204",
+          "resolution_similarity": 0.607196300956686,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this table",
+          "resolved_entity": "the table near the cabinet"
+        },
+        {
+          "ambiguous_phrase": "over there by the easels",
+          "resolved_entity": "the area by the easels"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4790093987248838,
+        "ollama_total_s": 0.477666109,
+        "model_load_s": 0.001505315,
+        "prompt_eval_s": 0.052347,
+        "generation_s": 0.357391,
+        "prompt_tokens": 739,
+        "output_tokens": 66,
+        "total_tokens": 805,
+        "generation_tokens_per_s": 184.67169010971176
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Let’s stay here. The table is less crowded now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "stay here",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        },
+        {
+          "ambiguous_phrase": "the table",
+          "resolved_entity": "the table near the cabinet"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "stay here",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        },
+        {
+          "ambiguous_phrase": "the table",
+          "resolved_entity": "the table near the cabinet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5054313652217388,
+        "ollama_total_s": 0.504214136,
+        "model_load_s": 0.001246299,
+        "prompt_eval_s": 0.052797,
+        "generation_s": 0.359481,
+        "prompt_tokens": 755,
+        "output_tokens": 67,
+        "total_tokens": 822,
+        "generation_tokens_per_s": 186.37980866860835
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Cool. So, what’s your theme?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.15755955316126347,
+        "ollama_total_s": 0.156370396,
+        "model_load_s": 0.001190016,
+        "prompt_eval_s": 0.062813,
+        "generation_s": 0.024695,
+        "prompt_tokens": 771,
+        "output_tokens": 6,
+        "total_tokens": 777,
+        "generation_tokens_per_s": 242.96416278598906
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "I’m thinking about home and memories, like the flowers my grandma grew.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17558380216360092,
+        "ollama_total_s": 0.174632997,
+        "model_load_s": 0.001516042,
+        "prompt_eval_s": 0.068438,
+        "generation_s": 0.024114,
+        "prompt_tokens": 802,
+        "output_tokens": 6,
+        "total_tokens": 808,
+        "generation_tokens_per_s": 248.8181139586962
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "That’s sweet. You could layer paint for texture, or use colored paper from that bin next to the door.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that bin",
+          "resolved_entity": "the bin next to the door (in the Art Room 204)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that bin next to the door",
+          "ground_truth_resolution": "Colored paper bin, east entry, Art Room 204",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that bin",
+          "resolved_entity": "the bin next to the door (in the Art Room 204)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.427218709141016,
+        "ollama_total_s": 0.426178447,
+        "model_load_s": 0.001076534,
+        "prompt_eval_s": 0.068653,
+        "generation_s": 0.290149,
+        "prompt_tokens": 843,
+        "output_tokens": 46,
+        "total_tokens": 889,
+        "generation_tokens_per_s": 158.5392332904818
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "I’ll grab some in a sec. Ms. Chen, can I use the metallic markers from your desk, or are those just for demos?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those",
+          "ground_truth_ambiguous_phrase": "those",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the metallic markers (referencing the metallic markers from Ms. Chen's desk)",
+          "ground_truth_resolution": "Metallic marker set on Ms. Chen’s desk",
+          "resolution_similarity": 0.8975074369241208,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "your desk",
+          "resolved_entity": "User B's desk (Ms. Chen's desk) in Lincoln High School, Staff Room (1st floor)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your desk",
+          "resolved_entity": "User B's desk (Ms. Chen's desk) in Lincoln High School, Staff Room (1st floor)"
+        },
+        {
+          "ambiguous_phrase": "those",
+          "resolved_entity": "the metallic markers (referencing the metallic markers from Ms. Chen's desk)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5772615051828325,
+        "ollama_total_s": 0.576076741,
+        "model_load_s": 0.001634671,
+        "prompt_eval_s": 0.07353,
+        "generation_s": 0.42653,
+        "prompt_tokens": 888,
+        "output_tokens": 87,
+        "total_tokens": 975,
+        "generation_tokens_per_s": 203.97158464820762
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "You can use them, just remember to return them here when you’re done.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "return them here",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "return them here",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.397560803219676,
+        "ollama_total_s": 0.396503744,
+        "model_load_s": 0.001311647,
+        "prompt_eval_s": 0.072994,
+        "generation_s": 0.22277,
+        "prompt_tokens": 901,
+        "output_tokens": 43,
+        "total_tokens": 944,
+        "generation_tokens_per_s": 193.02419535844143
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Got it. Jade, do you want to share paints? I noticed there’s just one tube of that bright yellow.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that bright yellow",
+          "ground_truth_ambiguous_phrase": "that bright yellow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bright yellow paint tube (referencing the single tube mentioned in the current turn)",
+          "ground_truth_resolution": "Winsor & Newton Lemon Yellow acrylic tube, central supply tray",
+          "resolution_similarity": 0.6471860496398312,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Jade",
+          "resolved_entity": "Jade (User B's colleague, mentioned in Turn 8 as being great at collage work)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Jade",
+          "resolved_entity": "Jade (User B's colleague, mentioned in Turn 8 as being great at collage work)"
+        },
+        {
+          "ambiguous_phrase": "that bright yellow",
+          "resolved_entity": "the bright yellow paint tube (referencing the single tube mentioned in the current turn)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6245472901500762,
+        "ollama_total_s": 0.623401279,
+        "model_load_s": 0.001750382,
+        "prompt_eval_s": 0.082343,
+        "generation_s": 0.45625,
+        "prompt_tokens": 943,
+        "output_tokens": 87,
+        "total_tokens": 1030,
+        "generation_tokens_per_s": 190.68493150684932
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Sure, I’ll bring it over. Also, did you see what Leo’s working on? He’s at that back corner with the big canvas.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "He’s at that back corner with the big canvas.",
+          "ground_truth_ambiguous_phrase": "that back corner with the big canvas",
+          "phrase_match_score": 0.9,
+          "predicted_resolution": "Leo",
+          "ground_truth_resolution": "Back-right (northwest) corner, Art Room 204",
+          "resolution_similarity": 0.47553771908368647,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that back corner",
+          "resolved_entity": "back corner of Lincoln High School, Art Room 204"
+        },
+        {
+          "ambiguous_phrase": "the big canvas",
+          "resolved_entity": "big canvas in the back corner of Lincoln High School, Art Room 204"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He’s at that back corner with the big canvas.",
+          "resolved_entity": "Leo"
+        },
+        {
+          "ambiguous_phrase": "that back corner",
+          "resolved_entity": "back corner of Lincoln High School, Art Room 204"
+        },
+        {
+          "ambiguous_phrase": "the big canvas",
+          "resolved_entity": "big canvas in the back corner of Lincoln High School, Art Room 204"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7329505537636578,
+        "ollama_total_s": 0.732049272,
+        "model_load_s": 0.001252851,
+        "prompt_eval_s": 0.083261,
+        "generation_s": 0.566271,
+        "prompt_tokens": 989,
+        "output_tokens": 112,
+        "total_tokens": 1101,
+        "generation_tokens_per_s": 197.78515940247692
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Not yet! I’ll check it out later. Right now, I want to do the flower sketches. Where’s the eraser?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the eraser",
+          "ground_truth_ambiguous_phrase": "the eraser",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the eraser (location-dependent, likely in the art room or nearby supply area)",
+          "ground_truth_resolution": "Large white eraser, supply drawer, Art Room 204",
+          "resolution_similarity": 0.8188014045006607,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the eraser",
+          "resolved_entity": "the eraser (location-dependent, likely in the art room or nearby supply area)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4241938800550997,
+        "ollama_total_s": 0.422855573,
+        "model_load_s": 0.001602341,
+        "prompt_eval_s": 0.082953,
+        "generation_s": 0.245348,
+        "prompt_tokens": 1023,
+        "output_tokens": 48,
+        "total_tokens": 1071,
+        "generation_tokens_per_s": 195.64047801490128
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "There should be one in the supply drawer right by you. If not, ask Maya—she always brings extra.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "right by you",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        },
+        {
+          "ambiguous_phrase": "the supply drawer",
+          "resolved_entity": "supply drawer in the Staff Room (1st floor)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "supply drawer right by you",
+          "ground_truth_resolution": "Drawer in Art Table 3, by window",
+          "resolution_source": "User A GPS"
+        },
+        {
+          "ambiguous_phrase": "Maya",
+          "ground_truth_resolution": "Maya Patel, Grade 10, Classmate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "right by you",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        },
+        {
+          "ambiguous_phrase": "the supply drawer",
+          "resolved_entity": "supply drawer in the Staff Room (1st floor)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5702831977978349,
+        "ollama_total_s": 0.569032459,
+        "model_load_s": 0.001447362,
+        "prompt_eval_s": 0.091801,
+        "generation_s": 0.363739,
+        "prompt_tokens": 1052,
+        "output_tokens": 74,
+        "total_tokens": 1126,
+        "generation_tokens_per_s": 203.44257833226573
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Thanks. Maya, do you have a spare eraser?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Maya",
+          "resolved_entity": "Maya (User B's colleague, mentioned in Turn 20 as someone who brings extra erasers)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Maya",
+          "resolved_entity": "Maya (User B's colleague, mentioned in Turn 20 as someone who brings extra erasers)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4801794746890664,
+        "ollama_total_s": 0.478920061,
+        "model_load_s": 0.001398081,
+        "prompt_eval_s": 0.091937,
+        "generation_s": 0.301998,
+        "prompt_tokens": 1063,
+        "output_tokens": 52,
+        "total_tokens": 1115,
+        "generation_tokens_per_s": 172.18657077199188
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Here, you can borrow this one. Just give it back before the bell.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this one",
+          "ground_truth_ambiguous_phrase": "this one",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the eraser",
+          "ground_truth_resolution": "Maya’s Staedtler Mars eraser",
+          "resolution_similarity": 0.7562093970197061,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Here",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        },
+        {
+          "ambiguous_phrase": "the bell",
+          "resolved_entity": "the school bell (implied by the context of the school day)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Here",
+          "resolved_entity": "Lincoln High School, Staff Room (1st floor)"
+        },
+        {
+          "ambiguous_phrase": "this one",
+          "resolved_entity": "the eraser"
+        },
+        {
+          "ambiguous_phrase": "the bell",
+          "resolved_entity": "the school bell (implied by the context of the school day)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6422606003470719,
+        "ollama_total_s": 0.641043726,
+        "model_load_s": 0.001432996,
+        "prompt_eval_s": 0.092773,
+        "generation_s": 0.451596,
+        "prompt_tokens": 1093,
+        "output_tokens": 97,
+        "total_tokens": 1190,
+        "generation_tokens_per_s": 214.7937537090674
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Will do! Ms. Chen, when do we need to finish the first draft by?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Ms. Chen",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Ms. Chen",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4159698588773608,
+        "ollama_total_s": 0.414861867,
+        "model_load_s": 0.001546962,
+        "prompt_eval_s": 0.092706,
+        "generation_s": 0.208877,
+        "prompt_tokens": 1123,
+        "output_tokens": 34,
+        "total_tokens": 1157,
+        "generation_tokens_per_s": 162.77522178123968
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Let’s aim for the end of next class, so you’ll have today and tomorrow.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the end of next class",
+          "ground_truth_ambiguous_phrase": "the end of next class",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Creative Expression Project - Due: March 30th",
+          "ground_truth_resolution": "March 29th, 2:35 PM",
+          "resolution_similarity": 0.4731635265521241,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the end of next class",
+          "resolved_entity": "Creative Expression Project - Due: March 30th"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42239699279889464,
+        "ollama_total_s": 0.421144665,
+        "model_load_s": 0.0015129,
+        "prompt_eval_s": 0.097984,
+        "generation_s": 0.22862,
+        "prompt_tokens": 1151,
+        "output_tokens": 45,
+        "total_tokens": 1196,
+        "generation_tokens_per_s": 196.83317295074798
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Oh, cool. That gives me time to refine things.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23809368815273046,
+        "ollama_total_s": 0.236815601,
+        "model_load_s": 0.001138264,
+        "prompt_eval_s": 0.099029,
+        "generation_s": 0.025604,
+        "prompt_tokens": 1167,
+        "output_tokens": 6,
+        "total_tokens": 1173,
+        "generation_tokens_per_s": 234.33838462740198
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Exactly. And for your story part, remember you can write a few sentences or even do a short comic strip, like that example at the front.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that example at the front",
+          "ground_truth_resolution": "Short comic strip on front whiteboard, Art Room 204",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21941520599648356,
+        "ollama_total_s": 0.21824655,
+        "model_load_s": 0.001627439,
+        "prompt_eval_s": 0.09925,
+        "generation_s": 0.025506,
+        "prompt_tokens": 1225,
+        "output_tokens": 6,
+        "total_tokens": 1231,
+        "generation_tokens_per_s": 235.23876734885908
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "I might try the comic idea. Can I get one of those black fine-tipped pens?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those black fine-tipped pens",
+          "resolved_entity": "the black fine-tipped pens mentioned in the example at the front"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those black fine-tipped pens",
+          "resolved_entity": "the black fine-tipped pens mentioned in the example at the front"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45142581034451723,
+        "ollama_total_s": 0.450195897,
+        "model_load_s": 0.001448547,
+        "prompt_eval_s": 0.101026,
+        "generation_s": 0.250385,
+        "prompt_tokens": 1243,
+        "output_tokens": 48,
+        "total_tokens": 1291,
+        "generation_tokens_per_s": 191.70477464704354
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "They’re in that small blue cup next to the sink.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "They’re in that small blue cup next to the sink.",
+          "resolved_entity": "the black fine-tipped pens"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that small blue cup next to the sink",
+          "ground_truth_resolution": "Blue cup with pens, by sink, Art Room 204",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They’re in that small blue cup next to the sink.",
+          "resolved_entity": "the black fine-tipped pens"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4703540811315179,
+        "ollama_total_s": 0.468844326,
+        "model_load_s": 0.001385547,
+        "prompt_eval_s": 0.100337,
+        "generation_s": 0.266048999,
+        "prompt_tokens": 1258,
+        "output_tokens": 46,
+        "total_tokens": 1304,
+        "generation_tokens_per_s": 172.90048138839268
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Found it, thanks! Jade, do you want me to grab you one too while I’m there?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Jade",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Jade",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4383184080943465,
+        "ollama_total_s": 0.436840922,
+        "model_load_s": 0.00148348,
+        "prompt_eval_s": 0.115824,
+        "generation_s": 0.21754,
+        "prompt_tokens": 1298,
+        "output_tokens": 33,
+        "total_tokens": 1331,
+        "generation_tokens_per_s": 151.69623977199595
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Sure, thanks! By the way, did you hear what the next project is going to be?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the next project",
+          "resolved_entity": "Creative Expression Project - Due: March 30th"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the next project",
+          "resolved_entity": "Creative Expression Project - Due: March 30th"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5712181790731847,
+        "ollama_total_s": 0.569373043,
+        "model_load_s": 0.001555596,
+        "prompt_eval_s": 0.116049,
+        "generation_s": 0.303545,
+        "prompt_tokens": 1327,
+        "output_tokens": 43,
+        "total_tokens": 1370,
+        "generation_tokens_per_s": 141.65939152349733
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "No, I only overheard Ms. Chen mention it to someone earlier.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the next project"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the next project"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4019058207049966,
+        "ollama_total_s": 0.400632597,
+        "model_load_s": 0.001515487,
+        "prompt_eval_s": 0.117442,
+        "generation_s": 0.151918,
+        "prompt_tokens": 1347,
+        "output_tokens": 22,
+        "total_tokens": 1369,
+        "generation_tokens_per_s": 144.814965968483
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Yeah, she told Leo it’ll involve recycled materials, but I don’t know the details.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "Leo",
+          "resolved_entity": "Leo"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the next project"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "she told Leo",
+          "ground_truth_resolution": "Leo Kwan, Grade 11, Classmate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "Leo",
+          "resolved_entity": "Leo"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the next project"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6403215448372066,
+        "ollama_total_s": 0.638980906,
+        "model_load_s": 0.001231971,
+        "prompt_eval_s": 0.117712,
+        "generation_s": 0.413741,
+        "prompt_tokens": 1380,
+        "output_tokens": 75,
+        "total_tokens": 1455,
+        "generation_tokens_per_s": 181.27282526991522
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Sounds interesting! Maybe we’ll get to use those bottle caps again.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3132867617532611,
+        "ollama_total_s": 0.312080464,
+        "model_load_s": 0.001410713,
+        "prompt_eval_s": 0.130067,
+        "generation_s": 0.025729,
+        "prompt_tokens": 1399,
+        "output_tokens": 6,
+        "total_tokens": 1405,
+        "generation_tokens_per_s": 233.19989117338415
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Probably. Ms. Chen loves upcycling. Anyway, let’s focus on this one. Do you want to work together after school in the art club room?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this one",
+          "ground_truth_ambiguous_phrase": "this one",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the creative project (the artwork being discussed)",
+          "ground_truth_resolution": "Current creative expression project (art + story)",
+          "resolution_similarity": 0.805016070205045,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the art club room",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this one",
+          "resolved_entity": "the creative project (the artwork being discussed)"
+        },
+        {
+          "ambiguous_phrase": "the art club room",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5985016161575913,
+        "ollama_total_s": 0.597423251,
+        "model_load_s": 0.001307846,
+        "prompt_eval_s": 0.130207,
+        "generation_s": 0.348026,
+        "prompt_tokens": 1461,
+        "output_tokens": 72,
+        "total_tokens": 1533,
+        "generation_tokens_per_s": 206.8810950905967
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "That could work. What time does the club open today?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the club",
+          "resolved_entity": "art club room"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the club",
+          "resolved_entity": "art club room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47501202300190926,
+        "ollama_total_s": 0.473657953,
+        "model_load_s": 0.001118009,
+        "prompt_eval_s": 0.130402999,
+        "generation_s": 0.219108,
+        "prompt_tokens": 1462,
+        "output_tokens": 34,
+        "total_tokens": 1496,
+        "generation_tokens_per_s": 155.17461708381256
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "I think around 3:30, but I can check with the coordinator.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "ground_truth_resolution": "Ms. Robinson, Art Club Coordinator",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2985174902714789,
+        "ollama_total_s": 0.297454982,
+        "model_load_s": 0.001158166,
+        "prompt_eval_s": 0.132872,
+        "generation_s": 0.02619,
+        "prompt_tokens": 1494,
+        "output_tokens": 6,
+        "total_tokens": 1500,
+        "generation_tokens_per_s": 229.09507445589918
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Cool, can you ask her? I have math help until about 3:20, so I’ll come after.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "the club",
+          "resolved_entity": "art club"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "the coordinator"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "the club",
+          "resolved_entity": "art club"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "the coordinator"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7484979568980634,
+        "ollama_total_s": 0.747413842,
+        "model_load_s": 0.001565017,
+        "prompt_eval_s": 0.136497,
+        "generation_s": 0.480591,
+        "prompt_tokens": 1537,
+        "output_tokens": 98,
+        "total_tokens": 1635,
+        "generation_tokens_per_s": 203.915595589597
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "No problem. I’ll message her now. Meet you there after your session?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meet you there after your session?",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "there",
+          "ground_truth_resolution": "Art Club Room 112",
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meet you there after your session?",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5254033599048853,
+        "ollama_total_s": 0.523862535,
+        "model_load_s": 0.00134447,
+        "prompt_eval_s": 0.137302,
+        "generation_s": 0.235484,
+        "prompt_tokens": 1554,
+        "output_tokens": 46,
+        "total_tokens": 1600,
+        "generation_tokens_per_s": 195.34235871651578
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Yep, I’ll head over as soon as I’m done.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3061081529594958,
+        "ollama_total_s": 0.304626041,
+        "model_load_s": 0.001596701,
+        "prompt_eval_s": 0.137888,
+        "generation_s": 0.024974,
+        "prompt_tokens": 1574,
+        "output_tokens": 6,
+        "total_tokens": 1580,
+        "generation_tokens_per_s": 240.24985985424843
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Great. I’ll save you a seat by the windows again.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "a seat by the windows again",
+          "ground_truth_resolution": "Window-side table, Art Club Room 112",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3153403722681105,
+        "ollama_total_s": 0.313925418,
+        "model_load_s": 0.001310748,
+        "prompt_eval_s": 0.138177,
+        "generation_s": 0.025,
+        "prompt_tokens": 1597,
+        "output_tokens": 6,
+        "total_tokens": 1603,
+        "generation_tokens_per_s": 240.0
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Perfect—thanks! Can you also grab the big sketchbook from that drawer in the club room for me?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that drawer",
+          "resolved_entity": "the drawer in the club room"
+        },
+        {
+          "ambiguous_phrase": "the club room",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that drawer in the club room",
+          "ground_truth_resolution": "Bottom drawer, supply cabinet, Art Club Room 112",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that drawer",
+          "resolved_entity": "the drawer in the club room"
+        },
+        {
+          "ambiguous_phrase": "the club room",
+          "resolved_entity": "Lincoln High School, Art Room 204"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6297726049087942,
+        "ollama_total_s": 0.628416147,
+        "model_load_s": 0.001374227,
+        "prompt_eval_s": 0.139379,
+        "generation_s": 0.34873,
+        "prompt_tokens": 1638,
+        "output_tokens": 69,
+        "total_tokens": 1707,
+        "generation_tokens_per_s": 197.86080922203425
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Sure thing. Anything else you need from there?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2958228839561343,
+        "ollama_total_s": 0.29466831,
+        "model_load_s": 0.001514173,
+        "prompt_eval_s": 0.140408,
+        "generation_s": 0.025129,
+        "prompt_tokens": 1646,
+        "output_tokens": 6,
+        "total_tokens": 1652,
+        "generation_tokens_per_s": 238.76795734012498
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Maybe the set of colored pencils we used last week, if you see them.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the set of colored pencils we used last week",
+          "ground_truth_ambiguous_phrase": "the set of colored pencils we used last week",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "colored pencils used in the Creative Expression Project last week",
+          "ground_truth_resolution": "Prismacolor Premier 36-Color Pencil Set, Art Club Room 112",
+          "resolution_similarity": 0.6606796967886204,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the set of colored pencils we used last week",
+          "resolved_entity": "colored pencils used in the Creative Expression Project last week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.568722243886441,
+        "ollama_total_s": 0.567403645,
+        "model_load_s": 0.004193835,
+        "prompt_eval_s": 0.146654,
+        "generation_s": 0.28171,
+        "prompt_tokens": 1678,
+        "output_tokens": 49,
+        "total_tokens": 1727,
+        "generation_tokens_per_s": 173.93773738951404
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Will do. Oh, heads up—Ms. Chen is coming this way.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Ms. Chen is coming this way",
+          "ground_truth_resolution": "Ms. Chen, walking from front desk toward User A/B’s table",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3216723850928247,
+        "ollama_total_s": 0.320538776,
+        "model_load_s": 0.001252824,
+        "prompt_eval_s": 0.148168,
+        "generation_s": 0.041073,
+        "prompt_tokens": 1704,
+        "output_tokens": 6,
+        "total_tokens": 1710,
+        "generation_tokens_per_s": 146.08136732159812
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Hi Ms. Chen! Is it okay if we work on our projects in the club room after school, or do we need to sign up?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32369331177324057,
+        "ollama_total_s": 0.322416064,
+        "model_load_s": 0.00119399,
+        "prompt_eval_s": 0.149193,
+        "generation_s": 0.024981,
+        "prompt_tokens": 1756,
+        "output_tokens": 6,
+        "total_tokens": 1762,
+        "generation_tokens_per_s": 240.18253872943438
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "You just need to let the coordinator know so she can unlock the cabinets for you.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the coordinator",
+          "ground_truth_ambiguous_phrase": "the coordinator",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the coordinator",
+          "ground_truth_resolution": "Ms. Robinson, Art Club Coordinator",
+          "resolution_similarity": 0.6432624151776201,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "the cabinets",
+          "resolved_entity": "the cabinets in the club room"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Ms. Chen"
+        },
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator"
+        },
+        {
+          "ambiguous_phrase": "the cabinets",
+          "resolved_entity": "the cabinets in the club room"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7365681561641395,
+        "ollama_total_s": 0.735334873,
+        "model_load_s": 0.001312671,
+        "prompt_eval_s": 0.149612,
+        "generation_s": 0.434937,
+        "prompt_tokens": 1771,
+        "output_tokens": 81,
+        "total_tokens": 1852,
+        "generation_tokens_per_s": 186.23386835334773
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Got it. Jade’s already messaging her.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32964578876271844,
+        "ollama_total_s": 0.328733246,
+        "model_load_s": 0.001297155,
+        "prompt_eval_s": 0.162361,
+        "generation_s": 0.026237,
+        "prompt_tokens": 1782,
+        "output_tokens": 6,
+        "total_tokens": 1788,
+        "generation_tokens_per_s": 228.68468193772154
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Perfect! Don’t forget to clean up your area before the bell, and bring any wet pieces to the drying rack.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "your area",
+          "ground_truth_resolution": "Table by window, Art Room 204",
+          "resolution_source": "User A GPS"
+        },
+        {
+          "ambiguous_phrase": "the drying rack",
+          "ground_truth_resolution": "Metal drying rack, near east wall, Art Room 204",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3416078360751271,
+        "ollama_total_s": 0.340387856,
+        "model_load_s": 0.001349065,
+        "prompt_eval_s": 0.163127,
+        "generation_s": 0.02495,
+        "prompt_tokens": 1831,
+        "output_tokens": 6,
+        "total_tokens": 1837,
+        "generation_tokens_per_s": 240.4809619238477
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Will do. Thanks, Ms. Chen!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34570618299767375,
+        "ollama_total_s": 0.344654044,
+        "model_load_s": 0.001445222,
+        "prompt_eval_s": 0.163927,
+        "generation_s": 0.025322,
+        "prompt_tokens": 1835,
+        "output_tokens": 6,
+        "total_tokens": 1841,
+        "generation_tokens_per_s": 236.94810836426822
+      }
+    }
+  ]
+}

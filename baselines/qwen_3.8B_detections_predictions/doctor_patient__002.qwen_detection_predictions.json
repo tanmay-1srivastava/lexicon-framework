@@ -1,0 +1,2845 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/doctor_patient__002.json",
+  "metrics": {
+    "ground_truth_ambiguities": 24,
+    "qwen_predicted_ambiguities": 50,
+    "detected_ground_truth_ambiguities": 5,
+    "missed_ground_truth_ambiguities": 19,
+    "detected_but_bad_resolution": 3,
+    "true_positives": 2,
+    "false_negatives": 22,
+    "false_positive_ambiguities": 45,
+    "detection_recall": 0.20833333333333334,
+    "detection_precision": 0.1,
+    "detection_f1": 0.13513513513513514,
+    "true_positive_rate_at_0_70": 0.08333333333333333,
+    "strict_end_to_end_precision_at_0_70": 0.04,
+    "end_to_end_f1_at_0_70": 0.05405405405405406,
+    "false_positive_discovery_rate": 0.9,
+    "false_positives_per_turn": 0.6164383561643836,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 73,
+    "median_latency_per_turn_s": 0.4105332870967686,
+    "mean_latency_per_turn_s": 0.4046092917696152,
+    "total_prompt_tokens": 106229,
+    "total_output_tokens": 2001
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi Dr. Reynolds, I'm reaching out because I'm feeling pretty fatigued today. It's been a bit more than usual, and I'm at home right now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "home",
+          "ground_truth_resolution": "David's Apartment, Lincoln Park, Chicago",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2447495018132031,
+        "ollama_total_s": 0.243792615,
+        "model_load_s": 0.001223567,
+        "prompt_eval_s": 0.041571,
+        "generation_s": 0.025234,
+        "prompt_tokens": 559,
+        "output_tokens": 6,
+        "total_tokens": 565,
+        "generation_tokens_per_s": 237.77443132281843
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Hello David, thanks for letting me know. Are you still at Lincoln Park?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Are you still at Lincoln Park?",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Lincoln Park",
+          "ground_truth_resolution": "Lincoln Park, Chicago",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Are you still at Lincoln Park?",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3449038611724973,
+        "ollama_total_s": 0.343733374,
+        "model_load_s": 0.000961116,
+        "prompt_eval_s": 0.040999,
+        "generation_s": 0.255959,
+        "prompt_tokens": 564,
+        "output_tokens": 43,
+        "total_tokens": 607,
+        "generation_tokens_per_s": 167.99565555420986
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Yes, I'm here. Just finished lunch, trying to follow the diet suggestions you made last week.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you made last week",
+          "resolved_entity": "User B (Dr. Reynolds)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "David's Apartment, Lincoln Park, Chicago",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you made last week",
+          "resolved_entity": "User B (Dr. Reynolds)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.37229134095832705,
+        "ollama_total_s": 0.371132499,
+        "model_load_s": 0.001412624,
+        "prompt_eval_s": 0.046751,
+        "generation_s": 0.257425,
+        "prompt_tokens": 599,
+        "output_tokens": 39,
+        "total_tokens": 638,
+        "generation_tokens_per_s": 151.5004370204914
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "That's good to hear. Can you tell me more about the fatigue? When did it start, and is it getting worse?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1260006921365857,
+        "ollama_total_s": 0.125127841,
+        "model_load_s": 0.001478463,
+        "prompt_eval_s": 0.047345,
+        "generation_s": 0.025215,
+        "prompt_tokens": 639,
+        "output_tokens": 6,
+        "total_tokens": 645,
+        "generation_tokens_per_s": 237.9535990481856
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "It started yesterday afternoon. It isn't worse right now, just lingering. I noticed it mostly when I was walking to the corner store.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The fatigue"
+        },
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The fatigue"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "corner store",
+          "ground_truth_resolution": "Fullerton Market, 1111 W Fullerton Ave, Chicago",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The fatigue"
+        },
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The fatigue"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.40136733604595065,
+        "ollama_total_s": 0.400196738,
+        "model_load_s": 0.001247864,
+        "prompt_eval_s": 0.047225,
+        "generation_s": 0.294372,
+        "prompt_tokens": 678,
+        "output_tokens": 53,
+        "total_tokens": 731,
+        "generation_tokens_per_s": 180.0442976913565
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Which store did you go to?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the corner store",
+          "resolved_entity": "Corner Store (Lincoln Park)"
+        },
+        {
+          "ambiguous_phrase": "store",
+          "resolved_entity": "Corner Store (Lincoln Park)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the corner store",
+          "resolved_entity": "Corner Store (Lincoln Park)"
+        },
+        {
+          "ambiguous_phrase": "store",
+          "resolved_entity": "Corner Store (Lincoln Park)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3765071169473231,
+        "ollama_total_s": 0.37525733,
+        "model_load_s": 0.001346325,
+        "prompt_eval_s": 0.048404,
+        "generation_s": 0.258458,
+        "prompt_tokens": 673,
+        "output_tokens": 48,
+        "total_tokens": 721,
+        "generation_tokens_per_s": 185.71682826610126
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "The little grocery on Fullerton, the one next to the bank.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "The little grocery on Fullerton, the one next to the bank.",
+          "ground_truth_ambiguous_phrase": "the little grocery on Fullerton, next to the bank",
+          "phrase_match_score": 0.9230769230769231,
+          "predicted_resolution": "The little grocery on Fullerton, the one next to the bank.",
+          "ground_truth_resolution": "Fullerton Market, 1111 W Fullerton Ave, Chicago",
+          "resolution_similarity": 0.5942014051326986,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "The little grocery on Fullerton, the one next to the bank.",
+          "resolved_entity": "The little grocery on Fullerton, the one next to the bank."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4309186413884163,
+        "ollama_total_s": 0.429455394,
+        "model_load_s": 0.00198702,
+        "prompt_eval_s": 0.05304,
+        "generation_s": 0.300538,
+        "prompt_tokens": 703,
+        "output_tokens": 55,
+        "total_tokens": 758,
+        "generation_tokens_per_s": 183.00514410823254
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Did you feel any chest pain while you were there or during the walk?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you were there",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        },
+        {
+          "ambiguous_phrase": "during the walk",
+          "resolved_entity": "walking to the corner store"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you were there",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        },
+        {
+          "ambiguous_phrase": "during the walk",
+          "resolved_entity": "walking to the corner store"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4671386447735131,
+        "ollama_total_s": 0.465899508,
+        "model_load_s": 0.001221127,
+        "prompt_eval_s": 0.052701,
+        "generation_s": 0.352438,
+        "prompt_tokens": 728,
+        "output_tokens": 66,
+        "total_tokens": 794,
+        "generation_tokens_per_s": 187.26698029156904
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "No pain at the store, but I felt slight tightness when I got back to this place.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "David's Apartment, Lincoln Park, Chicago",
+          "ground_truth_resolution": "David's Apartment, Lincoln Park, Chicago",
+          "resolution_similarity": 0.9998396620326155,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3662103917449713,
+        "ollama_total_s": 0.36501046,
+        "model_load_s": 0.001466769,
+        "prompt_eval_s": 0.060496,
+        "generation_s": 0.234428,
+        "prompt_tokens": 762,
+        "output_tokens": 39,
+        "total_tokens": 801,
+        "generation_tokens_per_s": 166.3623799204873
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "At home, correct?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "At home, correct?",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "At home, correct?",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39162019174546003,
+        "ollama_total_s": 0.390653906,
+        "model_load_s": 0.001403279,
+        "prompt_eval_s": 0.060703,
+        "generation_s": 0.242784,
+        "prompt_tokens": 763,
+        "output_tokens": 41,
+        "total_tokens": 804,
+        "generation_tokens_per_s": 168.8743904046395
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Yes, at my apartment.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my apartment",
+          "ground_truth_resolution": "David's Apartment, Lincoln Park, Chicago",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.32664420269429684,
+        "ollama_total_s": 0.325585816,
+        "model_load_s": 0.001482765,
+        "prompt_eval_s": 0.062478,
+        "generation_s": 0.19154,
+        "prompt_tokens": 780,
+        "output_tokens": 39,
+        "total_tokens": 819,
+        "generation_tokens_per_s": 203.6128223869688
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Can you describe the tightness? Also, did you notice any palpitations or shortness of breath around that time?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1725175087340176,
+        "ollama_total_s": 0.171217484,
+        "model_load_s": 0.001338221,
+        "prompt_eval_s": 0.069257,
+        "generation_s": 0.024265,
+        "prompt_tokens": 832,
+        "output_tokens": 6,
+        "total_tokens": 838,
+        "generation_tokens_per_s": 247.26973006387803
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "It was a dull pressure, not sharp. I did feel my heart racing a bit—almost like fluttering. No breathlessness though.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17917485302314162,
+        "ollama_total_s": 0.177861614,
+        "model_load_s": 0.001051143,
+        "prompt_eval_s": 0.069878,
+        "generation_s": 0.024804,
+        "prompt_tokens": 874,
+        "output_tokens": 6,
+        "total_tokens": 880,
+        "generation_tokens_per_s": 241.89646831156264
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Did it last long, or did you do anything to make it better?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the tightness"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the tightness"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.2912914650514722,
+        "ollama_total_s": 0.290149871,
+        "model_load_s": 0.001238926,
+        "prompt_eval_s": 0.072894,
+        "generation_s": 0.137986,
+        "prompt_tokens": 886,
+        "output_tokens": 22,
+        "total_tokens": 908,
+        "generation_tokens_per_s": 159.4364645688693
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "It lasted maybe five minutes, then I sat down and drank some water. That seemed to help.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1963996049016714,
+        "ollama_total_s": 0.195407639,
+        "model_load_s": 0.001169009,
+        "prompt_eval_s": 0.081942,
+        "generation_s": 0.0249,
+        "prompt_tokens": 921,
+        "output_tokens": 6,
+        "total_tokens": 927,
+        "generation_tokens_per_s": 240.96385542168676
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Has this happened before, say, in the last week or so?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the tightness and heart racing experienced by User A"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this",
+          "resolved_entity": "the tightness and heart racing experienced by User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.417900153901428,
+        "ollama_total_s": 0.41652304,
+        "model_load_s": 0.001196183,
+        "prompt_eval_s": 0.081485,
+        "generation_s": 0.243364,
+        "prompt_tokens": 939,
+        "output_tokens": 40,
+        "total_tokens": 979,
+        "generation_tokens_per_s": 164.36284742196875
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Only once, a couple of days ago, after playing chess with my friend. It was similar but milder.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It was similar but milder.",
+          "resolved_entity": "The chest tightness and heart racing experienced by User A after playing chess with their friend, which occurred a couple of days ago."
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my friend",
+          "ground_truth_resolution": "Greg, Resident of Parkside Building",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "It was similar but milder.",
+          "resolved_entity": "The chest tightness and heart racing experienced by User A after playing chess with their friend, which occurred a couple of days ago."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47834244277328253,
+        "ollama_total_s": 0.477271578,
+        "model_load_s": 0.001201626,
+        "prompt_eval_s": 0.083493,
+        "generation_s": 0.305299,
+        "prompt_tokens": 981,
+        "output_tokens": 60,
+        "total_tokens": 1041,
+        "generation_tokens_per_s": 196.5286489638027
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Who did you play chess with?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my friend",
+          "resolved_entity": "User A's friend (not specified in the context)"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my friend",
+          "resolved_entity": "User A's friend (not specified in the context)"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49210026813670993,
+        "ollama_total_s": 0.490899768,
+        "model_load_s": 0.001466282,
+        "prompt_eval_s": 0.082789,
+        "generation_s": 0.306517,
+        "prompt_tokens": 982,
+        "output_tokens": 53,
+        "total_tokens": 1035,
+        "generation_tokens_per_s": 172.91047478606407
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Greg—he lives in the building next to mine.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Greg—he lives in the building next to mine.",
+          "ground_truth_ambiguous_phrase": "Greg—he lives in the building next to mine",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Greg (User B's neighbor, living in the building next to David's apartment)",
+          "ground_truth_resolution": "Greg, Parkside Building, 1122 W Fullerton Ave",
+          "resolution_similarity": 0.4717554926195378,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Greg—he lives in the building next to mine.",
+          "resolved_entity": "Greg (User B's neighbor, living in the building next to David's apartment)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4730414538644254,
+        "ollama_total_s": 0.472038664,
+        "model_load_s": 0.001470852,
+        "prompt_eval_s": 0.082901,
+        "generation_s": 0.308754,
+        "prompt_tokens": 1005,
+        "output_tokens": 54,
+        "total_tokens": 1059,
+        "generation_tokens_per_s": 174.89651955926078
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "During that game, did you have any other symptoms besides mild tightness?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that game",
+          "resolved_entity": "the chess game with Greg"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that game",
+          "resolved_entity": "the chess game with Greg"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3545429166406393,
+        "ollama_total_s": 0.353509505,
+        "model_load_s": 0.001021609,
+        "prompt_eval_s": 0.091188,
+        "generation_s": 0.159465,
+        "prompt_tokens": 1035,
+        "output_tokens": 25,
+        "total_tokens": 1060,
+        "generation_tokens_per_s": 156.77421377731793
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "No, just a bit tired. I sat down right after and felt fine.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2132779359817505,
+        "ollama_total_s": 0.211920199,
+        "model_load_s": 0.001397454,
+        "prompt_eval_s": 0.092111,
+        "generation_s": 0.025055,
+        "prompt_tokens": 1062,
+        "output_tokens": 6,
+        "total_tokens": 1068,
+        "generation_tokens_per_s": 239.4731590500898
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "How about activities like cooking? Have you noticed symptoms when preparing meals?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2234025993384421,
+        "ollama_total_s": 0.222043456,
+        "model_load_s": 0.001404149,
+        "prompt_eval_s": 0.091987,
+        "generation_s": 0.024434,
+        "prompt_tokens": 1084,
+        "output_tokens": 6,
+        "total_tokens": 1090,
+        "generation_tokens_per_s": 245.55946631742654
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Actually, yes. When I made paella two nights ago, standing by the stove made me feel a bit drained. No chest pain, though.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        },
+        {
+          "ambiguous_phrase": "the little grocery on Fullerton",
+          "resolved_entity": "The little grocery on Fullerton, next to the bank"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "paella",
+          "ground_truth_resolution": "Meal prepared by David at home, 2 nights ago",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        },
+        {
+          "ambiguous_phrase": "the little grocery on Fullerton",
+          "resolved_entity": "The little grocery on Fullerton, next to the bank"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6966191930696368,
+        "ollama_total_s": 0.695420529,
+        "model_load_s": 0.001160354,
+        "prompt_eval_s": 0.098185,
+        "generation_s": 0.490367,
+        "prompt_tokens": 1140,
+        "output_tokens": 102,
+        "total_tokens": 1242,
+        "generation_tokens_per_s": 208.00747195467883
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "How is your blood pressure lately? Have you been checking it at home?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2415500832721591,
+        "ollama_total_s": 0.240603033,
+        "model_load_s": 0.001273953,
+        "prompt_eval_s": 0.098052,
+        "generation_s": 0.024665,
+        "prompt_tokens": 1150,
+        "output_tokens": 6,
+        "total_tokens": 1156,
+        "generation_tokens_per_s": 243.25967970808838
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "I checked it this morning with my home monitor. It was 138 over 88.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "blood pressure"
+        },
+        {
+          "ambiguous_phrase": "this morning",
+          "resolved_entity": "June 11, 2024"
+        },
+        {
+          "ambiguous_phrase": "my home monitor",
+          "resolved_entity": "User A's home blood pressure monitor"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "blood pressure"
+        },
+        {
+          "ambiguous_phrase": "this morning",
+          "resolved_entity": "June 11, 2024"
+        },
+        {
+          "ambiguous_phrase": "my home monitor",
+          "resolved_entity": "User A's home blood pressure monitor"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.654127405025065,
+        "ollama_total_s": 0.652936773,
+        "model_load_s": 0.001080578,
+        "prompt_eval_s": 0.098048,
+        "generation_s": 0.467266,
+        "prompt_tokens": 1187,
+        "output_tokens": 90,
+        "total_tokens": 1277,
+        "generation_tokens_per_s": 192.60977687227404
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "That's slightly elevated. Have you noticed any patterns—higher at certain times of day?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That's slightly elevated.",
+          "resolved_entity": "Blood pressure reading of 138 over 88 from User A's home monitor this morning"
+        },
+        {
+          "ambiguous_phrase": "higher at certain times of day?",
+          "resolved_entity": "Blood pressure patterns related to User A's activities and times of day"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That's slightly elevated.",
+          "resolved_entity": "Blood pressure reading of 138 over 88 from User A's home monitor this morning"
+        },
+        {
+          "ambiguous_phrase": "higher at certain times of day?",
+          "resolved_entity": "Blood pressure patterns related to User A's activities and times of day"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6766107603907585,
+        "ollama_total_s": 0.6755872,
+        "model_load_s": 0.001192233,
+        "prompt_eval_s": 0.100569,
+        "generation_s": 0.468279,
+        "prompt_tokens": 1212,
+        "output_tokens": 90,
+        "total_tokens": 1302,
+        "generation_tokens_per_s": 192.1931156425977
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Usually a bit higher in the mornings, lower in the evening after my walk around the park.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my walk around the park",
+          "ground_truth_resolution": "Lincoln Park, Chicago",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2520218198187649,
+        "ollama_total_s": 0.25078181,
+        "model_load_s": 0.001195191,
+        "prompt_eval_s": 0.100603,
+        "generation_s": 0.044239,
+        "prompt_tokens": 1242,
+        "output_tokens": 6,
+        "total_tokens": 1248,
+        "generation_tokens_per_s": 135.62693550939215
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Which park do you walk in?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Which park do you walk in?",
+          "resolved_entity": "Lincoln Park"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Which park do you walk in?",
+          "resolved_entity": "Lincoln Park"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42345642298460007,
+        "ollama_total_s": 0.422492482,
+        "model_load_s": 0.001279706,
+        "prompt_eval_s": 0.099785,
+        "generation_s": 0.228757,
+        "prompt_tokens": 1247,
+        "output_tokens": 38,
+        "total_tokens": 1285,
+        "generation_tokens_per_s": 166.11513527454898
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Lincoln Park, just a couple of blocks away from here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Lincoln Park",
+          "ground_truth_resolution": "Lincoln Park, Chicago",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4105332870967686,
+        "ollama_total_s": 0.409385648,
+        "model_load_s": 0.001217873,
+        "prompt_eval_s": 0.114663,
+        "generation_s": 0.1906,
+        "prompt_tokens": 1275,
+        "output_tokens": 38,
+        "total_tokens": 1313,
+        "generation_tokens_per_s": 199.37040923399792
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "About your upcoming tests: Have you scheduled the ECG and blood work yet?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2831748891621828,
+        "ollama_total_s": 0.282028002,
+        "model_load_s": 0.001149893,
+        "prompt_eval_s": 0.115502,
+        "generation_s": 0.025367,
+        "prompt_tokens": 1304,
+        "output_tokens": 6,
+        "total_tokens": 1310,
+        "generation_tokens_per_s": 236.52777230259787
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "I booked both for Monday morning at the main hospital.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the main hospital",
+          "resolved_entity": "Northwestern Memorial Hospital"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "main hospital",
+          "ground_truth_resolution": "Northwestern Memorial Hospital, 251 E Huron St, Chicago",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the main hospital",
+          "resolved_entity": "Northwestern Memorial Hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46263851737603545,
+        "ollama_total_s": 0.461531767,
+        "model_load_s": 0.001258939,
+        "prompt_eval_s": 0.115095,
+        "generation_s": 0.249881,
+        "prompt_tokens": 1320,
+        "output_tokens": 36,
+        "total_tokens": 1356,
+        "generation_tokens_per_s": 144.06857664248182
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Northwestern, correct? Which department?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Northwestern",
+          "resolved_entity": "Northwestern Memorial Hospital"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Northwestern",
+          "resolved_entity": "Northwestern Memorial Hospital"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38936211820691824,
+        "ollama_total_s": 0.388002811,
+        "model_load_s": 0.00156979,
+        "prompt_eval_s": 0.11593,
+        "generation_s": 0.16202,
+        "prompt_tokens": 1334,
+        "output_tokens": 24,
+        "total_tokens": 1358,
+        "generation_tokens_per_s": 148.129860511048
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Yes, Northwestern. Cardiology on the third floor.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Cardiology on the third floor",
+          "ground_truth_ambiguous_phrase": "Cardiology on the third floor",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Cardiology Department, Northwestern Memorial Hospital, Third Floor",
+          "ground_truth_resolution": "Cardiology Department, 3rd Floor, Northwestern Memorial Hospital",
+          "resolution_similarity": 0.9531849371048563,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Cardiology on the third floor",
+          "resolved_entity": "Cardiology Department, Northwestern Memorial Hospital, Third Floor"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4107773178257048,
+        "ollama_total_s": 0.409378163,
+        "model_load_s": 0.001398989,
+        "prompt_eval_s": 0.116484,
+        "generation_s": 0.18075,
+        "prompt_tokens": 1358,
+        "output_tokens": 34,
+        "total_tokens": 1392,
+        "generation_tokens_per_s": 188.1051175656985
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Perfect. After the tests, let's plan a follow-up. When are you free next week?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "next week",
+          "resolved_entity": "The upcoming week following June 11, 2024, which is the week of June 17, 2024."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next week",
+          "resolved_entity": "The upcoming week following June 11, 2024, which is the week of June 17, 2024."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5503564332611859,
+        "ollama_total_s": 0.549574869,
+        "model_load_s": 0.001283959,
+        "prompt_eval_s": 0.129542,
+        "generation_s": 0.307348,
+        "prompt_tokens": 1397,
+        "output_tokens": 61,
+        "total_tokens": 1458,
+        "generation_tokens_per_s": 198.472090269011
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Tuesday or Wednesday afternoon, or Thursday after 10 am.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Tuesday or Wednesday afternoon, or Thursday after 10 am.",
+          "resolved_entity": "Available time slots for follow-up appointment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Tuesday or Wednesday afternoon, or Thursday after 10 am.",
+          "resolved_entity": "Available time slots for follow-up appointment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5156897539272904,
+        "ollama_total_s": 0.514500757,
+        "model_load_s": 0.001271406,
+        "prompt_eval_s": 0.129104999,
+        "generation_s": 0.275934,
+        "prompt_tokens": 1413,
+        "output_tokens": 48,
+        "total_tokens": 1461,
+        "generation_tokens_per_s": 173.95464132727392
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Wednesday at 3:30 pm works for me. Will that time be okay for you?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "Wednesday at 3:30 pm"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that time",
+          "resolved_entity": "Wednesday at 3:30 pm"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46808542497456074,
+        "ollama_total_s": 0.466732081,
+        "model_load_s": 0.001615618,
+        "prompt_eval_s": 0.131032999,
+        "generation_s": 0.203838,
+        "prompt_tokens": 1450,
+        "output_tokens": 39,
+        "total_tokens": 1489,
+        "generation_tokens_per_s": 191.32840785329526
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yes, that works. I'll add it to my calendar.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that works",
+          "resolved_entity": "Wednesday at 3:30 pm"
+        },
+        {
+          "ambiguous_phrase": "my calendar",
+          "resolved_entity": "User A's calendar with the event 'Patient Consult: David - June 11, 2024, 3:30 PM'"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "it",
+          "ground_truth_resolution": "Follow-up appointment, Wednesday 3:30 pm, Dr. Reynolds' Office",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that works",
+          "resolved_entity": "Wednesday at 3:30 pm"
+        },
+        {
+          "ambiguous_phrase": "my calendar",
+          "resolved_entity": "User A's calendar with the event 'Patient Consult: David - June 11, 2024, 3:30 PM'"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7130073443986475,
+        "ollama_total_s": 0.711751588,
+        "model_load_s": 0.001466638,
+        "prompt_eval_s": 0.13122,
+        "generation_s": 0.462458,
+        "prompt_tokens": 1466,
+        "output_tokens": 89,
+        "total_tokens": 1555,
+        "generation_tokens_per_s": 192.449908964706
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Have you updated your medication list lately? I want to make sure I have the current info.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2868059831671417,
+        "ollama_total_s": 0.285537638,
+        "model_load_s": 0.001605827,
+        "prompt_eval_s": 0.132114,
+        "generation_s": 0.025249,
+        "prompt_tokens": 1501,
+        "output_tokens": 6,
+        "total_tokens": 1507,
+        "generation_tokens_per_s": 237.6331735910333
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "I did—added the new statin you prescribed last month. All other meds unchanged.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you prescribed last month",
+          "resolved_entity": "the new statin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the new statin you prescribed last month",
+          "ground_truth_resolution": "Atorvastatin, 20mg daily",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you prescribed last month",
+          "resolved_entity": "the new statin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43449092376977205,
+        "ollama_total_s": 0.433478769,
+        "model_load_s": 0.001330619,
+        "prompt_eval_s": 0.135976,
+        "generation_s": 0.165031,
+        "prompt_tokens": 1528,
+        "output_tokens": 26,
+        "total_tokens": 1554,
+        "generation_tokens_per_s": 157.5461579945586
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "And how are you tolerating it? Any side effects?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3386771469376981,
+        "ollama_total_s": 0.337376667,
+        "model_load_s": 0.001484904,
+        "prompt_eval_s": 0.137384,
+        "generation_s": 0.025479,
+        "prompt_tokens": 1544,
+        "output_tokens": 6,
+        "total_tokens": 1550,
+        "generation_tokens_per_s": 235.48804898151417
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "No issues so far, other than some mild leg cramps yesterday.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "yesterday",
+          "resolved_entity": "June 10, 2024"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "leg cramps yesterday",
+          "ground_truth_resolution": "Mild leg cramps on June 10, 2024",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "yesterday",
+          "resolved_entity": "June 10, 2024"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4648801167495549,
+        "ollama_total_s": 0.463506992,
+        "model_load_s": 0.001690642,
+        "prompt_eval_s": 0.137144,
+        "generation_s": 0.199647,
+        "prompt_tokens": 1570,
+        "output_tokens": 41,
+        "total_tokens": 1611,
+        "generation_tokens_per_s": 205.36246475028426
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "If the cramps persist, let me know. We'll track it for now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "We'll track it for now",
+          "resolved_entity": "the leg cramps mentioned in the previous turn"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "We'll track it for now",
+          "resolved_entity": "the leg cramps mentioned in the previous turn"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44289536215364933,
+        "ollama_total_s": 0.440803053,
+        "model_load_s": 0.001505946,
+        "prompt_eval_s": 0.138308,
+        "generation_s": 0.175952,
+        "prompt_tokens": 1600,
+        "output_tokens": 33,
+        "total_tokens": 1633,
+        "generation_tokens_per_s": 187.55115031372193
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Will do.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2945868051610887,
+        "ollama_total_s": 0.293288505,
+        "model_load_s": 0.002217807,
+        "prompt_eval_s": 0.138824,
+        "generation_s": 0.025048,
+        "prompt_tokens": 1599,
+        "output_tokens": 6,
+        "total_tokens": 1605,
+        "generation_tokens_per_s": 239.5400830405621
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Any recent family history changes—anyone new with heart problems?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "anyone new with heart problems?",
+          "resolved_entity": "family members with heart problems"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "anyone new with heart problems?",
+          "resolved_entity": "family members with heart problems"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5122437640093267,
+        "ollama_total_s": 0.511033213,
+        "model_load_s": 0.001274912,
+        "prompt_eval_s": 0.139211,
+        "generation_s": 0.240305,
+        "prompt_tokens": 1632,
+        "output_tokens": 40,
+        "total_tokens": 1672,
+        "generation_tokens_per_s": 166.45512993903583
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Not recently. My cousin had some issues last year but nothing new since then.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "cousin",
+          "ground_truth_resolution": "David's cousin, resident of Evanston",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32201435789465904,
+        "ollama_total_s": 0.320859579,
+        "model_load_s": 0.001479665,
+        "prompt_eval_s": 0.147086,
+        "generation_s": 0.025806,
+        "prompt_tokens": 1661,
+        "output_tokens": 6,
+        "total_tokens": 1667,
+        "generation_tokens_per_s": 232.50406882120438
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Have you spoken with him about your own symptoms?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "David"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "David"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5138003709726036,
+        "ollama_total_s": 0.512487052,
+        "model_load_s": 0.001437274,
+        "prompt_eval_s": 0.146705,
+        "generation_s": 0.201195,
+        "prompt_tokens": 1675,
+        "output_tokens": 31,
+        "total_tokens": 1706,
+        "generation_tokens_per_s": 154.07937573001317
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Not yet. He lives in Evanston. I might reach out soon.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "David"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "David"
+        },
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "David's Apartment, Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6214353991672397,
+        "ollama_total_s": 0.620138315,
+        "model_load_s": 0.001387849,
+        "prompt_eval_s": 0.148302,
+        "generation_s": 0.333968,
+        "prompt_tokens": 1705,
+        "output_tokens": 59,
+        "total_tokens": 1764,
+        "generation_tokens_per_s": 176.66363244382697
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "In terms of exercise, how many steps are you averaging daily?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.314193821977824,
+        "ollama_total_s": 0.313005351,
+        "model_load_s": 0.001300937,
+        "prompt_eval_s": 0.149278,
+        "generation_s": 0.025524,
+        "prompt_tokens": 1726,
+        "output_tokens": 6,
+        "total_tokens": 1732,
+        "generation_tokens_per_s": 235.07287259050304
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "About 6,000 on weekdays, higher on weekends when I go to the chess club.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the chess club",
+          "resolved_entity": "the chess club (location near David's Apartment, Lincoln Park, Chicago)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "weekdays",
+          "ground_truth_resolution": "Monday-Friday",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the chess club",
+          "resolved_entity": "the chess club (location near David's Apartment, Lincoln Park, Chicago)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4823245657607913,
+        "ollama_total_s": 0.480973731,
+        "model_load_s": 0.001347672,
+        "prompt_eval_s": 0.149042,
+        "generation_s": 0.180184,
+        "prompt_tokens": 1765,
+        "output_tokens": 36,
+        "total_tokens": 1801,
+        "generation_tokens_per_s": 199.79576432979619
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Which chess club do you go to?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Which chess club do you go to?",
+          "resolved_entity": "The chess club mentioned in Turn 49, which is the one User A attends on weekends."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Which chess club do you go to?",
+          "resolved_entity": "The chess club mentioned in Turn 49, which is the one User A attends on weekends."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5814094911329448,
+        "ollama_total_s": 0.580042079,
+        "model_load_s": 0.00173315,
+        "prompt_eval_s": 0.150123,
+        "generation_s": 0.234098,
+        "prompt_tokens": 1770,
+        "output_tokens": 45,
+        "total_tokens": 1815,
+        "generation_tokens_per_s": 192.2271869046297
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "The Knights' Square, downtown near the old theatre.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "The Knights' Square, downtown near the old theatre.",
+          "ground_truth_ambiguous_phrase": "The Knights' Square, downtown near the old theatre",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The Knights' Square, downtown near the old theatre.",
+          "ground_truth_resolution": "Knights' Square Chess Club, 123 S State St, Chicago",
+          "resolution_similarity": 0.5755557981357469,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "The Knights' Square, downtown near the old theatre.",
+          "resolved_entity": "The Knights' Square, downtown near the old theatre."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49523841496557,
+        "ollama_total_s": 0.493885511,
+        "model_load_s": 0.001485013,
+        "prompt_eval_s": 0.162217,
+        "generation_s": 0.203551,
+        "prompt_tokens": 1794,
+        "output_tokens": 39,
+        "total_tokens": 1833,
+        "generation_tokens_per_s": 191.59817441329199
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Sounds great. How's the atmosphere there?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "The Knights' Square, downtown near the old theatre."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "The Knights' Square, downtown near the old theatre."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47518201917409897,
+        "ollama_total_s": 0.474207984,
+        "model_load_s": 0.001124194,
+        "prompt_eval_s": 0.161717,
+        "generation_s": 0.176848,
+        "prompt_tokens": 1811,
+        "output_tokens": 30,
+        "total_tokens": 1841,
+        "generation_tokens_per_s": 169.63720256943816
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "It's lively—lots of friendly competition. Some banter about weather, Chicago style.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34617204824462533,
+        "ollama_total_s": 0.345009969,
+        "model_load_s": 0.003219247,
+        "prompt_eval_s": 0.163806,
+        "generation_s": 0.025129,
+        "prompt_tokens": 1848,
+        "output_tokens": 6,
+        "total_tokens": 1854,
+        "generation_tokens_per_s": 238.76795734012498
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "Does playing there ever make your symptoms worse?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Lincoln Park, Chicago"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Lincoln Park, Chicago"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4571712608449161,
+        "ollama_total_s": 0.45602948,
+        "model_load_s": 0.001370638,
+        "prompt_eval_s": 0.163526,
+        "generation_s": 0.137077,
+        "prompt_tokens": 1858,
+        "output_tokens": 24,
+        "total_tokens": 1882,
+        "generation_tokens_per_s": 175.08407683272904
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "Not really, but after a long match, I sometimes get a little tired. Nothing more.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.35322153102606535,
+        "ollama_total_s": 0.351996354,
+        "model_load_s": 0.001278853,
+        "prompt_eval_s": 0.165291,
+        "generation_s": 0.024696,
+        "prompt_tokens": 1897,
+        "output_tokens": 6,
+        "total_tokens": 1903,
+        "generation_tokens_per_s": 242.95432458697766
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "Do you drive or use public transport to get there?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.36335692601278424,
+        "ollama_total_s": 0.362240973,
+        "model_load_s": 0.001273965,
+        "prompt_eval_s": 0.177108,
+        "generation_s": 0.025304,
+        "prompt_tokens": 1910,
+        "output_tokens": 6,
+        "total_tokens": 1916,
+        "generation_tokens_per_s": 237.1166613974075
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User A",
+      "text": "Usually I take the metro, it's more convenient.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "metro",
+          "ground_truth_resolution": "Chicago Transit Authority (CTA) Red Line",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.36630139872431755,
+        "ollama_total_s": 0.365228816,
+        "model_load_s": 0.001263893,
+        "prompt_eval_s": 0.178761,
+        "generation_s": 0.024424,
+        "prompt_tokens": 1931,
+        "output_tokens": 6,
+        "total_tokens": 1937,
+        "generation_tokens_per_s": 245.6600065509335
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User B",
+      "text": "Good choice—less stress from parking. Any problems on your commute?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.36321476520970464,
+        "ollama_total_s": 0.36214043,
+        "model_load_s": 0.001281761,
+        "prompt_eval_s": 0.178939,
+        "generation_s": 0.025234,
+        "prompt_tokens": 1958,
+        "output_tokens": 6,
+        "total_tokens": 1964,
+        "generation_tokens_per_s": 237.77443132281843
+      }
+    },
+    {
+      "turn_id": 59,
+      "speaker": "User A",
+      "text": "Not at all. Sometimes it's crowded, but I just read chess books while I wait.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.37072900496423244,
+        "ollama_total_s": 0.369699189,
+        "model_load_s": 0.001136174,
+        "prompt_eval_s": 0.179309,
+        "generation_s": 0.025414,
+        "prompt_tokens": 1992,
+        "output_tokens": 6,
+        "total_tokens": 1998,
+        "generation_tokens_per_s": 236.0903439049343
+      }
+    },
+    {
+      "turn_id": 60,
+      "speaker": "User B",
+      "text": "Glad you're finding ways to reduce stress. Have you tried meditation or relaxation techniques?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3799369311891496,
+        "ollama_total_s": 0.378875079,
+        "model_load_s": 0.001327591,
+        "prompt_eval_s": 0.180868,
+        "generation_s": 0.025997,
+        "prompt_tokens": 2018,
+        "output_tokens": 6,
+        "total_tokens": 2024,
+        "generation_tokens_per_s": 230.79586106089164
+      }
+    },
+    {
+      "turn_id": 61,
+      "speaker": "User A",
+      "text": "I've started some guided breathing exercises. My wife recommended them.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "guided breathing exercises",
+          "ground_truth_resolution": "Breathing exercises recommended by David's wife",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.38243184238672256,
+        "ollama_total_s": 0.381382079,
+        "model_load_s": 0.001466326,
+        "prompt_eval_s": 0.185267,
+        "generation_s": 0.024798,
+        "prompt_tokens": 2036,
+        "output_tokens": 6,
+        "total_tokens": 2042,
+        "generation_tokens_per_s": 241.95499637067505
+      }
+    },
+    {
+      "turn_id": 62,
+      "speaker": "User B",
+      "text": "That's excellent. How is your wife managing your dietary changes? Is she supportive?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.38006583601236343,
+        "ollama_total_s": 0.378918352,
+        "model_load_s": 0.00131224,
+        "prompt_eval_s": 0.184935,
+        "generation_s": 0.024927,
+        "prompt_tokens": 2067,
+        "output_tokens": 6,
+        "total_tokens": 2073,
+        "generation_tokens_per_s": 240.70285232880008
+      }
+    },
+    {
+      "turn_id": 63,
+      "speaker": "User A",
+      "text": "She's fantastic—she's helping plan balanced meals, and we walk together most evenings.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "we walk together most evenings",
+          "ground_truth_resolution": "David and his wife, evening walks in Lincoln Park",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3871665191836655,
+        "ollama_total_s": 0.386007456,
+        "model_load_s": 0.001466315,
+        "prompt_eval_s": 0.186095,
+        "generation_s": 0.02515,
+        "prompt_tokens": 2096,
+        "output_tokens": 6,
+        "total_tokens": 2102,
+        "generation_tokens_per_s": 238.5685884691849
+      }
+    },
+    {
+      "turn_id": 64,
+      "speaker": "User B",
+      "text": "That's great. Who usually prepares the meals?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Who usually prepares the meals?",
+          "resolved_entity": "User A's wife"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Who usually prepares the meals?",
+          "resolved_entity": "User A's wife"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5395074570551515,
+        "ollama_total_s": 0.538279534,
+        "model_load_s": 0.001507303,
+        "prompt_eval_s": 0.188122,
+        "generation_s": 0.167747,
+        "prompt_tokens": 2108,
+        "output_tokens": 27,
+        "total_tokens": 2135,
+        "generation_tokens_per_s": 160.95667880796674
+      }
+    },
+    {
+      "turn_id": 65,
+      "speaker": "User A",
+      "text": "We alternate, but I do most of the cooking.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3761197072453797,
+        "ollama_total_s": 0.374852628,
+        "model_load_s": 0.001366677,
+        "prompt_eval_s": 0.18818,
+        "generation_s": 0.025451,
+        "prompt_tokens": 2130,
+        "output_tokens": 6,
+        "total_tokens": 2136,
+        "generation_tokens_per_s": 235.7471219205532
+      }
+    },
+    {
+      "turn_id": 66,
+      "speaker": "User B",
+      "text": "Wonderful teamwork. Any trouble sticking to the low-sodium recommendations?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.41266892198473215,
+        "ollama_total_s": 0.411599088,
+        "model_load_s": 0.001443718,
+        "prompt_eval_s": 0.188734,
+        "generation_s": 0.025179,
+        "prompt_tokens": 2156,
+        "output_tokens": 6,
+        "total_tokens": 2162,
+        "generation_tokens_per_s": 238.29381627546766
+      }
+    },
+    {
+      "turn_id": 67,
+      "speaker": "User A",
+      "text": "Sometimes, especially when I'm making sauces. I try to use more herbs now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "sauces",
+          "ground_truth_resolution": "Meals prepared at home by David (sauces)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4130130112171173,
+        "ollama_total_s": 0.411947804,
+        "model_load_s": 0.001493934,
+        "prompt_eval_s": 0.195761,
+        "generation_s": 0.025985,
+        "prompt_tokens": 2186,
+        "output_tokens": 6,
+        "total_tokens": 2192,
+        "generation_tokens_per_s": 230.90244371752934
+      }
+    },
+    {
+      "turn_id": 68,
+      "speaker": "User B",
+      "text": "Let me send you a resource for lower sodium options. I'll email you the links.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.42564563965424895,
+        "ollama_total_s": 0.424458421,
+        "model_load_s": 0.001312381,
+        "prompt_eval_s": 0.196564,
+        "generation_s": 0.025797,
+        "prompt_tokens": 2215,
+        "output_tokens": 6,
+        "total_tokens": 2221,
+        "generation_tokens_per_s": 232.58518432375857
+      }
+    },
+    {
+      "turn_id": 69,
+      "speaker": "User A",
+      "text": "Thanks, that'll be helpful.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4152744202874601,
+        "ollama_total_s": 0.414049953,
+        "model_load_s": 0.001152216,
+        "prompt_eval_s": 0.195662,
+        "generation_s": 0.025014,
+        "prompt_tokens": 2221,
+        "output_tokens": 6,
+        "total_tokens": 2227,
+        "generation_tokens_per_s": 239.86567522187573
+      }
+    },
+    {
+      "turn_id": 70,
+      "speaker": "User B",
+      "text": "Before we wrap up, do you have any questions or concerns?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4269848498515785,
+        "ollama_total_s": 0.425817375,
+        "model_load_s": 0.001340004,
+        "prompt_eval_s": 0.196513,
+        "generation_s": 0.025183,
+        "prompt_tokens": 2250,
+        "output_tokens": 6,
+        "total_tokens": 2256,
+        "generation_tokens_per_s": 238.2559663264901
+      }
+    },
+    {
+      "turn_id": 71,
+      "speaker": "User A",
+      "text": "I'm just worried about my results. Waiting for Monday makes me anxious.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4219849747605622,
+        "ollama_total_s": 0.420759701,
+        "model_load_s": 0.003246111,
+        "prompt_eval_s": 0.19685,
+        "generation_s": 0.025179,
+        "prompt_tokens": 2277,
+        "output_tokens": 6,
+        "total_tokens": 2283,
+        "generation_tokens_per_s": 238.29381627546766
+      }
+    },
+    {
+      "turn_id": 72,
+      "speaker": "User B",
+      "text": "That's very normal. We'll review everything together at the follow-up. Call me anytime if you have urgent symptoms.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4493728457018733,
+        "ollama_total_s": 0.448190115,
+        "model_load_s": 0.001497834,
+        "prompt_eval_s": 0.209488,
+        "generation_s": 0.025187,
+        "prompt_tokens": 2320,
+        "output_tokens": 6,
+        "total_tokens": 2326,
+        "generation_tokens_per_s": 238.21812839957119
+      }
+    },
+    {
+      "turn_id": 73,
+      "speaker": "User A",
+      "text": "Thank you, Dr. Reynolds. I appreciate your help.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.43760597007349133,
+        "ollama_total_s": 0.436386024,
+        "model_load_s": 0.001351843,
+        "prompt_eval_s": 0.209058,
+        "generation_s": 0.025068,
+        "prompt_tokens": 2330,
+        "output_tokens": 6,
+        "total_tokens": 2336,
+        "generation_tokens_per_s": 239.34897079942556
+      }
+    }
+  ]
+}

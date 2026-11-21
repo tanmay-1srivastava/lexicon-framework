@@ -1,0 +1,3345 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/office_meeting_007.json",
+  "metrics": {
+    "ground_truth_ambiguities": 112,
+    "qwen_predicted_ambiguities": 117,
+    "detected_ground_truth_ambiguities": 104,
+    "missed_ground_truth_ambiguities": 8,
+    "detected_but_bad_resolution": 56,
+    "true_positives": 48,
+    "false_negatives": 64,
+    "false_positive_ambiguities": 13,
+    "detection_recall": 0.9285714285714286,
+    "detection_precision": 0.8888888888888888,
+    "detection_f1": 0.9082969432314411,
+    "true_positive_rate_at_0_70": 0.42857142857142855,
+    "strict_end_to_end_precision_at_0_70": 0.41025641025641024,
+    "end_to_end_f1_at_0_70": 0.41921397379912667,
+    "false_positive_discovery_rate": 0.1111111111111111,
+    "false_positives_per_turn": 0.24528301886792453,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 53,
+    "median_latency_per_turn_s": 0.6110849902033806,
+    "mean_latency_per_turn_s": 0.6229910741050569,
+    "total_prompt_tokens": 70170,
+    "total_output_tokens": 3887
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hi Mark, I’m just settling in *here*. Sorry I’m a few minutes late – the traffic near *that intersection* was ridiculous.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that intersection",
+          "ground_truth_ambiguous_phrase": "that intersection",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Intersection near Downtown SF Office – Conference Room B",
+          "ground_truth_resolution": "Market St & Fremont St",
+          "resolution_similarity": 0.6216761471218984,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        },
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office – Conference Room B",
+          "ground_truth_resolution": "Downtown SF Office – Conference Room B",
+          "resolution_similarity": 0.9998656536602003,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        },
+        {
+          "ambiguous_phrase": "that intersection",
+          "resolved_entity": "Intersection near Downtown SF Office – Conference Room B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5434319879859686,
+        "ollama_total_s": 0.542061541,
+        "model_load_s": 0.001461672,
+        "prompt_eval_s": 0.03709,
+        "generation_s": 0.361452,
+        "prompt_tokens": 525,
+        "output_tokens": 67,
+        "total_tokens": 592,
+        "generation_tokens_per_s": 185.36347841483794
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "No worries, Priya. Is everyone in *the room*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the room",
+          "ground_truth_ambiguous_phrase": "the room",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Conference Room B",
+          "ground_truth_resolution": "Conference Room B",
+          "resolution_similarity": 0.9998901252097726,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the room",
+          "resolved_entity": "Conference Room B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30953147215768695,
+        "ollama_total_s": 0.308448749,
+        "model_load_s": 0.001151747,
+        "prompt_eval_s": 0.041326,
+        "generation_s": 0.212777,
+        "prompt_tokens": 533,
+        "output_tokens": 34,
+        "total_tokens": 567,
+        "generation_tokens_per_s": 159.79170681041654
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Almost. *He* just stepped out for a call, but *she* is reviewing the final version now.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*She*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Jamie (UI Designer)",
+          "resolution_similarity": 0.7407737423785388,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*He*",
+          "ground_truth_ambiguous_phrase": "He",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B (Mark)",
+          "ground_truth_resolution": "Daniel (Senior Developer)",
+          "resolution_similarity": 0.5895442303351173,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*He*",
+          "resolved_entity": "User B (Mark)"
+        },
+        {
+          "ambiguous_phrase": "*She*",
+          "resolved_entity": "Priya"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4371419888921082,
+        "ollama_total_s": 0.435952879,
+        "model_load_s": 0.00135101,
+        "prompt_eval_s": 0.041993,
+        "generation_s": 0.340775,
+        "prompt_tokens": 574,
+        "output_tokens": 57,
+        "total_tokens": 631,
+        "generation_tokens_per_s": 167.26579121120974
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Did you get a chance to send *that document* to *them* yet?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client",
+          "ground_truth_resolution": "Overture Tech Client Team",
+          "resolution_similarity": 0.6775571228316424,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that document",
+          "ground_truth_ambiguous_phrase": "that document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the final version",
+          "ground_truth_resolution": "Overture Tech Progress Report PDF",
+          "resolution_similarity": 0.5827013220179352,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that document",
+          "resolved_entity": "the final version"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the client"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.41224146634340286,
+        "ollama_total_s": 0.410463808,
+        "model_load_s": 0.001061881,
+        "prompt_eval_s": 0.046573,
+        "generation_s": 0.305743,
+        "prompt_tokens": 594,
+        "output_tokens": 55,
+        "total_tokens": 649,
+        "generation_tokens_per_s": 179.88964587905528
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "I sent it just before arriving *here*, but I haven’t heard back from *the coordinator*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the coordinator",
+          "ground_truth_ambiguous_phrase": "the coordinator",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Maya Patel (Client Project Coordinator)",
+          "resolution_similarity": 0.6952992337085556,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        },
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "Priya"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4716746937483549,
+        "ollama_total_s": 0.470604682,
+        "model_load_s": 0.001221716,
+        "prompt_eval_s": 0.047082,
+        "generation_s": 0.339722,
+        "prompt_tokens": 628,
+        "output_tokens": 60,
+        "total_tokens": 688,
+        "generation_tokens_per_s": 176.6149969681092
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Let’s make sure *the coordinator* receives it before *the update*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the update",
+          "ground_truth_ambiguous_phrase": "the update",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the update (referent from User A's calendar_next in mobile_context_snapshot: Client Update Meeting with Overture Tech (3:00 PM))",
+          "ground_truth_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "resolution_similarity": 0.8796697939025598,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator (referent from Turn 5, mentioned as someone who hasn't received the document yet)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator (referent from Turn 5, mentioned as someone who hasn't received the document yet)"
+        },
+        {
+          "ambiguous_phrase": "the update",
+          "resolved_entity": "the update (referent from User A's calendar_next in mobile_context_snapshot: Client Update Meeting with Overture Tech (3:00 PM))"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6685594548471272,
+        "ollama_total_s": 0.667451568,
+        "model_load_s": 0.001157363,
+        "prompt_eval_s": 0.047278,
+        "generation_s": 0.541948,
+        "prompt_tokens": 648,
+        "output_tokens": 100,
+        "total_tokens": 748,
+        "generation_tokens_per_s": 184.51954800091522
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Absolutely. *She* just pinged me, so I’ll confirm in a minute.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "She",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Maya Patel",
+          "resolution_similarity": 0.8702987051052217,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator (referenced in Turn 5)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Priya"
+        },
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator (referenced in Turn 5)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47452961886301637,
+        "ollama_total_s": 0.473365877,
+        "model_load_s": 0.001192415,
+        "prompt_eval_s": 0.047795,
+        "generation_s": 0.34215,
+        "prompt_tokens": 677,
+        "output_tokens": 61,
+        "total_tokens": 738,
+        "generation_tokens_per_s": 178.28437819669736
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Good. Now, about *that venue*, did *they* confirm the reservation for tomorrow?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the coordinator",
+          "ground_truth_resolution": "Mission Bay Event Center Staff",
+          "resolution_similarity": 0.6067297175531962,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that venue",
+          "ground_truth_ambiguous_phrase": "that venue",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech",
+          "ground_truth_resolution": "Mission Bay Event Center",
+          "resolution_similarity": 0.6133803026816721,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that venue",
+          "resolved_entity": "Client Update Meeting with Overture Tech"
+        },
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coordinator"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4521991079673171,
+        "ollama_total_s": 0.451059199,
+        "model_load_s": 0.000978685,
+        "prompt_eval_s": 0.052161,
+        "generation_s": 0.325647,
+        "prompt_tokens": 706,
+        "output_tokens": 59,
+        "total_tokens": 765,
+        "generation_tokens_per_s": 181.17777839193974
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Yes, *they* did. The confirmation was emailed to me this morning, so we’re set for *tomorrow at noon*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tomorrow at noon",
+          "ground_truth_ambiguous_phrase": "tomorrow at noon",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the update",
+          "ground_truth_resolution": "Mission Bay Event Center, 12:00 PM tomorrow",
+          "resolution_similarity": 0.383076883416518,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coordinator"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coordinator"
+        },
+        {
+          "ambiguous_phrase": "tomorrow at noon",
+          "resolved_entity": "the update"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4532138742506504,
+        "ollama_total_s": 0.452174145,
+        "model_load_s": 0.002931562,
+        "prompt_eval_s": 0.052837,
+        "generation_s": 0.308126,
+        "prompt_tokens": 752,
+        "output_tokens": 56,
+        "total_tokens": 808,
+        "generation_tokens_per_s": 181.74383206869916
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Perfect. Are you bringing *the presentation device* or should I grab it from *my office*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the presentation device",
+          "ground_truth_ambiguous_phrase": "the presentation device",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the presentation device",
+          "ground_truth_resolution": "Dell XPS Conference Laptop",
+          "resolution_similarity": 0.6219996493233576,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "my office",
+          "ground_truth_ambiguous_phrase": "my office",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office – Mark’s Office",
+          "ground_truth_resolution": "Mark’s Office, Downtown SF Office",
+          "resolution_similarity": 0.9589443492782325,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my office",
+          "resolved_entity": "Downtown SF Office – Mark’s Office"
+        },
+        {
+          "ambiguous_phrase": "the presentation device",
+          "resolved_entity": "the presentation device"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4713574470952153,
+        "ollama_total_s": 0.47035285,
+        "model_load_s": 0.001191483,
+        "prompt_eval_s": 0.062696,
+        "generation_s": 0.313177,
+        "prompt_tokens": 777,
+        "output_tokens": 63,
+        "total_tokens": 840,
+        "generation_tokens_per_s": 201.16419788170907
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "I have *it* packed in *this bag*. I'll double-check before leaving *here*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*this bag*",
+          "ground_truth_ambiguous_phrase": "this bag",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bag User A is referring to, which contains the presentation device",
+          "ground_truth_resolution": "Priya’s black laptop bag",
+          "resolution_similarity": 0.6355521510178411,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "*it*",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the presentation device",
+          "ground_truth_resolution": "Dell XPS Conference Laptop",
+          "resolution_similarity": 0.6233834759381998,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*here*",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the presentation device"
+        },
+        {
+          "ambiguous_phrase": "*this bag*",
+          "resolved_entity": "the bag User A is referring to, which contains the presentation device"
+        },
+        {
+          "ambiguous_phrase": "*here*",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.619204840157181,
+        "ollama_total_s": 0.618042075,
+        "model_load_s": 0.001030773,
+        "prompt_eval_s": 0.068198,
+        "generation_s": 0.467392,
+        "prompt_tokens": 808,
+        "output_tokens": 96,
+        "total_tokens": 904,
+        "generation_tokens_per_s": 205.39504313295907
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Thanks, Priya. Did you already review *the notes* from *the last session*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the last session",
+          "ground_truth_ambiguous_phrase": "the last session",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the feedback session with Priya",
+          "ground_truth_resolution": "Project Debrief – 2:00 PM, Monday",
+          "resolution_similarity": 0.5912589615594716,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the notes",
+          "ground_truth_ambiguous_phrase": "the notes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the notes from the last session",
+          "ground_truth_resolution": "Project Debrief Notes (last session)",
+          "resolution_similarity": 0.8285051326324251,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the notes",
+          "resolved_entity": "the notes from the last session"
+        },
+        {
+          "ambiguous_phrase": "the last session",
+          "resolved_entity": "the feedback session with Priya"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5131090967915952,
+        "ollama_total_s": 0.512061658,
+        "model_load_s": 0.000992988,
+        "prompt_eval_s": 0.068758,
+        "generation_s": 0.357997,
+        "prompt_tokens": 837,
+        "output_tokens": 64,
+        "total_tokens": 901,
+        "generation_tokens_per_s": 178.7724478138085
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "I did. *They* had some feedback about *the dashboard*, so I updated *it* this morning.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dashboard",
+          "ground_truth_resolution": "Client KPI Tracking Dashboard",
+          "resolution_similarity": 0.789818934563171,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "the dashboard",
+          "ground_truth_ambiguous_phrase": "the dashboard",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dashboard discussed in the previous conversation",
+          "ground_truth_resolution": "Client KPI Tracking Dashboard",
+          "resolution_similarity": 0.7695703869207341,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "They",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya and Mark",
+          "ground_truth_resolution": "Overture Tech Client Team",
+          "resolution_similarity": 0.5382191732128357,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "Priya and Mark"
+        },
+        {
+          "ambiguous_phrase": "the dashboard",
+          "resolved_entity": "the dashboard discussed in the previous conversation"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the dashboard"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5869619268923998,
+        "ollama_total_s": 0.585664161,
+        "model_load_s": 0.001228591,
+        "prompt_eval_s": 0.069724,
+        "generation_s": 0.42819,
+        "prompt_tokens": 873,
+        "output_tokens": 82,
+        "total_tokens": 955,
+        "generation_tokens_per_s": 191.50377169013754
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Great initiative. How did *the client* react during *the call*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the call",
+          "ground_truth_ambiguous_phrase": "the call",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech",
+          "ground_truth_resolution": "Client Progress Call – 10:00 AM today",
+          "resolution_similarity": 0.6366769951524353,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the client",
+          "ground_truth_ambiguous_phrase": "the client",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech",
+          "ground_truth_resolution": "Alex Wright (Overture Tech Project Lead)",
+          "resolution_similarity": 0.5525171104108331,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "Client Update Meeting with Overture Tech"
+        },
+        {
+          "ambiguous_phrase": "the call",
+          "resolved_entity": "Client Update Meeting with Overture Tech"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5171749549917877,
+        "ollama_total_s": 0.515870292,
+        "model_load_s": 0.001378623,
+        "prompt_eval_s": 0.069985,
+        "generation_s": 0.355197,
+        "prompt_tokens": 892,
+        "output_tokens": 65,
+        "total_tokens": 957,
+        "generation_tokens_per_s": 182.9970410786127
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "*He* appreciated the improvements but wants *us* to clarify the reporting metrics by *Thursday*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Thursday",
+          "ground_truth_ambiguous_phrase": "Thursday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The upcoming Thursday (contextually determined from the calendar_next in mobile_context_snapshot)",
+          "ground_truth_resolution": "Thursday, [specific date]",
+          "resolution_similarity": 0.7498658414389301,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "us",
+          "ground_truth_ambiguous_phrase": "us",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Priya and Mark (internal team)",
+          "resolution_similarity": 0.584863423581158,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "He",
+          "ground_truth_ambiguous_phrase": "He",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Mark",
+          "ground_truth_resolution": "Alex Wright",
+          "resolution_similarity": 0.6911437939924725,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Mark"
+        },
+        {
+          "ambiguous_phrase": "us",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "Thursday",
+          "resolved_entity": "The upcoming Thursday (contextually determined from the calendar_next in mobile_context_snapshot)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6548023028299212,
+        "ollama_total_s": 0.653630736,
+        "model_load_s": 0.001127675,
+        "prompt_eval_s": 0.07352,
+        "generation_s": 0.469339,
+        "prompt_tokens": 927,
+        "output_tokens": 89,
+        "total_tokens": 1016,
+        "generation_tokens_per_s": 189.62839227083197
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Let’s add *it* to our agenda for *then*. Did you loop in *the analyst* for support?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the analyst",
+          "ground_truth_ambiguous_phrase": "the analyst",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the analyst",
+          "ground_truth_resolution": "Jessica Quan (Data Analyst)",
+          "resolution_similarity": 0.7238199080903086,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Thursday",
+          "ground_truth_resolution": "Thursday, [specific date]",
+          "resolution_similarity": 0.79989859203826,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the presentation device",
+          "ground_truth_resolution": "Reporting metrics clarification",
+          "resolution_similarity": 0.4762100028218002,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the presentation device"
+        },
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "Thursday"
+        },
+        {
+          "ambiguous_phrase": "the analyst",
+          "resolved_entity": "the analyst"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5896511450409889,
+        "ollama_total_s": 0.588478627,
+        "model_load_s": 0.001070847,
+        "prompt_eval_s": 0.082309,
+        "generation_s": 0.400021,
+        "prompt_tokens": 965,
+        "output_tokens": 75,
+        "total_tokens": 1040,
+        "generation_tokens_per_s": 187.49015676676973
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Not yet. *She* was tied up in *that training session* all morning, but I’ll touch base with *her* after *this meeting*.",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 4,
+        "true_positives": 3,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*this meeting*",
+          "ground_truth_ambiguous_phrase": "this meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech",
+          "ground_truth_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "resolution_similarity": 0.9720662050834886,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*her*",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Jessica Quan",
+          "resolution_similarity": 0.8023704993716432,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*that training session*",
+          "ground_truth_ambiguous_phrase": "that training session",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "1:1 Feedback Session with Priya",
+          "ground_truth_resolution": "Data Security Training (morning)",
+          "resolution_similarity": 0.49905798167501964,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*She*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Jessica Quan",
+          "resolution_similarity": 0.8023704993716432,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*She*",
+          "resolved_entity": "Priya"
+        },
+        {
+          "ambiguous_phrase": "*that training session*",
+          "resolved_entity": "1:1 Feedback Session with Priya"
+        },
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Priya"
+        },
+        {
+          "ambiguous_phrase": "*this meeting*",
+          "resolved_entity": "Client Update Meeting with Overture Tech"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7777992752380669,
+        "ollama_total_s": 0.776677589,
+        "model_load_s": 0.001285206,
+        "prompt_eval_s": 0.082966,
+        "generation_s": 0.574008,
+        "prompt_tokens": 1017,
+        "output_tokens": 113,
+        "total_tokens": 1130,
+        "generation_tokens_per_s": 196.86136778581485
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Sounds good. By *then*, let’s make sure *everything* is ready for *the review*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the review",
+          "ground_truth_ambiguous_phrase": "the review",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client's review",
+          "ground_truth_resolution": "Quarterly Client Review (Thursday, 2:00 PM)",
+          "resolution_similarity": 0.7460225851147396,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "everything",
+          "ground_truth_ambiguous_phrase": "everything",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the presentation device, the notes, the dashboard, the reporting metrics",
+          "ground_truth_resolution": "All client deliverables and status items",
+          "resolution_similarity": 0.5882814132553424,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the update",
+          "ground_truth_resolution": "Thursday, [specific date]",
+          "resolution_similarity": 0.4898800731206983,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "the update"
+        },
+        {
+          "ambiguous_phrase": "everything",
+          "resolved_entity": "the presentation device, the notes, the dashboard, the reporting metrics"
+        },
+        {
+          "ambiguous_phrase": "the review",
+          "resolved_entity": "the client's review"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6529688620939851,
+        "ollama_total_s": 0.651796366,
+        "model_load_s": 0.001345411,
+        "prompt_eval_s": 0.082823,
+        "generation_s": 0.454095,
+        "prompt_tokens": 1038,
+        "output_tokens": 88,
+        "total_tokens": 1126,
+        "generation_tokens_per_s": 193.7920479194882
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Definitely. *That checklist* covers most items, but I’ll confirm *the client’s* feedback on *the target metrics* later today.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 3,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the target metrics",
+          "ground_truth_ambiguous_phrase": "the target metrics",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the metrics mentioned in Turn 15 (User A: 'He appreciated the improvements but wants us to clarify the reporting metrics by Thursday.') or the metrics from the client's feedback",
+          "ground_truth_resolution": "KPI targets for client success",
+          "resolution_similarity": 0.5767794184776802,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the client’s",
+          "ground_truth_ambiguous_phrase": "the client",
+          "phrase_match_score": 0.9090909090909091,
+          "predicted_resolution": "the client (from User B's calendar_next: '1:1 Feedback Session with Priya') or the client mentioned in Turn 15 (User A: 'He appreciated the improvements but wants us to clarify the reporting metrics by Thursday.')",
+          "ground_truth_resolution": "Alex Wright",
+          "resolution_similarity": 0.41329236311683804,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that checklist",
+          "ground_truth_resolution": "Project Deliverables Checklist",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the client’s",
+          "resolved_entity": "the client (from User B's calendar_next: '1:1 Feedback Session with Priya') or the client mentioned in Turn 15 (User A: 'He appreciated the improvements but wants us to clarify the reporting metrics by Thursday.')"
+        },
+        {
+          "ambiguous_phrase": "the target metrics",
+          "resolved_entity": "the metrics mentioned in Turn 15 (User A: 'He appreciated the improvements but wants us to clarify the reporting metrics by Thursday.') or the metrics from the client's feedback"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.9347582366317511,
+        "ollama_total_s": 0.93367605,
+        "model_load_s": 0.001121196,
+        "prompt_eval_s": 0.091766,
+        "generation_s": 0.733537,
+        "prompt_tokens": 1085,
+        "output_tokens": 138,
+        "total_tokens": 1223,
+        "generation_tokens_per_s": 188.12956946957004
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Stay on top of *it*. Did you see *that email* about *the project deadline* shifting?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the project deadline",
+          "ground_truth_ambiguous_phrase": "the project deadline",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project deadline shifting",
+          "ground_truth_resolution": "Next Friday, [specific date]",
+          "resolution_similarity": 0.45981400007360745,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that email",
+          "ground_truth_ambiguous_phrase": "that email",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the email about the project deadline shifting",
+          "ground_truth_resolution": "Internal update: project deadline change",
+          "resolution_similarity": 0.8248662736483711,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the target metrics"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the target metrics"
+        },
+        {
+          "ambiguous_phrase": "that email",
+          "resolved_entity": "the email about the project deadline shifting"
+        },
+        {
+          "ambiguous_phrase": "the project deadline",
+          "resolved_entity": "the project deadline shifting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6110849902033806,
+        "ollama_total_s": 0.609995976,
+        "model_load_s": 0.00130997,
+        "prompt_eval_s": 0.092259,
+        "generation_s": 0.40664,
+        "prompt_tokens": 1109,
+        "output_tokens": 85,
+        "total_tokens": 1194,
+        "generation_tokens_per_s": 209.03010033444815
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Yes, *they* moved *it* to *next Friday*. I already started adjusting *the timeline*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the timeline",
+          "ground_truth_ambiguous_phrase": "the timeline",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project timeline previously discussed, which is now being adjusted",
+          "ground_truth_resolution": "Updated project delivery timeline",
+          "resolution_similarity": 0.8305785884341115,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project deadline mentioned in the email referenced in Turn 20",
+          "ground_truth_resolution": "Project Deadline: Next Friday",
+          "resolution_similarity": 0.7043157975652528,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team or relevant stakeholders (likely the project team or client team) mentioned in prior context",
+          "ground_truth_resolution": "Project Management Team",
+          "resolution_similarity": 0.6988349372745808,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the team or relevant stakeholders (likely the project team or client team) mentioned in prior context"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the project deadline mentioned in the email referenced in Turn 20"
+        },
+        {
+          "ambiguous_phrase": "the timeline",
+          "resolved_entity": "the project timeline previously discussed, which is now being adjusted"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7843514620326459,
+        "ollama_total_s": 0.783216349,
+        "model_load_s": 0.00123811,
+        "prompt_eval_s": 0.098185,
+        "generation_s": 0.586885,
+        "prompt_tokens": 1143,
+        "output_tokens": 111,
+        "total_tokens": 1254,
+        "generation_tokens_per_s": 189.13415745844586
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Excellent. Will *the team* be able to hit *that milestone*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that milestone",
+          "ground_truth_ambiguous_phrase": "that milestone",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the milestone mentioned previously in the conversation, likely related to the project deadline or the target metrics",
+          "ground_truth_resolution": "Prototype demo by next Friday",
+          "resolution_similarity": 0.5839637375296848,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the team",
+          "ground_truth_ambiguous_phrase": "the team",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team (contextually refers to the group working on the project, likely including User A and User B)",
+          "ground_truth_resolution": "Project Delivery Team",
+          "resolution_similarity": 0.6782961812448325,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the team",
+          "resolved_entity": "the team (contextually refers to the group working on the project, likely including User A and User B)"
+        },
+        {
+          "ambiguous_phrase": "that milestone",
+          "resolved_entity": "the milestone mentioned previously in the conversation, likely related to the project deadline or the target metrics"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7160420850850642,
+        "ollama_total_s": 0.714671536,
+        "model_load_s": 0.00109083,
+        "prompt_eval_s": 0.098599,
+        "generation_s": 0.504096,
+        "prompt_tokens": 1162,
+        "output_tokens": 90,
+        "total_tokens": 1252,
+        "generation_tokens_per_s": 178.53742144353456
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "I believe so. *They’re* on track, but *Jessica* asked for clarification on *the specs*. Should I forward *her* question to *you*?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 5,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the specs*",
+          "ground_truth_ambiguous_phrase": "the specs",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the specs (referenced in prior context as a document or set of requirements)",
+          "ground_truth_resolution": "Technical specifications for prototype demo",
+          "resolution_similarity": 0.7273667024923323,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*Jessica*",
+          "ground_truth_ambiguous_phrase": "Jessica",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Jessica (referenced in prior context as a team member)",
+          "ground_truth_resolution": "Jessica Quan (Data Analyst)",
+          "resolution_similarity": 0.7126698021230826,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*They’re*",
+          "ground_truth_ambiguous_phrase": "they're",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team",
+          "ground_truth_resolution": "Project Delivery Team",
+          "resolution_similarity": 0.6874446416928583,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Jessica"
+        },
+        {
+          "ambiguous_phrase": "*you*",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*They’re*",
+          "resolved_entity": "the team"
+        },
+        {
+          "ambiguous_phrase": "*Jessica*",
+          "resolved_entity": "Jessica (referenced in prior context as a team member)"
+        },
+        {
+          "ambiguous_phrase": "*the specs*",
+          "resolved_entity": "the specs (referenced in prior context as a document or set of requirements)"
+        },
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "Jessica"
+        },
+        {
+          "ambiguous_phrase": "*you*",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8802062799222767,
+        "ollama_total_s": 0.879136642,
+        "model_load_s": 0.001176801,
+        "prompt_eval_s": 0.099989,
+        "generation_s": 0.676904,
+        "prompt_tokens": 1226,
+        "output_tokens": 144,
+        "total_tokens": 1370,
+        "generation_tokens_per_s": 212.73326793755098
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Yes, please send *it* my way. I’ll address *her concerns* later *today*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "today",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the current day (the day of the conversation)",
+          "ground_truth_resolution": "[Current date]",
+          "resolution_similarity": 0.770039522378549,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the presentation device",
+          "ground_truth_resolution": "Jessica's question on technical specifications",
+          "resolution_similarity": 0.554645100342173,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jessica"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her concerns",
+          "ground_truth_resolution": "Jessica's technical concerns",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the presentation device"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Jessica"
+        },
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "the current day (the day of the conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5946223502978683,
+        "ollama_total_s": 0.593378958,
+        "model_load_s": 0.001424572,
+        "prompt_eval_s": 0.100211,
+        "generation_s": 0.393799,
+        "prompt_tokens": 1245,
+        "output_tokens": 81,
+        "total_tokens": 1326,
+        "generation_tokens_per_s": 205.68868889966708
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thanks, Mark. *This project* is intense but rewarding.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "This project",
+          "ground_truth_ambiguous_phrase": "this project",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the project mentioned in the email about the project deadline shifting (Turn 20)",
+          "ground_truth_resolution": "Overture Tech Product Launch",
+          "resolution_similarity": 0.49057448107486223,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "This project",
+          "resolved_entity": "the project mentioned in the email about the project deadline shifting (Turn 20)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5004013739526272,
+        "ollama_total_s": 0.499073283,
+        "model_load_s": 0.001132871,
+        "prompt_eval_s": 0.101857,
+        "generation_s": 0.279156,
+        "prompt_tokens": 1259,
+        "output_tokens": 47,
+        "total_tokens": 1306,
+        "generation_tokens_per_s": 168.36464199229104
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "I agree. Remember to delegate *those lesser tasks* so *you* can focus on *the client deliverables*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 0,
+        "false_negatives": 3,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 3
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the client deliverables",
+          "ground_truth_ambiguous_phrase": "the client deliverables",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "deliverables related to the client, likely referring to the project work for the client mentioned in prior discussions",
+          "ground_truth_resolution": "Overture Tech presentation, dashboard, demo",
+          "resolution_similarity": 0.4495221209026859,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "you",
+          "ground_truth_ambiguous_phrase": "you",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A (Priya), based on the conversation context and the speaker being User B",
+          "ground_truth_resolution": "Priya Sharma (Customer Success Specialist)",
+          "resolution_similarity": 0.6745850769423004,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "those lesser tasks",
+          "ground_truth_ambiguous_phrase": "those lesser tasks",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "tasks mentioned in previous context (likely referring to routine or non-critical tasks that can be delegated)",
+          "ground_truth_resolution": "Routine support tickets, documentation updates",
+          "resolution_similarity": 0.6373747437109146,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those lesser tasks",
+          "resolved_entity": "tasks mentioned in previous context (likely referring to routine or non-critical tasks that can be delegated)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A (Priya), based on the conversation context and the speaker being User B"
+        },
+        {
+          "ambiguous_phrase": "the client deliverables",
+          "resolved_entity": "deliverables related to the client, likely referring to the project work for the client mentioned in prior discussions"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.9486953900195658,
+        "ollama_total_s": 0.94720447,
+        "model_load_s": 0.001768718,
+        "prompt_eval_s": 0.115495,
+        "generation_s": 0.69463,
+        "prompt_tokens": 1306,
+        "output_tokens": 129,
+        "total_tokens": 1435,
+        "generation_tokens_per_s": 185.71037818694845
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "I’ve already asked *Kevin* to handle *the support tickets*. It frees up time for *me* to complete *the reporting*. Should I copy *you* on updates?",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 3,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the reporting",
+          "ground_truth_ambiguous_phrase": "the reporting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Reporting (refer to a specific task or deliverable previously mentioned or implied in context)",
+          "ground_truth_resolution": "Client KPI reporting deliverable",
+          "resolution_similarity": 0.7375133667139024,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the support tickets",
+          "ground_truth_ambiguous_phrase": "the support tickets",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Support tickets (refer to a specific set of tickets previously mentioned or implied in context)",
+          "ground_truth_resolution": "Overture Tech open support requests",
+          "resolution_similarity": 0.6989502736426755,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "Kevin",
+          "ground_truth_ambiguous_phrase": "Kevin",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Kevin (from previous context, likely a colleague or team member)",
+          "ground_truth_resolution": "Kevin Brooks (Support Engineer)",
+          "resolution_similarity": 0.6465902297533436,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B (Mark)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "me",
+          "ground_truth_resolution": "Priya Sharma",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Kevin",
+          "resolved_entity": "Kevin (from previous context, likely a colleague or team member)"
+        },
+        {
+          "ambiguous_phrase": "the support tickets",
+          "resolved_entity": "Support tickets (refer to a specific set of tickets previously mentioned or implied in context)"
+        },
+        {
+          "ambiguous_phrase": "the reporting",
+          "resolved_entity": "Reporting (refer to a specific task or deliverable previously mentioned or implied in context)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B (Mark)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.9004444200545549,
+        "ollama_total_s": 0.899108403,
+        "model_load_s": 0.00113715,
+        "prompt_eval_s": 0.116996,
+        "generation_s": 0.662618,
+        "prompt_tokens": 1365,
+        "output_tokens": 138,
+        "total_tokens": 1503,
+        "generation_tokens_per_s": 208.2647920823159
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Yes, please. Also, keep *the director* in the loop about *the milestone progress*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the milestone progress",
+          "ground_truth_ambiguous_phrase": "the milestone progress",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The progress related to the project milestone mentioned in the conversation, likely referring to the target metrics and timeline adjustments",
+          "ground_truth_resolution": "Prototype demo status",
+          "resolution_similarity": 0.5392615974966194,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the director",
+          "ground_truth_ambiguous_phrase": "the director",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Mark's supervisor (not explicitly named in the context, but implied by the role)",
+          "ground_truth_resolution": "Samantha Lee (Director of Customer Operations)",
+          "resolution_similarity": 0.571782208120943,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the director",
+          "resolved_entity": "Mark's supervisor (not explicitly named in the context, but implied by the role)"
+        },
+        {
+          "ambiguous_phrase": "the milestone progress",
+          "resolved_entity": "The progress related to the project milestone mentioned in the conversation, likely referring to the target metrics and timeline adjustments"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6790692433714867,
+        "ollama_total_s": 0.67784101,
+        "model_load_s": 0.001354265,
+        "prompt_eval_s": 0.11847,
+        "generation_s": 0.443286,
+        "prompt_tokens": 1380,
+        "output_tokens": 89,
+        "total_tokens": 1469,
+        "generation_tokens_per_s": 200.7733156472345
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Will do. *She* prefers concise status reports, so I’ll keep *them* brief.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*them*",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client",
+          "ground_truth_resolution": "Status reports",
+          "resolution_similarity": 0.47847929355183555,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*She*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Samantha Lee",
+          "resolution_similarity": 0.8154224321726453,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*She*",
+          "resolved_entity": "Priya"
+        },
+        {
+          "ambiguous_phrase": "*them*",
+          "resolved_entity": "the client"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.596659803763032,
+        "ollama_total_s": 0.595496093,
+        "model_load_s": 0.001571907,
+        "prompt_eval_s": 0.129747,
+        "generation_s": 0.323615,
+        "prompt_tokens": 1409,
+        "output_tokens": 55,
+        "total_tokens": 1464,
+        "generation_tokens_per_s": 169.95503916691132
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Good thinking. After *the client meeting*, let’s regroup in *my office* to debrief.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my office",
+          "ground_truth_ambiguous_phrase": "my office",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office – Mark’s Office",
+          "ground_truth_resolution": "Mark’s Office, Downtown SF Office",
+          "resolution_similarity": 0.9589443492782325,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "the client meeting",
+          "ground_truth_ambiguous_phrase": "the client meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "ground_truth_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the client meeting",
+          "resolved_entity": "Client Update Meeting with Overture Tech (3:00 PM)"
+        },
+        {
+          "ambiguous_phrase": "my office",
+          "resolved_entity": "Downtown SF Office – Mark’s Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6549037438817322,
+        "ollama_total_s": 0.653708757,
+        "model_load_s": 0.001488729,
+        "prompt_eval_s": 0.130568,
+        "generation_s": 0.385692,
+        "prompt_tokens": 1443,
+        "output_tokens": 73,
+        "total_tokens": 1516,
+        "generation_tokens_per_s": 189.27019487051845
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Works for me. Should I invite *the analyst* or just *us*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "us",
+          "ground_truth_ambiguous_phrase": "us",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B (based on the ongoing conversation between them)",
+          "ground_truth_resolution": "Priya and Mark",
+          "resolution_similarity": 0.5183220995679735,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the analyst",
+          "ground_truth_ambiguous_phrase": "the analyst",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the analyst (from previous context, likely referring to a specific individual involved in the project or meeting, though not explicitly named in the current turn)",
+          "ground_truth_resolution": "Jessica Quan",
+          "resolution_similarity": 0.4989676757072322,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the analyst",
+          "resolved_entity": "the analyst (from previous context, likely referring to a specific individual involved in the project or meeting, though not explicitly named in the current turn)"
+        },
+        {
+          "ambiguous_phrase": "us",
+          "resolved_entity": "User A and User B (based on the ongoing conversation between them)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7935265391133726,
+        "ollama_total_s": 0.792220025,
+        "model_load_s": 0.001193837,
+        "prompt_eval_s": 0.131664999,
+        "generation_s": 0.539541,
+        "prompt_tokens": 1465,
+        "output_tokens": 91,
+        "total_tokens": 1556,
+        "generation_tokens_per_s": 168.66188111746834
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Just *us* for now. We’ll bring *her* in for *the next review*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the next review",
+          "ground_truth_ambiguous_phrase": "the next review",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the review for the client deliverables",
+          "ground_truth_resolution": "Quarterly Client Review (Thursday, 2:00 PM)",
+          "resolution_similarity": 0.6609742162661476,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya",
+          "ground_truth_resolution": "Jessica Quan",
+          "resolution_similarity": 0.8023704993716432,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Priya"
+        },
+        {
+          "ambiguous_phrase": "the next review",
+          "resolved_entity": "the review for the client deliverables"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6048516030423343,
+        "ollama_total_s": 0.603625084,
+        "model_load_s": 0.001180491,
+        "prompt_eval_s": 0.1326,
+        "generation_s": 0.346495,
+        "prompt_tokens": 1500,
+        "output_tokens": 60,
+        "total_tokens": 1560,
+        "generation_tokens_per_s": 173.16267190002742
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Understood. By the way, *the client’s* assistant mentioned *them* visiting *the building* next week. Do you need *me* on-site for *that*?",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client’s assistant mentioned visiting the building next week",
+          "ground_truth_resolution": "Client’s on-site visit",
+          "resolution_similarity": 0.6922565509494327,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the building",
+          "ground_truth_ambiguous_phrase": "the building",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office",
+          "ground_truth_resolution": "Downtown SF Office Building",
+          "resolution_similarity": 0.9489397773434315,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client’s team",
+          "ground_truth_resolution": "Overture Tech Client Team",
+          "resolution_similarity": 0.7814892785192388,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "me",
+          "resolved_entity": "User A"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the client’s assistant",
+          "ground_truth_resolution": "Sophie Riley (Overture Tech Assistant)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the client’s team"
+        },
+        {
+          "ambiguous_phrase": "the building",
+          "resolved_entity": "Downtown SF Office"
+        },
+        {
+          "ambiguous_phrase": "me",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the client’s assistant mentioned visiting the building next week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7938954699784517,
+        "ollama_total_s": 0.792721722,
+        "model_load_s": 0.001116678,
+        "prompt_eval_s": 0.137612,
+        "generation_s": 0.526443999,
+        "prompt_tokens": 1565,
+        "output_tokens": 108,
+        "total_tokens": 1673,
+        "generation_tokens_per_s": 205.15002584348954
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Yes, let’s plan for *you* to be *here* when *they* arrive.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client's visitors",
+          "ground_truth_resolution": "Overture Tech Client Team",
+          "resolution_similarity": 0.5792185000507155,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office – Mark’s Office",
+          "ground_truth_resolution": "Downtown SF Office Building",
+          "resolution_similarity": 0.8009162386745826,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "you",
+          "ground_truth_ambiguous_phrase": "you",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B (Priya)",
+          "ground_truth_resolution": "Priya Sharma",
+          "resolution_similarity": 0.7344230791805967,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B (Priya)"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Downtown SF Office – Mark’s Office"
+        },
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the client's visitors"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6916423770599067,
+        "ollama_total_s": 0.690363181,
+        "model_load_s": 0.001707883,
+        "prompt_eval_s": 0.13872,
+        "generation_s": 0.402077,
+        "prompt_tokens": 1577,
+        "output_tokens": 85,
+        "total_tokens": 1662,
+        "generation_tokens_per_s": 211.40229359053114
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Got it. I’ll block off time on *my calendar*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my calendar",
+          "ground_truth_ambiguous_phrase": "my calendar",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's calendar (Downtown SF Office – Conference Room B)",
+          "ground_truth_resolution": "Priya’s Outlook Calendar",
+          "resolution_similarity": 0.63054077849092,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my calendar",
+          "resolved_entity": "User A's calendar (Downtown SF Office – Conference Room B)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5312642487697303,
+        "ollama_total_s": 0.530113539,
+        "model_load_s": 0.001412964,
+        "prompt_eval_s": 0.139245,
+        "generation_s": 0.254933,
+        "prompt_tokens": 1595,
+        "output_tokens": 44,
+        "total_tokens": 1639,
+        "generation_tokens_per_s": 172.59436793196642
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Thank you. Regarding *the onboarding packet*, did *HR* send *it* to *the new client team member*?",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 2,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the new client team member",
+          "ground_truth_ambiguous_phrase": "the new client team member",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the new client team member",
+          "ground_truth_resolution": "Michael Chen (Client Implementation Lead)",
+          "resolution_similarity": 0.7020252364259773,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the onboarding packet",
+          "ground_truth_resolution": "Overture Tech onboarding packet (PDF)",
+          "resolution_similarity": 0.8302512821515796,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the onboarding packet",
+          "ground_truth_resolution": "Overture Tech onboarding packet (PDF)",
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "ambiguous_phrase": "HR",
+          "ground_truth_resolution": "Human Resources Department",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the onboarding packet"
+        },
+        {
+          "ambiguous_phrase": "the new client team member",
+          "resolved_entity": "the new client team member"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5908778589218855,
+        "ollama_total_s": 0.589813754,
+        "model_load_s": 0.001311368,
+        "prompt_eval_s": 0.140585,
+        "generation_s": 0.311632,
+        "prompt_tokens": 1645,
+        "output_tokens": 62,
+        "total_tokens": 1707,
+        "generation_tokens_per_s": 198.95261077167942
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Yes, *HR* sent *it* yesterday afternoon.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the onboarding packet",
+          "ground_truth_resolution": "Overture Tech onboarding packet",
+          "resolution_similarity": 0.851386803868369,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "HR",
+          "ground_truth_resolution": "Human Resources Department",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the onboarding packet"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.48724914994090796,
+        "ollama_total_s": 0.486200702,
+        "model_load_s": 0.001101317,
+        "prompt_eval_s": 0.146184,
+        "generation_s": 0.181746,
+        "prompt_tokens": 1652,
+        "output_tokens": 34,
+        "total_tokens": 1686,
+        "generation_tokens_per_s": 187.0742684845884
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Terrific. Are there any blockers on *your end* before *the review*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the review",
+          "ground_truth_ambiguous_phrase": "the review",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The review mentioned in prior context, likely referring to the review related to the project or client deliverables",
+          "ground_truth_resolution": "Quarterly Client Review Meeting",
+          "resolution_similarity": 0.6338117717749607,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "your end",
+          "ground_truth_ambiguous_phrase": "your end",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's end (i.e., User B's side or responsibilities)",
+          "ground_truth_resolution": "Priya’s project deliverable queue",
+          "resolution_similarity": 0.5307907616196113,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your end",
+          "resolved_entity": "User B's end (i.e., User B's side or responsibilities)"
+        },
+        {
+          "ambiguous_phrase": "the review",
+          "resolved_entity": "The review mentioned in prior context, likely referring to the review related to the project or client deliverables"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7386401351541281,
+        "ollama_total_s": 0.737659184,
+        "model_load_s": 0.001339949,
+        "prompt_eval_s": 0.147647,
+        "generation_s": 0.446204,
+        "prompt_tokens": 1686,
+        "output_tokens": 85,
+        "total_tokens": 1771,
+        "generation_tokens_per_s": 190.49582702082455
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Nothing major. *This laptop* was acting up, but IT resolved *the issue*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the issue",
+          "ground_truth_ambiguous_phrase": "the issue",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the technical problem with User A's laptop",
+          "ground_truth_resolution": "WiFi connectivity bug",
+          "resolution_similarity": 0.580330919886324,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "This laptop",
+          "ground_truth_ambiguous_phrase": "this laptop",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's laptop in Downtown SF Office – Conference Room B",
+          "ground_truth_resolution": "Priya’s Dell XPS 13",
+          "resolution_similarity": 0.4971988173727615,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "This laptop",
+          "resolved_entity": "User A's laptop in Downtown SF Office – Conference Room B"
+        },
+        {
+          "ambiguous_phrase": "the issue",
+          "resolved_entity": "the technical problem with User A's laptop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6423764070495963,
+        "ollama_total_s": 0.641254686,
+        "model_load_s": 0.001414844,
+        "prompt_eval_s": 0.148619,
+        "generation_s": 0.352093,
+        "prompt_tokens": 1716,
+        "output_tokens": 71,
+        "total_tokens": 1787,
+        "generation_tokens_per_s": 201.6512682728711
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Glad to hear it. Let me know if *anything else* pops up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "anything else",
+          "ground_truth_ambiguous_phrase": "anything else",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "any additional issues or tasks",
+          "ground_truth_resolution": "Any additional project blockers",
+          "resolution_similarity": 0.7281366110942858,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "anything else",
+          "resolved_entity": "any additional issues or tasks"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47794894594699144,
+        "ollama_total_s": 0.476563725,
+        "model_load_s": 0.00135106,
+        "prompt_eval_s": 0.149044,
+        "generation_s": 0.155432,
+        "prompt_tokens": 1740,
+        "output_tokens": 25,
+        "total_tokens": 1765,
+        "generation_tokens_per_s": 160.84204024911216
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Will do. Oh! *The catering company* called to confirm *the lunch order* for *tomorrow*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tomorrow",
+          "ground_truth_ambiguous_phrase": "tomorrow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The upcoming day, which is the day of the confirmed lunch order.",
+          "ground_truth_resolution": "Wednesday, [specific date]",
+          "resolution_similarity": 0.5793459785260473,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the lunch order",
+          "ground_truth_ambiguous_phrase": "the lunch order",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The lunch order for the upcoming meeting or event, which was confirmed by the catering company.",
+          "ground_truth_resolution": "Lunch catering for client meeting (Mission Bay Event Center)",
+          "resolution_similarity": 0.7707638762169551,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the catering company",
+          "ground_truth_ambiguous_phrase": "the catering company",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The catering company mentioned in the conversation, which is likely the one responsible for the lunch order.",
+          "ground_truth_resolution": "Bay Area Corporate Catering",
+          "resolution_similarity": 0.5368289266108472,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the catering company",
+          "resolved_entity": "The catering company mentioned in the conversation, which is likely the one responsible for the lunch order."
+        },
+        {
+          "ambiguous_phrase": "the lunch order",
+          "resolved_entity": "The lunch order for the upcoming meeting or event, which was confirmed by the catering company."
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The upcoming day, which is the day of the confirmed lunch order."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8855148940347135,
+        "ollama_total_s": 0.884425026,
+        "model_load_s": 0.000971774,
+        "prompt_eval_s": 0.161571,
+        "generation_s": 0.587708,
+        "prompt_tokens": 1781,
+        "output_tokens": 121,
+        "total_tokens": 1902,
+        "generation_tokens_per_s": 205.88455491502583
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Great. Let’s double-check *the menu* before *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "tomorrow at noon",
+          "ground_truth_resolution": "Tomorrow, Wednesday, [specific date]",
+          "resolution_similarity": 0.6817632204329225,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the menu",
+          "ground_truth_ambiguous_phrase": "the menu",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the catering menu for tomorrow's lunch order",
+          "ground_truth_resolution": "Corporate catering menu (Bay Area Corporate Catering)",
+          "resolution_similarity": 0.7050781317141419,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the menu",
+          "resolved_entity": "the catering menu for tomorrow's lunch order"
+        },
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "tomorrow at noon"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6207959083840251,
+        "ollama_total_s": 0.61984556,
+        "model_load_s": 0.001228313,
+        "prompt_eval_s": 0.162102,
+        "generation_s": 0.313817,
+        "prompt_tokens": 1797,
+        "output_tokens": 62,
+        "total_tokens": 1859,
+        "generation_tokens_per_s": 197.56737206716016
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Sure thing. The options look good, but *they* forgot *the vegan dish*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the vegan dish",
+          "ground_truth_ambiguous_phrase": "the vegan dish",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the vegan dish (specific dish not named)",
+          "ground_truth_resolution": "Vegan entree (Bay Area Corporate Catering menu)",
+          "resolution_similarity": 0.706061486280116,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the catering company",
+          "ground_truth_resolution": "Bay Area Corporate Catering",
+          "resolution_similarity": 0.7252810159704062,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the catering company"
+        },
+        {
+          "ambiguous_phrase": "the vegan dish",
+          "resolved_entity": "the vegan dish (specific dish not named)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6360773430205882,
+        "ollama_total_s": 0.634693807,
+        "model_load_s": 0.001580816,
+        "prompt_eval_s": 0.163685,
+        "generation_s": 0.306671,
+        "prompt_tokens": 1830,
+        "output_tokens": 62,
+        "total_tokens": 1892,
+        "generation_tokens_per_s": 202.17105627855256
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Can you call *them* back and request *it*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the vegan dish",
+          "ground_truth_resolution": "Vegan entree request",
+          "resolution_similarity": 0.7834730461004502,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client's assistant mentioned them visiting the building next week",
+          "ground_truth_resolution": "Bay Area Corporate Catering",
+          "resolution_similarity": 0.4139334978347693,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the client's assistant mentioned them visiting the building next week"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the vegan dish"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6414468223229051,
+        "ollama_total_s": 0.640192121,
+        "model_load_s": 0.001198466,
+        "prompt_eval_s": 0.164049,
+        "generation_s": 0.318015,
+        "prompt_tokens": 1847,
+        "output_tokens": 63,
+        "total_tokens": 1910,
+        "generation_tokens_per_s": 198.103863025329
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "On it. Anything else for *tomorrow*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tomorrow",
+          "ground_truth_ambiguous_phrase": "tomorrow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the Client Update Meeting with Overture Tech (3:00 PM) scheduled for tomorrow",
+          "ground_truth_resolution": "Wednesday, [specific date]",
+          "resolution_similarity": 0.5454754480649951,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "the Client Update Meeting with Overture Tech (3:00 PM) scheduled for tomorrow"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.524058383423835,
+        "ollama_total_s": 0.522819419,
+        "model_load_s": 0.001253409,
+        "prompt_eval_s": 0.164619,
+        "generation_s": 0.214733,
+        "prompt_tokens": 1866,
+        "output_tokens": 38,
+        "total_tokens": 1904,
+        "generation_tokens_per_s": 176.96395058048833
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Just make sure *the sign-in sheet* is ready for *the client team*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the client team",
+          "ground_truth_ambiguous_phrase": "the client team",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client team",
+          "ground_truth_resolution": "Overture Tech Client Team",
+          "resolution_similarity": 0.7970948367680488,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the sign-in sheet",
+          "ground_truth_ambiguous_phrase": "the sign-in sheet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sign-in sheet",
+          "ground_truth_resolution": "Printed attendee sign-in sheet (client team)",
+          "resolution_similarity": 0.8564653288482035,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the sign-in sheet",
+          "resolved_entity": "the sign-in sheet"
+        },
+        {
+          "ambiguous_phrase": "the client team",
+          "resolved_entity": "the client team"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5473839868791401,
+        "ollama_total_s": 0.545957747,
+        "model_load_s": 0.001252773,
+        "prompt_eval_s": 0.165426,
+        "generation_s": 0.222963,
+        "prompt_tokens": 1901,
+        "output_tokens": 36,
+        "total_tokens": 1937,
+        "generation_tokens_per_s": 161.461767199042
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Will do. I’ll bring *it* to *the front desk* in the morning.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the front desk",
+          "ground_truth_ambiguous_phrase": "the front desk",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the front desk of the Downtown SF Office",
+          "ground_truth_resolution": "Lobby reception, Downtown SF Office",
+          "resolution_similarity": 0.8000958771426935,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sign-in sheet",
+          "ground_truth_resolution": "Printed attendee sign-in sheet",
+          "resolution_similarity": 0.8692785719371606,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the sign-in sheet"
+        },
+        {
+          "ambiguous_phrase": "the front desk",
+          "resolved_entity": "the front desk of the Downtown SF Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6577312271110713,
+        "ollama_total_s": 0.656551467,
+        "model_load_s": 0.001332502,
+        "prompt_eval_s": 0.179158,
+        "generation_s": 0.314736,
+        "prompt_tokens": 1931,
+        "output_tokens": 63,
+        "total_tokens": 1994,
+        "generation_tokens_per_s": 200.16775964617963
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Thanks, Priya. Have you checked *the weather* for *tomorrow*? Just wondering if we need *umbrellas*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the weather",
+          "ground_truth_ambiguous_phrase": "the weather",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Weather forecast for the Downtown SF Office area",
+          "ground_truth_resolution": "San Francisco weather (Wednesday, [specific date])",
+          "resolution_similarity": 0.9125064382701868,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The day after the current day, specifically the day of the client meeting"
+        },
+        {
+          "ambiguous_phrase": "umbrellas",
+          "resolved_entity": "Rain protection items needed for the client meeting"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the weather",
+          "resolved_entity": "Weather forecast for the Downtown SF Office area"
+        },
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "The day after the current day, specifically the day of the client meeting"
+        },
+        {
+          "ambiguous_phrase": "umbrellas",
+          "resolved_entity": "Rain protection items needed for the client meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8555302750319242,
+        "ollama_total_s": 0.854332168,
+        "model_load_s": 0.000988365,
+        "prompt_eval_s": 0.180051,
+        "generation_s": 0.523001999,
+        "prompt_tokens": 1978,
+        "output_tokens": 101,
+        "total_tokens": 2079,
+        "generation_tokens_per_s": 193.11589667556893
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "I did. It’s clear skies, thankfully!",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "it",
+          "ground_truth_resolution": "San Francisco weather (Wednesday, [specific date])",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.365507029928267,
+        "ollama_total_s": 0.364395311,
+        "model_load_s": 0.001751495,
+        "prompt_eval_s": 0.181093,
+        "generation_s": 0.02559,
+        "prompt_tokens": 1980,
+        "output_tokens": 6,
+        "total_tokens": 1986,
+        "generation_tokens_per_s": 234.46658851113716
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Good. Lastly, for *the client’s visit*, coordinate with *security* to arrange access badges.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "security",
+          "ground_truth_ambiguous_phrase": "security",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Security Department (Downtown SF Office)",
+          "ground_truth_resolution": "Building Security Team",
+          "resolution_similarity": 0.681301486160768,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the client’s visit",
+          "ground_truth_ambiguous_phrase": "the client's visit",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "ground_truth_resolution": "Overture Tech client team on-site visit",
+          "resolution_similarity": 0.7157023314834563,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the client’s visit",
+          "resolved_entity": "Client Update Meeting with Overture Tech (3:00 PM)"
+        },
+        {
+          "ambiguous_phrase": "security",
+          "resolved_entity": "Security Department (Downtown SF Office)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7090199459344149,
+        "ollama_total_s": 0.707639618,
+        "model_load_s": 0.001733939,
+        "prompt_eval_s": 0.18142,
+        "generation_s": 0.356085,
+        "prompt_tokens": 2022,
+        "output_tokens": 72,
+        "total_tokens": 2094,
+        "generation_tokens_per_s": 202.19891318084166
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Already emailed *security*. We’re set for *Wednesday*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Wednesday",
+          "ground_truth_ambiguous_phrase": "Wednesday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Wednesday, which is the day of the client's visit as mentioned in Turn 50",
+          "ground_truth_resolution": "Wednesday, [specific date]",
+          "resolution_similarity": 0.6894782722079283,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "security",
+          "ground_truth_ambiguous_phrase": "security",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "security team at Downtown SF Office",
+          "ground_truth_resolution": "Building Security Team",
+          "resolution_similarity": 0.8132220661171918,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "security",
+          "resolved_entity": "security team at Downtown SF Office"
+        },
+        {
+          "ambiguous_phrase": "Wednesday",
+          "resolved_entity": "Wednesday, which is the day of the client's visit as mentioned in Turn 50"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7159832771867514,
+        "ollama_total_s": 0.714630852,
+        "model_load_s": 0.001400288,
+        "prompt_eval_s": 0.185061,
+        "generation_s": 0.359715,
+        "prompt_tokens": 2037,
+        "output_tokens": 73,
+        "total_tokens": 2110,
+        "generation_tokens_per_s": 202.93843737403222
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Fantastic. That's all from me for now. Let's regroup after *the meeting*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the meeting",
+          "ground_truth_ambiguous_phrase": "the meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "ground_truth_resolution": "Client Update Meeting with Overture Tech (3:00 PM)",
+          "resolution_similarity": 0.9999162598591611,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the meeting",
+          "resolved_entity": "Client Update Meeting with Overture Tech (3:00 PM)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5450431839562953,
+        "ollama_total_s": 0.543895865,
+        "model_load_s": 0.001402179,
+        "prompt_eval_s": 0.186914,
+        "generation_s": 0.19625,
+        "prompt_tokens": 2074,
+        "output_tokens": 34,
+        "total_tokens": 2108,
+        "generation_tokens_per_s": 173.2484076433121
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Sounds good. See you *there*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Downtown SF Office – Conference Room B",
+          "ground_truth_resolution": "Client Update Meeting location (Conference Room B)",
+          "resolution_similarity": 0.614083983716432,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Downtown SF Office – Conference Room B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5553690199740231,
+        "ollama_total_s": 0.554023454,
+        "model_load_s": 0.001562555,
+        "prompt_eval_s": 0.187402,
+        "generation_s": 0.192356,
+        "prompt_tokens": 2082,
+        "output_tokens": 27,
+        "total_tokens": 2109,
+        "generation_tokens_per_s": 140.36474037721723
+      }
+    }
+  ]
+}

@@ -1,0 +1,2503 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/teacher_meeting_007.json",
+  "metrics": {
+    "ground_truth_ambiguities": 66,
+    "qwen_predicted_ambiguities": 71,
+    "detected_ground_truth_ambiguities": 63,
+    "missed_ground_truth_ambiguities": 3,
+    "detected_but_bad_resolution": 38,
+    "true_positives": 25,
+    "false_negatives": 41,
+    "false_positive_ambiguities": 8,
+    "detection_recall": 0.9545454545454546,
+    "detection_precision": 0.8873239436619719,
+    "detection_f1": 0.9197080291970803,
+    "true_positive_rate_at_0_70": 0.3787878787878788,
+    "strict_end_to_end_precision_at_0_70": 0.352112676056338,
+    "end_to_end_f1_at_0_70": 0.36496350364963503,
+    "false_positive_discovery_rate": 0.11267605633802817,
+    "false_positives_per_turn": 0.1702127659574468,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 47,
+    "median_latency_per_turn_s": 0.4870199291035533,
+    "mean_latency_per_turn_s": 0.4808033730913984,
+    "total_prompt_tokens": 53311,
+    "total_output_tokens": 2433
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Hey! I’m finally *here* — took the 6 train and stopped by that little coffee spot on the way.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Yorkville Library Study Room 2",
+          "resolution_source": "User A Calendar + User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22586264414712787,
+        "ollama_total_s": 0.224735055,
+        "model_load_s": 0.001247115,
+        "prompt_eval_s": 0.031976,
+        "generation_s": 0.025116,
+        "prompt_tokens": 455,
+        "output_tokens": 6,
+        "total_tokens": 461,
+        "generation_tokens_per_s": 238.89154323936933
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Nice! I’m already in *our room*, grabbed the last table by *the window*. Did you bring *it*?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The item being referred to (contextually dependent on prior conversation)",
+          "ground_truth_resolution": "the laptop",
+          "resolution_similarity": 0.6060477131263425,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Research Session) + User B context"
+        },
+        {
+          "predicted_ambiguous_phrase": "the window",
+          "ground_truth_ambiguous_phrase": "the window",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Window in Yorkville Library Study Room 2",
+          "ground_truth_resolution": "window in Yorkville Library Study Room 2",
+          "resolution_similarity": 0.9702617124277666,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B local knowledge"
+        },
+        {
+          "predicted_ambiguous_phrase": "our room",
+          "ground_truth_ambiguous_phrase": "our room",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Study Room 2",
+          "ground_truth_resolution": "Yorkville Library Study Room 2",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "our room",
+          "resolved_entity": "Yorkville Library Study Room 2"
+        },
+        {
+          "ambiguous_phrase": "the window",
+          "resolved_entity": "Window in Yorkville Library Study Room 2"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "The item being referred to (contextually dependent on prior conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5368077051825821,
+        "ollama_total_s": 0.535717478,
+        "model_load_s": 0.001289969,
+        "prompt_eval_s": 0.035212,
+        "generation_s": 0.495083,
+        "prompt_tokens": 491,
+        "output_tokens": 98,
+        "total_tokens": 589,
+        "generation_tokens_per_s": 197.94660693257495
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Yep, I have *it* in my bag. Wasn’t sure if you needed *the other one*, too?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the other one*",
+          "ground_truth_ambiguous_phrase": "the other one",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the second item (likely the other notebook or materials for the research session)",
+          "ground_truth_resolution": "the portable scanner",
+          "resolution_similarity": 0.5380500513667079,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar + prior assignment detail"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the item referred to in Turn 2 (likely the notebook or materials for the research session)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the item referred to in Turn 2 (likely the notebook or materials for the research session)"
+        },
+        {
+          "ambiguous_phrase": "*the other one*",
+          "resolved_entity": "the second item (likely the other notebook or materials for the research session)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5312214284203947,
+        "ollama_total_s": 0.529863841,
+        "model_load_s": 0.001395646,
+        "prompt_eval_s": 0.037125,
+        "generation_s": 0.44578,
+        "prompt_tokens": 524,
+        "output_tokens": 85,
+        "total_tokens": 609,
+        "generation_tokens_per_s": 190.6770155682175
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "I think just *the textbook* will do for today. Oh—did you talk to *him* after class?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "him (referent is likely a male student or professor mentioned in prior context, though not explicitly named)",
+          "ground_truth_resolution": "Mr. Singh (teacher)",
+          "resolution_similarity": 0.5824943508184087,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (class teacher)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the textbook",
+          "resolved_entity": "the textbook (referent is likely the course textbook, as it's the context of the study session mentioned in User A's calendar)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the textbook",
+          "resolved_entity": "the textbook (referent is likely the course textbook, as it's the context of the study session mentioned in User A's calendar)"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "him (referent is likely a male student or professor mentioned in prior context, though not explicitly named)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5903283879160881,
+        "ollama_total_s": 0.589052566,
+        "model_load_s": 0.001783929,
+        "prompt_eval_s": 0.041626,
+        "generation_s": 0.486479,
+        "prompt_tokens": 556,
+        "output_tokens": 96,
+        "total_tokens": 652,
+        "generation_tokens_per_s": 197.33637012080686
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Yeah, *he* said we can use materials from the library archives, as long as we reference them. *He* seemed pretty excited about our topic.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Jordan",
+          "ground_truth_resolution": "Mr. Singh",
+          "resolution_similarity": 0.632795275741387,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Jordan"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Jordan"
+        },
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Jordan"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4107395401224494,
+        "ollama_total_s": 0.409237981,
+        "model_load_s": 0.001676807,
+        "prompt_eval_s": 0.046444,
+        "generation_s": 0.286362,
+        "prompt_tokens": 605,
+        "output_tokens": 51,
+        "total_tokens": 656,
+        "generation_tokens_per_s": 178.0962557881283
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Awesome. Want me to print *that article* now, or should we wait?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that article",
+          "ground_truth_ambiguous_phrase": "that article",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the article from the library archives",
+          "ground_truth_resolution": "‘March on Washington’ NYT article",
+          "resolution_similarity": 0.6154068757374045,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Email Sent Items"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that article",
+          "resolved_entity": "the article from the library archives"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.32786106038838625,
+        "ollama_total_s": 0.326679934,
+        "model_load_s": 0.001288,
+        "prompt_eval_s": 0.04675,
+        "generation_s": 0.227367,
+        "prompt_tokens": 616,
+        "output_tokens": 37,
+        "total_tokens": 653,
+        "generation_tokens_per_s": 162.73249855959747
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Let’s wait until we go through *these notes* first.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "these notes",
+          "ground_truth_ambiguous_phrase": "these notes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the notes from the research session with Jordan at Yorkville Library",
+          "ground_truth_resolution": "class summary notes (shared Google Doc)",
+          "resolution_similarity": 0.6102459711695416,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "these notes",
+          "resolved_entity": "the notes from the research session with Jordan at Yorkville Library"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3829549718648195,
+        "ollama_total_s": 0.38178234,
+        "model_load_s": 0.001302001,
+        "prompt_eval_s": 0.047487,
+        "generation_s": 0.272746,
+        "prompt_tokens": 634,
+        "output_tokens": 43,
+        "total_tokens": 677,
+        "generation_tokens_per_s": 157.65584096558703
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Good call. By the way, *she* said she might drop by later to help us with sources.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*she*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Samantha Chen (research teammate)",
+          "resolution_similarity": 0.5604106427919885,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*she*",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.324643824249506,
+        "ollama_total_s": 0.323540237,
+        "model_load_s": 0.00139534,
+        "prompt_eval_s": 0.048108,
+        "generation_s": 0.20723,
+        "prompt_tokens": 674,
+        "output_tokens": 33,
+        "total_tokens": 707,
+        "generation_tokens_per_s": 159.2433527964098
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Oh, that’s great! I’m hoping *she* can clarify what counts as a primary document for *this topic*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*this topic*",
+          "ground_truth_ambiguous_phrase": "this topic",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the research topic they are discussing",
+          "ground_truth_resolution": "post-1964 Civil Rights initiatives",
+          "resolution_similarity": 0.43378498454954023,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (assignment topic)"
+        },
+        {
+          "predicted_ambiguous_phrase": "*she*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Jordan",
+          "ground_truth_resolution": "Samantha Chen",
+          "resolution_similarity": 0.7018559924167138,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*she*",
+          "resolved_entity": "Jordan"
+        },
+        {
+          "ambiguous_phrase": "*this topic*",
+          "resolved_entity": "the research topic they are discussing"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4653864069841802,
+        "ollama_total_s": 0.464099783,
+        "model_load_s": 0.001069284,
+        "prompt_eval_s": 0.05255,
+        "generation_s": 0.328583,
+        "prompt_tokens": 713,
+        "output_tokens": 59,
+        "total_tokens": 772,
+        "generation_tokens_per_s": 179.55889379547938
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Same. Did you get my email with *the links*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the links",
+          "ground_truth_ambiguous_phrase": "the links",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the email with links sent by User B",
+          "ground_truth_resolution": "Ava’s research links email",
+          "resolution_similarity": 0.692077896093204,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Email"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the links",
+          "resolved_entity": "the email with links sent by User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3523116069845855,
+        "ollama_total_s": 0.351220234,
+        "model_load_s": 0.001185166,
+        "prompt_eval_s": 0.053119,
+        "generation_s": 0.237382,
+        "prompt_tokens": 724,
+        "output_tokens": 39,
+        "total_tokens": 763,
+        "generation_tokens_per_s": 164.29215357525
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Just checked, I have *them* now. There’s a lot about *the march* but not as much on *the sit-ins*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 3,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the sit-ins*",
+          "ground_truth_ambiguous_phrase": "the sit-ins",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sit-ins (referencing a historical event or protest)",
+          "ground_truth_resolution": "1960s Student Sit-ins",
+          "resolution_similarity": 0.8207014431678397,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Email content"
+        },
+        {
+          "predicted_ambiguous_phrase": "*the march*",
+          "ground_truth_ambiguous_phrase": "the march",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the march (referencing a historical event or protest)",
+          "ground_truth_resolution": "March on Washington, 1963",
+          "resolution_similarity": 0.7513455716194426,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Email content"
+        },
+        {
+          "predicted_ambiguous_phrase": "*them*",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the links",
+          "ground_truth_resolution": "the links",
+          "resolution_similarity": 0.9997832483689538,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Email"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*them*",
+          "resolved_entity": "the links"
+        },
+        {
+          "ambiguous_phrase": "*the march*",
+          "resolved_entity": "the march (referencing a historical event or protest)"
+        },
+        {
+          "ambiguous_phrase": "*the sit-ins*",
+          "resolved_entity": "the sit-ins (referencing a historical event or protest)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6530715897679329,
+        "ollama_total_s": 0.651626368,
+        "model_load_s": 0.001436137,
+        "prompt_eval_s": 0.06242,
+        "generation_s": 0.49712,
+        "prompt_tokens": 781,
+        "output_tokens": 97,
+        "total_tokens": 878,
+        "generation_tokens_per_s": 195.1239137431606
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Yeah, I noticed that. Maybe *that database* from *last week* has more on *those protests*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those protests",
+          "ground_truth_ambiguous_phrase": "those protests",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sit-ins",
+          "ground_truth_resolution": "Student Sit-ins",
+          "resolution_similarity": 0.9026865441215454,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Email"
+        },
+        {
+          "predicted_ambiguous_phrase": "last week",
+          "ground_truth_ambiguous_phrase": "last week",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the week prior to the current conversation",
+          "ground_truth_resolution": "previous Friday",
+          "resolution_similarity": 0.8029442710950795,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that database",
+          "ground_truth_ambiguous_phrase": "that database",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the database from last week",
+          "ground_truth_resolution": "JSTOR Academic Database",
+          "resolution_similarity": 0.46861678425914016,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar (library access)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that database",
+          "resolved_entity": "the database from last week"
+        },
+        {
+          "ambiguous_phrase": "last week",
+          "resolved_entity": "the week prior to the current conversation"
+        },
+        {
+          "ambiguous_phrase": "those protests",
+          "resolved_entity": "the sit-ins"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6006260691210628,
+        "ollama_total_s": 0.59950228,
+        "model_load_s": 0.001100099,
+        "prompt_eval_s": 0.062676,
+        "generation_s": 0.446106,
+        "prompt_tokens": 809,
+        "output_tokens": 86,
+        "total_tokens": 895,
+        "generation_tokens_per_s": 192.77929460711132
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Do you remember the login for *that system*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that system",
+          "ground_truth_ambiguous_phrase": "that system",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the database from last week",
+          "ground_truth_resolution": "JSTOR Academic Database",
+          "resolution_similarity": 0.46861678425914016,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that system",
+          "resolved_entity": "the database from last week"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3778607938438654,
+        "ollama_total_s": 0.376765389,
+        "model_load_s": 0.001306652,
+        "prompt_eval_s": 0.069053,
+        "generation_s": 0.217156,
+        "prompt_tokens": 817,
+        "output_tokens": 36,
+        "total_tokens": 853,
+        "generation_tokens_per_s": 165.77943966549395
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Pretty sure *she* set up a shared password. I’ll check with *her* now.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Samantha Chen",
+          "resolution_similarity": 0.6452603874617817,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Samantha Chen",
+          "resolution_similarity": 0.6452483391867432,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User A"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44813482323661447,
+        "ollama_total_s": 0.4471712,
+        "model_load_s": 0.001134979,
+        "prompt_eval_s": 0.069194,
+        "generation_s": 0.292761,
+        "prompt_tokens": 856,
+        "output_tokens": 53,
+        "total_tokens": 909,
+        "generation_tokens_per_s": 181.03504223581695
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Perfect. Meanwhile, I’ll start summarizing what we found *so far*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "so far",
+          "ground_truth_resolution": "progress on research assignment up to present moment",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.19755863724276423,
+        "ollama_total_s": 0.196515366,
+        "model_load_s": 0.001572257,
+        "prompt_eval_s": 0.069655,
+        "generation_s": 0.025272,
+        "prompt_tokens": 880,
+        "output_tokens": 6,
+        "total_tokens": 886,
+        "generation_tokens_per_s": 237.41690408357076
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Sounds good. Are you okay if we switch to *the main desk* when it’s free? *This corner* is a bit cramped.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this corner",
+          "ground_truth_ambiguous_phrase": "this corner",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Study Room 2 Corner",
+          "ground_truth_resolution": "corner table in Yorkville Library Study Room 2",
+          "resolution_similarity": 0.8867812187593612,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "the main desk",
+          "ground_truth_ambiguous_phrase": "the main desk",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Main Desk",
+          "ground_truth_resolution": "main desk in Yorkville Library Study Room 2",
+          "resolution_similarity": 0.7578748284826157,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the main desk",
+          "resolved_entity": "Yorkville Library Main Desk"
+        },
+        {
+          "ambiguous_phrase": "this corner",
+          "resolved_entity": "Yorkville Library Study Room 2 Corner"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49945357628166676,
+        "ollama_total_s": 0.49822563,
+        "model_load_s": 0.001212852,
+        "prompt_eval_s": 0.080745,
+        "generation_s": 0.349234,
+        "prompt_tokens": 931,
+        "output_tokens": 65,
+        "total_tokens": 996,
+        "generation_tokens_per_s": 186.12162618759916
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "Sure, just let me know when *it* opens up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the main desk",
+          "ground_truth_resolution": "the main desk",
+          "resolution_similarity": 0.9998163052260235,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the main desk"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.40168470004573464,
+        "ollama_total_s": 0.400338646,
+        "model_load_s": 0.001488855,
+        "prompt_eval_s": 0.081463,
+        "generation_s": 0.208159,
+        "prompt_tokens": 938,
+        "output_tokens": 33,
+        "total_tokens": 971,
+        "generation_tokens_per_s": 158.53266012999677
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Maybe in about 10 minutes; I can see *them* packing up now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the people packing up (likely User A and others at the library)",
+          "ground_truth_resolution": "previous group at main desk",
+          "resolution_similarity": 0.4101974643854925,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B visual observation"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the people packing up (likely User A and others at the library)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43686426989734173,
+        "ollama_total_s": 0.435261558,
+        "model_load_s": 0.001454517,
+        "prompt_eval_s": 0.082076,
+        "generation_s": 0.24486,
+        "prompt_tokens": 971,
+        "output_tokens": 43,
+        "total_tokens": 1014,
+        "generation_tokens_per_s": 175.61055296904354
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Cool, I’ll start organizing *our printouts* and flagging key sections.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "our printouts",
+          "ground_truth_ambiguous_phrase": "our printouts",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "printouts from the library archives and the article mentioned earlier",
+          "ground_truth_resolution": "physical printouts of research articles",
+          "resolution_similarity": 0.8068804542395462,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "our printouts",
+          "resolved_entity": "printouts from the library archives and the article mentioned earlier"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45307732420042157,
+        "ollama_total_s": 0.451743483,
+        "model_load_s": 0.003438847,
+        "prompt_eval_s": 0.082662,
+        "generation_s": 0.255174,
+        "prompt_tokens": 997,
+        "output_tokens": 43,
+        "total_tokens": 1040,
+        "generation_tokens_per_s": 168.5124660035897
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Thanks! Did you see *her* message about the timeline poster?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*her*",
+          "ground_truth_ambiguous_phrase": "her",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Samantha Chen",
+          "resolution_similarity": 0.6452483391867432,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the timeline poster",
+          "resolved_entity": "a message about the timeline poster"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*her*",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the timeline poster",
+          "resolved_entity": "a message about the timeline poster"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5185423130169511,
+        "ollama_total_s": 0.517466494,
+        "model_load_s": 0.001529834,
+        "prompt_eval_s": 0.083019,
+        "generation_s": 0.317698,
+        "prompt_tokens": 1018,
+        "output_tokens": 60,
+        "total_tokens": 1078,
+        "generation_tokens_per_s": 188.85860156500829
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Yes, *she* wants us to focus on the period after *the Civil Rights Act*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the Civil Rights Act*",
+          "ground_truth_ambiguous_phrase": "the Civil Rights Act",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The Civil Rights Act of 1964",
+          "ground_truth_resolution": "U.S. Civil Rights Act of 1964",
+          "resolution_similarity": 0.9920604183012376,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (assignment reference)"
+        },
+        {
+          "predicted_ambiguous_phrase": "*she*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Samantha Chen",
+          "resolution_similarity": 0.599370547347559,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*she*",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "*the Civil Rights Act*",
+          "resolved_entity": "The Civil Rights Act of 1964"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49711712915450335,
+        "ollama_total_s": 0.495964263,
+        "model_load_s": 0.001424619,
+        "prompt_eval_s": 0.091628,
+        "generation_s": 0.321732,
+        "prompt_tokens": 1054,
+        "output_tokens": 66,
+        "total_tokens": 1120,
+        "generation_tokens_per_s": 205.13968147402184
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Makes sense. Should we include the info from *that discussion* last week, or just stick with *the readings*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the readings",
+          "ground_truth_ambiguous_phrase": "the readings",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the assigned readings related to the Civil Rights Act and the timeline poster",
+          "ground_truth_resolution": "assigned textbook and articles",
+          "resolution_similarity": 0.5589025818396466,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that discussion",
+          "ground_truth_ambiguous_phrase": "that discussion",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the discussion about the Civil Rights Act and the timeline poster",
+          "ground_truth_resolution": "class discussion on Friday about protest tactics",
+          "resolution_similarity": 0.6586170951654338,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that discussion",
+          "resolved_entity": "the discussion about the Civil Rights Act and the timeline poster"
+        },
+        {
+          "ambiguous_phrase": "the readings",
+          "resolved_entity": "the assigned readings related to the Civil Rights Act and the timeline poster"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5639838050119579,
+        "ollama_total_s": 0.562808525,
+        "model_load_s": 0.001441034,
+        "prompt_eval_s": 0.092259,
+        "generation_s": 0.374145,
+        "prompt_tokens": 1094,
+        "output_tokens": 75,
+        "total_tokens": 1169,
+        "generation_tokens_per_s": 200.45704205588743
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "We should bring in *that example* from the video, too.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that example",
+          "ground_truth_ambiguous_phrase": "that example",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the example from the video",
+          "ground_truth_resolution": "video segment about Freedom Riders",
+          "resolution_similarity": 0.6391248744277667,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that example",
+          "resolved_entity": "the example from the video"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4149896800518036,
+        "ollama_total_s": 0.413871551,
+        "model_load_s": 0.001684238,
+        "prompt_eval_s": 0.092992,
+        "generation_s": 0.215195,
+        "prompt_tokens": 1107,
+        "output_tokens": 36,
+        "total_tokens": 1143,
+        "generation_tokens_per_s": 167.29013220567393
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "The one about *the Freedom Riders*? I flagged it in *my notes*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my notes",
+          "ground_truth_ambiguous_phrase": "my notes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's personal notes",
+          "ground_truth_resolution": "Jordan's Class Notes (Google Docs)",
+          "resolution_similarity": 0.6506771520875518,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the one about *the Freedom Riders*",
+          "resolved_entity": "the Freedom Riders example from the video"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the Freedom Riders",
+          "ground_truth_resolution": "Freedom Riders, 1961 Civil Rights Action",
+          "resolution_source": "User B Notes"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the one about *the Freedom Riders*",
+          "resolved_entity": "the Freedom Riders example from the video"
+        },
+        {
+          "ambiguous_phrase": "my notes",
+          "resolved_entity": "User B's personal notes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5809096591547132,
+        "ollama_total_s": 0.579640821,
+        "model_load_s": 0.001451814,
+        "prompt_eval_s": 0.097701,
+        "generation_s": 0.390683,
+        "prompt_tokens": 1139,
+        "output_tokens": 69,
+        "total_tokens": 1208,
+        "generation_tokens_per_s": 176.61377638648213
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Exactly. Also, do you want to take turns *presenting*, or just have one of us do most of the talking?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23535839514806867,
+        "ollama_total_s": 0.234342662,
+        "model_load_s": 0.001158426,
+        "prompt_eval_s": 0.099178,
+        "generation_s": 0.025489,
+        "prompt_tokens": 1183,
+        "output_tokens": 6,
+        "total_tokens": 1189,
+        "generation_tokens_per_s": 235.3956608733179
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Let’s split it. I’m more comfortable covering *that chart*, if you don’t mind.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that chart",
+          "ground_truth_ambiguous_phrase": "that chart",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the chart mentioned in the conversation about the Freedom Riders example from the video",
+          "ground_truth_resolution": "statistical chart on civil rights legislation",
+          "resolution_similarity": 0.670164704566004,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that chart",
+          "resolved_entity": "the chart mentioned in the conversation about the Freedom Riders example from the video"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46314159501343966,
+        "ollama_total_s": 0.46202888,
+        "model_load_s": 0.002647572,
+        "prompt_eval_s": 0.098886,
+        "generation_s": 0.263243,
+        "prompt_tokens": 1207,
+        "output_tokens": 45,
+        "total_tokens": 1252,
+        "generation_tokens_per_s": 170.9447164786908
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "No problem! I’ll talk through *the timeline* then. Do you have *the handouts* from last session?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the handouts",
+          "ground_truth_ambiguous_phrase": "the handouts",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the handouts from last session, referenced in Turn 27",
+          "ground_truth_resolution": "class handouts on civil rights",
+          "resolution_similarity": 0.6406799570741698,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Backpack + previous class"
+        },
+        {
+          "predicted_ambiguous_phrase": "the timeline",
+          "ground_truth_ambiguous_phrase": "the timeline",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the timeline poster mentioned by User B in Turn 20, focusing on the period after the Civil Rights Act (Turn 21)",
+          "ground_truth_resolution": "historical timeline of civil rights",
+          "resolution_similarity": 0.7457500822666995,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the timeline",
+          "resolved_entity": "the timeline poster mentioned by User B in Turn 20, focusing on the period after the Civil Rights Act (Turn 21)"
+        },
+        {
+          "ambiguous_phrase": "the handouts",
+          "resolved_entity": "the handouts from last session, referenced in Turn 27"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6615937640890479,
+        "ollama_total_s": 0.660272145,
+        "model_load_s": 0.001079635,
+        "prompt_eval_s": 0.100753,
+        "generation_s": 0.446247,
+        "prompt_tokens": 1247,
+        "output_tokens": 92,
+        "total_tokens": 1339,
+        "generation_tokens_per_s": 206.16385096146306
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Yeah, I grabbed *them* from *the folder* in my backpack.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the folder",
+          "ground_truth_ambiguous_phrase": "the folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folder in my backpack",
+          "ground_truth_resolution": "Jordan's backpack folder",
+          "resolution_similarity": 0.808850661537985,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Backpack"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the handouts from last session",
+          "ground_truth_resolution": "the handouts",
+          "resolution_similarity": 0.8697820272136241,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Backpack"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the handouts from last session"
+        },
+        {
+          "ambiguous_phrase": "the folder",
+          "resolved_entity": "the folder in my backpack"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.553461576346308,
+        "ollama_total_s": 0.552276295,
+        "model_load_s": 0.001234852,
+        "prompt_eval_s": 0.113874,
+        "generation_s": 0.333946,
+        "prompt_tokens": 1264,
+        "output_tokens": 61,
+        "total_tokens": 1325,
+        "generation_tokens_per_s": 182.66426308445077
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Awesome, thanks. By the way, did *the coordinator* send the final format yet?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the coordinator",
+          "ground_truth_ambiguous_phrase": "the coordinator",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the coordinator (referent is ambiguous, but likely refers to the person responsible for organizing the research session or project, possibly Jordan or another project manager)",
+          "ground_truth_resolution": "Ms. Patel (assignment coordinator)",
+          "resolution_similarity": 0.6088285562128581,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the coordinator",
+          "resolved_entity": "the coordinator (referent is ambiguous, but likely refers to the person responsible for organizing the research session or project, possibly Jordan or another project manager)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5632125050760806,
+        "ollama_total_s": 0.562129812,
+        "model_load_s": 0.001229042,
+        "prompt_eval_s": 0.115336,
+        "generation_s": 0.330822,
+        "prompt_tokens": 1296,
+        "output_tokens": 60,
+        "total_tokens": 1356,
+        "generation_tokens_per_s": 181.3664145673504
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Not yet, but I heard *she* was going to send a template *later this afternoon*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*later this afternoon*",
+          "ground_truth_ambiguous_phrase": "later this afternoon",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "A time reference relative to the current moment in the conversation, likely referring to the afternoon of the same day as the current conversation",
+          "ground_truth_resolution": "3:00 PM today",
+          "resolution_similarity": 0.6758221026113194,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*she*",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's colleague or collaborator (not explicitly identified in the conversation, but likely referring to someone involved in the research project)",
+          "ground_truth_resolution": "Ms. Patel",
+          "resolution_similarity": 0.4451648015669078,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*she*",
+          "resolved_entity": "User A's colleague or collaborator (not explicitly identified in the conversation, but likely referring to someone involved in the research project)"
+        },
+        {
+          "ambiguous_phrase": "*later this afternoon*",
+          "resolved_entity": "A time reference relative to the current moment in the conversation, likely referring to the afternoon of the same day as the current conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7300328249111772,
+        "ollama_total_s": 0.728925403,
+        "model_load_s": 0.001238655,
+        "prompt_eval_s": 0.115775,
+        "generation_s": 0.494989,
+        "prompt_tokens": 1329,
+        "output_tokens": 103,
+        "total_tokens": 1432,
+        "generation_tokens_per_s": 208.08543220152367
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Alright, I’ll check my email again *then*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "then",
+          "ground_truth_ambiguous_phrase": "then",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "later this afternoon",
+          "ground_truth_resolution": "3:00 PM today",
+          "resolution_similarity": 0.7051422780490008,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "later this afternoon"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.38584163086488843,
+        "ollama_total_s": 0.384549362,
+        "model_load_s": 0.001403044,
+        "prompt_eval_s": 0.11621,
+        "generation_s": 0.144148,
+        "prompt_tokens": 1342,
+        "output_tokens": 22,
+        "total_tokens": 1364,
+        "generation_tokens_per_s": 152.6209173904598
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Want to grab *a snack* at *the café* after we finish?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "a snack",
+          "ground_truth_ambiguous_phrase": "a snack",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "snack",
+          "ground_truth_resolution": "food purchased at local café",
+          "resolution_similarity": 0.6497111588849576,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A + B prior routine"
+        },
+        {
+          "predicted_ambiguous_phrase": "the café",
+          "ground_truth_ambiguous_phrase": "the café",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Café",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "resolution_similarity": 0.7494582165526475,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the café",
+          "resolved_entity": "Yorkville Library Café"
+        },
+        {
+          "ambiguous_phrase": "a snack",
+          "resolved_entity": "snack"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5453059189021587,
+        "ollama_total_s": 0.54426628,
+        "model_load_s": 0.00125265,
+        "prompt_eval_s": 0.117305,
+        "generation_s": 0.318655,
+        "prompt_tokens": 1372,
+        "output_tokens": 57,
+        "total_tokens": 1429,
+        "generation_tokens_per_s": 178.87684172537698
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Sure! Is *the usual place* still good?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the usual place",
+          "ground_truth_ambiguous_phrase": "the usual place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Ava's Apartment - Upper East Side",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "resolution_similarity": 0.7141778079612412,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the usual place",
+          "resolved_entity": "Ava's Apartment - Upper East Side"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47591153578832746,
+        "ollama_total_s": 0.474530165,
+        "model_load_s": 0.00140381,
+        "prompt_eval_s": 0.117476,
+        "generation_s": 0.233454,
+        "prompt_tokens": 1388,
+        "output_tokens": 40,
+        "total_tokens": 1428,
+        "generation_tokens_per_s": 171.3399641899475
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Yeah, let’s meet *there* in about an hour.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Study Room 2",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "resolution_similarity": 0.5516904845712167,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Yorkville Library Study Room 2"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4475739127956331,
+        "ollama_total_s": 0.446064208,
+        "model_load_s": 0.001734289,
+        "prompt_eval_s": 0.129753999,
+        "generation_s": 0.205187,
+        "prompt_tokens": 1413,
+        "output_tokens": 37,
+        "total_tokens": 1450,
+        "generation_tokens_per_s": 180.32331482988687
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Sounds perfect. Oh, do you remember where we saved *that infographic* from history class?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that infographic",
+          "ground_truth_ambiguous_phrase": "that infographic",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the infographic from history class",
+          "ground_truth_resolution": "Infographic: Timeline of Protest Movements",
+          "resolution_similarity": 0.7412023834630371,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that infographic",
+          "resolved_entity": "the infographic from history class"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4684808040037751,
+        "ollama_total_s": 0.467126791,
+        "model_load_s": 0.001240953,
+        "prompt_eval_s": 0.131031,
+        "generation_s": 0.220689,
+        "prompt_tokens": 1448,
+        "output_tokens": 36,
+        "total_tokens": 1484,
+        "generation_tokens_per_s": 163.12548427878144
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "I think it’s in *the shared drive*, under *presentations*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "presentations",
+          "ground_truth_ambiguous_phrase": "presentations",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "presentations",
+          "ground_truth_resolution": "subfolder for presentations in shared drive",
+          "resolution_similarity": 0.5953934021071123,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Shared Drive"
+        },
+        {
+          "predicted_ambiguous_phrase": "the shared drive",
+          "ground_truth_ambiguous_phrase": "the shared drive",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "shared drive",
+          "ground_truth_resolution": "Google Drive: Ava & Jordan shared folder",
+          "resolution_similarity": 0.7522234425252075,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the shared drive",
+          "resolved_entity": "shared drive"
+        },
+        {
+          "ambiguous_phrase": "presentations",
+          "resolved_entity": "presentations"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4870199291035533,
+        "ollama_total_s": 0.485963174,
+        "model_load_s": 0.001324345,
+        "prompt_eval_s": 0.131026999,
+        "generation_s": 0.231147,
+        "prompt_tokens": 1471,
+        "output_tokens": 39,
+        "total_tokens": 1510,
+        "generation_tokens_per_s": 168.7237991408065
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Great, I’ll check *it* now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "the infographic",
+          "resolution_similarity": 0.6723860986830595,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43250224087387323,
+        "ollama_total_s": 0.431460939,
+        "model_load_s": 0.001419131,
+        "prompt_eval_s": 0.131937,
+        "generation_s": 0.171757,
+        "prompt_tokens": 1485,
+        "output_tokens": 32,
+        "total_tokens": 1517,
+        "generation_tokens_per_s": 186.30972827890568
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Just let me know if you can’t find *it*, I can resend from *my laptop*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my laptop",
+          "ground_truth_ambiguous_phrase": "my laptop",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's laptop",
+          "ground_truth_resolution": "Jordan’s MacBook Air",
+          "resolution_similarity": 0.6907412647350032,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B local device"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "that infographic",
+          "ground_truth_resolution": "the infographic",
+          "resolution_similarity": 0.9871245678848796,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "that infographic"
+        },
+        {
+          "ambiguous_phrase": "my laptop",
+          "resolved_entity": "User B's laptop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5586648001335561,
+        "ollama_total_s": 0.557444981,
+        "model_load_s": 0.001157357,
+        "prompt_eval_s": 0.137363,
+        "generation_s": 0.280823,
+        "prompt_tokens": 1527,
+        "output_tokens": 56,
+        "total_tokens": 1583,
+        "generation_tokens_per_s": 199.41386567339572
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Okay! By the way, how’s *your brother* after *that accident*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that accident",
+          "ground_truth_ambiguous_phrase": "that accident",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "an accident mentioned previously in the conversation",
+          "ground_truth_resolution": "Marcus’s bike accident last week",
+          "resolution_similarity": 0.7192023951876932,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "your brother",
+          "ground_truth_ambiguous_phrase": "your brother",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's brother",
+          "ground_truth_resolution": "Jordan’s younger brother, Marcus",
+          "resolution_similarity": 0.65001175090136,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "your brother",
+          "resolved_entity": "User B's brother"
+        },
+        {
+          "ambiguous_phrase": "that accident",
+          "resolved_entity": "an accident mentioned previously in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.610754581168294,
+        "ollama_total_s": 0.609640385,
+        "model_load_s": 0.001231499,
+        "prompt_eval_s": 0.137228,
+        "generation_s": 0.339061,
+        "prompt_tokens": 1552,
+        "output_tokens": 62,
+        "total_tokens": 1614,
+        "generation_tokens_per_s": 182.85795181398038
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "He’s getting better, thanks! *Mom* made him this huge breakfast today.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Mom",
+          "ground_truth_ambiguous_phrase": "Mom",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's mother",
+          "ground_truth_resolution": "Jordan's mother, Mrs. Taylor",
+          "resolution_similarity": 0.659889579768215,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He’s",
+          "resolved_entity": "User B's brother"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He’s",
+          "resolved_entity": "User B's brother"
+        },
+        {
+          "ambiguous_phrase": "Mom",
+          "resolved_entity": "User B's mother"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5829564398154616,
+        "ollama_total_s": 0.581751569,
+        "model_load_s": 0.001229067,
+        "prompt_eval_s": 0.138799,
+        "generation_s": 0.294032,
+        "prompt_tokens": 1578,
+        "output_tokens": 58,
+        "total_tokens": 1636,
+        "generation_tokens_per_s": 197.25744136692603
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "That’s good to hear. Tell *him* I’m wishing him well.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B's brother",
+          "ground_truth_resolution": "Marcus Taylor",
+          "resolution_similarity": 0.6230159366083685,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User B's brother"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User B's brother"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User B's brother"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49297965271398425,
+        "ollama_total_s": 0.492024649,
+        "model_load_s": 0.001402695,
+        "prompt_eval_s": 0.139098,
+        "generation_s": 0.22513,
+        "prompt_tokens": 1603,
+        "output_tokens": 40,
+        "total_tokens": 1643,
+        "generation_tokens_per_s": 177.67512104117623
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Will do! Have you seen *the weather* today? It’s finally sunny.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the weather",
+          "ground_truth_ambiguous_phrase": "the weather",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Current weather at Yorkville Library Study Room 2",
+          "ground_truth_resolution": "Current weather in New York: sunny, 68°F",
+          "resolution_similarity": 0.6555173107144036,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B local weather API"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the weather",
+          "resolved_entity": "Current weather at Yorkville Library Study Room 2"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.496315591968596,
+        "ollama_total_s": 0.495265584,
+        "model_load_s": 0.001138726,
+        "prompt_eval_s": 0.140078,
+        "generation_s": 0.212992,
+        "prompt_tokens": 1631,
+        "output_tokens": 41,
+        "total_tokens": 1672,
+        "generation_tokens_per_s": 192.49549278846155
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Yeah, I’m tempted to just work *outside* for a change.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "outside",
+          "ground_truth_ambiguous_phrase": "outside",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Outside of Ava's Apartment - Upper East Side",
+          "ground_truth_resolution": "outdoor seating at Yorkville Library",
+          "resolution_similarity": 0.6137330849389444,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "outside",
+          "resolved_entity": "Outside of Ava's Apartment - Upper East Side"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43048061104491353,
+        "ollama_total_s": 0.429122413,
+        "model_load_s": 0.001296924,
+        "prompt_eval_s": 0.146098,
+        "generation_s": 0.148983,
+        "prompt_tokens": 1654,
+        "output_tokens": 28,
+        "total_tokens": 1682,
+        "generation_tokens_per_s": 187.94090600941047
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Let’s do that next time. For now, let’s get to work on *this section* of the assignment.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this section",
+          "ground_truth_ambiguous_phrase": "this section",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the specific section of the assignment they are currently working on, which was previously mentioned in the conversation",
+          "ground_truth_resolution": "analysis of post-Civil Rights legislation",
+          "resolution_similarity": 0.44698530154021915,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B assignment rubric"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this section",
+          "resolved_entity": "the specific section of the assignment they are currently working on, which was previously mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5429811156354845,
+        "ollama_total_s": 0.541881468,
+        "model_load_s": 0.001427924,
+        "prompt_eval_s": 0.147815,
+        "generation_s": 0.24633,
+        "prompt_tokens": 1697,
+        "output_tokens": 50,
+        "total_tokens": 1747,
+        "generation_tokens_per_s": 202.97974262168637
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Agreed. I’ll finalize *the outline*, and you can review *the citations*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the citations",
+          "ground_truth_ambiguous_phrase": "the citations",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the citations for the assignment",
+          "ground_truth_resolution": "Works Cited list for assignment",
+          "resolution_similarity": 0.7790300974834361,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Shared Drive"
+        },
+        {
+          "predicted_ambiguous_phrase": "the outline",
+          "ground_truth_ambiguous_phrase": "the outline",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the outline for the assignment",
+          "ground_truth_resolution": "presentation outline draft (Google Doc)",
+          "resolution_similarity": 0.6375937056653217,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Shared Drive"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the outline",
+          "resolved_entity": "the outline for the assignment"
+        },
+        {
+          "ambiguous_phrase": "the citations",
+          "resolved_entity": "the citations for the assignment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6015550126321614,
+        "ollama_total_s": 0.600169749,
+        "model_load_s": 0.00144734,
+        "prompt_eval_s": 0.148734,
+        "generation_s": 0.301094,
+        "prompt_tokens": 1721,
+        "output_tokens": 61,
+        "total_tokens": 1782,
+        "generation_tokens_per_s": 202.59453858263535
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Absolutely. And when we meet *there* later, let’s make sure we run through everything once.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Yorkville Library Study Room 2",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "resolution_similarity": 0.5516904845712167,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "future time reference relative to the current conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Yorkville Library Study Room 2"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "future time reference relative to the current conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5818188679404557,
+        "ollama_total_s": 0.58065267,
+        "model_load_s": 0.001574423,
+        "prompt_eval_s": 0.149774,
+        "generation_s": 0.295787,
+        "prompt_tokens": 1754,
+        "output_tokens": 64,
+        "total_tokens": 1818,
+        "generation_tokens_per_s": 216.37191627759162
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Got it. See you at *the café*!",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the café",
+          "ground_truth_ambiguous_phrase": "the café",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Ava's Apartment - Upper East Side",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "resolution_similarity": 0.7141778079612412,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the café",
+          "resolved_entity": "Ava's Apartment - Upper East Side"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4578232830390334,
+        "ollama_total_s": 0.456688257,
+        "model_load_s": 0.001357676,
+        "prompt_eval_s": 0.149401,
+        "generation_s": 0.156263,
+        "prompt_tokens": 1765,
+        "output_tokens": 28,
+        "total_tokens": 1793,
+        "generation_tokens_per_s": 179.1850918003622
+      }
+    }
+  ]
+}

@@ -1,0 +1,2512 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/companions_006.json",
+  "metrics": {
+    "ground_truth_ambiguities": 28,
+    "qwen_predicted_ambiguities": 67,
+    "detected_ground_truth_ambiguities": 12,
+    "missed_ground_truth_ambiguities": 16,
+    "detected_but_bad_resolution": 6,
+    "true_positives": 6,
+    "false_negatives": 22,
+    "false_positive_ambiguities": 55,
+    "detection_recall": 0.42857142857142855,
+    "detection_precision": 0.1791044776119403,
+    "detection_f1": 0.2526315789473684,
+    "true_positive_rate_at_0_70": 0.21428571428571427,
+    "strict_end_to_end_precision_at_0_70": 0.08955223880597014,
+    "end_to_end_f1_at_0_70": 0.1263157894736842,
+    "false_positive_discovery_rate": 0.8208955223880597,
+    "false_positives_per_turn": 0.9821428571428571,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 56,
+    "median_latency_per_turn_s": 0.4645327974576503,
+    "mean_latency_per_turn_s": 0.4555830154983726,
+    "total_prompt_tokens": 66968,
+    "total_output_tokens": 2435
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A (Tyler)",
+      "text": "Thanks for making it, everyone. I'm glad we're all here.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Living Room, 104 Grove St, Atlanta",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2316573611460626,
+        "ollama_total_s": 0.230510772,
+        "model_load_s": 0.001198555,
+        "prompt_eval_s": 0.036654,
+        "generation_s": 0.025562,
+        "prompt_tokens": 496,
+        "output_tokens": 6,
+        "total_tokens": 502,
+        "generation_tokens_per_s": 234.72341757295985
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B (Jordan)",
+      "text": "Yeah, I just finished my shift. Sorry I'm running late—I was there with Meera until a minute ago.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Kitchen, 104 Grove St, Atlanta",
+          "ground_truth_resolution": "Kitchen, 104 Grove St, Atlanta",
+          "resolution_similarity": 0.9997585643732504,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Gym with Meera, 8:30 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Kitchen, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Gym with Meera, 8:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6035528653301299,
+        "ollama_total_s": 0.602466549,
+        "model_load_s": 0.0011071,
+        "prompt_eval_s": 0.040383,
+        "generation_s": 0.521068,
+        "prompt_tokens": 540,
+        "output_tokens": 102,
+        "total_tokens": 642,
+        "generation_tokens_per_s": 195.75180206806021
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "No worries. So, this place is the only spot quiet enough for a meeting, right?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "this place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Living Room, 104 Grove St, Atlanta",
+          "ground_truth_resolution": "Living Room, 104 Grove St, Atlanta",
+          "resolution_similarity": 0.9998602581595162,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.34448871901258826,
+        "ollama_total_s": 0.343480883,
+        "model_load_s": 0.000996554,
+        "prompt_eval_s": 0.041459,
+        "generation_s": 0.244417,
+        "prompt_tokens": 561,
+        "output_tokens": 42,
+        "total_tokens": 603,
+        "generation_tokens_per_s": 171.83747448008936
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "I mean, the kitchen's a mess. Living room works. Sorry about the plates over there.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the kitchen's a mess",
+          "resolved_entity": "Kitchen, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "Living room works",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "plates over there",
+          "resolved_entity": "Kitchen, 104 Grove St, Atlanta"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "over there",
+          "ground_truth_resolution": "Corner of Kitchen",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the kitchen's a mess",
+          "resolved_entity": "Kitchen, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "Living room works",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "plates over there",
+          "resolved_entity": "Kitchen, 104 Grove St, Atlanta"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6054467633366585,
+        "ollama_total_s": 0.604433301,
+        "model_load_s": 0.00314467,
+        "prompt_eval_s": 0.046223,
+        "generation_s": 0.506417,
+        "prompt_tokens": 591,
+        "output_tokens": 107,
+        "total_tokens": 698,
+        "generation_tokens_per_s": 211.28832562887897
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "It's fine. Let’s get started. I’ve got the rent breakdown here—I’ll share it on this doc.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this doc",
+          "resolved_entity": "the document mentioned in the current turn (rent breakdown)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Google Doc: 'Rent Breakdown - April'",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this doc",
+          "resolved_entity": "the document mentioned in the current turn (rent breakdown)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3902715356089175,
+        "ollama_total_s": 0.388776919,
+        "model_load_s": 0.001250131,
+        "prompt_eval_s": 0.047341,
+        "generation_s": 0.269445,
+        "prompt_tokens": 628,
+        "output_tokens": 41,
+        "total_tokens": 669,
+        "generation_tokens_per_s": 152.16463471209337
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Cool. Did Meera leave the folder with last month’s receipts?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the folder",
+          "resolved_entity": "folder with last month’s receipts"
+        },
+        {
+          "ambiguous_phrase": "last month’s receipts",
+          "resolved_entity": "last month’s receipts"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the folder",
+          "resolved_entity": "folder with last month’s receipts"
+        },
+        {
+          "ambiguous_phrase": "last month’s receipts",
+          "resolved_entity": "last month’s receipts"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4443988548591733,
+        "ollama_total_s": 0.443155034,
+        "model_load_s": 0.001437541,
+        "prompt_eval_s": 0.047207,
+        "generation_s": 0.343076,
+        "prompt_tokens": 641,
+        "output_tokens": 63,
+        "total_tokens": 704,
+        "generation_tokens_per_s": 183.6327810747473
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Yeah, she dropped it off earlier. I put that folder by the window.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that folder",
+          "ground_truth_ambiguous_phrase": "that folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the folder with last month’s receipts",
+          "ground_truth_resolution": "Folder: 'Receipts March-April'",
+          "resolution_similarity": 0.8226774988121125,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "that folder",
+          "resolved_entity": "the folder with last month’s receipts"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44964069966226816,
+        "ollama_total_s": 0.448300859,
+        "model_load_s": 0.00136412,
+        "prompt_eval_s": 0.04808,
+        "generation_s": 0.325795,
+        "prompt_tokens": 668,
+        "output_tokens": 59,
+        "total_tokens": 727,
+        "generation_tokens_per_s": 181.0954741478537
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Great, I’ll grab it. Is she joining us now, or still at the gym?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "us",
+          "resolved_entity": "User A (Tyler) and User B (Jordan)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Living Room, 104 Grove St, Atlanta",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "us",
+          "resolved_entity": "User A (Tyler) and User B (Jordan)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43437900906428695,
+        "ollama_total_s": 0.433078002,
+        "model_load_s": 0.001345689,
+        "prompt_eval_s": 0.052094,
+        "generation_s": 0.324694,
+        "prompt_tokens": 699,
+        "output_tokens": 61,
+        "total_tokens": 760,
+        "generation_tokens_per_s": 187.8691937639747
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "She texted me saying she’d be here after, so probably later.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "after the gym session, likely around 8:30 PM"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "after",
+          "ground_truth_resolution": "After Gym: ~8:15 PM",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "after the gym session, likely around 8:30 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5886288601905107,
+        "ollama_total_s": 0.58743321,
+        "model_load_s": 0.001604474,
+        "prompt_eval_s": 0.053369,
+        "generation_s": 0.465498,
+        "prompt_tokens": 719,
+        "output_tokens": 90,
+        "total_tokens": 809,
+        "generation_tokens_per_s": 193.34132477475734
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Alright. So, rent’s due next Thursday. Are we splitting utilities with that or separate?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "rent"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "next Thursday",
+          "ground_truth_resolution": "Thursday, April 25th",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "rent"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3509999578818679,
+        "ollama_total_s": 0.349577518,
+        "model_load_s": 0.001579112,
+        "prompt_eval_s": 0.060547,
+        "generation_s": 0.196218,
+        "prompt_tokens": 753,
+        "output_tokens": 31,
+        "total_tokens": 784,
+        "generation_tokens_per_s": 157.9875444658492
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Let’s do utilities separately. The electric bill came in yesterday—that’s this envelope.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that’s this envelope",
+          "resolved_entity": "the envelope mentioned in the current turn, which contains the electric bill that came in yesterday"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this envelope",
+          "ground_truth_resolution": "Envelope: Electric Bill, April",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that’s this envelope",
+          "resolved_entity": "the envelope mentioned in the current turn, which contains the electric bill that came in yesterday"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4041356719098985,
+        "ollama_total_s": 0.402809655,
+        "model_load_s": 0.001364677,
+        "prompt_eval_s": 0.062339,
+        "generation_s": 0.27984,
+        "prompt_tokens": 778,
+        "output_tokens": 50,
+        "total_tokens": 828,
+        "generation_tokens_per_s": 178.67352773013153
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "I haven’t seen it yet. Who paid last time?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the electric bill"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "the previous rent payment"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the electric bill"
+        },
+        {
+          "ambiguous_phrase": "last time",
+          "resolved_entity": "the previous rent payment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4533171998336911,
+        "ollama_total_s": 0.451827044,
+        "model_load_s": 0.001227512,
+        "prompt_eval_s": 0.062419,
+        "generation_s": 0.317744,
+        "prompt_tokens": 795,
+        "output_tokens": 57,
+        "total_tokens": 852,
+        "generation_tokens_per_s": 179.38969736643335
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Meera handled it last month; I paid the water bill then.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the electric bill"
+        },
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "last month"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "last month",
+          "ground_truth_resolution": "March 2024",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the electric bill"
+        },
+        {
+          "ambiguous_phrase": "then",
+          "resolved_entity": "last month"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44374820590019226,
+        "ollama_total_s": 0.442509349,
+        "model_load_s": 0.001430707,
+        "prompt_eval_s": 0.069692,
+        "generation_s": 0.297417,
+        "prompt_tokens": 821,
+        "output_tokens": 54,
+        "total_tokens": 875,
+        "generation_tokens_per_s": 181.5632596657219
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Got it. So, how much do I owe for this one?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1858703731559217,
+        "ollama_total_s": 0.184430571,
+        "model_load_s": 0.00281776,
+        "prompt_eval_s": 0.070529,
+        "generation_s": 0.024797,
+        "prompt_tokens": 845,
+        "output_tokens": 6,
+        "total_tokens": 851,
+        "generation_tokens_per_s": 241.964753800863
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "It’s $128.67. Split three ways, that’s $42.89 each.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.17425223113968968,
+        "ollama_total_s": 0.173029526,
+        "model_load_s": 0.001312663,
+        "prompt_eval_s": 0.073183,
+        "generation_s": 0.024527,
+        "prompt_tokens": 889,
+        "output_tokens": 6,
+        "total_tokens": 895,
+        "generation_tokens_per_s": 244.62836873649448
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Alright, I’ll transfer mine now. Should I send it to you or Meera?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "User A's contact (Meera, not explicitly named in the conversation, but referenced in prior turns as the one who handled the electric bill and left the folder with receipts)."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "User A's contact (Meera, not explicitly named in the conversation, but referenced in prior turns as the one who handled the electric bill and left the folder with receipts)."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5526860891841352,
+        "ollama_total_s": 0.551487994,
+        "model_load_s": 0.001794542,
+        "prompt_eval_s": 0.073411,
+        "generation_s": 0.386048,
+        "prompt_tokens": 911,
+        "output_tokens": 66,
+        "total_tokens": 977,
+        "generation_tokens_per_s": 170.96319628647214
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "To me for electric. Meera’s got the water bill this month.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "To me for electric.",
+          "resolved_entity": "electric bill"
+        },
+        {
+          "ambiguous_phrase": "Meera’s got the water bill this month.",
+          "resolved_entity": "water bill"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Meera",
+          "ground_truth_resolution": "Meera Patel, Roommate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "To me for electric.",
+          "resolved_entity": "electric bill"
+        },
+        {
+          "ambiguous_phrase": "Meera’s got the water bill this month.",
+          "resolved_entity": "water bill"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5216569057665765,
+        "ollama_total_s": 0.52029054,
+        "model_load_s": 0.001540503,
+        "prompt_eval_s": 0.082079,
+        "generation_s": 0.343485,
+        "prompt_tokens": 933,
+        "output_tokens": 64,
+        "total_tokens": 997,
+        "generation_tokens_per_s": 186.32545817139032
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Okay. And the water bill—when’s that due?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the water bill",
+          "resolved_entity": "the water bill this month"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the water bill",
+          "resolved_entity": "the water bill this month"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.39150179363787174,
+        "ollama_total_s": 0.390153438,
+        "model_load_s": 0.001611417,
+        "prompt_eval_s": 0.082728,
+        "generation_s": 0.21978,
+        "prompt_tokens": 952,
+        "output_tokens": 37,
+        "total_tokens": 989,
+        "generation_tokens_per_s": 168.35016835016836
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Next Tuesday. It should be just under $60 total.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Next Tuesday",
+          "ground_truth_ambiguous_phrase": "Next Tuesday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Next Tuesday (calendar event for water bill due date)",
+          "ground_truth_resolution": "Tuesday, April 23rd",
+          "resolution_similarity": 0.6252574926547962,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The water bill (referenced from the previous context of the water bill due date)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Next Tuesday",
+          "resolved_entity": "Next Tuesday (calendar event for water bill due date)"
+        },
+        {
+          "ambiguous_phrase": "It",
+          "resolved_entity": "The water bill (referenced from the previous context of the water bill due date)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5366503740660846,
+        "ollama_total_s": 0.535400607,
+        "model_load_s": 0.001467332,
+        "prompt_eval_s": 0.082702,
+        "generation_s": 0.370927,
+        "prompt_tokens": 976,
+        "output_tokens": 76,
+        "total_tokens": 1052,
+        "generation_tokens_per_s": 204.89206771143648
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Alright, I’ll Venmo Meera for water then. Can you remind me on Sunday?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Meera (User A's roommate, mentioned in prior turns as handling bills and present at the gym)"
+        },
+        {
+          "ambiguous_phrase": "water",
+          "resolved_entity": "water bill (referenced in prior turns as Meera's responsibility for the month)"
+        },
+        {
+          "ambiguous_phrase": "remind me on Sunday",
+          "resolved_entity": "Sunday (relative time, referring to the upcoming Sunday after the current conversation)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Sunday",
+          "ground_truth_resolution": "Sunday, April 21st",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Meera (User A's roommate, mentioned in prior turns as handling bills and present at the gym)"
+        },
+        {
+          "ambiguous_phrase": "water",
+          "resolved_entity": "water bill (referenced in prior turns as Meera's responsibility for the month)"
+        },
+        {
+          "ambiguous_phrase": "remind me on Sunday",
+          "resolved_entity": "Sunday (relative time, referring to the upcoming Sunday after the current conversation)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8103868151083589,
+        "ollama_total_s": 0.809169406,
+        "model_load_s": 0.001860318,
+        "prompt_eval_s": 0.08234,
+        "generation_s": 0.633491,
+        "prompt_tokens": 1011,
+        "output_tokens": 123,
+        "total_tokens": 1134,
+        "generation_tokens_per_s": 194.16219014950488
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Of course. Actually, I’ll put it in the shared calendar right now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the shared calendar",
+          "resolved_entity": "shared calendar"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "shared calendar",
+          "ground_truth_resolution": "Google Calendar: 'House Expenses'",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the shared calendar",
+          "resolved_entity": "shared calendar"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4191414378583431,
+        "ollama_total_s": 0.417875356,
+        "model_load_s": 0.001571113,
+        "prompt_eval_s": 0.091794,
+        "generation_s": 0.216496,
+        "prompt_tokens": 1034,
+        "output_tokens": 34,
+        "total_tokens": 1068,
+        "generation_tokens_per_s": 157.04678146478457
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Nice, thanks. Did you get the calendar invite for rent too?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the calendar invite for rent",
+          "resolved_entity": "House Meeting: Rent & Bills, 7:00 PM"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the calendar invite for rent",
+          "resolved_entity": "House Meeting: Rent & Bills, 7:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4880422609858215,
+        "ollama_total_s": 0.486749883,
+        "model_load_s": 0.001506653,
+        "prompt_eval_s": 0.091997,
+        "generation_s": 0.302318,
+        "prompt_tokens": 1056,
+        "output_tokens": 47,
+        "total_tokens": 1103,
+        "generation_tokens_per_s": 155.46543705634465
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Yeah, I sent it earlier. Check your inbox.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the calendar invite for rent"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the calendar invite for rent"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3678943966515362,
+        "ollama_total_s": 0.366557616,
+        "model_load_s": 0.001533886,
+        "prompt_eval_s": 0.092083,
+        "generation_s": 0.182398,
+        "prompt_tokens": 1074,
+        "output_tokens": 24,
+        "total_tokens": 1098,
+        "generation_tokens_per_s": 131.58039013585676
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "I see it now. Got it.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21214645681902766,
+        "ollama_total_s": 0.211100034,
+        "model_load_s": 0.001494012,
+        "prompt_eval_s": 0.092246,
+        "generation_s": 0.025377,
+        "prompt_tokens": 1089,
+        "output_tokens": 6,
+        "total_tokens": 1095,
+        "generation_tokens_per_s": 236.43456673365645
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Cool. I’ll add a reminder for the water bill. That way we won’t forget.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That way we won’t forget.",
+          "resolved_entity": "The reminder for the water bill."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That way we won’t forget.",
+          "resolved_entity": "The reminder for the water bill."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42064595175907016,
+        "ollama_total_s": 0.419187318,
+        "model_load_s": 0.001441711,
+        "prompt_eval_s": 0.092424,
+        "generation_s": 0.245967,
+        "prompt_tokens": 1129,
+        "output_tokens": 41,
+        "total_tokens": 1170,
+        "generation_tokens_per_s": 166.68902738985312
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Appreciate it. What about the internet bill—are we good for this month?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "this month",
+          "resolved_entity": "the current month (based on the context of the conversation and the mention of the internet bill being discussed in the current turn)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this month",
+          "resolved_entity": "the current month (based on the context of the conversation and the mention of the internet bill being discussed in the current turn)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4839887358248234,
+        "ollama_total_s": 0.482820987,
+        "model_load_s": 0.001423184,
+        "prompt_eval_s": 0.098555,
+        "generation_s": 0.272664,
+        "prompt_tokens": 1153,
+        "output_tokens": 55,
+        "total_tokens": 1208,
+        "generation_tokens_per_s": 201.71346419035882
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Yeah, I paid it last week. It’s covered until the 15th.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23418373242020607,
+        "ollama_total_s": 0.233067195,
+        "model_load_s": 0.001469946,
+        "prompt_eval_s": 0.098924,
+        "generation_s": 0.025639,
+        "prompt_tokens": 1182,
+        "output_tokens": 6,
+        "total_tokens": 1188,
+        "generation_tokens_per_s": 234.0184874605094
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Awesome. Is that the new password on the fridge?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the calendar invite for rent"
+        },
+        {
+          "ambiguous_phrase": "the new password",
+          "resolved_entity": "the internet password"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the calendar invite for rent"
+        },
+        {
+          "ambiguous_phrase": "the new password",
+          "resolved_entity": "the internet password"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5016347621567547,
+        "ollama_total_s": 0.500564772,
+        "model_load_s": 0.001325408,
+        "prompt_eval_s": 0.09878,
+        "generation_s": 0.31432,
+        "prompt_tokens": 1196,
+        "output_tokens": 59,
+        "total_tokens": 1255,
+        "generation_tokens_per_s": 187.70679562229574
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Yep, that sticky note is the current one.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that sticky note",
+          "ground_truth_ambiguous_phrase": "that sticky note",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sticky note on the fridge",
+          "ground_truth_resolution": "Sticky Note: Wifi Password",
+          "resolution_similarity": 0.5446076032145188,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that sticky note",
+          "resolved_entity": "the sticky note on the fridge"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.365049147978425,
+        "ollama_total_s": 0.363752261,
+        "model_load_s": 0.0016475,
+        "prompt_eval_s": 0.099476,
+        "generation_s": 0.147989,
+        "prompt_tokens": 1215,
+        "output_tokens": 27,
+        "total_tokens": 1242,
+        "generation_tokens_per_s": 182.44599260755865
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Very organized. Wish I could say the same about that cabinet!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that cabinet",
+          "resolved_entity": "the cabinet in the kitchen (User B's location)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that cabinet",
+          "resolved_entity": "the cabinet in the kitchen (User B's location)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5022799312137067,
+        "ollama_total_s": 0.500961923,
+        "model_load_s": 0.001269505,
+        "prompt_eval_s": 0.100224,
+        "generation_s": 0.275557,
+        "prompt_tokens": 1241,
+        "output_tokens": 41,
+        "total_tokens": 1282,
+        "generation_tokens_per_s": 148.789542635462
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Haha, I’ll get to it eventually. Anyway, Meera said she’d cover groceries this week.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meera said she’d cover groceries this week",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meera said she’d cover groceries this week",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46506908209994435,
+        "ollama_total_s": 0.463690044,
+        "model_load_s": 0.001762506,
+        "prompt_eval_s": 0.113978,
+        "generation_s": 0.240688,
+        "prompt_tokens": 1282,
+        "output_tokens": 40,
+        "total_tokens": 1322,
+        "generation_tokens_per_s": 166.19025460347004
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Nice. Did she say when she’d go shopping?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "she’d go shopping",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "she’d go shopping",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4815429178997874,
+        "ollama_total_s": 0.480277063,
+        "model_load_s": 0.001604217,
+        "prompt_eval_s": 0.114466,
+        "generation_s": 0.245082,
+        "prompt_tokens": 1292,
+        "output_tokens": 39,
+        "total_tokens": 1331,
+        "generation_tokens_per_s": 159.13041349425907
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Tomorrow afternoon, I think. She’s got class until noon.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She’s got class until noon.",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "tomorrow afternoon",
+          "ground_truth_resolution": "Wednesday, April 17th, 12:30 PM",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She’s got class until noon.",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.441565859131515,
+        "ollama_total_s": 0.440285478,
+        "model_load_s": 0.001248216,
+        "prompt_eval_s": 0.116667,
+        "generation_s": 0.22685,
+        "prompt_tokens": 1317,
+        "output_tokens": 37,
+        "total_tokens": 1354,
+        "generation_tokens_per_s": 163.10337227242672
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Alright, I’ll text her my list after she’s done.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "Meera"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.46399651281535625,
+        "ollama_total_s": 0.462676338,
+        "model_load_s": 0.003358998,
+        "prompt_eval_s": 0.117497,
+        "generation_s": 0.218903,
+        "prompt_tokens": 1340,
+        "output_tokens": 36,
+        "total_tokens": 1376,
+        "generation_tokens_per_s": 164.456403064371
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Sounds good. Oh, did you move the package from the front door?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the package",
+          "resolved_entity": "the package from the front door (location-dependent reference)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the package",
+          "resolved_entity": "the package from the front door (location-dependent reference)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49658255791291595,
+        "ollama_total_s": 0.495230758,
+        "model_load_s": 0.001589595,
+        "prompt_eval_s": 0.117752,
+        "generation_s": 0.244851,
+        "prompt_tokens": 1367,
+        "output_tokens": 41,
+        "total_tokens": 1408,
+        "generation_tokens_per_s": 167.44877496926702
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Yeah, I put it on that shelf by the stairs.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that shelf by the stairs",
+          "ground_truth_ambiguous_phrase": "that shelf by the stairs",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "shelf by the stairs (in the hallway between the kitchen and living room)",
+          "ground_truth_resolution": "Shelf next to staircase, Living Room",
+          "resolution_similarity": 0.7615561075964996,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that shelf by the stairs",
+          "resolved_entity": "shelf by the stairs (in the hallway between the kitchen and living room)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5226337257772684,
+        "ollama_total_s": 0.52131177,
+        "model_load_s": 0.001431391,
+        "prompt_eval_s": 0.118064,
+        "generation_s": 0.271802,
+        "prompt_tokens": 1386,
+        "output_tokens": 48,
+        "total_tokens": 1434,
+        "generation_tokens_per_s": 176.5991420225017
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Perfect. That’s Meera’s textbook, I think.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That’s Meera’s textbook, I think.",
+          "resolved_entity": "the package from the front door (moved to the shelf by the stairs)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Meera's textbook",
+          "ground_truth_resolution": "Textbook: 'Chemistry 201', Meera Patel",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That’s Meera’s textbook, I think.",
+          "resolved_entity": "the package from the front door (moved to the shelf by the stairs)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5521915857680142,
+        "ollama_total_s": 0.550804348,
+        "model_load_s": 0.001603225,
+        "prompt_eval_s": 0.130529,
+        "generation_s": 0.305733,
+        "prompt_tokens": 1408,
+        "output_tokens": 52,
+        "total_tokens": 1460,
+        "generation_tokens_per_s": 170.0830463181927
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Cool. Let her know it’s there when she gets in.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it’s there",
+          "resolved_entity": "the package"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it’s there",
+          "resolved_entity": "the package"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4739602063782513,
+        "ollama_total_s": 0.472620498,
+        "model_load_s": 0.001780459,
+        "prompt_eval_s": 0.131547,
+        "generation_s": 0.218305,
+        "prompt_tokens": 1432,
+        "output_tokens": 34,
+        "total_tokens": 1466,
+        "generation_tokens_per_s": 155.74540207507846
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Will do. And I’ll text the landlord about the leak tonight.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the landlord",
+          "ground_truth_ambiguous_phrase": "the landlord",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the landlord of the apartment at 104 Grove St, Atlanta",
+          "ground_truth_resolution": "Mr. Dennis Walker, Landlord",
+          "resolution_similarity": 0.6135322728488646,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the leak",
+          "resolved_entity": "the leak in the apartment (implied by context of the conversation about the apartment and the leak being mentioned previously)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the leak",
+          "resolved_entity": "the leak in the apartment (implied by context of the conversation about the apartment and the leak being mentioned previously)"
+        },
+        {
+          "ambiguous_phrase": "the landlord",
+          "resolved_entity": "the landlord of the apartment at 104 Grove St, Atlanta"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6218023477122188,
+        "ollama_total_s": 0.620489366,
+        "model_load_s": 0.001484188,
+        "prompt_eval_s": 0.132247999,
+        "generation_s": 0.347687,
+        "prompt_tokens": 1457,
+        "output_tokens": 71,
+        "total_tokens": 1528,
+        "generation_tokens_per_s": 204.20665713702266
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Thanks. Did you send that photo to him?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A (Tyler)",
+          "ground_truth_resolution": "Dennis Walker, Landlord",
+          "resolution_similarity": 0.6020609284601492,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "User A (Tyler)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49901866307482123,
+        "ollama_total_s": 0.498080826,
+        "model_load_s": 0.000975223,
+        "prompt_eval_s": 0.132018,
+        "generation_s": 0.183484,
+        "prompt_tokens": 1473,
+        "output_tokens": 34,
+        "total_tokens": 1507,
+        "generation_tokens_per_s": 185.30226068758037
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Yep. Sent it this morning.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27990421606227756,
+        "ollama_total_s": 0.27844434,
+        "model_load_s": 0.001420634,
+        "prompt_eval_s": 0.131845,
+        "generation_s": 0.024941,
+        "prompt_tokens": 1487,
+        "output_tokens": 6,
+        "total_tokens": 1493,
+        "generation_tokens_per_s": 240.56773986608394
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Hope he responds soon. That spot’s gotten worse.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that spot",
+          "ground_truth_ambiguous_phrase": "that spot",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the leak",
+          "ground_truth_resolution": "Leak under window, Living Room",
+          "resolution_similarity": 0.6768312361600919,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A (Tyler)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "User A (Tyler)"
+        },
+        {
+          "ambiguous_phrase": "that spot",
+          "resolved_entity": "the leak"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5945228389464319,
+        "ollama_total_s": 0.593232107,
+        "model_load_s": 0.001405897,
+        "prompt_eval_s": 0.132134999,
+        "generation_s": 0.327569,
+        "prompt_tokens": 1512,
+        "output_tokens": 56,
+        "total_tokens": 1568,
+        "generation_tokens_per_s": 170.95634812818062
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "I know. Let’s check again tomorrow, just in case.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "tomorrow",
+          "ground_truth_ambiguous_phrase": "tomorrow",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Next day after today, based on the calendar_next entry for User A: House Meeting: Rent & Bills, 7:00 PM",
+          "ground_truth_resolution": "Wednesday, April 17th",
+          "resolution_similarity": 0.5241480206704943,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow",
+          "resolved_entity": "Next day after today, based on the calendar_next entry for User A: House Meeting: Rent & Bills, 7:00 PM"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5215654610656202,
+        "ollama_total_s": 0.520171433,
+        "model_load_s": 0.001333531,
+        "prompt_eval_s": 0.13763,
+        "generation_s": 0.245151,
+        "prompt_tokens": 1537,
+        "output_tokens": 48,
+        "total_tokens": 1585,
+        "generation_tokens_per_s": 195.79769203470514
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Alright. Anything else tonight?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3053436763584614,
+        "ollama_total_s": 0.304224737,
+        "model_load_s": 0.001446269,
+        "prompt_eval_s": 0.136768,
+        "generation_s": 0.025305,
+        "prompt_tokens": 1546,
+        "output_tokens": 6,
+        "total_tokens": 1552,
+        "generation_tokens_per_s": 237.10729104919974
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "I think that’s everything. If Meera has questions, I’ll loop her in.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Meera (User B's friend, mentioned in prior turns as being at the gym, with Jordan, and involved in shared responsibilities)"
+        },
+        {
+          "ambiguous_phrase": "loop her in",
+          "resolved_entity": "Include Meera in the communication or discussion"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "Meera (User B's friend, mentioned in prior turns as being at the gym, with Jordan, and involved in shared responsibilities)"
+        },
+        {
+          "ambiguous_phrase": "loop her in",
+          "resolved_entity": "Include Meera in the communication or discussion"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6402100659906864,
+        "ollama_total_s": 0.63887316,
+        "model_load_s": 0.001423151,
+        "prompt_eval_s": 0.137717,
+        "generation_s": 0.370345,
+        "prompt_tokens": 1586,
+        "output_tokens": 70,
+        "total_tokens": 1656,
+        "generation_tokens_per_s": 189.012947386896
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Sounds good. Oh, before I forget—did you ask her about the carpool for Friday?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "did you ask her about the carpool for Friday?",
+          "resolved_entity": "the carpool for Friday"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "her",
+          "ground_truth_resolution": "Meera Patel, Roommate",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "did you ask her about the carpool for Friday?",
+          "resolved_entity": "the carpool for Friday"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5515733766369522,
+        "ollama_total_s": 0.550261302,
+        "model_load_s": 0.001760764,
+        "prompt_eval_s": 0.140055,
+        "generation_s": 0.263242,
+        "prompt_tokens": 1618,
+        "output_tokens": 44,
+        "total_tokens": 1662,
+        "generation_tokens_per_s": 167.14657995304702
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Yes, she’s driving. We need to be ready by 7 AM.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Meera",
+          "ground_truth_resolution": "Meera Patel, Roommate",
+          "resolution_similarity": 0.7904769055705806,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "Meera"
+        },
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6189390169456601,
+        "ollama_total_s": 0.617551689,
+        "model_load_s": 0.00147533,
+        "prompt_eval_s": 0.141507,
+        "generation_s": 0.324727,
+        "prompt_tokens": 1640,
+        "output_tokens": 56,
+        "total_tokens": 1696,
+        "generation_tokens_per_s": 172.45255245175179
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "7 AM… I’ll set my alarm. Where are we meeting?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Where are we meeting?",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Friday",
+          "ground_truth_resolution": "Friday, April 19th",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Where are we meeting?",
+          "resolved_entity": "Living Room, 104 Grove St, Atlanta"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5390058080665767,
+        "ollama_total_s": 0.537345319,
+        "model_load_s": 0.001415074,
+        "prompt_eval_s": 0.147422,
+        "generation_s": 0.231209,
+        "prompt_tokens": 1663,
+        "output_tokens": 44,
+        "total_tokens": 1707,
+        "generation_tokens_per_s": 190.3040106570246
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Out front, same as last time.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Out front",
+          "ground_truth_ambiguous_phrase": "out front",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Front entrance of 104 Grove St, Atlanta",
+          "ground_truth_resolution": "Front porch, 104 Grove St",
+          "resolution_similarity": 0.8267917873682933,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "same as last time",
+          "resolved_entity": "Front entrance of 104 Grove St, Atlanta (location used for previous meetings)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Out front",
+          "resolved_entity": "Front entrance of 104 Grove St, Atlanta"
+        },
+        {
+          "ambiguous_phrase": "same as last time",
+          "resolved_entity": "Front entrance of 104 Grove St, Atlanta (location used for previous meetings)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7371055600233376,
+        "ollama_total_s": 0.736002048,
+        "model_load_s": 0.001488577,
+        "prompt_eval_s": 0.147274,
+        "generation_s": 0.435983,
+        "prompt_tokens": 1675,
+        "output_tokens": 81,
+        "total_tokens": 1756,
+        "generation_tokens_per_s": 185.7870605046527
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Perfect. Thanks for keeping track of all this, Tyler.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.35298754507675767,
+        "ollama_total_s": 0.351664279,
+        "model_load_s": 0.001435428,
+        "prompt_eval_s": 0.148199,
+        "generation_s": 0.025388,
+        "prompt_tokens": 1701,
+        "output_tokens": 6,
+        "total_tokens": 1707,
+        "generation_tokens_per_s": 236.33212541358122
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "No problem. Let’s try not to stress about bills—just stay organized.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.31891912361606956,
+        "ollama_total_s": 0.317509341,
+        "model_load_s": 0.002026118,
+        "prompt_eval_s": 0.149415,
+        "generation_s": 0.025363,
+        "prompt_tokens": 1731,
+        "output_tokens": 6,
+        "total_tokens": 1737,
+        "generation_tokens_per_s": 236.56507510941134
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Agreed. Anyway, I’m heading to finish my essay. See you tomorrow.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.32690068520605564,
+        "ollama_total_s": 0.325680096,
+        "model_load_s": 0.001455746,
+        "prompt_eval_s": 0.149563,
+        "generation_s": 0.024763,
+        "prompt_tokens": 1759,
+        "output_tokens": 6,
+        "total_tokens": 1765,
+        "generation_tokens_per_s": 242.29697532609134
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Night.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3256977843120694,
+        "ollama_total_s": 0.324624736,
+        "model_load_s": 0.001326509,
+        "prompt_eval_s": 0.148836,
+        "generation_s": 0.025263,
+        "prompt_tokens": 1756,
+        "output_tokens": 6,
+        "total_tokens": 1762,
+        "generation_tokens_per_s": 237.5014843842774
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "Oh, one last thing—did you eat the cookies from the tin?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the cookies from the tin",
+          "resolved_entity": "the cookies from the tin"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the tin",
+          "ground_truth_resolution": "Metal Cookie Tin, Kitchen Counter",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the cookies from the tin",
+          "resolved_entity": "the cookies from the tin"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5022168857976794,
+        "ollama_total_s": 0.500967945,
+        "model_load_s": 0.001416492,
+        "prompt_eval_s": 0.161493,
+        "generation_s": 0.187914,
+        "prompt_tokens": 1794,
+        "output_tokens": 28,
+        "total_tokens": 1822,
+        "generation_tokens_per_s": 149.00433176878786
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "Not me. I think Meera did.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "User B (Jordan)'s friend, mentioned in prior turns as the one who handled the water bill, went to the gym, and is involved in carpooling"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Meera",
+          "resolved_entity": "User B (Jordan)'s friend, mentioned in prior turns as the one who handled the water bill, went to the gym, and is involved in carpooling"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6310977376997471,
+        "ollama_total_s": 0.629763952,
+        "model_load_s": 0.001420096,
+        "prompt_eval_s": 0.162317,
+        "generation_s": 0.311047,
+        "prompt_tokens": 1807,
+        "output_tokens": 53,
+        "total_tokens": 1860,
+        "generation_tokens_per_s": 170.3922558327198
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "Haha, fair enough. See you!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.33561852807179093,
+        "ollama_total_s": 0.334180508,
+        "model_load_s": 0.002682415,
+        "prompt_eval_s": 0.16488,
+        "generation_s": 0.025635,
+        "prompt_tokens": 1826,
+        "output_tokens": 6,
+        "total_tokens": 1832,
+        "generation_tokens_per_s": 234.05500292568752
+      }
+    }
+  ]
+}

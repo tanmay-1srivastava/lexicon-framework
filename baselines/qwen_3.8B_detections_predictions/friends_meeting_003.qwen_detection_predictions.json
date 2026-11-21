@@ -1,0 +1,3438 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/friends_meeting_003.json",
+  "metrics": {
+    "ground_truth_ambiguities": 33,
+    "qwen_predicted_ambiguities": 67,
+    "detected_ground_truth_ambiguities": 14,
+    "missed_ground_truth_ambiguities": 19,
+    "detected_but_bad_resolution": 8,
+    "true_positives": 6,
+    "false_negatives": 27,
+    "false_positive_ambiguities": 53,
+    "detection_recall": 0.42424242424242425,
+    "detection_precision": 0.208955223880597,
+    "detection_f1": 0.27999999999999997,
+    "true_positive_rate_at_0_70": 0.18181818181818182,
+    "strict_end_to_end_precision_at_0_70": 0.08955223880597014,
+    "end_to_end_f1_at_0_70": 0.12,
+    "false_positive_discovery_rate": 0.7910447761194029,
+    "false_positives_per_turn": 0.6162790697674418,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 86,
+    "median_latency_per_turn_s": 0.42719047889113426,
+    "mean_latency_per_turn_s": 0.4673936450204184,
+    "total_prompt_tokens": 138277,
+    "total_output_tokens": 2474
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "This place always feels so cozy. I can't believe how full it is today.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this place",
+          "ground_truth_ambiguous_phrase": "This place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Brewed Awakening Coffee Shop",
+          "ground_truth_resolution": "Brewed Awakening Coffee Shop",
+          "resolution_similarity": 0.9998804942609456,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this place",
+          "resolved_entity": "Brewed Awakening Coffee Shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4080985030159354,
+        "ollama_total_s": 0.40669582,
+        "model_load_s": 0.001689633,
+        "prompt_eval_s": 0.03625,
+        "generation_s": 0.173318,
+        "prompt_tokens": 511,
+        "output_tokens": 26,
+        "total_tokens": 537,
+        "generation_tokens_per_s": 150.01327040468965
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Right? Hard to find a spot. Good thing you got here before me. I grabbed us that table by the window.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that table",
+          "resolved_entity": "the table by the window at Brewed Awakening Coffee Shop"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that table by the window",
+          "ground_truth_resolution": "Window-side table, Brewed Awakening Coffee Shop",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that table",
+          "resolved_entity": "the table by the window at Brewed Awakening Coffee Shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.357625899836421,
+        "ollama_total_s": 0.356465138,
+        "model_load_s": 0.001296828,
+        "prompt_eval_s": 0.041237,
+        "generation_s": 0.270239,
+        "prompt_tokens": 553,
+        "output_tokens": 42,
+        "total_tokens": 595,
+        "generation_tokens_per_s": 155.41798186050124
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Yeah, I was lucky. I saw that guy from our chem class leaving, so I snagged it.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that guy from our chem class",
+          "ground_truth_ambiguous_phrase": "that guy from our chem class",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Joshua Lin (Chem 101 Classmate)",
+          "resolution_similarity": 0.5532011485855466,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Class Roster)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the table by the window"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that guy from our chem class",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the table by the window"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4395482763648033,
+        "ollama_total_s": 0.438160292,
+        "model_load_s": 0.001394989,
+        "prompt_eval_s": 0.046101,
+        "generation_s": 0.338476,
+        "prompt_tokens": 581,
+        "output_tokens": 61,
+        "total_tokens": 642,
+        "generation_tokens_per_s": 180.21957243645045
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Oh, which one? The tall one with glasses?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "The tall one with glasses",
+          "ground_truth_ambiguous_phrase": "The tall one with glasses",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The guy from our chem class",
+          "ground_truth_resolution": "Joshua Lin",
+          "resolution_similarity": 0.5273436233239192,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar (Class Roster)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "The tall one with glasses",
+          "resolved_entity": "The guy from our chem class"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.35154954297468066,
+        "ollama_total_s": 0.350325982,
+        "model_load_s": 0.001248859,
+        "prompt_eval_s": 0.04664,
+        "generation_s": 0.236266,
+        "prompt_tokens": 590,
+        "output_tokens": 40,
+        "total_tokens": 630,
+        "generation_tokens_per_s": 169.30070344442282
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Yeah, him. He waved but looked exhausted.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the tall one with glasses",
+          "ground_truth_resolution": "Joshua Lin",
+          "resolution_similarity": 0.5369519754058139,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "the tall one with glasses"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "the tall one with glasses"
+        },
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "the tall one with glasses"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.42822824278846383,
+        "ollama_total_s": 0.427090383,
+        "model_load_s": 0.001225643,
+        "prompt_eval_s": 0.04681,
+        "generation_s": 0.320795,
+        "prompt_tokens": 608,
+        "output_tokens": 59,
+        "total_tokens": 667,
+        "generation_tokens_per_s": 183.91807852366776
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Can’t blame him. Everyone’s running on caffeine and hope right now.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1342848939821124,
+        "ollama_total_s": 0.133428777,
+        "model_load_s": 0.00140768,
+        "prompt_eval_s": 0.047125,
+        "generation_s": 0.025807,
+        "prompt_tokens": 637,
+        "output_tokens": 6,
+        "total_tokens": 643,
+        "generation_tokens_per_s": 232.49505947998605
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "Speaking of, did you bring those snacks you mentioned?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those snacks you mentioned",
+          "resolved_entity": "snacks mentioned in previous conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those snacks you mentioned",
+          "resolved_entity": "snacks mentioned in previous conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3822282589972019,
+        "ollama_total_s": 0.381104286,
+        "model_load_s": 0.001162592,
+        "prompt_eval_s": 0.046883,
+        "generation_s": 0.279005,
+        "prompt_tokens": 653,
+        "output_tokens": 39,
+        "total_tokens": 692,
+        "generation_tokens_per_s": 139.78244117488933
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Yup, I've got them right here in my bag. Want the granola bar or those chocolate almonds first?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "snacks"
+        },
+        {
+          "ambiguous_phrase": "those chocolate almonds",
+          "resolved_entity": "snacks"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here",
+          "ground_truth_resolution": "Brewed Awakening Coffee Shop",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "snacks"
+        },
+        {
+          "ambiguous_phrase": "those chocolate almonds",
+          "resolved_entity": "snacks"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44380864314734936,
+        "ollama_total_s": 0.442571931,
+        "model_load_s": 0.001475925,
+        "prompt_eval_s": 0.052305,
+        "generation_s": 0.310506,
+        "prompt_tokens": 698,
+        "output_tokens": 55,
+        "total_tokens": 753,
+        "generation_tokens_per_s": 177.13023258809812
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "I’ll take the almonds. Thanks! By the way, did you print out those bio notes?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those bio notes",
+          "resolved_entity": "the bio notes mentioned in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those bio notes",
+          "resolved_entity": "the bio notes mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36203584214672446,
+        "ollama_total_s": 0.360793356,
+        "model_load_s": 0.001454844,
+        "prompt_eval_s": 0.052569,
+        "generation_s": 0.243367,
+        "prompt_tokens": 723,
+        "output_tokens": 39,
+        "total_tokens": 762,
+        "generation_tokens_per_s": 160.25180077824848
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "I did, but left them on my desk at home. Total fail.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "those bio notes"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "those bio notes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3520993059501052,
+        "ollama_total_s": 0.350966257,
+        "model_load_s": 0.001358608,
+        "prompt_eval_s": 0.052444,
+        "generation_s": 0.205226,
+        "prompt_tokens": 744,
+        "output_tokens": 33,
+        "total_tokens": 777,
+        "generation_tokens_per_s": 160.798339391695
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "No worries, I have mine. We can share.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "I have mine",
+          "resolved_entity": "bio notes"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "I have mine",
+          "resolved_entity": "bio notes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30101783061400056,
+        "ollama_total_s": 0.299563752,
+        "model_load_s": 0.001425087,
+        "prompt_eval_s": 0.060465,
+        "generation_s": 0.172647,
+        "prompt_tokens": 761,
+        "output_tokens": 23,
+        "total_tokens": 784,
+        "generation_tokens_per_s": 133.21980688920166
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Awesome. Let’s start with the evolutionary section? That one always trips me up.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "That one",
+          "resolved_entity": "the evolutionary section"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That one",
+          "resolved_entity": "the evolutionary section"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3629843951202929,
+        "ollama_total_s": 0.361659678,
+        "model_load_s": 0.001444461,
+        "prompt_eval_s": 0.063056,
+        "generation_s": 0.219691,
+        "prompt_tokens": 794,
+        "output_tokens": 34,
+        "total_tokens": 828,
+        "generation_tokens_per_s": 154.7628259692022
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "Totally. Here’s the chart Dr. Patel gave us—remember, the one with all those colored arrows?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the chart Dr. Patel gave us",
+          "resolved_entity": "chart with colored arrows from Dr. Patel"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "here’s the chart Dr. Patel gave us",
+          "ground_truth_resolution": "Evolutionary Pathways Handout (Dr. Patel)",
+          "resolution_source": "User A Calendar (Course Materials)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the chart Dr. Patel gave us",
+          "resolved_entity": "chart with colored arrows from Dr. Patel"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49325647205114365,
+        "ollama_total_s": 0.492104293,
+        "model_load_s": 0.001390368,
+        "prompt_eval_s": 0.069416,
+        "generation_s": 0.331529,
+        "prompt_tokens": 832,
+        "output_tokens": 44,
+        "total_tokens": 876,
+        "generation_tokens_per_s": 132.7184047247752
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "Oh yeah, it’s in that folder. Let me grab it. Wait, is that the folder with the sticker?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that folder",
+          "ground_truth_ambiguous_phrase": "that folder",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "folder with the sticker",
+          "ground_truth_resolution": "Priya's blue folder with cat sticker",
+          "resolution_similarity": 0.6304425602213571,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar (Study Materials)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that folder with the sticker",
+          "resolved_entity": "folder with the sticker"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that folder",
+          "resolved_entity": "folder with the sticker"
+        },
+        {
+          "ambiguous_phrase": "that folder with the sticker",
+          "resolved_entity": "folder with the sticker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.49778339779004455,
+        "ollama_total_s": 0.496625215,
+        "model_load_s": 0.001455364,
+        "prompt_eval_s": 0.070202,
+        "generation_s": 0.332216,
+        "prompt_tokens": 867,
+        "output_tokens": 62,
+        "total_tokens": 929,
+        "generation_tokens_per_s": 186.62556890697618
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "Yep, the one with the cat sticker. Here you go.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the one with the cat sticker",
+          "ground_truth_ambiguous_phrase": "the one with the cat sticker",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "folder with the cat sticker",
+          "ground_truth_resolution": "Priya's blue folder",
+          "resolution_similarity": 0.6104468233461584,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Personal Items List)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the one with the cat sticker",
+          "resolved_entity": "folder with the cat sticker"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43986829882487655,
+        "ollama_total_s": 0.438671843,
+        "model_load_s": 0.001454388,
+        "prompt_eval_s": 0.069933,
+        "generation_s": 0.26908,
+        "prompt_tokens": 879,
+        "output_tokens": 40,
+        "total_tokens": 919,
+        "generation_tokens_per_s": 148.65467518953471
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "Thank you! Alright, so what does 'adaptive radiation' actually mean? I always get it mixed up.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.1894870880059898,
+        "ollama_total_s": 0.188544494,
+        "model_load_s": 0.001135035,
+        "prompt_eval_s": 0.081514,
+        "generation_s": 0.024749,
+        "prompt_tokens": 920,
+        "output_tokens": 6,
+        "total_tokens": 926,
+        "generation_tokens_per_s": 242.43403773889855
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "It’s when one species splits into multiple due to environmental differences. Like those birds from that documentary.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "those birds from that documentary",
+          "resolved_entity": "the documentary mentioned previously in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those birds from that documentary",
+          "resolved_entity": "the documentary mentioned previously in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.36801224015653133,
+        "ollama_total_s": 0.366898289,
+        "model_load_s": 0.001445414,
+        "prompt_eval_s": 0.081559,
+        "generation_s": 0.206081,
+        "prompt_tokens": 948,
+        "output_tokens": 41,
+        "total_tokens": 989,
+        "generation_tokens_per_s": 198.95089794789428
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Oh! The one you showed me last week? With the colorful finches?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "The one you showed me last week?",
+          "ground_truth_ambiguous_phrase": "the one you showed me last week",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the documentary about colorful finches",
+          "ground_truth_resolution": "BBC Earth Documentary: Finches of Galapagos",
+          "resolution_similarity": 0.7903644039683372,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar (Media History)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "With the colorful finches?",
+          "resolved_entity": "the documentary about colorful finches"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "The one you showed me last week?",
+          "resolved_entity": "the documentary about colorful finches"
+        },
+        {
+          "ambiguous_phrase": "With the colorful finches?",
+          "resolved_entity": "the documentary about colorful finches"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5543414289131761,
+        "ollama_total_s": 0.553087678,
+        "model_load_s": 0.001423357,
+        "prompt_eval_s": 0.082959,
+        "generation_s": 0.3758,
+        "prompt_tokens": 970,
+        "output_tokens": 71,
+        "total_tokens": 1041,
+        "generation_tokens_per_s": 188.93028206492815
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Exactly! Those ones. The islands affected their beak shapes.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Those ones",
+          "ground_truth_ambiguous_phrase": "those ones",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the birds from that documentary (with colorful finches)",
+          "ground_truth_resolution": "Galapagos Island Finches",
+          "resolution_similarity": 0.7295867308382579,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (Media History)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "The islands",
+          "resolved_entity": "the islands mentioned in the context of adaptive radiation and beak shape changes"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Those ones",
+          "resolved_entity": "the birds from that documentary (with colorful finches)"
+        },
+        {
+          "ambiguous_phrase": "The islands",
+          "resolved_entity": "the islands mentioned in the context of adaptive radiation and beak shape changes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5673758783377707,
+        "ollama_total_s": 0.566077047,
+        "model_load_s": 0.001423694,
+        "prompt_eval_s": 0.082982,
+        "generation_s": 0.397275,
+        "prompt_tokens": 990,
+        "output_tokens": 75,
+        "total_tokens": 1065,
+        "generation_tokens_per_s": 188.78610534264678
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "You make it sound easy. I wish Dr. Patel explained it like that.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "Dr. Patel",
+          "resolved_entity": "Dr. Patel (referent: Professor of Biology, mentioned in prior context as the instructor for BIO201 course)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Dr. Patel",
+          "resolved_entity": "Dr. Patel (referent: Professor of Biology, mentioned in prior context as the instructor for BIO201 course)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5378202241845429,
+        "ollama_total_s": 0.536795462,
+        "model_load_s": 0.001240122,
+        "prompt_eval_s": 0.082371,
+        "generation_s": 0.327436,
+        "prompt_tokens": 1019,
+        "output_tokens": 56,
+        "total_tokens": 1075,
+        "generation_tokens_per_s": 171.0257882456419
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Ha, right? She loves making things mysterious. Anyway, want to quiz each other now or do it later?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 4,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Dr. Patel"
+        },
+        {
+          "ambiguous_phrase": "that documentary",
+          "resolved_entity": "the documentary about the colorful finches"
+        },
+        {
+          "ambiguous_phrase": "those birds",
+          "resolved_entity": "the birds from the documentary about the colorful finches"
+        },
+        {
+          "ambiguous_phrase": "those islands",
+          "resolved_entity": "the islands that affected the beak shapes of the birds"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Dr. Patel"
+        },
+        {
+          "ambiguous_phrase": "that documentary",
+          "resolved_entity": "the documentary about the colorful finches"
+        },
+        {
+          "ambiguous_phrase": "those birds",
+          "resolved_entity": "the birds from the documentary about the colorful finches"
+        },
+        {
+          "ambiguous_phrase": "those islands",
+          "resolved_entity": "the islands that affected the beak shapes of the birds"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7861839444376528,
+        "ollama_total_s": 0.78502706,
+        "model_load_s": 0.001100118,
+        "prompt_eval_s": 0.091792,
+        "generation_s": 0.611703,
+        "prompt_tokens": 1059,
+        "output_tokens": 121,
+        "total_tokens": 1180,
+        "generation_tokens_per_s": 197.80841356017544
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "Hmm, maybe now—before my brain checks out. Unless you want to review genetics first?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my brain",
+          "resolved_entity": "User B's brain"
+        },
+        {
+          "ambiguous_phrase": "genetics",
+          "resolved_entity": "the genetics topic"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my brain",
+          "resolved_entity": "User B's brain"
+        },
+        {
+          "ambiguous_phrase": "genetics",
+          "resolved_entity": "the genetics topic"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5326010747812688,
+        "ollama_total_s": 0.531405213,
+        "model_load_s": 0.001518272,
+        "prompt_eval_s": 0.092385,
+        "generation_s": 0.316691,
+        "prompt_tokens": 1084,
+        "output_tokens": 58,
+        "total_tokens": 1142,
+        "generation_tokens_per_s": 183.14382158002596
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Let’s do the quiz now. I’ll start.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21824888372793794,
+        "ollama_total_s": 0.21696089,
+        "model_load_s": 0.001605869,
+        "prompt_eval_s": 0.092259,
+        "generation_s": 0.025441,
+        "prompt_tokens": 1097,
+        "output_tokens": 6,
+        "total_tokens": 1103,
+        "generation_tokens_per_s": 235.83978617192722
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Okay, hit me.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.20630628801882267,
+        "ollama_total_s": 0.20547016,
+        "model_load_s": 0.001512949,
+        "prompt_eval_s": 0.091752,
+        "generation_s": 0.024706,
+        "prompt_tokens": 1106,
+        "output_tokens": 6,
+        "total_tokens": 1112,
+        "generation_tokens_per_s": 242.85598640006478
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Alright. What’s the difference between homologous and analogous structures?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21115277288481593,
+        "ollama_total_s": 0.210037026,
+        "model_load_s": 0.00124828,
+        "prompt_eval_s": 0.0966,
+        "generation_s": 0.024841,
+        "prompt_tokens": 1139,
+        "output_tokens": 6,
+        "total_tokens": 1145,
+        "generation_tokens_per_s": 241.53617004146372
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Homologous means same origin but different function. Analogous is different origin but similar function.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.22021923772990704,
+        "ollama_total_s": 0.219322155,
+        "model_load_s": 0.001069052,
+        "prompt_eval_s": 0.099425,
+        "generation_s": 0.026026,
+        "prompt_tokens": 1173,
+        "output_tokens": 6,
+        "total_tokens": 1179,
+        "generation_tokens_per_s": 230.5386920771536
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "Nice! Next: Who proposed the theory of natural selection?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2200350142084062,
+        "ollama_total_s": 0.218850173,
+        "model_load_s": 0.001379108,
+        "prompt_eval_s": 0.098161,
+        "generation_s": 0.025043,
+        "prompt_tokens": 1188,
+        "output_tokens": 6,
+        "total_tokens": 1194,
+        "generation_tokens_per_s": 239.58790879686939
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Darwin, obviously. Though Wallace also contributed, right?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.21314411610364914,
+        "ollama_total_s": 0.212054267,
+        "model_load_s": 0.001320172,
+        "prompt_eval_s": 0.09846,
+        "generation_s": 0.024997,
+        "prompt_tokens": 1209,
+        "output_tokens": 6,
+        "total_tokens": 1215,
+        "generation_tokens_per_s": 240.02880345641478
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Yep. Both did, but Darwin gets most of the credit.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2214547130279243,
+        "ollama_total_s": 0.220395545,
+        "model_load_s": 0.001349626,
+        "prompt_eval_s": 0.09919,
+        "generation_s": 0.025069,
+        "prompt_tokens": 1233,
+        "output_tokens": 6,
+        "total_tokens": 1239,
+        "generation_tokens_per_s": 239.3394231919901
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Okay, your turn. What’s the name of that process where bacteria exchange genetic material?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2493676608428359,
+        "ollama_total_s": 0.248375231,
+        "model_load_s": 0.000980694,
+        "prompt_eval_s": 0.112664,
+        "generation_s": 0.025108,
+        "prompt_tokens": 1266,
+        "output_tokens": 6,
+        "total_tokens": 1272,
+        "generation_tokens_per_s": 238.9676597100526
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Conjugation!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.23980608815327287,
+        "ollama_total_s": 0.238945831,
+        "model_load_s": 0.001230936,
+        "prompt_eval_s": 0.11238,
+        "generation_s": 0.025912,
+        "prompt_tokens": 1266,
+        "output_tokens": 6,
+        "total_tokens": 1272,
+        "generation_tokens_per_s": 231.5529484408768
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Correct. We’re pretty good at this. Want to grab more coffee before we melt into zombies?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "We’re pretty good at this.",
+          "resolved_entity": "User A and User B collaborating on studying and discussing biology topics, including evolutionary concepts and quiz preparation."
+        },
+        {
+          "ambiguous_phrase": "Want to grab more coffee before we melt into zombies?",
+          "resolved_entity": "Referring to the coffee shop 'Brewed Awakening Coffee Shop' where both users are currently located."
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "We’re pretty good at this.",
+          "resolved_entity": "User A and User B collaborating on studying and discussing biology topics, including evolutionary concepts and quiz preparation."
+        },
+        {
+          "ambiguous_phrase": "Want to grab more coffee before we melt into zombies?",
+          "resolved_entity": "Referring to the coffee shop 'Brewed Awakening Coffee Shop' where both users are currently located."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.747565240599215,
+        "ollama_total_s": 0.746523062,
+        "model_load_s": 0.001184612,
+        "prompt_eval_s": 0.114186,
+        "generation_s": 0.532457,
+        "prompt_tokens": 1312,
+        "output_tokens": 102,
+        "total_tokens": 1414,
+        "generation_tokens_per_s": 191.56476485425117
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Yes, please. I’ll go. You want your usual?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "your usual",
+          "ground_truth_resolution": "Iced latte with oat milk",
+          "resolution_source": "User B Calendar (Order History)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2535016108304262,
+        "ollama_total_s": 0.25232419,
+        "model_load_s": 0.001519103,
+        "prompt_eval_s": 0.115874,
+        "generation_s": 0.025249,
+        "prompt_tokens": 1328,
+        "output_tokens": 6,
+        "total_tokens": 1334,
+        "generation_tokens_per_s": 237.6331735910333
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Definitely. If they’re out of oat milk, just get regular.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coffee shop staff or the oat milk supply at the coffee shop"
+        },
+        {
+          "ambiguous_phrase": "they’re",
+          "resolved_entity": "the coffee shop staff or the oat milk supply at the coffee shop"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "regular",
+          "ground_truth_resolution": "Iced latte with regular milk",
+          "resolution_source": "User B Calendar (Order History)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coffee shop staff or the oat milk supply at the coffee shop"
+        },
+        {
+          "ambiguous_phrase": "they’re",
+          "resolved_entity": "the coffee shop staff or the oat milk supply at the coffee shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6609065933153033,
+        "ollama_total_s": 0.659750744,
+        "model_load_s": 0.001404411,
+        "prompt_eval_s": 0.115433,
+        "generation_s": 0.439826,
+        "prompt_tokens": 1354,
+        "output_tokens": 76,
+        "total_tokens": 1430,
+        "generation_tokens_per_s": 172.7956055349161
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Got it. Be right back.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2561908192001283,
+        "ollama_total_s": 0.255136389,
+        "model_load_s": 0.001171032,
+        "prompt_eval_s": 0.116844,
+        "generation_s": 0.026097,
+        "prompt_tokens": 1363,
+        "output_tokens": 6,
+        "total_tokens": 1369,
+        "generation_tokens_per_s": 229.91148407862974
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Thanks! I’ll watch our stuff.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.24457335099577904,
+        "ollama_total_s": 0.243806411,
+        "model_load_s": 0.001347623,
+        "prompt_eval_s": 0.11659,
+        "generation_s": 0.025812,
+        "prompt_tokens": 1382,
+        "output_tokens": 6,
+        "total_tokens": 1388,
+        "generation_tokens_per_s": 232.4500232450023
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "(returns) There’s a huge line. The barista said it’d be about ten minutes.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.26205026311799884,
+        "ollama_total_s": 0.261021491,
+        "model_load_s": 0.001001069,
+        "prompt_eval_s": 0.128899,
+        "generation_s": 0.025073,
+        "prompt_tokens": 1423,
+        "output_tokens": 6,
+        "total_tokens": 1429,
+        "generation_tokens_per_s": 239.30124037809594
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "No rush, we’ve got nowhere else to be until tonight.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.27977180387824774,
+        "ollama_total_s": 0.278884664,
+        "model_load_s": 0.001402851,
+        "prompt_eval_s": 0.130027999,
+        "generation_s": 0.025873,
+        "prompt_tokens": 1440,
+        "output_tokens": 6,
+        "total_tokens": 1446,
+        "generation_tokens_per_s": 231.9019827619526
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "True, but I did promise to help my cousin move later. Hope I don’t pass out before then.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my cousin",
+          "ground_truth_resolution": "Neha Agarwal",
+          "resolution_source": "User A Calendar (Contacts)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.2774199293926358,
+        "ollama_total_s": 0.276371838,
+        "model_load_s": 0.001484536,
+        "prompt_eval_s": 0.130681,
+        "generation_s": 0.024669,
+        "prompt_tokens": 1481,
+        "output_tokens": 6,
+        "total_tokens": 1487,
+        "generation_tokens_per_s": 243.22023592362885
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Wait, which cousin? The one with the truck or the one who always loses everything?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 3,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "which cousin",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "the one with the truck",
+          "resolved_entity": "User A's cousin who owns a truck"
+        },
+        {
+          "ambiguous_phrase": "the one who always loses everything",
+          "resolved_entity": "User A's cousin who frequently loses things"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "which cousin",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "the one with the truck",
+          "resolved_entity": "User A's cousin who owns a truck"
+        },
+        {
+          "ambiguous_phrase": "the one who always loses everything",
+          "resolved_entity": "User A's cousin who frequently loses things"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8007637220434844,
+        "ollama_total_s": 0.79955124,
+        "model_load_s": 0.00127555,
+        "prompt_eval_s": 0.131414999,
+        "generation_s": 0.506223,
+        "prompt_tokens": 1505,
+        "output_tokens": 98,
+        "total_tokens": 1603,
+        "generation_tokens_per_s": 193.59057174407326
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "The second one! She misplaces her keys like every hour.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "She",
+          "ground_truth_ambiguous_phrase": "she",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's cousin (the one who always loses everything)",
+          "ground_truth_resolution": "Neha Agarwal",
+          "resolution_similarity": 0.5296889011919532,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Contacts)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "The second one!",
+          "resolved_entity": "the cousin who always loses everything"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "The second one!",
+          "resolved_entity": "the cousin who always loses everything"
+        },
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "User A's cousin (the one who always loses everything)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.613684045150876,
+        "ollama_total_s": 0.612276615,
+        "model_load_s": 0.001506615,
+        "prompt_eval_s": 0.136577,
+        "generation_s": 0.33839,
+        "prompt_tokens": 1523,
+        "output_tokens": 68,
+        "total_tokens": 1591,
+        "generation_tokens_per_s": 200.95156476255207
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Classic. Good luck wrangling her. What time are you helping out?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4716913946904242,
+        "ollama_total_s": 0.47062884,
+        "model_load_s": 0.001055713,
+        "prompt_eval_s": 0.13716,
+        "generation_s": 0.200971,
+        "prompt_tokens": 1550,
+        "output_tokens": 38,
+        "total_tokens": 1588,
+        "generation_tokens_per_s": 189.08200685671065
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "After 7, I think. She just texted, so I’ll confirm later.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "after 7"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "after 7",
+          "ground_truth_resolution": "7:00pm, Today",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "after 7"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5498893801122904,
+        "ollama_total_s": 0.548717668,
+        "model_load_s": 0.001092512,
+        "prompt_eval_s": 0.138572,
+        "generation_s": 0.280053,
+        "prompt_tokens": 1581,
+        "output_tokens": 56,
+        "total_tokens": 1637,
+        "generation_tokens_per_s": 199.96215002160307
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Alright, so we’ve got at least a few hours here. Let’s not waste them. Ready to tackle genetics?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3099423819221556,
+        "ollama_total_s": 0.308858951,
+        "model_load_s": 0.001277664,
+        "prompt_eval_s": 0.14018,
+        "generation_s": 0.025664,
+        "prompt_tokens": 1621,
+        "output_tokens": 6,
+        "total_tokens": 1627,
+        "generation_tokens_per_s": 233.79052369077309
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "Let’s do it. Wait—did you see the group chat last night? Everyone’s freaking out about the exam format.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the group chat",
+          "resolved_entity": "the group chat (referencing the shared group chat between User A and User B, likely related to their study group or class discussions)"
+        },
+        {
+          "ambiguous_phrase": "the exam format",
+          "resolved_entity": "the exam format (referencing the upcoming BIO201 Final Exam, mentioned in User A's calendar event)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the group chat",
+          "resolved_entity": "the group chat (referencing the shared group chat between User A and User B, likely related to their study group or class discussions)"
+        },
+        {
+          "ambiguous_phrase": "the exam format",
+          "resolved_entity": "the exam format (referencing the upcoming BIO201 Final Exam, mentioned in User A's calendar event)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8126008068211377,
+        "ollama_total_s": 0.811205608,
+        "model_load_s": 0.001360627,
+        "prompt_eval_s": 0.146177,
+        "generation_s": 0.522196,
+        "prompt_tokens": 1657,
+        "output_tokens": 101,
+        "total_tokens": 1758,
+        "generation_tokens_per_s": 193.41396716941532
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Yeah! Someone said it’s all multiple-choice this time, but I’m not sure if it’s true.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3079327819868922,
+        "ollama_total_s": 0.30647838,
+        "model_load_s": 0.001765481,
+        "prompt_eval_s": 0.146942,
+        "generation_s": 0.025238,
+        "prompt_tokens": 1686,
+        "output_tokens": 6,
+        "total_tokens": 1692,
+        "generation_tokens_per_s": 237.73674617640066
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "I’ll check with Maya. She usually knows what’s up.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maya"
+        },
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maya"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Maya",
+          "ground_truth_resolution": "Maya Fernandez (Classmate)",
+          "resolution_source": "User A Calendar (Contacts)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maya"
+        },
+        {
+          "ambiguous_phrase": "She",
+          "resolved_entity": "Maya"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6000831751152873,
+        "ollama_total_s": 0.598444065,
+        "model_load_s": 0.001364062,
+        "prompt_eval_s": 0.147534,
+        "generation_s": 0.302982,
+        "prompt_tokens": 1700,
+        "output_tokens": 53,
+        "total_tokens": 1753,
+        "generation_tokens_per_s": 174.92788350463064
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Good idea. Maybe she heard from the TA or Dr. Patel herself.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the TA",
+          "ground_truth_ambiguous_phrase": "the TA",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Teaching Assistant (unspecified)",
+          "ground_truth_resolution": "Anthony Park (BIO201 TA)",
+          "resolution_similarity": 0.6285259083146418,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar (Course Staff List)"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "Dr. Patel",
+          "resolved_entity": "Dr. Patel (unspecified)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "she",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "the TA",
+          "resolved_entity": "Teaching Assistant (unspecified)"
+        },
+        {
+          "ambiguous_phrase": "Dr. Patel",
+          "resolved_entity": "Dr. Patel (unspecified)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7433444643393159,
+        "ollama_total_s": 0.741976559,
+        "model_load_s": 0.001338959,
+        "prompt_eval_s": 0.148587,
+        "generation_s": 0.454633,
+        "prompt_tokens": 1727,
+        "output_tokens": 85,
+        "total_tokens": 1812,
+        "generation_tokens_per_s": 186.96399073538436
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "I’ll text her now. In the meantime, can you explain what a test cross is?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the group chat"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her",
+          "resolved_entity": "User A's cousin"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the group chat"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6142063341103494,
+        "ollama_total_s": 0.613177406,
+        "model_load_s": 0.001239146,
+        "prompt_eval_s": 0.150643,
+        "generation_s": 0.318017,
+        "prompt_tokens": 1760,
+        "output_tokens": 56,
+        "total_tokens": 1816,
+        "generation_tokens_per_s": 176.09121524949924
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Sure. It’s when you cross an individual with a homozygous recessive to figure out its genotype.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3806773740798235,
+        "ollama_total_s": 0.37954483,
+        "model_load_s": 0.001458424,
+        "prompt_eval_s": 0.162219,
+        "generation_s": 0.024945,
+        "prompt_tokens": 1797,
+        "output_tokens": 6,
+        "total_tokens": 1803,
+        "generation_tokens_per_s": 240.52916416115457
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Nice. I always mix that up with backcrossing.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "test cross"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "test cross"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4448231649585068,
+        "ollama_total_s": 0.443695506,
+        "model_load_s": 0.001394013,
+        "prompt_eval_s": 0.16114,
+        "generation_s": 0.13616,
+        "prompt_tokens": 1808,
+        "output_tokens": 21,
+        "total_tokens": 1829,
+        "generation_tokens_per_s": 154.23031727379552
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "Me too. Want to look at that worksheet from class?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that worksheet from class",
+          "resolved_entity": "the worksheet from class (referenced in the conversation, likely the one discussed in the context of studying for the exam)"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that worksheet",
+          "ground_truth_resolution": "Genetics Worksheet (BIO201 Lecture 14)",
+          "resolution_source": "User A Calendar (Course Materials)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that worksheet from class",
+          "resolved_entity": "the worksheet from class (referenced in the conversation, likely the one discussed in the context of studying for the exam)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5534757329151034,
+        "ollama_total_s": 0.552356411,
+        "model_load_s": 0.001404668,
+        "prompt_eval_s": 0.164536,
+        "generation_s": 0.250764,
+        "prompt_tokens": 1830,
+        "output_tokens": 46,
+        "total_tokens": 1876,
+        "generation_tokens_per_s": 183.43940916558998
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Yeah. It should be in my blue folder, under my laptop.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my blue folder",
+          "resolved_entity": "User A's blue folder"
+        },
+        {
+          "ambiguous_phrase": "under my laptop",
+          "resolved_entity": "User A's laptop"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my blue folder, under my laptop",
+          "ground_truth_resolution": "Priya's blue folder (contains Genetics Worksheet), location: Brewed Awakening, table",
+          "resolution_source": "User A GPS + Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my blue folder",
+          "resolved_entity": "User A's blue folder"
+        },
+        {
+          "ambiguous_phrase": "under my laptop",
+          "resolved_entity": "User A's laptop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5693599623627961,
+        "ollama_total_s": 0.568343117,
+        "model_load_s": 0.001380927,
+        "prompt_eval_s": 0.16364,
+        "generation_s": 0.2444,
+        "prompt_tokens": 1856,
+        "output_tokens": 45,
+        "total_tokens": 1901,
+        "generation_tokens_per_s": 184.1243862520458
+      }
+    },
+    {
+      "turn_id": 54,
+      "speaker": "User B",
+      "text": "Found it! You really organize things well. I’m always losing stuff in my bag.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.33267020201310515,
+        "ollama_total_s": 0.331425244,
+        "model_load_s": 0.001381812,
+        "prompt_eval_s": 0.164657,
+        "generation_s": 0.025236,
+        "prompt_tokens": 1888,
+        "output_tokens": 6,
+        "total_tokens": 1894,
+        "generation_tokens_per_s": 237.75558725630052
+      }
+    },
+    {
+      "turn_id": 55,
+      "speaker": "User A",
+      "text": "If only you saw my room. Anyway, let's go over the Punnett squares.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.36699554696679115,
+        "ollama_total_s": 0.365696506,
+        "model_load_s": 0.001247994,
+        "prompt_eval_s": 0.177584,
+        "generation_s": 0.02539,
+        "prompt_tokens": 1916,
+        "output_tokens": 6,
+        "total_tokens": 1922,
+        "generation_tokens_per_s": 236.31350925561244
+      }
+    },
+    {
+      "turn_id": 56,
+      "speaker": "User B",
+      "text": "Sure. Wait, my pen’s running out. Got a spare?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "my pen",
+          "ground_truth_resolution": "Leila's black ink pen",
+          "resolution_source": "User B Calendar (Personal Items List)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3744534272700548,
+        "ollama_total_s": 0.373491191,
+        "model_load_s": 0.001510859,
+        "prompt_eval_s": 0.179464,
+        "generation_s": 0.026539,
+        "prompt_tokens": 1936,
+        "output_tokens": 6,
+        "total_tokens": 1942,
+        "generation_tokens_per_s": 226.0823693432307
+      }
+    },
+    {
+      "turn_id": 57,
+      "speaker": "User A",
+      "text": "Check the zip pocket—there should be a new one.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the zip pocket",
+          "ground_truth_ambiguous_phrase": "the zip pocket",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A's zip pocket",
+          "ground_truth_resolution": "Priya's bag, front zip pocket",
+          "resolution_similarity": 0.7397998110382715,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar (Personal Items List)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the zip pocket",
+          "resolved_entity": "User A's zip pocket"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5378849669359624,
+        "ollama_total_s": 0.536666741,
+        "model_load_s": 0.00321568,
+        "prompt_eval_s": 0.17947,
+        "generation_s": 0.189476,
+        "prompt_tokens": 1956,
+        "output_tokens": 22,
+        "total_tokens": 1978,
+        "generation_tokens_per_s": 116.10969199265342
+      }
+    },
+    {
+      "turn_id": 58,
+      "speaker": "User B",
+      "text": "Yep, got it. Thanks!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3783863168209791,
+        "ollama_total_s": 0.37731816,
+        "model_load_s": 0.001385265,
+        "prompt_eval_s": 0.18043,
+        "generation_s": 0.025907,
+        "prompt_tokens": 1968,
+        "output_tokens": 6,
+        "total_tokens": 1974,
+        "generation_tokens_per_s": 231.59763770409543
+      }
+    },
+    {
+      "turn_id": 59,
+      "speaker": "User A",
+      "text": "Alright. If you have TT and tt parents, what genotypes do the offspring have?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.38174373703077435,
+        "ollama_total_s": 0.380647829,
+        "model_load_s": 0.001404237,
+        "prompt_eval_s": 0.181883,
+        "generation_s": 0.025183,
+        "prompt_tokens": 2007,
+        "output_tokens": 6,
+        "total_tokens": 2013,
+        "generation_tokens_per_s": 238.2559663264901
+      }
+    },
+    {
+      "turn_id": 60,
+      "speaker": "User B",
+      "text": "All Tt. Easy peasy.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.37669378612190485,
+        "ollama_total_s": 0.375627719,
+        "model_load_s": 0.001515651,
+        "prompt_eval_s": 0.182591,
+        "generation_s": 0.025391,
+        "prompt_tokens": 2015,
+        "output_tokens": 6,
+        "total_tokens": 2021,
+        "generation_tokens_per_s": 236.30420227639715
+      }
+    },
+    {
+      "turn_id": 61,
+      "speaker": "User A",
+      "text": "You’re on fire. Hey, what’s the name of that new dessert they have here? The one with matcha?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coffee shop staff or the coffee shop in general"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Brewed Awakening Coffee Shop"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that new dessert",
+          "ground_truth_resolution": "Matcha Swiss Roll (Brewed Awakening Menu)",
+          "resolution_source": "User A Wifi (Menu Digital Access)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the coffee shop staff or the coffee shop in general"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Brewed Awakening Coffee Shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6249386169947684,
+        "ollama_total_s": 0.623676044,
+        "model_load_s": 0.001360954,
+        "prompt_eval_s": 0.18572,
+        "generation_s": 0.265166999,
+        "prompt_tokens": 2067,
+        "output_tokens": 40,
+        "total_tokens": 2107,
+        "generation_tokens_per_s": 150.84833388335778
+      }
+    },
+    {
+      "turn_id": 62,
+      "speaker": "User B",
+      "text": "Oh, I think it’s the Matcha Swiss Roll. Want to split it later?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.39502787590026855,
+        "ollama_total_s": 0.393736839,
+        "model_load_s": 0.00177661,
+        "prompt_eval_s": 0.187892,
+        "generation_s": 0.025705,
+        "prompt_tokens": 2088,
+        "output_tokens": 6,
+        "total_tokens": 2094,
+        "generation_tokens_per_s": 233.4176230305388
+      }
+    },
+    {
+      "turn_id": 63,
+      "speaker": "User A",
+      "text": "Yes, let’s save it for when we finish genetics.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.39463498815894127,
+        "ollama_total_s": 0.393498928,
+        "model_load_s": 0.001293543,
+        "prompt_eval_s": 0.18838,
+        "generation_s": 0.025336,
+        "prompt_tokens": 2104,
+        "output_tokens": 6,
+        "total_tokens": 2110,
+        "generation_tokens_per_s": 236.81717713924849
+      }
+    },
+    {
+      "turn_id": 64,
+      "speaker": "User B",
+      "text": "Deal. By the way, did you see what the weather’s doing now?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "what the weather’s doing now",
+          "ground_truth_resolution": "Light rain, 12°C",
+          "resolution_source": "User B Wifi (Weather API)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3904940248467028,
+        "ollama_total_s": 0.389327865,
+        "model_load_s": 0.001361405,
+        "prompt_eval_s": 0.188895,
+        "generation_s": 0.025131,
+        "prompt_tokens": 2134,
+        "output_tokens": 6,
+        "total_tokens": 2140,
+        "generation_tokens_per_s": 238.7489554733198
+      }
+    },
+    {
+      "turn_id": 65,
+      "speaker": "User A",
+      "text": "No, but if it starts raining, at least we’re trapped inside with coffee.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "if it starts raining",
+          "ground_truth_resolution": "forecast: rain expected in next hour",
+          "resolution_source": "User A Wifi (Weather API)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.41951046139001846,
+        "ollama_total_s": 0.418160473,
+        "model_load_s": 0.001298927,
+        "prompt_eval_s": 0.193693,
+        "generation_s": 0.040934,
+        "prompt_tokens": 2162,
+        "output_tokens": 6,
+        "total_tokens": 2168,
+        "generation_tokens_per_s": 146.5774173059071
+      }
+    },
+    {
+      "turn_id": 66,
+      "speaker": "User B",
+      "text": "True. I just saw someone run in soaking wet—poor guy.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.40862998086959124,
+        "ollama_total_s": 0.407453023,
+        "model_load_s": 0.001393463,
+        "prompt_eval_s": 0.195206,
+        "generation_s": 0.025136,
+        "prompt_tokens": 2185,
+        "output_tokens": 6,
+        "total_tokens": 2191,
+        "generation_tokens_per_s": 238.7014640356461
+      }
+    },
+    {
+      "turn_id": 67,
+      "speaker": "User A",
+      "text": "LOL, classic Toronto spring. Should I ask for extra napkins?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Should I ask for extra napkins?",
+          "ground_truth_resolution": "Barista counter; napkin dispenser location",
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.40440678875893354,
+        "ollama_total_s": 0.403337248,
+        "model_load_s": 0.001430927,
+        "prompt_eval_s": 0.196044,
+        "generation_s": 0.025208,
+        "prompt_tokens": 2209,
+        "output_tokens": 6,
+        "total_tokens": 2215,
+        "generation_tokens_per_s": 238.01967629324022
+      }
+    },
+    {
+      "turn_id": 68,
+      "speaker": "User B",
+      "text": "Good plan. Anyway, Maya’s typing—she might have news about the exam now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Maya’s typing",
+          "ground_truth_resolution": "Maya Fernandez (classmate) about to send message about BIO201 exam format",
+          "resolution_source": "User B Calendar (Messaging History)"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4261527149938047,
+        "ollama_total_s": 0.424962685,
+        "model_load_s": 0.001343717,
+        "prompt_eval_s": 0.196632,
+        "generation_s": 0.040235,
+        "prompt_tokens": 2240,
+        "output_tokens": 6,
+        "total_tokens": 2246,
+        "generation_tokens_per_s": 149.123897104511
+      }
+    },
+    {
+      "turn_id": 69,
+      "speaker": "User A",
+      "text": "Great, let’s wait for her reply before we dive into the next topic.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4083967818878591,
+        "ollama_total_s": 0.407241878,
+        "model_load_s": 0.001459574,
+        "prompt_eval_s": 0.197652,
+        "generation_s": 0.024984,
+        "prompt_tokens": 2264,
+        "output_tokens": 6,
+        "total_tokens": 2270,
+        "generation_tokens_per_s": 240.15369836695487
+      }
+    },
+    {
+      "turn_id": 70,
+      "speaker": "User B",
+      "text": "Sounds good. Oh, did you ever figure out what’s going on with the group project for psychology?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 2.7913408428430557,
+        "ollama_total_s": 2.790073895,
+        "model_load_s": 0.001357242,
+        "prompt_eval_s": 2.568514,
+        "generation_s": 0.028255,
+        "prompt_tokens": 2300,
+        "output_tokens": 6,
+        "total_tokens": 2306,
+        "generation_tokens_per_s": 212.3517961422757
+      }
+    },
+    {
+      "turn_id": 71,
+      "speaker": "User A",
+      "text": "Sort of. Ben said he’ll handle the slides, but we still need someone to take notes during tomorrow’s meeting.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow’s meeting",
+          "resolved_entity": "the meeting scheduled for tomorrow"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Ben",
+          "ground_truth_resolution": "Ben Turner (Psych 101 Groupmate)",
+          "resolution_source": "User A Calendar (Group Project Contacts)"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "tomorrow’s meeting",
+          "resolved_entity": "the meeting scheduled for tomorrow"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5523743252269924,
+        "ollama_total_s": 0.551173073,
+        "model_load_s": 0.001467343,
+        "prompt_eval_s": 0.211704,
+        "generation_s": 0.164325,
+        "prompt_tokens": 2337,
+        "output_tokens": 27,
+        "total_tokens": 2364,
+        "generation_tokens_per_s": 164.30853491556368
+      }
+    },
+    {
+      "turn_id": 72,
+      "speaker": "User B",
+      "text": "If no one else volunteers, I’ll do it. Tomorrow’s meeting is still at the library, right?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "Tomorrow’s meeting",
+          "ground_truth_ambiguous_phrase": "tomorrow’s meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Psychology Group Project Meeting (Tomorrow, at the library)",
+          "ground_truth_resolution": "Psych group project meeting, University Library, 10:00am, Sunday",
+          "resolution_similarity": 0.8187521256857458,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the library",
+          "resolved_entity": "Local Public Library (Based on prior context of meeting location)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "Tomorrow’s meeting",
+          "resolved_entity": "Psychology Group Project Meeting (Tomorrow, at the library)"
+        },
+        {
+          "ambiguous_phrase": "the library",
+          "resolved_entity": "Local Public Library (Based on prior context of meeting location)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7967489990405738,
+        "ollama_total_s": 0.795430252,
+        "model_load_s": 0.00126957,
+        "prompt_eval_s": 0.214591,
+        "generation_s": 0.393843,
+        "prompt_tokens": 2367,
+        "output_tokens": 74,
+        "total_tokens": 2441,
+        "generation_tokens_per_s": 187.8921296049441
+      }
+    },
+    {
+      "turn_id": 73,
+      "speaker": "User A",
+      "text": "Yeah, at 10am. Should be in the same corner room as last week.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the same corner room as last week",
+          "ground_truth_ambiguous_phrase": "same corner room as last week",
+          "phrase_match_score": 0.9354838709677419,
+          "predicted_resolution": "the corner room by the window where User A and User B were sitting during their study session",
+          "ground_truth_resolution": "Library Room 203 (NW Corner)",
+          "resolution_similarity": 0.6157508120560661,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar (Location History)"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the same corner room as last week",
+          "resolved_entity": "the corner room by the window where User A and User B were sitting during their study session"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6600834177806973,
+        "ollama_total_s": 0.658938279,
+        "model_load_s": 0.004303355,
+        "prompt_eval_s": 0.218378,
+        "generation_s": 0.2415,
+        "prompt_tokens": 2393,
+        "output_tokens": 43,
+        "total_tokens": 2436,
+        "generation_tokens_per_s": 178.05383022774328
+      }
+    },
+    {
+      "turn_id": 74,
+      "speaker": "User B",
+      "text": "Cool. I’ll set a reminder.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.43661122396588326,
+        "ollama_total_s": 0.435657167,
+        "model_load_s": 0.001470144,
+        "prompt_eval_s": 0.219293,
+        "generation_s": 0.025419,
+        "prompt_tokens": 2400,
+        "output_tokens": 6,
+        "total_tokens": 2406,
+        "generation_tokens_per_s": 236.0439041661749
+      }
+    },
+    {
+      "turn_id": 75,
+      "speaker": "User A",
+      "text": "Thanks. I’ll bring the printouts for everyone.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.44592427322641015,
+        "ollama_total_s": 0.444753139,
+        "model_load_s": 0.001452712,
+        "prompt_eval_s": 0.221822,
+        "generation_s": 0.025242,
+        "prompt_tokens": 2424,
+        "output_tokens": 6,
+        "total_tokens": 2430,
+        "generation_tokens_per_s": 237.6990729736154
+      }
+    },
+    {
+      "turn_id": 76,
+      "speaker": "User B",
+      "text": "You’re always the prepared one. I owe you a coffee next time.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4573550699278712,
+        "ollama_total_s": 0.456265538,
+        "model_load_s": 0.001310947,
+        "prompt_eval_s": 0.224064,
+        "generation_s": 0.024686,
+        "prompt_tokens": 2453,
+        "output_tokens": 6,
+        "total_tokens": 2459,
+        "generation_tokens_per_s": 243.0527424451106
+      }
+    },
+    {
+      "turn_id": 77,
+      "speaker": "User A",
+      "text": "Deal. By the way, my laptop battery’s dying. Do you see an outlet nearby?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "an outlet nearby",
+          "ground_truth_ambiguous_phrase": "an outlet nearby",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "electrical outlet in the Brewed Awakening Coffee Shop",
+          "ground_truth_resolution": "Wall outlet behind potted plant, Brewed Awakening",
+          "resolution_similarity": 0.7955750584343916,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "my laptop battery’s dying",
+          "resolved_entity": "User A's laptop battery"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my laptop battery’s dying",
+          "resolved_entity": "User A's laptop battery"
+        },
+        {
+          "ambiguous_phrase": "an outlet nearby",
+          "resolved_entity": "electrical outlet in the Brewed Awakening Coffee Shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8116327729076147,
+        "ollama_total_s": 0.810375619,
+        "model_load_s": 0.001371083,
+        "prompt_eval_s": 0.227741,
+        "generation_s": 0.382975,
+        "prompt_tokens": 2486,
+        "output_tokens": 70,
+        "total_tokens": 2556,
+        "generation_tokens_per_s": 182.77955480122722
+      }
+    },
+    {
+      "turn_id": 78,
+      "speaker": "User B",
+      "text": "Let me check. There’s one by that plant behind you.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that plant behind you",
+          "resolved_entity": "the plant located behind User B's current position in the Brewed Awakening Coffee Shop"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "that plant",
+          "ground_truth_resolution": "Tall ficus near wall outlet, Brewed Awakening",
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that plant behind you",
+          "resolved_entity": "the plant located behind User B's current position in the Brewed Awakening Coffee Shop"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6169451102614403,
+        "ollama_total_s": 0.615835315,
+        "model_load_s": 0.001150881,
+        "prompt_eval_s": 0.22924,
+        "generation_s": 0.170771,
+        "prompt_tokens": 2503,
+        "output_tokens": 34,
+        "total_tokens": 2537,
+        "generation_tokens_per_s": 199.0970363820555
+      }
+    },
+    {
+      "turn_id": 79,
+      "speaker": "User A",
+      "text": "Perfect. Scooting over now.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Scooting over",
+          "ground_truth_resolution": "Moving to seat by wall outlet behind plant, Brewed Awakening",
+          "resolution_source": "User A GPS"
+        }
+      ],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.46853411197662354,
+        "ollama_total_s": 0.467323579,
+        "model_load_s": 0.001781016,
+        "prompt_eval_s": 0.232775,
+        "generation_s": 0.025429,
+        "prompt_tokens": 2514,
+        "output_tokens": 6,
+        "total_tokens": 2520,
+        "generation_tokens_per_s": 235.9510794761886
+      }
+    },
+    {
+      "turn_id": 80,
+      "speaker": "User B",
+      "text": "I’ll save your seat.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4628062630072236,
+        "ollama_total_s": 0.46151411,
+        "model_load_s": 0.00146739,
+        "prompt_eval_s": 0.231613,
+        "generation_s": 0.024634,
+        "prompt_tokens": 2529,
+        "output_tokens": 6,
+        "total_tokens": 2535,
+        "generation_tokens_per_s": 243.56580336120808
+      }
+    },
+    {
+      "turn_id": 81,
+      "speaker": "User A",
+      "text": "Thanks. Okay, battery crisis averted.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4760558451525867,
+        "ollama_total_s": 0.474746509,
+        "model_load_s": 0.003818479,
+        "prompt_eval_s": 0.23213,
+        "generation_s": 0.024721,
+        "prompt_tokens": 2551,
+        "output_tokens": 6,
+        "total_tokens": 2557,
+        "generation_tokens_per_s": 242.70862829173578
+      }
+    },
+    {
+      "turn_id": 82,
+      "speaker": "User B",
+      "text": "We’re unstoppable!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4676191727630794,
+        "ollama_total_s": 0.466319681,
+        "model_load_s": 0.001383716,
+        "prompt_eval_s": 0.232559,
+        "generation_s": 0.025157,
+        "prompt_tokens": 2560,
+        "output_tokens": 6,
+        "total_tokens": 2566,
+        "generation_tokens_per_s": 238.50220614540686
+      }
+    },
+    {
+      "turn_id": 83,
+      "speaker": "User A",
+      "text": "For now. Did you see that meme I sent you earlier?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "that meme",
+          "resolved_entity": "the meme sent by User A earlier in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that meme",
+          "resolved_entity": "the meme sent by User A earlier in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6257998021319509,
+        "ollama_total_s": 0.624459139,
+        "model_load_s": 0.001597016,
+        "prompt_eval_s": 0.236741,
+        "generation_s": 0.177296,
+        "prompt_tokens": 2592,
+        "output_tokens": 30,
+        "total_tokens": 2622,
+        "generation_tokens_per_s": 169.20855518455014
+      }
+    },
+    {
+      "turn_id": 84,
+      "speaker": "User B",
+      "text": "Haha, yes! The one with the raccoon and the exam stress? That’s literally me.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4941337606869638,
+        "ollama_total_s": 0.492788781,
+        "model_load_s": 0.001377206,
+        "prompt_eval_s": 0.243141,
+        "generation_s": 0.025749,
+        "prompt_tokens": 2631,
+        "output_tokens": 6,
+        "total_tokens": 2637,
+        "generation_tokens_per_s": 233.0187580100198
+      }
+    },
+    {
+      "turn_id": 85,
+      "speaker": "User A",
+      "text": "Same. Alright, focus mode—let’s finish this section and reward ourselves with cake.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.4829897601157427,
+        "ollama_total_s": 0.481705522,
+        "model_load_s": 0.001233491,
+        "prompt_eval_s": 0.242331,
+        "generation_s": 0.025497,
+        "prompt_tokens": 2656,
+        "output_tokens": 6,
+        "total_tokens": 2662,
+        "generation_tokens_per_s": 235.32180256500766
+      }
+    },
+    {
+      "turn_id": 86,
+      "speaker": "User B",
+      "text": "Deal. Let’s go!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.48344971472397447,
+        "ollama_total_s": 0.482366079,
+        "model_load_s": 0.001225607,
+        "prompt_eval_s": 0.242017,
+        "generation_s": 0.025243,
+        "prompt_tokens": 2660,
+        "output_tokens": 6,
+        "total_tokens": 2666,
+        "generation_tokens_per_s": 237.6896565384463
+      }
+    }
+  ]
+}

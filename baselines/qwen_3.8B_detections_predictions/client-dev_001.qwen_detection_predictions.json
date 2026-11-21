@@ -1,0 +1,3159 @@
+{
+  "dataset_id": "scenario_protocol_001",
+  "source_file": "/home/vnattar/lexicon-framework/data_generation/event_keywords/generated_datasets/client-dev_001.json",
+  "metrics": {
+    "ground_truth_ambiguities": 94,
+    "qwen_predicted_ambiguities": 107,
+    "detected_ground_truth_ambiguities": 83,
+    "missed_ground_truth_ambiguities": 11,
+    "detected_but_bad_resolution": 41,
+    "true_positives": 42,
+    "false_negatives": 52,
+    "false_positive_ambiguities": 24,
+    "detection_recall": 0.8829787234042553,
+    "detection_precision": 0.7757009345794392,
+    "detection_f1": 0.8258706467661693,
+    "true_positive_rate_at_0_70": 0.44680851063829785,
+    "strict_end_to_end_precision_at_0_70": 0.3925233644859813,
+    "end_to_end_f1_at_0_70": 0.41791044776119407,
+    "false_positive_discovery_rate": 0.22429906542056074,
+    "false_positives_per_turn": 0.4528301886792453,
+    "classical_false_positive_rate": null,
+    "fpr_note": "Classical FPR = FP/(FP+TN) is not defined unless a finite set of negative candidate phrases is specified."
+  },
+  "latency_compute": {
+    "number_of_turn_calls": 53,
+    "median_latency_per_turn_s": 0.534597986843437,
+    "mean_latency_per_turn_s": 0.5362042495453695,
+    "total_prompt_tokens": 64533,
+    "total_output_tokens": 3284
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "User A",
+      "text": "Morning, Aakash! I'm all set up *here* in my home office. Can you hear me okay?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*here*",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emily's Home Office",
+          "ground_truth_resolution": "Emily's Home Office",
+          "resolution_similarity": 0.9999237301240049,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*here*",
+          "resolved_entity": "Emily's Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30292074428871274,
+        "ollama_total_s": 0.301643558,
+        "model_load_s": 0.001936922,
+        "prompt_eval_s": 0.076339,
+        "generation_s": 0.208992,
+        "prompt_tokens": 474,
+        "output_tokens": 35,
+        "total_tokens": 509,
+        "generation_tokens_per_s": 167.47052518756698
+      }
+    },
+    {
+      "turn_id": 2,
+      "speaker": "User B",
+      "text": "Hey Emily, loud and clear! I'm dialed in from *my place*. Let's kick things off.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "my place",
+          "ground_truth_ambiguous_phrase": "my place",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Aakash's Apartment",
+          "ground_truth_resolution": "Aakash's Apartment",
+          "resolution_similarity": 0.9998875486469497,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "my place",
+          "resolved_entity": "Aakash's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3659795452840626,
+        "ollama_total_s": 0.364592759,
+        "model_load_s": 0.001430591,
+        "prompt_eval_s": 0.088866,
+        "generation_s": 0.220726,
+        "prompt_tokens": 505,
+        "output_tokens": 35,
+        "total_tokens": 540,
+        "generation_tokens_per_s": 158.56763589246395
+      }
+    },
+    {
+      "turn_id": 3,
+      "speaker": "User A",
+      "text": "Perfect. I just pulled up the dashboard specs *on this screen*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "on this screen",
+          "resolved_entity": "Emily's Home Office Screen"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "this screen",
+          "ground_truth_resolution": "Emily's Laptop",
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "on this screen",
+          "resolved_entity": "Emily's Home Office Screen"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.30941816326230764,
+        "ollama_total_s": 0.30781149,
+        "model_load_s": 0.001249114,
+        "prompt_eval_s": 0.037171,
+        "generation_s": 0.216724,
+        "prompt_tokens": 521,
+        "output_tokens": 37,
+        "total_tokens": 558,
+        "generation_tokens_per_s": 170.72405455787083
+      }
+    },
+    {
+      "turn_id": 4,
+      "speaker": "User B",
+      "text": "Awesome. Is that the latest version you sent *last night*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "last night",
+          "ground_truth_ambiguous_phrase": "last night",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The previous day's time frame (the day before the current day) based on the conversation context.",
+          "ground_truth_resolution": "2024-06-17 22:14:00",
+          "resolution_similarity": 0.5487076786518881,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "last night",
+          "resolved_entity": "The previous day's time frame (the day before the current day) based on the conversation context."
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.3648207043297589,
+        "ollama_total_s": 0.363365669,
+        "model_load_s": 0.001402036,
+        "prompt_eval_s": 0.041735,
+        "generation_s": 0.275292,
+        "prompt_tokens": 543,
+        "output_tokens": 50,
+        "total_tokens": 593,
+        "generation_tokens_per_s": 181.62532874184504
+      }
+    },
+    {
+      "turn_id": 5,
+      "speaker": "User A",
+      "text": "Yes, that's *the document* with the comments from *the marketing team*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the document",
+          "ground_truth_ambiguous_phrase": "the document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document with the comments from the marketing team",
+          "ground_truth_resolution": "Dashboard_Specs_v3.pdf",
+          "resolution_similarity": 0.5346309187969794,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the marketing team",
+          "resolved_entity": "the marketing team"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the document with the comments from the marketing team"
+        },
+        {
+          "ambiguous_phrase": "the marketing team",
+          "resolved_entity": "the marketing team"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4416955942288041,
+        "ollama_total_s": 0.4402062,
+        "model_load_s": 0.001357596,
+        "prompt_eval_s": 0.046508,
+        "generation_s": 0.331658,
+        "prompt_tokens": 574,
+        "output_tokens": 64,
+        "total_tokens": 638,
+        "generation_tokens_per_s": 192.96986654927667
+      }
+    },
+    {
+      "turn_id": 6,
+      "speaker": "User B",
+      "text": "Great, let me open *it*.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.290757711045444,
+        "ollama_total_s": 0.289176358,
+        "model_load_s": 0.001554973,
+        "prompt_eval_s": 0.046382,
+        "generation_s": 0.191246,
+        "prompt_tokens": 583,
+        "output_tokens": 32,
+        "total_tokens": 615,
+        "generation_tokens_per_s": 167.32376101983832
+      }
+    },
+    {
+      "turn_id": 7,
+      "speaker": "User A",
+      "text": "So, our top focus is integrating real-time analytics. *They* were pretty adamant about *that feature*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that feature",
+          "ground_truth_ambiguous_phrase": "that feature",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "real-time analytics",
+          "ground_truth_resolution": "Real-time analytics",
+          "resolution_similarity": 0.9620838681334614,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "They",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Stakeholders (Marketing, Sales, Client Management)",
+          "resolution_similarity": 0.5273657262702177,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "that feature",
+          "resolved_entity": "real-time analytics"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4089699829928577,
+        "ollama_total_s": 0.407477665,
+        "model_load_s": 0.001309831,
+        "prompt_eval_s": 0.046925,
+        "generation_s": 0.31054,
+        "prompt_tokens": 629,
+        "output_tokens": 58,
+        "total_tokens": 687,
+        "generation_tokens_per_s": 186.7714304115412
+      }
+    },
+    {
+      "turn_id": 8,
+      "speaker": "User B",
+      "text": "Yeah, *the stakeholders*? I remember *them* mentioning it during *the last review*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the stakeholders",
+          "ground_truth_resolution": "Stakeholders",
+          "resolution_similarity": 0.9487582275818724,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the stakeholders",
+          "ground_truth_ambiguous_phrase": "the stakeholders",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the stakeholders from the last review",
+          "ground_truth_resolution": "Stakeholder group listed in calendar invite",
+          "resolution_similarity": 0.6780506803122609,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the last review",
+          "resolved_entity": "the previous review meeting"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the stakeholders",
+          "resolved_entity": "the stakeholders from the last review"
+        },
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the stakeholders"
+        },
+        {
+          "ambiguous_phrase": "the last review",
+          "resolved_entity": "the previous review meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5554987760260701,
+        "ollama_total_s": 0.554195642,
+        "model_load_s": 0.001506654,
+        "prompt_eval_s": 0.047787,
+        "generation_s": 0.450582,
+        "prompt_tokens": 657,
+        "output_tokens": 83,
+        "total_tokens": 740,
+        "generation_tokens_per_s": 184.20620442006117
+      }
+    },
+    {
+      "turn_id": 9,
+      "speaker": "User A",
+      "text": "Exactly. Plus, *dynamic filtering*—*those users* flagged it as a critical need.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those users",
+          "ground_truth_ambiguous_phrase": "those users",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the users who flagged dynamic filtering as a critical need",
+          "ground_truth_resolution": "Dashboard Pilot Users",
+          "resolution_similarity": 0.5634417318982161,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "dynamic filtering",
+          "resolved_entity": "the feature mentioned in the conversation"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "those users",
+          "resolved_entity": "the users who flagged dynamic filtering as a critical need"
+        },
+        {
+          "ambiguous_phrase": "dynamic filtering",
+          "resolved_entity": "the feature mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4591074902564287,
+        "ollama_total_s": 0.457906138,
+        "model_load_s": 0.000976554,
+        "prompt_eval_s": 0.048294,
+        "generation_s": 0.347527,
+        "prompt_tokens": 685,
+        "output_tokens": 67,
+        "total_tokens": 752,
+        "generation_tokens_per_s": 192.79077596848592
+      }
+    },
+    {
+      "turn_id": 10,
+      "speaker": "User B",
+      "text": "Right. I see *their feedback* highlighted *in the spreadsheet*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "in the spreadsheet",
+          "ground_truth_ambiguous_phrase": "in the spreadsheet",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "UserFeedback_June2024.xlsx",
+          "resolution_similarity": 0.5404686540913678,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "their feedback",
+          "ground_truth_ambiguous_phrase": "their feedback",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the marketing team",
+          "ground_truth_resolution": "Pilot user feedback from June 2024",
+          "resolution_similarity": 0.4574748478392191,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "their feedback",
+          "resolved_entity": "the marketing team"
+        },
+        {
+          "ambiguous_phrase": "in the spreadsheet",
+          "resolved_entity": "the document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4231585981324315,
+        "ollama_total_s": 0.421968531,
+        "model_load_s": 0.001214654,
+        "prompt_eval_s": 0.052254,
+        "generation_s": 0.298535,
+        "prompt_tokens": 706,
+        "output_tokens": 57,
+        "total_tokens": 763,
+        "generation_tokens_per_s": 190.93238648734655
+      }
+    },
+    {
+      "turn_id": 11,
+      "speaker": "User A",
+      "text": "Let’s walk through *the sprint backlog*. I’ve organized *these user stories* by priority.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "these user stories",
+          "ground_truth_ambiguous_phrase": "these user stories",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the user stories organized by priority in the sprint backlog (referencing the current discussion)",
+          "ground_truth_resolution": "Sprint Backlog User Stories (June 2024)",
+          "resolution_similarity": 0.8256060862840674,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the sprint backlog",
+          "resolved_entity": "the sprint backlog (contextual entity from the current sprint planning meeting)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the sprint backlog",
+          "resolved_entity": "the sprint backlog (contextual entity from the current sprint planning meeting)"
+        },
+        {
+          "ambiguous_phrase": "these user stories",
+          "resolved_entity": "the user stories organized by priority in the sprint backlog (referencing the current discussion)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5325823030434549,
+        "ollama_total_s": 0.531214454,
+        "model_load_s": 0.003227305,
+        "prompt_eval_s": 0.052119,
+        "generation_s": 0.413079,
+        "prompt_tokens": 741,
+        "output_tokens": 82,
+        "total_tokens": 823,
+        "generation_tokens_per_s": 198.50924399449016
+      }
+    },
+    {
+      "turn_id": 12,
+      "speaker": "User B",
+      "text": "Okay, is *the analytics epic* first or second?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the analytics epic",
+          "ground_truth_ambiguous_phrase": "the analytics epic",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the analytics epic (referent: the epic in the sprint backlog discussed in Turn 11)",
+          "ground_truth_resolution": "Sprint Backlog: Analytics Epic",
+          "resolution_similarity": 0.9138538929172306,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the analytics epic",
+          "resolved_entity": "the analytics epic (referent: the epic in the sprint backlog discussed in Turn 11)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4557572011835873,
+        "ollama_total_s": 0.454431047,
+        "model_load_s": 0.001233953,
+        "prompt_eval_s": 0.060369,
+        "generation_s": 0.329859,
+        "prompt_tokens": 755,
+        "output_tokens": 51,
+        "total_tokens": 806,
+        "generation_tokens_per_s": 154.61151582949077
+      }
+    },
+    {
+      "turn_id": 13,
+      "speaker": "User A",
+      "text": "It's first. *That item* is at the top because of *the client deadline*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the client deadline",
+          "ground_truth_ambiguous_phrase": "the client deadline",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the deadline mentioned in the conversation",
+          "ground_truth_resolution": "2024-06-27",
+          "resolution_similarity": 0.5602792257747108,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "That item",
+          "ground_truth_ambiguous_phrase": "that item",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the analytics epic",
+          "ground_truth_resolution": "Real-time analytics user story",
+          "resolution_similarity": 0.8012901782475134,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "That item",
+          "resolved_entity": "the analytics epic"
+        },
+        {
+          "ambiguous_phrase": "the client deadline",
+          "resolved_entity": "the deadline mentioned in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45272822631523013,
+        "ollama_total_s": 0.45105768,
+        "model_load_s": 0.001405953,
+        "prompt_eval_s": 0.063205,
+        "generation_s": 0.323105,
+        "prompt_tokens": 793,
+        "output_tokens": 61,
+        "total_tokens": 854,
+        "generation_tokens_per_s": 188.79311678866006
+      }
+    },
+    {
+      "turn_id": 14,
+      "speaker": "User B",
+      "text": "How soon does *marketing* need *the dashboard* ready?",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "marketing",
+          "resolved_entity": "the marketing team"
+        },
+        {
+          "ambiguous_phrase": "the dashboard",
+          "resolved_entity": "the dashboard specs"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "marketing",
+          "resolved_entity": "the marketing team"
+        },
+        {
+          "ambiguous_phrase": "the dashboard",
+          "resolved_entity": "the dashboard specs"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44976490503177047,
+        "ollama_total_s": 0.448577154,
+        "model_load_s": 0.001353438,
+        "prompt_eval_s": 0.068799,
+        "generation_s": 0.310455,
+        "prompt_tokens": 809,
+        "output_tokens": 56,
+        "total_tokens": 865,
+        "generation_tokens_per_s": 180.38040939910778
+      }
+    },
+    {
+      "turn_id": 15,
+      "speaker": "User A",
+      "text": "*They* are planning the announcement for *next Thursday*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next Thursday",
+          "ground_truth_ambiguous_phrase": "next Thursday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the Sprint Planning Meeting",
+          "ground_truth_resolution": "2024-06-27",
+          "resolution_similarity": 0.42860445826578647,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "They",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the stakeholders",
+          "ground_truth_resolution": "Marketing Team",
+          "resolution_similarity": 0.5388469446643973,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "They",
+          "resolved_entity": "the stakeholders"
+        },
+        {
+          "ambiguous_phrase": "next Thursday",
+          "resolved_entity": "the Sprint Planning Meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44821353629231453,
+        "ollama_total_s": 0.446934774,
+        "model_load_s": 0.00139367,
+        "prompt_eval_s": 0.069338,
+        "generation_s": 0.309054,
+        "prompt_tokens": 831,
+        "output_tokens": 56,
+        "total_tokens": 887,
+        "generation_tokens_per_s": 181.19810777404595
+      }
+    },
+    {
+      "turn_id": 16,
+      "speaker": "User B",
+      "text": "So, *we* have about a week and a half. Should we split *the analytics work* across two sprints or try to deliver *it* all at once?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the analytics work",
+          "ground_truth_resolution": "Analytics feature",
+          "resolution_similarity": 0.7765818240951335,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "we",
+          "ground_truth_ambiguous_phrase": "we",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Development Team (Emily, Aakash, Sam, Priya)",
+          "resolution_similarity": 0.5125225362787688,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the analytics work"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.43130635377019644,
+        "ollama_total_s": 0.430009776,
+        "model_load_s": 0.003337961,
+        "prompt_eval_s": 0.074475,
+        "generation_s": 0.283873,
+        "prompt_tokens": 901,
+        "output_tokens": 57,
+        "total_tokens": 958,
+        "generation_tokens_per_s": 200.79401704283254
+      }
+    },
+    {
+      "turn_id": 17,
+      "speaker": "User A",
+      "text": "I’d prefer *we* aim for a complete release for *this sprint*, if possible.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "*we*",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "*this sprint*",
+          "resolved_entity": "The current sprint planning meeting"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*we*",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "*this sprint*",
+          "resolved_entity": "The current sprint planning meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5022374489344656,
+        "ollama_total_s": 0.501004369,
+        "model_load_s": 0.001252858,
+        "prompt_eval_s": 0.081871,
+        "generation_s": 0.335771,
+        "prompt_tokens": 913,
+        "output_tokens": 62,
+        "total_tokens": 975,
+        "generation_tokens_per_s": 184.64965705793531
+      }
+    },
+    {
+      "turn_id": 18,
+      "speaker": "User B",
+      "text": "Okay. Who’s handling *the filtering feature*? Is *Sam* taking point on *that*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the filtering feature",
+          "resolved_entity": "dynamic filtering"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "dynamic filtering"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Sam",
+          "ground_truth_resolution": "Sam Patel, Front-End Developer",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the filtering feature",
+          "resolved_entity": "dynamic filtering"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "dynamic filtering"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.45391112193465233,
+        "ollama_total_s": 0.452672347,
+        "model_load_s": 0.001320246,
+        "prompt_eval_s": 0.082348,
+        "generation_s": 0.294367,
+        "prompt_tokens": 948,
+        "output_tokens": 55,
+        "total_tokens": 1003,
+        "generation_tokens_per_s": 186.84159569516964
+      }
+    },
+    {
+      "turn_id": 19,
+      "speaker": "User A",
+      "text": "Yes, *he* has bandwidth this week. I confirmed with *him* yesterday.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam",
+          "ground_truth_resolution": "Sam Patel",
+          "resolution_similarity": 0.7463931949482885,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam",
+          "ground_truth_resolution": "Sam Patel",
+          "resolution_similarity": 0.7467071408823586,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "he",
+          "resolved_entity": "Sam"
+        },
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Sam"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.44829760678112507,
+        "ollama_total_s": 0.446793396,
+        "model_load_s": 0.001588786,
+        "prompt_eval_s": 0.083354,
+        "generation_s": 0.278577,
+        "prompt_tokens": 972,
+        "output_tokens": 51,
+        "total_tokens": 1023,
+        "generation_tokens_per_s": 183.07326161169084
+      }
+    },
+    {
+      "turn_id": 20,
+      "speaker": "User B",
+      "text": "Awesome. I’ll sync with *him* later *today* about *the API integration*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "today",
+          "ground_truth_ambiguous_phrase": "today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Today (current day)",
+          "ground_truth_resolution": "2024-06-17",
+          "resolution_similarity": 0.5986019824321382,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam",
+          "ground_truth_resolution": "Sam Patel",
+          "resolution_similarity": 0.7467071408823586,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the API integration",
+          "resolved_entity": "The API integration (referencing the feature discussed earlier)"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "him",
+          "resolved_entity": "Sam"
+        },
+        {
+          "ambiguous_phrase": "today",
+          "resolved_entity": "Today (current day)"
+        },
+        {
+          "ambiguous_phrase": "the API integration",
+          "resolved_entity": "The API integration (referencing the feature discussed earlier)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6187490853480995,
+        "ollama_total_s": 0.617576479,
+        "model_load_s": 0.001129869,
+        "prompt_eval_s": 0.08352,
+        "generation_s": 0.44555,
+        "prompt_tokens": 1004,
+        "output_tokens": 85,
+        "total_tokens": 1089,
+        "generation_tokens_per_s": 190.77544607788127
+      }
+    },
+    {
+      "turn_id": 21,
+      "speaker": "User A",
+      "text": "Great. Also, *Priya* flagged *a blocker* for *her task*—did you see *her message*?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "her message",
+          "ground_truth_ambiguous_phrase": "her message",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's message",
+          "ground_truth_resolution": "Priya's Slack message @ 7:45am",
+          "resolution_similarity": 0.8208574153096337,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "her task",
+          "ground_truth_ambiguous_phrase": "her task",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Priya's task",
+          "ground_truth_resolution": "QA testing for dashboard migration",
+          "resolution_similarity": 0.4668948152547026,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "Priya",
+          "ground_truth_resolution": "Priya Singh, QA Engineer",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "her task",
+          "resolved_entity": "Priya's task"
+        },
+        {
+          "ambiguous_phrase": "her message",
+          "resolved_entity": "Priya's message"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.47651985427364707,
+        "ollama_total_s": 0.475197408,
+        "model_load_s": 0.001256861,
+        "prompt_eval_s": 0.09187,
+        "generation_s": 0.289685,
+        "prompt_tokens": 1048,
+        "output_tokens": 59,
+        "total_tokens": 1107,
+        "generation_tokens_per_s": 203.6695030809327
+      }
+    },
+    {
+      "turn_id": 22,
+      "speaker": "User B",
+      "text": "No, not yet. Was *it* about *the database migration*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the database migration",
+          "ground_truth_ambiguous_phrase": "the database migration",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the database migration",
+          "ground_truth_resolution": "Migration task for user dashboard storage",
+          "resolution_similarity": 0.5884398981716672,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the database migration",
+          "ground_truth_resolution": "Blocker on database migration",
+          "resolution_similarity": 0.7896501365986004,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the database migration"
+        },
+        {
+          "ambiguous_phrase": "the database migration",
+          "resolved_entity": "the database migration"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5030549173243344,
+        "ollama_total_s": 0.50171835,
+        "model_load_s": 0.001442574,
+        "prompt_eval_s": 0.091946,
+        "generation_s": 0.315273,
+        "prompt_tokens": 1063,
+        "output_tokens": 57,
+        "total_tokens": 1120,
+        "generation_tokens_per_s": 180.79569135320816
+      }
+    },
+    {
+      "turn_id": 23,
+      "speaker": "User A",
+      "text": "Yes, *that issue* popped up *this morning* in *the team chat*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 0,
+        "false_negatives": 3,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 3
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the team chat",
+          "ground_truth_ambiguous_phrase": "the team chat",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the shared communication channel where the issue was discussed",
+          "ground_truth_resolution": "Sprint Planning Slack Channel",
+          "resolution_similarity": 0.6032955180930789,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "this morning",
+          "ground_truth_ambiguous_phrase": "this morning",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the time when the issue was mentioned in the team chat",
+          "ground_truth_resolution": "2024-06-17 07:45",
+          "resolution_similarity": 0.47080512040847355,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that issue",
+          "ground_truth_ambiguous_phrase": "that issue",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the blocker mentioned by Priya",
+          "ground_truth_resolution": "Database migration blocker",
+          "resolution_similarity": 0.5819287083528051,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that issue",
+          "resolved_entity": "the blocker mentioned by Priya"
+        },
+        {
+          "ambiguous_phrase": "this morning",
+          "resolved_entity": "the time when the issue was mentioned in the team chat"
+        },
+        {
+          "ambiguous_phrase": "the team chat",
+          "resolved_entity": "the shared communication channel where the issue was discussed"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6646709558553994,
+        "ollama_total_s": 0.663596844,
+        "model_load_s": 0.001196856,
+        "prompt_eval_s": 0.092788,
+        "generation_s": 0.474971,
+        "prompt_tokens": 1095,
+        "output_tokens": 98,
+        "total_tokens": 1193,
+        "generation_tokens_per_s": 206.32838636464123
+      }
+    },
+    {
+      "turn_id": 24,
+      "speaker": "User B",
+      "text": "Alright, I’ll follow up in *the channel* after *this meeting*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this meeting",
+          "ground_truth_ambiguous_phrase": "this meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the Sprint Planning Meeting",
+          "ground_truth_resolution": "Sprint Planning Meeting (2024-06-17 08:30)",
+          "resolution_similarity": 0.869902496829829,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the channel",
+          "ground_truth_ambiguous_phrase": "the channel",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the team chat",
+          "ground_truth_resolution": "Sprint Planning Slack Channel",
+          "resolution_similarity": 0.6664722702125896,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the channel",
+          "resolved_entity": "the team chat"
+        },
+        {
+          "ambiguous_phrase": "this meeting",
+          "resolved_entity": "the Sprint Planning Meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5030539059080184,
+        "ollama_total_s": 0.501537154,
+        "model_load_s": 0.001308562,
+        "prompt_eval_s": 0.093113,
+        "generation_s": 0.319025,
+        "prompt_tokens": 1120,
+        "output_tokens": 58,
+        "total_tokens": 1178,
+        "generation_tokens_per_s": 181.80393386098268
+      }
+    },
+    {
+      "turn_id": 25,
+      "speaker": "User A",
+      "text": "Thanks. Let’s also revisit *the metrics definition*. *That table* needs updating per *stakeholder feedback*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "stakeholder feedback",
+          "ground_truth_ambiguous_phrase": "stakeholder feedback",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the latest stakeholder feedback document",
+          "ground_truth_resolution": "Comments from June 2024 stakeholder meeting",
+          "resolution_similarity": 0.7651860466179917,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that table",
+          "ground_truth_ambiguous_phrase": "that table",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the metrics table",
+          "ground_truth_resolution": "Metrics_Definition.xlsx",
+          "resolution_similarity": 0.6448728454588775,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the metrics definition",
+          "resolved_entity": "the metrics definition document"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the metrics definition",
+          "resolved_entity": "the metrics definition document"
+        },
+        {
+          "ambiguous_phrase": "that table",
+          "resolved_entity": "the metrics table"
+        },
+        {
+          "ambiguous_phrase": "stakeholder feedback",
+          "resolved_entity": "the latest stakeholder feedback document"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6347738821059465,
+        "ollama_total_s": 0.633392759,
+        "model_load_s": 0.001047329,
+        "prompt_eval_s": 0.098742,
+        "generation_s": 0.445236,
+        "prompt_tokens": 1163,
+        "output_tokens": 87,
+        "total_tokens": 1250,
+        "generation_tokens_per_s": 195.4019890574886
+      }
+    },
+    {
+      "turn_id": 26,
+      "speaker": "User B",
+      "text": "Got it. Should I use *the revised key metrics* from *the document* or from *the spreadsheet*?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the revised key metrics",
+          "ground_truth_ambiguous_phrase": "the revised key metrics",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the key metrics that need updating per stakeholder feedback",
+          "ground_truth_resolution": "Updated metrics from Dashboard_Specs_v3.pdf",
+          "resolution_similarity": 0.6734100595341751,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the document with the comments from the marketing team"
+        },
+        {
+          "ambiguous_phrase": "the spreadsheet",
+          "resolved_entity": "the spreadsheet with highlighted feedback"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the document",
+          "resolved_entity": "the document with the comments from the marketing team"
+        },
+        {
+          "ambiguous_phrase": "the spreadsheet",
+          "resolved_entity": "the spreadsheet with highlighted feedback"
+        },
+        {
+          "ambiguous_phrase": "the revised key metrics",
+          "resolved_entity": "the key metrics that need updating per stakeholder feedback"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6683820369653404,
+        "ollama_total_s": 0.667235913,
+        "model_load_s": 0.001240337,
+        "prompt_eval_s": 0.099744,
+        "generation_s": 0.463159,
+        "prompt_tokens": 1196,
+        "output_tokens": 97,
+        "total_tokens": 1293,
+        "generation_tokens_per_s": 209.43131840253562
+      }
+    },
+    {
+      "turn_id": 27,
+      "speaker": "User A",
+      "text": "*Document*—I just updated *it* with *the latest numbers*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 0,
+        "false_negatives": 3,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 3
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the latest numbers*",
+          "ground_truth_ambiguous_phrase": "the latest numbers",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the latest numbers",
+          "ground_truth_resolution": "Updated business metrics for June 2024",
+          "resolution_similarity": 0.6610933921507152,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*it*",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Dashboard_Specs_v3.pdf",
+          "resolution_similarity": 0.6496511126689692,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "*Document*",
+          "ground_truth_ambiguous_phrase": "document",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Dashboard_Specs_v3.pdf",
+          "resolution_similarity": 0.6496205329220698,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*Document*",
+          "resolved_entity": "the document"
+        },
+        {
+          "ambiguous_phrase": "*it*",
+          "resolved_entity": "the document"
+        },
+        {
+          "ambiguous_phrase": "*the latest numbers*",
+          "resolved_entity": "the latest numbers"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.641245637089014,
+        "ollama_total_s": 0.64000314,
+        "model_load_s": 0.001575971,
+        "prompt_eval_s": 0.099725,
+        "generation_s": 0.429442,
+        "prompt_tokens": 1215,
+        "output_tokens": 80,
+        "total_tokens": 1295,
+        "generation_tokens_per_s": 186.28825312847835
+      }
+    },
+    {
+      "turn_id": 28,
+      "speaker": "User B",
+      "text": "Great, sending *them* over to *DevOps*. They'll set up *the dashboard hooks*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the dashboard hooks",
+          "ground_truth_ambiguous_phrase": "the dashboard hooks",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the dashboard integration with DevOps",
+          "ground_truth_resolution": "Dashboard Analytics API Integration",
+          "resolution_similarity": 0.8020531599937767,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the stakeholders",
+          "ground_truth_resolution": "Updated key metrics",
+          "resolution_similarity": 0.46157311726942946,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "DevOps",
+          "ground_truth_resolution": "DevOps Team (internal team members)",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the stakeholders"
+        },
+        {
+          "ambiguous_phrase": "the dashboard hooks",
+          "resolved_entity": "the dashboard integration with DevOps"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5177208720706403,
+        "ollama_total_s": 0.516507753,
+        "model_load_s": 0.001275534,
+        "prompt_eval_s": 0.10125,
+        "generation_s": 0.317408,
+        "prompt_tokens": 1253,
+        "output_tokens": 59,
+        "total_tokens": 1312,
+        "generation_tokens_per_s": 185.88063312833953
+      }
+    },
+    {
+      "turn_id": 29,
+      "speaker": "User A",
+      "text": "Perfect. Oh, before we move on: *this user story* for *the activity feed*—can *you* review *it* for dependencies?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 2,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the user story for the activity feed",
+          "ground_truth_resolution": "Activity Feed user story",
+          "resolution_similarity": 0.8087359254571123,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "this user story",
+          "ground_truth_ambiguous_phrase": "this user story",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the user story for the activity feed",
+          "ground_truth_resolution": "Activity Feed user story",
+          "resolution_similarity": 0.8088427481723469,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the activity feed",
+          "resolved_entity": "the activity feed (referenced in the current turn)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "this user story",
+          "resolved_entity": "the user story for the activity feed"
+        },
+        {
+          "ambiguous_phrase": "the activity feed",
+          "resolved_entity": "the activity feed (referenced in the current turn)"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User B"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the user story for the activity feed"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7874669088050723,
+        "ollama_total_s": 0.786222729,
+        "model_load_s": 0.001602988,
+        "prompt_eval_s": 0.115591,
+        "generation_s": 0.557332,
+        "prompt_tokens": 1305,
+        "output_tokens": 117,
+        "total_tokens": 1422,
+        "generation_tokens_per_s": 209.92873188691837
+      }
+    },
+    {
+      "turn_id": 30,
+      "speaker": "User B",
+      "text": "Sure, let me check *the backlog* and see if *that* needs *any backend changes*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the user story for the activity feed",
+          "ground_truth_resolution": "Activity Feed user story",
+          "resolution_similarity": 0.8088427481723469,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the backlog",
+          "ground_truth_ambiguous_phrase": "the backlog",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sprint backlog",
+          "ground_truth_resolution": "Sprint Backlog (June 2024)",
+          "resolution_similarity": 0.8680910410908582,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "any backend changes",
+          "ground_truth_resolution": "Potential backend requirements for Activity Feed",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the backlog",
+          "resolved_entity": "the sprint backlog"
+        },
+        {
+          "ambiguous_phrase": "that",
+          "resolved_entity": "the user story for the activity feed"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5705873062834144,
+        "ollama_total_s": 0.569305229,
+        "model_load_s": 0.001764994,
+        "prompt_eval_s": 0.116059,
+        "generation_s": 0.319879,
+        "prompt_tokens": 1327,
+        "output_tokens": 60,
+        "total_tokens": 1387,
+        "generation_tokens_per_s": 187.57092525611245
+      }
+    },
+    {
+      "turn_id": 31,
+      "speaker": "User A",
+      "text": "Thanks. Also, *that corner case* with *multi-account users* needs clarification.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "that corner case",
+          "ground_truth_ambiguous_phrase": "that corner case",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the corner case with multi-account users discussed previously",
+          "ground_truth_resolution": "Multi-account user scenario",
+          "resolution_similarity": 0.845555564534524,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "multi-account users",
+          "resolved_entity": "users who manage multiple accounts, previously mentioned in the context of needing clarification"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that corner case",
+          "resolved_entity": "the corner case with multi-account users discussed previously"
+        },
+        {
+          "ambiguous_phrase": "multi-account users",
+          "resolved_entity": "users who manage multiple accounts, previously mentioned in the context of needing clarification"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6286501022987068,
+        "ollama_total_s": 0.627424466,
+        "model_load_s": 0.001244098,
+        "prompt_eval_s": 0.116962,
+        "generation_s": 0.407399,
+        "prompt_tokens": 1351,
+        "output_tokens": 76,
+        "total_tokens": 1427,
+        "generation_tokens_per_s": 186.54930424473304
+      }
+    },
+    {
+      "turn_id": 32,
+      "speaker": "User B",
+      "text": "Yeah, I’ll check with *the QA lead* about *those scenarios*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those scenarios",
+          "ground_truth_ambiguous_phrase": "those scenarios",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "scenarios mentioned earlier in the conversation related to multi-account users or testing",
+          "ground_truth_resolution": "Multi-account scenarios",
+          "resolution_similarity": 0.853142985996648,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the QA lead",
+          "ground_truth_ambiguous_phrase": "the QA lead",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "QA lead (from previous context, likely a known role or person in the team)",
+          "ground_truth_resolution": "QA Lead: Priya Singh",
+          "resolution_similarity": 0.793110443483406,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the QA lead",
+          "resolved_entity": "QA lead (from previous context, likely a known role or person in the team)"
+        },
+        {
+          "ambiguous_phrase": "those scenarios",
+          "resolved_entity": "scenarios mentioned earlier in the conversation related to multi-account users or testing"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6478967303410172,
+        "ollama_total_s": 0.646697286,
+        "model_load_s": 0.001153662,
+        "prompt_eval_s": 0.117429,
+        "generation_s": 0.421717,
+        "prompt_tokens": 1377,
+        "output_tokens": 82,
+        "total_tokens": 1459,
+        "generation_tokens_per_s": 194.44319294692886
+      }
+    },
+    {
+      "turn_id": 33,
+      "speaker": "User A",
+      "text": "Good. *She* had some concerns after *the last sprint*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "*the last sprint*",
+          "ground_truth_ambiguous_phrase": "the last sprint",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the previous sprint planning meeting",
+          "ground_truth_resolution": "Sprint ending 2024-06-14",
+          "resolution_similarity": 0.6875535547101514,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "*She*",
+          "ground_truth_ambiguous_phrase": "She",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emily",
+          "ground_truth_resolution": "Priya Singh",
+          "resolution_similarity": 0.727353943328842,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "*She*",
+          "resolved_entity": "Emily"
+        },
+        {
+          "ambiguous_phrase": "*the last sprint*",
+          "resolved_entity": "the previous sprint planning meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5550656621344388,
+        "ollama_total_s": 0.553913014,
+        "model_load_s": 0.001144101,
+        "prompt_eval_s": 0.129822,
+        "generation_s": 0.314014,
+        "prompt_tokens": 1400,
+        "output_tokens": 59,
+        "total_tokens": 1459,
+        "generation_tokens_per_s": 187.8897119236722
+      }
+    },
+    {
+      "turn_id": 34,
+      "speaker": "User B",
+      "text": "Got it. By the way, do *we* have confirmation from *the client* on *the UI wireframes*?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the UI wireframes",
+          "ground_truth_ambiguous_phrase": "the UI wireframes",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The UI wireframes discussed in the conversation",
+          "ground_truth_resolution": "Dashboard UI wireframes (Figma link)",
+          "resolution_similarity": 0.8097290603637591,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the client",
+          "ground_truth_ambiguous_phrase": "the client",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "The client mentioned in previous context (not explicitly named)",
+          "ground_truth_resolution": "Client Organization: FinView Inc.",
+          "resolution_similarity": 0.4789650895674506,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "we",
+          "ground_truth_ambiguous_phrase": "we",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "User A and User B",
+          "ground_truth_resolution": "Product & Development Team",
+          "resolution_similarity": 0.5103111611435643,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "we",
+          "resolved_entity": "User A and User B"
+        },
+        {
+          "ambiguous_phrase": "the client",
+          "resolved_entity": "The client mentioned in previous context (not explicitly named)"
+        },
+        {
+          "ambiguous_phrase": "the UI wireframes",
+          "resolved_entity": "The UI wireframes discussed in the conversation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7161363400518894,
+        "ollama_total_s": 0.714786587,
+        "model_load_s": 0.001456054,
+        "prompt_eval_s": 0.131390999,
+        "generation_s": 0.467799,
+        "prompt_tokens": 1447,
+        "output_tokens": 95,
+        "total_tokens": 1542,
+        "generation_tokens_per_s": 203.07867267779537
+      }
+    },
+    {
+      "turn_id": 35,
+      "speaker": "User A",
+      "text": "Yes, *they* sent *final approval* on *those files* last Friday.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "those files",
+          "ground_truth_ambiguous_phrase": "those files",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the UI wireframes",
+          "ground_truth_resolution": "UI wireframes (Figma link)",
+          "resolution_similarity": 0.8994994655477196,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "they",
+          "ground_truth_ambiguous_phrase": "they",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the client",
+          "ground_truth_resolution": "Client Organization: FinView Inc.",
+          "resolution_similarity": 0.5434428554317253,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "final approval",
+          "ground_truth_resolution": "Wireframe Approval Email (2024-06-14)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "they",
+          "resolved_entity": "the client"
+        },
+        {
+          "ambiguous_phrase": "those files",
+          "resolved_entity": "the UI wireframes"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5430423049256206,
+        "ollama_total_s": 0.541966805,
+        "model_load_s": 0.001695057,
+        "prompt_eval_s": 0.132571,
+        "generation_s": 0.279182,
+        "prompt_tokens": 1467,
+        "output_tokens": 56,
+        "total_tokens": 1523,
+        "generation_tokens_per_s": 200.58599766460588
+      }
+    },
+    {
+      "turn_id": 36,
+      "speaker": "User B",
+      "text": "Awesome. I’ll get *the design team* to start *on the implementation*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "on the implementation",
+          "ground_truth_ambiguous_phrase": "on the implementation",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "on the implementation",
+          "ground_truth_resolution": "UI implementation task",
+          "resolution_similarity": 0.5703539771316508,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the design team",
+          "ground_truth_ambiguous_phrase": "the design team",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the design team",
+          "ground_truth_resolution": "Design Team (internal team)",
+          "resolution_similarity": 0.8330876853484565,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the design team",
+          "resolved_entity": "the design team"
+        },
+        {
+          "ambiguous_phrase": "on the implementation",
+          "resolved_entity": "on the implementation"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5808915621601045,
+        "ollama_total_s": 0.579431092,
+        "model_load_s": 0.00187409,
+        "prompt_eval_s": 0.132161,
+        "generation_s": 0.319837,
+        "prompt_tokens": 1495,
+        "output_tokens": 59,
+        "total_tokens": 1554,
+        "generation_tokens_per_s": 184.46896387847562
+      }
+    },
+    {
+      "turn_id": 37,
+      "speaker": "User A",
+      "text": "Perfect. We may need to flag *any blockers* for *next Monday’s stand-up*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next Monday’s stand-up",
+          "ground_truth_ambiguous_phrase": "next Monday’s stand-up",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sprint Planning Meeting",
+          "ground_truth_resolution": "Sprint Stand-up Meeting (2024-06-24 09:00)",
+          "resolution_similarity": 0.8348954006007915,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "any blockers",
+          "ground_truth_resolution": "Open blockers in Sprint Backlog",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "next Monday’s stand-up",
+          "resolved_entity": "Sprint Planning Meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.4859503279440105,
+        "ollama_total_s": 0.484559174,
+        "model_load_s": 0.001781498,
+        "prompt_eval_s": 0.13681,
+        "generation_s": 0.227631,
+        "prompt_tokens": 1527,
+        "output_tokens": 38,
+        "total_tokens": 1565,
+        "generation_tokens_per_s": 166.93684076421928
+      }
+    },
+    {
+      "turn_id": 38,
+      "speaker": "User B",
+      "text": "Definitely. Should I prep *the update* for *the leadership team*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 2,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the leadership team",
+          "ground_truth_ambiguous_phrase": "the leadership team",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the company leadership team",
+          "ground_truth_resolution": "Leadership Team (Directors, Product Heads)",
+          "resolution_similarity": 0.7903403167107725,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the update",
+          "ground_truth_ambiguous_phrase": "the update",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the sprint update",
+          "ground_truth_resolution": "Sprint Progress Update",
+          "resolution_similarity": 0.8941257132856145,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the update",
+          "resolved_entity": "the sprint update"
+        },
+        {
+          "ambiguous_phrase": "the leadership team",
+          "resolved_entity": "the company leadership team"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6008699107915163,
+        "ollama_total_s": 0.599648942,
+        "model_load_s": 0.001610983,
+        "prompt_eval_s": 0.13753,
+        "generation_s": 0.332064,
+        "prompt_tokens": 1550,
+        "output_tokens": 59,
+        "total_tokens": 1609,
+        "generation_tokens_per_s": 177.6765924641033
+      }
+    },
+    {
+      "turn_id": 39,
+      "speaker": "User A",
+      "text": "Yes, and include *the new risks* from *the migration task*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the migration task",
+          "ground_truth_ambiguous_phrase": "the migration task",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the migration task",
+          "ground_truth_resolution": "Database migration sub-task",
+          "resolution_similarity": 0.7646229608444807,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the new risks",
+          "ground_truth_ambiguous_phrase": "the new risks",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the migration task",
+          "ground_truth_resolution": "Risks from database migration",
+          "resolution_similarity": 0.6378895094769073,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the new risks",
+          "resolved_entity": "the migration task"
+        },
+        {
+          "ambiguous_phrase": "the migration task",
+          "resolved_entity": "the migration task"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5849072560667992,
+        "ollama_total_s": 0.583586432,
+        "model_load_s": 0.00117975,
+        "prompt_eval_s": 0.138567,
+        "generation_s": 0.324533,
+        "prompt_tokens": 1575,
+        "output_tokens": 59,
+        "total_tokens": 1634,
+        "generation_tokens_per_s": 181.79969371373633
+      }
+    },
+    {
+      "turn_id": 40,
+      "speaker": "User B",
+      "text": "Will do. Oh, one more thing—*the test data* for *the analytics module*: do *you* have *it*?",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the test data for the analytics module",
+          "ground_truth_resolution": "Test data ZIP file",
+          "resolution_similarity": 0.6227906107459547,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "the test data",
+          "ground_truth_ambiguous_phrase": "the test data",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the test data for the analytics module",
+          "ground_truth_resolution": "QA Analytics Test Data Files",
+          "resolution_similarity": 0.8057386296140255,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the analytics module",
+          "ground_truth_resolution": "Dashboard Analytics Module",
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the test data",
+          "resolved_entity": "the test data for the analytics module"
+        },
+        {
+          "ambiguous_phrase": "you",
+          "resolved_entity": "User A"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the test data for the analytics module"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.7229256038554013,
+        "ollama_total_s": 0.721680587,
+        "model_load_s": 0.000922391,
+        "prompt_eval_s": 0.140512,
+        "generation_s": 0.445504,
+        "prompt_tokens": 1627,
+        "output_tokens": 86,
+        "total_tokens": 1713,
+        "generation_tokens_per_s": 193.03979313317052
+      }
+    },
+    {
+      "turn_id": 41,
+      "speaker": "User A",
+      "text": "Yes, I got *the files* from *the QA team*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the files",
+          "ground_truth_ambiguous_phrase": "the files",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the test data for the analytics module",
+          "ground_truth_resolution": "QA Analytics Test Data Files",
+          "resolution_similarity": 0.8065334180090945,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the QA team",
+          "resolved_entity": "the QA team"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the files",
+          "resolved_entity": "the test data for the analytics module"
+        },
+        {
+          "ambiguous_phrase": "the QA team",
+          "resolved_entity": "the QA team"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5934151881374419,
+        "ollama_total_s": 0.592043574,
+        "model_load_s": 0.001546827,
+        "prompt_eval_s": 0.141235,
+        "generation_s": 0.311845,
+        "prompt_tokens": 1638,
+        "output_tokens": 62,
+        "total_tokens": 1700,
+        "generation_tokens_per_s": 198.8167198447947
+      }
+    },
+    {
+      "turn_id": 42,
+      "speaker": "User B",
+      "text": "Great. Can *you* send *them* over after *this meeting*?",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this meeting",
+          "ground_truth_ambiguous_phrase": "this meeting",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sprint Planning Meeting",
+          "ground_truth_resolution": "Sprint Planning Meeting (2024-06-17 08:30)",
+          "resolution_similarity": 0.900959232889717,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the files",
+          "ground_truth_resolution": "QA Analytics Test Data Files",
+          "resolution_similarity": 0.6161596569677525,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "them",
+          "resolved_entity": "the files"
+        },
+        {
+          "ambiguous_phrase": "this meeting",
+          "resolved_entity": "Sprint Planning Meeting"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6129428558051586,
+        "ollama_total_s": 0.611530692,
+        "model_load_s": 0.003085262,
+        "prompt_eval_s": 0.147123,
+        "generation_s": 0.3243,
+        "prompt_tokens": 1667,
+        "output_tokens": 56,
+        "total_tokens": 1723,
+        "generation_tokens_per_s": 172.67961763798954
+      }
+    },
+    {
+      "turn_id": 43,
+      "speaker": "User A",
+      "text": "Absolutely. I’ll email *the ZIP* immediately.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the ZIP",
+          "ground_truth_ambiguous_phrase": "the ZIP",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the ZIP file containing the test data for the analytics module",
+          "ground_truth_resolution": "TestDataAnalytics_2024-06-17.zip",
+          "resolution_similarity": 0.6137767019441771,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the ZIP",
+          "resolved_entity": "the ZIP file containing the test data for the analytics module"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5406599952839315,
+        "ollama_total_s": 0.539236794,
+        "model_load_s": 0.001561191,
+        "prompt_eval_s": 0.147645,
+        "generation_s": 0.251891,
+        "prompt_tokens": 1682,
+        "output_tokens": 42,
+        "total_tokens": 1724,
+        "generation_tokens_per_s": 166.73878780901265
+      }
+    },
+    {
+      "turn_id": 44,
+      "speaker": "User B",
+      "text": "Thanks, Emily. One last thing for today—*that bug* in *the filters*: did *Sam* fix *it*?",
+      "counts": {
+        "ground_truth_ambiguities": 4,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 4,
+        "true_positives": 3,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bug in the filters",
+          "ground_truth_resolution": "Filter bug patch",
+          "resolution_similarity": 0.7530701145050502,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "Sam",
+          "ground_truth_ambiguous_phrase": "Sam",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Sam (developer handling the filtering feature)",
+          "ground_truth_resolution": "Sam Patel",
+          "resolution_similarity": 0.7046151131316879,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the filters",
+          "ground_truth_ambiguous_phrase": "the filters",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the filters feature",
+          "ground_truth_resolution": "Dashboard filter module",
+          "resolution_similarity": 0.644116490744687,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "that bug",
+          "ground_truth_ambiguous_phrase": "that bug",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the bug in the filters",
+          "ground_truth_resolution": "Filter bug (Dashboard filters)",
+          "resolution_similarity": 0.7156639459954258,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Calendar"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "that bug",
+          "resolved_entity": "the bug in the filters"
+        },
+        {
+          "ambiguous_phrase": "the filters",
+          "resolved_entity": "the filters feature"
+        },
+        {
+          "ambiguous_phrase": "Sam",
+          "resolved_entity": "Sam (developer handling the filtering feature)"
+        },
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the bug in the filters"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8264986490830779,
+        "ollama_total_s": 0.825104649,
+        "model_load_s": 0.001162994,
+        "prompt_eval_s": 0.150204,
+        "generation_s": 0.532168,
+        "prompt_tokens": 1737,
+        "output_tokens": 109,
+        "total_tokens": 1846,
+        "generation_tokens_per_s": 204.8225372438779
+      }
+    },
+    {
+      "turn_id": 45,
+      "speaker": "User A",
+      "text": "He pushed *the patch* to *the repo* early *this morning*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 4,
+        "detected_gt_ambiguities": 3,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 2
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "this morning",
+          "ground_truth_ambiguous_phrase": "this morning",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the morning of the current day",
+          "ground_truth_resolution": "2024-06-17 06:30",
+          "resolution_similarity": 0.47606796060267675,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the repo",
+          "ground_truth_ambiguous_phrase": "the repo",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the repository for the project",
+          "ground_truth_resolution": "GitHub Repo: dashboard-ui",
+          "resolution_similarity": 0.5224185142537996,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Wifi"
+        },
+        {
+          "predicted_ambiguous_phrase": "the patch",
+          "ground_truth_ambiguous_phrase": "the patch",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the patch for the filters",
+          "ground_truth_resolution": "Patch commit (filter bug)",
+          "resolution_similarity": 0.7242496122008307,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Wifi"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Sam"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "He",
+          "resolved_entity": "Sam"
+        },
+        {
+          "ambiguous_phrase": "the patch",
+          "resolved_entity": "the patch for the filters"
+        },
+        {
+          "ambiguous_phrase": "the repo",
+          "resolved_entity": "the repository for the project"
+        },
+        {
+          "ambiguous_phrase": "this morning",
+          "resolved_entity": "the morning of the current day"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.8102463721297681,
+        "ollama_total_s": 0.809034251,
+        "model_load_s": 0.001478167,
+        "prompt_eval_s": 0.150059,
+        "generation_s": 0.522155999,
+        "prompt_tokens": 1753,
+        "output_tokens": 107,
+        "total_tokens": 1860,
+        "generation_tokens_per_s": 204.9196029633282
+      }
+    },
+    {
+      "turn_id": 46,
+      "speaker": "User B",
+      "text": "Awesome. I’ll test *it* and update *the ticket*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 1,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the ticket",
+          "ground_truth_ambiguous_phrase": "the ticket",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the ticket related to the filters bug",
+          "ground_truth_resolution": "Jira Issue: DASH-366",
+          "resolution_similarity": 0.5982080859035336,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the patch",
+          "ground_truth_resolution": "Patch commit",
+          "resolution_similarity": 0.7336555074247634,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "it",
+          "resolved_entity": "the patch"
+        },
+        {
+          "ambiguous_phrase": "the ticket",
+          "resolved_entity": "the ticket related to the filters bug"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5944772958755493,
+        "ollama_total_s": 0.593340469,
+        "model_load_s": 0.001277216,
+        "prompt_eval_s": 0.161554,
+        "generation_s": 0.295447,
+        "prompt_tokens": 1776,
+        "output_tokens": 59,
+        "total_tokens": 1835,
+        "generation_tokens_per_s": 199.69740765687246
+      }
+    },
+    {
+      "turn_id": 47,
+      "speaker": "User A",
+      "text": "Sounds good. Let’s regroup *here* for *the check-in* *next Monday*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "next Monday",
+          "ground_truth_ambiguous_phrase": "next Monday",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "2023-10-17",
+          "ground_truth_resolution": "2024-06-24",
+          "resolution_similarity": 0.6430188820789979,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "here",
+          "ground_truth_ambiguous_phrase": "here",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Emily's Home Office",
+          "ground_truth_resolution": "Emily's Home Office",
+          "resolution_similarity": 1.0,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "the check-in",
+          "ground_truth_resolution": "Sprint Stand-up (2024-06-24 09:00)",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Emily's Home Office"
+        },
+        {
+          "ambiguous_phrase": "next Monday",
+          "resolved_entity": "2023-10-17"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.6188509920611978,
+        "ollama_total_s": 0.617601953,
+        "model_load_s": 0.001464473,
+        "prompt_eval_s": 0.162439,
+        "generation_s": 0.319767,
+        "prompt_tokens": 1813,
+        "output_tokens": 64,
+        "total_tokens": 1877,
+        "generation_tokens_per_s": 200.1457311104648
+      }
+    },
+    {
+      "turn_id": 48,
+      "speaker": "User B",
+      "text": "Same time *there*, right?",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 1,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "there",
+          "ground_truth_ambiguous_phrase": "there",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "Aakash's Apartment",
+          "ground_truth_resolution": "Emily's Home Office",
+          "resolution_similarity": 0.7411757246495723,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User B GPS + Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "there",
+          "resolved_entity": "Aakash's Apartment"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.534597986843437,
+        "ollama_total_s": 0.533076545,
+        "model_load_s": 0.001327016,
+        "prompt_eval_s": 0.162527,
+        "generation_s": 0.212436,
+        "prompt_tokens": 1816,
+        "output_tokens": 34,
+        "total_tokens": 1850,
+        "generation_tokens_per_s": 160.04820275282907
+      }
+    },
+    {
+      "turn_id": 49,
+      "speaker": "User A",
+      "text": "Yep, I’ll send out *the invite* and *agenda* later *today*.",
+      "counts": {
+        "ground_truth_ambiguities": 3,
+        "predicted_ambiguities": 3,
+        "detected_gt_ambiguities": 2,
+        "true_positives": 1,
+        "false_negatives": 2,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "later today",
+          "ground_truth_ambiguous_phrase": "later today",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "later today (before the check-in on next Monday)",
+          "ground_truth_resolution": "2024-06-17",
+          "resolution_similarity": 0.5690151285457459,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        },
+        {
+          "predicted_ambiguous_phrase": "the invite",
+          "ground_truth_ambiguous_phrase": "the invite",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the invite for the check-in",
+          "ground_truth_resolution": "Google Calendar event invite",
+          "resolution_similarity": 0.7305099594549895,
+          "positive_similarity_ge_0_70": true,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "the agenda",
+          "resolved_entity": "the agenda for the check-in"
+        }
+      ],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "agenda",
+          "ground_truth_resolution": "Meeting agenda for Sprint Stand-up",
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the invite",
+          "resolved_entity": "the invite for the check-in"
+        },
+        {
+          "ambiguous_phrase": "the agenda",
+          "resolved_entity": "the agenda for the check-in"
+        },
+        {
+          "ambiguous_phrase": "later today",
+          "resolved_entity": "later today (before the check-in on next Monday)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.767437940929085,
+        "ollama_total_s": 0.766327134,
+        "model_load_s": 0.001511381,
+        "prompt_eval_s": 0.164482,
+        "generation_s": 0.450795,
+        "prompt_tokens": 1857,
+        "output_tokens": 93,
+        "total_tokens": 1950,
+        "generation_tokens_per_s": 206.3021994476425
+      }
+    },
+    {
+      "turn_id": 50,
+      "speaker": "User B",
+      "text": "Great. Thanks, Emily. This was super productive.",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.34555339999496937,
+        "ollama_total_s": 0.344317906,
+        "model_load_s": 0.001461943,
+        "prompt_eval_s": 0.163956,
+        "generation_s": 0.025237,
+        "prompt_tokens": 1870,
+        "output_tokens": 6,
+        "total_tokens": 1876,
+        "generation_tokens_per_s": 237.74616634306773
+      }
+    },
+    {
+      "turn_id": 51,
+      "speaker": "User A",
+      "text": "Agreed! Let’s keep this energy going. Have a good one!",
+      "counts": {
+        "ground_truth_ambiguities": 0,
+        "predicted_ambiguities": 0,
+        "detected_gt_ambiguities": 0,
+        "true_positives": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 0
+      },
+      "matched": [],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [],
+      "compute": {
+        "wall_latency_s": 0.3466208619065583,
+        "ollama_total_s": 0.345513975,
+        "model_load_s": 0.001293651,
+        "prompt_eval_s": 0.165181,
+        "generation_s": 0.025862,
+        "prompt_tokens": 1899,
+        "output_tokens": 6,
+        "total_tokens": 1905,
+        "generation_tokens_per_s": 232.00061866831646
+      }
+    },
+    {
+      "turn_id": 52,
+      "speaker": "User B",
+      "text": "You too! Enjoy *the weather*—looks lovely *over there*.",
+      "counts": {
+        "ground_truth_ambiguities": 2,
+        "predicted_ambiguities": 1,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 2,
+        "false_positives": 0,
+        "missed_gt_ambiguities": 1,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "the weather",
+          "ground_truth_ambiguous_phrase": "the weather",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "weather at Aakash's location (Aakash's Apartment)",
+          "ground_truth_resolution": "San Francisco sunny, 66°F",
+          "resolution_similarity": 0.5841068332250122,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User B Wifi"
+        }
+      ],
+      "false_positive_predictions": [],
+      "missed_ground_truth": [
+        {
+          "ambiguous_phrase": "over there",
+          "ground_truth_resolution": "Emily's location (San Francisco)",
+          "resolution_source": "User B GPS"
+        }
+      ],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "the weather",
+          "resolved_entity": "weather at Aakash's location (Aakash's Apartment)"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.510834988206625,
+        "ollama_total_s": 0.509613727,
+        "model_load_s": 0.001296646,
+        "prompt_eval_s": 0.178342,
+        "generation_s": 0.173646,
+        "prompt_tokens": 1926,
+        "output_tokens": 28,
+        "total_tokens": 1954,
+        "generation_tokens_per_s": 161.2475956831715
+      }
+    },
+    {
+      "turn_id": 53,
+      "speaker": "User A",
+      "text": "Haha, it really is. I’ll try to get out *later*.",
+      "counts": {
+        "ground_truth_ambiguities": 1,
+        "predicted_ambiguities": 2,
+        "detected_gt_ambiguities": 1,
+        "true_positives": 0,
+        "false_negatives": 1,
+        "false_positives": 1,
+        "missed_gt_ambiguities": 0,
+        "detected_but_resolution_below_0_70": 1
+      },
+      "matched": [
+        {
+          "predicted_ambiguous_phrase": "later",
+          "ground_truth_ambiguous_phrase": "later",
+          "phrase_match_score": 1.0,
+          "predicted_resolution": "the future time after the current conversation",
+          "ground_truth_resolution": "2024-06-17 afternoon",
+          "resolution_similarity": 0.49720125894897144,
+          "positive_similarity_ge_0_70": false,
+          "resolution_source": "User A Calendar"
+        }
+      ],
+      "false_positive_predictions": [
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Emily's Home Office"
+        }
+      ],
+      "missed_ground_truth": [],
+      "all_qwen_predictions": [
+        {
+          "ambiguous_phrase": "later",
+          "resolved_entity": "the future time after the current conversation"
+        },
+        {
+          "ambiguous_phrase": "here",
+          "resolved_entity": "Emily's Home Office"
+        }
+      ],
+      "compute": {
+        "wall_latency_s": 0.5670015239156783,
+        "ollama_total_s": 0.5658519,
+        "model_load_s": 0.003357242,
+        "prompt_eval_s": 0.179121,
+        "generation_s": 0.221716,
+        "prompt_tokens": 1954,
+        "output_tokens": 43,
+        "total_tokens": 1997,
+        "generation_tokens_per_s": 193.94179941907666
+      }
+    }
+  ]
+}
