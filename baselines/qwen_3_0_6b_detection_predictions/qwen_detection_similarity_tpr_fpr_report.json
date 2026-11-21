@@ -1,0 +1,4323 @@
+{
+  "pred_dir": "C:\\Users\\amart\\Desktop\\PhD projects\\lexicon-framework\\baselines\\qwen_3_0_6b_detection_predictions",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "definitions": {
+    "TP": "Ground-truth ambiguous phrase detected by Qwen (no similarity threshold).",
+    "FN": "Ground-truth ambiguous phrase missed by Qwen.",
+    "FP": "Phrase flagged by Qwen that is not a ground-truth ambiguity.",
+    "TPR": "TP / (TP + FN).",
+    "FPR_turn_level": "Turns with no ground-truth ambiguity are negatives. FPR = negative turns where Qwen predicted >=1 ambiguity / all negative turns.",
+    "false_discovery_rate_phrase_level": "FP / all predicted phrases.",
+    "semantic_similarity": "Cosine similarity of Sentence-BERT embeddings (predicted_resolution vs ground_truth_resolution), detected phrases only.",
+    "sentence_similarity_rougeL_f1": "ROUGE-L F1 (lexical overlap), detected phrases only."
+  },
+  "num_files": 53,
+  "skipped_files": [
+    "eval_detection_report.json"
+  ],
+  "overall_micro": {
+    "counts": {
+      "turns": 2907,
+      "ground_truth_ambiguities": 1832,
+      "predicted_ambiguities": 2232,
+      "true_positives": 226,
+      "false_negatives": 1606,
+      "false_positives": 2006,
+      "negative_turns": 1271,
+      "fp_turns": 633,
+      "tn_turns": 638
+    },
+    "rates": {
+      "TPR": 0.12336244541484716,
+      "precision": 0.10125448028673835,
+      "F1": 0.11122047244094488,
+      "FPR_turn_level": 0.4980330448465775,
+      "TNR_turn_level": 0.5019669551534225,
+      "false_discovery_rate_phrase_level": 0.8987455197132617,
+      "false_positives_per_turn": 0.6900584795321637
+    },
+    "semantic_similarity_detected": {
+      "n": 226,
+      "median": 0.3216401934623718,
+      "mean": 0.3410332195658599,
+      "std": 0.19525147944884763
+    },
+    "sentence_similarity_rougeL_f1_detected": {
+      "n": 226,
+      "median": 0.0,
+      "mean": 0.14474700166876667,
+      "std": 0.1858745865729186
+    }
+  },
+  "overall_macro_mean_of_files": {
+    "TPR": 0.09273848747327025,
+    "precision": 0.08729074622367716,
+    "F1": 0.12404725754645506,
+    "FPR_turn_level": 0.5046270090109707,
+    "TNR_turn_level": 0.4953729909890293,
+    "false_discovery_rate_phrase_level": 0.912709253776323,
+    "false_positives_per_turn": 0.6953874930320657,
+    "median_semantic_similarity": 0.3482531040302805,
+    "median_sentence_similarity_rougeL_f1": 0.12234865655918287
+  },
+  "per_file": [
+    {
+      "file": "client-dev_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 46,
+        "ground_truth_ambiguities": 55,
+        "predicted_ambiguities": 33,
+        "true_positives": 12,
+        "false_negatives": 43,
+        "false_positives": 21,
+        "negative_turns": 3,
+        "fp_turns": 1,
+        "tn_turns": 2
+      },
+      "rates": {
+        "TPR": 0.21818181818181817,
+        "precision": 0.36363636363636365,
+        "F1": 0.27272727272727276,
+        "FPR_turn_level": 0.3333333333333333,
+        "TNR_turn_level": 0.6666666666666666,
+        "false_discovery_rate_phrase_level": 0.6363636363636364,
+        "false_positives_per_turn": 0.45652173913043476
+      },
+      "semantic_similarity_detected": {
+        "n": 12,
+        "median": 0.17563720047473907,
+        "mean": 0.2390485123420755,
+        "std": 0.15015340676819866
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 12,
+        "median": 0.0,
+        "mean": 0.06845238095238097,
+        "std": 0.11886146159354677
+      },
+      "pairs": [
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that document",
+          "ground_truth_ambiguous_phrase": "that document",
+          "predicted_resolution": "that document",
+          "ground_truth_resolution": "Payment Gateway Integration Outline (sent yesterday)",
+          "semantic_similarity": 0.14410856366157532,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 6,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the signup flow",
+          "ground_truth_ambiguous_phrase": "the signup flow",
+          "predicted_resolution": "the signup flow",
+          "ground_truth_resolution": "Payment Account Onboarding Process",
+          "semantic_similarity": 0.3205142021179199,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the security auditor",
+          "ground_truth_ambiguous_phrase": "the security auditor",
+          "predicted_resolution": "the security auditor",
+          "ground_truth_resolution": "Claudia Reyes",
+          "semantic_similarity": 0.17253708839416504,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the onboarding screens",
+          "ground_truth_ambiguous_phrase": "the onboarding screens",
+          "predicted_resolution": "the onboarding screens",
+          "ground_truth_resolution": "Customer Account Setup UI",
+          "semantic_similarity": 0.2175062745809555,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the onboarding flow",
+          "ground_truth_ambiguous_phrase": "the onboarding flow",
+          "predicted_resolution": "the onboarding flow",
+          "ground_truth_resolution": "Customer Account Setup & Verification Sequence",
+          "semantic_similarity": 0.1787373125553131,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the welcome screen",
+          "ground_truth_ambiguous_phrase": "the welcome screen",
+          "predicted_resolution": "the welcome screen",
+          "ground_truth_resolution": "Account Creation Final Screen",
+          "semantic_similarity": 0.49754011631011963,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the onboarding code",
+          "ground_truth_ambiguous_phrase": "the onboarding code",
+          "predicted_resolution": "the onboarding code",
+          "ground_truth_resolution": "Customer Account Creation Source Code",
+          "semantic_similarity": 0.3691263794898987,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 27,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "his details",
+          "ground_truth_ambiguous_phrase": "his details",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Steven Kim's Email & Phone",
+          "semantic_similarity": 0.1674385517835617,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 34,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the feature request tracker",
+          "ground_truth_ambiguous_phrase": "the feature request tracker",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Github Feature Request Board",
+          "semantic_similarity": 0.030686352401971817,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the repo",
+          "ground_truth_ambiguous_phrase": "the repo",
+          "predicted_resolution": "the repo",
+          "ground_truth_resolution": "Martinez E-Commerce Github Repo",
+          "semantic_similarity": 0.5313810110092163,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 38,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "those changes",
+          "ground_truth_ambiguous_phrase": "those changes",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Figma Design June 6 Updates",
+          "semantic_similarity": 0.12477575987577438,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those files",
+          "ground_truth_ambiguous_phrase": "those files",
+          "predicted_resolution": "the files",
+          "ground_truth_resolution": "Figma Checkout Design Update & Privacy Policy Draft",
+          "semantic_similarity": 0.11423053592443466,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "client-dev_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 52,
+        "ground_truth_ambiguities": 31,
+        "predicted_ambiguities": 46,
+        "true_positives": 1,
+        "false_negatives": 30,
+        "false_positives": 45,
+        "negative_turns": 21,
+        "fp_turns": 10,
+        "tn_turns": 11
+      },
+      "rates": {
+        "TPR": 0.03225806451612903,
+        "precision": 0.021739130434782608,
+        "F1": 0.025974025974025976,
+        "FPR_turn_level": 0.47619047619047616,
+        "TNR_turn_level": 0.5238095238095238,
+        "false_discovery_rate_phrase_level": 0.9782608695652174,
+        "false_positives_per_turn": 0.8653846153846154
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.7862644195556641,
+        "mean": 0.7862644195556641,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.5263157894736842,
+        "mean": 0.5263157894736842,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "In the north conference wing, beside the registration desk.",
+          "ground_truth_ambiguous_phrase": "north conference wing, beside the registration desk",
+          "predicted_resolution": "the north conference wing, beside the registration desk.",
+          "ground_truth_resolution": "City Hall North Conference Wing (53.3437, -6.2546), Registration Desk",
+          "semantic_similarity": 0.7862644195556641,
+          "sentence_similarity_rougeL_f1": 0.5263157894736842
+        }
+      ]
+    },
+    {
+      "file": "client-dev_010.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_sprint_review",
+      "counts": {
+        "turns": 52,
+        "ground_truth_ambiguities": 19,
+        "predicted_ambiguities": 16,
+        "true_positives": 0,
+        "false_negatives": 19,
+        "false_positives": 16,
+        "negative_turns": 34,
+        "fp_turns": 13,
+        "tn_turns": 21
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.38235294117647056,
+        "TNR_turn_level": 0.6176470588235294,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.3076923076923077
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "colleagues_meeting_001.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 59,
+        "ground_truth_ambiguities": 27,
+        "predicted_ambiguities": 53,
+        "true_positives": 1,
+        "false_negatives": 26,
+        "false_positives": 52,
+        "negative_turns": 34,
+        "fp_turns": 15,
+        "tn_turns": 19
+      },
+      "rates": {
+        "TPR": 0.037037037037037035,
+        "precision": 0.018867924528301886,
+        "F1": 0.025,
+        "FPR_turn_level": 0.4411764705882353,
+        "TNR_turn_level": 0.5588235294117647,
+        "false_discovery_rate_phrase_level": 0.9811320754716981,
+        "false_positives_per_turn": 0.8813559322033898
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.32276618480682373,
+        "mean": 0.32276618480682373,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 44,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "The one with the green icon?",
+          "ground_truth_ambiguous_phrase": "the one with the green icon",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Meeting Notes – 2024' folder in main drive",
+          "semantic_similarity": 0.32276618480682373,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "colleagues_meeting_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 35,
+        "predicted_ambiguities": 30,
+        "true_positives": 4,
+        "false_negatives": 31,
+        "false_positives": 26,
+        "negative_turns": 15,
+        "fp_turns": 7,
+        "tn_turns": 8
+      },
+      "rates": {
+        "TPR": 0.11428571428571428,
+        "precision": 0.13333333333333333,
+        "F1": 0.12307692307692307,
+        "FPR_turn_level": 0.4666666666666667,
+        "TNR_turn_level": 0.5333333333333333,
+        "false_discovery_rate_phrase_level": 0.8666666666666667,
+        "false_positives_per_turn": 0.52
+      },
+      "semantic_similarity_detected": {
+        "n": 4,
+        "median": 0.3802558034658432,
+        "mean": 0.37693770974874496,
+        "std": 0.23427423545193274
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 4,
+        "median": 0.30000000000000004,
+        "mean": 0.275,
+        "std": 0.1920286436967152
+      },
+      "pairs": [
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Was it that batch we received last week?",
+          "ground_truth_ambiguous_phrase": "that batch we received last week",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Reagent batch #SIG-202306",
+          "semantic_similarity": 0.05730921030044556,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 10,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the one that came in on Thursday from Sigma.",
+          "ground_truth_ambiguous_phrase": "the one that came in on Thursday from Sigma",
+          "predicted_resolution": "Sigma",
+          "ground_truth_resolution": "Sigma reagent shipment, Thursday",
+          "semantic_similarity": 0.4787166714668274,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 23,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Was it the centrifuge or the PCR machine?",
+          "ground_truth_ambiguous_phrase": "the centrifuge or the PCR machine",
+          "predicted_resolution": "the centrifuge or the PCR machine",
+          "ground_truth_resolution": "PCR machine",
+          "semantic_similarity": 0.6899300217628479,
+          "sentence_similarity_rougeL_f1": 0.5
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "everything's current now.",
+          "ground_truth_ambiguous_phrase": "everything's current",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Protocol Document v.4 verified on shared drive",
+          "semantic_similarity": 0.281794935464859,
+          "sentence_similarity_rougeL_f1": 0.2
+        }
+      ]
+    },
+    {
+      "file": "colleagues_meeting_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 57,
+        "ground_truth_ambiguities": 28,
+        "predicted_ambiguities": 48,
+        "true_positives": 1,
+        "false_negatives": 27,
+        "false_positives": 47,
+        "negative_turns": 29,
+        "fp_turns": 11,
+        "tn_turns": 18
+      },
+      "rates": {
+        "TPR": 0.03571428571428571,
+        "precision": 0.020833333333333332,
+        "F1": 0.026315789473684213,
+        "FPR_turn_level": 0.3793103448275862,
+        "TNR_turn_level": 0.6206896551724138,
+        "false_discovery_rate_phrase_level": 0.9791666666666666,
+        "false_positives_per_turn": 0.8245614035087719
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.5694323182106018,
+        "mean": 0.5694323182106018,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.4,
+        "mean": 0.4,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "No, but Luis was talking about running a permutation test earlier.",
+          "ground_truth_ambiguous_phrase": "Luis was talking about running a permutation test earlier",
+          "predicted_resolution": "Luis",
+          "ground_truth_resolution": "Luis Hernandez, Data Engineer",
+          "semantic_similarity": 0.5694323182106018,
+          "sentence_similarity_rougeL_f1": 0.4
+        }
+      ]
+    },
+    {
+      "file": "colleagues_meeting_005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 49,
+        "ground_truth_ambiguities": 20,
+        "predicted_ambiguities": 18,
+        "true_positives": 0,
+        "false_negatives": 20,
+        "false_positives": 18,
+        "negative_turns": 29,
+        "fp_turns": 11,
+        "tn_turns": 18
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.3793103448275862,
+        "TNR_turn_level": 0.6206896551724138,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.3673469387755102
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "colleagues_meeting_006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_academic_review",
+      "counts": {
+        "turns": 49,
+        "ground_truth_ambiguities": 56,
+        "predicted_ambiguities": 58,
+        "true_positives": 20,
+        "false_negatives": 36,
+        "false_positives": 38,
+        "negative_turns": 1,
+        "fp_turns": 1,
+        "tn_turns": 0
+      },
+      "rates": {
+        "TPR": 0.35714285714285715,
+        "precision": 0.3448275862068966,
+        "F1": 0.3508771929824561,
+        "FPR_turn_level": 1.0,
+        "TNR_turn_level": 0.0,
+        "false_discovery_rate_phrase_level": 0.6551724137931034,
+        "false_positives_per_turn": 0.7755102040816326
+      },
+      "semantic_similarity_detected": {
+        "n": 20,
+        "median": 0.35716859996318817,
+        "mean": 0.33650005534291266,
+        "std": 0.13687990029434274
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 20,
+        "median": 0.0,
+        "mean": 0.10730158730158731,
+        "std": 0.14937039276685243
+      },
+      "pairs": [
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the results part",
+          "ground_truth_resolution": "Manuscript draft",
+          "semantic_similarity": 0.12471279501914978,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 10,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "those citations",
+          "ground_truth_ambiguous_phrase": "those citations",
+          "predicted_resolution": "the results part",
+          "ground_truth_resolution": "Citations in results section",
+          "semantic_similarity": 0.4197489321231842,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 13,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the document",
+          "ground_truth_ambiguous_phrase": "the document",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Current manuscript draft",
+          "semantic_similarity": 0.5093091726303101,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "its",
+          "ground_truth_ambiguous_phrase": "its",
+          "predicted_resolution": "the table",
+          "ground_truth_resolution": "Formatting of statistical summary table",
+          "semantic_similarity": 0.3115902543067932,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the figures",
+          "ground_truth_ambiguous_phrase": "the figures",
+          "predicted_resolution": "the results part",
+          "ground_truth_resolution": "Figures in results section",
+          "semantic_similarity": 0.49040693044662476,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 18,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "predicted_resolution": "the documents",
+          "ground_truth_resolution": "Figures in results section",
+          "semantic_similarity": 0.1664510816335678,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the platform",
+          "ground_truth_ambiguous_phrase": "the platform",
+          "predicted_resolution": "the platform",
+          "ground_truth_resolution": "Collaborative editing platform (DocShare)",
+          "semantic_similarity": 0.22472983598709106,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "tonight",
+          "ground_truth_ambiguous_phrase": "tonight",
+          "predicted_resolution": "tonight",
+          "ground_truth_resolution": "Today by 23:59",
+          "semantic_similarity": 0.5157474875450134,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "this version",
+          "ground_truth_ambiguous_phrase": "this version",
+          "predicted_resolution": "the version",
+          "ground_truth_resolution": "Current draft under review",
+          "semantic_similarity": 0.19631478190422058,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the coordinator",
+          "ground_truth_ambiguous_phrase": "the coordinator",
+          "predicted_resolution": "the coordinator",
+          "ground_truth_resolution": "Dr. Marwan Zein",
+          "semantic_similarity": 0.2803489863872528,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 25,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that paragraph",
+          "ground_truth_ambiguous_phrase": "that paragraph",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Paragraph about sample selection in methodology",
+          "semantic_similarity": 0.2464255392551422,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 26,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Dr. Layla Hassan",
+          "semantic_similarity": 0.13639143109321594,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 28,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the stats",
+          "ground_truth_ambiguous_phrase": "the stats",
+          "predicted_resolution": "the stats",
+          "ground_truth_resolution": "Statistical results section",
+          "semantic_similarity": 0.5275310277938843,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 30,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the updated draft",
+          "ground_truth_ambiguous_phrase": "the updated draft",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Revised manuscript file",
+          "semantic_similarity": 0.48607581853866577,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "everyone",
+          "ground_truth_ambiguous_phrase": "everyone",
+          "predicted_resolution": "all",
+          "ground_truth_resolution": "All team members present",
+          "semantic_similarity": 0.3227967619895935,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 32,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that reference",
+          "ground_truth_ambiguous_phrase": "that reference",
+          "predicted_resolution": "the study",
+          "ground_truth_resolution": "Reference to 'Ali et al., 2022' study",
+          "semantic_similarity": 0.4026463031768799,
+          "sentence_similarity_rougeL_f1": 0.22222222222222224
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the bibliography",
+          "ground_truth_ambiguous_phrase": "the bibliography",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Manuscript bibliography section",
+          "semantic_similarity": 0.39154043793678284,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that file",
+          "ground_truth_ambiguous_phrase": "that file",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Updated manuscript draft",
+          "semantic_similarity": 0.4366171061992645,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "her",
+          "ground_truth_resolution": "Updated manuscript draft",
+          "semantic_similarity": 0.13062632083892822,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the results",
+          "ground_truth_ambiguous_phrase": "the results",
+          "predicted_resolution": "the results",
+          "ground_truth_resolution": "Figures in results section",
+          "semantic_similarity": 0.4099901020526886,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "file": "colleagues_meeting_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 53,
+        "ground_truth_ambiguities": 23,
+        "predicted_ambiguities": 22,
+        "true_positives": 0,
+        "false_negatives": 23,
+        "false_positives": 22,
+        "negative_turns": 31,
+        "fp_turns": 11,
+        "tn_turns": 20
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.3548387096774194,
+        "TNR_turn_level": 0.6451612903225806,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.41509433962264153
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "colleagues_meeting_010.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 76,
+        "ground_truth_ambiguities": 29,
+        "predicted_ambiguities": 57,
+        "true_positives": 0,
+        "false_negatives": 29,
+        "false_positives": 57,
+        "negative_turns": 47,
+        "fp_turns": 28,
+        "tn_turns": 19
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.5957446808510638,
+        "TNR_turn_level": 0.40425531914893614,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.75
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "companions_001.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_seattle_apartment_chores",
+      "counts": {
+        "turns": 58,
+        "ground_truth_ambiguities": 20,
+        "predicted_ambiguities": 19,
+        "true_positives": 2,
+        "false_negatives": 18,
+        "false_positives": 17,
+        "negative_turns": 38,
+        "fp_turns": 10,
+        "tn_turns": 28
+      },
+      "rates": {
+        "TPR": 0.1,
+        "precision": 0.10526315789473684,
+        "F1": 0.10256410256410256,
+        "FPR_turn_level": 0.2631578947368421,
+        "TNR_turn_level": 0.7368421052631579,
+        "false_discovery_rate_phrase_level": 0.8947368421052632,
+        "false_positives_per_turn": 0.29310344827586204
+      },
+      "semantic_similarity_detected": {
+        "n": 2,
+        "median": 0.18659764528274536,
+        "mean": 0.18659764528274536,
+        "std": 0.019067496061325073
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 2,
+        "median": 0.07692307692307691,
+        "mean": 0.07692307692307691,
+        "std": 0.07692307692307691
+      },
+      "pairs": [
+        {
+          "turn_id": 24,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the bin outside.",
+          "ground_truth_ambiguous_phrase": "the bin outside",
+          "predicted_resolution": "Sophie & Jamie's Apartment, Capitol Hill, Seattle",
+          "ground_truth_resolution": "Apartment trash bin in back alley",
+          "semantic_similarity": 0.20566514134407043,
+          "sentence_similarity_rougeL_f1": 0.15384615384615383
+        },
+        {
+          "turn_id": 49,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "Vivace, the place on Broadway?",
+          "ground_truth_ambiguous_phrase": "Vivace, the place on Broadway",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Caffe Vivace, 532 Broadway E, Seattle",
+          "semantic_similarity": 0.1675301492214203,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "companions_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_financial_partnership",
+      "counts": {
+        "turns": 59,
+        "ground_truth_ambiguities": 54,
+        "predicted_ambiguities": 63,
+        "true_positives": 12,
+        "false_negatives": 42,
+        "false_positives": 51,
+        "negative_turns": 10,
+        "fp_turns": 5,
+        "tn_turns": 5
+      },
+      "rates": {
+        "TPR": 0.2222222222222222,
+        "precision": 0.19047619047619047,
+        "F1": 0.20512820512820512,
+        "FPR_turn_level": 0.5,
+        "TNR_turn_level": 0.5,
+        "false_discovery_rate_phrase_level": 0.8095238095238095,
+        "false_positives_per_turn": 0.864406779661017
+      },
+      "semantic_similarity_detected": {
+        "n": 12,
+        "median": 0.15973325818777084,
+        "mean": 0.22357180807739496,
+        "std": 0.1658204472987536
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 12,
+        "median": 0.0,
+        "mean": 0.07710622710622711,
+        "std": 0.11386743098629307
+      },
+      "pairs": [
+        {
+          "turn_id": 4,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the internet",
+          "ground_truth_ambiguous_phrase": "the internet",
+          "predicted_resolution": "the internet",
+          "ground_truth_resolution": "Comcast Xfinity Internet Service bill",
+          "semantic_similarity": 0.13405276834964752,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the electric bill",
+          "ground_truth_ambiguous_phrase": "the electric bill",
+          "predicted_resolution": "Marcus & Laura's Apartment - Kitchen Table",
+          "ground_truth_resolution": "ComEd Electric Utility bill",
+          "semantic_similarity": 0.03466010466217995,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "predicted_resolution": "Marcus & Laura's Apartment - Living Room Couch",
+          "ground_truth_resolution": "ComEd Customer Service",
+          "semantic_similarity": 0.049069374799728394,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the provider",
+          "ground_truth_ambiguous_phrase": "the provider",
+          "predicted_resolution": "the provider",
+          "ground_truth_resolution": "ComEd Utility Company",
+          "semantic_similarity": 0.33989986777305603,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 18,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the internet",
+          "ground_truth_resolution": "Mariano's grocery receipt PDF",
+          "semantic_similarity": 0.08438041806221008,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the thermostat",
+          "ground_truth_ambiguous_phrase": "the thermostat",
+          "predicted_resolution": "Marcus & Laura's Apartment - Kitchen Table",
+          "ground_truth_resolution": "Apartment wall thermostat (Honeywell)",
+          "semantic_similarity": 0.24108314514160156,
+          "sentence_similarity_rougeL_f1": 0.2
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the provider",
+          "ground_truth_resolution": "Apartment wall thermostat",
+          "semantic_similarity": 0.1712566316127777,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 23,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the charger",
+          "ground_truth_ambiguous_phrase": "the charger",
+          "predicted_resolution": "the charger",
+          "ground_truth_resolution": "iPhone charging cable",
+          "semantic_similarity": 0.4847903847694397,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 29,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "Marcus & Laura's Apartment - Kitchen Table",
+          "ground_truth_resolution": "Lease Renewal Discussion",
+          "semantic_similarity": 0.1120103970170021,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 34,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the provider",
+          "ground_truth_resolution": "Chicago Water payment confirmation email",
+          "semantic_similarity": 0.14820988476276398,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the rent",
+          "ground_truth_ambiguous_phrase": "the rent",
+          "predicted_resolution": "Marcus & Laura's Apartment - Kitchen Table",
+          "ground_truth_resolution": "Monthly rent for Apartment B401 ($1,100)",
+          "semantic_similarity": 0.30331718921661377,
+          "sentence_similarity_rougeL_f1": 0.15384615384615383
+        },
+        {
+          "turn_id": 44,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the neighbor",
+          "ground_truth_ambiguous_phrase": "the neighbor",
+          "predicted_resolution": "the neighbor",
+          "ground_truth_resolution": "Sandra (neighbor in Apartment B402)",
+          "semantic_similarity": 0.5801315307617188,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        }
+      ]
+    },
+    {
+      "file": "companions_005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 84,
+        "ground_truth_ambiguities": 27,
+        "predicted_ambiguities": 48,
+        "true_positives": 2,
+        "false_negatives": 25,
+        "false_positives": 46,
+        "negative_turns": 57,
+        "fp_turns": 29,
+        "tn_turns": 28
+      },
+      "rates": {
+        "TPR": 0.07407407407407407,
+        "precision": 0.041666666666666664,
+        "F1": 0.05333333333333334,
+        "FPR_turn_level": 0.5087719298245614,
+        "TNR_turn_level": 0.49122807017543857,
+        "false_discovery_rate_phrase_level": 0.9583333333333334,
+        "false_positives_per_turn": 0.5476190476190477
+      },
+      "semantic_similarity_detected": {
+        "n": 2,
+        "median": 0.35536251962184906,
+        "mean": 0.35536251962184906,
+        "std": 0.1511465460062027
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 2,
+        "median": 0.25,
+        "mean": 0.25,
+        "std": 0.25
+      },
+      "pairs": [
+        {
+          "turn_id": 32,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "The one from last week—left side of the rack.",
+          "ground_truth_ambiguous_phrase": "The one from last week—left side of the rack",
+          "predicted_resolution": "Leah & Sam's Apartment, Kitchen",
+          "ground_truth_resolution": "2018 Pinot Noir (Wine Rack, Left Side)",
+          "semantic_similarity": 0.20421597361564636,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 68,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "GreenLeaf—on 18th and Valencia.",
+          "ground_truth_ambiguous_phrase": "GreenLeaf—on 18th and Valencia",
+          "predicted_resolution": "18th and Valencia.",
+          "ground_truth_resolution": "GreenLeaf Market (18th & Valencia, SF)",
+          "semantic_similarity": 0.5065090656280518,
+          "sentence_similarity_rougeL_f1": 0.5
+        }
+      ]
+    },
+    {
+      "file": "companions_006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 56,
+        "ground_truth_ambiguities": 28,
+        "predicted_ambiguities": 31,
+        "true_positives": 0,
+        "false_negatives": 28,
+        "false_positives": 31,
+        "negative_turns": 28,
+        "fp_turns": 13,
+        "tn_turns": 15
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.4642857142857143,
+        "TNR_turn_level": 0.5357142857142857,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.5535714285714286
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "companions_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 56,
+        "predicted_ambiguities": 62,
+        "true_positives": 9,
+        "false_negatives": 47,
+        "false_positives": 53,
+        "negative_turns": 2,
+        "fp_turns": 1,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.16071428571428573,
+        "precision": 0.14516129032258066,
+        "F1": 0.15254237288135594,
+        "FPR_turn_level": 0.5,
+        "TNR_turn_level": 0.5,
+        "false_discovery_rate_phrase_level": 0.8548387096774194,
+        "false_positives_per_turn": 1.06
+      },
+      "semantic_similarity_detected": {
+        "n": 9,
+        "median": 0.4508621096611023,
+        "mean": 0.39722753481732476,
+        "std": 0.25484165223009786
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 9,
+        "median": 0.10526315789473685,
+        "mean": 0.2098440545808967,
+        "std": 0.255686591647433
+      },
+      "pairs": [
+        {
+          "turn_id": 3,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that pile",
+          "ground_truth_ambiguous_phrase": "that pile",
+          "predicted_resolution": "that pile refers to the pile of old clothes from last winter",
+          "ground_truth_resolution": "Clothes pile by Mia's bedroom door",
+          "semantic_similarity": 0.4508621096611023,
+          "sentence_similarity_rougeL_f1": 0.10526315789473685
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that jar",
+          "ground_truth_ambiguous_phrase": "that jar",
+          "predicted_resolution": "that jar",
+          "ground_truth_resolution": "Coffee jar, pantry shelf",
+          "semantic_similarity": 0.5351850390434265,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the shelter",
+          "ground_truth_ambiguous_phrase": "the shelter",
+          "predicted_resolution": "the shelter",
+          "ground_truth_resolution": "Portland Animal Shelter",
+          "semantic_similarity": 0.6585732698440552,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 17,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those socks",
+          "ground_truth_ambiguous_phrase": "those socks",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Pair of striped socks, Mia's bedroom",
+          "semantic_similarity": 0.10225879400968552,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 18,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the donation bag",
+          "ground_truth_ambiguous_phrase": "the donation bag",
+          "predicted_resolution": "Goodwill",
+          "ground_truth_resolution": "Large tote bag by front door",
+          "semantic_similarity": 0.2562977075576782,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "this weekend",
+          "ground_truth_ambiguous_phrase": "this weekend",
+          "predicted_resolution": "Goodwill",
+          "ground_truth_resolution": "Saturday-Sunday, June 8-9, 2024",
+          "semantic_similarity": 0.029094547033309937,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the bookshelves",
+          "ground_truth_ambiguous_phrase": "the bookshelves",
+          "predicted_resolution": "the bookshelves",
+          "ground_truth_resolution": "Living room bookshelves, Emma's Apartment",
+          "semantic_similarity": 0.6541412472724915,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 27,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the mail",
+          "ground_truth_ambiguous_phrase": "the mail",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Mail slot in entryway, Emma's Apartment",
+          "semantic_similarity": 0.14310449361801147,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that meeting",
+          "ground_truth_ambiguous_phrase": "that meeting",
+          "predicted_resolution": "building tenants",
+          "ground_truth_resolution": "Building Tenant Meeting",
+          "semantic_similarity": 0.7455306053161621,
+          "sentence_similarity_rougeL_f1": 0.8
+        }
+      ]
+    },
+    {
+      "file": "doctor_patient__002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 73,
+        "ground_truth_ambiguities": 24,
+        "predicted_ambiguities": 42,
+        "true_positives": 2,
+        "false_negatives": 22,
+        "false_positives": 40,
+        "negative_turns": 49,
+        "fp_turns": 22,
+        "tn_turns": 27
+      },
+      "rates": {
+        "TPR": 0.08333333333333333,
+        "precision": 0.047619047619047616,
+        "F1": 0.060606060606060615,
+        "FPR_turn_level": 0.4489795918367347,
+        "TNR_turn_level": 0.5510204081632653,
+        "false_discovery_rate_phrase_level": 0.9523809523809523,
+        "false_positives_per_turn": 0.547945205479452
+      },
+      "semantic_similarity_detected": {
+        "n": 2,
+        "median": 0.41281965374946594,
+        "mean": 0.41281965374946594,
+        "std": 0.08809146285057068
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 2,
+        "median": 0.08333333333333333,
+        "mean": 0.08333333333333333,
+        "std": 0.08333333333333333
+      },
+      "pairs": [
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "The little grocery on Fullerton, the one next to the bank.",
+          "ground_truth_ambiguous_phrase": "the little grocery on Fullerton, next to the bank",
+          "predicted_resolution": "the one next to the bank",
+          "ground_truth_resolution": "Fullerton Market, 1111 W Fullerton Ave, Chicago",
+          "semantic_similarity": 0.32472819089889526,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Greg—he lives in the building next to mine.",
+          "ground_truth_ambiguous_phrase": "Greg—he lives in the building next to mine",
+          "predicted_resolution": "the building next to mine.",
+          "ground_truth_resolution": "Greg, Parkside Building, 1122 W Fullerton Ave",
+          "semantic_similarity": 0.5009111166000366,
+          "sentence_similarity_rougeL_f1": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "file": "doctor_patient__005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_lily_recovery",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 42,
+        "predicted_ambiguities": 32,
+        "true_positives": 9,
+        "false_negatives": 33,
+        "false_positives": 23,
+        "negative_turns": 9,
+        "fp_turns": 5,
+        "tn_turns": 4
+      },
+      "rates": {
+        "TPR": 0.21428571428571427,
+        "precision": 0.28125,
+        "F1": 0.2432432432432432,
+        "FPR_turn_level": 0.5555555555555556,
+        "TNR_turn_level": 0.4444444444444444,
+        "false_discovery_rate_phrase_level": 0.71875,
+        "false_positives_per_turn": 0.46
+      },
+      "semantic_similarity_detected": {
+        "n": 9,
+        "median": 0.423403799533844,
+        "mean": 0.40613110591140056,
+        "std": 0.22603158822178215
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 9,
+        "median": 0.16666666666666666,
+        "mean": 0.1850439321027556,
+        "std": 0.19335925691796388
+      },
+      "pairs": [
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the medication",
+          "ground_truth_ambiguous_phrase": "the medication",
+          "predicted_resolution": "the medication",
+          "ground_truth_resolution": "Cephalexin 500mg",
+          "semantic_similarity": 0.3821486830711365,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 23,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the exercise log",
+          "ground_truth_ambiguous_phrase": "the exercise log",
+          "predicted_resolution": "the exercise log",
+          "ground_truth_resolution": "Daily exercise log (spreadsheet)",
+          "semantic_similarity": 0.6925531029701233,
+          "sentence_similarity_rougeL_f1": 0.5714285714285715
+        },
+        {
+          "turn_id": 30,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the patient portal",
+          "ground_truth_ambiguous_phrase": "the patient portal",
+          "predicted_resolution": "Sutter Health Clinic - 1101 Van Ness Ave, San Francisco, CA",
+          "ground_truth_resolution": "Sutter Health portal: patient.lily",
+          "semantic_similarity": 0.6244198083877563,
+          "sentence_similarity_rougeL_f1": 0.26666666666666666
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the last CBC",
+          "ground_truth_ambiguous_phrase": "the last CBC",
+          "predicted_resolution": "the last CBC",
+          "ground_truth_resolution": "CBC from Sutter Health Lab, collected 2024-06-09",
+          "semantic_similarity": 0.49259501695632935,
+          "sentence_similarity_rougeL_f1": 0.16666666666666666
+        },
+        {
+          "turn_id": 33,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the X-ray",
+          "ground_truth_ambiguous_phrase": "the X-ray",
+          "predicted_resolution": "the X-ray",
+          "ground_truth_resolution": "Lumbar spine X-ray, Sutter Health, taken 2024-06-09",
+          "semantic_similarity": 0.423403799533844,
+          "sentence_similarity_rougeL_f1": 0.30769230769230765
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "your pain meds",
+          "ground_truth_ambiguous_phrase": "your pain meds",
+          "predicted_resolution": "your pain meds",
+          "ground_truth_resolution": "Hydrocodone 5/325mg tablets",
+          "semantic_similarity": 0.362619012594223,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "a new prescription",
+          "ground_truth_ambiguous_phrase": "a new prescription",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Hydrocodone 5/325mg, 10 tablets, for pickup at Clement Street Pharmacy",
+          "semantic_similarity": 0.03967203199863434,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the exercise log",
+          "ground_truth_resolution": "Hydrocodone 5/325mg prescription order",
+          "semantic_similarity": 0.027023067697882652,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the nurse",
+          "ground_truth_ambiguous_phrase": "the nurse",
+          "predicted_resolution": "Sutter Health Clinic - 1101 Van Ness Ave, San Francisco, CA",
+          "ground_truth_resolution": "Linda M., Surgical Nurse, Sutter Health Clinic",
+          "semantic_similarity": 0.6107454299926758,
+          "sentence_similarity_rougeL_f1": 0.3529411764705882
+        }
+      ]
+    },
+    {
+      "file": "doctor_patient__006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 68,
+        "predicted_ambiguities": 47,
+        "true_positives": 11,
+        "false_negatives": 57,
+        "false_positives": 36,
+        "negative_turns": 5,
+        "fp_turns": 4,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.16176470588235295,
+        "precision": 0.23404255319148937,
+        "F1": 0.19130434782608696,
+        "FPR_turn_level": 0.8,
+        "TNR_turn_level": 0.2,
+        "false_discovery_rate_phrase_level": 0.7659574468085106,
+        "false_positives_per_turn": 0.72
+      },
+      "semantic_similarity_detected": {
+        "n": 11,
+        "median": 0.19983917474746704,
+        "mean": 0.25294413400644605,
+        "std": 0.17542787188166167
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 11,
+        "median": 0.0,
+        "mean": 0.11284271284271284,
+        "std": 0.15434855006032933
+      },
+      "pairs": [
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "predicted_resolution": "he",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "semantic_similarity": 0.19983917474746704,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the steps",
+          "ground_truth_ambiguous_phrase": "the steps",
+          "predicted_resolution": "the steps",
+          "ground_truth_resolution": "5 things you see, 4 you touch, 3 you hear, 2 you smell, 1 you taste",
+          "semantic_similarity": 0.196738138794899,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that technique",
+          "ground_truth_ambiguous_phrase": "that technique",
+          "predicted_resolution": "the tool",
+          "ground_truth_resolution": "5-4-3-2-1 Sensory Grounding Exercise",
+          "semantic_similarity": 0.06507524102926254,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the sleep journal",
+          "ground_truth_ambiguous_phrase": "the sleep journal",
+          "predicted_resolution": "the sleep journal",
+          "ground_truth_resolution": "CBT Sleep Diary Worksheet",
+          "semantic_similarity": 0.6729510426521301,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 25,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "him",
+          "ground_truth_ambiguous_phrase": "him",
+          "predicted_resolution": "him",
+          "ground_truth_resolution": "Project Coordinator (James Lee)",
+          "semantic_similarity": 0.2779011130332947,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 25,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the team",
+          "ground_truth_ambiguous_phrase": "the team",
+          "predicted_resolution": "the team",
+          "ground_truth_resolution": "Development Team (Slack group)",
+          "semantic_similarity": 0.38218826055526733,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "your privacy preferences",
+          "ground_truth_ambiguous_phrase": "your privacy preferences",
+          "predicted_resolution": "me",
+          "ground_truth_resolution": "Ahmed's privacy choices in SleepMonitorX",
+          "semantic_similarity": 0.1162150576710701,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the results",
+          "ground_truth_ambiguous_phrase": "the results",
+          "predicted_resolution": "the results",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "semantic_similarity": 0.13256800174713135,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the app",
+          "ground_truth_ambiguous_phrase": "the app",
+          "predicted_resolution": "the app",
+          "ground_truth_resolution": "SleepMonitorX mobile app",
+          "semantic_similarity": 0.3725135326385498,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the report",
+          "ground_truth_ambiguous_phrase": "the report",
+          "predicted_resolution": "the report at your next appointment",
+          "ground_truth_resolution": "SleepMonitorX summary report",
+          "semantic_similarity": 0.3353598713874817,
+          "sentence_similarity_rougeL_f1": 0.2222222222222222
+        },
+        {
+          "turn_id": 44,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the sharing",
+          "ground_truth_ambiguous_phrase": "the sharing",
+          "predicted_resolution": "the sharing",
+          "ground_truth_resolution": "Transfer of sleep data to EHR",
+          "semantic_similarity": 0.03103603981435299,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "friends_meeting_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 86,
+        "ground_truth_ambiguities": 33,
+        "predicted_ambiguities": 30,
+        "true_positives": 1,
+        "false_negatives": 32,
+        "false_positives": 29,
+        "negative_turns": 53,
+        "fp_turns": 16,
+        "tn_turns": 37
+      },
+      "rates": {
+        "TPR": 0.030303030303030304,
+        "precision": 0.03333333333333333,
+        "F1": 0.03174603174603175,
+        "FPR_turn_level": 0.3018867924528302,
+        "TNR_turn_level": 0.6981132075471698,
+        "false_discovery_rate_phrase_level": 0.9666666666666667,
+        "false_positives_per_turn": 0.3372093023255814
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.12174442410469055,
+        "mean": 0.12174442410469055,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 15,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the one with the cat sticker",
+          "ground_truth_ambiguous_phrase": "the one with the cat sticker",
+          "predicted_resolution": "the one with the cat sticker",
+          "ground_truth_resolution": "Priya's blue folder",
+          "semantic_similarity": 0.12174442410469055,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "friends_meeting_008.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_leah_coffee_catchup",
+      "counts": {
+        "turns": 78,
+        "ground_truth_ambiguities": 27,
+        "predicted_ambiguities": 80,
+        "true_positives": 1,
+        "false_negatives": 26,
+        "false_positives": 79,
+        "negative_turns": 51,
+        "fp_turns": 30,
+        "tn_turns": 21
+      },
+      "rates": {
+        "TPR": 0.037037037037037035,
+        "precision": 0.0125,
+        "F1": 0.01869158878504673,
+        "FPR_turn_level": 0.5882352941176471,
+        "TNR_turn_level": 0.4117647058823529,
+        "false_discovery_rate_phrase_level": 0.9875,
+        "false_positives_per_turn": 1.0128205128205128
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.607867956161499,
+        "mean": 0.607867956161499,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.5714285714285715,
+        "mean": 0.5714285714285715,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 34,
+          "speaker": "User D",
+          "predicted_ambiguous_phrase": "the one at Franklin Hall",
+          "ground_truth_ambiguous_phrase": "The one at Franklin Hall",
+          "predicted_resolution": "Franklin Hall",
+          "ground_truth_resolution": "Concert at Franklin Hall, Philadelphia",
+          "semantic_similarity": 0.607867956161499,
+          "sentence_similarity_rougeL_f1": 0.5714285714285715
+        }
+      ]
+    },
+    {
+      "file": "legal_settig_001.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 74,
+        "ground_truth_ambiguities": 19,
+        "predicted_ambiguities": 52,
+        "true_positives": 3,
+        "false_negatives": 16,
+        "false_positives": 49,
+        "negative_turns": 55,
+        "fp_turns": 38,
+        "tn_turns": 17
+      },
+      "rates": {
+        "TPR": 0.15789473684210525,
+        "precision": 0.057692307692307696,
+        "F1": 0.08450704225352111,
+        "FPR_turn_level": 0.6909090909090909,
+        "TNR_turn_level": 0.3090909090909091,
+        "false_discovery_rate_phrase_level": 0.9423076923076923,
+        "false_positives_per_turn": 0.6621621621621622
+      },
+      "semantic_similarity_detected": {
+        "n": 3,
+        "median": 0.45230498909950256,
+        "mean": 0.6016139884789785,
+        "std": 0.28463081574554905
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 3,
+        "median": 0.0,
+        "mean": 0.3333333333333333,
+        "std": 0.4714045207910317
+      },
+      "pairs": [
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "next meeting",
+          "ground_truth_ambiguous_phrase": "next meeting",
+          "predicted_resolution": "Legal Consultation: Breach of Contract (2:00-3:00 PM)",
+          "ground_truth_resolution": "Legal Consultation: Breach of Contract (2:00-3:00 PM)",
+          "semantic_similarity": 1.0000001192092896,
+          "sentence_similarity_rougeL_f1": 1.0
+        },
+        {
+          "turn_id": 39,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "predicted_resolution": "the client",
+          "ground_truth_resolution": "Mediation session",
+          "semantic_similarity": 0.3525368571281433,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "predicted_resolution": "the company rep",
+          "ground_truth_resolution": "Daniel Monroe (Apex Digital Solutions LLC representative)",
+          "semantic_similarity": 0.45230498909950256,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "legal_settig_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 75,
+        "ground_truth_ambiguities": 17,
+        "predicted_ambiguities": 59,
+        "true_positives": 0,
+        "false_negatives": 17,
+        "false_positives": 59,
+        "negative_turns": 58,
+        "fp_turns": 38,
+        "tn_turns": 20
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.6551724137931034,
+        "TNR_turn_level": 0.3448275862068966,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.7866666666666666
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_settig_004.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 61,
+        "predicted_ambiguities": 46,
+        "true_positives": 8,
+        "false_negatives": 53,
+        "false_positives": 38,
+        "negative_turns": 3,
+        "fp_turns": 2,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.13114754098360656,
+        "precision": 0.17391304347826086,
+        "F1": 0.14953271028037382,
+        "FPR_turn_level": 0.6666666666666666,
+        "TNR_turn_level": 0.3333333333333333,
+        "false_discovery_rate_phrase_level": 0.8260869565217391,
+        "false_positives_per_turn": 0.76
+      },
+      "semantic_similarity_detected": {
+        "n": 8,
+        "median": 0.3078446388244629,
+        "mean": 0.3404809720814228,
+        "std": 0.13105136968463474
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 8,
+        "median": 0.0,
+        "mean": 0.08730158730158731,
+        "std": 0.12243848111540882
+      },
+      "pairs": [
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the inspector",
+          "ground_truth_ambiguous_phrase": "the inspector",
+          "predicted_resolution": "the inspector",
+          "ground_truth_resolution": "Leo Schmidt (Home Inspector)",
+          "semantic_similarity": 0.6352576017379761,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that report",
+          "ground_truth_ambiguous_phrase": "that report",
+          "predicted_resolution": "that report",
+          "ground_truth_resolution": "Plaintiff’s Inspection Report (2024-04-15)",
+          "semantic_similarity": 0.30015796422958374,
+          "sentence_similarity_rougeL_f1": 0.22222222222222224
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the broker",
+          "ground_truth_ambiguous_phrase": "the broker",
+          "predicted_resolution": "Hayes & Associates Law Office",
+          "ground_truth_resolution": "Rick Lane (Managing Broker)",
+          "semantic_similarity": 0.3828371465206146,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 27,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that contract",
+          "ground_truth_ambiguous_phrase": "that contract",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Purchase Contract #A-492, Dated 2022-05-14",
+          "semantic_similarity": 0.26754701137542725,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "me",
+          "ground_truth_ambiguous_phrase": "me",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Michael Grant, Client",
+          "semantic_similarity": 0.31553131341934204,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 39,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the judge",
+          "ground_truth_ambiguous_phrase": "the judge",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Judge Dana Harper",
+          "semantic_similarity": 0.21671557426452637,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 46,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the sale",
+          "ground_truth_ambiguous_phrase": "the sale",
+          "predicted_resolution": "sale",
+          "ground_truth_resolution": "Moderate-income home sale, 2136 Cherry St, Denver, closing date: 2024-03-20",
+          "semantic_similarity": 0.41013431549072266,
+          "sentence_similarity_rougeL_f1": 0.14285714285714288
+        },
+        {
+          "turn_id": 48,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "this process",
+          "ground_truth_ambiguous_phrase": "this process",
+          "predicted_resolution": "the process",
+          "ground_truth_resolution": "Legal preparation for pretrial conference",
+          "semantic_similarity": 0.1956668496131897,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "legal_settig_006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 60,
+        "ground_truth_ambiguities": 18,
+        "predicted_ambiguities": 39,
+        "true_positives": 1,
+        "false_negatives": 17,
+        "false_positives": 38,
+        "negative_turns": 42,
+        "fp_turns": 26,
+        "tn_turns": 16
+      },
+      "rates": {
+        "TPR": 0.05555555555555555,
+        "precision": 0.02564102564102564,
+        "F1": 0.03508771929824561,
+        "FPR_turn_level": 0.6190476190476191,
+        "TNR_turn_level": 0.38095238095238093,
+        "false_discovery_rate_phrase_level": 0.9743589743589743,
+        "false_positives_per_turn": 0.6333333333333333
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.4470466673374176,
+        "mean": 0.4470466673374176,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.25,
+        "mean": 0.25,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those receipts in ‘the folder’",
+          "ground_truth_ambiguous_phrase": "those receipts in ‘the folder’",
+          "predicted_resolution": "the folder",
+          "ground_truth_resolution": "Blue folder in café supply drawer",
+          "semantic_similarity": 0.4470466673374176,
+          "sentence_similarity_rougeL_f1": 0.25
+        }
+      ]
+    },
+    {
+      "file": "legal_settig_007.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_chicago_regulatory",
+      "counts": {
+        "turns": 57,
+        "ground_truth_ambiguities": 25,
+        "predicted_ambiguities": 43,
+        "true_positives": 0,
+        "false_negatives": 25,
+        "false_positives": 43,
+        "negative_turns": 32,
+        "fp_turns": 19,
+        "tn_turns": 13
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.59375,
+        "TNR_turn_level": 0.40625,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.7543859649122807
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_settig_010.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 55,
+        "ground_truth_ambiguities": 24,
+        "predicted_ambiguities": 28,
+        "true_positives": 0,
+        "false_negatives": 24,
+        "false_positives": 28,
+        "negative_turns": 31,
+        "fp_turns": 15,
+        "tn_turns": 16
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.4838709677419355,
+        "TNR_turn_level": 0.5161290322580645,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.509090909090909
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_setting_001.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 24,
+        "predicted_ambiguities": 39,
+        "true_positives": 0,
+        "false_negatives": 24,
+        "false_positives": 39,
+        "negative_turns": 26,
+        "fp_turns": 22,
+        "tn_turns": 4
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.8461538461538461,
+        "TNR_turn_level": 0.15384615384615385,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.78
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_setting_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 59,
+        "ground_truth_ambiguities": 18,
+        "predicted_ambiguities": 50,
+        "true_positives": 1,
+        "false_negatives": 17,
+        "false_positives": 49,
+        "negative_turns": 41,
+        "fp_turns": 21,
+        "tn_turns": 20
+      },
+      "rates": {
+        "TPR": 0.05555555555555555,
+        "precision": 0.02,
+        "F1": 0.029411764705882353,
+        "FPR_turn_level": 0.5121951219512195,
+        "TNR_turn_level": 0.4878048780487805,
+        "false_discovery_rate_phrase_level": 0.98,
+        "false_positives_per_turn": 0.8305084745762712
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.6259305477142334,
+        "mean": 0.6259305477142334,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.4,
+        "mean": 0.4,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the old City Hall site, Third and L.",
+          "ground_truth_ambiguous_phrase": "old City Hall site, Third and L",
+          "predicted_resolution": "Rivera Construction, Office 210, 1128 Main St, Sacramento, CA",
+          "ground_truth_resolution": "1100 3rd St, Sacramento, CA 95814",
+          "semantic_similarity": 0.6259305477142334,
+          "sentence_similarity_rougeL_f1": 0.4
+        }
+      ]
+    },
+    {
+      "file": "legal_setting_004.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 45,
+        "ground_truth_ambiguities": 22,
+        "predicted_ambiguities": 27,
+        "true_positives": 0,
+        "false_negatives": 22,
+        "false_positives": 27,
+        "negative_turns": 23,
+        "fp_turns": 10,
+        "tn_turns": 13
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.43478260869565216,
+        "TNR_turn_level": 0.5652173913043478,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.6
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_setting_005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 46,
+        "ground_truth_ambiguities": 39,
+        "predicted_ambiguities": 37,
+        "true_positives": 10,
+        "false_negatives": 29,
+        "false_positives": 27,
+        "negative_turns": 13,
+        "fp_turns": 9,
+        "tn_turns": 4
+      },
+      "rates": {
+        "TPR": 0.2564102564102564,
+        "precision": 0.2702702702702703,
+        "F1": 0.2631578947368421,
+        "FPR_turn_level": 0.6923076923076923,
+        "TNR_turn_level": 0.3076923076923077,
+        "false_discovery_rate_phrase_level": 0.7297297297297297,
+        "false_positives_per_turn": 0.5869565217391305
+      },
+      "semantic_similarity_detected": {
+        "n": 10,
+        "median": 0.27784112095832825,
+        "mean": 0.29530823677778245,
+        "std": 0.10931733670218786
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 10,
+        "median": 0.0,
+        "mean": 0.10944444444444446,
+        "std": 0.14194525983675346
+      },
+      "pairs": [
+        {
+          "turn_id": 4,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that document",
+          "ground_truth_ambiguous_phrase": "that document",
+          "predicted_resolution": "Morris & Patel Law Office - Conference Room",
+          "ground_truth_resolution": "Freelance Design Services Agreement - CloudBright.pdf",
+          "semantic_similarity": 0.25201159715652466,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "this agreement",
+          "ground_truth_ambiguous_phrase": "this agreement",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Freelance Design Services Agreement - CloudBright.pdf",
+          "semantic_similarity": 0.2666284143924713,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the demand letter",
+          "ground_truth_ambiguous_phrase": "the demand letter",
+          "predicted_resolution": "the demand letter",
+          "ground_truth_resolution": "Draft legal payment demand letter for CloudBright",
+          "semantic_similarity": 0.49185681343078613,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the session",
+          "ground_truth_ambiguous_phrase": "the session",
+          "predicted_resolution": "the session",
+          "ground_truth_resolution": "Mediation session (potentially online or in person)",
+          "semantic_similarity": 0.43614062666893005,
+          "sentence_similarity_rougeL_f1": 0.22222222222222224
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "your financials",
+          "ground_truth_ambiguous_phrase": "your financials",
+          "predicted_resolution": "your financials",
+          "ground_truth_resolution": "Nina Desai’s bank records, business accounts, and invoices",
+          "semantic_similarity": 0.3417087197303772,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 28,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the statute",
+          "ground_truth_ambiguous_phrase": "the statute",
+          "predicted_resolution": "the statute",
+          "ground_truth_resolution": "Oregon Statute of Limitations for Written Contracts",
+          "semantic_similarity": 0.3462488353252411,
+          "sentence_similarity_rougeL_f1": 0.22222222222222224
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that step",
+          "ground_truth_ambiguous_phrase": "that step",
+          "predicted_resolution": "the step",
+          "ground_truth_resolution": "Filing a small claims lawsuit",
+          "semantic_similarity": 0.0904829204082489,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that agreement",
+          "ground_truth_ambiguous_phrase": "that agreement",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Signed mediation settlement contract",
+          "semantic_similarity": 0.22650456428527832,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 38,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the offer",
+          "ground_truth_ambiguous_phrase": "the offer",
+          "predicted_resolution": "the offer",
+          "ground_truth_resolution": "Proposed settlement amount from CloudBright",
+          "semantic_similarity": 0.21244604885578156,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the letter",
+          "ground_truth_ambiguous_phrase": "the letter",
+          "predicted_resolution": "the letter",
+          "ground_truth_resolution": "Draft legal demand letter for payment",
+          "semantic_similarity": 0.2890538275241852,
+          "sentence_similarity_rougeL_f1": 0.25
+        }
+      ]
+    },
+    {
+      "file": "legal_setting_006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 48,
+        "ground_truth_ambiguities": 38,
+        "predicted_ambiguities": 44,
+        "true_positives": 4,
+        "false_negatives": 34,
+        "false_positives": 40,
+        "negative_turns": 14,
+        "fp_turns": 8,
+        "tn_turns": 6
+      },
+      "rates": {
+        "TPR": 0.10526315789473684,
+        "precision": 0.09090909090909091,
+        "F1": 0.0975609756097561,
+        "FPR_turn_level": 0.5714285714285714,
+        "TNR_turn_level": 0.42857142857142855,
+        "false_discovery_rate_phrase_level": 0.9090909090909091,
+        "false_positives_per_turn": 0.8333333333333334
+      },
+      "semantic_similarity_detected": {
+        "n": 4,
+        "median": 0.29035139083862305,
+        "mean": 0.28795320354402065,
+        "std": 0.1676421130789485
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 4,
+        "median": 0.11111111111111112,
+        "mean": 0.11805555555555555,
+        "std": 0.11846334798077765
+      },
+      "pairs": [
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "predicted_resolution": "Kim & Associates Law Office",
+          "ground_truth_resolution": "Guardianship application paperwork",
+          "semantic_similarity": 0.1275196671485901,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "her",
+          "ground_truth_ambiguous_phrase": "her",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "George's daughter",
+          "semantic_similarity": 0.11327012628316879,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the documents",
+          "ground_truth_ambiguous_phrase": "the documents",
+          "predicted_resolution": "the documents",
+          "ground_truth_resolution": "Guardianship and power of attorney draft documents",
+          "semantic_similarity": 0.453183114528656,
+          "sentence_similarity_rougeL_f1": 0.22222222222222224
+        },
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "predicted_resolution": "the documents",
+          "ground_truth_resolution": "Guardianship and power of attorney documents",
+          "semantic_similarity": 0.4578399062156677,
+          "sentence_similarity_rougeL_f1": 0.25
+        }
+      ]
+    },
+    {
+      "file": "legal_setting_007.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 45,
+        "ground_truth_ambiguities": 40,
+        "predicted_ambiguities": 24,
+        "true_positives": 0,
+        "false_negatives": 40,
+        "false_positives": 24,
+        "negative_turns": 9,
+        "fp_turns": 2,
+        "tn_turns": 7
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.2222222222222222,
+        "TNR_turn_level": 0.7777777777777778,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.5333333333333333
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_setting_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 57,
+        "ground_truth_ambiguities": 18,
+        "predicted_ambiguities": 30,
+        "true_positives": 0,
+        "false_negatives": 18,
+        "false_positives": 30,
+        "negative_turns": 39,
+        "fp_turns": 20,
+        "tn_turns": 19
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.5128205128205128,
+        "TNR_turn_level": 0.48717948717948717,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.5263157894736842
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "legal_setting_010.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 22,
+        "predicted_ambiguities": 19,
+        "true_positives": 0,
+        "false_negatives": 22,
+        "false_positives": 19,
+        "negative_turns": 28,
+        "fp_turns": 13,
+        "tn_turns": 15
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.4642857142857143,
+        "TNR_turn_level": 0.5357142857142857,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.38
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "office_meeting_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 49,
+        "ground_truth_ambiguities": 26,
+        "predicted_ambiguities": 24,
+        "true_positives": 2,
+        "false_negatives": 24,
+        "false_positives": 22,
+        "negative_turns": 23,
+        "fp_turns": 9,
+        "tn_turns": 14
+      },
+      "rates": {
+        "TPR": 0.07692307692307693,
+        "precision": 0.08333333333333333,
+        "F1": 0.08,
+        "FPR_turn_level": 0.391304347826087,
+        "TNR_turn_level": 0.6086956521739131,
+        "false_discovery_rate_phrase_level": 0.9166666666666666,
+        "false_positives_per_turn": 0.4489795918367347
+      },
+      "semantic_similarity_detected": {
+        "n": 2,
+        "median": 0.07151323184370995,
+        "mean": 0.07151323184370995,
+        "std": 0.04013222083449364
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 2,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "It’ll be in the big meeting space on the first floor—you know, the one near the coffee stand.",
+          "ground_truth_ambiguous_phrase": "the big meeting space on the first floor—you know, the one near the coffee stand",
+          "predicted_resolution": "mobile_context_snapshot",
+          "ground_truth_resolution": "Multipurpose Hall, Building C, 1st Floor, adjacent to JavaStop Café",
+          "semantic_similarity": 0.03138101100921631,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 25,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Which lead? I know there are two people splitting that role.",
+          "ground_truth_ambiguous_phrase": "Which lead? I know there are two people splitting that role.",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Emily Zhao (Data Engineering Lead, joined August 2022)",
+          "semantic_similarity": 0.11164545267820358,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "office_meeting_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_maya_omar_teamwork",
+      "counts": {
+        "turns": 48,
+        "ground_truth_ambiguities": 29,
+        "predicted_ambiguities": 20,
+        "true_positives": 1,
+        "false_negatives": 28,
+        "false_positives": 19,
+        "negative_turns": 19,
+        "fp_turns": 8,
+        "tn_turns": 11
+      },
+      "rates": {
+        "TPR": 0.034482758620689655,
+        "precision": 0.05,
+        "F1": 0.04081632653061224,
+        "FPR_turn_level": 0.42105263157894735,
+        "TNR_turn_level": 0.5789473684210527,
+        "false_discovery_rate_phrase_level": 0.95,
+        "false_positives_per_turn": 0.3958333333333333
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.20124641060829163,
+        "mean": 0.20124641060829163,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 39,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the client call",
+          "ground_truth_ambiguous_phrase": "the client call",
+          "predicted_resolution": "the client site this morning",
+          "ground_truth_resolution": "Teleconference with Glades Group, scheduled for 2:30 PM, following day",
+          "semantic_similarity": 0.20124641060829163,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "office_meeting_004.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 52,
+        "ground_truth_ambiguities": 31,
+        "predicted_ambiguities": 33,
+        "true_positives": 1,
+        "false_negatives": 30,
+        "false_positives": 32,
+        "negative_turns": 21,
+        "fp_turns": 10,
+        "tn_turns": 11
+      },
+      "rates": {
+        "TPR": 0.03225806451612903,
+        "precision": 0.030303030303030304,
+        "F1": 0.03125,
+        "FPR_turn_level": 0.47619047619047616,
+        "TNR_turn_level": 0.5238095238095238,
+        "false_discovery_rate_phrase_level": 0.9696969696969697,
+        "false_positives_per_turn": 0.6153846153846154
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.042526975274086,
+        "mean": 0.042526975274086,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 11,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the project you flagged last week",
+          "ground_truth_ambiguous_phrase": "that project you flagged last week",
+          "predicted_resolution": "User A's project flagged in Turn 11",
+          "ground_truth_resolution": "Workforce Optimization Initiative",
+          "semantic_similarity": 0.042526975274086,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "office_meeting_005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 45,
+        "ground_truth_ambiguities": 73,
+        "predicted_ambiguities": 70,
+        "true_positives": 6,
+        "false_negatives": 67,
+        "false_positives": 64,
+        "negative_turns": 1,
+        "fp_turns": 0,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.0821917808219178,
+        "precision": 0.08571428571428572,
+        "F1": 0.0839160839160839,
+        "FPR_turn_level": 0.0,
+        "TNR_turn_level": 1.0,
+        "false_discovery_rate_phrase_level": 0.9142857142857143,
+        "false_positives_per_turn": 1.4222222222222223
+      },
+      "semantic_similarity_detected": {
+        "n": 6,
+        "median": 0.31268617510795593,
+        "mean": 0.32591911653677624,
+        "std": 0.13092152991439288
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 6,
+        "median": 0.0,
+        "mean": 0.08585858585858586,
+        "std": 0.12905992261798624
+      },
+      "pairs": [
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the folder",
+          "ground_truth_ambiguous_phrase": "the folder",
+          "predicted_resolution": "the folder",
+          "ground_truth_resolution": "Orientation folder on each desk in Conference Room B",
+          "semantic_similarity": 0.34524235129356384,
+          "sentence_similarity_rougeL_f1": 0.1818181818181818
+        },
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Benefits overview presentation",
+          "semantic_similarity": 0.16096454858779907,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "anyone",
+          "ground_truth_ambiguous_phrase": "anyone",
+          "predicted_resolution": "the group",
+          "ground_truth_resolution": "Any participant in today’s orientation session",
+          "semantic_similarity": 0.24014073610305786,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 27,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the end of the day",
+          "ground_truth_ambiguous_phrase": "the end of the day",
+          "predicted_resolution": "the end of the day",
+          "ground_truth_resolution": "Today, June 4, 2024, 5:00 PM deadline",
+          "semantic_similarity": 0.33561334013938904,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 32,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the usual place",
+          "ground_truth_ambiguous_phrase": "the usual place",
+          "predicted_resolution": "Denver Office - Conference Room B",
+          "ground_truth_resolution": "Maple Street Bistro",
+          "semantic_similarity": 0.2897590100765228,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the helpdesk",
+          "ground_truth_ambiguous_phrase": "the helpdesk",
+          "predicted_resolution": "the helpdesk",
+          "ground_truth_resolution": "IT Helpdesk, extension 2828",
+          "semantic_similarity": 0.5837947130203247,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "file": "office_meeting_008.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 48,
+        "ground_truth_ambiguities": 46,
+        "predicted_ambiguities": 78,
+        "true_positives": 13,
+        "false_negatives": 33,
+        "false_positives": 65,
+        "negative_turns": 4,
+        "fp_turns": 3,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.2826086956521739,
+        "precision": 0.16666666666666666,
+        "F1": 0.2096774193548387,
+        "FPR_turn_level": 0.75,
+        "TNR_turn_level": 0.25,
+        "false_discovery_rate_phrase_level": 0.8333333333333334,
+        "false_positives_per_turn": 1.3541666666666667
+      },
+      "semantic_similarity_detected": {
+        "n": 13,
+        "median": 0.41637882590293884,
+        "mean": 0.403161333157466,
+        "std": 0.262081609418413
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 13,
+        "median": 0.0,
+        "mean": 0.19597069597069597,
+        "std": 0.22840230429479702
+      },
+      "pairs": [
+        {
+          "turn_id": 14,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "everyone",
+          "ground_truth_ambiguous_phrase": "everyone",
+          "predicted_resolution": "everyone",
+          "ground_truth_resolution": "All Department Meeting Attendees",
+          "semantic_similarity": 0.27570000290870667,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 15,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the admin team",
+          "ground_truth_ambiguous_phrase": "the admin team",
+          "predicted_resolution": "the admin team",
+          "ground_truth_resolution": "Admin Group, Miami HQ",
+          "semantic_similarity": 0.6466125249862671,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the conference room",
+          "ground_truth_ambiguous_phrase": "the conference room",
+          "predicted_resolution": "the conference room, Operations Department Meeting Room, Miami HQ",
+          "ground_truth_resolution": "Main Conference Room, Miami HQ",
+          "semantic_similarity": 0.8989795446395874,
+          "sentence_similarity_rougeL_f1": 0.5714285714285714
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Business Documentation Template Draft",
+          "semantic_similarity": 0.41637882590293884,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 29,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the process map draft",
+          "ground_truth_ambiguous_phrase": "the process map draft",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Process Map v3.2 Printout",
+          "semantic_similarity": 0.146113783121109,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 30,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the storage closet",
+          "ground_truth_ambiguous_phrase": "the storage closet",
+          "predicted_resolution": "storage closet",
+          "ground_truth_resolution": "Storage Closet 3, Miami HQ",
+          "semantic_similarity": 0.715203046798706,
+          "sentence_similarity_rougeL_f1": 0.5714285714285715
+        },
+        {
+          "turn_id": 32,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "everyone",
+          "ground_truth_ambiguous_phrase": "everyone",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "All Department Meeting Attendees",
+          "semantic_similarity": 0.11163297295570374,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 33,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the new staff",
+          "ground_truth_ambiguous_phrase": "the new staff",
+          "predicted_resolution": "the new staff",
+          "ground_truth_resolution": "New Hires, Miami HQ",
+          "semantic_similarity": 0.4272999167442322,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 36,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the group",
+          "ground_truth_ambiguous_phrase": "the group",
+          "predicted_resolution": "the group",
+          "ground_truth_resolution": "All Attendees, Department Meeting",
+          "semantic_similarity": 0.43593335151672363,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 40,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the quick wins",
+          "ground_truth_ambiguous_phrase": "the quick wins",
+          "predicted_resolution": "the quick wins we already achieved",
+          "ground_truth_resolution": "List of Successfully Implemented Changes",
+          "semantic_similarity": 0.057523518800735474,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "your location history",
+          "ground_truth_ambiguous_phrase": "your location history",
+          "predicted_resolution": "Miami HQ",
+          "ground_truth_resolution": "Omar’s Location Check-in Log (past week)",
+          "semantic_similarity": 0.21675406396389008,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 47,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the conference room",
+          "ground_truth_ambiguous_phrase": "the conference room",
+          "predicted_resolution": "the conference room",
+          "ground_truth_resolution": "Main Conference Room, Miami HQ",
+          "semantic_similarity": 0.732268750667572,
+          "sentence_similarity_rougeL_f1": 0.5
+        },
+        {
+          "turn_id": 48,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the printouts",
+          "ground_truth_ambiguous_phrase": "the printouts",
+          "predicted_resolution": "the printouts",
+          "ground_truth_resolution": "Process Map and Feedback Forms",
+          "semantic_similarity": 0.16069702804088593,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_001.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 50,
+        "predicted_ambiguities": 39,
+        "true_positives": 13,
+        "false_negatives": 37,
+        "false_positives": 26,
+        "negative_turns": 8,
+        "fp_turns": 4,
+        "tn_turns": 4
+      },
+      "rates": {
+        "TPR": 0.26,
+        "precision": 0.3333333333333333,
+        "F1": 0.2921348314606742,
+        "FPR_turn_level": 0.5,
+        "TNR_turn_level": 0.5,
+        "false_discovery_rate_phrase_level": 0.6666666666666666,
+        "false_positives_per_turn": 0.52
+      },
+      "semantic_similarity_detected": {
+        "n": 13,
+        "median": 0.340370774269104,
+        "mean": 0.41195323719428134,
+        "std": 0.18610072032881597
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 13,
+        "median": 0.2222222222222222,
+        "mean": 0.20345487845487845,
+        "std": 0.1539833155889275
+      },
+      "pairs": [
+        {
+          "turn_id": 3,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "container",
+          "ground_truth_ambiguous_phrase": "container",
+          "predicted_resolution": "experiment",
+          "ground_truth_resolution": "Plastic experiment container on group table",
+          "semantic_similarity": 0.41842007637023926,
+          "sentence_similarity_rougeL_f1": 0.2857142857142857
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "instructions",
+          "ground_truth_ambiguous_phrase": "instructions",
+          "predicted_resolution": "experiment",
+          "ground_truth_resolution": "Step-by-step procedure sheet for today's experiment",
+          "semantic_similarity": 0.5173266530036926,
+          "sentence_similarity_rougeL_f1": 0.19999999999999998
+        },
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those gloves",
+          "ground_truth_ambiguous_phrase": "those gloves",
+          "predicted_resolution": "those gloves",
+          "ground_truth_resolution": "Latex gloves supplied for experiment",
+          "semantic_similarity": 0.5645780563354492,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the sink closest to the podium",
+          "ground_truth_ambiguous_phrase": "the sink closest to the podium",
+          "predicted_resolution": "the sink closest to the podium",
+          "ground_truth_resolution": "Front-right sink in Room 302 nearest the instructor podium",
+          "semantic_similarity": 0.7354714870452881,
+          "sentence_similarity_rougeL_f1": 0.37499999999999994
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "an idea",
+          "ground_truth_ambiguous_phrase": "an idea",
+          "predicted_resolution": "Raj",
+          "ground_truth_resolution": "Hypothesis: temperature affects reaction rate (proposed by Raj)",
+          "semantic_similarity": 0.2463516891002655,
+          "sentence_similarity_rougeL_f1": 0.2222222222222222
+        },
+        {
+          "turn_id": 18,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the experiment",
+          "ground_truth_ambiguous_phrase": "the experiment",
+          "predicted_resolution": "the experiment",
+          "ground_truth_resolution": "Same chemical reaction using warm water",
+          "semantic_similarity": 0.2578049600124359,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that chart",
+          "ground_truth_ambiguous_phrase": "that chart",
+          "predicted_resolution": "Mark gave us",
+          "ground_truth_resolution": "Comparison chart for experiment results ('Mark's chart')",
+          "semantic_similarity": 0.340370774269104,
+          "sentence_similarity_rougeL_f1": 0.18181818181818182
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the syllabus",
+          "ground_truth_ambiguous_phrase": "the syllabus",
+          "predicted_resolution": "the syllabus",
+          "ground_truth_resolution": "Course syllabus, 'Chemistry 1101, Spring 2024",
+          "semantic_similarity": 0.5630097389221191,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the discussion questions",
+          "ground_truth_ambiguous_phrase": "the discussion questions",
+          "predicted_resolution": "the discussion questions",
+          "ground_truth_resolution": "End-of-chapter discussion questions (Chapter 6)",
+          "semantic_similarity": 0.7380172610282898,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 37,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "office hours",
+          "ground_truth_ambiguous_phrase": "office hours",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "TA Mark’s office hours: Tuesday, 1–2 PM",
+          "semantic_similarity": 0.20933407545089722,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 39,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the email",
+          "ground_truth_ambiguous_phrase": "the email",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Mark’s group email, sent Monday night",
+          "semantic_similarity": 0.2081090360879898,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the practice problems",
+          "ground_truth_ambiguous_phrase": "the practice problems",
+          "predicted_resolution": "practice problems",
+          "ground_truth_resolution": "Chemistry practice problems (hard copy in folder)",
+          "semantic_similarity": 0.3389299809932709,
+          "sentence_similarity_rougeL_f1": 0.4444444444444445
+        },
+        {
+          "turn_id": 43,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the quiz",
+          "ground_truth_ambiguous_phrase": "the quiz",
+          "predicted_resolution": "the quiz",
+          "ground_truth_resolution": "Chemistry formative assessment, results Friday afternoon",
+          "semantic_similarity": 0.2176682949066162,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 25,
+        "predicted_ambiguities": 29,
+        "true_positives": 1,
+        "false_negatives": 24,
+        "false_positives": 28,
+        "negative_turns": 25,
+        "fp_turns": 11,
+        "tn_turns": 14
+      },
+      "rates": {
+        "TPR": 0.04,
+        "precision": 0.034482758620689655,
+        "F1": 0.03703703703703704,
+        "FPR_turn_level": 0.44,
+        "TNR_turn_level": 0.56,
+        "false_discovery_rate_phrase_level": 0.9655172413793104,
+        "false_positives_per_turn": 0.56
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.37116697430610657,
+        "mean": 0.37116697430610657,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 29,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Is it the one with the yellow sticky note on top?",
+          "ground_truth_ambiguous_phrase": "the one with the yellow sticky note on top",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Rubric sheet (week prior), identifier: yellow sticky note",
+          "semantic_similarity": 0.37116697430610657,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_004.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 59,
+        "predicted_ambiguities": 51,
+        "true_positives": 5,
+        "false_negatives": 54,
+        "false_positives": 46,
+        "negative_turns": 2,
+        "fp_turns": 1,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.0847457627118644,
+        "precision": 0.09803921568627451,
+        "F1": 0.09090909090909091,
+        "FPR_turn_level": 0.5,
+        "TNR_turn_level": 0.5,
+        "false_discovery_rate_phrase_level": 0.9019607843137255,
+        "false_positives_per_turn": 0.92
+      },
+      "semantic_similarity_detected": {
+        "n": 5,
+        "median": 0.19531871378421783,
+        "mean": 0.30317954421043397,
+        "std": 0.18546040901108177
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 5,
+        "median": 0.2,
+        "mean": 0.17,
+        "std": 0.15362291495737218
+      },
+      "pairs": [
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "this section",
+          "ground_truth_ambiguous_phrase": "this section",
+          "predicted_resolution": "that section",
+          "ground_truth_resolution": "Procedure introduction on worksheet",
+          "semantic_similarity": 0.1360112428665161,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the blue box",
+          "ground_truth_ambiguous_phrase": "the blue box",
+          "predicted_resolution": "the blue box",
+          "ground_truth_resolution": "Procedure steps highlighted in blue on worksheet",
+          "semantic_similarity": 0.19531871378421783,
+          "sentence_similarity_rougeL_f1": 0.2
+        },
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "that stack",
+          "ground_truth_resolution": "Highlighted blue box content",
+          "semantic_similarity": 0.13263072073459625,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 21,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the timer",
+          "ground_truth_ambiguous_phrase": "the timer",
+          "predicted_resolution": "the timer",
+          "ground_truth_resolution": "Digital timer at Maya's station",
+          "semantic_similarity": 0.5709232687950134,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the report",
+          "ground_truth_ambiguous_phrase": "the report",
+          "predicted_resolution": "the report",
+          "ground_truth_resolution": "Lab report submission",
+          "semantic_similarity": 0.48101377487182617,
+          "sentence_similarity_rougeL_f1": 0.4
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_005.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 59,
+        "ground_truth_ambiguities": 19,
+        "predicted_ambiguities": 57,
+        "true_positives": 1,
+        "false_negatives": 18,
+        "false_positives": 56,
+        "negative_turns": 40,
+        "fp_turns": 24,
+        "tn_turns": 16
+      },
+      "rates": {
+        "TPR": 0.05263157894736842,
+        "precision": 0.017543859649122806,
+        "F1": 0.02631578947368421,
+        "FPR_turn_level": 0.6,
+        "TNR_turn_level": 0.4,
+        "false_discovery_rate_phrase_level": 0.9824561403508771,
+        "false_positives_per_turn": 0.9491525423728814
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.36458566784858704,
+        "mean": 0.36458566784858704,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 26,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that booklet you borrowed last week",
+          "ground_truth_ambiguous_phrase": "that booklet you borrowed last week",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Critical Literature Theory Booklet (Checked out last Thursday)",
+          "semantic_similarity": 0.36458566784858704,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_006.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 56,
+        "ground_truth_ambiguities": 28,
+        "predicted_ambiguities": 29,
+        "true_positives": 2,
+        "false_negatives": 26,
+        "false_positives": 27,
+        "negative_turns": 28,
+        "fp_turns": 11,
+        "tn_turns": 17
+      },
+      "rates": {
+        "TPR": 0.07142857142857142,
+        "precision": 0.06896551724137931,
+        "F1": 0.07017543859649124,
+        "FPR_turn_level": 0.39285714285714285,
+        "TNR_turn_level": 0.6071428571428571,
+        "false_discovery_rate_phrase_level": 0.9310344827586207,
+        "false_positives_per_turn": 0.48214285714285715
+      },
+      "semantic_similarity_detected": {
+        "n": 2,
+        "median": 0.35420937836170197,
+        "mean": 0.35420937836170197,
+        "std": 0.014645382761955261
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 2,
+        "median": 0.3333333333333333,
+        "mean": 0.3333333333333333,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the thick one on the shelf",
+          "ground_truth_ambiguous_phrase": "thick one on the shelf",
+          "predicted_resolution": "the thick one on the shelf",
+          "ground_truth_resolution": "Thick binder on bookshelf, not blue",
+          "semantic_similarity": 0.3395639955997467,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 46,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the blue one here on the table.",
+          "ground_truth_ambiguous_phrase": "blue one here on the table",
+          "predicted_resolution": "the table.",
+          "ground_truth_resolution": "Blue binder on table",
+          "semantic_similarity": 0.3688547611236572,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_007.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 41,
+        "predicted_ambiguities": 76,
+        "true_positives": 16,
+        "false_negatives": 25,
+        "false_positives": 60,
+        "negative_turns": 9,
+        "fp_turns": 6,
+        "tn_turns": 3
+      },
+      "rates": {
+        "TPR": 0.3902439024390244,
+        "precision": 0.21052631578947367,
+        "F1": 0.2735042735042735,
+        "FPR_turn_level": 0.6666666666666666,
+        "TNR_turn_level": 0.3333333333333333,
+        "false_discovery_rate_phrase_level": 0.7894736842105263,
+        "false_positives_per_turn": 1.2
+      },
+      "semantic_similarity_detected": {
+        "n": 16,
+        "median": 0.37720000743865967,
+        "mean": 0.3757520499639213,
+        "std": 0.1760549547724974
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 16,
+        "median": 0.0,
+        "mean": 0.14114774114774115,
+        "std": 0.17431940676852134
+      },
+      "pairs": [
+        {
+          "turn_id": 3,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that chart",
+          "ground_truth_ambiguous_phrase": "that chart",
+          "predicted_resolution": "chart",
+          "ground_truth_resolution": "Concept Map: Derivatives and Limits (from Ben's Guided Notes)",
+          "semantic_similarity": 0.19356957077980042,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "problem 5",
+          "ground_truth_ambiguous_phrase": "problem 5",
+          "predicted_resolution": "problem 5",
+          "ground_truth_resolution": "Problem 5 from Recitation Problem Set #4",
+          "semantic_similarity": 0.5502333641052246,
+          "sentence_similarity_rougeL_f1": 0.4444444444444445
+        },
+        {
+          "turn_id": 12,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the exit ticket",
+          "ground_truth_ambiguous_phrase": "the exit ticket",
+          "predicted_resolution": "the exit ticket",
+          "ground_truth_resolution": "Math 1551 Recitation Exit Ticket (Reflection Form)",
+          "semantic_similarity": 0.567632794380188,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 17,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "that chart",
+          "ground_truth_resolution": "Guided Notes: Derivatives & Limits Summary Sheet",
+          "semantic_similarity": 0.2027869075536728,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the food court",
+          "ground_truth_ambiguous_phrase": "the food court",
+          "predicted_resolution": "the food court",
+          "ground_truth_resolution": "North Avenue Dining",
+          "semantic_similarity": 0.5371533036231995,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 20,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "North Avenue Dining",
+          "ground_truth_ambiguous_phrase": "North Avenue Dining",
+          "predicted_resolution": "North Avenue Dining",
+          "ground_truth_resolution": "North Avenue Dining Hall, 120 North Ave NW, Atlanta, GA",
+          "semantic_similarity": 0.7185028195381165,
+          "sentence_similarity_rougeL_f1": 0.4615384615384615
+        },
+        {
+          "turn_id": 23,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the feedback sheets",
+          "ground_truth_ambiguous_phrase": "the feedback sheets",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Graded Feedback Sheets (Math 1551, Week 4)",
+          "semantic_similarity": 0.2649860084056854,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 25,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those reflection notes",
+          "ground_truth_ambiguous_phrase": "those reflection notes",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Reflection Notes Assignment (Math 1551)",
+          "semantic_similarity": 0.3562500476837158,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 26,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the new assignment",
+          "ground_truth_ambiguous_phrase": "the new assignment",
+          "predicted_resolution": "the new assignment",
+          "ground_truth_resolution": "Math 1551 Week 5 Assignment",
+          "semantic_similarity": 0.4007926881313324,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 27,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the exit ticket",
+          "ground_truth_resolution": "Math 1551 Week 5 Assignment",
+          "semantic_similarity": 0.10785011202096939,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 29,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "your laptop",
+          "ground_truth_ambiguous_phrase": "your laptop",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Alex's Laptop (Dell XPS 13, Library East Commons Backpack)",
+          "semantic_similarity": 0.11094018816947937,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 30,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "backpack",
+          "ground_truth_resolution": "Alex's Laptop (Dell XPS 13)",
+          "semantic_similarity": 0.29023513197898865,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 31,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "my notes",
+          "ground_truth_ambiguous_phrase": "my notes",
+          "predicted_resolution": "my notes",
+          "ground_truth_resolution": "Maya's Notes (Math 1551 Guided Notes, Recitation Week 4)",
+          "semantic_similarity": 0.3981499671936035,
+          "sentence_similarity_rougeL_f1": 0.16666666666666669
+        },
+        {
+          "turn_id": 33,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the usual spot",
+          "ground_truth_ambiguous_phrase": "the usual spot",
+          "predicted_resolution": "Georgia Tech Clough Undergraduate Learning Commons Room 205",
+          "ground_truth_resolution": "Math Lounge (Room 310, Clough Commons)",
+          "semantic_similarity": 0.5609163045883179,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 44,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "those proofs",
+          "ground_truth_ambiguous_phrase": "those proofs",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Proofs from Math 1551 Recitation Week 4",
+          "semantic_similarity": 0.2647653818130493,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the worksheet",
+          "ground_truth_ambiguous_phrase": "the worksheet",
+          "predicted_resolution": "the worksheet",
+          "ground_truth_resolution": "Math 1551 Week 4 Proof Worksheet",
+          "semantic_similarity": 0.48726820945739746,
+          "sentence_similarity_rougeL_f1": 0.25
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 48,
+        "ground_truth_ambiguities": 51,
+        "predicted_ambiguities": 63,
+        "true_positives": 11,
+        "false_negatives": 40,
+        "false_positives": 52,
+        "negative_turns": 8,
+        "fp_turns": 6,
+        "tn_turns": 2
+      },
+      "rates": {
+        "TPR": 0.21568627450980393,
+        "precision": 0.1746031746031746,
+        "F1": 0.19298245614035087,
+        "FPR_turn_level": 0.75,
+        "TNR_turn_level": 0.25,
+        "false_discovery_rate_phrase_level": 0.8253968253968254,
+        "false_positives_per_turn": 1.0833333333333333
+      },
+      "semantic_similarity_detected": {
+        "n": 11,
+        "median": 0.3105508089065552,
+        "mean": 0.35779347202994605,
+        "std": 0.2048379008092967
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 11,
+        "median": 0.0,
+        "mean": 0.19437229437229436,
+        "std": 0.22221332041164896
+      },
+      "pairs": [
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that concept",
+          "ground_truth_ambiguous_phrase": "that concept",
+          "predicted_resolution": "that concept",
+          "ground_truth_resolution": "Market equilibrium",
+          "semantic_similarity": 0.16033610701560974,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 11,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "those summary questions",
+          "ground_truth_ambiguous_phrase": "those summary questions",
+          "predicted_resolution": "User A's summary questions",
+          "ground_truth_resolution": "Summary questions provided in Alex's outline",
+          "semantic_similarity": 0.5304592847824097,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the formative assessment",
+          "ground_truth_ambiguous_phrase": "the formative assessment",
+          "predicted_resolution": "the formative assessment at the front desk",
+          "ground_truth_resolution": "End-of-session quiz",
+          "semantic_similarity": 0.3105508089065552,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "yours",
+          "ground_truth_ambiguous_phrase": "yours",
+          "predicted_resolution": "yours",
+          "ground_truth_resolution": "Emily's group’s organizer",
+          "semantic_similarity": 0.14974413812160492,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 17,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "his group",
+          "ground_truth_ambiguous_phrase": "his group",
+          "predicted_resolution": "his group",
+          "ground_truth_resolution": "Tom’s group",
+          "semantic_similarity": 0.5717294216156006,
+          "sentence_similarity_rougeL_f1": 0.4
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the assessment results",
+          "ground_truth_ambiguous_phrase": "the assessment results",
+          "predicted_resolution": "the assessment results",
+          "ground_truth_resolution": "Formative assessment scores",
+          "semantic_similarity": 0.6692911386489868,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the study guide",
+          "ground_truth_ambiguous_phrase": "the study guide",
+          "predicted_resolution": "the study guide",
+          "ground_truth_resolution": "Alex’s Economics Study Guide",
+          "semantic_similarity": 0.465687096118927,
+          "sentence_similarity_rougeL_f1": 0.5
+        },
+        {
+          "turn_id": 29,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the test",
+          "ground_truth_ambiguous_phrase": "the test",
+          "predicted_resolution": "next Thursday",
+          "ground_truth_resolution": "Economics final exam",
+          "semantic_similarity": 0.15500874817371368,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the grading rubric",
+          "ground_truth_ambiguous_phrase": "the grading rubric",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Economics presentation grading rubric",
+          "semantic_similarity": 0.16653381288051605,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 37,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "Alex's office hours",
+          "ground_truth_ambiguous_phrase": "Alex's office hours",
+          "predicted_resolution": "our review",
+          "ground_truth_resolution": "TA Alex's office hours (5:00-6:00 PM)",
+          "semantic_similarity": 0.13918517529964447,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 41,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the study group",
+          "ground_truth_ambiguous_phrase": "the study group",
+          "predicted_resolution": "the study group",
+          "ground_truth_resolution": "Economics Study Group (Friday)",
+          "semantic_similarity": 0.6172024607658386,
+          "sentence_similarity_rougeL_f1": 0.5714285714285715
+        }
+      ]
+    },
+    {
+      "file": "ta_Student_010.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 45,
+        "ground_truth_ambiguities": 23,
+        "predicted_ambiguities": 41,
+        "true_positives": 1,
+        "false_negatives": 22,
+        "false_positives": 40,
+        "negative_turns": 23,
+        "fp_turns": 10,
+        "tn_turns": 13
+      },
+      "rates": {
+        "TPR": 0.043478260869565216,
+        "precision": 0.024390243902439025,
+        "F1": 0.03125000000000001,
+        "FPR_turn_level": 0.43478260869565216,
+        "TNR_turn_level": 0.5652173913043478,
+        "false_discovery_rate_phrase_level": 0.975609756097561,
+        "false_positives_per_turn": 0.8888888888888888
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.6932567358016968,
+        "mean": 0.6932567358016968,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.3636363636363636,
+        "mean": 0.3636363636363636,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 17,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the same seminar room as last time",
+          "ground_truth_ambiguous_phrase": "same seminar room as last time",
+          "predicted_resolution": "NYU Computer Science Building - Room 217",
+          "ground_truth_resolution": "NYU Bobst Library, Room B3",
+          "semantic_similarity": 0.6932567358016968,
+          "sentence_similarity_rougeL_f1": 0.3636363636363636
+        }
+      ]
+    },
+    {
+      "file": "teacher_meeting_002.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 45,
+        "ground_truth_ambiguities": 23,
+        "predicted_ambiguities": 34,
+        "true_positives": 1,
+        "false_negatives": 22,
+        "false_positives": 33,
+        "negative_turns": 22,
+        "fp_turns": 10,
+        "tn_turns": 12
+      },
+      "rates": {
+        "TPR": 0.043478260869565216,
+        "precision": 0.029411764705882353,
+        "F1": 0.035087719298245605,
+        "FPR_turn_level": 0.45454545454545453,
+        "TNR_turn_level": 0.5454545454545454,
+        "false_discovery_rate_phrase_level": 0.9705882352941176,
+        "false_positives_per_turn": 0.7333333333333333
+      },
+      "semantic_similarity_detected": {
+        "n": 1,
+        "median": 0.2628980875015259,
+        "mean": 0.2628980875015259,
+        "std": 0.0
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 1,
+        "median": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "pairs": [
+        {
+          "turn_id": 38,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the woman from the main office",
+          "ground_truth_ambiguous_phrase": "the woman from the main office",
+          "predicted_resolution": "the main office",
+          "ground_truth_resolution": "Ms. Greene",
+          "semantic_similarity": 0.2628980875015259,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    },
+    {
+      "file": "teacher_meeting_003.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 49,
+        "ground_truth_ambiguities": 30,
+        "predicted_ambiguities": 16,
+        "true_positives": 0,
+        "false_negatives": 30,
+        "false_positives": 16,
+        "negative_turns": 23,
+        "fp_turns": 8,
+        "tn_turns": 15
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.34782608695652173,
+        "TNR_turn_level": 0.6521739130434783,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.32653061224489793
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "teacher_meeting_004.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 55,
+        "ground_truth_ambiguities": 27,
+        "predicted_ambiguities": 27,
+        "true_positives": 0,
+        "false_negatives": 27,
+        "false_positives": 27,
+        "negative_turns": 28,
+        "fp_turns": 11,
+        "tn_turns": 17
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.39285714285714285,
+        "TNR_turn_level": 0.6071428571428571,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.4909090909090909
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "teacher_meeting_007.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 47,
+        "ground_truth_ambiguities": 66,
+        "predicted_ambiguities": 46,
+        "true_positives": 19,
+        "false_negatives": 47,
+        "false_positives": 27,
+        "negative_turns": 1,
+        "fp_turns": 0,
+        "tn_turns": 1
+      },
+      "rates": {
+        "TPR": 0.2878787878787879,
+        "precision": 0.41304347826086957,
+        "F1": 0.3392857142857143,
+        "FPR_turn_level": 0.0,
+        "TNR_turn_level": 1.0,
+        "false_discovery_rate_phrase_level": 0.5869565217391305,
+        "false_positives_per_turn": 0.574468085106383
+      },
+      "semantic_similarity_detected": {
+        "n": 19,
+        "median": 0.3842947781085968,
+        "mean": 0.37126628466342626,
+        "std": 0.17765194304606674
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 19,
+        "median": 0.16666666666666666,
+        "mean": 0.15864135864135864,
+        "std": 0.16896219378871088
+      },
+      "pairs": [
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Mr. Singh",
+          "semantic_similarity": 0.25447601079940796,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 6,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that article",
+          "ground_truth_ambiguous_phrase": "that article",
+          "predicted_resolution": "the article",
+          "ground_truth_resolution": "‘March on Washington’ NYT article",
+          "semantic_similarity": 0.2818382978439331,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        },
+        {
+          "turn_id": 7,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "these notes",
+          "ground_truth_ambiguous_phrase": "these notes",
+          "predicted_resolution": "these notes",
+          "ground_truth_resolution": "class summary notes (shared Google Doc)",
+          "semantic_similarity": 0.43904274702072144,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Samantha Chen (research teammate)",
+          "semantic_similarity": 0.2747552990913391,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "predicted_resolution": "that article",
+          "ground_truth_resolution": "Samantha Chen",
+          "semantic_similarity": 0.15686985850334167,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 11,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the sit-ins",
+          "ground_truth_ambiguous_phrase": "the sit-ins",
+          "predicted_resolution": "the sit-ins",
+          "ground_truth_resolution": "1960s Student Sit-ins",
+          "semantic_similarity": 0.6785379648208618,
+          "sentence_similarity_rougeL_f1": 0.5714285714285715
+        },
+        {
+          "turn_id": 11,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the march",
+          "ground_truth_ambiguous_phrase": "the march",
+          "predicted_resolution": "the march",
+          "ground_truth_resolution": "March on Washington, 1963",
+          "semantic_similarity": 0.6175463795661926,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 11,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "predicted_resolution": "User A's location",
+          "ground_truth_resolution": "the links",
+          "semantic_similarity": 0.08898184448480606,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "she",
+          "ground_truth_ambiguous_phrase": "she",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Samantha Chen",
+          "semantic_similarity": 0.24507589638233185,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "this corner",
+          "ground_truth_ambiguous_phrase": "this corner",
+          "predicted_resolution": "the main desk",
+          "ground_truth_resolution": "corner table in Yorkville Library Study Room 2",
+          "semantic_similarity": 0.3842947781085968,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the main desk",
+          "ground_truth_ambiguous_phrase": "the main desk",
+          "predicted_resolution": "the main desk",
+          "ground_truth_resolution": "main desk in Yorkville Library Study Room 2",
+          "semantic_similarity": 0.5917938351631165,
+          "sentence_similarity_rougeL_f1": 0.36363636363636365
+        },
+        {
+          "turn_id": 18,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "them",
+          "ground_truth_ambiguous_phrase": "them",
+          "predicted_resolution": "packaging",
+          "ground_truth_resolution": "previous group at main desk",
+          "semantic_similarity": 0.08558177947998047,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 19,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "our printouts",
+          "ground_truth_ambiguous_phrase": "our printouts",
+          "predicted_resolution": "organizing *our printouts* and flagging key sections.",
+          "ground_truth_resolution": "physical printouts of research articles",
+          "semantic_similarity": 0.36908817291259766,
+          "sentence_similarity_rougeL_f1": 0.16666666666666666
+        },
+        {
+          "turn_id": 26,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that chart",
+          "ground_truth_ambiguous_phrase": "that chart",
+          "predicted_resolution": "that chart",
+          "ground_truth_resolution": "statistical chart on civil rights legislation",
+          "semantic_similarity": 0.4152369499206543,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 33,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the usual place",
+          "ground_truth_ambiguous_phrase": "the usual place",
+          "predicted_resolution": "Ava's Apartment - Upper East Side",
+          "ground_truth_resolution": "Joe's Corner Café, East 85th St.",
+          "semantic_similarity": 0.40861716866493225,
+          "sentence_similarity_rougeL_f1": 0.30769230769230765
+        },
+        {
+          "turn_id": 35,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "that infographic",
+          "ground_truth_ambiguous_phrase": "that infographic",
+          "predicted_resolution": "the document",
+          "ground_truth_resolution": "Infographic: Timeline of Protest Movements",
+          "semantic_similarity": 0.14884519577026367,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the weather",
+          "ground_truth_ambiguous_phrase": "the weather",
+          "predicted_resolution": "the weather",
+          "ground_truth_resolution": "Current weather in New York: sunny, 68°F",
+          "semantic_similarity": 0.511925995349884,
+          "sentence_similarity_rougeL_f1": 0.2
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the citations",
+          "ground_truth_ambiguous_phrase": "the citations",
+          "predicted_resolution": "the citations",
+          "ground_truth_resolution": "Works Cited list for assignment",
+          "semantic_similarity": 0.5506203770637512,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the outline",
+          "ground_truth_ambiguous_phrase": "the outline",
+          "predicted_resolution": "the outline",
+          "ground_truth_resolution": "presentation outline draft (Google Doc)",
+          "semantic_similarity": 0.5509308576583862,
+          "sentence_similarity_rougeL_f1": 0.28571428571428575
+        }
+      ]
+    },
+    {
+      "file": "teacher_meeting_008.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001_leo_science_class",
+      "counts": {
+        "turns": 53,
+        "ground_truth_ambiguities": 33,
+        "predicted_ambiguities": 23,
+        "true_positives": 0,
+        "false_negatives": 33,
+        "false_positives": 23,
+        "negative_turns": 23,
+        "fp_turns": 12,
+        "tn_turns": 11
+      },
+      "rates": {
+        "TPR": 0.0,
+        "precision": 0.0,
+        "F1": null,
+        "FPR_turn_level": 0.5217391304347826,
+        "TNR_turn_level": 0.4782608695652174,
+        "false_discovery_rate_phrase_level": 1.0,
+        "false_positives_per_turn": 0.4339622641509434
+      },
+      "semantic_similarity_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 0,
+        "median": NaN,
+        "mean": NaN,
+        "std": NaN
+      },
+      "pairs": []
+    },
+    {
+      "file": "teacher_meeting_009.qwen_detection_predictions.json",
+      "dataset_id": "scenario_protocol_001",
+      "counts": {
+        "turns": 50,
+        "ground_truth_ambiguities": 65,
+        "predicted_ambiguities": 104,
+        "true_positives": 18,
+        "false_negatives": 47,
+        "false_positives": 86,
+        "negative_turns": 3,
+        "fp_turns": 3,
+        "tn_turns": 0
+      },
+      "rates": {
+        "TPR": 0.27692307692307694,
+        "precision": 0.17307692307692307,
+        "F1": 0.21301775147928995,
+        "FPR_turn_level": 1.0,
+        "TNR_turn_level": 0.0,
+        "false_discovery_rate_phrase_level": 0.8269230769230769,
+        "false_positives_per_turn": 1.72
+      },
+      "semantic_similarity_detected": {
+        "n": 18,
+        "median": 0.27608688175678253,
+        "mean": 0.2994807335651583,
+        "std": 0.14902741436821787
+      },
+      "sentence_similarity_rougeL_f1_detected": {
+        "n": 18,
+        "median": 0.0,
+        "mean": 0.09404761904761905,
+        "std": 0.12965506985003744
+      },
+      "pairs": [
+        {
+          "turn_id": 5,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "it",
+          "ground_truth_ambiguous_phrase": "it",
+          "predicted_resolution": "the model",
+          "ground_truth_resolution": "Class resource binder with simulation requirements",
+          "semantic_similarity": 0.1024310365319252,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 6,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the poster",
+          "ground_truth_ambiguous_phrase": "the poster",
+          "predicted_resolution": "the poster by the door",
+          "ground_truth_resolution": "Project inspiration poster, History Building hallway near Room 204 entrance",
+          "semantic_similarity": 0.4865450859069824,
+          "sentence_similarity_rougeL_f1": 0.13333333333333333
+        },
+        {
+          "turn_id": 8,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the new project guidelines",
+          "ground_truth_ambiguous_phrase": "the new project guidelines",
+          "predicted_resolution": "the new project guidelines",
+          "ground_truth_resolution": "Updated assignment instructions for simulation project distributed by Ms. Patel",
+          "semantic_similarity": 0.34226104617118835,
+          "sentence_similarity_rougeL_f1": 0.14285714285714288
+        },
+        {
+          "turn_id": 9,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "this one",
+          "ground_truth_ambiguous_phrase": "this one",
+          "predicted_resolution": "this one",
+          "ground_truth_resolution": "Physical model (cardboard structure)",
+          "semantic_similarity": 0.059229616075754166,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 13,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "predicted_resolution": "User A",
+          "ground_truth_resolution": "Mr. Evans (the teacher)",
+          "semantic_similarity": 0.18249788880348206,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 14,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "his",
+          "ground_truth_ambiguous_phrase": "his",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Mr. Evans's (the teacher's) post on the class forum",
+          "semantic_similarity": 0.18563640117645264,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 15,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the first draft",
+          "ground_truth_ambiguous_phrase": "the first draft",
+          "predicted_resolution": "the first draft",
+          "ground_truth_resolution": "Initial structure design submission for simulation project",
+          "semantic_similarity": 0.15903538465499878,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "his",
+          "ground_truth_ambiguous_phrase": "his",
+          "predicted_resolution": "the user",
+          "ground_truth_resolution": "Mr. Evans's email",
+          "semantic_similarity": 0.27234604954719543,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 16,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "that",
+          "ground_truth_ambiguous_phrase": "that",
+          "predicted_resolution": "the meeting",
+          "ground_truth_resolution": "First draft due date/time",
+          "semantic_similarity": 0.1496722400188446,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 17,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the schedule",
+          "ground_truth_ambiguous_phrase": "the schedule",
+          "predicted_resolution": "my calendar",
+          "ground_truth_resolution": "Simulation project calendar for the class",
+          "semantic_similarity": 0.5047879219055176,
+          "sentence_similarity_rougeL_f1": 0.25
+        },
+        {
+          "turn_id": 22,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the bomb shelter concept",
+          "ground_truth_ambiguous_phrase": "the bomb shelter concept",
+          "predicted_resolution": "the model",
+          "ground_truth_resolution": "Section of the group model representing bomb shelters (WWII influence)",
+          "semantic_similarity": 0.3131105899810791,
+          "sentence_similarity_rougeL_f1": 0.33333333333333337
+        },
+        {
+          "turn_id": 24,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the special glue",
+          "ground_truth_ambiguous_phrase": "the special glue",
+          "predicted_resolution": "the special glue",
+          "ground_truth_resolution": "Tube of architectural model adhesive (Elmer's Extra Hold)",
+          "semantic_similarity": 0.49781155586242676,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 32,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the green one",
+          "ground_truth_ambiguous_phrase": "the green one",
+          "predicted_resolution": "the green one",
+          "ground_truth_resolution": "Green Crayola marker",
+          "semantic_similarity": 0.4174128770828247,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 33,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the projector",
+          "ground_truth_ambiguous_phrase": "the projector",
+          "predicted_resolution": "the projector",
+          "ground_truth_resolution": "Epson EX3240 classroom projector",
+          "semantic_similarity": 0.6005938649177551,
+          "sentence_similarity_rougeL_f1": 0.3333333333333333
+        },
+        {
+          "turn_id": 38,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "the time",
+          "ground_truth_ambiguous_phrase": "the time",
+          "predicted_resolution": "today",
+          "ground_truth_resolution": "8:30 AM, field trip meet-up at the Getty Center",
+          "semantic_similarity": 0.21813252568244934,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 39,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "the permission slip",
+          "ground_truth_ambiguous_phrase": "the permission slip",
+          "predicted_resolution": "the permission slip",
+          "ground_truth_resolution": "Getty Center field trip parent permission form (digital copy)",
+          "semantic_similarity": 0.3507903218269348,
+          "sentence_similarity_rougeL_f1": 0.16666666666666666
+        },
+        {
+          "turn_id": 42,
+          "speaker": "User B",
+          "predicted_ambiguous_phrase": "he",
+          "ground_truth_ambiguous_phrase": "he",
+          "predicted_resolution": "User B",
+          "ground_truth_resolution": "Jordan (classmate, group member)",
+          "semantic_similarity": 0.26853108406066895,
+          "sentence_similarity_rougeL_f1": 0.0
+        },
+        {
+          "turn_id": 45,
+          "speaker": "User A",
+          "predicted_ambiguous_phrase": "my laptop",
+          "ground_truth_ambiguous_phrase": "my laptop",
+          "predicted_resolution": "my laptop",
+          "ground_truth_resolution": "Maya's personal school-issued Chromebook",
+          "semantic_similarity": 0.27982771396636963,
+          "sentence_similarity_rougeL_f1": 0.0
+        }
+      ]
+    }
+  ]
+}
