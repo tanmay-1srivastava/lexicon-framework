@@ -1,4 +1,3 @@
-
 import json
 import os
 import re
@@ -29,16 +28,69 @@ PRED_DIR = Path(
 OUT_FILE = PRED_DIR / "eval_detection_report.json"
 
 
+# ================= MODEL PRESET =================
+# MODEL_PRESET=opus   -> Claude Opus 5.5 via Anthropic's OpenAI-compatible endpoint
+# MODEL_PRESET=astra  -> GPT-6 Astra via OpenAI
+# MODEL_PRESET=custom -> original behaviour (any OpenAI-compatible model)
+#
+# Opus 5.5:   temperature < 1 returns 400 (omitted); only strict json_schema is
+#             accepted as response_format; thinking is always on and counts
+#             toward max_tokens; Anthropic has no embeddings endpoint.
+# GPT-6 Astra: reasoning model; temperature returns 400 (omitted); max_tokens
+#             returns 400 (max_completion_tokens is used); reasoning tokens
+#             count toward the limit.
+
+MODEL_PRESET = os.getenv("MODEL_PRESET", "custom").strip().lower()
+
+PRESETS = {
+    "opus": {
+        "base_url": "https://api.anthropic.com/v1",
+        "model": "claude-opus-5-5",
+        "key_env": "ANTHROPIC_API_KEY",
+        "send_temperature": False,
+        "max_tokens_param": "max_tokens",
+        "max_tokens": 16000,
+        "response_format": "json_schema",
+    },
+    "astra": {
+        "base_url": "https://api.openai.com/v1",
+        "model": "gpt-6-astra",
+        "key_env": "OPENAI_API_KEY",
+        "send_temperature": False,
+        "max_tokens_param": "max_completion_tokens",
+        "max_tokens": 16000,
+        "response_format": "json_schema",
+    },
+    "custom": {
+        "base_url": "https://api.openai.com/v1",
+        "model": "gpt-4o-mini",
+        "key_env": "MODEL_API_KEY",
+        "send_temperature": True,
+        "max_tokens_param": "max_tokens",
+        "max_tokens": 512,
+        "response_format": "json_object",
+    },
+}
+
+if MODEL_PRESET not in PRESETS:
+    raise SystemExit(f"MODEL_PRESET must be one of {sorted(PRESETS)}")
+
+_PRESET = PRESETS[MODEL_PRESET]
+
+
 # ================= MODEL API =================
 
 MODEL_API_BASE_URL = os.getenv(
     "MODEL_API_BASE_URL",
-    "https://api.openai.com/v1"
+    _PRESET["base_url"]
 ).rstrip("/")
 
-MODEL_API_KEY = os.getenv("MODEL_API_KEY", "")
+MODEL_API_KEY = (
+    os.getenv("MODEL_API_KEY")
+    or os.getenv(_PRESET["key_env"], "")
+)
 
-MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
+MODEL_NAME = os.getenv("MODEL_NAME", _PRESET["model"])
 
 CHAT_API_URL = os.getenv(
     "CHAT_API_URL",
@@ -48,14 +100,18 @@ CHAT_API_URL = os.getenv(
 
 # ================= EMBEDDING API =================
 
+# Embeddings always default to OpenAI (Anthropic has no embeddings endpoint).
 EMBED_API_BASE_URL = os.getenv(
     "EMBED_API_BASE_URL",
-    MODEL_API_BASE_URL
+    "https://api.openai.com/v1"
 ).rstrip("/")
 
-EMBED_API_KEY = os.getenv(
-    "EMBED_API_KEY",
-    MODEL_API_KEY
+# Use the chat key only if chat and embeddings are the same host,
+# so an Anthropic key is never sent to OpenAI.
+EMBED_API_KEY = (
+    os.getenv("EMBED_API_KEY")
+    or os.getenv("OPENAI_API_KEY")
+    or (MODEL_API_KEY if EMBED_API_BASE_URL == MODEL_API_BASE_URL else "")
 )
 
 EMBED_MODEL_NAME = os.getenv(
@@ -74,12 +130,13 @@ EMBED_API_URL = os.getenv(
 RESOLUTION_THRESHOLD = 0.70
 PHRASE_MATCH_THRESHOLD = 0.90
 
-TEMPERATURE = 0.0
-MAX_TOKENS = 512
-MAX_TOKENS_PARAMETER = "max_tokens"
+# None = do not send temperature (required for Opus 5.5 and GPT-6 Astra)
+TEMPERATURE = 0.0 if _PRESET["send_temperature"] else None
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", _PRESET["max_tokens"]))
+MAX_TOKENS_PARAMETER = _PRESET["max_tokens_param"]
 
 # Options: "json_object", "json_schema", "none"
-RESPONSE_FORMAT_MODE = "json_object"
+RESPONSE_FORMAT_MODE = _PRESET["response_format"]
 
 REQUEST_TIMEOUT_S = 120
 MAX_RETRIES = 3
@@ -282,7 +339,7 @@ def post_api(session, url, api_key, payload, label):
 
         if (
             response.status_code in (
-                429, 500, 502, 503, 504
+                429, 500, 502, 503, 504, 529
             )
             and attempt < MAX_RETRIES
         ):
@@ -984,8 +1041,23 @@ def aggregate(file_results):
 
     return {
         "configuration": {
+            "model_preset":
+                MODEL_PRESET,
+
             "chat_model":
                 MODEL_NAME,
+
+            "temperature_sent":
+                TEMPERATURE,
+
+            "max_tokens_parameter":
+                MAX_TOKENS_PARAMETER,
+
+            "max_tokens":
+                MAX_TOKENS,
+
+            "response_format_mode":
+                RESPONSE_FORMAT_MODE,
 
             "embedding_model":
                 EMBED_MODEL_NAME,
@@ -1134,12 +1206,14 @@ def main():
 
     if not MODEL_API_KEY:
         raise RuntimeError(
-            "Set the MODEL_API_KEY environment variable first"
+            f"Set the {_PRESET['key_env']} (or MODEL_API_KEY) "
+            f"environment variable first"
         )
 
     if not EMBED_API_KEY:
         raise RuntimeError(
-            "Set EMBED_API_KEY, or use MODEL_API_KEY for both APIs"
+            "Set OPENAI_API_KEY (or EMBED_API_KEY) for the embeddings API; "
+            "Anthropic has no embeddings endpoint"
         )
 
     files = sorted(
