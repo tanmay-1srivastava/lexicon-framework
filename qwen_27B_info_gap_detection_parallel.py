@@ -18,10 +18,12 @@ import requests
 # ============================================================
 
 # --- Reasoning mode ---
-# True  -> thinking on  (thinking text returned separately by Ollama in
-#          message.thinking; the JSON answer stays in message.content)
-# False -> thinking off (same settings as the GPT-4.1 baseline)
+# Set it here (True = thinking on, False = off) ...
 THINK = False
+# ... or override it from SLURM:  sbatch --export=ALL,THINK=1 ...  (or THINK=0)
+_env_think = os.environ.get("THINK", "").strip().lower()
+if _env_think:
+    THINK = _env_think in ("1", "true", "yes", "on")
 
 QWEN_MODEL = "qwen3.5:27b"
 MODEL_TAG = "qwen_3_5_27b"       # used in the output folder name

@@ -21,9 +21,12 @@ MODEL_TAG = "qwen_3_5_27b"       # used in the output folder name
 EMBED_MODEL = "qwen3-embedding:0.6b"
 
 # --- Reasoning mode ---
-# True  -> thinking on
-# False -> thinking off (same as the original script)
+# Set it here (True = thinking on, False = off) ...
 THINK = False
+# ... or override it from SLURM:  sbatch --export=ALL,THINK=1 ...  (or THINK=0)
+_env_think = os.environ.get("THINK", "").strip().lower()
+if _env_think:
+    THINK = _env_think in ("1", "true", "yes", "on")
 
 DATASETS_DIR = Path(
     "/lustre/nvwulf/scratch/ambasu/lexicon-framework"
@@ -70,7 +73,7 @@ KEEP_ALIVE = "30m"
 if THINK:
     # Thinking tokens count toward num_predict; 512 would cut the model off
     # before it writes the JSON. Context must hold prompt + thinking + answer.
-    NUM_PREDICT = 8192
+    NUM_PREDICT = 12288
     NUM_CTX = 32768
 else:
     NUM_PREDICT = 512      # same as the original script
@@ -279,12 +282,19 @@ def call_qwen(session, messages):
 
     latency = time.perf_counter() - t0
 
+    repeat_aborted = False
     if not r.ok:
-        raise RuntimeError(
-            f"Ollama chat failed ({r.status_code}): {r.text}"
-        )
-
-    raw = r.json()
+        if "repeat limit" in r.text:
+            # Model got stuck repeating itself and Ollama aborted it:
+            # count this turn as "no detections" instead of failing the file.
+            repeat_aborted = True
+            raw = {"message": {"content": ""}}
+        else:
+            raise RuntimeError(
+                f"Ollama chat failed ({r.status_code}): {r.text}"
+            )
+    else:
+        raw = r.json()
     content = raw.get("message", {}).get("content", "")
     thinking = raw.get("message", {}).get("thinking", "") or ""
 
@@ -337,6 +347,7 @@ def call_qwen(session, messages):
         "thinking_returned": bool(thinking.strip()),
         "thinking_chars": len(thinking),
         "hit_num_predict_limit": output_tokens >= NUM_PREDICT,
+        "repeat_aborted": repeat_aborted,
     }
 
     return cleaned, compute
@@ -838,6 +849,12 @@ def latency_from_turns(turns):
                 1 for t in turns
                 if t["compute"].get("hit_num_predict_limit")
             ),
+
+        "turns_repeat_aborted":
+            sum(
+                1 for t in turns
+                if t["compute"].get("repeat_aborted")
+            ),
     }
 
 
@@ -920,6 +937,8 @@ def process_file(path, session):
             f"FN={c['false_negatives']} "
             f"FP={c['false_positives']} "
             f"lat={compute['wall_latency_s']:.2f}s"
+            + ("" if compute.get("json_parse_ok", True) else " [JSON PARSE FAIL]")
+            + (" [REPEAT ABORT]" if compute.get("repeat_aborted") else "")
         )
 
     return {
@@ -1138,6 +1157,10 @@ def print_summary(report):
         f"  Turns hit NUM_PREDICT limit:    "
         f"{l.get('turns_hit_num_predict_limit', 0)}"
     )
+    print(
+        f"  Turns aborted (repeat limit):   "
+        f"{l.get('turns_repeat_aborted', 0)}"
+    )
 
     print("\nPer conversation:")
     for row in report["per_file"]:
@@ -1149,7 +1172,7 @@ def print_summary(report):
             f"FN={row['false_negatives']}, "
             f"FP={row['false_positive_ambiguities']}, "
             f"TPR={100*row['true_positive_rate_at_0_70']:.2f}%, "
-            f"median latency={row['median_latency_per_turn_s']:.3f}s"
+            f"median latency={(row['median_latency_per_turn_s'] or 0.0):.3f}s"
         )
 
 
