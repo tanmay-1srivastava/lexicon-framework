@@ -1,0 +1,1461 @@
+import json
+import os
+import random
+import re
+import statistics
+import time
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from difflib import SequenceMatcher
+from pathlib import Path
+
+import numpy as np
+import requests
+
+
+# ============================================================
+# CONFIG
+# ============================================================
+
+QWEN_MODEL = "qwen3.5:27b"
+MODEL_TAG = "qwen_3_5_27b_fewshot"  # used in the output folder name
+EMBED_MODEL = "qwen3-embedding:0.6b"
+
+# --- Reasoning mode ---
+# Set it here (True = thinking on, False = off) ...
+THINK = False
+# ... or override it from SLURM:  sbatch --export=ALL,THINK=1 ...  (or THINK=0)
+_env_think = os.environ.get("THINK", "").strip().lower()
+if _env_think:
+    THINK = _env_think in ("1", "true", "yes", "on")
+
+DATASETS_DIR = Path(
+    "/lustre/nvwulf/scratch/ambasu/lexicon-framework"
+    "/data_generation/event_keywords/generated_datasets"
+)
+
+# Separate output folders for thinking on / off, so they never overwrite.
+PRED_DIR = Path(
+    "/lustre/nvwulf/scratch/ambasu/lexicon-framework/baselines"
+) / (f"{MODEL_TAG}_thinking_detection_predictions" if THINK
+     else f"{MODEL_TAG}_detection_predictions")
+
+OUT_FILE = PRED_DIR / "eval_detection_report.json"
+
+# Ollama address comes from the SLURM job (unique port per job).
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "127.0.0.1:11434")
+if not OLLAMA_HOST.startswith("http"):
+    OLLAMA_HOST = "http://" + OLLAMA_HOST
+OLLAMA_CHAT_URL = f"{OLLAMA_HOST}/api/chat"
+OLLAMA_EMBED_URL = f"{OLLAMA_HOST}/api/embed"
+OLLAMA_TAGS_URL = f"{OLLAMA_HOST}/api/tags"
+
+# --- Parallel run ---
+# Conversation files processed at the same time.
+# Must match OLLAMA_NUM_PARALLEL in the SLURM script.
+NUM_WORKERS = 4
+
+# Skip files that already have a complete prediction file in PRED_DIR
+# (lets a stopped job continue where it ended).
+RESUME = True
+
+# --- Few-shot examples ---
+# Worked examples (input -> expected output) are shown to the model before each
+# real turn. They are taken from the ground truth of a few "demo" conversations,
+# and those conversations are LEFT OUT of the evaluation, so nothing leaks.
+# Leave FEWSHOT_FILES empty to pick N_FEWSHOT_FILES automatically (fixed seed,
+# so every run and both tasks pick the same files), or list file names, e.g.
+# FEWSHOT_FILES = ["client-dev_002.json", "client-dev_004.json"]
+FEWSHOT_FILES = []
+N_FEWSHOT_FILES = 2
+N_POSITIVE_SHOTS = 4      # example turns that DO have a ground-truth answer
+N_NEGATIVE_SHOTS = 2      # example turns with nothing to report (empty output)
+FEWSHOT_HISTORY_TURNS = 6 # earlier turns shown in each example (keeps prompts short)
+FEWSHOT_SEED = 42
+
+FEWSHOT_MESSAGES = []     # filled in main()
+FEWSHOT_INFO = {}         # recorded in the report
+
+# User-requested threshold:
+RESOLUTION_THRESHOLD = 0.70
+
+# Used only to match Qwen's detected phrase to the GT ambiguous phrase.
+# 1.0 = exact normalized phrase match.
+PHRASE_MATCH_THRESHOLD = 0.90
+
+TEMPERATURE = 0.0
+SEED = 42
+# Thinking turns can be long, especially with 4 requests sharing the GPU.
+REQUEST_TIMEOUT_S = 1800
+CHAT_ATTEMPTS = 2       # 1 retry after a timeout / server error
+KEEP_ALIVE = "30m"
+
+if THINK:
+    # Thinking tokens count toward num_predict; 512 would cut the model off
+    # before it writes the JSON. Context must hold prompt + thinking + answer.
+    NUM_PREDICT = 12288
+    NUM_CTX = 32768
+else:
+    NUM_PREDICT = 512      # same as the original script
+    NUM_CTX = 32768        # set explicitly: the examples make the prompt longer
+
+
+# ============================================================
+# HELPERS
+# ============================================================
+
+def safe_div(a, b):
+    return float(a / b) if b else 0.0
+
+
+def median_or_none(xs):
+    return float(statistics.median(xs)) if xs else None
+
+
+def mean_or_none(xs):
+    return float(statistics.mean(xs)) if xs else None
+
+
+def ns_to_s(x):
+    return float(x or 0) / 1_000_000_000.0
+
+
+def normalize_phrase(s):
+    s = str(s or "").strip().lower()
+    s = s.replace("*", "")
+    s = s.replace("’", "'").replace("“", '"').replace("”", '"')
+    s = re.sub(r"[^a-z0-9'\s-]+", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s.strip(" -'\"")
+
+
+def phrase_similarity(a, b):
+    a = normalize_phrase(a)
+    b = normalize_phrase(b)
+
+    if not a or not b:
+        return 0.0
+    if a == b:
+        return 1.0
+
+    return float(SequenceMatcher(None, a, b).ratio())
+
+
+def transcript_until(transcript, turn_id):
+    rows = [
+        t for t in transcript
+        if int(t.get("turn_id", -1)) <= int(turn_id)
+    ]
+    rows.sort(key=lambda x: int(x.get("turn_id", 0)))
+    return rows
+
+
+def format_transcript(rows):
+    return "\n".join(
+        f"[Turn {t.get('turn_id')}] "
+        f"{t.get('speaker', 'Unknown')}: "
+        f"{t.get('text', '')}"
+        for t in rows
+    )
+
+
+def group_gt_by_turn(gt_rows):
+    grouped = defaultdict(list)
+
+    for gt_id, row in enumerate(gt_rows):
+        item = dict(row)
+        item["_gt_id"] = gt_id
+        grouped[int(row["trigger_turn_id"])].append(item)
+
+    return grouped
+
+
+# ============================================================
+# OLLAMA
+# ============================================================
+
+def check_ollama(session):
+    r = session.get(OLLAMA_TAGS_URL, timeout=15)
+    r.raise_for_status()
+
+    names = {
+        m.get("name")
+        for m in r.json().get("models", [])
+        if m.get("name")
+    }
+
+    missing = [
+        m for m in [QWEN_MODEL, EMBED_MODEL]
+        if m not in names
+    ]
+
+    if missing:
+        raise RuntimeError(
+            "Missing Ollama model(s): "
+            + ", ".join(missing)
+            + "\nRun:\n"
+            + "\n".join(f"ollama pull {m}" for m in missing)
+        )
+
+
+def output_schema():
+    return {
+        "type": "object",
+        "properties": {
+            "detections": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "ambiguous_phrase": {"type": "string"},
+                        "resolved_entity": {"type": "string"},
+                    },
+                    "required": [
+                        "ambiguous_phrase",
+                        "resolved_entity",
+                    ],
+                    "additionalProperties": False,
+                },
+            }
+        },
+        "required": ["detections"],
+        "additionalProperties": False,
+    }
+
+
+def make_prompt(transcript, snapshot, current_turn,
+                history_turns=None, with_examples=True):
+    turn_id = int(current_turn["turn_id"])
+
+    system = """
+You are an ambiguity detection and contextual entity-resolution system.
+
+Evaluate ONLY the CURRENT TURN.
+
+Detect expressions whose intended referent or meaning depends on previous
+dialogue or the supplied mobile context. These may include:
+
+- pronouns: he, she, they, it, them, we
+- demonstratives: this, that, these, those
+- deictic locations: here, there, my place
+- relative time: today, tomorrow, later, next Monday
+- context-dependent entities: the document, the meeting, the client,
+  that feature, the channel, the files, etc.
+
+Rules:
+1. Do NOT mark every noun phrase as ambiguous.
+2. A phrase should be detected only when its intended identity/reference
+   genuinely requires contextual interpretation.
+3. `ambiguous_phrase` MUST be copied exactly from the CURRENT TURN.
+4. Resolve the phrase using transcript history and mobile_context_snapshot.
+5. Do not invent unsupported exact filenames, dates, IDs, or names.
+6. If the current turn contains no ambiguous phrase, return {"detections":[]}.
+7. Return JSON only.
+""".strip()
+
+    payload = {
+        "current_turn_id": turn_id,
+        "current_speaker": current_turn.get("speaker"),
+        "current_turn_text": current_turn.get("text", ""),
+        "mobile_context_snapshot": snapshot,
+        "conversation_so_far": format_transcript(
+            transcript_until(transcript, turn_id)[-history_turns:]
+            if history_turns else transcript_until(transcript, turn_id)
+        ),
+    }
+
+    return (
+        [{"role": "system", "content": system}]
+        + (FEWSHOT_MESSAGES if with_examples else [])
+        + [{
+            "role": "user",
+            "content": json.dumps(
+                payload,
+                ensure_ascii=False,
+                indent=2,
+            ),
+        }]
+    )
+
+
+
+def pick_fewshot_files(files):
+    """Choose the demo conversations (same choice for both tasks)."""
+    if FEWSHOT_FILES:
+        by_name = {p.name: p for p in files}
+        missing = [n for n in FEWSHOT_FILES if n not in by_name]
+        if missing:
+            raise FileNotFoundError(f"FEWSHOT_FILES not found in datasets: {missing}")
+        return [by_name[n] for n in FEWSHOT_FILES]
+    rng = random.Random(FEWSHOT_SEED)
+    return sorted(rng.sample(sorted(files), min(N_FEWSHOT_FILES, len(files) - 1)))
+
+
+def pick_shots(positives, negatives, diversity_key):
+    """Deterministic pick: positives spread over different answer types, then negatives."""
+    rng = random.Random(FEWSHOT_SEED + 1)
+    positives = list(positives)
+    negatives = list(negatives)
+    rng.shuffle(positives)
+    rng.shuffle(negatives)
+
+    chosen, seen = [], set()
+    for item in positives:                      # first pass: one per answer type
+        k = diversity_key(item)
+        if k not in seen and len(chosen) < N_POSITIVE_SHOTS:
+            chosen.append(item)
+            seen.add(k)
+    for item in positives:                      # fill up if needed
+        if len(chosen) >= N_POSITIVE_SHOTS:
+            break
+        if item not in chosen:
+            chosen.append(item)
+    chosen += negatives[:N_NEGATIVE_SHOTS]
+
+    if len(chosen) < N_POSITIVE_SHOTS + N_NEGATIVE_SHOTS:
+        print(f"  WARNING: only {len(chosen)} few-shot examples available")
+    rng.shuffle(chosen)                         # mix positive / negative order
+    return chosen
+
+
+def build_fewshot_messages(demo_files):
+    """Example user/assistant message pairs from the demo conversations' ground truth."""
+    positives, negatives = [], []
+    for path in demo_files:
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        transcript = data.get("conversation_transcript", [])
+        snapshot = data.get("mobile_context_snapshot", {})
+        gt_map = group_gt_by_turn(data.get("ground_truth_resolutions", []))
+        for turn in transcript:
+            tid = int(turn["turn_id"])
+            item = (path.name, tid, transcript, snapshot, turn, gt_map.get(tid, []))
+            (positives if item[5] else negatives).append(item)
+
+    chosen = pick_shots(
+        positives, negatives,
+        diversity_key=lambda it: str(it[5][0].get("resolution_source")),
+    )
+
+    messages, info = [], []
+    for name, tid, transcript, snapshot, turn, gts in chosen:
+        user_msg = make_prompt(transcript, snapshot, turn,
+                               history_turns=FEWSHOT_HISTORY_TURNS, with_examples=False)[-1]
+        answer = {"detections": [
+            {"ambiguous_phrase": g["ambiguous_phrase"], "resolved_entity": g["resolved_entity"]}
+            for g in gts
+        ]}
+        messages.append(user_msg)
+        messages.append({"role": "assistant", "content": json.dumps(answer, ensure_ascii=False)})
+        info.append({"file": name, "turn_id": tid, "n_ambiguities": len(gts)})
+    return messages, info
+
+
+
+def post_chat_with_retry(session, payload):
+    """POST to Ollama chat. Retries timeouts, dropped connections and server
+    errors (5xx). Returns (response, None) on success or repeat-limit, or
+    (None, error_text) if every attempt failed - the caller then counts that
+    turn as "no prediction" instead of failing the whole conversation."""
+    last_error = ""
+    for attempt in range(1, CHAT_ATTEMPTS + 1):
+        try:
+            r = session.post(OLLAMA_CHAT_URL, json=payload, timeout=REQUEST_TIMEOUT_S)
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last_error = repr(exc)
+        else:
+            if r.ok or "repeat limit" in r.text:
+                return r, None
+            if r.status_code < 500:
+                # A real request problem (e.g. model not found): stop, as before.
+                raise RuntimeError(f"Ollama chat failed ({r.status_code}): {r.text}")
+            last_error = f"HTTP {r.status_code}: {r.text[:300]}"
+        if attempt < CHAT_ATTEMPTS:
+            print(f"  retrying turn (attempt {attempt + 1}/{CHAT_ATTEMPTS}) after: {last_error[:200]}")
+            time.sleep(15 * attempt)
+    print(f"  giving up on this turn after {CHAT_ATTEMPTS} attempts: {last_error[:200]}")
+    return None, last_error
+
+
+def post_embed_with_retry(session, url, **kwargs):
+    """POST to Ollama embed, retrying timeouts / dropped connections / 5xx."""
+    last_error = ""
+    for attempt in range(1, 4):
+        try:
+            r = session.post(url, **kwargs)
+            if r.ok or r.status_code < 500:
+                return r
+            last_error = f"HTTP {r.status_code}: {r.text[:300]}"
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last_error = repr(exc)
+        if attempt < 3:
+            time.sleep(10 * attempt)
+    raise RuntimeError(f"Ollama embed failed after 3 attempts: {last_error}")
+
+
+def call_qwen(session, messages):
+    payload = {
+        "model": QWEN_MODEL,
+        "messages": messages,
+        "stream": False,
+        "format": output_schema(),
+        "think": THINK,
+        "keep_alive": KEEP_ALIVE,
+        "options": {
+            "temperature": TEMPERATURE,
+            "seed": SEED,
+            "num_predict": NUM_PREDICT,
+        },
+    }
+    if NUM_CTX:
+        payload["options"]["num_ctx"] = NUM_CTX
+
+    t0 = time.perf_counter()
+    r, request_error = post_chat_with_retry(session, payload)
+    latency = time.perf_counter() - t0
+
+    repeat_aborted = False
+    request_failed = False
+    if r is None:
+        # Timed out / server error on every attempt: count this turn as
+        # "no prediction" instead of failing the whole conversation.
+        request_failed = True
+        raw = {"message": {"content": ""}}
+    elif not r.ok:
+        # Model got stuck repeating itself and Ollama aborted it.
+        repeat_aborted = True
+        raw = {"message": {"content": ""}}
+    else:
+        raw = r.json()
+
+    content = raw.get("message", {}).get("content", "")
+    thinking = raw.get("message", {}).get("thinking", "") or ""
+
+    # A truncated generation can break JSON:
+    # count it as "no detections" for this turn instead of failing the file.
+    parse_ok = True
+    try:
+        parsed = json.loads(content)
+        detections = parsed.get("detections", []) if isinstance(parsed, dict) else []
+        if not isinstance(detections, list):
+            detections = []
+    except json.JSONDecodeError:
+        parse_ok = False
+        detections = []
+
+    cleaned = []
+
+    for d in detections:
+        if not isinstance(d, dict):
+            continue
+        phrase = str(d.get("ambiguous_phrase", "")).strip()
+        resolution = str(d.get("resolved_entity", "")).strip()
+
+        if phrase:
+            cleaned.append({
+                "ambiguous_phrase": phrase,
+                "resolved_entity": resolution,
+            })
+
+    prompt_eval_s = ns_to_s(raw.get("prompt_eval_duration"))
+    generation_s = ns_to_s(raw.get("eval_duration"))
+
+    prompt_tokens = int(raw.get("prompt_eval_count") or 0)
+    output_tokens = int(raw.get("eval_count") or 0)
+
+    compute = {
+        "wall_latency_s": latency,
+        "ollama_total_s": ns_to_s(raw.get("total_duration")),
+        "model_load_s": ns_to_s(raw.get("load_duration")),
+        "prompt_eval_s": prompt_eval_s,
+        "generation_s": generation_s,
+        "prompt_tokens": prompt_tokens,
+        "output_tokens": output_tokens,
+        "total_tokens": prompt_tokens + output_tokens,
+        "generation_tokens_per_s": safe_div(
+            output_tokens,
+            generation_s,
+        ),
+        "json_parse_ok": parse_ok,
+        "thinking_returned": bool(thinking.strip()),
+        "thinking_chars": len(thinking),
+        "hit_num_predict_limit": output_tokens >= NUM_PREDICT,
+        "repeat_aborted": repeat_aborted,
+        "request_failed": request_failed,
+        "request_error": request_error,
+    }
+
+    return cleaned, compute
+
+
+def warm_up(session):
+    messages = [
+        {
+            "role": "user",
+            "content": 'Return JSON: {"detections":[]}',
+        }
+    ]
+
+    payload = {
+        "model": QWEN_MODEL,
+        "messages": messages,
+        "stream": False,
+        "format": output_schema(),
+        "think": THINK,
+        "keep_alive": KEEP_ALIVE,
+        "options": {
+            "temperature": 0,
+            "num_predict": 32,
+        },
+    }
+    if NUM_CTX:
+        payload["options"]["num_ctx"] = NUM_CTX
+
+    r = session.post(
+        OLLAMA_CHAT_URL,
+        json=payload,
+        timeout=REQUEST_TIMEOUT_S,
+    )
+
+    if not r.ok:
+        raise RuntimeError(
+            f"Qwen warm-up failed ({r.status_code}): {r.text}"
+        )
+
+
+# ============================================================
+# RESOLUTION SIMILARITY
+# ============================================================
+
+def resolution_similarities(session, pairs):
+    """
+    pairs:
+        [(predicted_resolution, ground_truth_resolution), ...]
+    """
+    if not pairs:
+        return []
+
+    inputs = []
+
+    for pred, gt in pairs:
+        inputs.append(str(pred or ""))
+        inputs.append(str(gt or ""))
+
+    r = post_embed_with_retry(
+        session,
+        OLLAMA_EMBED_URL,
+        json={
+            "model": EMBED_MODEL,
+            "input": inputs,
+            "keep_alive": KEEP_ALIVE,
+        },
+        timeout=REQUEST_TIMEOUT_S,
+    )
+
+    if not r.ok:
+        raise RuntimeError(
+            f"Ollama embed failed ({r.status_code}): {r.text}"
+        )
+
+    embs = r.json().get("embeddings", [])
+
+    if len(embs) != len(inputs):
+        raise ValueError(
+            f"Expected {len(inputs)} embeddings, got {len(embs)}"
+        )
+
+    sims = []
+
+    for i in range(0, len(embs), 2):
+        a = np.asarray(embs[i], dtype=np.float64)
+        b = np.asarray(embs[i + 1], dtype=np.float64)
+
+        denom = np.linalg.norm(a) * np.linalg.norm(b)
+
+        sim = (
+            float(np.dot(a, b) / denom)
+            if denom else 0.0
+        )
+
+        sims.append(max(-1.0, min(1.0, sim)))
+
+    return sims
+
+
+# ============================================================
+# PHRASE MATCHING
+# ============================================================
+
+def match_predictions(predictions, gt_items):
+    """
+    One-to-one matching of predicted ambiguous phrases to GT phrases.
+
+    Returns:
+      matches = [(pred_index, gt_index, phrase_score), ...]
+      unmatched_pred_indices
+      unmatched_gt_indices
+    """
+    candidates = []
+
+    for pi, pred in enumerate(predictions):
+        for gi, gt in enumerate(gt_items):
+            score = phrase_similarity(
+                pred["ambiguous_phrase"],
+                gt["ambiguous_phrase"],
+            )
+
+            if score >= PHRASE_MATCH_THRESHOLD:
+                candidates.append(
+                    (score, pi, gi)
+                )
+
+    candidates.sort(reverse=True)
+
+    used_p = set()
+    used_g = set()
+    matches = []
+
+    for score, pi, gi in candidates:
+        if pi in used_p or gi in used_g:
+            continue
+
+        used_p.add(pi)
+        used_g.add(gi)
+
+        matches.append(
+            (pi, gi, score)
+        )
+
+    unmatched_p = [
+        i for i in range(len(predictions))
+        if i not in used_p
+    ]
+
+    unmatched_g = [
+        i for i in range(len(gt_items))
+        if i not in used_g
+    ]
+
+    return matches, unmatched_p, unmatched_g
+
+
+# ============================================================
+# TURN EVALUATION
+# ============================================================
+
+def evaluate_turn(
+    session,
+    current_turn,
+    predictions,
+    gt_items,
+    compute,
+):
+    matches, unmatched_p, unmatched_g = match_predictions(
+        predictions,
+        gt_items,
+    )
+
+    pairs = [
+        (
+            predictions[pi]["resolved_entity"],
+            gt_items[gi]["resolved_entity"],
+        )
+        for pi, gi, _ in matches
+    ]
+
+    sim_scores = resolution_similarities(
+        session,
+        pairs,
+    )
+
+    matched_rows = []
+    tp = 0
+    bad_resolution = 0
+
+    for (
+        (pi, gi, phrase_score),
+        resolution_score,
+    ) in zip(matches, sim_scores):
+
+        pred = predictions[pi]
+        gt = gt_items[gi]
+
+        is_tp = (
+            resolution_score
+            >= RESOLUTION_THRESHOLD
+        )
+
+        if is_tp:
+            tp += 1
+        else:
+            bad_resolution += 1
+
+        matched_rows.append({
+            "predicted_ambiguous_phrase":
+                pred["ambiguous_phrase"],
+            "ground_truth_ambiguous_phrase":
+                gt["ambiguous_phrase"],
+            "phrase_match_score":
+                phrase_score,
+
+            "predicted_resolution":
+                pred["resolved_entity"],
+            "ground_truth_resolution":
+                gt["resolved_entity"],
+
+            "resolution_similarity":
+                resolution_score,
+
+            "positive_similarity_ge_0_70":
+                is_tp,
+
+            "resolution_source":
+                gt.get("resolution_source"),
+        })
+
+    false_positives = [
+        predictions[i]
+        for i in unmatched_p
+    ]
+
+    missed_gt = [
+        {
+            "ambiguous_phrase":
+                gt_items[i]["ambiguous_phrase"],
+            "ground_truth_resolution":
+                gt_items[i]["resolved_entity"],
+            "resolution_source":
+                gt_items[i].get("resolution_source"),
+        }
+        for i in unmatched_g
+    ]
+
+    # User-requested definitions:
+    #
+    # TP = detected GT phrase + resolution >= 0.70
+    #
+    # FN = missed GT phrase OR detected GT phrase
+    #      whose resolution similarity < 0.70
+    #
+    # FP = predicted ambiguous phrase that did not match
+    #      any GT ambiguous phrase.
+    fn = len(unmatched_g) + bad_resolution
+    fp = len(unmatched_p)
+
+    return {
+        "turn_id": int(current_turn["turn_id"]),
+        "speaker": current_turn.get("speaker"),
+        "text": current_turn.get("text", ""),
+
+        "counts": {
+            "ground_truth_ambiguities":
+                len(gt_items),
+
+            "predicted_ambiguities":
+                len(predictions),
+
+            "detected_gt_ambiguities":
+                len(matches),
+
+            "true_positives":
+                tp,
+
+            "false_negatives":
+                fn,
+
+            "false_positives":
+                fp,
+
+            "missed_gt_ambiguities":
+                len(unmatched_g),
+
+            "detected_but_resolution_below_0_70":
+                bad_resolution,
+        },
+
+        "matched": matched_rows,
+        "false_positive_predictions":
+            false_positives,
+        "missed_ground_truth":
+            missed_gt,
+        "all_qwen_predictions":
+            predictions,
+        "compute":
+            compute,
+    }
+
+
+# ============================================================
+# METRICS
+# ============================================================
+
+def metrics_from_turns(turns):
+    gt = sum(
+        t["counts"]["ground_truth_ambiguities"]
+        for t in turns
+    )
+
+    pred = sum(
+        t["counts"]["predicted_ambiguities"]
+        for t in turns
+    )
+
+    detected = sum(
+        t["counts"]["detected_gt_ambiguities"]
+        for t in turns
+    )
+
+    tp = sum(
+        t["counts"]["true_positives"]
+        for t in turns
+    )
+
+    fn = sum(
+        t["counts"]["false_negatives"]
+        for t in turns
+    )
+
+    fp = sum(
+        t["counts"]["false_positives"]
+        for t in turns
+    )
+
+    missed = sum(
+        t["counts"]["missed_gt_ambiguities"]
+        for t in turns
+    )
+
+    bad_res = sum(
+        t["counts"]["detected_but_resolution_below_0_70"]
+        for t in turns
+    )
+
+    # Detection only:
+    detection_recall = safe_div(
+        detected,
+        gt,
+    )
+
+    detection_precision = safe_div(
+        detected,
+        detected + fp,
+    )
+
+    detection_f1 = safe_div(
+        2 * detection_precision * detection_recall,
+        detection_precision + detection_recall,
+    )
+
+    # End-to-end:
+    #
+    # If GT has 10 ambiguities, Qwen detects 8,
+    # and all 8 resolution scores >= .70:
+    # TPR = 8/10 = 80%.
+    #
+    # If only 6 of those 8 exceed .70:
+    # TPR = 6/10 = 60%.
+    tpr = safe_div(
+        tp,
+        gt,
+    )
+
+    # Strict precision:
+    # Of ALL ambiguous phrases Qwen predicted,
+    # how many were correct detections AND had
+    # resolution similarity >= .70?
+    strict_precision = safe_div(
+        tp,
+        pred,
+    )
+
+    end_to_end_f1 = safe_div(
+        2 * strict_precision * tpr,
+        strict_precision + tpr,
+    )
+
+    # User-requested FP statistic:
+    false_positive_discovery_rate = safe_div(
+        fp,
+        pred,
+    )
+
+    return {
+        "ground_truth_ambiguities":
+            gt,
+
+        "qwen_predicted_ambiguities":
+            pred,
+
+        "detected_ground_truth_ambiguities":
+            detected,
+
+        "missed_ground_truth_ambiguities":
+            missed,
+
+        "detected_but_bad_resolution":
+            bad_res,
+
+        "true_positives":
+            tp,
+
+        "false_negatives":
+            fn,
+
+        "false_positive_ambiguities":
+            fp,
+
+        "detection_recall":
+            detection_recall,
+
+        "detection_precision":
+            detection_precision,
+
+        "detection_f1":
+            detection_f1,
+
+        "true_positive_rate_at_0_70":
+            tpr,
+
+        "strict_end_to_end_precision_at_0_70":
+            strict_precision,
+
+        "end_to_end_f1_at_0_70":
+            end_to_end_f1,
+
+        "false_positive_discovery_rate":
+            false_positive_discovery_rate,
+
+        "false_positives_per_turn":
+            safe_div(fp, len(turns)),
+
+        "classical_false_positive_rate":
+            None,
+
+        "fpr_note":
+            (
+                "Classical FPR = FP/(FP+TN) is not defined "
+                "unless a finite set of negative candidate phrases "
+                "is specified."
+            ),
+    }
+
+
+def latency_from_turns(turns):
+    latencies = [
+        t["compute"]["wall_latency_s"]
+        for t in turns
+    ]
+
+    return {
+        "number_of_turn_calls":
+            len(turns),
+
+        "median_latency_per_turn_s":
+            median_or_none(latencies),
+
+        "mean_latency_per_turn_s":
+            mean_or_none(latencies),
+
+        "total_prompt_tokens":
+            sum(
+                t["compute"]["prompt_tokens"]
+                for t in turns
+            ),
+
+        "total_output_tokens":
+            sum(
+                t["compute"]["output_tokens"]
+                for t in turns
+            ),
+
+        "json_parse_failures":
+            sum(
+                1 for t in turns
+                if not t["compute"].get("json_parse_ok", True)
+            ),
+
+        "turns_with_thinking":
+            sum(
+                1 for t in turns
+                if t["compute"].get("thinking_returned")
+            ),
+
+        "turns_hit_num_predict_limit":
+            sum(
+                1 for t in turns
+                if t["compute"].get("hit_num_predict_limit")
+            ),
+
+        "turns_repeat_aborted":
+            sum(
+                1 for t in turns
+                if t["compute"].get("repeat_aborted")
+            ),
+
+        "turns_request_failed":
+            sum(
+                1 for t in turns
+                if t["compute"].get("request_failed")
+            ),
+    }
+
+
+# ============================================================
+# ONE FILE
+# ============================================================
+
+def process_file(path, session):
+    with path.open(
+        "r",
+        encoding="utf-8",
+    ) as f:
+        data = json.load(f)
+
+    transcript = data.get(
+        "conversation_transcript",
+        [],
+    )
+
+    snapshot = data.get(
+        "mobile_context_snapshot",
+        {},
+    )
+
+    gt_rows = data.get(
+        "ground_truth_resolutions",
+        [],
+    )
+
+    gt_map = group_gt_by_turn(
+        gt_rows
+    )
+
+    evaluated_turns = []
+
+    # IMPORTANT:
+    # Run Qwen on EVERY turn.
+    # Otherwise false positives on turns with
+    # no GT ambiguity cannot be measured.
+    for i, turn in enumerate(
+        transcript,
+        start=1,
+    ):
+        turn_id = int(turn["turn_id"])
+
+        messages = make_prompt(
+            transcript,
+            snapshot,
+            turn,
+        )
+
+        predictions, compute = call_qwen(
+            session,
+            messages,
+        )
+
+        evaluated = evaluate_turn(
+            session=session,
+            current_turn=turn,
+            predictions=predictions,
+            gt_items=gt_map.get(
+                turn_id,
+                [],
+            ),
+            compute=compute,
+        )
+
+        evaluated_turns.append(
+            evaluated
+        )
+
+        c = evaluated["counts"]
+
+        print(
+            f"  {path.stem} turn {turn_id:>3} "
+            f"({i}/{len(transcript)}) "
+            f"GT={c['ground_truth_ambiguities']} "
+            f"PRED={c['predicted_ambiguities']} "
+            f"TP={c['true_positives']} "
+            f"FN={c['false_negatives']} "
+            f"FP={c['false_positives']} "
+            f"lat={compute['wall_latency_s']:.2f}s"
+            + ("" if compute.get("json_parse_ok", True) else " [JSON PARSE FAIL]")
+            + (" [REPEAT ABORT]" if compute.get("repeat_aborted") else "")
+            + (" [REQUEST FAILED]" if compute.get("request_failed") else "")
+        )
+
+    return {
+        "dataset_id":
+            data.get("dataset_id"),
+
+        "source_file":
+            str(path),
+
+        "metrics":
+            metrics_from_turns(
+                evaluated_turns
+            ),
+
+        "latency_compute":
+            latency_from_turns(
+                evaluated_turns
+            ),
+
+        "turns":
+            evaluated_turns,
+    }
+
+
+# ============================================================
+# GLOBAL REPORT
+# ============================================================
+
+def aggregate(file_results):
+    all_turns = [
+        turn
+        for result in file_results
+        for turn in result["turns"]
+    ]
+
+    per_file = []
+
+    for result in file_results:
+        per_file.append({
+            "dataset_id":
+                result["dataset_id"],
+
+            "source_file":
+                result["source_file"],
+
+            **result["metrics"],
+            **result["latency_compute"],
+        })
+
+    overall_latency = latency_from_turns(
+        all_turns
+    )
+
+    file_medians = [
+        x["median_latency_per_turn_s"]
+        for x in per_file
+        if x["median_latency_per_turn_s"]
+        is not None
+    ]
+
+    overall_latency[
+        "median_of_conversation_median_latencies_s"
+    ] = median_or_none(
+        file_medians
+    )
+
+    return {
+        "configuration": {
+            "qwen_model":
+                QWEN_MODEL,
+
+            "embedding_model":
+                EMBED_MODEL,
+
+            "think":
+                THINK,
+
+            "few_shot":
+                FEWSHOT_INFO,
+
+            "num_predict":
+                NUM_PREDICT,
+
+            "num_ctx":
+                NUM_CTX,
+
+            "num_workers":
+                NUM_WORKERS,
+
+            "resolution_similarity_threshold":
+                RESOLUTION_THRESHOLD,
+
+            "phrase_match_threshold":
+                PHRASE_MATCH_THRESHOLD,
+
+            "ground_truth_shown_to_qwen":
+                False,
+        },
+
+        "overall":
+            metrics_from_turns(
+                all_turns
+            ),
+
+        "latency_compute":
+            overall_latency,
+
+        "per_file":
+            per_file,
+    }
+
+
+def print_summary(report):
+    m = report["overall"]
+    l = report["latency_compute"]
+
+    print("\n" + "=" * 80)
+    print("AMBIGUITY DETECTION + RESOLUTION")
+    print("=" * 80)
+
+    print(
+        f"GT ambiguous phrases:             "
+        f"{m['ground_truth_ambiguities']}"
+    )
+
+    print(
+        f"Qwen predicted ambiguities:       "
+        f"{m['qwen_predicted_ambiguities']}"
+    )
+
+    print(
+        f"Detected GT ambiguities:          "
+        f"{m['detected_ground_truth_ambiguities']}"
+    )
+
+    print(
+        f"Missed GT ambiguities:            "
+        f"{m['missed_ground_truth_ambiguities']}"
+    )
+
+    print(
+        f"Detected but similarity < 0.70:   "
+        f"{m['detected_but_bad_resolution']}"
+    )
+
+    print(
+        f"TRUE POSITIVES:                   "
+        f"{m['true_positives']}"
+    )
+
+    print(
+        f"FALSE NEGATIVES:                  "
+        f"{m['false_negatives']}"
+    )
+
+    print(
+        f"FALSE POSITIVES:                  "
+        f"{m['false_positive_ambiguities']}"
+    )
+
+    print("\nDetection only:")
+    print(
+        f"  Recall:                         "
+        f"{100*m['detection_recall']:.2f}%"
+    )
+    print(
+        f"  Precision:                      "
+        f"{100*m['detection_precision']:.2f}%"
+    )
+    print(
+        f"  F1:                             "
+        f"{100*m['detection_f1']:.2f}%"
+    )
+
+    print("\nDetection + correct resolution:")
+    print(
+        f"  TPR / Recall @ 0.70:            "
+        f"{100*m['true_positive_rate_at_0_70']:.2f}%"
+    )
+    print(
+        f"  Precision @ 0.70:               "
+        f"{100*m['strict_end_to_end_precision_at_0_70']:.2f}%"
+    )
+    print(
+        f"  F1 @ 0.70:                      "
+        f"{100*m['end_to_end_f1_at_0_70']:.2f}%"
+    )
+
+    print("\nFalse positives:")
+    print(
+        f"  FP discovery rate:              "
+        f"{100*m['false_positive_discovery_rate']:.2f}%"
+    )
+    print(
+        f"  FP per turn:                    "
+        f"{m['false_positives_per_turn']:.4f}"
+    )
+
+    print("\nLatency:")
+    print(
+        f"  Median turn latency:            "
+        f"{l['median_latency_per_turn_s']:.3f}s"
+    )
+
+    print(
+        f"  Median of file medians:         "
+        f"{l['median_of_conversation_median_latencies_s']:.3f}s"
+    )
+
+    print(
+        f"  JSON parse failures:            "
+        f"{l.get('json_parse_failures', 0)}"
+    )
+    print(
+        f"  Turns with thinking:            "
+        f"{l.get('turns_with_thinking', 0)}"
+    )
+    print(
+        f"  Turns hit NUM_PREDICT limit:    "
+        f"{l.get('turns_hit_num_predict_limit', 0)}"
+    )
+    print(
+        f"  Turns aborted (repeat limit):   "
+        f"{l.get('turns_repeat_aborted', 0)}"
+    )
+    print(
+        f"  Turns failed (timeout/error):   "
+        f"{l.get('turns_request_failed', 0)}"
+    )
+
+    print("\nPer conversation:")
+    for row in report["per_file"]:
+        print(
+            f"  {Path(row['source_file']).name}: "
+            f"GT={row['ground_truth_ambiguities']}, "
+            f"Pred={row['qwen_predicted_ambiguities']}, "
+            f"TP={row['true_positives']}, "
+            f"FN={row['false_negatives']}, "
+            f"FP={row['false_positive_ambiguities']}, "
+            f"TPR={100*row['true_positive_rate_at_0_70']:.2f}%, "
+            f"median latency={(row['median_latency_per_turn_s'] or 0.0):.3f}s"
+        )
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def atomic_write_json(path, obj):
+    """Write to a temp file, then rename, so a job killed mid-write
+    never leaves a half-written JSON behind."""
+    tmp = path.with_name(path.name + ".tmp")
+    with tmp.open("w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+    tmp.replace(path)
+
+
+def write_report(results, failures):
+    results = sorted(results, key=lambda r: r["source_file"])
+    report = aggregate(results)
+    report["failures"] = failures
+    atomic_write_json(OUT_FILE, report)
+    return report
+
+
+def pred_path_for(path):
+    relative = path.relative_to(DATASETS_DIR)
+    pred_path = PRED_DIR / relative
+    return pred_path.with_name(pred_path.stem + ".qwen_detection_predictions.json")
+
+
+def load_finished(path):
+    """Return the saved result for this file, or None if it must be (re)run."""
+    pred_path = pred_path_for(path)
+    if not (RESUME and pred_path.exists()):
+        return None
+    try:
+        with pred_path.open("r", encoding="utf-8") as f:
+            result = json.load(f)
+        if "metrics" in result and "turns" in result:
+            return result
+    except (json.JSONDecodeError, OSError):
+        pass
+    print(f"  {path.name}: incomplete prediction file; re-running")
+    return None
+
+
+def run_one(path):
+    """Process one conversation file in its own thread with its own session."""
+    session = requests.Session()
+    try:
+        result = process_file(path, session)
+    finally:
+        session.close()
+
+    pred_path = pred_path_for(path)
+    pred_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(pred_path, result)
+    return result
+
+
+def main():
+    PRED_DIR.mkdir(parents=True, exist_ok=True)
+
+    files = sorted(DATASETS_DIR.rglob("*.json"))
+    if not files:
+        raise FileNotFoundError(f"No JSON files found in:\n{DATASETS_DIR}")
+
+    # --- Few-shot: pick demo conversations, build examples, exclude them ---
+    demo_files = pick_fewshot_files(files)
+    FEWSHOT_MESSAGES[:], shots_info = build_fewshot_messages(demo_files)
+    files = [p for p in files if p not in demo_files]
+    FEWSHOT_INFO.update({
+        "demo_files_excluded_from_evaluation": [p.name for p in demo_files],
+        "examples": shots_info,
+        "n_examples": len(shots_info),
+        "history_turns_per_example": FEWSHOT_HISTORY_TURNS,
+        "seed": FEWSHOT_SEED,
+    })
+    print(f"Few-shot: {len(shots_info)} examples from {[p.name for p in demo_files]} "
+          f"(these files are not scored); evaluating {len(files)} files")
+
+
+    print(f"Model: {QWEN_MODEL} | thinking: {'ON' if THINK else 'OFF'} | "
+          f"Ollama: {OLLAMA_HOST}")
+    print(f"Output folder: {PRED_DIR}")
+
+    session = requests.Session()
+    check_ollama(session)
+
+    print("Warming Qwen; warm-up is excluded from evaluation latency...")
+    warm_up(session)
+
+    results = []
+    failures = []
+
+    # --- Resume: load files that already finished in an earlier run ---
+    to_run = []
+    for path in files:
+        done = load_finished(path)
+        if done is not None:
+            results.append(done)
+        else:
+            to_run.append(path)
+
+    print(
+        f"\n{len(files)} files total: {len(results)} already done (skipped), "
+        f"{len(to_run)} to run with {NUM_WORKERS} parallel workers."
+    )
+
+    # --- Run the remaining files in parallel ---
+    with ThreadPoolExecutor(max_workers=NUM_WORKERS) as pool:
+        futures = {pool.submit(run_one, path): path for path in to_run}
+
+        for done_no, fut in enumerate(as_completed(futures), start=1):
+            path = futures[fut]
+            try:
+                results.append(fut.result())
+                print(f"\n[{done_no}/{len(to_run)}] FINISHED {path.name}")
+            except Exception as exc:
+                failures.append({"file": str(path), "error": repr(exc)})
+                print(f"\n[{done_no}/{len(to_run)}] ERROR in {path.name}: {exc}")
+
+            # checkpoint
+            if results:
+                write_report(results, failures)
+
+    if not results:
+        raise RuntimeError("No files completed successfully.")
+
+    report = write_report(results, failures)
+    print_summary(report)
+    print(f"\nSaved report:\n{OUT_FILE}")
+
+
+if __name__ == "__main__":
+    main()
